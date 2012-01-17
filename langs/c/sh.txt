@@ -1,0 +1,20 @@
+### SHELL LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Shell Script
+    VERSION             1.0
+
+    COMMENT             (?default)|(#.*?$)
+    STRING              (?default)
+    
+    STATEMENT           (?default)|\b(?alt:statement.txt)\b
+    RESERVED            (?default)|\b(?alt:reserved.txt)\b
+    TYPE                (?default)
+
+    ENTITY              (?default)|(\.[a-z_]\w*\b)
+    VARIABLE            (?default)|(\$[a-z_]\w*\b)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

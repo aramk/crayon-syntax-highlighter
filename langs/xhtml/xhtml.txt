@@ -1,0 +1,19 @@
+### XHTML LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                XHTML
+    VERSION             1.7.0
+
+    COMMENT             \<!--.*?--\>
+    ATT_STR:STRING      (((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)'))
+    NOTATION            <!.*?>
+    
+    HTML_TAG:KEYWORD			(</?\s*[^<\s>]+\s*>?)|(\s*>)
+    
+    #</?\s*[^<\s>]+\s*>?
+
+    ATTR:ENTITY         [\w-]+(?=\s*=")
+    TEXT:IDENTIFIER     (?<=\>)[^\<\>]*(?=\<)
+    SYMBOL              (?default)
+#    OTHER:CONSTANT      (?default:identifier)

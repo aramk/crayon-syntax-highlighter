@@ -1,0 +1,7 @@
+__NAMESPACE__
+__METHOD__
+__FUNCTION__
+__LINE__
+__FILE__
+__DIR__
+__CLASS__

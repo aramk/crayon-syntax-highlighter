@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main(void) {
+    int x;
+    x = 0;
+    set(&x, 42);
+    printf("%d %d", x);
+    return 0;
+}

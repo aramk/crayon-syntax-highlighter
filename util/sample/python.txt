@@ -1,0 +1,9 @@
+# Merge example
+def mergeWithoutOverlap(oneDict, otherDict):
+    newDict = oneDict.copy()
+    for key in otherDict.keys():
+        if key in oneDict.keys():
+            raise ValueError, "the two dictionaries are sharing keys!"
+        newDict[key] = otherDict[key]
+    return newDict
+    

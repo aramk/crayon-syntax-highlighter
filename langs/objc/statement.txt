@@ -1,0 +1,10 @@
+continue
+return
+switch
+break
+while
+case
+else
+goto
+do
+if

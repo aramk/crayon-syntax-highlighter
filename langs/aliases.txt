@@ -1,0 +1,11 @@
+# This file contains aliases in the following structure. They are case insensitive
+# Format: id alias1 alias2
+
+c# cs csharp
+c++ cpp
+xhtml xml html
+objc obj-c
+python py
+vb vbs
+js javascript
+sh shell unix bash

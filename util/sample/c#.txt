@@ -1,0 +1,10 @@
+using Functions;
+class FunctionClient { 
+    public static void Main(string[] args) { 
+        Console.WriteLine("Function Client"); 
+        if ( args.Length == 0 ) {
+            Console.WriteLine("Usage: FunctionTest ... "); 
+            return; 
+        } 
+    } 
+}

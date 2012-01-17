@@ -1,0 +1,27 @@
+### PYTHON LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    CASE_INSENSITIVE = ON
+
+    NAME                Python
+    VERSION             1.1
+
+    COMMENT             (#[^\r\n]*)
+    STRING              (?:(?<!\\)""".*?(?<!\\)""")|(?:(?<!\\)'''.*?(?<!\\)''')|((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)')
+    
+    FUNCTION:KEYWORD    \b(?alt:function.txt)\b
+    MODULE:KEYWORD      \b(?alt:module.txt)\b
+    EXCEPTION:KEYWORD   \b(?alt:exception.txt)\b
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            \b(?alt:reserved.txt)\b
+    TYPE                \b(?alt:type.txt)\b
+    MODIFIER            \b(?alt:modifier.txt)\b
+    
+    ENTITY              (?default)
+    # TODO: capture variables like "return variable"
+    VARIABLE            (?default)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

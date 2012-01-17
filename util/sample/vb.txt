@@ -1,0 +1,10 @@
+Option Explicit
+Dim Count As Integer
+Private Sub Form_Load()
+    Count = 0
+    Timer1.Interval = 1000 ' units of milliseconds
+End Sub
+Private Sub Timer1_Timer()
+    Count = Count + 1
+    lblCount.Caption = Count
+End Sub

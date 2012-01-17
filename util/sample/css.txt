@@ -1,0 +1,12 @@
+@import url('fonts/monaco/monaco.css');
+
+/* General ========================= */
+.crayon-syntax {
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.crayon-syntax .crayon-toolbar {
+    position: relative;
+    overflow: hidden;
+}

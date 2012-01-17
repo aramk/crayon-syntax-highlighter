@@ -1,0 +1,14 @@
+unset
+print
+return
+require_once	
+require
+list
+isset
+include_once
+include
+eval
+exit
+empty
+echo
+die

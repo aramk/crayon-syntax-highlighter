@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello HTML</title>
+    </head>
+    <body class="hello">
+        <!-- Howdy -->
+        <p style="font-size: 12px;">Hello World!</p>
+    </body>
+</html>

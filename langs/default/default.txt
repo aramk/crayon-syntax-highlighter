@@ -1,0 +1,24 @@
+### DEFAULT LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Default
+    VERSION             1.7.0
+
+    COMMENT             (/\*.*?\*/)|(//.*?$)
+    STRING              ((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)')
+    
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            \b(?<![:\.])(?alt:reserved.txt)(?![:\.])\b
+    TYPE                \b(?alt:type.txt)\b
+    MODIFIER            \b(?alt:modifier.txt)\b
+
+    ENTITY              (\b[a-z_]\w*\b(?=\s*\([^\)]*\)))|((?<!\.)(\b[a-z_]\w*\b)(?=[^},.:;\)]*{))|(\b[a-z_]\w+\b\s+(?=\b[a-z_]\w+\b))|(\b[a-z_]\w*\s*\*)
+    VARIABLE            \b(?<=\.)\s*[A-Za-z_]\w*
+    IDENTIFIER          \b[A-Za-z_]\w*\b
+    CONSTANT            (?<!\w)\.?[0-9][\w]*
+    OPERATOR            (?alt:operator.txt)
+    SYMBOL              &[^;]+;|(?alt:symbol.txt)
+    
+    # |[^\w\s\d'"] in SYMBOL causes it to crash
+    

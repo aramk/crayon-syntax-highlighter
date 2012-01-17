@@ -1,0 +1,12 @@
+// Convert '-10px' to -10
+function px_to_int(pixels) {
+	if (typeof pixels != 'string') {
+		return 0;
+	}
+	var result = pixels.replace(/[^-0-9]/g, '');
+	if (result.length == 0) {
+		return 0;
+	} else {
+		return parseInt(result);
+	}
+}

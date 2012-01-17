@@ -1,0 +1,16 @@
+__if_not_exists
+static_assert
+__if_exists
+__try_cast
+__finally
+__finally
+__except
+__leave
+and_eq
+bitand
+not_eq
+xor_eq
+bitor
+or_eq
+__try
+__try

@@ -1,0 +1,12 @@
+stackalloc
+unchecked
+delegate
+explicit
+checked
+params
+typeof
+sizeof
+event
+this
+base
+new

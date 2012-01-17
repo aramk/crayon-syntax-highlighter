@@ -1,0 +1,13 @@
+# This file contains all the extensions mapped to their language IDs (folder names)
+# Languages where names and extensions are the same do not need to be listed Eg PHP
+# Languages that appear first in this list and share extensions will be given precedence
+
+# Format: ID EXTENSION1 EXTENSION2 
+
+c# cs
+c++ h hh hpp hxx h++ cc cpp cxx c++
+html html htm xhtml xhtm xml xsd
+java java class jar
+objc m mm
+python py pyw pyc pyo pyd
+vb vbs

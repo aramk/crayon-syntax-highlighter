@@ -1,0 +1,10 @@
+# Grouped operators
+shl=
+shr=
+mod=
+:=
+
+# Single operators
+mod
+shl
+shr

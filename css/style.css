@@ -1,0 +1,274 @@
+/*
+Crayon Syntax Highlighter Structure Style Sheet
+
+- This style sheet is used to structure a Crayon's dimensions and visibility, but does not contain any details regarding
+coloring etc.
+- Attributes, where possible, are kept flexible such that Themes can customise them.
+- Themes are used to add coloring to the Crayon and the syntax highlighting itself.
+- Themes can be considered as layers on top of this style sheet.
+- Several attributes are marked !important where they are required to remain unchanged by CSS precedence,
+  which may occur from conflicts with certain Wordpress Themes.
+- The attributes in Themes are generally all marked !important to ensure styles are not altered by precedence.  
+*/
+
+@import url('fonts/monaco/monaco.css');
+
+/* General ========================= */
+.crayon-syntax {
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.crayon-syntax div {
+	/* Need !important? */
+	background: none;
+	border: none;
+	padding: 0px;
+    margin: 0px;
+    text-align: left;
+}
+
+.crayon-syntax .crayon-main,
+.crayon-syntax .crayon-toolbar,
+.crayon-syntax .crayon-info,
+.crayon-syntax .crayon-plain,
+.crayon-syntax .crayon-code {
+    /* Dimensions of code */
+    width: 100%;
+}
+
+.crayon-syntax .crayon-main,
+.crayon-syntax .crayon-plain {
+	/* TODO a bug in IE8 causes max-height and overflow:auto to set max-height = height
+	   http://edskes.net/ie8overflowandexpandingboxbugs.htm */
+    overflow: auto;
+}
+
+.crayon-popup {
+	/*position: static !important;*/
+}
+
+.crayon-popup .crayon-plain {
+	display: block !important;
+	width: 100% !important;
+	height: 100% !important;
+	opacity: 100 !important;
+	position: relative !important;
+}
+
+.crayon-popup .crayon-main,
+.crayon-popup .crayon-table {
+	/*max-width: 0;
+	max-height: 0;
+	display: block !important;
+	opacity: 100 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100% !important;
+	height: auto !important;*/
+}
+
+.crayon-syntax,
+.crayon-syntax .crayon-main,
+.crayon-syntax .crayon-plain,
+.crayon-syntax .crayon-table {
+    padding: 0px;
+    margin: 0px;
+}
+
+.crayon-syntax .crayon-table {
+    border: none !important;
+	background: none !important;
+	padding: 0px !important;
+	margin-top: 0px !important;
+	margin-right: 0px !important;
+	margin-bottom: 0px !important;
+	/* left margin needed for nums toggle */
+}
+
+.crayon-syntax td {
+	background: none !important;
+    vertical-align: top !important;
+    padding: 0px !important;
+    margin: 0px !important;
+	border: none !important;
+}
+
+.crayon-syntax .crayon-invisible {
+    display: none !important;
+}
+/* End General ===================== */
+
+/* Line Numbers ==================== */
+.crayon-syntax .crayon-num {
+    text-align: center;
+    padding: 0 5px;
+    margin: 0px;
+}
+/* End Line Numbers ================ */
+
+/* Toolbar & Info ================== */
+.crayon-syntax .crayon-toolbar {
+    position: relative;
+    overflow: hidden;
+}
+.crayon-syntax .crayon-info {
+	position: absolute;
+	overflow: hidden;
+	display: none;
+	z-index: 3;
+	min-height: 20px;
+	padding: 0px;
+	line-height: 20px;
+}
+.crayon-syntax .crayon-info div {
+	padding: 4px !important;
+	text-align: center;
+}
+
+.crayon-syntax .crayon-toolbar,
+.crayon-syntax .crayon-toolbar * {
+    height: 20px;
+    line-height: 20px;
+    padding: 0px;
+}
+
+.crayon-syntax .crayon-toolbar span {
+	padding: 0 4px !important;
+}
+
+.crayon-syntax .crayon-toolbar a.crayon-button {
+	display: inline;
+	float: left !important;
+	min-width: 20px;
+	
+    height: 16px;
+    line-height: 16px;
+    margin: 2px 2px !important;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Plain Button */
+.crayon-toolbar a.crayon-button.crayon-plain-button,
+.crayon-toolbar a.crayon-button.crayon-plain-button:hover,
+.crayon-toolbar a.crayon-button.crayon-plain-button.crayon-pressed:hover {
+	background-image: url('images/toolbar/plain_dark.png');
+}
+.crayon-toolbar a.crayon-button.crayon-plain-button.crayon-pressed,
+.crayon-toolbar a.crayon-button.crayon-plain-button:active,
+.crayon-toolbar a.crayon-button.crayon-plain-button.crayon-pressed:active {
+	background-image: url('images/toolbar/plain_light.png');
+}
+
+/* Copy Button */
+.crayon-toolbar a.crayon-button.crayon-copy-button,
+.crayon-toolbar a.crayon-button.crayon-copy-button:hover,
+.crayon-toolbar a.crayon-button.crayon-copy-button.crayon-pressed:hover {
+	background-image: url('images/toolbar/copy_dark.png');
+}
+.crayon-toolbar a.crayon-button.crayon-copy-button.crayon-pressed,
+.crayon-toolbar a.crayon-button.crayon-copy-button:active,
+.crayon-toolbar a.crayon-button.crayon-copy-button.crayon-pressed:active {
+	background-image: url('images/toolbar/copy_light.png');
+}
+
+/* Popup Button */
+.crayon-toolbar a.crayon-button.crayon-popup-button,
+.crayon-toolbar a.crayon-button.crayon-popup-button:hover,
+.crayon-toolbar a.crayon-button.crayon-popup-button.crayon-pressed:hover {
+	background-image: url('images/toolbar/popup_dark.png');
+}
+.crayon-toolbar a.crayon-button.crayon-popup-button.crayon-pressed,
+.crayon-toolbar a.crayon-button.crayon-popup-button:active,
+.crayon-toolbar a.crayon-button.crayon-popup-button.crayon-pressed:active {
+	background-image: url('images/toolbar/popup_light.png');
+}
+
+/* Nums Button */
+.crayon-toolbar a.crayon-button.crayon-nums-button,
+.crayon-toolbar a.crayon-button.crayon-nums-button:hover,
+.crayon-toolbar a.crayon-button.crayon-nums-button.crayon-pressed:hover {
+	background-image: url('images/toolbar/nums_dark.png');
+}
+.crayon-toolbar a.crayon-button.crayon-nums-button.crayon-pressed,
+.crayon-toolbar a.crayon-button.crayon-nums-button:active,
+.crayon-toolbar a.crayon-button.crayon-nums-button.crayon-pressed:active {
+	background-image: url('images/toolbar/nums_light.png');
+}
+
+/* Plus Sign */
+.crayon-syntax .crayon-toolbar .crayon-mixed-highlight {
+	background-image: url('images/toolbar/plus.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0px 4px;
+	float: left;
+}
+
+/* Language */
+.crayon-syntax .crayon-toolbar .crayon-language {
+	padding-right: 3px !important; 
+}
+
+/* Tools */
+.crayon-syntax .crayon-toolbar .crayon-tools {
+	padding-right: 2px !important; 
+}
+
+.crayon-syntax .crayon-title {
+    float: left;
+}
+/* End Toolbar ===================== */
+
+/* Code ============================ */
+.crayon-syntax .crayon-pre,
+.crayon-syntax pre {
+    white-space: pre;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: none !important;
+    border: none !important;
+}
+
+.crayon-syntax .crayon-line {
+    padding: 0 5px;
+}
+
+/* Default Font */
+.crayon-syntax * {
+    font-family: Monaco, 'MonacoRegular', 'Courier New', monospace;
+	font-size: 12px;
+    line-height: 16px;
+}
+.crayon-syntax .crayon-num,
+.crayon-syntax .crayon-line {
+    height: 16px;
+}
+
+.crayon-syntax .crayon-plain {
+	position: absolute;
+	opacity: 0;
+	padding: 0 5px;
+	margin: 0px;
+	resize: none; /* vertical */
+	border: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	overflow: auto;
+	/*white-space: pre-wrap;*/
+	white-space: pre;
+	color: #000;
+    background: #FFF;
+	resize: none;
+}
+/* End Code ======================== */
+
+/* End AK Code Table ============================================= */

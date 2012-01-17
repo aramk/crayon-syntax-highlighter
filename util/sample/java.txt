@@ -1,0 +1,8 @@
+// A sample class
+class Human extends Mammal implements Humanoid {
+	private int age = 0;
+	public void birthday() {
+		age++;
+		System.out.println('Happy Birthday!');
+	}
+}

@@ -1,0 +1,8 @@
+// A sample class
+class Human {
+	private int age = 0;
+	public void birthday() {
+		age++;
+		print('Happy Birthday!');
+	}
+}

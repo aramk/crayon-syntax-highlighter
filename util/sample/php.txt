@@ -1,0 +1,10 @@
+<?php
+// A sample class
+class Human {
+	$age = 0;
+	function birthday() {
+		$age++;
+		echo 'Happy Birthday!';
+	}
+}
+?>

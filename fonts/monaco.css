@@ -1,0 +1,5 @@
+@import url('../css/fonts/monaco/monaco.css');
+
+.crayon-font-monaco * {
+    font-family: Monaco, 'MonacoRegular', 'Courier New', monospace !important;
+}

@@ -1,0 +1,13 @@
+implements
+instanceof
+declare
+default
+extends
+typedef
+parent
+super
+child
+clone
+self
+this
+new

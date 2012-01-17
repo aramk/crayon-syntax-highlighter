@@ -1,0 +1,27 @@
+### PHP LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                        PHP
+    VERSION                     1.7.0
+
+    #HTML:FADED 		            ((?<=\?>).*?(?=<\?(?:php)?))|(\A.*?(?=<\?(?:php)?))|((?<=\?>).*\Z)
+  
+    COMMENT                     (?default)|(\#.*?$)
+    STRING                      (?default)|(<<<EOT.*?^EOT)
+    
+    TAG                         <\?php|<\?|\?>
+    CONSTRUCT:KEYWORD           \b(?alt:construct.txt)\b
+    STATEMENT                   (?default)
+    RESERVED                    (?default)
+    TYPE                        (?default)
+    MODIFIER                    (?default)
+    COMPILE:KEYWORD             \b(?alt:compile.txt)\b
+    
+    RES_CONST:ENTITY            \b(?alt:reserved.txt)\b
+    ENTITY                      (?default)|\b[a-z_]\w*::
+    VARIABLE                    \$[a-z_]\w*\b
+    IDENTIFIER                  \b[a-z_]\w*\b\s*(?=\([^\)]*\))
+    CONSTANT                    \b[a-z_]\w*\b
+    OPERATOR                    (?default)
+    SYMBOL                      (?default)

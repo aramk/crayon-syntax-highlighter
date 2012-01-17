@@ -1,0 +1,21 @@
+### C LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                C
+    VERSION             1.0
+
+    COMMENT             (?default)|(#.*?$)
+    STRING              (?default)
+    
+    STATEMENT           (?default)
+    RESERVED            (?default)|\b(?alt:reserved.txt)\b
+    TYPE                (?default)|\b(?alt:type.txt)\b
+    MODIFIER            (?default)|\b(?alt:modifier.txt)\b
+    
+    ENTITY              (?default)
+    VARIABLE            (?default)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

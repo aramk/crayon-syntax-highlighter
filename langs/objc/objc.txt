@@ -1,0 +1,22 @@
+### OBJECTIVE-C LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Objective-C
+    VERSION             1.0
+
+    COMMENT             (?default)|(#.*?$)
+    STRING              (@?(?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)')
+    NOTATION            \<.+\>
+    
+    STATEMENT           (?alt:statement_at.txt)\b|\b(?alt:statement.txt)\b
+    RESERVED            (?alt:reserved_at.txt)\b|\b(?alt:reserved.txt)\b
+    TYPE                \b(?alt:type.txt)\b
+    MODIFIER            (?alt:modifier_at.txt)\b|\b(?alt:modifier.txt)\b
+    
+    ENTITY              (\b[a-z_]\w*\b(?=\s*\([^\)]*\)))|((?<!\.)(\b[a-z_]\w*\b)(?=[^},.:;\)]*{))|(\b[a-z_]\w+\b\s+(?=\b[a-z_][\w]+\b(?!\s*\:)))|(\b[a-z_]\w*\s*\*)|(?-i:NS[\w]+)
+    VARIABLE            (?default)|(\*\w+)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)|\b(?alt:constant.txt)\b
+    OPERATOR            (?default)
+    SYMBOL              (?default)

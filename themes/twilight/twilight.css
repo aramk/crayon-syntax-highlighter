@@ -1,0 +1,168 @@
+/*
+Theme Name: Twilight
+Description: Dark and elegant. 
+Version: 1.3
+Author: Aram Kocharyan
+Author URI: http://ak.net84.net/
+*/
+
+/* Code Style ====================== */
+.crayon-theme-twilight {
+    border: 1px #333 solid !important;
+    text-shadow: none !important;
+    background: #2d2d2d !important;
+    color: #fff;
+}
+
+.crayon-theme-twilight span {
+    color: #999 !important;
+}
+
+/* Line Numbers */
+.crayon-theme-twilight .crayon-nums {
+    border-right: 1px solid #333 !important;
+    color: #333 !important;
+    background: #909090 !important;
+}
+
+/* Selection */
+.crayon-theme-twilight .crayon-code::selection,
+.crayon-theme-twilight .crayon-code *::selection {
+    background: #ddeeff !important;
+    color: #316ba5 !important;
+}
+.crayon-theme-twilight::selection,
+.crayon-theme-twilight .crayon-toolbar::selection,
+.crayon-theme-twilight .crayon-toolbar *::selection,
+.crayon-theme-twilight .crayon-info::selection,
+.crayon-theme-twilight .crayon-info *::selection,
+.crayon-theme-twilight .crayon-nums::selection,
+.crayon-theme-twilight .crayon-nums *::selection {
+    background: transparent !important;
+}
+
+/* Striped Lines */
+.crayon-theme-twilight .crayon-striped-line {
+    background: #343434 !important;
+    border: 1px #171717 !important;
+}
+.crayon-theme-twilight .crayon-striped-num {
+    background: #aaa !important;
+    border: 1px #CCC !important;
+    color: #555 !important;
+}
+
+/* Marked Lines */
+.crayon-theme-twilight .crayon-marked-line {
+    background: #484844 !important;
+    border: 1px #222 !important;
+}
+.crayon-theme-twilight .crayon-marked-num {
+    color: #555 !important;
+    background: #bbb !important;
+    border: 1px #777 !important;
+}
+.crayon-theme-twilight .crayon-marked-line.crayon-striped-line {
+    background: #51514d !important;
+}
+.crayon-theme-twilight .crayon-marked-num.crayon-striped-num {
+    background: #ccc !important;
+    color: #888 !important;
+}
+.crayon-theme-twilight .crayon-marked-line.crayon-top,
+.crayon-theme-twilight .crayon-marked-num.crayon-top {
+    border-top-style: solid !important;
+}
+.crayon-theme-twilight .crayon-marked-line.crayon-bottom,
+.crayon-theme-twilight .crayon-marked-num.crayon-bottom {
+    border-bottom-style: solid !important;
+}
+
+/* Info */
+.crayon-theme-twilight .crayon-info {
+    background: #faf9d7 !important;
+    border-bottom: 1px #b1af5e solid !important;
+    color: #7e7d34;
+}
+
+/* Toolbar */
+.crayon-theme-twilight .crayon-toolbar {
+    background: #b2b2b2 !important;
+    border-bottom: 1px #666 solid !important;
+}
+.crayon-theme-twilight .crayon-toolbar > div {
+    float: left !important;
+}
+.crayon-theme-twilight .crayon-toolbar .crayon-tools {
+    float: right !important;
+}
+.crayon-theme-twilight .crayon-title {
+    color: #333 !important;
+}
+.crayon-theme-twilight .crayon-language {
+    color: #666 !important;
+}
+.crayon-theme-twilight a.crayon-button:link {
+    background-color: #ddd !important;
+    color: #666 !important;
+}
+.crayon-theme-twilight a.crayon-button:hover,
+.crayon-theme-twilight a.crayon-button.crayon-pressed {
+    background-color: #777 !important;
+    color: #ccc !important;
+}
+.crayon-theme-twilight a.crayon-button:active {
+	background-color: #F2F2F2 !important;
+    color: #666 !important;
+}
+.crayon-theme-twilight .crayon-toolbar .crayon-mixed-highlight {
+	background-image: url('../../css/images/toolbar/plus_dark.png');
+}
+/* End Code Style ================== */
+
+/* Syntax Highlighting ============= */
+.crayon-theme-twilight .crayon-pre .c {
+    color: #7f7b80 !important;
+}
+.crayon-theme-twilight .crayon-pre .s {
+    color: #a0ab83 !important;
+}
+.crayon-theme-twilight .crayon-pre .k,
+.crayon-theme-twilight .crayon-pre .st,
+.crayon-theme-twilight .crayon-pre .r,
+.crayon-theme-twilight .crayon-pre .t,
+.crayon-theme-twilight .crayon-pre .m {
+    color: #d8b584 !important;
+}
+.crayon-theme-twilight .crayon-pre .ta {
+	color: #AAA !important;
+}
+.crayon-theme-twilight .crayon-pre .i {
+    color: #fbefb1 !important;
+}
+.crayon-theme-twilight .crayon-pre .v {
+    color: #879ab2 !important;
+}
+.crayon-theme-twilight .crayon-pre .e {
+	color: #ad8258 !important;
+}
+.crayon-theme-twilight .crayon-pre .cn {
+    color: #db7e64 !important;
+}
+.crayon-theme-twilight .crayon-pre .o,
+.crayon-theme-twilight .crayon-pre .h {
+    color: #ac99ab !important;
+}
+.crayon-theme-twilight .crayon-pre .sy {
+	color: #ac99ab !important;
+}
+.crayon-theme-twilight .crayon-pre .n {
+	color: #726e73 !important;
+	font-style: italic;
+}
+.crayon-theme-twilight .crayon-pre .f {
+	color: #595959 !important;
+}
+/* End Syntax Highlighting ========= */
+
+/* End Classic Scheme ============================================ */

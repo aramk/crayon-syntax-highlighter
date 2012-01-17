@@ -1,0 +1,27 @@
+### JAVASCRIPT LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                JavaScript
+    VERSION             1.8
+
+    COMMENT             (?default)
+    STRING              (?default)
+	REGEX:COMMENT		/([^/]|(?<=\\)/)+/[gmiys]
+    
+    STATEMENT           (?default)
+    RESERVED            (?default)|\b(?<![:\.])(?-i:(?alt:reserved.txt))(?![:\.])\b
+    TYPE                (?default)
+    MODIFIER            (?default)
+    
+    # For the <script> tag
+    ATT_STR:STRING      (((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)'))
+    TAG     			(</?\s*[^<\s>]+\s*>?)|(\s*>)
+    ATTR:ENTITY         [\w-]+(?=\s*=")
+    
+    ENTITY              (?default)
+    VARIABLE            (?default)|\b\s*[A-Za-z_]\w*\s*\:
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

@@ -1,0 +1,18 @@
+// List of mobile device strings to look for inside the user agent of browsers.
+// This is used to disable mouseover triggered events and just show the content if possible.
+Android
+Mobile
+Touch
+Phone
+Nokia
+Motorola
+HTC
+Blackberry
+Samsung
+Ericsson
+LGE
+Palm
+Kindle
+iPhone
+iPad
+iPod
