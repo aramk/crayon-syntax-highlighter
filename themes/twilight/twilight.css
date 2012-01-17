@@ -102,21 +102,25 @@ Author URI: http://ak.net84.net/
 .crayon-theme-twilight .crayon-language {
     color: #666 !important;
 }
-.crayon-theme-twilight a.crayon-button:link {
-    background-color: #ddd !important;
-    color: #666 !important;
-}
-.crayon-theme-twilight a.crayon-button:hover,
-.crayon-theme-twilight a.crayon-button.crayon-pressed {
-    background-color: #777 !important;
-    color: #ccc !important;
-}
-.crayon-theme-twilight a.crayon-button:active {
-	background-color: #F2F2F2 !important;
-    color: #666 !important;
-}
 .crayon-theme-twilight .crayon-toolbar .crayon-mixed-highlight {
 	background-image: url('../../css/images/toolbar/plus_dark.png');
+}
+
+/* Buttons */
+.crayon-theme-twilight a.crayon-button {
+    background-color: transparent;
+}
+.crayon-theme-twilight a.crayon-button:hover,
+.crayon-theme-twilight a.crayon-button.crayon-pressed:hover {
+	background-color: #ddd;
+    color: #666;
+}
+/* :active MUST come after :hover */
+.crayon-theme-twilight a.crayon-button.crayon-pressed,
+.crayon-theme-twilight a.crayon-button.crayon-pressed:active,
+.crayon-theme-twilight a.crayon-button:active {
+	background-color: #777;
+    color: #ccc;
 }
 /* End Code Style ================== */
 

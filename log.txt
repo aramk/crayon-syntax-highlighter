@@ -1,6 +1,0 @@
-==============================================================================
-Crayon Syntax Highlighter Log Entry
-==============================================================================
-[SYSTEM ERROR] 12:00:54 PM - 15 Jan 2012
-string(168) "No regex patterns and/or elements were parsed from language file at '/langs/css/css.txt'."
-------------------------------------------------------------------------------

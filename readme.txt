@@ -121,6 +121,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.8.0 =
+* Theme Editor
+
 = 1.7.16 =
 * Running out of revision numbers!
 * Fixed a bug causing default-theme from loading as a font

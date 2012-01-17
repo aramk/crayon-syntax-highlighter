@@ -2,7 +2,8 @@
 
 // Switches
 
-define('CRAYON_DEBUG', FALSE); // Enable to show exceptions on screen
+// Enable to show exceptions on screen
+define('CRAYON_DEBUG', FALSE);
 
 // Constants
 

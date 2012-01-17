@@ -14,6 +14,36 @@ if (typeof crayon_log == 'undefined') {
 	}
 }
 
+jQuery.fn.exists = function () {
+    return this.length !== 0;
+}
+
+jQuery.fn.style = function (name, value, priority) {
+	// DOM node
+	var node = this.get(0);
+	// Ensure we have a DOM node 
+	if (typeof node == 'undefined') {
+		return;
+	}
+	// CSSStyleDeclaration, works in all but < IE9
+	// Use http://www.quirksmode.org/dom/w3c_css.html#style on style instead
+	var style = this.get(0).style;
+	// Getter/Setter
+	if (typeof name != 'undefined') {
+		if (typeof value != 'undefined') {
+			// Set style
+			var priority = typeof priority != 'undefined' ? priority : '';
+			style.setProperty(name, value, priority);
+		} else {
+			// Get style property
+			return style.getPropertyValue(name);
+		}
+	} else {
+		// Get CSSStyleDeclaration
+		return style;
+	}
+}
+
 var PRESSED = 'crayon-pressed';
 var UNPRESSED = '';
 
@@ -71,8 +101,6 @@ var CrayonSyntax = new function() {
 	        var popup_button = jQuery(this).find(CRAYON_POPUP_BUTTON);
 	        var copy_button = jQuery(this).find(CRAYON_COPY_BUTTON);
 	        var plain_button = jQuery(this).find(CRAYON_PLAIN_BUTTON);
-	        // Register the objects
-//	        make_uid(uid);
 	        
 	        crayon[uid] = jQuery(this);
 	        crayon[uid].toolbar = toolbar;
@@ -96,14 +124,15 @@ var CrayonSyntax = new function() {
 	        // Set plain
 	        jQuery(CRAYON_PLAIN).css('z-index', 0);
 	        
-	        // Remember CSS dimensions
-	        var main_style = crayon[uid].main.get(0).style;
-	        crayon[uid].main_height = main_style.height;
-	        crayon[uid].main_max_height = main_style.maxHeight;
-	        crayon[uid].main_min_height = main_style.minHeight;
-	        crayon[uid].main_width = main_style.width;
-	        crayon[uid].main_max_width = main_style.maxWidth;
-	        crayon[uid].main_min_width = main_style.minWidth;
+	        // XXX Remember CSS dimensions
+	        var main_style = crayon[uid].main.style();
+	        
+	        crayon[uid].main_style = {
+	        	height: main_style.height || '',
+                max_height: main_style.maxHeight || '',
+                min_height: main_style.minHeight || '',
+                width: main_style.width || ''
+	        }
 	        
 	        var load_timer;
 	        var last_num_width = nums.width();
@@ -132,7 +161,7 @@ var CrayonSyntax = new function() {
 	            } else {
 	            	update_nums_button(uid);
 	            }
-	        	
+	            
 	            // TODO If width has changed or timeout, stop timer
 	            if (/*last_num_width != nums.width() ||*/ i == 5) {
 	            	clearInterval(load_timer);
@@ -174,7 +203,6 @@ var CrayonSyntax = new function() {
 	    	});
 
 	        plain.css('opacity', 0);
-//	        crayon.toolbar_neg_height = '-' + toolbar.height() + 'px';
 	        // If a toolbar with mouseover was found
 	        if (toolbar.filter('[settings~="mouseover"]').length != 0 && !touchscreen) {
 	        	crayon[uid].toolbar_mouseover = true;
@@ -400,7 +428,6 @@ var CrayonSyntax = new function() {
 	        if (hover) {
 	            visible = main;
 	            hidden = plain;
-	            //crayon[uid].plain_visible = true;
 	        } else {
 	            visible = plain;
 	            hidden = main;
@@ -409,11 +436,9 @@ var CrayonSyntax = new function() {
 	    	if (main.css('z-index') == 1) {
 	    		visible = main;
 	    		hidden = plain;
-	    		//crayon[uid].plain_visible = true;
 	    	} else {
 	    		visible = plain;
 	    		hidden = main;
-	    		//crayon[uid].plain_visible = false;
 	    	}
 	    }
 	    	    
@@ -454,20 +479,22 @@ var CrayonSyntax = new function() {
 					hidden.css('overflow', hid_over);
 				}
 				
+				// Give focus to plain code
+				if (hidden == plain) {
+					if (select) {
+						plain.select();
+					} else {
+						// XXX not needed
+						// plain.focus();
+					}
+				}
+				
 				// Refresh scrollbar draw
 				hidden.scrollTop(crayon[uid].top + 1);
 				hidden.scrollTop(crayon[uid].top);
 				hidden.scrollLeft(crayon[uid].left + 1);
 				hidden.scrollLeft(crayon[uid].left);
 				
-				// Give focus to plain code
-				if (hidden == plain) {
-					if (select) {
-						plain.select();
-					} else {
-						plain.focus();
-					}
-				}
 			});
 	    
 		// Restore scroll positions to hidden
@@ -503,7 +530,6 @@ var CrayonSyntax = new function() {
 		}
 			
 	    var num_margin;
-//	    var table_width = crayon[uid].main.width();
 	    if (num_hidden) {
 	    	// Show
 	        num_margin = '0px';
@@ -513,12 +539,10 @@ var CrayonSyntax = new function() {
 	        crayon[uid].table.css('margin-left', '0px');
 	        crayon[uid].nums_visible = false;
 	        num_margin = neg_width;
-//	        table_width += nums_width;
 	    }
 	    
 	    if (typeof instant != 'undefined') {
 	    	crayon[uid].table.css('margin-left', num_margin);
-//	    	crayon[uid].table.width(table_width);
 	    	update_nums_button(uid);
 	    	return false;
 	    }
@@ -531,8 +555,7 @@ var CrayonSyntax = new function() {
 	    	crayon[uid].main.css('overflow', 'hidden');
 	    }
 	    crayon[uid].table.animate({
-	        marginLeft: num_margin,
-	        //width: table_width
+	        marginLeft: num_margin
 	    }, animt(200, uid), function() {        
 	        if (typeof crayon[uid] != 'undefined') {
 	        	update_nums_button(uid);
@@ -542,6 +565,13 @@ var CrayonSyntax = new function() {
 	        }
 	    });
 	    return false;
+	}
+	
+	var fix_table_width = function(uid) {
+		if (typeof crayon[uid] == 'undefined') {
+			make_uid(uid);
+		    return false;
+		}
 	}
 	
 	// Convert '-10px' to -10
@@ -643,10 +673,10 @@ var CrayonSyntax = new function() {
 	        plain.css('overflow', 'hidden');
 	        if (!crayon[uid].scroll_block_fix) {
 	        	// Restore dimensions
-	        	main.css('height', crayon[uid].main_height);
-	        	main.css('max-height', crayon[uid].main_max_height);
-	        	main.css('min-height', crayon[uid].main_min_height);
-	        	main.css('width', crayon[uid].main_width);
+	        	main.css('height', crayon[uid].main_style['height']);
+	        	main.css('max-height', crayon[uid].main_style['max-height']);
+	        	main.css('min-height', crayon[uid].main_style['min-height']);
+	        	main.css('width', crayon[uid].main_style['width']);
 	        }
 	    }
 		// Register that overflow has changed
@@ -656,7 +686,8 @@ var CrayonSyntax = new function() {
 	
 	/* Fix weird draw error, causes blank area to appear where scrollbar once was. */
 	var fix_scroll_blank = function(uid) {
-		return; // TODO test in windows to see if scrollbar effect is bad enough
+		// TODO Fix stupid scrollbar draw error in chrome by forcing redraw...
+		return;
 		
 		crayon_log('fix_scroll_blank');
 	    if (typeof crayon[uid] == 'undefined') {
@@ -672,7 +703,7 @@ var CrayonSyntax = new function() {
 	var reconsile_dimensions = function(uid) {
 		// Reconsile dimensions
 		crayon[uid].plain.height(crayon[uid].main.height());
-		crayon[uid].plain.width(crayon[uid].main.width());
+		//crayon[uid].plain.width(crayon[uid].main.width());
 	}
 	
 	var animt = function(x, uid) {
