@@ -1,14 +1,7 @@
-=== Crayon Syntax Highlighter ===
-Contributors: akarmenia
-Donate link: http://bit.ly/crayondonate
-Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter
-Requires at least: 3.0
-Tested up to: 3.3.1
-Stable tag: trunk
-
+### Crayon Syntax Highlighter ###
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
-== Description ==
+## Description ##
 
 A Syntax Highlighter built in PHP and jQuery that supports customizable languages and themes.
 It can highlight from a URL, a local file or Wordpress post text. Crayon makes it easy to manage Language files and define
@@ -87,12 +80,12 @@ These are helpful for discovering new features.
 * Theme Editor
 * Highlighting priority
 
-== Installation ==
+## Installation ##
 
 Download the .zip of the plugin and extract the contents. Upload it to the Wordpress plugin directory and activate the plugin.
 You can change settings and view help under <strong>Settings > Crayon</strong> in the Wordpress Admin.
 
-== Frequently Asked Questions ==
+## Frequently Asked Questions ##
 
 = How do I use this thing? =
 
@@ -114,14 +107,14 @@ Please see the contextual help under <strong>Settings > Crayon</strong> for quic
 
 Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
-== Screenshots ==
+## Screenshots ##
 
 1. Classic theme.
 2. Twilight theme.
 
-== Changelog ==
+## Changelog ##
 
-= 1.7.16 =
+# 1.7.16 #
 * Running out of revision numbers!
 * Fixed a bug causing default-theme from loading as a font
 * Fixed an issue where the js used to remove inline styles before opening in another window was missing the /g regex modifier
@@ -358,6 +351,6 @@ http://wordpress.org/support/topic/plugin-crayon-syntax-highlighter-this-plugin-
 = 1.0.0 =
 * Initial Release. Huzzah!
 
-== Upgrade Notice ==
+## Upgrade Notice ##
 
 Make sure to upgrade to the latest release when possible, I usually fix bugs on the day and add new features quickly. 
