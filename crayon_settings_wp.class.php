@@ -63,7 +63,9 @@ class CrayonSettingsWP {
 		wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS, __FILE__), array('jquery'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_jquery_popup', plugins_url(CRAYON_JQUERY_POPUP, __FILE__), array('jquery'), $CRAYON_VERSION);
-		wp_enqueue_script('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_JS, __FILE__), array('jquery'), $CRAYON_VERSION);
+		if (CRAYON_THEME_EDITOR) {
+			wp_enqueue_script('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_JS, __FILE__), array('jquery'), $CRAYON_VERSION);
+		}
 	}
 
 	public static function settings() {
@@ -533,7 +535,9 @@ class CrayonSettingsWP {
 		}
 		echo '</select><span class="crayon-span-5"></span>';
 		// Theme editor
-		echo '<a id="crayon-theme-editor-button" class="button-primary crayon-admin-button" loading="'. crayon__('Loading...') .'" loaded="'. crayon__('Theme Editor') .'" >'. crayon__('Theme Editor') .'</a></br>';
+		if (CRAYON_THEME_EDITOR) {
+			echo '<a id="crayon-theme-editor-button" class="button-primary crayon-admin-button" loading="'. crayon__('Loading...') .'" loaded="'. crayon__('Theme Editor') .'" >'. crayon__('Theme Editor') .'</a></br>';
+		}
 		// Preview Box
 		echo '<div id="crayon-preview" url="', plugins_url(CRAYON_PREVIEW_PHP, __FILE__), '"></div>';
 		printf(crayon__('Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked.'), '<a href="#langs">', '</a>');
@@ -688,7 +692,9 @@ class CrayonSettingsWP {
 	public static function plugin_row_meta($meta, $file) {
 		if ($file == CrayonWP::basename()) {
 			$meta[] = '<a href="options-general.php?page=crayon_settings">' . crayon__('Settings') . '</a>';
-			$meta[] = '<a href="options-general.php?page=crayon_settings&subpage=theme_editor">' . crayon__('Theme Editor') . '</a>';
+			if (CRAYON_THEME_EDITOR) {
+				$meta[] = '<a href="options-general.php?page=crayon_settings&subpage=theme_editor">' . crayon__('Theme Editor') . '</a>';
+			}
 			$meta[] = '<a href="http://bit.ly/crayondonate" target="_blank">' . crayon__('Donate') . '</a>';
 		}
 		return $meta;

@@ -18,31 +18,65 @@ jQuery.fn.exists = function () {
     return this.length !== 0;
 }
 
-jQuery.fn.style = function (name, value, priority) {
+// For those who need them (< IE 9), add support for CSS functions
+var isStyleFuncSupported = CSSStyleDeclaration.prototype.getPropertyValue != null;
+if (!isStyleFuncSupported) {
+	CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
+        return this.getAttribute(a);
+    };
+    CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
+        this.setAttribute(styleName,value);
+        var priority = typeof priority != 'undefined' ? priority : '';
+        if (priority != '') {
+	        // Add priority manually
+			var rule = new RegExp(RegExp.escape(styleName) + '\\s*:\\s*' + RegExp.escape(value) + '(\\s*;)?', 'gmi');
+			this.cssText = this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
+        } 
+    }
+    CSSStyleDeclaration.prototype.removeProperty = function(a) {
+        return this.removeAttribute(a);
+    }
+    CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
+    	var rule = new RegExp(RegExp.escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?', 'gmi');
+        return rule.test(this.cssText) ? 'important' : '';
+    }
+}
+
+// Escape regex chars with \
+RegExp.escape = function(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
+
+// The style function
+jQuery.fn.style = function(styleName, value, priority) {
 	// DOM node
 	var node = this.get(0);
 	// Ensure we have a DOM node 
 	if (typeof node == 'undefined') {
 		return;
 	}
-	// CSSStyleDeclaration, works in all but < IE9
-	// Use http://www.quirksmode.org/dom/w3c_css.html#style on style instead
+	// CSSStyleDeclaration
 	var style = this.get(0).style;
 	// Getter/Setter
-	if (typeof name != 'undefined') {
+	if (typeof styleName != 'undefined') {
 		if (typeof value != 'undefined') {
-			// Set style
+			// Set style property
 			var priority = typeof priority != 'undefined' ? priority : '';
-			style.setProperty(name, value, priority);
+			style.setProperty(styleName, value, priority);
 		} else {
 			// Get style property
-			return style.getPropertyValue(name);
+			return style.getPropertyValue(styleName);
 		}
 	} else {
 		// Get CSSStyleDeclaration
 		return style;
 	}
 }
+
+
+
+
+
 
 var PRESSED = 'crayon-pressed';
 var UNPRESSED = '';

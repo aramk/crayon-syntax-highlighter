@@ -5,6 +5,9 @@
 // Enable to show exceptions on screen
 define('CRAYON_DEBUG', FALSE);
 
+// TODO remove once done
+define('CRAYON_THEME_EDITOR', false);
+
 // Constants
 
 $uid = CRAYON_DEBUG ? uniqid() : ''; // Prevent caching in debug mode
