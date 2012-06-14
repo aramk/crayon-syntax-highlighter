@@ -1,0 +1,168 @@
+### any entity with '?' has to be added to scheme.txt separately to be escaped properly
+### any entity with '!' has to be added to scheme.txt separately, although '!' need not be escaped
+scheme-report-environment
+interaction-environment
+call-with-output-file
+with-input-from-file
+call-with-input-file
+with-output-to-file
+current-output-port
+current-input-port
+close-output-port
+open-output-file
+null-environment
+make-rectangular
+close-input-port
+# char-whitespace?
+# char-upper-case?
+# char-lower-case?
+# char-alphabetic?
+call-with-values
+open-input-file
+transcript-off
+symbol->string
+string->symbol
+string->number
+number->string
+inexact->exact
+exact->inexact
+vector-length
+transcript-on
+string-length
+string-append
+integer->char
+# char-numeric?
+char->integer
+char-downcase
+vector->list
+#  vector-fill!
+string->list
+# string-fill!
+# string-ci>=?
+# string-ci<=?
+# output-port?
+list->vector
+list->string
+# vector-set!
+# string-set!
+string-copy
+# string-ci>?
+# string-ci=?
+# string-ci<?
+rationalize
+make-vector
+make-string
+# input-port?
+# eof-object?
+denominator
+char-upcase
+# char-ready?
+write-char
+vector-ref
+string-ref
+quasiquote
+# procedure?
+make-polar
+# char-ci>=?
+# char-ci<=?
+substring
+# string>=?
+# string<=?
+remainder
+real-part
+read-char
+# rational?
+# positive?
+peek-char
+numerator
+# negative?
+magnitude
+list-tail
+imag-part
+# char-ci>?
+# char-ci=?
+# char-ci<?
+truncate
+# string>?
+# string=?
+# string<?
+# set-cdr!
+# set-car!
+quotient
+list-ref
+# integer?
+# inexact?
+# complex?
+# boolean?
+# symbol?
+# string?
+reverse
+# number?
+newline
+display
+# char>=?
+# char<=?
+ceiling
+vector
+values
+string
+modulo
+member
+length
+# exact?
+# equal?
+# char>?
+# char=?
+# char<?
+cddddr
+cdddar
+append
+# zero?
+write
+round
+# real?
+quote
+# port?
+# pair?
+# null?
+# list?
+force
+floor
+# even?
+# char?
+assoc
+apply
+angle
+sqrt
+# set!
+read
+# odd?
+memv
+memq
+load
+list
+expt
+eval
+# eqv?
+cons
+cadr
+caar
+atan
+assv
+assq
+asin
+acos
+tan
+sin
+not
+min
+max
+log
+lcm
+gcd
+exp
+# eq?
+cos
+cdr
+car
+abs

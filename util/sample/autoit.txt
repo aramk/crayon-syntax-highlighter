@@ -1,0 +1,11 @@
+;Finds the average of numbers specified by a user.
+;The numbers must be delimited by commas.
+#NoTrayIcon
+#include <GUIConstantsEx.au3>
+#include <Array.au3>
+;region---------------GUI-----------------------
+$form = GUICreate("Average Finder", 300, 100)
+$label = GUICtrlCreateLabel("Enter the numbers to be averaged separated by commas", 19, 0)
+$textbox = GUICtrlCreateInput("", 20, 20, 220)
+GUISetState()
+;endregion---------------END GUI-----------------------

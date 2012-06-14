@@ -1,0 +1,20 @@
+### AUTOIT LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                AutoIt
+    VERSION             1.8.2
+
+    COMMENT             (#(comments-start|cs).*?#(comments-end|ce))|(;.*?$)
+    PREPROCESSOR		(#.*?$)
+    STRING              (?default)
+        
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            \b(?alt:reserved.txt)\b
+    
+    ENTITY              (?default)
+    VARIABLE            \$[A-Za-z_]\w*\b
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

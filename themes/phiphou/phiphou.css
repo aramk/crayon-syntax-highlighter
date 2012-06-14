@@ -1,0 +1,203 @@
+/*
+
+Theme name: SonOfObsidian
+Description: Inspired from http://studiostyl.es/schemes/son-of-obsidian
+Original author : http://studiostyl.es/users/135
+Author: Phiphou
+Author URL : http://blog.phiphou.com
+Author twitter: @__phiphou__
+
+*/
+
+/* code style ====================== */
+.crayon-theme-phiphou {
+	border: 1px #999 solid !important;
+	text-shadow: none !important;
+}
+
+.crayon-theme-phiphou .crayon-code {
+	background: #22282a !important;
+	color: #f1f2f3 !important;
+}
+
+/* inline style */
+.crayon-theme-phiphou-inline {
+	border: 1px solid #ddd !important;
+	background: #fafafa !important;
+}
+
+/* line numbers */
+.crayon-theme-phiphou .crayon-nums {
+	background: #22282a !important;
+	color: #808080 !important;
+	border-right: 1px solid #475459 !important;
+}
+
+/* selection */
+.crayon-theme-phiphou .crayon-code::selection,
+.crayon-theme-phiphou .crayon-code *::selection {
+	background: #7c9299 !important;
+	color: #FFFFFF !important;
+}
+
+.crayon-theme-phiphou::selection,
+.crayon-theme-phiphou .crayon-toolbar::selection,
+.crayon-theme-phiphou .crayon-toolbar *::selection,
+.crayon-theme-phiphou .crayon-info::selection,
+.crayon-theme-phiphou .crayon-info *::selection,
+.crayon-theme-phiphou .crayon-nums::selection,
+.crayon-theme-phiphou .crayon-nums *::selection {
+	background: transparent !important;
+}
+
+/* striped lines */
+.crayon-theme-phiphou .crayon-striped-line {
+	background: #22282a !important;
+	border: 1px #ccc !important;
+}
+.crayon-theme-phiphou .crayon-striped-num {
+	background: #293134 !important;
+	border: 1px #22282a !important;
+	color: #808080 !important;
+}
+
+/* marked lines */
+.crayon-theme-phiphou .crayon-marked-line {
+	background: #40292c !important;
+	border: 1px #996b72 !important;
+}
+
+.crayon-theme-phiphou .crayon-marked-num {
+	color: #808080 !important;
+	background: #40292c !important;
+	border: 1px #996b72 !important;
+}
+
+.crayon-theme-phiphou .crayon-marked-line.crayon-striped-line {
+	background: #40292c !important;
+}
+
+.crayon-theme-phiphou .crayon-marked-num.crayon-striped-num {
+	background: #663d43 !important;
+	border: 1px #996b72 !important;
+	color: #808080 !important;
+}
+
+.crayon-theme-phiphou .crayon-marked-line.crayon-top,
+.crayon-theme-phiphou .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+
+.crayon-theme-phiphou .crayon-marked-line.crayon-bottom,
+.crayon-theme-phiphou .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+
+/* info */
+.crayon-theme-phiphou .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom: 1px #b1af5e solid !important;
+	color: #7e7d34;
+}
+
+/* toolbar */
+.crayon-theme-phiphou .crayon-toolbar {
+	background: #ddd !important;
+	border-bottom: 1px #bbb solid !important;
+}
+
+.crayon-theme-phiphou .crayon-toolbar > div {
+	float: left !important;
+}
+
+.crayon-theme-phiphou .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+
+.crayon-theme-phiphou .crayon-title {
+	color: #333 !important;
+}
+
+.crayon-theme-phiphou .crayon-language {
+	color: #999 !important;
+}
+
+/* buttons */
+.crayon-theme-phiphou a.crayon-button {
+	background-color: transparent;
+}
+
+.crayon-theme-phiphou a.crayon-button:hover,
+.crayon-theme-phiphou a.crayon-button.crayon-pressed:hover {
+	background-color: #eee;
+	color: #666;
+}
+/* :active must come after :hover */
+.crayon-theme-phiphou a.crayon-button.crayon-pressed,
+.crayon-theme-phiphou a.crayon-button.crayon-pressed:active,
+.crayon-theme-phiphou a.crayon-button:active {
+	background-color: #bcbcbc;
+	color: #fff;
+}
+
+/* end code style ================== */
+
+/* syntax highlighting ============= */
+.crayon-theme-phiphou .crayon-pre .c {
+	color: #66747b !important;
+}
+.crayon-theme-phiphou .crayon-pre .p {
+	color: #00FF00 !important;
+}
+.crayon-theme-phiphou .crayon-pre .s {
+	color: #ec7600 !important;
+}
+.crayon-theme-phiphou .crayon-pre .k {
+	color: #a082bd !important;
+}
+.crayon-theme-phiphou .crayon-pre .st {
+	color: #a082bd !important;
+}
+.crayon-theme-phiphou .crayon-pre .r {
+	color: #a082bd !important;
+}
+.crayon-theme-phiphou .crayon-pre .t {
+	color: #a082bd !important;
+}
+.crayon-theme-phiphou .crayon-pre .m {
+	color: #a082bd !important;
+}
+.crayon-theme-phiphou .crayon-pre .ta {
+	color: #99daf9 !important;
+}
+.crayon-theme-phiphou .crayon-pre .i {
+	color: #678cb1 !important;
+}
+.crayon-theme-phiphou .crayon-pre .v {
+	color: #678cb1 !important;
+}
+.crayon-theme-phiphou .crayon-pre .e {
+	color: #95c763 !important;
+}
+.crayon-theme-phiphou .crayon-pre .cn {
+	color: #99daf9 !important;
+}
+.crayon-theme-phiphou .crayon-pre .o {
+	color: #ffcd22 !important;
+}
+.crayon-theme-phiphou .crayon-pre .h {
+	color: #ffcd22 !important;
+}
+.crayon-theme-phiphou .crayon-pre .sy {
+	color: #f1f2f3 !important;
+}
+.crayon-theme-phiphou .crayon-pre .n {
+	color: #f1f2f3 !important;
+	font-style: italic;
+}
+.crayon-theme-phiphou .crayon-pre .f {
+}
+
+/* end syntax highlighting ========= */
+
+/* end classic scheme ============================================ */

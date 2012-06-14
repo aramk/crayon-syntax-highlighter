@@ -1,0 +1,95 @@
+natural right outer join
+natural left outer join
+natural full outer join
+natural inner join
+natural right join
+natural cross join
+natural left join
+natural full join
+right outer join
+left outer join
+full outer join
+natural join
+transaction
+checkpoint
+deallocate
+inner join
+right join
+cross join
+savepoint
+recursive
+left join
+full join
+intersect
+returning
+rollback
+truncate
+unlisten
+group by
+coalesce
+greatest
+end loop
+replace
+analyze
+cluster
+comment
+declare
+discard
+execute
+explain
+prepare
+reindex
+instead
+create
+commit
+delete
+insert
+listen
+notify
+select
+except
+update
+vacuum
+values
+having
+nullif
+exists
+not in
+end if
+before
+alter
+begin
+close
+fatch
+grant
+using
+union
+where
+least
+elsif
+after
+drop
+copy
+load
+lock
+move
+with
+join
+from
+case
+when
+then
+else
+some
+loop
+rule
+also
+into
+end
+set
+any
+all
+for
+do
+in
+if

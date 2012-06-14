@@ -1,0 +1,24 @@
+### INVENTOR ILOGIC LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Inventor iLogic
+    VERSION             1.7.30
+
+    COMMENT             (?default)|('.*?$)
+    STRING              (?default)
+    
+    KEYWORD				(\b\w+\b)\.(?=[a-z])|((?<![^\s])\b\w+\b(?=\s*\())
+    STATEMENT           \b(?alt:statement.txt)\b
+    #Not used since keyword matches well
+    #RESERVED           (?default)|\b(?alt:reserved.txt)\b
+    TYPE                (?default)|\b(?alt:type.txt)\b
+    MODIFIER            (?default)|\b(?alt:modifier.txt)\b
+    SPECIAL:CONSTANT	\b(?alt:special.txt)\b
+    
+    ENTITY              (?default)
+    VARIABLE            (?default)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)|\b(?alt:operator.txt)\b
+    SYMBOL              (?default)

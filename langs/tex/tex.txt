@@ -1,0 +1,15 @@
+### TeX LANGUAGE ###
+# http://blog.keyboardplaying.org/2012/06/08/syntax-highlighting-latex/
+# ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                TeX
+    VERSION             1.9.8
+
+    COMMENT (?<!\\)%.*?$
+
+	# Make math formulaes appear as Strings
+	MATH:STRING ((?<!\\)\$\$.*?(?<!\\)\$\$)|((?<!\\)\$.*?(?<!\\)\$)|((?<!\\)\\\[.*?(?<!\\)\\\])
+	
+	STATEMENT (\\[\w]+)|(\\['`^"~=.$vuH][\w]?)
+	
+	SYMBOL (?<!\\)(?default)

@@ -1,0 +1,10 @@
+Dim map As Inventor.NameValueMap = ThisApplication.TransientObjects.CreateNameValueMap()
+map.Add("Arg1", "Arg1Value")
+iLogicVb.RunRule("ruleName", map)
+iLogicVb.RunRule("PartA:1", "ruleName")
+InventorVb.RunMacro("projectName", "moduleName", "macroName")
+AddVbRule "RuleName"
+AddReference "fileName.dll"
+AddVbFile "fileName.vb"
+AddResources "fileName.resources"
+arg1Value = RuleArguments("Arg1")

@@ -1,0 +1,5 @@
+\begin{document}
+\hello % Here a comment
+% Here a comment from line beginning
+
+10\% is not a comment.

@@ -1,0 +1,6 @@
+string
+double
+integer
+string
+object
+arraylist

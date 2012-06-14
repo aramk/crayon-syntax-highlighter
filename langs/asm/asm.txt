@@ -1,0 +1,16 @@
+### X86 ASSEMBLY LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Assembly (x86)
+    VERSION             1.9.1
+
+    COMMENT             (;.*?$)
+    STRING              (?default)
+    
+    OPERATION:RESERVED	^\s*\w+
+    
+    REGISTER:VARIABLE   %?[a-z]+
+    CONSTANT            \$?(?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

@@ -1,0 +1,23 @@
+### APACHE LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Apache
+    VERSION             1.8.3
+
+    COMMENT             #.*?$
+    STRING              (?default)
+    
+    TAGNAME:RESERVED	(?<=<)(\s*/\s*)?[^>\s]+
+    TAG_DELIM:RESERVED		<|(/\s*)?>
+    TAG_ATTR:ENTITY		[^<>\s]+(?=[^<>]*\s*>)
+
+    VARIABLE            (^\s*\b\w+\b(?=\s*=))|(\$\w+\b)
+    SPECIAL:VARIABLE	%\{[^\}]*\}
+    OPTION:VARIABLE		-\w+
+    ARRAY:CONSTANT		\[[^]]*\]
+    RESERVED            ^\s*\b\w+\b
+    CONSTANT            (?default)
+    TEXT:IDENTIFIER		[\w-]+
+    OPERATOR            (?default)
+    SYMBOL              (?default)    

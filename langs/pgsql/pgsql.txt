@@ -1,0 +1,18 @@
+### PgSQL LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                PgSQL
+    VERSION             1.8.0
+
+    COMMENT             (/\*.*?\*/)|(--.*?$)
+    STRING              ((?<!\\)'.*?(?<!\\)')
+    
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            \b(?alt:reserved.txt)\b
+    TYPE                \b(?alt:type.txt)\b
+    
+    BUILT_IN:ENTITY		\b(?alt:built.in.func.txt)\b
+    IDENTIFIER          ((?<!\\)".*?(?<!\\)")
+    OPERATOR            \b(?alt:operator.txt)\b
+

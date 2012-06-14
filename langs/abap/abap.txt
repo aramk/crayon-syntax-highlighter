@@ -1,0 +1,17 @@
+### ABAP LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                ABAP
+    VERSION             1.8.4
+
+    COMMENT             (^\s*\*.*?$)|(".*?$)
+    STRING				('.*?')|(`.*?`)
+    
+    RESERVED			\b(?alt:reserved.txt)\b
+    
+    ENTITY				\b\w+(?=\([^\)]*\))
+    STATEMENT			\b(?alt:statement.txt)\b
+    OPERATOR            (?alt:operator.txt)
+    CONSTANT            (?default)
+    SYMBOL              (?default)

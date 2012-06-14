@@ -1,0 +1,19 @@
+### LUA LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Lua
+    VERSION             1.8.1
+
+    COMMENT             (--\[\[.*?\]\])|(--.*?$)
+    STRING              (?default)|(\[(==)?\[[^\]]*\](==)?\])
+    
+    STATEMENT           (?default)|\b(?alt:statement.txt)\b
+    RESERVED            (?default)|\b(?alt:reserved.txt)\b
+    
+    ENTITY              (?default)
+    VARIABLE            (?default)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

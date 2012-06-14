@@ -1,0 +1,23 @@
+module Interpret(interpret) where
+
+import Prog
+
+import System.IO.Unsafe
+import Control.Monad
+import Char
+
+-- In a call to this function such as "interpret prog vars entry debug":
+-- prog is the ABCD program to be interpreted;
+-- vars represents the initial values of the four variables;
+-- entry is the name of the entry point function, "main" by default; and
+-- debug specifies whether the user wants debugging output.
+
+interpret :: Prog -> Vars -> String -> MaybeDebug -> IO ()
+interpret prog vars entry debug = do
+    let context = Context prog vars entry debug 0
+    let newContext = runFunc entry context
+    let output =
+        case newContext of
+            IError s -> "abcdi: " ++ s
+            IOK c -> (strVal (getVar A (cVars c))) ++ "\n"
+    putStrLn output

@@ -1,0 +1,27 @@
+### RUBY LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Ruby
+    VERSION             1.7.24
+
+    COMMENT             (\#.*?$)|(=begin.*?=end)
+    STRING              (?default)|(%\w?\([^\)]*\))|(\`[^\`]*`)|(\<\<["'-]?\w+["']?)
+    REGEX:STRING        /([^/]|(?<=\\)/)+/\[a-z]+   
+    
+    TAG                 <%=?|%>|^%
+    LIBRARY:KEYWORD     \b(?alt:library.txt)\b
+    MODULE:KEYWORD      \b(?alt:module.txt)\b
+    EXCEPTION:KEYWORD   \b(?alt:exception.txt)\b
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            (?alt:reserved.txt)
+    TYPE                \b(?alt:type.txt)\b
+    MODIFIER            \b(?alt:modifier.txt)\b
+    
+    ENTITY              (\b[a-z_]\w*\b(?=\s*\([^\)]*\)))|(\b[a-z_]\w*\b(?=\s*\{[^{)]*\}))
+    VARIABLE            (?default)|((\$|@+)\w+)|\&\w+
+    CONSTANT            (?default)|\b(?alt:constant.txt)\b
+    OPERATOR            (?default)|\b(?alt:operator.txt)\b
+    IDENTIFIER          (?default)
+    BRACES:KEYWORD      [\{\}]
+    SYMBOL              (?default)

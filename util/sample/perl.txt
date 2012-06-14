@@ -1,0 +1,14 @@
+while (<STDIN>) {
+    $oldStr = $_;
+    foreach $k (keys %dic) {
+	s/$k/$dic{$k}/g;
+    }
+    
+    $newStr = $_;
+    if ($oldStr ne $newStr) {
+	print STDERR "\n";
+	print STDERR "old>>$oldStr";
+	print STDERR "new>>$newStr";
+    }
+    print;
+}

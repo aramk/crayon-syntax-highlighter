@@ -1,0 +1,7 @@
+---
+receipt:     Oz-Ware Purchase Invoice
+date:        2007-08-06
+customer:
+    given:   "Dorothy"
+    family:  Gale
+...

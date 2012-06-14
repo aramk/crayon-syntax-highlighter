@@ -1,0 +1,11 @@
+ObjectSpace
+Comparable
+Enumerable
+Precision
+FileTest
+Marshal
+Process
+Kernel
+Errno
+Math
+GC

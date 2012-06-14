@@ -1,0 +1,10 @@
+^
+Mod
+<>
+and
+or
+andalso
+orelse
+not
+is
+isnot

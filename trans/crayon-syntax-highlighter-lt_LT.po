@@ -1,0 +1,806 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: crayon-syntax-highlighter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-07 20:58+1000\n"
+"PO-Revision-Date: 2012-05-07 20:58+1000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;crayon_e;crayon__;crayon_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:266
+msgid "Toggle Plain Code"
+msgstr "Sukeisti Grynąjį Kodą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:268
+#, php-format
+msgid "Press %s to Copy, %s to Paste"
+msgstr "Paspauskite %s norėdami nukopijuoti, %s norėdami Įdėti"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:268
+msgid "Copy Plain Code"
+msgstr "Kopijuoti Grynąjį Kodą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:270
+msgid "Open Code In New Window"
+msgstr "Atverti Kodą Naujame Lange"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:273
+msgid "Toggle Line Numbers"
+msgstr "Sukeisti Eilučių Numerius"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:279
+msgid "Contains Mixed Languages"
+msgstr "Palaiko Mišrias Kalbas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:138
+msgid "Hourly"
+msgstr "Valandomis"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:138
+msgid "Daily"
+msgstr "Dienomis"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:139
+msgid "Weekly"
+msgstr "Savaitėmis"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:139
+msgid "Monthly"
+msgstr "Mėnesiais"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:140
+msgid "Immediately"
+msgstr "Tučtuojau"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:150
+#: ../crayon_settings.class.php:154
+msgid "Max"
+msgstr "Daugiausia"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:150
+#: ../crayon_settings.class.php:154
+msgid "Min"
+msgstr "Mažiausia"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:150
+#: ../crayon_settings.class.php:154
+msgid "Static"
+msgstr "Nustatyta"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:152
+#: ../crayon_settings.class.php:156
+#: ../crayon_settings_wp.class.php:541
+#: ../crayon_settings_wp.class.php:550
+#: ../crayon_settings_wp.class.php:649
+msgid "Pixels"
+msgstr "Taškai"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:152
+#: ../crayon_settings.class.php:156
+msgid "Percent"
+msgstr "Procentais"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:165
+msgid "None"
+msgstr "Nieko"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:165
+msgid "Left"
+msgstr "Kairė"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:165
+msgid "Center"
+msgstr "Centras"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:165
+msgid "Right"
+msgstr "Dešinė"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:167
+#: ../crayon_settings.class.php:189
+msgid "On MouseOver"
+msgstr "Užvedus pelės žymeklį"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:167
+#: ../crayon_settings.class.php:173
+msgid "Always"
+msgstr "Visada"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:167
+#: ../crayon_settings.class.php:173
+msgid "Never"
+msgstr "Niekada"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:173
+msgid "When Found"
+msgstr "Kai Aptinkama"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:189
+msgid "On Double Click"
+msgstr "Dvikarčiu Spustelėjimu"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:189
+msgid "On Single Click"
+msgstr "Vienkarčiu Spustelėjimu"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:189
+msgid "Disable Mouse Events"
+msgstr "Išjungti Pelės Veiksmus"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:196
+msgid "An error has occurred. Please try again later."
+msgstr "Įvyko klaida. Prašome mėginti vėliau."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:44
+#: ../crayon_settings_wp.class.php:118
+#: ../crayon_settings_wp.class.php:802
+msgid "Settings"
+msgstr "Nuostatos"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:99
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Jūs neturite reikiamų leidimų priėjimui prie šio puslapio."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:130
+msgid "Save Changes"
+msgstr "Įrašyti Pakeitimus"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:136
+msgid "Reset Settings"
+msgstr "Atkurti Nuostatas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:301
+msgid "General"
+msgstr "Bendrai"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:302
+msgid "Theme"
+msgstr "Apipavidalinimas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:303
+msgid "Font"
+msgstr "Šriftas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:304
+msgid "Metrics"
+msgstr "Maketas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:305
+msgid "Toolbar"
+msgstr "Įrankių juosta"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:306
+msgid "Lines"
+msgstr "Linijos"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:307
+msgid "Code"
+msgstr "Kodas"
+
+#: ../crayon_settings_wp.class.php:308
+msgid "Tags"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:309
+msgid "Languages"
+msgstr "Kalbos"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:310
+msgid "Files"
+msgstr "Rinkmenos"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:311
+#, fuzzy
+msgid "Tag Editor"
+msgstr "Apipavidalinimų Redaktorius"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:312
+msgid "Misc"
+msgstr "Kita"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:315
+msgid "Debug"
+msgstr "Derinimas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:316
+msgid "Errors"
+msgstr "Klaidos"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:317
+msgid "Log"
+msgstr "Žurnalas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:320
+msgid "About"
+msgstr "Apie"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:503
+msgid "Crayon Help"
+msgstr "Crayon Pagalba"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:518
+msgid "Height"
+msgstr "Aukštis"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:524
+msgid "Width"
+msgstr "Paraštė"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:530
+msgid "Top Margin"
+msgstr "Viršutinė Paraštė"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:531
+msgid "Bottom Margin"
+msgstr "Apatinė Paraštė"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:532
+#: ../crayon_settings_wp.class.php:537
+msgid "Left Margin"
+msgstr "Kairė Paraštė"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:533
+#: ../crayon_settings_wp.class.php:537
+msgid "Right Margin"
+msgstr "Dešinė paraštė"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:543
+msgid "Horizontal Alignment"
+msgstr "Horizontalus Lygiavimas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:546
+msgid "Allow floating elements to surround Crayon"
+msgstr "Leisti slankiųjų elementų Crayon apsupimą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:548
+#, fuzzy
+msgid "Inline Margin"
+msgstr "Kairė Paraštė"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:556
+msgid "Display the Toolbar"
+msgstr "Rodyti Įrankių juostą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:559
+msgid "Overlay the toolbar on code rather than push it down when possible"
+msgstr "Perdengti kodą įrankių juosta vietoje kodo nustūmimo žemyn, kai įmanoma"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:560
+msgid "Toggle the toolbar on single click when it is overlayed"
+msgstr "Perjungti įrankių juostą vieno pelės mygtuko paspaudimo metu, kai ji perdengta"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:561
+msgid "Delay hiding the toolbar on MouseOut"
+msgstr "Delsti paslėpti įrankių juostą MouseOut metu"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:563
+msgid "Display the title when provided"
+msgstr "Rodyti antraštę, kai ši pateikta"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:564
+msgid "Display the language"
+msgstr "Rodyti kalbą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:571
+msgid "Display striped code lines"
+msgstr "Rodyti atskirtas kodo eilutes"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:572
+msgid "Enable line marking for important lines"
+msgstr "Leisti eilučių žymėjimą svarbioms eilutėms"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:573
+msgid "Display line numbers by default"
+msgstr "Rodyti eilučių numerius (numatyta)"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:574
+msgid "Enable line number toggling"
+msgstr "Leisti eilučių numerių sukeitimą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:575
+msgid "Start line numbers from"
+msgstr "Pradėti eilučių numeravimą nuo"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:585
+msgid "When no language is provided, use the fallback"
+msgstr "Kai jokia kalba nepateikta, naudokite numatytąją"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:591
+#, fuzzy, php-format
+msgid "%d language has been detected."
+msgstr "aptikta %d kalba"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:592
+msgid "Parsing was successful"
+msgstr "Analizė atlikta sėkmingai"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:592
+msgid "Parsing was unsuccessful"
+msgstr "Analizė atlikta nesėkmingai"
+
+#  skliausteliai?
+#: ../crayon_settings_wp.class.php:598
+#, php-format
+msgid "The selected language with id %s could not be loaded"
+msgstr "Pasirinkta kalba su (identifikatorius %s) negali būti įkelta"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:602
+msgid "Show Languages"
+msgstr "Rodyti Kalbas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:621
+msgid "Loading..."
+msgstr "Įkeliama..."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:621
+#: ../crayon_settings_wp.class.php:804
+msgid "Theme Editor"
+msgstr "Apipavidalinimų Redaktorius"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:626
+#, php-format
+msgid "Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked."
+msgstr "Pakeiskite %1$sNumatytąją kalbą%2$s, norėdami pakeisti imties kodą. 5-7 eilutės yra pažymėtos."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:630
+msgid "Enable Live Preview"
+msgstr "Leisti Tiesioginę Greitąją peržiūrą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:632
+msgid "Enqueue themes in the header (more efficient)."
+msgstr "Išrikiuoti apipavidalinimus puslapinėje antraštėje (efektyviau)."
+
+#: ../crayon_settings_wp.class.php:632
+#: ../crayon_settings_wp.class.php:658
+#: ../crayon_settings_wp.class.php:683
+#: ../crayon_settings_wp.class.php:690
+#: ../crayon_settings_wp.class.php:691
+#: ../crayon_settings_wp.class.php:692
+#: ../crayon_settings_wp.class.php:693
+#: ../crayon_settings_wp.class.php:694
+#: ../crayon_settings_wp.class.php:695
+#: ../crayon_settings_wp.class.php:709
+#: ../crayon_settings_wp.class.php:716
+#: ../crayon_settings_wp.class.php:717
+msgid "?"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:635
+#, php-format
+msgid "The selected theme with id %s could not be loaded"
+msgstr "Pasirinktas apipavidalinimas (Identifikatorius %s) negali  būti įkeltas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:647
+msgid "Custom Font Size"
+msgstr "Individualizuotas Šrifto Dydis"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:652
+#, php-format
+msgid "The selected font with id %s could not be loaded"
+msgstr "Pasirinktas šriftas (Identifikatorius %s) negali būti įkeltas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:658
+msgid "Enqueue fonts in the header (more efficient)."
+msgstr "Išrikiuoti šriftus puslapinėje antraštėje (efektyviau)"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:663
+msgid "Enable plain code view and display"
+msgstr "Leisti paprastojo kodo peržiūrą ir vaizdavimą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:666
+msgid "Enable plain code toggling"
+msgstr "Leisti grynojo kodo sukeistį"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:667
+msgid "Show the plain code by default"
+msgstr "Rodyti grynąjį kodą (kaip numatyta)"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:668
+msgid "Enable code copy/paste"
+msgstr "Leisti kodo kopijavimą/įdėjimą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:670
+msgid "Enable opening code in a window"
+msgstr "Leisti kodo atvėrimą lange"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:671
+msgid "Always display scrollbars"
+msgstr "Visada rodyti slankjuostes"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:672
+msgid "Tab size in spaces"
+msgstr "Kortelės dydis tarpuose"
+
+#: ../crayon_settings_wp.class.php:677
+msgid "Decode HTML entities in code"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:679
+msgid "Decode HTML entities in attributes"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:681
+msgid "Remove whitespace surrounding the shortcode content"
+msgstr "Pašalinti matomus tarpus aplink trumpojo kodo turinį"
+
+#: ../crayon_settings_wp.class.php:683
+msgid "Allow Mixed Language Highlighting with delimiters and tags."
+msgstr "Leisti Mišrios Kalbos Pažymėjimą skirtukais ir gairėmis."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:685
+msgid "Show Mixed Language Icon (+)"
+msgstr "Rodyti Mišrios Kalbos Piktogramą (+)"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:690
+msgid "Capture Mini Tags like [php][/php] as Crayons."
+msgstr "Užskaityti Mini Gaires, kaip [php][/php] kaip Crayons."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:691
+#, fuzzy
+msgid "Capture Inline Tags like {php}{/php} inside sentences."
+msgstr "Užskaityti Mini Gaires, kaip [php][/php] kaip Crayons."
+
+#: ../crayon_settings_wp.class.php:692
+msgid "Wrap Inline Tags"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:693
+msgid "Capture `backquotes` as &lt;code&gt;"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:694
+msgid "Capture &lt;pre&gt; tags as Crayons"
+msgstr "Užskaityti &lt;pre&gt; gaires kaip Crayons"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:695
+msgid "Enable [plain][/plain] tag."
+msgstr "Leisti [plain][/plain] gairių kūrimą."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:700
+msgid "When loading local files and a relative path is given for the URL, use the absolute path"
+msgstr "Įkeliant vietines rinkmenas, kuomet Universaliąjai nuorodai yra priskirtas santykinis kelias, naudokite absoliutųjį kelią"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:703
+msgid "Followed by your relative URL."
+msgstr "Laikomasi Jūsų santykinės Universaliosios nuorodos"
+
+#: ../crayon_settings_wp.class.php:707
+#, php-format
+msgid "Use %s to separate setting names from values in the &lt;pre&gt; class attribute"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:713
+msgid "Clear the cache used to store remote code requests"
+msgstr "Išvalyti spartinančiąją atmintinę, naudotą kaupti nuotolines kodo užklausas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:715
+msgid "Clear Now"
+msgstr "Išvalyti Dabar"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:716
+msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
+msgstr "Bandykite įkelti Crayon's CSS ir JavaScript tik tada, kai to tikrai reikia"
+
+#: ../crayon_settings_wp.class.php:717
+msgid "Disable enqueuing for page templates that may contain The Loop."
+msgstr "Panaikinti puslapio apipavidalinimų rikiavimą, kuris gali sukelti ciklinius pasikartojimus."
+
+#: ../crayon_settings_wp.class.php:718
+msgid "Allow Crayons inside comments"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:719
+msgid "Remove Crayons from excerpts"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:720
+msgid "Load Crayons only from the main Wordpress query"
+msgstr "Įkelti Crayons tik iš pagrindinės WordPress užklausos"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:721
+msgid "Disable mouse gestures for touchscreen devices (eg. MouseOver)"
+msgstr "Išjungti pelės gestus įrenginiams su liečiamuoju ekranu (pavyzdžiui MouseOver)"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:722
+msgid "Disable animations"
+msgstr "Išjungti animaciją"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:723
+msgid "Disable runtime stats"
+msgstr "Išjungti vykdymo laiko statistiką"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:729
+msgid "Log errors for individual Crayons"
+msgstr "Fiksuoti klaidas individualiems Crayons"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:730
+msgid "Log system-wide errors"
+msgstr "Fiksuoti sistemines klaidas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:731
+msgid "Display custom message for errors"
+msgstr "Rodyti individualizuotą pranešimą klaidų atveju"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:743
+msgid "Show Log"
+msgstr "Rodyti Žurnalą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:743
+msgid "Hide Log"
+msgstr "Paslėpti Žurnalą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:745
+msgid "Clear Log"
+msgstr "Išvalyti Žurnalą"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:746
+msgid "Email Admin"
+msgstr "Susisiekti su svetainės Administratoriumi elektroniniu paštu"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:748
+msgid "Email Developer"
+msgstr "Susisiekti su svetainės Plėtotoju elektroniniu paštu"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:750
+msgid "The log is currently empty."
+msgstr "Žurnalas šiuo metu tuščias"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:752
+msgid "The log file exists and is writable."
+msgstr "Žurnalo rinkmena egzistuoja, įrašas į ją įmanomas."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:752
+msgid "The log file exists and is not writable."
+msgstr "Žurnalo rinkmena egzistuoja, įrašas į ją neįmanomas."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:754
+msgid "The log file does not exist and is not writable."
+msgstr "Žurnalo rinkmena neegzistuoja, įrašas į ją neįmanomas."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:764
+msgid "Version"
+msgstr "Versija"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:766
+msgid "Developer"
+msgstr "Plėtotojas"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:767
+msgid "Translators"
+msgstr "Vertėjai"
+
+#: ../crayon_settings_wp.class.php:790
+msgid "The result of innumerable hours of hard work over many months. It's an ongoing project, keep me motivated!"
+msgstr "Nesuskaičiuojamo darbo valandų kiekio ir labai sunkaus darbo vaisius. Tai tebevykstantis projektas, išlaikykite mano motyvaciją!"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:806
+msgid "Donate"
+msgstr "Paaukokite"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:57
+#, fuzzy
+msgid "Add Crayon Code"
+msgstr "Crayon Pagalba"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:58
+msgid "Edit Crayon Code"
+msgstr ""
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:59
+msgid "Add"
+msgstr ""
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:60
+msgid "Save"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_te_content.php:65
+#, fuzzy
+msgid "Title"
+msgstr "Rinkmenos"
+
+#: ../util/tag-editor/crayon_te_content.php:67
+msgid "A short description"
+msgstr ""
+
+#: ../util/tag-editor/crayon_te_content.php:70
+msgid "Inline"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_te_content.php:75
+#, fuzzy
+msgid "Language"
+msgstr "Kalbos"
+
+#: ../util/tag-editor/crayon_te_content.php:78
+msgid "Marked Lines"
+msgstr ""
+
+#: ../util/tag-editor/crayon_te_content.php:79
+msgid "(e.g. 1,2,3-5)"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_te_content.php:82
+#, fuzzy
+msgid "Disable Highlighting"
+msgstr "Išjungti animaciją"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_te_content.php:87
+#, fuzzy
+msgid "Clear"
+msgstr "Išvalyti Dabar"
+
+#: ../util/tag-editor/crayon_te_content.php:88
+msgid "Paste your code here, or type it in manually."
+msgstr ""
+
+#: ../util/tag-editor/crayon_te_content.php:91
+msgid "URL"
+msgstr ""
+
+#: ../util/tag-editor/crayon_te_content.php:93
+msgid "Relative local path or absolute URL"
+msgstr ""
+
+#: ../util/tag-editor/crayon_te_content.php:96
+msgid "If the URL fails to load, the code above will be shown instead. If no code exists, an error is shown."
+msgstr ""
+
+#: ../util/tag-editor/crayon_te_content.php:98
+#, php-format
+msgid "If a relative local path is given it will be appended to %s - which is defined in %sCrayon &gt; Settings &gt; Files%s."
+msgstr ""
+
+#: ../util/tag-editor/crayon_te_content.php:117
+msgid "Change the following settings to override their global values."
+msgstr ""
+
+#: ../util/tag-editor/crayon_te_content.php:119
+msgid "Only changes (shown yellow) are applied."
+msgstr ""
+
+#: ../util/tag-editor/crayon_te_content.php:121
+#, php-format
+msgid "Future changes to the global settings under %sCrayon &gt; Settings%s won't affect overridden settings."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/editor.php:16
+msgid "Back To Settings"
+msgstr "Grįžti Į Nuostatas"
+

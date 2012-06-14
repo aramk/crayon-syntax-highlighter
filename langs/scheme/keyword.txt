@@ -1,0 +1,24 @@
+call-with-current-continuation
+call-with-output-file
+call-with-input-file
+letrec-syntax
+define-syntax
+syntax-rules
+dynamic-wind
+let-syntax
+for-each
+letrec
+lambda
+define
+delay
+begin
+# let* ; the * can not be escaped?
+else
+cond
+case
+map
+let
+and
+or
+if
+do

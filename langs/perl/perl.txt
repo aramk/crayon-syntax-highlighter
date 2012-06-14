@@ -1,0 +1,22 @@
+### PERL LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                        Perl
+    VERSION                     1.9.2
+  
+    COMMENT                     (?default)|(\#.*?$)
+    STRING                      (?default)|(<<<EOT.*?^EOT)
+    REGEX:PREPROCESSOR          \b\w*/([^\r\n]|(?<=\\)/)+/\w*\b
+    
+    TAG                         <\?php|<\?|\?>
+    STATEMENT                   \b(?alt:statement.txt)\b
+    RESERVED                    \b(?alt:reserved.txt)\b
+    COMPILE:CONSTANT             \b(?alt:compile.txt)\b
+    
+    ENTITY                      (?default)|\b[a-z_]\w*(::|->)
+    VARIABLE                    (\$|%)[a-z_]\w*\b
+    IDENTIFIER                  \b[a-z_]\w*\b\s*(?=\([^\)]*\))
+    CONSTANT                    \b[a-z_]\w*\b
+    OPERATOR                    (?default)
+    SYMBOL                      (?default)

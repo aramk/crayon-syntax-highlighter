@@ -1,0 +1,187 @@
+/*
+Theme Name: neon
+Description: Dark and elegant. 
+Version: 1.3
+Author: Aram Kocharyan
+Author URI: http://ak.net84.net/
+*/
+
+/* Code Style ====================== */
+.crayon-theme-neon {
+    border: 1px #333 solid !important;
+    text-shadow: none !important;
+    color: #fff;
+}
+
+.crayon-theme-neon,
+.crayon-theme-neon .crayon-code {
+	background: #2d2d2d !important;
+}
+
+/* Inline Style */
+.crayon-theme-neon-inline {
+	border: 1px solid #333 !important;
+	background: #333 !important;
+}
+
+.crayon-theme-neon span {
+    color: #999 !important;
+}
+
+/* Line Numbers */
+.crayon-theme-neon .crayon-nums {
+    border-right: 1px solid #333 !important;
+    color: #333 !important;
+    background: #777777 !important;
+}
+
+/* Selection */
+.crayon-theme-neon .crayon-code::selection,
+.crayon-theme-neon .crayon-code *::selection {
+    background: #ddeeff !important;
+    color: #316ba5 !important;
+}
+.crayon-theme-neon::selection,
+.crayon-theme-neon .crayon-toolbar::selection,
+.crayon-theme-neon .crayon-toolbar *::selection,
+.crayon-theme-neon .crayon-info::selection,
+.crayon-theme-neon .crayon-info *::selection,
+.crayon-theme-neon .crayon-nums::selection,
+.crayon-theme-neon .crayon-nums *::selection {
+    background: #777 !important;
+}
+
+/* Striped Lines */
+.crayon-theme-neon .crayon-line {
+    background: #050505 !important;
+}
+
+.crayon-theme-neon .crayon-striped-line {
+    background: #000 !important;
+    border: 1px #171717 !important;
+}
+.crayon-theme-neon .crayon-striped-num {
+    background: #aaa !important;
+    border: 1px #CCC !important;
+    color: #555 !important;
+}
+
+/* Marked Lines */
+.crayon-theme-neon .crayon-marked-line {
+    background: #484844 !important;
+    border: 1px #222 !important;
+}
+.crayon-theme-neon .crayon-marked-num {
+    color: #555 !important;
+    background: #bbb !important;
+    border: 1px #777 !important;
+}
+.crayon-theme-neon .crayon-marked-line.crayon-striped-line {
+    background: #51514d !important;
+}
+.crayon-theme-neon .crayon-marked-num.crayon-striped-num {
+    background: #ccc !important;
+    color: #888 !important;
+}
+.crayon-theme-neon .crayon-marked-line.crayon-top,
+.crayon-theme-neon .crayon-marked-num.crayon-top {
+    border-top-style: solid !important;
+}
+.crayon-theme-neon .crayon-marked-line.crayon-bottom,
+.crayon-theme-neon .crayon-marked-num.crayon-bottom {
+    border-bottom-style: solid !important;
+}
+
+/* Info */
+.crayon-theme-neon .crayon-info {
+    background: #faf9d7 !important;
+    border-bottom: 1px #b1af5e solid !important;
+    color: #7e7d34;
+}
+
+/* Toolbar */
+.crayon-theme-neon .crayon-toolbar {
+    background: #b2b2b2 !important;
+    border-bottom: 1px #666 solid !important;
+}
+.crayon-theme-neon .crayon-toolbar > div {
+    float: left !important;
+}
+.crayon-theme-neon .crayon-toolbar .crayon-tools {
+    float: right !important;
+}
+.crayon-theme-neon .crayon-title {
+    color: #333 !important;
+}
+.crayon-theme-neon .crayon-language {
+    color: #666 !important;
+}
+.crayon-theme-neon .crayon-toolbar .crayon-mixed-highlight {
+	background-position: -24px center;
+}
+
+/* Buttons */
+.crayon-theme-neon a.crayon-button {
+    background-color: transparent;
+}
+.crayon-theme-neon a.crayon-button:hover,
+.crayon-theme-neon a.crayon-button.crayon-pressed:hover {
+	background-color: #ccc;
+    color: #666;
+}
+/* :active MUST come after :hover */
+.crayon-theme-neon a.crayon-button.crayon-pressed,
+.crayon-theme-neon a.crayon-button.crayon-pressed:active,
+.crayon-theme-neon a.crayon-button:active {
+	background-color: #999;
+    color: #ccc;
+}
+/* End Code Style ================== */
+
+/* Syntax Highlighting ============= */
+.crayon-theme-neon .crayon-pre .c {
+    color: #888 !important;
+}
+.crayon-theme-neon .crayon-pre .s {
+    color: #99CC18 !important;
+}
+.crayon-theme-neon .crayon-pre .k,
+.crayon-theme-neon .crayon-pre .st,
+.crayon-theme-neon .crayon-pre .r,
+.crayon-theme-neon .crayon-pre .t,
+.crayon-theme-neon .crayon-pre .m {
+    color: #EEEE33 !important;
+    font-weight: bold;
+}
+.crayon-theme-neon .crayon-pre .ta {
+	color: #AAA !important;
+}
+.crayon-theme-neon .crayon-pre .i {
+    color: #fbefb1 !important;
+}
+.crayon-theme-neon .crayon-pre .v {
+    color: #879ab2 !important;
+}
+.crayon-theme-neon .crayon-pre .e {
+	color: #ED7218 !important;
+}
+.crayon-theme-neon .crayon-pre .cn {
+    color: #FF2020 !important;
+}
+.crayon-theme-neon .crayon-pre .o,
+.crayon-theme-neon .crayon-pre .h {
+    color: #ac99ab !important;
+}
+.crayon-theme-neon .crayon-pre .sy {
+	color: #A069F8 !important;
+}
+.crayon-theme-neon .crayon-pre .n {
+	color: #726e73 !important;
+	font-style: italic;
+}
+.crayon-theme-neon .crayon-pre .f {
+	color: #595959 !important;
+}
+/* End Syntax Highlighting ========= */
+
+/* End Classic Scheme ============================================ */

@@ -1,0 +1,18 @@
+### YAML LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                YAML
+    VERSION             1.8.1
+    ALLOW_MIXED			NO
+
+    COMMENT             #.*?$
+    QUOTED:IDENTIFIER   ("[^"]*")|('[^']*')
+    VALUES:IDENTIFIER	\[[^\]]*\]
+    
+	LIST_KEY:STRING     ((\-\s*)?[\w-]+(?=\s*:))|(\-\s*(?=\{))
+	TAG     			%(\w+)
+    ANCHOR:CONSTANT		&\w+
+    REF:ENTITY			\*\w+
+    OPERATOR            (?alt:operator.txt)
+    SYMBOL              (?default)

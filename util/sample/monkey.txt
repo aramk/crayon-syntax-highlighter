@@ -1,0 +1,8 @@
+Class GameApp Extends App
+  Field player:Player
+  Method OnCreate:Int()
+    local img:Image = LoadImage("player.png")
+    player = New Player(img, 100, 100)
+    SetUpdateRate 60
+  End
+End

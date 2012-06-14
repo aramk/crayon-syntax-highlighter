@@ -1,0 +1,8 @@
+instanceof
+undefined
+typeof
+import
+set
+get
+internal
+delete

@@ -1,0 +1,22 @@
+### ACTIONSCRIPT LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                ActionScript
+    VERSION             1.8.0
+
+    COMMENT             (?default)
+    STRING              (?default)
+    
+    STATEMENT           (?default)|\b(?alt:statement.txt)\b
+    RESERVED            (?default)|\b(?<![:\.])(?-i:(?alt:reserved.txt))(?![:\.])\b
+    TYPE                (?default)
+    MODIFIER            (?default)
+        
+    ENTITY              (?default)
+    LIBRARY:ENTITY      \b(?alt:library.txt)\b
+    VARIABLE            (?default)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

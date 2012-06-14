@@ -1,0 +1,8 @@
+CREATE TABLE arr(f1 int[], f2 int[]);
+INSERT INTO arr VALUES (ARRAY[[1,2],[3,4]], ARRAY[[5,6],[7,8]]);
+SELECT ARRAY[f1, f2, '{{9,10},{11,12}}'::int[]] FROM arr;
+array_prepend(1, ARRAY[2,3])
+SELECT ROW(table.*) IS NULL FROM table;  -- detect all-null rows
+SELECT getf1(CAST(ROW(11,'this is a test',2.5) AS myrowtype));
+
+CHARACTER  VARYING

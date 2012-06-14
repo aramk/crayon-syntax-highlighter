@@ -1,0 +1,23 @@
+### SCHEME LANGUAGE ###
+
+#	https://github.com/harry75369/crayon-syntax-highlighter-langs
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Scheme
+    VERSION             1.8.4
+
+SUPER_COMMENT:COMMENT [sc] !.*?$
+
+    COMMENT             (;[^\r\n]*)|(#\|.*\|#)
+    STRING              ((?<!\\)".*?(?<!\\)")|(#\\.)
+    
+    KEYWORD             (let\*)|(\b(?alt:keyword.txt)\b)
+
+    ENTITY              (char-whitespace\?)|(char-upper-case\?)|(char-lower-case\?)|(char-alphabetic\?)|(char-numeric\?)|(vector-fill!)|(string-fill!)|(string-ci>=\?)|(string-ci<=\?)|(output-port\?)|(vector-set!)|(string-set!)|(string-ci>\?)|(string-ci=\?)|(string-ci<\?)|(input-port\?)|(eof-object\?)|(char-ready\?)|(procedure\?)|(char-ci>=\?)|(char-ci<=\?)|(string>=\?)|(string<=\?)|(rational\?)|(positive\?)|(negative\?)|(char-ci>\?)|(char-ci=\?)|(char-ci<\?)|(string>\?)|(string=\?)|(string<\?)|(set-cdr!)|(set-car!)|(integer\?)|(inexact\?)|(complex\?)|(boolean\?)|(symbol\?)|(string\?)|(number\?)|(char>=\?)|(char<=\?)|(exact\?)|(equal\?)|(char>\?)|(char=\?)|(char<\?)|(zero\?)|(real\?)|(port\?)|(pair\?)|(null\?)|(list\?)|(even\?)|(char\?)|(set!)|(odd\?)|(eqv\?)|(eq\?)||(\b(?alt:entity.txt)\b)
+
+    CONSTANT            (\.\d+)|(\d+\.)|(\d+\.\d+)|(#t)|(#f)
+    IDENTIFIER          \b[\w\d`\^~<=>|_\-,;:!\?/\.\(\)\[\]\{\}@\$\*\\&#%\+]+\b
+    OPERATOR         	(?default)
+    
+    

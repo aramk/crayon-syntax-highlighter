@@ -1,0 +1,8 @@
+* A sample function
+CALL FUNCTION 'KD_GET_FILENAME_ON_F4' 
+   EXPORTING 
+    MASK = ',*.txt,*.*'
+    STATIC = 'X' 
+  CHANGING 
+    FILE_NAME = LV_FILE.
+    

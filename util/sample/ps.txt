@@ -1,0 +1,2 @@
+# Find the processes that use more than 1000 MB of memory and kill them
+Get-Process | Where-Object { $_.WS -gt 1000MB } | Stop-Process
