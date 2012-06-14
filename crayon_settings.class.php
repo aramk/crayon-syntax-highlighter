@@ -549,10 +549,12 @@ class CrayonGlobalSettings {
 	}
 
 	public static function val($name = NULL) {
+		self::init();
 		return self::$global->val($name);
 	}
 	
 	public static function val_str($name = NULL) {
+		self::init();
 		return self::$global->val_str($name);
 	}
 
