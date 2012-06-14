@@ -3,9 +3,10 @@
 #   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
 
     NAME                C#
-    VERSION             1.0
+    VERSION             1.8.1
 
-    COMMENT             (?default)|(#.*?$)
+    COMMENT             (?default)
+    PREPROCESSOR		(?default)
     STRING              (?default)
     
     STATEMENT           \b(?alt:statement.txt)\b

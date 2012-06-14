@@ -1,9 +1,7 @@
 <?php
 
 require_once (dirname(dirname(__FILE__)) . '/crayon_wp.class.php');
-
-$wp_root_path = str_replace('wp-content/plugins/' . CRAYON_DIR, '', CRAYON_ROOT_PATH);
-require_once ($wp_root_path . 'wp-load.php');
+require_once (CrayonWP::wp_load_path());
 
 echo '<link rel="stylesheet" href="', plugins_url(CRAYON_STYLE, dirname(__FILE__)),
 	'?ver=', $CRAYON_VERSION, '" type="text/css" media="all" />';
@@ -37,7 +35,7 @@ if ($theme_id != NULL) {
 }
 
 $font_id = $crayon->setting_val(CrayonSettings::FONT);
-if ($font_id != NULL && $font_id != CrayonFonts::DEFAULT_FONT) {
+if ($font_id != NULL /*&& $font_id != CrayonFonts::DEFAULT_FONT*/) {
 	echo CrayonResources::fonts()->get_css($font_id);
 }
 
@@ -64,6 +62,6 @@ $crayon->title('Sample Code');
 $crayon->marked('5-7');
 $crayon->output($highlight = true, $nums = true, $print = true);
 echo '</div>';
-CrayonWP::load_textdomain();
+crayon_load_plugin_textdomain();
 
 ?>

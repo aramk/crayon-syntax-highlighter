@@ -190,6 +190,14 @@ class CrayonResourceCollection {
 		}
 		return NULL;
 	}
+	
+	public function get_array() {
+		$array = array();
+		foreach ($this->get() as $resource) {
+			$array[$resource->id()] = $resource->name();
+		}
+		return $array;
+	}
 
 	public function is_loaded($id) {
 		if (is_string($id)) {

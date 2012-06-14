@@ -22,8 +22,8 @@ class CrayonLog {
 					self::$file = @fopen(CRAYON_LOG_FILE, 'a+');
 
 					if (self::$file) {
-						$header = CRAYON_DASH . CRAYON_NL . 'Crayon Syntax Highlighter Log Entry' . CRAYON_NL .
-							CRAYON_DASH . CRAYON_NL;
+						$header = /*CRAYON_DASH .*/ CRAYON_NL . '[Crayon Syntax Highlighter Log Entry - ' . date('g:i:s A - d M Y') . ']' . CRAYON_NL .
+							/*CRAYON_DASH .*/ CRAYON_NL;
 						fwrite(self::$file, $header);
 					} else {
 						return;
@@ -36,19 +36,20 @@ class CrayonLog {
 				
 				// Remove stupid formatting from wampserver
 				$buffer = str_replace('&apos;', '"', $buffer);
-				$title = (!empty($title) && is_string($title) ? "[$title] " : '');
+				$buffer = preg_replace('#^string\([^\)]*\)#mi', 'str', $buffer);
+				$title = (!empty($title) && is_string($title) ? " [$title]" : '');
 
 				// Remove absolute path to plugin directory from buffer
 				if ($trim_url) {
 					$buffer = CrayonUtil::path_rel($buffer);
 				}
-				$write = $title . date('g:i:s A - d M Y') . CRAYON_NL . $buffer . CRAYON_NL . CRAYON_LINE . CRAYON_NL;
+				$write = $title . ' ' . $buffer . CRAYON_NL /* . CRAYON_LINE . CRAYON_NL*/;
 				
 				// If we exceed max file size, truncate file first
 				if (filesize(CRAYON_LOG_FILE) + strlen($write) > CRAYON_LOG_MAX_SIZE) {
 					ftruncate(self::$file, 0);
 					fwrite(self::$file, 'The log has been truncated since it exceeded ' . CRAYON_LOG_MAX_SIZE .
-						' bytes.' . CRAYON_NL . CRAYON_LINE . CRAYON_NL);
+						' bytes.' . CRAYON_NL . /*CRAYON_LINE .*/ CRAYON_NL);
 				}
 				clearstatcache();
 				fwrite(self::$file, $write, CRAYON_LOG_MAX_SIZE);
@@ -64,6 +65,13 @@ class CrayonLog {
 	public static function syslog($var = NULL, $title = '', $trim_url = TRUE) {
 		if (CrayonGlobalSettings::val(CrayonSettings::ERROR_LOG_SYS)) {
 			$title = (empty($title)) ? 'SYSTEM ERROR' : $title;
+			self::log($var, $title, $trim_url);
+		}
+	}
+	
+	public static function debug($var = NULL, $title = '', $trim_url = TRUE) {
+		if (CRAYON_DEBUG) {
+			$title = (empty($title)) ? 'DEBUG' : $title;
 			self::log($var, $title, $trim_url);
 		}
 	}

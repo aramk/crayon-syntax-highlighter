@@ -9,6 +9,7 @@ class CrayonParser {
 	const CASE_INSENSITIVE = 'CASE_INSENSITIVE';
 	const MULTI_LINE = 'MULTI_LINE';
 	const SINGLE_LINE = 'SINGLE_LINE';
+	const ALLOW_MIXED = 'ALLOW_MIXED';
 	//const NO_END_TAG = '(?![^<]*>)'; // No longer used
 	const HTML_CHAR = 'HTML_CHAR';
 	const HTML_CHAR_REGEX = '<|>|(&([\w-]+);?)|[ \t]+';
@@ -16,7 +17,7 @@ class CrayonParser {
 	const CRAYON_ELEMENT_REGEX = '\{\{crayon-internal:[^\}]*\}\}';
 	const CRAYON_ELEMENT_REGEX_CAPTURE = '\{\{crayon-internal:([^\}]*)\}\}';
 	
-	private static $modes = array(self::CASE_INSENSITIVE => TRUE, self::MULTI_LINE => TRUE, self::SINGLE_LINE => TRUE);
+	private static $modes = array(self::CASE_INSENSITIVE => TRUE, self::MULTI_LINE => TRUE, self::SINGLE_LINE => TRUE, self::ALLOW_MIXED => TRUE);
 
 	// Methods ================================================================
 	private function __construct() {}
@@ -163,6 +164,8 @@ class CrayonParser {
 					$file_lines = CrayonUtil::lines(dirname($element->path()) . crayon_s() . $file[1][$i], 'rcwh');
 					if ($file_lines !== FALSE) {
 						$file_lines = implode('|', $file_lines);
+						// If any spaces exist, treat them as whitespace
+						$file_lines = preg_replace('#[ \t]+#msi', '\s+', $file_lines);
 						$regex = str_replace($file[0][$i], "(?:$file_lines)", $regex);
 					} else {
 						CrayonLog::syslog("Parsing of '{$element->path()}' failed, an (?alt) tag failed for the element '{$element->name()}'" );
@@ -203,7 +206,7 @@ class CrayonParser {
 			}
 			
 			// Ensure all parenthesis are atomic to avoid conflicting with element matches
-			$regex = preg_replace('#(?<!\\\\)\((?!\?)#', '(?:', $regex);
+			$regex = CrayonUtil::esc_atomic($regex);
 			
 			// Escape #, this is our delimiter
 			$regex = CrayonUtil::esc_hash($regex);
@@ -232,7 +235,7 @@ class CrayonParser {
 					$css_str .= $c . ' ';
 				}
 			}
-			return $css_str;
+			return trim($css_str);
 		} else {
 			return '';
 		}

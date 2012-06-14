@@ -10,7 +10,17 @@ Author URI: http://ak.net84.net/
 .crayon-theme-classic {
     border: 1px #999 solid !important;
     text-shadow: none !important;
-    background: #fdfdfd !important;
+}
+
+.crayon-theme-classic,
+.crayon-theme-classic .crayon-code {
+	background: #fdfdfd !important;
+}
+
+/* Inline Style */
+.crayon-theme-classic-inline {
+	border: 1px solid #ddd !important;
+	background: #fafafa !important;
 }
 
 /* Line Numbers */
@@ -104,14 +114,14 @@ Author URI: http://ak.net84.net/
 }
 .crayon-theme-classic a.crayon-button:hover,
 .crayon-theme-classic a.crayon-button.crayon-pressed:hover {
-	background-color: #F2F2F2;
+	background-color: #EEE;
     color: #666;
 }
 /* :active MUST come after :hover */
 .crayon-theme-classic a.crayon-button.crayon-pressed,
 .crayon-theme-classic a.crayon-button.crayon-pressed:active,
 .crayon-theme-classic a.crayon-button:active {
-	background-color: #BBB;
+	background-color: #BCBCBC;
     color: #FFF;
 }
 
@@ -120,6 +130,9 @@ Author URI: http://ak.net84.net/
 /* Syntax Highlighting ============= */
 .crayon-theme-classic .crayon-pre .c {
     color: #ff8000 !important;
+}
+.crayon-theme-classic .crayon-pre .p {
+    color: #b85c00 !important;
 }
 .crayon-theme-classic .crayon-pre .s {
     color: #008000 !important;

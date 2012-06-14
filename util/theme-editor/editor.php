@@ -1,7 +1,7 @@
 <?php
 
-$root_path = dirname(dirname(dirname(__FILE__))) . '/';
-require_once $root_path . 'global.php';
+$crayon_root_theme = dirname(dirname(dirname(__FILE__))) . '/';
+require_once $crayon_root_theme . 'global.php';
 
 //class CrayonThemeEditor {
 //	

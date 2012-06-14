@@ -1,9 +1,9 @@
 === Crayon Syntax Highlighter ===
 Contributors: akarmenia
-Donate link: http://bit.ly/crayondonate
+Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=PPqWIQJ0gEZp4pVGNnYzhcwFGvx3MGwD95tvUcZgeYlHIEjBS7x6QHG34B4&dispatch=5885d80a13c0db1f8e263663d3faee8d0288a7fd2903afb85a5540fd44243d03
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter
 Requires at least: 3.0
-Tested up to: 3.3.1
+Tested up to: 3.4
 Stable tag: trunk
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
@@ -15,15 +15,20 @@ It can highlight from a URL, a local file or Wordpress post text. Crayon makes i
 custom language elements with regular expressions.
 It also supports some neat features like:
 
+* <a href="http://ak.net84.net/projects/crayon-tag-editor/" target="_blank">Tag Editor</a> in both Visual & HTML editors
 * Toggled plain code
 * Toggled line numbers
 * Copy/paste code
 * Open code in a new window (popup)
 * Remote request caching
-* Multiple language highlighting in a single Crayon
-* Mini Tags like [php][/php]
-* Plain Tag ([plain]...[/plain]) for quick &lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;
-* &lt;pre&gt; tag support
+* <a href="http://ak.net84.net/projects/mixed-language-highlighting-in-crayon/" target="_blank">Mixed Language Highlighting</a> in a single Crayon
+* <a href="http://ak.net84.net/projects/mini-tags-in-crayon/" target="_blank">Mini Tags</a> like [php][/php]
+* <a href="http://ak.net84.net/crayon/inline-crayons/" target="_blank">Inline Tags</a> floating in sentences
+* Crayons in comments
+* &#96;Backquotes&#96; become &lt;code&gt;
+* &lt;pre&gt; tag support, option to use <code>setting-value</code> in the class attribute
+* Valid HTML 5 markup
+* <a href="http://ak.net84.net/projects/crayon-tag-editor/" target="_blank">Visual & HTML editor compatible</a> 
 * Mobile/touchscreen device detection
 * Mouse event interaction (showing plain code on double click, toolbar on mouseover)
 * Tab sizes
@@ -38,81 +43,150 @@ It also supports some neat features like:
 * Dimensions, margins, alignment and CSS floating
 * Extensive error logging
 
+**Links**
+
+* <a href="http://aksandbox.webege.com/?p=1" target="_blank">Live Demo</a>
+* <a href="http://ak.net84.net/projects/crayon-syntax-highlighter/" target="_blank">Short How-To</a>
+
+**Contributions**
+
+There are many ways you can help!
+
+* Make a Theme and share
+* Add support for your favourite <a href="http://ak.net84.net/projects/crayon-language-file-specification/" target="_blank">Language</a>
+* Write a post about your pastel experiences and share
+* <a href="https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=PPqWIQJ0gEZp4pVGNnYzhcwFGvx3MGwD95tvUcZgeYlHIEjBS7x6QHG34B4&dispatch=5885d80a13c0db1f8e263663d3faee8d0288a7fd2903afb85a5540fd44243d03" target="_blank">Donate</a> to the project
+
 **Supported Languages**
 
 Languages are defined in language files using Regular Expressions to capture elements.
-See http://ak.net84.net/projects/crayon-language-file-specification/ to learn how to make your own.
+See the <a href="http://ak.net84.net/projects/crayon-language-file-specification/" target="_blank">Crayon Language File Specification</a> to learn how to make your own.
 
 * Default Langauge (one size fits all, highlights generic code)
+* ABAP
+* ActionScript
+* Apache
+* Assembly (x86)
+* AutoIt
 * C
 * C#
 * C++
 * CSS
+* Haskell
 * HTML (XML/XHTML)
-* Monkey
+* Lua
+* Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
 * Java
 * JavaScript
 * Objective-C
+* Perl
 * PHP
+* PostgreSQL (thanks to <a href="http://bitorchestra.com/" target="_blank">Bitorchestra</a>)
+* PowerShell
 * Python
+* Ruby
+* Scheme (thanks to <a href="https://github.com/harry75369" target="_blank">Harry75369</a>)
 * Shell (Unix)
+* TeX
 * Visual Basic
-
-Live Demo: <a href="http://bit.ly/poKNqs" target="_blank">http://bit.ly/poKNqs</a>
-
-Short How-To: <a href="http://ak.net84.net/projects/crayon-syntax-highlighter/" target="_blank">http://ak.net84.net/projects/crayon-syntax-highlighter/</a>
-
-Please Thank Me With <a href="http://ak.net84.net/files/donate.php" target="_blank">Coffee</a>!
+* YAML
+* Others will be added when requested
 
 **International Languages**
 
+* Chinese (Simplified, thanks to <a href="http://smerpup.com/" target="_blank">Dezhi Liu</a> & <a href="http://neverno.me/" target="_blank">Jash Yin</a>)
 * French
-* German
+* German (thanks to <a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&szlig;</a>)
 * Italian
+* Lithuanian (thanks to <a href="http://www.host1free.com" target="_blank">Vincent G</a>)
 * Spanish
-* Japanese (thanks to @west_323)
-* Russian (thanks to minimus - http://simplelib.com)
-* Help from translators at improving/adding to this list greatly appreciated!  
+* Japanese (thanks to <a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>)
+* Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
+* Turkish (thanks to <a href="http://kazancexpert.com" target="_blank">Hakan</a>)
+* Help from translators at improving/adding to this list greatly appreciated!
 
 **Articles**
 
 These are helpful for discovering new features.
 
+* <a href="http://ak.net84.net/projects/crayon-tag-editor/" target="_blank">Crayon Tag Editor</a>
 * <a href="http://ak.net84.net/projects/mixed-language-highlighting-in-crayon/" target="_blank">Mixed Language Highlighting in Crayon</a>
 * <a href="http://ak.net84.net/projects/mini-tags-in-crayon/" target="_blank">Mini Tags And Plain Tags In Crayon</a>
+* <a href="http://ak.net84.net/crayon/inline-crayons/" target="_blank">Inline Tags</a>
 * <a href="http://ak.net84.net/projects/enqueuing-themes-and-fonts-in-crayon/" target="_blank">Enqueuing Themes and Fonts in Crayon</a> 
 
-**Planned Features**
+**The Press**
 
-* Ruby support (feel free to add before me!)
-* Highlighting in sentences
+A handful of articles from others written about Crayon, thanks guys!
+
+
+* <a href="http://selfpwnt.com/crayon-syntax-highlighter-and-its-studly-author/" target="_blank">Crayon Syntax Highlighter (and its studly author)</a>
+* <a href="http://bit51.com/add-code-to-your-wordpress-posts-with-crayon-syntax-highlighter/" target="_blank">Add Code To Your WordPress Posts With Crayon Syntax Highlighter</a>
+* <a href="http://www.wpsquare.com/syntax-highlighter-wordpress-plugins/" target="_blank">15 Best Syntax Highlighter WordPress Plugins</a>
+* <a href="http://www.doitwithwp.com/displaying-code-in-wordpress-with-crayon-syntax-highlighter/" target="_blank">Displaying Code in WordPress with Crayon </a>
+* <a href="http://blog.boxedpages.net/2012/03/15/abap-syntaxhighlighting-in-wordpress/" target="_blank">ABAP Syntax Highlighting in WordPress (German)</a>
+* <a href="http://jstips.org/2012/04/23/crayon-syntax-highlighter-plugin/" target="_blank">Crayon Syntax Highlighter plugin</a>
+* <a href="http://infodrug.ru/wordpress/kak-krasivo-vstavit-programmnyj-kod-v-wordpress-podsvetka-sintaksisa.html" target="_blank">Crayon Syntax Highlighter (Russian)</a>
+* <a href="http://n-wp.ru/11513" target="_blank">Crayon Syntax Highlighter (also Russian)</a>
+* <a href="http://kampungtoys.com/tag/crayon-syntax-highlighter/" target="_blank">How To Post Source Code</a>
+* http://wp-best-practices.asdf573189.com/home/good-plugins/crayon-syntax-highlighter/
+* http://www.wplover.com/2155/crayon-syntax-highlighter-plugin/
+* http://www.htmlandphp.com/scripts/crayon-syntax-highlighter.html
+
+**Future Development**
+
+* Performance, minimised resources
 * Theme Editor
-* Visual Editor Support
 
 == Installation ==
 
-Download the .zip of the plugin and extract the contents. Upload it to the Wordpress plugin directory and activate the plugin.
-You can change settings and view help under <strong>Settings > Crayon</strong> in the Wordpress Admin.
+* Download the .zip of the plugin and extract the contents.
+* Upload it to the Wordpress plugin directory and activate the plugin.
+* Even easier, just go to <strong>Plugins > Add New</strong> and search for "Crayon". 
+* You can change settings and view help under <strong>Settings > Crayon</strong> in the Wordpress Admin.
+* Make sure your theme either manually specifies jQuery, or uses the version shipped with Wordpress (recommended). You should NOT print out jQuery manually in the header as a script tag. <a href="http://wordpress.stackexchange.com/questions/1535/how-to-dequeue-a-script" target="_blank">Enqueueing it in Wordpresss</a> will prevent duplicate jQuery includes (also bad) and will allow other scripts to be placed AFTER jQuery in the head tag so they can use it. If you're uncertain, just let Wordpress handle it and remove any jQuery script tags you find in your theme's header.php. 
 
 == Frequently Asked Questions ==
 
-= How do I use this thing? =
+= How do I use the Tag Editor? =
+
+The <a href="http://ak.net84.net/projects/crayon-tag-editor/" target="_blank">Tag Editor</a> provides a dialog box to add Crayons easily.
+
+= How do I use it manually? =
 
 <code>[crayon lang="php"] your code [/crayon]</code>
 <code>[crayon url="http://example.com/code.txt" /]</code>
-<code>[crayon url="/local-path-defined-in-settings/code.java" /]</code>
+<code>[crayon url="/relative-path-added-to-local-path-defined-in-settings/code.java" /]</code>
 
 You can use &lt;pre&gt;:
 
-<code>&lt;pre lang="php"&gt; your code &lt;/crayon&gt;</code>
+<code>&lt;pre lang="php"&gt; your code &lt;/pre&gt;</code>
+
+You can use an HTML5 compliant &lt;pre&gt; (recommended):
+
+<code>&lt;pre class="lang:php mark:1-4,3" title="some title"&gt; your code &lt;/pre&gt;</code>
 
 You can also use Mini Tags:
 
 <code>[php theme="twilight"]your code[/php]</code>
 
-Please see the contextual help under <strong>Settings > Crayon</strong> for quick info about languages, themes, etc.
+<code>[php url="https://raw.github.com/somefile.php" /]</code>
 
-= I need help, now! =
+Please see the <a href="http://ak.net84.net/projects/crayon-syntax-highlighter/" target="_blank">documentation</a> for more details.
+
+= Why are the controls not working? =
+
+Make sure jQuery is included in your theme ONCE and before all its dependents (see Installation).
+
+= Why am I only seeing [crayon-3ffr7fa34a321/]? =
+
+Your theme is being naughty. Find where it prints the content/excerpt on that page in the PHP and make sure to add this line before printing:
+
+$output = apply_filters('the_content', $output);
+
+This ensures that the content can be filtered by plugins, such as Crayon. Otherwise, Crayon detects and creates the code but can't replace those funny looking tags in the content.
+
+= Support =
 
 Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
@@ -120,11 +194,191 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 1. Classic theme.
 2. Twilight theme.
+3. Mixed Language Highlighting.
+4. Tag Editor.
 
 == Changelog ==
 
+= 1.9.8 =
+* New API to access Crayon internals
+* Added TeX thanks to http://blog.keyboardplaying.org/2012/06/08/syntax-highlighting-latex/
+* Moved update method into settings page to improve efficiency a bit
+* Fixed an issue causing HTML spaces to appear in plain code
+* Made sure \r\n was present for all line breaks in plain code
+
+= 1.9.7 =
+* Fixed a crucial but hard to spot bug causing Crayon code to break by incorrectly handling ignored Crayons
+* Added functions to generate Crayons when given Crayon tags in strings like the post content
+* Added width:100%; so CSS float works
+* Removed bit.ly links from this readme
+
+= 1.9.6 =
+* Fixed a bug causing wordpress wp_content path customisations to break the tag editor and live preview
+* Fixed a bug with marked lines using ranges
+
+= 1.9.5 =
+* Fixed a bug that prevent Crayons from being captured internally, only affected on certain themes
+* Fixed a bug causing backquotes being changed to code within Crayon code
+
+= 1.9.4 =
+* Added /util/external_use.php for an example of how to use Crayon in other PHP environments.
+* Fixed issues with the excerpt, now Crayons are not stripped out by default, can be changed in Settings &gt; Misc. 
+* Fixed font-size issues that may conflict on some themes.
+* Crayons in comments now have their HTML entities decoded by default, specify "decode:false" in the class attr or decode="false" as an attr if you don't want it to decode.
+* Fixed a newline bug thanks to Eugene at http://iteye.ru/ 
+
+= 1.9.3 =
+* Added Perl
+* Minor bugs fixed thanks to http://hahler.de
+* Fixed bug in js detecting PCs as Macs
+* Fixed IE bug preventing code from opening in a window
+* Fixed bug causing comment &lt;p&gt; tags being removed
+
+= 1.9.2 =
+* Fixed an error preventing code containing HTML tags from being added using the Tag Editor in Visual mode
+* Fixed CSS for Mixed Highlighting (+)
+* Added a new theme thanks to http://blog.phiphou.com
+
+= 1.9.1 =
+* Added Assembly (x86)
+* Standardised the toolbar buttons, now they use CSS spriting and have the same colour 
+* Changed Theme CSS background to avoid conflicts with themes that affect TD tags
+* Fixed bug caused by discrepancies in how checkbox values were handled in Tag Editor
+* Fixed a bug causing $root variable to change on some setups, preventing tag editor from loading
+
+= 1.9.0 =
+* This update is the biggest update yet - highly recommended for all users.
+* Added a brand new Tag Editor in the Visual Editor toolbar! <strong>Greatly</strong> simplifies adding code to posts in the Visual Editor. You can also switch between Visual and HTML modes to verify your code before posting!
+* Added ability to decode HTML entities, so now you can use &lt;, &gt; etc. in the Visual Editor. But if you need indentation etc, you'll want to use the HTML editor for posts with Crayons. You can also use decode="yes/no/true/false" to set this for an individual Crayon.
+* Added ability to decode attributes, which is enabled by default to avoid seeing encoded strings in the title, and also to allow encoded angle/square brackets in the title that would otherwise clash with the Crayon tag brackets if left unencoded.
+* Added ability to use the class attribute in &lt;pre&gt; tags for specifying settings like url, mark, lang, toolbar and all other valid settings like in a normal [crayon] tag. This will ensure your &lt;pre&gt; tags remain valid XHTML markup even with Crayon disabled.
+* Added ability to specify hyphen-separated-values in the class attribute of a &lt;pre&gt; tag to make them look like actual class selectors. E.g. &lt;pre class="lang-objc toolbar-false"&gt;...&lt;/pre&gt;. The setting name is made up of letters and hyphens ONLY, the value is whatever is left between the last hyphen and the next whitespace character.  
+* Added Scheme language thanks to https://github.com/harry75369
+* Added ABAP language with help from Christian Fein
+* Added a new setting: crayon="false/no/0" as an attribute or crayon:false in the class tag of a &lt;pre&gt;. This will ignore the &lt;pre&gt; tag and not turn it into a Crayon for those rare cases you don't want to use the plugin.
+* Improved the method of finding posts with Crayons - now it will search through all posts for Crayons and save the ids in the options db. When the_posts is called, it won't need to do any extra searching on page loading and will already know which post has Crayons. Like before, pages which might use page templates will turn off enqueuing of fonts and themes to ensure they are always printed.
+* Overriden Language File elements are now put first in the CSS class name, so the extended element can override in a theme
+* Prevented capturing Crayons in the admin
+* Crayons now use HTML5 valid markup
+* I'm still sticking to the wrap="off" for no-wrapping preformatted styling - CSS doesn't do the trick yet: http://stackoverflow.com/questions/657795/how-remove-wordwrap-from-textarea
+* Improved ajax handling
+* Cleaned up the settings screen
+* Line numbers now use UID in id to avoid duplicates
+* Crayon CSS updated to use inline styles and never use style tags in the body
+* Simplified the toolbar buttons to suit the minimalistic design of the rest of Crayon. It'll look badass with an inset shadow in a future theme...
+* Plain tags are now just &lt;pre&gt; tags and don't contain the inline code tag since they are block tags.
+* Fixed a MAJOR bug preventing previously captured Crayons from being applied to post content!
+* Fixed a bug causing case insensitive Boolean settings to fail at times
+* Fixed a bug causing a [crayon ... /] tags to be recognised as [c ... /] tags (added a \b)
+* Fixed a bug preventing highlight="false" from working
+* Fixed a bug preventing mouse events for showing plain code when toolbar is always hidden
+* Fixed a bug preventing smart enqueuing from detecting if a Crayon was present before enqueuing resources.
+* Fixed a bug causing inline tags to be surround in &lt;p&gt; tags
+* Fixed a bug causing toolbar=1 to be regarded as toolbar=false from legacy settings
+* Fixed a bug causing content to be specified but not formatted for URLs with no code given
+* Fixed removing $ in font of ignored crayons like $&lt;pre...
+* Fixed js .style bugs in < IE 9
+* Cleaned up code for specifying attributes, NULL attributes are not passed as empty strings anymore. 
+* The log looks cleaner now
+* Now crayons are replaced with [crayon-id/] in posts before being replaced with the actual Crayon 
+* If js ever fails to load, it won't affect styling, just functionality
+* Added ability to use closed Mini Tags like [php ... \] when you're just giving a URL
+* Added lenient spaces for closed tags
+* Fixed element content text in XHTML to avoid capturing "" as strings
+* Added Lithuanian translation thanks to <a href="http://www.host1free.com" target="_blank">Vincent G</a>
+
+= 1.8.3 =
+* Added inline support for Crayons using the inline="true" attribute or even cooler with {php}...{/php} style tags.
+* `backquotes` become &lt;code&gt;
+* Added support for Crayons in comments!
+* Added Apache
+* Fixed a bug causing irregular formatting of Crayons by increasing the priority of the_content filter, thanks to http://joshmountain.com/
+* Added sample code for missing languages in Live Preview
+
+= 1.8.2 =
+* Added AutoIt and PowerShell
+* Fixed a bug causing single line comments on the last line without carriage return to be ignored.
+* Fixed bug causing crayon.js to fail when show-plain-default was enabled thanks to http://www.stuarticus.com/
+
+= 1.8.1 =
+* Added Lua
+* Added YAML
+* Added different highlighting for preprocessor in C, C++, C# and Obj-C. Any other lang can use it as well.
+* Improved Russian translation thanks to Di_Skyer (http://atlocal.net/)
+* Added new "Neon" theme thanks to Di_Skyer (http://atlocal.net/)
+* Added ability to log debug messages if CRAYON_DEBUG is TRUE in global.php
+* Added ALLOW_MIXED = YES/NO option in language files to disable ability to have mixed language highlighting
+
 = 1.8.0 =
-* Theme Editor coming soon!
+* Added PostgreSQL thanks to Emiliano Leporati and Alessandro Venezia from http://bitorchestra.com/
+* Added ActionScript
+* Thanks to Thomas Tan for finding and fixing IE6 compatibility bugs in crayon.js!
+* Improved Objective-C, XHTML and default language
+* ?alt: tag now supports spaces in language files, treats then as \s+
+* Added support for single quotes in CSS and JS
+
+= 1.7.30 =
+* Added Inventor iLogic as a language
+* Added cellspacing and cellpadding back into table due to spacing issue after trying to conform to W3C standards...
+* Improved default language constants
+* Added missing language samples for live preview (ruby, monkey and ilogic)
+* More prominent "show language" button
+
+= 1.7.29 =
+* Thanks to @west_323 for updating the Japanese translation
+
+= 1.7.28 =
+* Fixed a bug prevent attributes from being detected since 1.7.24
+* Added Turkish languge thanks to Hakan (http://kazancexpert.com)
+
+= 1.7.27 =
+* Recommended update for everyone. This fixes a bug in 1.7.25 where Mixed Highlighting would fail inside an html tag
+* Greatly simplified the mixed highlighting method, more robust
+* Made it impossible to nest delimiters, which mimics the behaviour in supported languages. 
+
+= 1.7.26 =
+* Added translations to the tooltips and copy notification in the toolbar
+
+= 1.7.25 =
+* German translation improved by Stephan Knau&szlig;;
+* Added missing translations in other languages and fixed bug preventing dropdowns from being translated
+* Added translators to the about page
+* Oh, added <code>&lt;html&gt;...&lt;/html&gt;</code> tag into the delimiters
+* But of course, if you wanted say HTML with PHP, then you'd set the language to HTML and use <code>&lt;?php ... ?&gt;</code> tag when you needed them
+
+= 1.7.24 =
+* Added support for Ruby(on Rails)?
+* Added support for Ruby file extensions like rb, rbx
+* Added "rb" alias for [rb][/rb] Mini Tags
+* Added RHTML delimiters like %lt;% and %%gt;
+* Added a bottom margin to the Plain Tag
+* Added support for quotes in the title attribute
+* You still need to use <code>" some 'title'"</code> or <code>' some "title" '</code> properly, not "' or '" ;)
+
+= 1.7.23 =
+* Remove 'theme-font' and replaced default as 'Monaco'.
+* Remove @import for fonts and replace with CSS tags. This should fix any 404 issues.
+* Now all fonts reside in /fonts with font-face fonts having a separate directory by their name to store the font vectors etc
+
+= 1.7.22 =
+* Fixed dimension and redraw issues on scrollbars
+
+= 1.7.21 =
+* Fixed a bug that relied on register_activation_hook to update the database on auto update
+
+= 1.7.20 =
+* "Always display scrollbars" now a checkbox
+
+= 1.7.19 =
+* Fixed issue with Crayons failing to load on pages with templates containing The Loop. http://ak.net84.net/crayon/failing-to-load-crayons-on-pages/
+* Objective-C operators improved
+
+= 1.7.18 =
+* Fixed issue with extra &lt;br/&gt; and &lt;p&gt; tags before and after Crayons
+
+= 1.7.17 =
+* Added a setting to use just the main WP query or to use the_posts wherever it is used (default now).
+* Improved XHTML
 
 = 1.7.16 =
 * Running out of revision numbers!
@@ -135,6 +389,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Improved CSS language
 * Improved JS language by adding regex syntax, yay!
 * Fixed issues with resizing Crayon and dimensions
+* Added support for custom excerpts
 
 = 1.7.15 =
 * Fixed a bug prevented fonts and themes with spaces from being enqueued. Thanks to Fredrik Nygren.
@@ -183,7 +438,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added namespacing to crayon.js to prevent conflicts
 
 = 1.7.3 =
-* Added Mini Tags and Plain Tags into Crayon. http://bit.ly/rRZuzk
+* Added Mini Tags and Plain Tags into Crayon. http://ak.net84.net/projects/mini-tags-in-crayon/
 * Fixed a bug causing RSS feeds to contain malformed HTML of Crayons, now it shows plain code with correct indentations. Thanks to Артём.
 * Updated help in Settings and http://ak.net84.net/projects/crayon-syntax-highlighter/
 
@@ -194,7 +449,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Renamed Japanese GNU language code from ja_JP to ja.
 
 = 1.7.0 =
-* Added the ability to highlight multiple languages in a single Crayon! http://bit.ly/ukwts2
+* Added the ability to highlight multiple languages in a single Crayon! http://ak.net84.net/projects/mixed-language-highlighting-in-crayon/
 * A bunch of language improvements, a few CSS improvements, etc.
 
 = 1.6.6 =
@@ -366,11 +621,26 @@ http://wordpress.org/support/topic/plugin-crayon-syntax-highlighter-this-plugin-
 
 == Upgrade Notice ==
 
-Make sure to upgrade to the latest release when possible, I usually fix bugs on the day and add new features quickly. 
+Make sure to upgrade to the latest release when possible to ensure you avoid bugs others have found and enjoy new features. 
 
 == Donations ==
 
-Thanks to all those who donate to my project!
+Thanks to all those who donate to my project, your support keeps the Crayons going!
 
-Nick Weisser (http://www.openstream.ch/), Switzerland
-Perry Bonewell (http://pointatthemoon.co.uk/), United Kingdom
+* Oldrich Strachota, (http://www.strachota.net/), Czech Republic
+* Dividend Ninja, (http://dividendninja.com/), Canada
+* Chris Wiegman, (http://bit51.com/), USA
+* Sven Meier, (http://www.codesix.net/), Germany
+* Christy Wiggins, (http://www.jinxyisms.com/), USA
+* eSnipe, Inc. (http://esnipe.com/), USA (again!)
+* Aliseya Wright, (http://blog.xoxothemes.com/), USA
+* Jeremy Worboys (http://complexcompulsions.com/), Australia
+* Steve McGough, Spider Creations, LLC. (http://spidercreations.net/), USA
+* eSnipe, Inc. (http://esnipe.com/), USA
+* Gerald Drouillard (http://www.drouillard.biz/), USA
+* Greg Pettit (http://blog.monkey-house.ca/), Canada
+* Waimanu Solutions (http://daveblog.waimanu.web44.net/), USA
+* Andrew McDonnell (http://blog.oldcomputerjunk.net/), Australia
+* Perry Bonewell (http://pointatthemoon.co.uk/), United Kingdom
+* Nick Weisser (http://www.openstream.ch/), Switzerland
+

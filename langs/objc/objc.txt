@@ -3,20 +3,25 @@
 #   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
 
     NAME                Objective-C
-    VERSION             1.0
+    VERSION             1.8.1
 
-    COMMENT             (?default)|(#.*?$)
+    COMMENT             (?default)
+    PREPROCESSOR		(?default)
     STRING              (@?(?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)')
     NOTATION            \<.+\>
     
     STATEMENT           (?alt:statement_at.txt)\b|\b(?alt:statement.txt)\b
     RESERVED            (?alt:reserved_at.txt)\b|\b(?alt:reserved.txt)\b
-    TYPE                \b(?alt:type.txt)\b
+    TYPE                \b(?alt:type.txt)\b|(\b[a-z_]\w+\b\s+(?=\b[a-z_][\w]+\b(?!\s*\:)))
     MODIFIER            (?alt:modifier_at.txt)\b|\b(?alt:modifier.txt)\b
     
-    ENTITY              (\b[a-z_]\w*\b(?=\s*\([^\)]*\)))|((?<!\.)(\b[a-z_]\w*\b)(?=[^},.:;\)]*{))|(\b[a-z_]\w+\b\s+(?=\b[a-z_][\w]+\b(?!\s*\:)))|(\b[a-z_]\w*\s*\*)|(?-i:NS[\w]+)
+	CONSTANT            (?default)|\b(?alt:constant.txt)\b
+    ENTITY              (\b[a-z_]\w*\b(?=\s*\([^\)]*\)))|(\b[a-z_]\w+\b\s+(?=\b[a-z_][\w]+\b(?!\s*\:)))|(?-i:NS[\w]+)
+    FUNC:ENTITY			\b\w+\b\s*(?=:[^;]*[\{;])
+    POINTER_TYPE:TYPE	(\b[a-z_]\w*\s*(?=\*)|\*(?=\s*\)))
+    RETURN:TYPE			\b\w+\b(?=\s*\)\s*\w+\s*[:;\{])
+    
     VARIABLE            (?default)|(\*\w+)
     IDENTIFIER          (?default)
-    CONSTANT            (?default)|\b(?alt:constant.txt)\b
     OPERATOR            (?default)
     SYMBOL              (?default)

@@ -151,6 +151,14 @@ class CrayonUtil {
 	public static function htmlentities($str) {
 		return htmlentities($str, ENT_COMPAT, 'UTF-8');
 	}
+	
+	public static function html_entity_decode($str) {
+		return html_entity_decode($str, ENT_NOQUOTES, 'UTF-8');
+	}
+	
+	public static function htmlspecialchars($str) {
+		return htmlspecialchars($str, ENT_NOQUOTES, 'UTF-8');
+	}
 
 	// Sets a variable to an int if valid
 	public static function num(&$var, $num) {
@@ -227,6 +235,11 @@ class CrayonUtil {
 		} else {
 			return FALSE;
 		}
+	}
+	
+	// Ensure all parenthesis are atomic to avoid conflicting with element matches
+	public static function esc_atomic($regex) {
+		return preg_replace('#(?<!\\\\)\((?!\?)#', '(?:', $regex);
 	}
 
 	// Removes crayon plugin path from absolute path
@@ -400,7 +413,14 @@ class CrayonUtil {
 				return TRUE;
 			}
 		}
-		
+	}
+	
+	public static function bool_to_str($bool, $strict = FALSE) {
+		if ($strict) {
+			return $bool === TRUE  ? 'true' : 'false';
+		} else {
+			return $bool ? 'true' : 'false';
+		}
 	}
 	
 	public static function tlower($str) {
@@ -422,9 +442,9 @@ class CrayonUtil {
 	// Detect if on a Mac or PC
 	public static function is_mac($default = FALSE) {
 		$user = $_SERVER['HTTP_USER_AGENT'];
-		if (stripos($user, 'macintosh')) {
+		if (stripos($user, 'macintosh') !== FALSE) {
 			return TRUE;
-		} else if (stripos($user, 'windows') || stripos($user, 'linux')) {
+		} else if (stripos($user, 'windows') !== FALSE || stripos($user, 'linux') !== FALSE) {
 			return FALSE;
 		} else {
 			return $default===TRUE;

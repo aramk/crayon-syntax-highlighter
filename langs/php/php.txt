@@ -3,9 +3,7 @@
 #   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
 
     NAME                        PHP
-    VERSION                     1.7.0
-
-    #HTML:FADED 		            ((?<=\?>).*?(?=<\?(?:php)?))|(\A.*?(?=<\?(?:php)?))|((?<=\?>).*\Z)
+    VERSION                     1.9.4
   
     COMMENT                     (?default)|(\#.*?$)
     STRING                      (?default)|(<<<EOT.*?^EOT)
@@ -21,7 +19,8 @@
     RES_CONST:ENTITY            \b(?alt:reserved.txt)\b
     ENTITY                      (?default)|\b[a-z_]\w*::
     VARIABLE                    \$[a-z_]\w*\b
-    IDENTIFIER                  \b[a-z_]\w*\b\s*(?=\([^\)]*\))
-    CONSTANT                    \b[a-z_]\w*\b
+    OTHER_ID:IDENTIFIER         \b[a-z_]\w*\b\s*(?=\([^\)]*\))
+    CONSTANT                    (?-i)\b[A-Z_]*\b(?i)
+    IDENTIFIER                  (?default)
     OPERATOR                    (?default)
     SYMBOL                      (?default)

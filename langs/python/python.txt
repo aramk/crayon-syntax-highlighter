@@ -7,7 +7,7 @@
     NAME                Python
     VERSION             1.1
 
-    COMMENT             (#[^\r\n]*)
+    COMMENT             (#.*?$)
     STRING              (?:(?<!\\)""".*?(?<!\\)""")|(?:(?<!\\)'''.*?(?<!\\)''')|((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)')
     
     FUNCTION:KEYWORD    \b(?alt:function.txt)\b

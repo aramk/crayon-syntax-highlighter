@@ -12,7 +12,7 @@ class CrayonLangsResourceType {
 class CrayonLangs extends CrayonResourceCollection {
 	// Properties and Constants ===============================================
 	// CSS classes for known elements
-	private static $known_elements = array('COMMENT' => 'c', 'STRING' => 's', 'KEYWORD' => 'k', 
+	private static $known_elements = array('COMMENT' => 'c', 'PREPROCESSOR' => 'p', 'STRING' => 's', 'KEYWORD' => 'k', 
 			'STATEMENT' => 'st', 'RESERVED' => 'r', 'TYPE' => 't', 'TAG' => 'ta', 'MODIFIER' => 'm', 'IDENTIFIER' => 'i', 
 			'ENTITY' => 'e', 'VARIABLE' => 'v', 'CONSTANT' => 'cn', 'OPERATOR' => 'o', 'SYMBOL' => 'sy', 
 			'NOTATION' => 'n', 'FADED' => 'f', CrayonParser::HTML_CHAR => 'h', CrayonParser::CRAYON_ELEMENT => 'crayon-internal-element');
@@ -22,10 +22,7 @@ class CrayonLangs extends CrayonResourceCollection {
 	const RESOURCE_TYPE = 'CrayonLangsResourceType';
 	
 	// Used to cache the objects, since they are unlikely to change during a single run
-	private static $resource_cache = array(); 
-//	private static $extensions = NULL;
-//	private static $aliases = NULL;
-//	private static $delimiters = NULL;
+	private static $resource_cache = array();
 	
 	// Methods ================================================================
 	public function __construct() {
@@ -282,6 +279,7 @@ class CrayonLang extends CrayonVersionResource {
 	//private $regex = '';
 	private $state = self::UNPARSED;
 	private $modes = array();
+	// Whether this language allows Multiple Highlighting from other languages
 	const PARSED_ERRORS = -1;
 	const UNPARSED = 0;
 	const PARSED_SUCCESS = 1;
@@ -331,9 +329,13 @@ class CrayonLang extends CrayonVersionResource {
 			return $this->delimiters;
 		// Convert to regex for capturing delimiters
 		} else if (is_string($delim) && !empty($delim)) {
-			$this->delimiters = '#(?:'.$delim.')#msi';
+			$this->delimiters = '(?:'.$delim.')';
 		} else if (is_array($delim) && !empty($delim)) {
-			$this->delimiters = '#(?:'.implode(')|(?:', $delim).')#msi';
+			for ($i = 0; $i < count($delim); $i++) {
+				$delim[$i] = CrayonUtil::esc_atomic($delim[$i]);
+			}
+			
+			$this->delimiters = '(?:'.implode(')|(?:', $delim).')';
 		}
 	}
 

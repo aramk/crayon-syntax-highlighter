@@ -10,8 +10,18 @@ Author URI: http://ak.net84.net/
 .crayon-theme-twilight {
     border: 1px #333 solid !important;
     text-shadow: none !important;
-    background: #2d2d2d !important;
     color: #fff;
+}
+
+.crayon-theme-twilight,
+.crayon-theme-twilight .crayon-code {
+	background: #2d2d2d !important;
+}
+
+/* Inline Style */
+.crayon-theme-twilight-inline {
+	border: 1px solid #333 !important;
+	background: #333 !important;
 }
 
 .crayon-theme-twilight span {
@@ -103,7 +113,7 @@ Author URI: http://ak.net84.net/
     color: #666 !important;
 }
 .crayon-theme-twilight .crayon-toolbar .crayon-mixed-highlight {
-	background-image: url('../../css/images/toolbar/plus_dark.png');
+	background-position: -24px center;
 }
 
 /* Buttons */
@@ -112,14 +122,14 @@ Author URI: http://ak.net84.net/
 }
 .crayon-theme-twilight a.crayon-button:hover,
 .crayon-theme-twilight a.crayon-button.crayon-pressed:hover {
-	background-color: #ddd;
+	background-color: #ccc;
     color: #666;
 }
 /* :active MUST come after :hover */
 .crayon-theme-twilight a.crayon-button.crayon-pressed,
 .crayon-theme-twilight a.crayon-button.crayon-pressed:active,
 .crayon-theme-twilight a.crayon-button:active {
-	background-color: #777;
+	background-color: #999;
     color: #ccc;
 }
 /* End Code Style ================== */
@@ -127,6 +137,9 @@ Author URI: http://ak.net84.net/
 /* Syntax Highlighting ============= */
 .crayon-theme-twilight .crayon-pre .c {
     color: #7f7b80 !important;
+}
+.crayon-theme-twilight .crayon-pre .p {
+    color: #a19ba2 !important;
 }
 .crayon-theme-twilight .crayon-pre .s {
     color: #a0ab83 !important;

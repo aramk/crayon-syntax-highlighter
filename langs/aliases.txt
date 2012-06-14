@@ -9,3 +9,10 @@ python py
 vb vbs
 js javascript
 sh shell unix bash
+ruby rb
+ilogic logic inventor inv ilog
+pgsql sql mysql
+as flash swf fla
+ps powershell
+asm x86
+perl pl

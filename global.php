@@ -2,11 +2,11 @@
 
 // Switches
 
-// Enable to show exceptions on screen
 define('CRAYON_DEBUG', FALSE);
 
 // TODO remove once done
-define('CRAYON_THEME_EDITOR', false);
+define('CRAYON_TAG_EDITOR', TRUE);
+define('CRAYON_THEME_EDITOR', FALSE);
 
 // Constants
 
@@ -19,8 +19,9 @@ define('CRAYON_DOMAIN', 'crayon-syntax-highlighter');
 $CRAYON_VERSION = '1.1.1' . $uid;
 $CRAYON_DATE = '27th September, 2011';
 $CRAYON_AUTHOR = 'Aram Kocharyan';
-$CRAYON_WEBSITE = 'http://ak.net84.net/?go=crayon';
-$CRAYON_WEBSITE_DOCS = 'http://ak.net84.net/?go=crayondocs';
+$CRAYON_AUTHOR_SITE = 'http://ak.net84.net/';
+$CRAYON_DONATE = 'http://bit.ly/crayondonate';
+$CRAYON_WEBSITE = 'http://ak.net84.net/projects/crayon-syntax-highlighter';
 $CRAYON_EMAIL = 'crayon.syntax@gmail.com';
 $CRAYON_TWITTER = 'http://twitter.com/crayonsyntax';
 
@@ -41,6 +42,7 @@ define('CRAYON_CSS_DIR', crayon_s('css'));
 define('CRAYON_JS_DIR', crayon_s('js'));
 define('CRAYON_TRANS_DIR', crayon_s('trans'));
 define('CRAYON_THEME_EDITOR_DIR', crayon_s('theme-editor'));
+define('CRAYON_TAG_EDITOR_DIR', crayon_s('tag-editor'));
 
 // Paths
 
@@ -65,6 +67,11 @@ define('CRAYON_HELP_FILE', CRAYON_UTIL_PATH . 'help.htm');
 define('CRAYON_JQUERY_POPUP', CRAYON_JS_DIR . 'jquery.popup.js');
 define('CRAYON_JS', CRAYON_JS_DIR . 'crayon.js');
 define('CRAYON_JS_ADMIN', CRAYON_JS_DIR . 'crayon_admin.js');
+define('CRAYON_JS_UTIL', CRAYON_JS_DIR . 'util.js');
+define('CRAYON_TE_JS', 'crayon_te.js');
+define('CRAYON_TE_PHP', 'crayon_te_content.php');
+define('CRAYON_TINYMCE_JS', 'crayon_tinymce.js');
+define('CRAYON_QUICKTAGS_JS', 'crayon_qt.js');
 define('CRAYON_STYLE', CRAYON_CSS_DIR . 'style.css');
 define('CRAYON_STYLE_ADMIN', CRAYON_CSS_DIR . 'admin_style.css');
 define('CRAYON_LOGO', CRAYON_CSS_DIR . 'images/crayon_logo.png');
@@ -93,7 +100,7 @@ define('CRAYON_THEME_EDITOR_PHP', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR . 'e
 // Script time
 
 define('CRAYON_LOAD_TIME', 'Load Time');
-define('CRAYON_PARSE_TIME', 'Parse Time');
+//define('CRAYON_PARSE_TIME', 'Parse Time');
 define('CRAYON_FORMAT_TIME', 'Format Time');
 
 // Printing
@@ -165,13 +172,23 @@ function crayon_set_info_key($key, $array, &$info) {
 	}
 }
 
+function crayon_vargs(&$var, $default) {
+	$var = isset($var) ? $var: $default;
+}
+
 // LANGUAGE TRANSLATION FUNCTIONS
+
+function crayon_load_plugin_textdomain() {
+	if (function_exists('load_plugin_textdomain')) {
+		load_plugin_textdomain(CRAYON_DOMAIN, false, CRAYON_DIR.CRAYON_TRANS_DIR);
+	}
+}
 
 function crayon__($text) {
 	if (function_exists('__')) {
 		return __($text, CRAYON_DOMAIN);
 	} else {
-		return $text;
+		return $text . CRAYON_DOMAIN;
 	}
 }
 

@@ -9,7 +9,17 @@ Author URI: http://epicgeeks.net/
 .crayon-theme-epicgeeks {
     border: 1px #e1e1e1 solid !important;
     text-shadow: none !important;
-    background: #ffffe1 !important;
+}
+
+.crayon-theme-epicgeeks,
+.crayon-theme-epicgeeks .crayon-code {
+	background: #ffffe1 !important;
+}
+
+/* Inline Style */
+.crayon-theme-epicgeeks-inline {
+	border: 1px solid #e1e1e1 !important;
+	background: #ffffe1 !important;
 }
 
 .crayon-theme-epicgeeks .crayon-nums {
@@ -179,6 +189,9 @@ Author URI: http://epicgeeks.net/
 
 .crayon-theme-epicgeeks .crayon-pre .c {
     color: #787878 !important;
+}
+.crayon-theme-epicgeeks .crayon-pre .p {
+    color: #a3a3a3 !important;
 }
 .crayon-theme-epicgeeks .crayon-pre .s {
     color: #90c300 !important;

@@ -13,6 +13,14 @@ class CrayonSettings {
 	// Plugin data
 	const VERSION = 'version';
 
+	// Added when used in HTML to avoid id conflicts
+	const PREFIX = 'crayon-';
+	const SETTING = 'crayon-setting';
+	const SETTING_SELECTED = 'crayon-setting-selected';
+	const SETTING_CHANGED = 'crayon-setting-changed';
+	const SETTING_SPECIAL = 'crayon-setting-special';
+	const SETTING_ORIG_VALUE = 'data-orig-value';
+	
 	// Global names for settings
 	const THEME = 'theme';
 	const FONT = 'font';
@@ -59,7 +67,6 @@ class CrayonSettings {
 	const PLAIN_TOGGLE = 'plain-toggle';
 	const SHOW_PLAIN = 'show-plain';
 	const DISABLE_RUNTIME = 'runtime';
-	const EXP_SCROLL = 'exp-scroll';
 	const TOUCHSCREEN = 'touchscreen';
 	const DISABLE_ANIM = 'disable-anim';
 	const ERROR_LOG = 'error-log';
@@ -77,6 +84,20 @@ class CrayonSettings {
 	const SHOW_PLAIN_DEFAULT = 'show-plain-default';
 	const ENQUEUE_THEMES = 'enqueque-themes';
 	const ENQUEUE_FONTS = 'enqueque-fonts';
+	const MAIN_QUERY = 'main-query';
+	const SAFE_ENQUEUE = 'safe-enqueue';
+	const INLINE_TAG = 'inline-tag';
+	const INLINE_MARGIN = 'inline-margin';
+	const INLINE_WRAP = 'inline-wrap';
+	const BACKQUOTE = 'backquote';
+	const COMMENTS = 'comments';
+	const DECODE = 'decode';
+	const DECODE_ATTRIBUTES = 'decode-attributes';
+	const TINYMCE_USED = 'tinymce-used';
+	const ATTR_SEP = 'attr-sep';
+	const EXCERPT_STRIP = 'excerpt-strip';
+//	const TINYMCE_LINE_BREAK = 'tinymce-line-break';
+//	const TINYMCE_ADD_OVERRIDDEN = 'tinymce-add-overridden';
 	
 	private static $cache_array;
 	
@@ -96,9 +117,6 @@ class CrayonSettings {
 	private static $default = NULL;
 
 	function __construct() {
-		self::$cache_array = array(crayon__('Hourly') => 3600, crayon__('Daily') => 86400,
-									crayon__('Weekly') => 604800, crayon__('Monthly') => 18144000,
-									crayon__('Immediately') => 1);
 		$this->init();
 	}
 	
@@ -114,6 +132,13 @@ class CrayonSettings {
 
 	private function init() {
 		global $CRAYON_VERSION;
+		
+		crayon_load_plugin_textdomain();
+		
+		self::$cache_array = array(crayon__('Hourly') => 3600, crayon__('Daily') => 86400,
+				crayon__('Weekly') => 604800, crayon__('Monthly') => 18144000,
+				crayon__('Immediately') => 1);
+		
 		$settings = array(
 			new CrayonSetting(self::VERSION, $CRAYON_VERSION, NULL, TRUE),
 			new CrayonSetting(self::THEME, CrayonThemes::DEFAULT_THEME), 
@@ -156,7 +181,7 @@ class CrayonSettings {
 			new CrayonSetting(self::TAB_SIZE, 4), 
 			new CrayonSetting(self::FALLBACK_LANG, CrayonLangs::DEFAULT_LANG), 
 			new CrayonSetting(self::LOCAL_PATH, ''), 
-			new CrayonSetting(self::SCROLL, array(crayon__('On MouseOver'), crayon__('Always'))), 
+			new CrayonSetting(self::SCROLL, FALSE), 
 			new CrayonSetting(self::PLAIN, TRUE),
 			new CrayonSetting(self::PLAIN_TOGGLE, TRUE),
 			new CrayonSetting(self::SHOW_PLAIN_DEFAULT, FALSE),
@@ -164,8 +189,7 @@ class CrayonSettings {
 					array(crayon__('On Double Click'), crayon__('On Single Click'), crayon__('On MouseOver'), crayon__('Disable Mouse Events'))), 
 			new CrayonSetting(self::DISABLE_ANIM, FALSE),
 			new CrayonSetting(self::TOUCHSCREEN, TRUE), 
-			new CrayonSetting(self::DISABLE_RUNTIME, FALSE),
-			new CrayonSetting(self::EXP_SCROLL, FALSE), 
+			new CrayonSetting(self::DISABLE_RUNTIME, FALSE), 
 			new CrayonSetting(self::ERROR_LOG, TRUE),
 			new CrayonSetting(self::ERROR_LOG_SYS, TRUE), 
 			new CrayonSetting(self::ERROR_MSG_SHOW, TRUE), 
@@ -180,6 +204,20 @@ class CrayonSettings {
 			new CrayonSetting(self::PLAIN_TAG, TRUE),
 			new CrayonSetting(self::ENQUEUE_THEMES, TRUE),
 			new CrayonSetting(self::ENQUEUE_FONTS, TRUE),
+			new CrayonSetting(self::MAIN_QUERY, FALSE),
+			new CrayonSetting(self::SAFE_ENQUEUE, TRUE),
+			new CrayonSetting(self::INLINE_TAG, TRUE),
+			new CrayonSetting(self::INLINE_MARGIN, 5),
+			new CrayonSetting(self::INLINE_WRAP, TRUE),
+			new CrayonSetting(self::BACKQUOTE, TRUE),
+			new CrayonSetting(self::COMMENTS, TRUE),
+			new CrayonSetting(self::DECODE, FALSE),
+			new CrayonSetting(self::DECODE_ATTRIBUTES, TRUE),
+			new CrayonSetting(self::TINYMCE_USED, FALSE),
+			new CrayonSetting(self::ATTR_SEP, array(':', '_')),
+			new CrayonSetting(self::EXCERPT_STRIP, FALSE),
+//			new CrayonSetting(self::TINYMCE_LINE_BREAK, array(crayon__('Before & After'), crayon__('After'), crayon__('Before'), crayon__('None'))),
+//			new CrayonSetting(self::TINYMCE_ADD_OVERRIDDEN, TRUE),
 		);
 		
 		$this->set($settings);
@@ -249,6 +287,18 @@ class CrayonSettings {
 		}
 	}
 	
+	function val_str($name) {
+		if (($setting = self::get($name)) != FALSE) {
+			$def = $setting->def();
+			$index = $setting->value();
+			if (array_key_exists($index, $def)) {
+				return $def[$index];
+			} else {
+				return NULL;
+			}
+		}
+	}
+	
 	function get_array() {
 		$array = array();
 		foreach ($this->settings as $setting) {
@@ -313,7 +363,7 @@ class CrayonSettings {
 		if (($setting = CrayonGlobalSettings::get($name)) != FALSE) {
 			// Booleans settings that are sent as string are allowed to have "false" == false
 			if (is_string($value) && is_bool($setting->def())) {
-				$value = trim(str_replace(array('no', 'false'), '0', $value));
+				$value = CrayonUtil::str_to_bool($value);
 			}
 			// Ensure we don't cast integer settings to 0 because $value doesn't have any numbers in it
 			if (is_string($value) && is_int($setting->def())) {
@@ -423,8 +473,6 @@ class CrayonSettings {
 				}
 				else if (CrayonUtil::str_to_bool($value) === FALSE) {
 					$settings[CrayonSettings::TOOLBAR] = 2;
-				} else if (CrayonUtil::str_to_bool($value, FALSE)) {
-					$settings[CrayonSettings::TOOLBAR] = 0;
 				}
 			}
 		}
@@ -502,6 +550,10 @@ class CrayonGlobalSettings {
 
 	public static function val($name = NULL) {
 		return self::$global->val($name);
+	}
+	
+	public static function val_str($name = NULL) {
+		return self::$global->val_str($name);
 	}
 
 	public static function set($name, $value = NULL, $replace = FALSE) {

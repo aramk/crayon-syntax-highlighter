@@ -45,14 +45,16 @@ function popupWindow(object, instanceSettings, beforeCallback, afterCallback) {
 								',location=' + settings.location +
 								',menuBar=' + settings.menubar;
 	
-		settings.windowName = settings.windowName || this.name; 
-		settings.windowURL = settings.windowURL || ( jQuery(this).attr('href') == '#' ? '' : this.href);
+		settings.windowName = settings.windowName || jQuery(this).attr('name');
+		var href = jQuery(this).attr('href');
+		if (!settings.windowURL && !(href == '#') && !(href == '')) {
+			settings.windowURL = jQuery(this).attr('href');
+		}
 		
 		var centeredY,centeredX;
 		
 		var win = null;
 		if (settings.centerBrowser) {
-				
 			if (jQuery.browser.msie) {//hacked together for IE browsers
 				centeredY = (window.screenTop - 120) + ((((document.documentElement.clientHeight + 120)/2) - (settings.height/2)));
 				centeredX = window.screenLeft + ((((document.body.offsetWidth + 20)/2) - (settings.width/2)));
@@ -66,7 +68,7 @@ function popupWindow(object, instanceSettings, beforeCallback, afterCallback) {
 			centeredX = (screen.width - settings.width)/2;
 			win = window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + centeredX +',top=' + centeredY);
 		} else {
-			win = window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + settings.left +',top=' + settings.top)
+			win = window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + settings.left +',top=' + settings.top);
 		}
 		if (win != null) {
 			win.focus();

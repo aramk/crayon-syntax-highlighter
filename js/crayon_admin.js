@@ -1,58 +1,46 @@
-<!--
 // Crayon Syntax Highlighter Admin JavaScript
-
-if (typeof DEBUG == 'undefined') {
-	var DEBUG = false;
-}
-
-if (typeof crayon_log == 'undefined') {
-	function crayon_log(string) {
-	    if (typeof console != 'undefined' && DEBUG) {
-	        console.log(string);
-	    }
-	}
-}
-
-// Not used, # is left unencoded
-function crayon_escape(string) {
-    if (typeof encodeURIComponent == 'function') {
-    	return encodeURIComponent(string);
-    } else if (typeof escape != 'function') {
-    	return escape(string);
-    } else {
-    	return string;
-    }
-}
-
-jQuery(document).ready(function() {
-	crayon_log('admin loaded');
-	CrayonSyntaxAdmin.init();
-});
 
 var CrayonSyntaxAdmin = new function() {
 	
 	// Preview
-	var preview, preview_cbox, preview_url, preview_height, preview_timer, preview_delay_timer, preview_get;
+	var preview = preview_info = preview_cbox = preview_url = preview_delay_timer = preview_get = null;
 	// The DOM object ids that trigger a preview update
 	var preview_obj_names = [];
 	// The jQuery objects for these objects
 	var preview_objs = [];
 	var preview_last_values = [];
 	// Alignment
-	var align_drop, float;
+	var align_drop = float = null;
 	// Toolbar
-	var overlay, toolbar;
+	var overlay = toolbar = null;
 	// Error
-	var msg_cbox, msg;
+	var msg_cbox = msg = null;
 	// Log
-	var log_button, log_text, log;
+	var log_button = log_text = null;
 	
-	var main_wrap, theme_editor_wrap, editor_url, theme_editor_button;
+	var main_wrap = theme_editor_wrap = editor_url = theme_editor_button = null;
 	var theme_editor_loaded = false;
 	var theme_editor_loading = false;
+
+	var settings = CrayonSyntaxSettings;
+	var me = this;
+	
+	this.cssElem = function(id) {
+		return jQuery(this.addPrefixToID(id));
+	};
+	
+	// Used in Tag Editor
+	this.addPrefixToID = function(id) {
+		return id.replace(/^([#.])?(.*)$/, '$1'+settings.prefix+'$2');
+	};
+	
+	this.removePrefixFromID = function(id) {
+		var re = new RegExp('^[#.]?'+settings.prefix, 'i');
+		return id.replace(re,'');
+	};
 	
 	this.init = function() {
-		crayon_log('admin init');
+		console_log('admin init');
 		
 		// Wraps
 		main_wrap = jQuery('#crayon-main-wrap');
@@ -77,36 +65,40 @@ var CrayonSyntaxAdmin = new function() {
 		});
 		
 		// Preview
-		preview = jQuery('#crayon-preview');
+		preview = jQuery('#crayon-live-preview');
+		preview_info = jQuery('#crayon-preview-info');
 		preview_url = preview.attr('url');
-		preview_cbox = jQuery('#preview');
-		preview_register();
-		preview.ready(function() {
-			preview_toggle();
-		});
+		preview_cbox = me.cssElem('#preview');
+		if (preview.length != 0) {
+			// Preview not needed in Tag Editor
+			preview_register();
+			preview.ready(function() {
+				preview_toggle();
+			});
 		preview_cbox.change(function() { preview_toggle(); });
+		}
 		
 		// Alignment
-		align_drop = jQuery('#h_align');
-		float = jQuery('#crayon-float');
+		align_drop = me.cssElem('#h-align');
+		float = jQuery('#crayon-subsection-float');
 		align_drop.change(function() { float_toggle(); });
 		align_drop.ready(function() { float_toggle(); });
 		
 	    // Custom Error
-	    msg_cbox = jQuery('#error_msg_show');
-	    msg = jQuery('#error_msg');
+	    msg_cbox = me.cssElem('#error-msg-show');
+	    msg = me.cssElem('#error-msg');
 	    toggle_error();
 	    msg_cbox.change(function() { toggle_error(); });
 	
 	    // Toolbar
-	    overlay = jQuery('#toolbar_overlay');
-	    toolbar = jQuery('#toolbar');
+	    overlay = jQuery('#crayon-subsection-toolbar');
+	    toolbar = me.cssElem('#toolbar');
 	    toggle_toolbar();
 	    toolbar.change(function() { toggle_toolbar(); });
 	    
 	    // Copy
-	    plain = jQuery('#plain');
-	    copy = jQuery('#crayon-copy-check');
+	    plain = me.cssElem('#plain');
+	    copy = jQuery('#crayon-subsection-copy-check');
 	    plain.change(function() {
 	    	if (plain.is(':checked')) {
 	    		copy.show();
@@ -116,11 +108,11 @@ var CrayonSyntaxAdmin = new function() {
 		});
 	    
 	    // Log
-	    var show_log = 'Show Log';
-	    var hide_log = 'Hide Log';
 	    log_wrapper = jQuery('#crayon-log-wrapper');
 	    log_button = jQuery('#crayon-log-toggle');
 	    log_text = jQuery('#crayon-log-text');
+	    var show_log = log_button.attr('show_txt');
+	    var hide_log = log_button.attr('hide_txt');
 	    clog = jQuery('#crayon-log');
 	    log_button.val(show_log);
 	    log_button.click(function() {
@@ -132,16 +124,15 @@ var CrayonSyntaxAdmin = new function() {
 	        log_button.val(text);
 	    });
 	    
-	    
-	}
+	};
 	
 	/* Whenever a control changes preview */
 	var preview_update = function() {
-		crayon_log('preview_update');
+//		console_log('preview_update');
 		preview_get = '?';
 		var val = 0;
 		var obj;
-		for (i = 0; i < preview_obj_names.length; i++) {
+		for (var i = 0; i < preview_obj_names.length; i++) {
 			obj = preview_objs[i];
 			if (obj.attr('type') == 'checkbox') {
 				val = obj.is(':checked');
@@ -167,30 +158,23 @@ var CrayonSyntaxAdmin = new function() {
 	
 		// Load Preview
 		jQuery.get(preview_url + preview_get, function(data) {
-			//crayon_log(data);
 			preview.html(data);
 			// Important! Calls the crayon.js init
 			CrayonSyntax.init();
 		});
-	}
-	
-	var bool_to_int = function(bool) {
-		if (bool == true) {
-			return 1;
-		} else {
-			return 0;
-		}
-	}
+	};
 	
 	var preview_toggle = function() {
-		crayon_log('preview_toggle');
+//		console_log('preview_toggle');
 	    if ( preview_cbox.is(':checked') ) {
 	    	preview.show();
+	    	preview_info.show();
 	    	preview_update();
 	    } else {
 	    	preview.hide();
+	    	preview_info.hide();
 	    }
-	}
+	};
 	
 	var float_toggle = function() {
 	    if ( align_drop.val() != 0 ) {
@@ -198,7 +182,7 @@ var CrayonSyntaxAdmin = new function() {
 	    } else {
 	    	float.hide();
 	    }
-	}
+	};
 	
 	// List of callbacks
 	var preview_callback;
@@ -209,55 +193,55 @@ var CrayonSyntaxAdmin = new function() {
 	
 	// Register all event handlers for preview objects
 	var preview_register = function() {
-		crayon_log('preview_register');
-		var obj;
+//		console_log('preview_register');
 		preview_get = '?';
 	
 		// Instant callback
 		preview_callback = function() {
 			preview_update();
-		}
+		};
 		
 		// Checks if the text input is changed, if so, runs the callback with given event
 		preview_txt_change = function(callback, event) {
-			//crayon_log('checking if changed');
+			//console_log('checking if changed');
 			var obj = event.target;
 			var last = preview_last_values[obj.id];
-			//crayon_log('last' + preview_last_values[obj.id]);
+			//console_log('last' + preview_last_values[obj.id]);
 			
 			if (obj.value != last) {
-				//crayon_log('changed');
+				//console_log('changed');
 				// Update last value to current
 				preview_last_values[obj.id] = obj.value;
 				// Run callback with event
 				callback(event);
 			}
-		}
+		};
 		
 		// Only updates when text is changed
 		preview_txt_callback = function(event) {
-			//crayon_log('txt callback');
+			//console_log('txt callback');
 			preview_txt_change(preview_update, event);
-		}
+		};
 		
 		// Only updates when text is changed, but  callback
 		preview_txt_callback_delayed = function(event) {
-			//crayon_log('txt delayed');
-			
 			preview_txt_change(function() {
 				clearInterval(preview_delay_timer);
 				preview_delay_timer = setInterval(function() {
-					//crayon_log('delayed update');				
+					//console_log('delayed update');				
 					preview_update();
 					clearInterval(preview_delay_timer);
 				}, 500);
 			}, event);
-		}
+		};
 		
 		// Retreive preview objects
 		jQuery('[crayon-preview="1"]').each(function(i) {
 			var obj = jQuery(this);
-			preview_obj_names[i] = obj.attr('id');
+			var id = obj.attr('id');
+			// XXX Remove prefix
+			id = me.removePrefixFromID(id);
+			preview_obj_names[i] = id;
 			preview_objs[i] = obj;
 			// To capture key up events when typing
 			if (obj.attr('type') == 'text') {
@@ -269,7 +253,7 @@ var CrayonSyntaxAdmin = new function() {
 				obj.change(preview_callback);
 			}
 		});
-	}
+	};
 	
 	var toggle_error = function() {
 	    if ( msg_cbox.is(':checked') ) {
@@ -277,7 +261,7 @@ var CrayonSyntaxAdmin = new function() {
 	    } else {
 	        msg.hide();
 	    }
-	}
+	};
 	
 	var toggle_toolbar = function() {
 	    if ( toolbar.val() == 0 ) {
@@ -285,24 +269,24 @@ var CrayonSyntaxAdmin = new function() {
 	    } else {
 	        overlay.hide();
 	    }
-	}
+	};
 	
 	this.show_langs = function(url) {
-		jQuery('#show-lang').hide();
+//		jQuery('#show-lang').hide();
 		jQuery.get(url, function(data) {
-			jQuery('#lang-info').show();
-			jQuery('#lang-info').html(data);
+//			jQuery('#lang-info').show();
+			jQuery('#crayon-subsection-lang-info').html(data);
 		});
 		return false;
-	}
+	};
 	
 	this.get_vars = function() {
 		var vars = {};
-		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
 			vars[key] = value;
 		});
 		return vars;
-	}
+	};
 	
 	// Changing wrap views
 	this.show_main = function() {
@@ -310,7 +294,7 @@ var CrayonSyntaxAdmin = new function() {
 		main_wrap.show();
 		jQuery(window).scrollTop(0);
 		return false;
-	}
+	};
 	
 	this.show_theme_editor_now = function() {
 		main_wrap.hide();
@@ -319,7 +303,7 @@ var CrayonSyntaxAdmin = new function() {
 		
 		theme_editor_loading = false;
 		theme_editor_button.html(theme_editor_button.attr('loaded'));
-	}
+	};
 	
 	this.show_theme_editor = function() {
 		if (theme_editor_loading) {
@@ -355,8 +339,6 @@ var CrayonSyntaxAdmin = new function() {
 			this.show_theme_editor_now();
 		}
 		return false;
-	}
+	};
 	
-}
-
-//-->
+};

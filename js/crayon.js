@@ -1,53 +1,48 @@
-<!--
 // Crayon Syntax Highlighter JavaScript
 
-// Contants
-if (typeof DEBUG == 'undefined') {
-	var DEBUG = false;
-}
-
-if (typeof crayon_log == 'undefined') {
-	function crayon_log(string) {
-	    if (typeof console != 'undefined' && DEBUG) {
-	        console.log(string);
-	    }
-	}
-}
+// BEGIN AUXILIARY FUNCTIONS
 
 jQuery.fn.exists = function () {
     return this.length !== 0;
-}
+};
 
-// For those who need them (< IE 9), add support for CSS functions
-var isStyleFuncSupported = CSSStyleDeclaration.prototype.getPropertyValue != null;
-if (!isStyleFuncSupported) {
-	CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
-        return this.getAttribute(a);
-    };
-    CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
-        this.setAttribute(styleName,value);
-        var priority = typeof priority != 'undefined' ? priority : '';
-        if (priority != '') {
-	        // Add priority manually
-			var rule = new RegExp(RegExp.escape(styleName) + '\\s*:\\s*' + RegExp.escape(value) + '(\\s*;)?', 'gmi');
-			this.cssText = this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
-        } 
-    }
-    CSSStyleDeclaration.prototype.removeProperty = function(a) {
-        return this.removeAttribute(a);
-    }
-    CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
-    	var rule = new RegExp(RegExp.escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?', 'gmi');
-        return rule.test(this.cssText) ? 'important' : '';
-    }
-}
+// This makes IE < 9 doesn't support CSSStyleDeclaration, can't use this
+var CrayonSyntaxUnused = function () {
+	// For those who need them (< IE 9), add support for CSS functions
+	var isStyleFuncSupported = null;
+	if (typeof(CSSStyleDeclaration) != 'undefined') {
+		isStyleFuncSupported = CSSStyleDeclaration.prototype.getPropertyValue != null;
+		if (!isStyleFuncSupported) {
+			CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
+		        return this.getAttribute(a);
+		    };
+		    CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
+		        this.setAttribute(styleName,value);
+		        var priority = typeof priority != 'undefined' ? priority : '';
+		        if (priority != '') {
+			        // Add priority manually
+					var rule = new RegExp(RegExp.escape(styleName) + '\\s*:\\s*' + RegExp.escape(value) + '(\\s*;)?', 'gmi');
+					this.cssText = this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
+		        } 
+		    };
+		    CSSStyleDeclaration.prototype.removeProperty = function(a) {
+		        return this.removeAttribute(a);
+		    };
+		    CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
+		    	var rule = new RegExp(RegExp.escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?', 'gmi');
+		        return rule.test(this.cssText) ? 'important' : '';
+		    };
+		}
+	}
+};
 
 // Escape regex chars with \
 RegExp.escape = function(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-}
+};
 
-// The style function
+
+var hasCSSStyleDeclaration = typeof(CSSStyleDeclaration) != 'undefined';
 jQuery.fn.style = function(styleName, value, priority) {
 	// DOM node
 	var node = this.get(0);
@@ -56,27 +51,32 @@ jQuery.fn.style = function(styleName, value, priority) {
 		return;
 	}
 	// CSSStyleDeclaration
-	var style = this.get(0).style;
+	var style = node.style;
 	// Getter/Setter
 	if (typeof styleName != 'undefined') {
 		if (typeof value != 'undefined') {
 			// Set style property
 			var priority = typeof priority != 'undefined' ? priority : '';
-			style.setProperty(styleName, value, priority);
+			if (hasCSSStyleDeclaration) {
+				style.setProperty(styleName, value, priority);
+			} else {
+				style.styleName = value + ' ' + priority;
+			}
 		} else {
 			// Get style property
-			return style.getPropertyValue(styleName);
+			if (hasCSSStyleDeclaration) {
+				return style.getPropertyValue(styleName);
+			} else {
+				return style.styleName;
+			}
 		}
 	} else {
 		// Get CSSStyleDeclaration
 		return style;
 	}
-}
+};
 
-
-
-
-
+// END AUXILIARY FUNCTIONS
 
 var PRESSED = 'crayon-pressed';
 var UNPRESSED = '';
@@ -100,7 +100,6 @@ jQuery(document).ready(function() {
 });
 
 var CrayonSyntax = new function() {
-
 	var crayon = new Object();
 	var currUID = 0;
 	
@@ -116,7 +115,7 @@ var CrayonSyntax = new function() {
 	        	uid += getUID();
 	        }
 	        jQuery(this).attr('id', uid);
-	        crayon_log(uid);
+	        console_log(uid);
 	        
 	        if (!make_uid(uid)) {
 	        	// Already a Crayon
@@ -159,37 +158,35 @@ var CrayonSyntax = new function() {
 	        jQuery(CRAYON_PLAIN).css('z-index', 0);
 	        
 	        // XXX Remember CSS dimensions
-	        var main_style = crayon[uid].main.style();
-	        
+	        var main_style = main.style();
 	        crayon[uid].main_style = {
-	        	height: main_style.height || '',
-                max_height: main_style.maxHeight || '',
-                min_height: main_style.minHeight || '',
-                width: main_style.width || ''
-	        }
+	        	height: main_style && main_style.height || '',
+                max_height: main_style && main_style.maxHeight || '',
+                min_height: main_style && main_style.minHeight || '',
+                width: main_style && main_style.width || ''
+	        };
 	        
 	        var load_timer;
-	        var last_num_width = nums.width();
 	        var i = 0;
 	        crayon[uid].loading = true;
 	        crayon[uid].scroll_block_fix = false;
 	        
 	        // Register click events
-	        nums_button.click(function() { CrayonSyntax.toggle_nums(uid) });
-	        plain_button.click(function() { CrayonSyntax.toggle_plain(uid) });
-	        copy_button.click(function() { CrayonSyntax.copy_plain(uid) });
+	        nums_button.click(function() { CrayonSyntax.toggle_nums(uid); });
+	        plain_button.click(function() { CrayonSyntax.toggle_plain(uid); });
+	        copy_button.click(function() { CrayonSyntax.copy_plain(uid); });
 	        
 	        var load_func = function() {
 	        	if (main.height() < 30) {
 	        		crayon[uid].scroll_block_fix = true;
 	        	}
 	        	
-	        	reconsile_dimensions(uid);
+//	        	reconsile_dimensions(uid);
 	    	    
 	            // If nums hidden by default
-	            if (nums.filter('[settings~="hide"]').length != 0) {
+	            if (nums.filter('[data-settings~="hide"]').length != 0) {
 	            	nums_content.ready(function() {
-	            		crayon_log('function' + uid);
+	            		console_log('function' + uid);
 	            		CrayonSyntax.toggle_nums(uid, true, true);
 	            	});
 	            } else {
@@ -203,16 +200,22 @@ var CrayonSyntax = new function() {
 	            }
 	            i++;
 	        };
-	        main.ready(function() {
+//	        main.ready(function() {
+//	        	alert();
 	        	load_timer = setInterval(load_func, 300);
-	        });
+	        	fix_scroll_blank(uid);
+//	        });
 	        
 	        // Used for toggling
 	        main.css('position', 'relative');
 	        main.css('z-index', 1);
 	        
+	        // Update clickable buttons
+	        update_nums_button(uid);
+	        update_plain_button(uid);
+	        
 	        // Disable certain features for touchscreen devices
-	        touchscreen = (jQuery(this).filter('[settings~="touchscreen"]').length != 0);
+	        touchscreen = (jQuery(this).filter('[data-settings~="touchscreen"]').length != 0);
 	        
 	        // Used to hide info
 	        if (!touchscreen) {
@@ -229,28 +232,28 @@ var CrayonSyntax = new function() {
 	    		left:50,
 	    		scrollbars:1,
 	    		windowURL:'',
-	    		data:'', // Data overrides URL
+	    		data:'' // Data overrides URL
 	    	}, function() {
 	    		code_popup(uid);
 	    	}, function() {
-	    		//crayon_log('after');
+	    		//console_log('after');
 	    	});
 
 	        plain.css('opacity', 0);
 	        // If a toolbar with mouseover was found
-	        if (toolbar.filter('[settings~="mouseover"]').length != 0 && !touchscreen) {
+	        if (toolbar.filter('[data-settings~="mouseover"]').length != 0 && !touchscreen) {
 	        	crayon[uid].toolbar_mouseover = true;
 	            
 	            toolbar.css('margin-top', '-' + toolbar.height() + 'px');
 	            toolbar.hide();
 	            // Overlay the toolbar if needed, only if doing so will not hide the
 				// whole code!
-	            if (toolbar.filter('[settings~="overlay"]').length != 0
+	            if (toolbar.filter('[data-settings~="overlay"]').length != 0
 	                && main.height() > toolbar.height() * 2) {
 	                toolbar.css('position', 'absolute');
 	                toolbar.css('z-index', 2);
 	                // Hide on single click when overlayed
-	                if (toolbar.filter('[settings~="hide"]').length != 0) {
+	                if (toolbar.filter('[data-settings~="hide"]').length != 0) {
 	                    main.click(function() { toolbar_toggle(uid, undefined, undefined, 0); });
 	                    plain.click(function() { toolbar_toggle(uid, false, undefined, 0); });
 	                }
@@ -258,7 +261,7 @@ var CrayonSyntax = new function() {
 	            	toolbar.css('z-index', 4);
 	            }
 	            // Enable delay on mouseout
-	            if (toolbar.filter('[settings~="delay"]').length != 0) {
+	            if (toolbar.filter('[data-settings~="delay"]').length != 0) {
 	                crayon[uid].toolbar_delay = 500;
 	            }
 	            // Use .hover() for chrome, but in firefox mouseover/mouseout worked best
@@ -270,52 +273,56 @@ var CrayonSyntax = new function() {
 	        }
 	        // Plain show events
 	        if (plain.length != 0 && !touchscreen) {
-	            if (plain.filter('[settings~="dblclick"]').length != 0) {
+	            if (plain.filter('[data-settings~="dblclick"]').length != 0) {
 	                main.dblclick(function() { CrayonSyntax.toggle_plain(uid); });
-	            } else if (plain.filter('[settings~="click"]').length != 0) {
+	            } else if (plain.filter('[data-settings~="click"]').length != 0) {
 	                main.click(function() { CrayonSyntax.toggle_plain(uid); });
-	            } else if (plain.filter('[settings~="mouseover"]').length != 0) {
+	            } else if (plain.filter('[data-settings~="mouseover"]').length != 0) {
 	                jQuery(this).mouseenter(function() { CrayonSyntax.toggle_plain(uid, true); })
 	                            .mouseleave(function() { CrayonSyntax.toggle_plain(uid, false); });
 	                nums_button.hide();
 	            }
-	            if (plain.filter('[settings~="show-plain-default"]').length != 0) {
-	            	this.toggle_plain(uid, true);
+	            if (plain.filter('[data-settings~="show-plain-default"]').length != 0) {
+	            	// XXX
+	            	CrayonSyntax.toggle_plain(uid, true);
 	            }
 	        }
 	        // Scrollbar show events
-	        if (!touchscreen && jQuery(this).filter('[settings~="scroll-mouseover"]').length != 0) {
+	        if (!touchscreen && jQuery(this).filter('[data-settings~="scroll-mouseover"]').length != 0) {
 	            // Disable on touchscreen devices and when set to mouseover
 	            main.css('overflow', 'hidden');
 	            plain.css('overflow', 'hidden');
+	            
+	            console_log(plain.css('overflow'));
+	            
 				jQuery(this).mouseenter(function() { toggle_scroll(uid, true); })
 	                        .mouseleave(function() { toggle_scroll(uid, false); });
 	        }
 	        // Disable animations
-	        if ( jQuery(this).filter('[settings~="disable-anim"]').length != 0 ) {
+	        if ( jQuery(this).filter('[data-settings~="disable-anim"]').length != 0 ) {
 	            crayon[uid].time = 0;
 	        }
 	        
 	        // Determine if Mac
-	        crayon[uid].mac = (jQuery(this).filter('[crayon-os~="mac"]').length != 0); 
+	        crayon[uid].mac = jQuery(this).hasClass('crayon-os-mac');
 	    });
-	}
+	};
 	
 	var make_uid = function(uid) {
-		crayon_log(crayon);
+		console_log(crayon);
 	    if (typeof crayon[uid] == 'undefined') {
 	        crayon[uid] = jQuery('#'+uid);
-	        crayon_log('make ' + uid);
+	        console_log('make ' + uid);
 	        return true;
 	    }
 	    
-	    crayon_log('no make ' + uid);
+	    console_log('no make ' + uid);
 	    return false;
-	}
+	};
 	
 	var getUID = function() {
 		return currUID++;
-	}
+	};
 	
 	var code_popup = function(uid) {
 		if (typeof crayon[uid] == 'undefined') {
@@ -328,25 +335,25 @@ var CrayonSyntax = new function() {
 		if (typeof settings == 'undefined') {
 			return;
 		}
-	}
+	};
 	
 	var get_jquery_str = function(object) {
 		return jQuery('<div>').append(object.clone()).remove().html();
-	}
+	};
 	
 	var remove_css_inline = function(string) {
 		return string.replace(/style\s*=\s*["'][^"]+["']/gmi, '');
-	}
+	};
 	
 	// Get all CSS on the page as a string
 	var get_all_css = function() {
-		var css_str = ''
+		var css_str = '';
 		css = jQuery('link[rel="stylesheet"]').each(function() {
 			var string = get_jquery_str(jQuery(this));
 			css_str += string;
 		});
 		return css_str;
-	}
+	};
 	
 	this.copy_plain = function(uid, hover) {
 		if (typeof crayon[uid] == 'undefined') {
@@ -359,10 +366,12 @@ var CrayonSyntax = new function() {
 		toolbar_toggle(uid, true);
 		
 		key = crayon[uid].mac ? '\u2318' : 'CTRL';
-		text = 'Press ' + key + '+C to Copy, ' + key + '+V to Paste :)';
+		var text = crayon[uid].copy_button.attr('data-text');
+		text = text.replace(/%s/, key + '+C');
+		text = text.replace(/%s/, key + '+V');
 		crayon_info(uid, text);
 		return false;
-	}
+	};
 	
 	var crayon_info = function(uid, text, show) {
 		if (typeof crayon[uid] == 'undefined') {
@@ -392,7 +401,7 @@ var CrayonSyntax = new function() {
 			crayon_slide(uid, info, false);
 		}
 	
-	}
+	};
 	
 	var crayon_is_slide_hidden = function(object) {
 		var object_neg_height = '-' + object.height() + 'px';	
@@ -401,7 +410,7 @@ var CrayonSyntax = new function() {
 	    } else {
 	        return false;            
 	    }
-	}
+	};
 	
 	var crayon_slide = function(uid, object, show, anim_time, hide_delay) {
 		var object_neg_height = '-' + object.height() + 'px';
@@ -440,7 +449,7 @@ var CrayonSyntax = new function() {
 	            object.hide();
 	        });
 	    }
-	}
+	};
 	
 	this.toggle_plain = function(uid, hover, select) {
 		if (typeof crayon[uid] == 'undefined') {
@@ -449,7 +458,6 @@ var CrayonSyntax = new function() {
 	    
 	    var main = crayon[uid].main;
 	    var plain = crayon[uid].plain;
-	    var plain_button = crayon[uid].plain_button;
 	    
 	    if ( (main.is(':animated') || plain.is(':animated')) && typeof hover == 'undefined' ) {
 	        return;
@@ -487,12 +495,9 @@ var CrayonSyntax = new function() {
 		 * no need to revert it after toggling plain. */
 		crayon[uid].scroll_changed = false;
 		
-		var vis_over = visible.css('overflow');
-		var hid_over = hidden.css('overflow');
-		
 		// Hide scrollbars during toggle to avoid Chrome weird draw error
-		visible.css('overflow', 'hidden');
-		hidden.css('overflow', 'hidden');
+//		visible.css('overflow', 'hidden');
+//		hidden.css('overflow', 'hidden');
 		
 		fix_scroll_blank(uid);
 		
@@ -501,17 +506,17 @@ var CrayonSyntax = new function() {
 	    visible.fadeTo(animt(500, uid), 0,
 			function() {
 				visible.css('z-index', 0);
-				if (!crayon[uid].scroll_changed) {
-					visible.css('overflow', vis_over);
-				}
+//				if (!crayon[uid].scroll_changed) {
+//					visible.css('overflow', vis_over);
+//				}
 			});
 	    hidden.stop(true);
 	    hidden.fadeTo(animt(500, uid), 1,
 			function() {
 				hidden.css('z-index', 1);
-				if (!crayon[uid].scroll_changed) {
-					hidden.css('overflow', hid_over);
-				}
+//				if (!crayon[uid].scroll_changed) {
+//					hidden.css('overflow', hid_over);
+//				}
 				
 				// Give focus to plain code
 				if (hidden == plain) {
@@ -528,7 +533,6 @@ var CrayonSyntax = new function() {
 				hidden.scrollTop(crayon[uid].top);
 				hidden.scrollLeft(crayon[uid].left + 1);
 				hidden.scrollLeft(crayon[uid].left);
-				
 			});
 	    
 		// Restore scroll positions to hidden
@@ -540,7 +544,7 @@ var CrayonSyntax = new function() {
 	    // Hide toolbar if possible
 	    toolbar_toggle(uid, false);
 	    return false;
-	}
+	};
 	
 	this.toggle_nums = function(uid, hide, instant) {
 		if (typeof crayon[uid] == 'undefined') {
@@ -599,14 +603,14 @@ var CrayonSyntax = new function() {
 	        }
 	    });
 	    return false;
-	}
+	};
 	
 	var fix_table_width = function(uid) {
 		if (typeof crayon[uid] == 'undefined') {
 			make_uid(uid);
 		    return false;
 		}
-	}
+	};
 	
 	// Convert '-10px' to -10
 	var px_to_int = function(pixels) {
@@ -619,7 +623,7 @@ var CrayonSyntax = new function() {
 		} else {
 			return parseInt(result);
 		}
-	}
+	};
 	
 	var update_nums_button = function(uid) {
 		if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].nums_visible == 'undefined') {
@@ -633,7 +637,7 @@ var CrayonSyntax = new function() {
 			crayon[uid].nums_button.removeClass(PRESSED);
 			crayon[uid].nums_button.addClass(UNPRESSED);
 		}
-	}
+	};
 	
 	var update_plain_button = function(uid) {
 		if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].plain_visible == 'undefined') {
@@ -648,7 +652,7 @@ var CrayonSyntax = new function() {
 			crayon[uid].plain_button.removeClass(PRESSED);
 			crayon[uid].plain_button.addClass(UNPRESSED);
 		}
-	}
+	};
 	
 	var toolbar_toggle = function(uid, show, anim_time, hide_delay) {
 	    if (typeof crayon[uid] == 'undefined') {
@@ -657,14 +661,14 @@ var CrayonSyntax = new function() {
 	    	return;
 	    }
 	    var toolbar = crayon[uid].toolbar;
-	    var delay = crayon[uid].toolbar_delay;
 	    
 	    if (typeof hide_delay == 'undefined') {
 	    	hide_delay = crayon[uid].toolbar_delay;
 	    }
 	    
 	    crayon_slide(uid, toolbar, show, anim_time, hide_delay);
-	}
+//	    reconsile_dimensions(uid);
+	};
 	
 	var toggle_scroll = function(uid, show) {
 	    if (typeof crayon[uid] == 'undefined') {
@@ -676,6 +680,8 @@ var CrayonSyntax = new function() {
 	    
 	    var main = crayon[uid].main;
 	    var plain = crayon[uid].plain;
+	    
+	    var main_size = {width:main.width(), height:main.height()};
 	    
 	    if (show) {
 	        main.css('overflow', 'auto');
@@ -690,8 +696,8 @@ var CrayonSyntax = new function() {
 	        }
 	        if (!crayon[uid].scroll_block_fix) {
 	        	// Fix dimensions so scrollbars stay inside
-	        	main.css('height', main.height());
-	        	main.css('width', main.width());
+	        	main.css('height', main_size.height);
+	        	main.css('width', main_size.width);
 	        } else {
 	        	// Relax dimensions so scrollbars are visible
 	        	main.css('height', '');
@@ -716,29 +722,26 @@ var CrayonSyntax = new function() {
 		// Register that overflow has changed
 		crayon[uid].scroll_changed = true;
 		fix_scroll_blank(uid);
-	}
+		reconsile_dimensions(uid);
+	};
 	
 	/* Fix weird draw error, causes blank area to appear where scrollbar once was. */
 	var fix_scroll_blank = function(uid) {
-		// TODO Fix stupid scrollbar draw error in chrome by forcing redraw...
-		return;
-		
-		crayon_log('fix_scroll_blank');
-	    if (typeof crayon[uid] == 'undefined') {
-		    return make_uid(uid);
-		}
-	    var width = crayon[uid].main.width();
-		crayon[uid].main.width(width);
-		crayon[uid].main.width(width - 1);
-		crayon[uid].main.width(width + 1);
-		crayon[uid].main.width(width);
-	}
+		// Scrollbar draw error in Chrome
+		crayon[uid].table.style('width', '100%', 'important');
+		var redraw = setTimeout(function() {
+			crayon[uid].table.style('width', '');
+			clearInterval(redraw);
+		}, 10);
+	};
 	
 	var reconsile_dimensions = function(uid) {
 		// Reconsile dimensions
 		crayon[uid].plain.height(crayon[uid].main.height());
 		//crayon[uid].plain.width(crayon[uid].main.width());
-	}
+		
+		console_log('main: ' + crayon[uid].main.height() + ' plain: ' + crayon[uid].plain.height());
+	};
 	
 	var animt = function(x, uid) {
 	    if (x == 'fast') {
@@ -752,12 +755,11 @@ var CrayonSyntax = new function() {
 	        }
 	    }
 	    return x * crayon[uid].time;
-	}
+	};
 	
 	var isNumber = function(x) {
 	    return typeof x == 'number';
-	}
+	};
 	
-}
+};
 
-// -->
