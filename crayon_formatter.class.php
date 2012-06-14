@@ -311,7 +311,7 @@ class CrayonFormatter {
 			$readonly = $touch ? '' : 'readonly';
 			$print_plain = $print_plain_button = '';
 			// TODO remove wrap
-			$print_plain = '<textarea wrap="off" class="crayon-plain print-no" data-settings="' . $plain_settings . '" '. $readonly .' style="' . $plain_style .' '. $font_style . '">' . self::clean_code($hl->code(), FALSE) . '</textarea>';
+			$print_plain = '<textarea wrap="off" class="crayon-plain print-no" data-settings="' . $plain_settings . '" '. $readonly .' style="' . $plain_style .' '. $font_style . '">' . $hl->code() . '</textarea>';
 		} else {
 			$print_plain = $plain_settings = $plain_settings = '';
 		}
