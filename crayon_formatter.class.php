@@ -500,7 +500,7 @@ class CrayonFormatter {
 			// Replace 2 spaces with html escaped characters
 			$code = preg_replace('#[ ]{2}#msi', '&nbsp;&nbsp;', $code);
 		}
-		$code = preg_replace('#(\r(?!\n))|((?<!\r)\n)#msi', '\r\n', $code);
+		$code = preg_replace('#(\r(?!\n))|((?<!\r)\n)#msi', "\r\n", $code);
 		// Replace tabs with 4 spaces
 		$code = preg_replace('#\t#', str_repeat('&nbsp;', CrayonGlobalSettings::val(CrayonSettings::TAB_SIZE)), $code);
 		return $code;

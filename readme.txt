@@ -199,6 +199,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.9.9 =
+* Fixed a bug caused when ensuring "\r\n" was present in 1.9.8. It was due to using '\r\n' instead of "\r\n".
+
 = 1.9.8 =
 * New API to access Crayon internals
 * Added TeX thanks to http://blog.keyboardplaying.org/2012/06/08/syntax-highlighting-latex/
