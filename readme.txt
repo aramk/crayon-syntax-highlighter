@@ -199,6 +199,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.9.10 =
+* Another fix regarding the \r\n line breaks
+
 = 1.9.9 =
 * Fixed a bug caused when ensuring "\r\n" was present in 1.9.8. It was due to using '\r\n' instead of "\r\n".
 

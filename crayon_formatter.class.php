@@ -525,8 +525,8 @@ class CrayonFormatter {
 // 		var_dump($code);
 // 		var_dump($class);
 // 		echo "\n";
-		$code = preg_replace('|^|m', '<span class="'.$class.'">', $code);
-		$code = preg_replace('|$|m', '</span>', $code);
+		$code = preg_replace('#^#m', '<span class="'.$class.'">', $code);
+		$code = preg_replace('#(\r|\n|\r\n)#m', '</span>', $code);
 		return $code;
 	}
 
