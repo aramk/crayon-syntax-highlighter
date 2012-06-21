@@ -57,7 +57,7 @@ jQuery.fn.style = function(styleName, value, priority) {
 		if (typeof value != 'undefined') {
 			// Set style property
 			var priority = typeof priority != 'undefined' ? priority : '';
-			if (hasCSSStyleDeclaration) {
+			if (typeof style.setProperty != 'undefined') {
 				style.setProperty(styleName, value, priority);
 			} else {
 				style.styleName = value + ' ' + priority;
