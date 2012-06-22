@@ -4,12 +4,21 @@ $crayon_root_theme_editor = dirname(dirname(dirname(__FILE__)));
 require_once ($crayon_root_theme_editor . '/crayon_wp.class.php');
 require_once (CrayonWP::wp_load_path());
 
-$theme = null;
+$theme = CrayonResources::themes()->get_default();
+$editing = false;
+
 if ( isset($_GET['curr_theme']) ) {
 	$theme = CrayonResources::themes()->get($_GET['curr_theme']);
 }
 
-var_dump($_GET);
+if ( isset($_GET['editing']) ) {
+	$editing = CrayonUtil::str_to_bool($_GET['editing'], FALSE);
+}
+
+// var_dump($_GET);
+
+// var_dump($theme);
+// var_dump($editing);
 
 ?>
 
@@ -19,8 +28,10 @@ var_dump($_GET);
 
 <h3>
 <?php 
-	if ($theme) {
-		echo 'Creating ' . $theme->name();
+	if ($editing) {
+		echo sprintf(crayon__('Editing "%s" Theme'), $theme->name());
+	} else {
+		echo sprintf(crayon__('Creating Theme From "%s"'), $theme->name());
 	}
 ?>
 </h3>

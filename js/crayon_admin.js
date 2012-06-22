@@ -48,8 +48,8 @@ var CrayonSyntaxAdmin = new function() {
 		editor_url = theme_editor_wrap.attr('url');
 		theme_editor_edit_button = jQuery('#crayon-theme-editor-edit-button');
 		theme_editor_create_button = jQuery('#crayon-theme-editor-create-button');
-		theme_editor_edit_button.click(function() { CrayonSyntaxAdmin.show_theme_editor(true); });
-		theme_editor_create_button.click(function() { CrayonSyntaxAdmin.show_theme_editor(false); });
+		theme_editor_edit_button.click(function() { CrayonSyntaxAdmin.show_theme_editor(theme_editor_edit_button, true); });
+		theme_editor_create_button.click(function() { CrayonSyntaxAdmin.show_theme_editor(theme_editor_create_button, false); });
 		
 		// Theme editor
 		var get_vars = this.get_vars();
@@ -307,14 +307,14 @@ var CrayonSyntaxAdmin = new function() {
 		button.html(button.attr('loaded'));
 	};
 	
-	this.show_theme_editor = function(editing) {
+	this.show_theme_editor = function(button, editing) {
 //		if (theme_editor_loading) {
 //			return;
 //		}
-		theme_editor_button.css('width', theme_editor_button.width());
+//		theme_editor_button.css('width', theme_editor_button.width());
 //		if (!theme_editor_loaded) {
 //			theme_editor_loading = true;
-			theme_editor_button.html(theme_editor_button.attr('loading'));
+		button.html(button.attr('loading'));
 			
 			// Simulate loading with timer
 //			editor_timer = setInterval(function() {
@@ -329,12 +329,13 @@ var CrayonSyntaxAdmin = new function() {
 //					CrayonSyntax.init();
 				
 				// Load url from preview into theme editor
-				jQuery('#crayon-editor-preview').attr('url', preview_url);
-				
-				
+//				jQuery('#crayon-editor-preview').attr('url', preview_url);
 				
 				// Load preview into editor
-				CrayonSyntaxThemeEditor.init();
+				CrayonSyntaxThemeEditor.init(function () {
+						CrayonSyntaxAdmin.show_theme_editor_now(button);
+					}, preview.clone()
+				);
 				
 //					show_theme_editor_now();
 			});

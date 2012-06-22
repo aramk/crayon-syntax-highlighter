@@ -109,203 +109,212 @@ var CrayonSyntax = new function() {
 		}
 		
 	    jQuery(CRAYON_SYNTAX).each(function() {
-	        var uid = jQuery(this).attr('id');
-	        if (uid == 'crayon-') {
-	        	// No ID, generate one
-	        	uid += getUID();
-	        }
-	        jQuery(this).attr('id', uid);
-	        console_log(uid);
-	        
-	        if (!make_uid(uid)) {
-	        	// Already a Crayon
-	        	return;
-	        }
-	        
-	        var toolbar = jQuery(this).find(CRAYON_TOOLBAR);
-	        var info = jQuery(this).find(CRAYON_INFO);
-	        var plain = jQuery(this).find(CRAYON_PLAIN);
-	        var main = jQuery(this).find(CRAYON_MAIN);
-	        var table = jQuery(this).find(CRAYON_TABLE);
-	        var code = jQuery(this).find(CRAYON_CODE);
-	        var nums = jQuery(this).find(CRAYON_NUMS);
-	        var nums_content = jQuery(this).find(CRAYON_NUMS_CONTENT);
-	        var nums_button = jQuery(this).find(CRAYON_NUMS_BUTTON);
-	        var popup_button = jQuery(this).find(CRAYON_POPUP_BUTTON);
-	        var copy_button = jQuery(this).find(CRAYON_COPY_BUTTON);
-	        var plain_button = jQuery(this).find(CRAYON_PLAIN_BUTTON);
-	        
-	        crayon[uid] = jQuery(this);
-	        crayon[uid].toolbar = toolbar;
-	        crayon[uid].plain = plain;
-	        crayon[uid].info = info;
-	        crayon[uid].main = main;
-	        crayon[uid].table = table;
-	        crayon[uid].code = code;
-	        crayon[uid].nums = nums;
-	        crayon[uid].nums_content = nums_content;
-	        crayon[uid].nums_button = nums_button;
-	        crayon[uid].popup_button = popup_button;
-	        crayon[uid].copy_button = copy_button;
-	        crayon[uid].plain_button = plain_button;
-	        crayon[uid].nums_visible = true;
-	        crayon[uid].plain_visible = false;
-	        
-	        crayon[uid].toolbar_delay = 0;
-	        crayon[uid].time = 1;
-	        
-	        // Set plain
-	        jQuery(CRAYON_PLAIN).css('z-index', 0);
-	        
-	        // XXX Remember CSS dimensions
-	        var main_style = main.style();
-	        crayon[uid].main_style = {
-	        	height: main_style && main_style.height || '',
-                max_height: main_style && main_style.maxHeight || '',
-                min_height: main_style && main_style.minHeight || '',
-                width: main_style && main_style.width || ''
-	        };
-	        
-	        var load_timer;
-	        var i = 0;
-	        crayon[uid].loading = true;
-	        crayon[uid].scroll_block_fix = false;
-	        
-	        // Register click events
-	        nums_button.click(function() { CrayonSyntax.toggle_nums(uid); });
-	        plain_button.click(function() { CrayonSyntax.toggle_plain(uid); });
-	        copy_button.click(function() { CrayonSyntax.copy_plain(uid); });
-	        
-	        var load_func = function() {
-	        	if (main.height() < 30) {
-	        		crayon[uid].scroll_block_fix = true;
-	        	}
-	        	
-//	        	reconsile_dimensions(uid);
-	    	    
-	            // If nums hidden by default
-	            if (nums.filter('[data-settings~="hide"]').length != 0) {
-	            	nums_content.ready(function() {
-	            		console_log('function' + uid);
-	            		CrayonSyntax.toggle_nums(uid, true, true);
-	            	});
-	            } else {
-	            	update_nums_button(uid);
-	            }
-	            
-	            // TODO If width has changed or timeout, stop timer
-	            if (/*last_num_width != nums.width() ||*/ i == 5) {
-	            	clearInterval(load_timer);
-	            	crayon[uid].loading = false;
-	            }
-	            i++;
-	        };
-//	        main.ready(function() {
-//	        	alert();
-	        	load_timer = setInterval(load_func, 300);
-	        	fix_scroll_blank(uid);
-//	        });
-	        
-	        // Used for toggling
-	        main.css('position', 'relative');
-	        main.css('z-index', 1);
-	        
-	        // Update clickable buttons
-	        update_nums_button(uid);
-	        update_plain_button(uid);
-	        
-	        // Disable certain features for touchscreen devices
-	        touchscreen = (jQuery(this).filter('[data-settings~="touchscreen"]').length != 0);
-	        
-	        // Used to hide info
-	        if (!touchscreen) {
-		        main.click(function() { crayon_info(uid, '', false); });
-	        	plain.click(function() { crayon_info(uid, '', false); });
-	        	info.click(function() { crayon_info(uid, '', false); });
-	        }
-	        
-	        // Used for code popup
-	        crayon[uid].popup_settings = popupWindow(popup_button, { 
-	    		height:screen.height - 200, 
-	    		width:screen.width - 100,
-	    		top:75,
-	    		left:50,
-	    		scrollbars:1,
-	    		windowURL:'',
-	    		data:'' // Data overrides URL
-	    	}, function() {
-	    		code_popup(uid);
-	    	}, function() {
-	    		//console_log('after');
-	    	});
-
-	        plain.css('opacity', 0);
-	        // If a toolbar with mouseover was found
-	        if (toolbar.filter('[data-settings~="mouseover"]').length != 0 && !touchscreen) {
-	        	crayon[uid].toolbar_mouseover = true;
-	            
-	            toolbar.css('margin-top', '-' + toolbar.height() + 'px');
-	            toolbar.hide();
-	            // Overlay the toolbar if needed, only if doing so will not hide the
-				// whole code!
-	            if (toolbar.filter('[data-settings~="overlay"]').length != 0
-	                && main.height() > toolbar.height() * 2) {
-	                toolbar.css('position', 'absolute');
-	                toolbar.css('z-index', 2);
-	                // Hide on single click when overlayed
-	                if (toolbar.filter('[data-settings~="hide"]').length != 0) {
-	                    main.click(function() { toolbar_toggle(uid, undefined, undefined, 0); });
-	                    plain.click(function() { toolbar_toggle(uid, false, undefined, 0); });
-	                }
-	            } else {
-	            	toolbar.css('z-index', 4);
-	            }
-	            // Enable delay on mouseout
-	            if (toolbar.filter('[data-settings~="delay"]').length != 0) {
-	                crayon[uid].toolbar_delay = 500;
-	            }
-	            // Use .hover() for chrome, but in firefox mouseover/mouseout worked best
-	            jQuery(this).mouseenter(function() { toolbar_toggle(uid, true); })
-	            			.mouseleave(function() { toolbar_toggle(uid, false); });
-	            
-	        } else if (touchscreen) {
-	            toolbar.show();
-	        }
-	        // Plain show events
-	        if (plain.length != 0 && !touchscreen) {
-	            if (plain.filter('[data-settings~="dblclick"]').length != 0) {
-	                main.dblclick(function() { CrayonSyntax.toggle_plain(uid); });
-	            } else if (plain.filter('[data-settings~="click"]').length != 0) {
-	                main.click(function() { CrayonSyntax.toggle_plain(uid); });
-	            } else if (plain.filter('[data-settings~="mouseover"]').length != 0) {
-	                jQuery(this).mouseenter(function() { CrayonSyntax.toggle_plain(uid, true); })
-	                            .mouseleave(function() { CrayonSyntax.toggle_plain(uid, false); });
-	                nums_button.hide();
-	            }
-	            if (plain.filter('[data-settings~="show-plain-default"]').length != 0) {
-	            	// XXX
-	            	CrayonSyntax.toggle_plain(uid, true);
-	            }
-	        }
-	        // Scrollbar show events
-	        if (!touchscreen && jQuery(this).filter('[data-settings~="scroll-mouseover"]').length != 0) {
-	            // Disable on touchscreen devices and when set to mouseover
-	            main.css('overflow', 'hidden');
-	            plain.css('overflow', 'hidden');
-	            
-	            console_log(plain.css('overflow'));
-	            
-				jQuery(this).mouseenter(function() { toggle_scroll(uid, true); })
-	                        .mouseleave(function() { toggle_scroll(uid, false); });
-	        }
-	        // Disable animations
-	        if ( jQuery(this).filter('[data-settings~="disable-anim"]').length != 0 ) {
-	            crayon[uid].time = 0;
-	        }
-	        
-	        // Determine if Mac
-	        crayon[uid].mac = jQuery(this).hasClass('crayon-os-mac');
+	    	CrayonSyntax.process(this);
 	    });
+	};
+	
+	this.process = function(c, replace) {
+        c = jQuery(c);
+		var uid = c.attr('id');
+        if (uid == 'crayon-') {
+        	// No ID, generate one
+        	uid += getUID();
+        }
+        c.attr('id', uid);
+        console_log(uid);
+        
+        if (typeof replace == 'undefined') {
+        	replace = false;
+        }
+        
+        if (!replace && !make_uid(uid)) {
+        	// Already a Crayon
+        	return;
+        }
+        
+        var toolbar = c.find(CRAYON_TOOLBAR);
+        var info = c.find(CRAYON_INFO);
+        var plain = c.find(CRAYON_PLAIN);
+        var main = c.find(CRAYON_MAIN);
+        var table = c.find(CRAYON_TABLE);
+        var code = c.find(CRAYON_CODE);
+        var nums = c.find(CRAYON_NUMS);
+        var nums_content = c.find(CRAYON_NUMS_CONTENT);
+        var nums_button = c.find(CRAYON_NUMS_BUTTON);
+        var popup_button = c.find(CRAYON_POPUP_BUTTON);
+        var copy_button = c.find(CRAYON_COPY_BUTTON);
+        var plain_button = c.find(CRAYON_PLAIN_BUTTON);
+        
+        crayon[uid] = c;
+        crayon[uid].toolbar = toolbar;
+        crayon[uid].plain = plain;
+        crayon[uid].info = info;
+        crayon[uid].main = main;
+        crayon[uid].table = table;
+        crayon[uid].code = code;
+        crayon[uid].nums = nums;
+        crayon[uid].nums_content = nums_content;
+        crayon[uid].nums_button = nums_button;
+        crayon[uid].popup_button = popup_button;
+        crayon[uid].copy_button = copy_button;
+        crayon[uid].plain_button = plain_button;
+        crayon[uid].nums_visible = true;
+        crayon[uid].plain_visible = false;
+        
+        crayon[uid].toolbar_delay = 0;
+        crayon[uid].time = 1;
+        
+        // Set plain
+        jQuery(CRAYON_PLAIN).css('z-index', 0);
+        
+        // XXX Remember CSS dimensions
+        var main_style = main.style();
+        crayon[uid].main_style = {
+        	height: main_style && main_style.height || '',
+            max_height: main_style && main_style.maxHeight || '',
+            min_height: main_style && main_style.minHeight || '',
+            width: main_style && main_style.width || ''
+        };
+        
+        var load_timer;
+        var i = 0;
+        crayon[uid].loading = true;
+        crayon[uid].scroll_block_fix = false;
+        
+        // Register click events
+        nums_button.click(function() { CrayonSyntax.toggle_nums(uid); });
+        plain_button.click(function() { CrayonSyntax.toggle_plain(uid); });
+        copy_button.click(function() { CrayonSyntax.copy_plain(uid); });
+        
+        var load_func = function() {
+        	if (main.height() < 30) {
+        		crayon[uid].scroll_block_fix = true;
+        	}
+        	
+//        	reconsile_dimensions(uid);
+    	    
+            // If nums hidden by default
+            if (nums.filter('[data-settings~="hide"]').length != 0) {
+            	nums_content.ready(function() {
+            		console_log('function' + uid);
+            		CrayonSyntax.toggle_nums(uid, true, true);
+            	});
+            } else {
+            	update_nums_button(uid);
+            }
+            
+            // TODO If width has changed or timeout, stop timer
+            if (/*last_num_width != nums.width() ||*/ i == 5) {
+            	clearInterval(load_timer);
+            	crayon[uid].loading = false;
+            }
+            i++;
+        };
+//        main.ready(function() {
+//        	alert();
+        	load_timer = setInterval(load_func, 300);
+        	fix_scroll_blank(uid);
+//        });
+        
+        // Used for toggling
+        main.css('position', 'relative');
+        main.css('z-index', 1);
+        
+        // Update clickable buttons
+        update_nums_button(uid);
+        update_plain_button(uid);
+        
+        // Disable certain features for touchscreen devices
+        touchscreen = (c.filter('[data-settings~="touchscreen"]').length != 0);
+        
+        // Used to hide info
+        if (!touchscreen) {
+	        main.click(function() { crayon_info(uid, '', false); });
+        	plain.click(function() { crayon_info(uid, '', false); });
+        	info.click(function() { crayon_info(uid, '', false); });
+        }
+        
+        // Used for code popup
+        crayon[uid].popup_settings = popupWindow(popup_button, { 
+    		height:screen.height - 200, 
+    		width:screen.width - 100,
+    		top:75,
+    		left:50,
+    		scrollbars:1,
+    		windowURL:'',
+    		data:'' // Data overrides URL
+    	}, function() {
+    		code_popup(uid);
+    	}, function() {
+    		//console_log('after');
+    	});
+
+        plain.css('opacity', 0);
+        // If a toolbar with mouseover was found
+        if (toolbar.filter('[data-settings~="mouseover"]').length != 0 && !touchscreen) {
+        	crayon[uid].toolbar_mouseover = true;
+            
+            toolbar.css('margin-top', '-' + toolbar.height() + 'px');
+            toolbar.hide();
+            // Overlay the toolbar if needed, only if doing so will not hide the
+			// whole code!
+            if (toolbar.filter('[data-settings~="overlay"]').length != 0
+                && main.height() > toolbar.height() * 2) {
+                toolbar.css('position', 'absolute');
+                toolbar.css('z-index', 2);
+                // Hide on single click when overlayed
+                if (toolbar.filter('[data-settings~="hide"]').length != 0) {
+                    main.click(function() { toolbar_toggle(uid, undefined, undefined, 0); });
+                    plain.click(function() { toolbar_toggle(uid, false, undefined, 0); });
+                }
+            } else {
+            	toolbar.css('z-index', 4);
+            }
+            // Enable delay on mouseout
+            if (toolbar.filter('[data-settings~="delay"]').length != 0) {
+                crayon[uid].toolbar_delay = 500;
+            }
+            // Use .hover() for chrome, but in firefox mouseover/mouseout worked best
+            c.mouseenter(function() { toolbar_toggle(uid, true); })
+            			.mouseleave(function() { toolbar_toggle(uid, false); });
+            
+        } else if (touchscreen) {
+            toolbar.show();
+        }
+        // Plain show events
+        if (plain.length != 0 && !touchscreen) {
+            if (plain.filter('[data-settings~="dblclick"]').length != 0) {
+                main.dblclick(function() { CrayonSyntax.toggle_plain(uid); });
+            } else if (plain.filter('[data-settings~="click"]').length != 0) {
+                main.click(function() { CrayonSyntax.toggle_plain(uid); });
+            } else if (plain.filter('[data-settings~="mouseover"]').length != 0) {
+                c.mouseenter(function() { CrayonSyntax.toggle_plain(uid, true); })
+                            .mouseleave(function() { CrayonSyntax.toggle_plain(uid, false); });
+                nums_button.hide();
+            }
+            if (plain.filter('[data-settings~="show-plain-default"]').length != 0) {
+            	// XXX
+            	CrayonSyntax.toggle_plain(uid, true);
+            }
+        }
+        // Scrollbar show events
+        if (!touchscreen && c.filter('[data-settings~="scroll-mouseover"]').length != 0) {
+            // Disable on touchscreen devices and when set to mouseover
+            main.css('overflow', 'hidden');
+            plain.css('overflow', 'hidden');
+            
+            console_log(plain.css('overflow'));
+            
+			c.mouseenter(function() { toggle_scroll(uid, true); })
+                        .mouseleave(function() { toggle_scroll(uid, false); });
+        }
+        // Disable animations
+        if ( c.filter('[data-settings~="disable-anim"]').length != 0 ) {
+            crayon[uid].time = 0;
+        }
+        
+        // Determine if Mac
+        crayon[uid].mac = c.hasClass('crayon-os-mac');
 	};
 	
 	var make_uid = function(uid) {
