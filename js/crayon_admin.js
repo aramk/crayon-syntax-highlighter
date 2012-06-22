@@ -18,9 +18,9 @@ var CrayonSyntaxAdmin = new function() {
 	// Log
 	var log_button = log_text = null;
 	
-	var main_wrap = theme_editor_wrap = editor_url = theme_editor_button = null;
-	var theme_editor_loaded = false;
-	var theme_editor_loading = false;
+	var main_wrap = theme_editor_wrap = editor_url = theme_editor_edit_button = theme_editor_create_button = null;
+//	var theme_editor_loaded = false;
+//	var theme_editor_loading = false;
 
 	var settings = CrayonSyntaxSettings;
 	var me = this;
@@ -46,8 +46,10 @@ var CrayonSyntaxAdmin = new function() {
 		main_wrap = jQuery('#crayon-main-wrap');
 		theme_editor_wrap = jQuery('#crayon-theme-editor-wrap');
 		editor_url = theme_editor_wrap.attr('url');
-		theme_editor_button = jQuery('#crayon-theme-editor-button');
-		theme_editor_button.click(function() { CrayonSyntaxAdmin.show_theme_editor(); });
+		theme_editor_edit_button = jQuery('#crayon-theme-editor-edit-button');
+		theme_editor_create_button = jQuery('#crayon-theme-editor-create-button');
+		theme_editor_edit_button.click(function() { CrayonSyntaxAdmin.show_theme_editor(true); });
+		theme_editor_create_button.click(function() { CrayonSyntaxAdmin.show_theme_editor(false); });
 		
 		// Theme editor
 		var get_vars = this.get_vars();
@@ -296,48 +298,53 @@ var CrayonSyntaxAdmin = new function() {
 		return false;
 	};
 	
-	this.show_theme_editor_now = function() {
+	this.show_theme_editor_now = function(button) {
 		main_wrap.hide();
 		theme_editor_wrap.show();
 		jQuery(window).scrollTop(0);
 		
 		theme_editor_loading = false;
-		theme_editor_button.html(theme_editor_button.attr('loaded'));
+		button.html(button.attr('loaded'));
 	};
 	
-	this.show_theme_editor = function() {
-		if (theme_editor_loading) {
-			return;
-		}
+	this.show_theme_editor = function(editing) {
+//		if (theme_editor_loading) {
+//			return;
+//		}
 		theme_editor_button.css('width', theme_editor_button.width());
-		if (!theme_editor_loaded) {
-			theme_editor_loading = true;
+//		if (!theme_editor_loaded) {
+//			theme_editor_loading = true;
 			theme_editor_button.html(theme_editor_button.attr('loading'));
 			
 			// Simulate loading with timer
 //			editor_timer = setInterval(function() {
 //				clearInterval(editor_timer);
 				
-				// Load theme editor
-				jQuery.get(editor_url, function(data) {
-					theme_editor_wrap.html(data);
+			CrayonThemeEditorSettings.curr_theme = jQuery('#crayon-theme').val();
+			CrayonThemeEditorSettings.editing = editing;
+			
+			// Load theme editor
+			jQuery.get(editor_url + '?curr_theme=' + CrayonThemeEditorSettings.curr_theme + '&editing=' + editing, function(data) {
+				theme_editor_wrap.html(data);
 //					CrayonSyntax.init();
-					
-					// Load url from preview into theme editor
-					jQuery('#crayon-editor-preview').attr('url', preview_url);
-					
-					// Load preview into editor
-					CrayonSyntaxThemeEditor.init();
-					
+				
+				// Load url from preview into theme editor
+				jQuery('#crayon-editor-preview').attr('url', preview_url);
+				
+				
+				
+				// Load preview into editor
+				CrayonSyntaxThemeEditor.init();
+				
 //					show_theme_editor_now();
-				});
+			});
 				
 //			}, 2000);
 			
-			theme_editor_loaded = true;
-		} else {
-			this.show_theme_editor_now();
-		}
+//			theme_editor_loaded = true;
+//		} else {
+//			this.show_theme_editor_now();
+//		}
 		return false;
 	};
 	

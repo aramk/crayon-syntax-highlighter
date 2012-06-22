@@ -740,7 +740,7 @@ var CrayonSyntax = new function() {
 		crayon[uid].plain.height(crayon[uid].main.height());
 		//crayon[uid].plain.width(crayon[uid].main.width());
 		
-		console_log('main: ' + crayon[uid].main.height() + ' plain: ' + crayon[uid].plain.height());
+//		console_log('main: ' + crayon[uid].main.height() + ' plain: ' + crayon[uid].plain.height());
 	};
 	
 	var animt = function(x, uid) {

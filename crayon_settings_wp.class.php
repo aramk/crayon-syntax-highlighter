@@ -63,6 +63,7 @@ class CrayonSettingsWP {
 	public static function admin_styles() {
 		global $CRAYON_VERSION;
 		wp_enqueue_style('crayon_admin_style', plugins_url(CRAYON_STYLE_ADMIN, __FILE__), array(), $CRAYON_VERSION);
+		wp_enqueue_style('crayon_theme_editor_style', plugins_url(CRAYON_THEME_EDITOR_STYLE, __FILE__), array(), $CRAYON_VERSION);
 	}
 
 	public static function admin_scripts() {
@@ -75,12 +76,13 @@ class CrayonSettingsWP {
 		if (CRAYON_THEME_EDITOR) {
 			wp_enqueue_script('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_JS, __FILE__), array('jquery'), $CRAYON_VERSION);
 		}
-		// Must come after
+		// XXX Must come after
 		self::init_js_settings();
 	}
 	
 	public static function init_js_settings() {
 		// TODO Create a global CrayonSyntaxSettings object here
+		self::load_settings(TRUE);
 		if (!self::$js_settings) {
 			self::$js_settings = array(
 					'prefix' => CrayonSettings::PREFIX,
@@ -88,10 +90,11 @@ class CrayonSettingsWP {
 					'selected' => CrayonSettings::SETTING_SELECTED,
 					'changed' => CrayonSettings::SETTING_CHANGED,
 					'special' => CrayonSettings::SETTING_SPECIAL,
-					'orig_value' => CrayonSettings::SETTING_ORIG_VALUE,
+					'orig_value' => CrayonSettings::SETTING_ORIG_VALUE 
 					);
 		}
 		wp_localize_script('crayon_admin_js', 'CrayonSyntaxSettings', self::$js_settings);
+		CrayonThemeEditorWP::admin_scripts();
 	}
 
 	public static function settings() {
@@ -138,7 +141,7 @@ class CrayonSettingsWP {
 </form>
 </div>
 
-<div id="crayon-theme-editor-wrap" class="wrap" url="<?php echo plugins_url(CRAYON_THEME_EDITOR_PHP, __FILE__); ?>"></div>
+<div id="crayon-theme-editor-wrap" class="wrap" url="<?php echo plugins_url(CRAYON_THEME_EDITOR_CONTENT_PHP, __FILE__); ?>"></div>
 
 <?php
 	}
@@ -620,7 +623,10 @@ class CrayonSettingsWP {
 		}
 		// Theme editor
 		if (CRAYON_THEME_EDITOR) {
-			echo '<a id="crayon-theme-editor-button" class="button-primary crayon-admin-button" loading="'. crayon__('Loading...') .'" loaded="'. crayon__('Theme Editor') .'" >'. crayon__('Theme Editor') .'</a></br>';
+// 			echo '<a id="crayon-theme-editor-button" class="button-primary crayon-admin-button" loading="'. crayon__('Loading...') .'" loaded="'. crayon__('Theme Editor') .'" >'. crayon__('Theme Editor') .'</a></br>';
+			echo '<div id="crayon-theme-editor-admin-buttons">',
+				'<a id="crayon-theme-editor-edit-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Edit'), '" >', crayon__('Edit'), '</a>',
+				'<a id="crayon-theme-editor-create-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Create'), '" >', crayon__('Create'), '</a></br></div>';
 		}
 		// Preview Box
 		echo '<div id="crayon-live-preview" url="', plugins_url(CRAYON_PREVIEW_PHP, __FILE__), '"></div>';

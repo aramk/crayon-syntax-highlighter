@@ -175,15 +175,16 @@
 	text-align: center;
 }
 
+#crayon-theme-editor-admin-buttons {
+	display: inline;
+}
+
+#crayon-theme-editor-admin-buttons .crayon-admin-button {
+	margin-left: 5px;
+}
+
 #crayon-editor-table td {
 	vertical-align: top;
-}
-.crayon-editor-controls {
-	
-}
-.crayon-editor-controls,
-.crayon-editor-control-wrapper {
-	width: 300px;
 }
 
 #gmail-icon, #twitter-icon, #donate-icon {

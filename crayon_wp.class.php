@@ -25,7 +25,8 @@ License: GPL2
 */
 require_once ('global.php');
 require_once (CRAYON_HIGHLIGHTER_PHP);
-require_once ('util/tag-editor/crayon_tag_editor_wp.class.php');
+require_once (CRAYON_TE_PHP);
+require_once (CRAYON_THEME_EDITOR_PHP);
 require_once ('crayon_settings_wp.class.php');
 
 if (defined('ABSPATH')) {

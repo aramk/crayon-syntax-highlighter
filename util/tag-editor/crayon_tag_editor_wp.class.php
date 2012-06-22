@@ -26,7 +26,7 @@ class CrayonTagEditorWP {
 			// Add settings
 			CrayonSettingsWP::load_settings(TRUE);
 			self::$settings = array(
-					'url' => plugins_url(CRAYON_TE_PHP, __FILE__),
+					'url' => plugins_url(CRAYON_TE_CONTENT_PHP, __FILE__),
 					'home_url' => home_url(),
 					'css' => 'crayon-te',
 					'used' => CrayonGlobalSettings::val(CrayonSettings::TINYMCE_USED),

@@ -6,7 +6,7 @@ define('CRAYON_DEBUG', FALSE);
 
 // TODO remove once done
 define('CRAYON_TAG_EDITOR', TRUE);
-define('CRAYON_THEME_EDITOR', FALSE);
+define('CRAYON_THEME_EDITOR', TRUE);
 
 // Constants
 
@@ -51,6 +51,8 @@ define('CRAYON_LANG_PATH', CRAYON_ROOT_PATH . CRAYON_LANG_DIR);
 define('CRAYON_THEME_PATH', CRAYON_ROOT_PATH . CRAYON_THEME_DIR);
 define('CRAYON_FONT_PATH', CRAYON_ROOT_PATH . CRAYON_FONT_DIR);
 define('CRAYON_UTIL_PATH', CRAYON_ROOT_PATH . CRAYON_UTIL_DIR);
+define('CRAYON_TAG_EDITOR_PATH', CRAYON_ROOT_PATH . CRAYON_UTIL_DIR . CRAYON_TAG_EDITOR_DIR);
+define('CRAYON_THEME_EDITOR_PATH', CRAYON_ROOT_PATH . CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR);
 
 // Files
 
@@ -68,16 +70,22 @@ define('CRAYON_JQUERY_POPUP', CRAYON_JS_DIR . 'jquery.popup.js');
 define('CRAYON_JS', CRAYON_JS_DIR . 'crayon.js');
 define('CRAYON_JS_ADMIN', CRAYON_JS_DIR . 'crayon_admin.js');
 define('CRAYON_JS_UTIL', CRAYON_JS_DIR . 'util.js');
+// TODO rename TE
 define('CRAYON_TE_JS', 'crayon_te.js');
-define('CRAYON_TE_PHP', 'crayon_te_content.php');
+define('CRAYON_TE_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.class.php');
+// TODO Fix these
+define('CRAYON_TE_CONTENT_PHP', 'crayon_te_content.php');
 define('CRAYON_TINYMCE_JS', 'crayon_tinymce.js');
 define('CRAYON_QUICKTAGS_JS', 'crayon_qt.js');
 define('CRAYON_STYLE', CRAYON_CSS_DIR . 'style.css');
 define('CRAYON_STYLE_ADMIN', CRAYON_CSS_DIR . 'admin_style.css');
 define('CRAYON_LOGO', CRAYON_CSS_DIR . 'images/crayon_logo.png');
 define('CRAYON_DONATE_BUTTON', CRAYON_CSS_DIR . 'images/donate.png');
+define('CRAYON_THEME_EDITOR_PHP', CRAYON_THEME_EDITOR_PATH . 'theme_editor.php');
+define('CRAYON_THEME_EDITOR_CONTENT_PHP', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR  . 'theme_editor_content.php');
+define('CRAYON_THEME_EDITOR_JS', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR . 'theme_editor.js');
+define('CRAYON_THEME_EDITOR_STYLE', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR . 'theme_editor.css');
 define('CRAYON_THEME_EDITOR_BUTTON', CRAYON_CSS_DIR . 'images/theme_editor.png');
-define('CRAYON_THEME_EDITOR_JS', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR . 'editor.js');
 
 // PHP Files
 define('CRAYON_FORMATTER_PHP', CRAYON_ROOT_PATH . 'crayon_formatter.class.php');
@@ -95,7 +103,6 @@ define('CRAYON_LOG_PHP', CRAYON_UTIL_DIR . 'crayon_log.class.php');
 define('CRAYON_LIST_LANGS_PHP', CRAYON_UTIL_DIR . 'list_langs.php');
 define('CRAYON_PREVIEW_PHP', CRAYON_UTIL_DIR . 'preview.php');
 define('CRAYON_AJAX_PHP', CRAYON_UTIL_DIR . 'ajax.php');
-define('CRAYON_THEME_EDITOR_PHP', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR . 'editor.php');
 
 // Script time
 
