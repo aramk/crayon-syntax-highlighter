@@ -27,6 +27,9 @@ class CrayonFormatter {
 	public static function format_code($code, $language, $hl = NULL) {
 		// Ensure the language is defined
 		if ($language != NULL && $hl->is_highlighted) {
+			
+			$code = self::clean_code($code, FALSE, FALSE, FALSE, TRUE);
+			
 			/* Perform the replace on the code using the regex, pass the captured matches for
 			 formatting before they are replaced */
 			try {
@@ -46,7 +49,7 @@ class CrayonFormatter {
 			
 			return $code;
 		} else {
-			return self::clean_code($code);
+			return self::clean_code($code, TRUE, TRUE, TRUE, TRUE);
 		}
 	}
 
@@ -490,19 +493,25 @@ class CrayonFormatter {
 	
 	// Auxiliary Methods ======================================================
 	/* Prepares code for formatting. */
-	public static function clean_code($code, $spaces = TRUE) {
+	public static function clean_code($code, $escape = TRUE, $spaces = FALSE, $tabs = FALSE, $lines = FALSE) {
 		if (empty($code)) {
 			return $code;
 		}
 		/* Convert <, > and & characters to entities, as these can appear as HTML tags and entities. */
-		$code = CrayonUtil::htmlspecialchars($code);
+		if ($escape) {
+			$code = CrayonUtil::htmlspecialchars($code);
+		}
 		if ($spaces) {
 			// Replace 2 spaces with html escaped characters
 			$code = preg_replace('#[ ]{2}#msi', '&nbsp;&nbsp;', $code);
 		}
-		$code = preg_replace('#(\r(?!\n))|((?<!\r)\n)#msi', "\r\n", $code);
-		// Replace tabs with 4 spaces
-		$code = preg_replace('#\t#', str_repeat('&nbsp;', CrayonGlobalSettings::val(CrayonSettings::TAB_SIZE)), $code);
+		if ($tabs) {
+			// Replace tabs with 4 spaces
+			$code = preg_replace('#\t#', str_repeat('&nbsp;', CrayonGlobalSettings::val(CrayonSettings::TAB_SIZE)), $code);
+		}
+		if ($lines) {
+			$code = preg_replace('#(\r\n)|\r|\n#msi', "\r\n", $code);
+		}
 		return $code;
 	}
 	
@@ -520,7 +529,11 @@ class CrayonFormatter {
 	}
 
 	public static function split_lines($code, $class) {
-		$code = self::clean_code($code);
+		
+// 		var_dump($code);
+// 		exit;
+		
+		$code = self::clean_code($code, TRUE, TRUE, TRUE, FALSE);
 // 		$code = preg_replace('#^[^\r\n]+#m', '<span class="'.$class.'">', $code);
 // 		$code = preg_replace('#(?<=[^\r\n])(?=\r\n|\r|\n)#m', '</span>', $code);
 		$code = preg_replace('#^([^\r\n]+)(?=\r\n|\r|\n|$)#m', '<span class="'.$class.'">$1</span>', $code);
