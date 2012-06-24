@@ -4,10 +4,6 @@ $crayon_root_theme = dirname(dirname(dirname(__FILE__))) . '/';
 require_once $crayon_root_theme . 'global.php';
 
 class CrayonThemeEditorWP {
-	
-// 	public static function init() {
-// 		self::admin_scripts();
-// 	}
 
 	public static function admin_scripts() {
 		
@@ -18,14 +14,13 @@ class CrayonThemeEditorWP {
 			$themes[$theme->id()] = $theme->name();
 		}
 		
-		$settings = array('themes' => $themes);
+		$settings = array(
+				'themes' => $themes,
+				'themes_url' => plugins_url(CRAYON_THEME_DIR, dirname(dirname(__FILE__)))
+			);
 		wp_localize_script('crayon_theme_editor', 'CrayonThemeEditorSettings', $settings);
 	}
 
 }
-
-// if (defined('ABSPATH') && is_admin()) {
-// 	add_action('init', 'CrayonThemeEditorWP::init');
-// }
 
 ?>

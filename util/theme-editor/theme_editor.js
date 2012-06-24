@@ -7,9 +7,11 @@ var CrayonSyntaxThemeEditor = new function() {
 //	var theme_dropdown;
 //	var theme_css, is_theme_changed;
 	
+	var settings = CrayonThemeEditorSettings;
+	
 	this.init = function(callback, crayon) {
 		
-		console_log(CrayonThemeEditorSettings);
+		console_log(CrayonThemeEditorSettings); 
 		
 		console_log('editor init');
 		preview = jQuery('#crayon-editor-preview');
@@ -17,6 +19,13 @@ var CrayonSyntaxThemeEditor = new function() {
 		crayon.attr('id', 'theme-editor-instance');
 		CrayonSyntax.process(crayon, true);
 		preview.html(crayon);
+		
+		jQuery.get(settings.themes_url + settings.curr_theme + '/' + settings.curr_theme + '.css' , function(css) {
+			console_log(css);
+			
+			var json = CSSJSON.toJSON(css, true);
+			console_log(json);
+		});
 		
 //		preview_loaded = false;
 //		editor_controls = jQuery('#crayon-editor-controls');

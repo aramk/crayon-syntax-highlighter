@@ -68,13 +68,13 @@ class CrayonSettingsWP {
 
 	public static function admin_scripts() {
 		global $CRAYON_VERSION;
-		//wp_enqueue_script('crayon_jquery', plugins_url(CRAYON_JQUERY, __FILE__), array(), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_util_js'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_jquery_popup', plugins_url(CRAYON_JQUERY_POPUP, __FILE__), array('jquery'), $CRAYON_VERSION);
+		wp_enqueue_script('cssjson_js', plugins_url(CRAYON_CSSJSON_JS, __FILE__), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS, __FILE__), array('jquery', 'crayon_jquery_popup', 'crayon_util_js'), $CRAYON_VERSION);
 		if (CRAYON_THEME_EDITOR) {
-			wp_enqueue_script('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_JS, __FILE__), array('jquery'), $CRAYON_VERSION);
+			wp_enqueue_script('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_JS, __FILE__), array('jquery', 'cssjson_js'), $CRAYON_VERSION);
 		}
 		// XXX Must come after
 		self::init_js_settings();
