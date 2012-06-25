@@ -199,7 +199,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 2.0.0 =
+= 1.9.11 =
 * Fixed an issue with IE 8 throwing JS errors for setStyleProperty
 
 = 1.9.10 =
