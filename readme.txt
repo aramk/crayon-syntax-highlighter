@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=PPqWIQJ0
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter
 Requires at least: 3.0
 Tested up to: 3.4
-Stable tag: 1.9.10
+Stable tag: 1.9.11
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
@@ -201,6 +201,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 1.9.11 =
 * Fixed an issue with IE 8 throwing JS errors for setStyleProperty
+* Fixed yet another issue with \r\n causing incorrect span tags, refactored code.
 
 = 1.9.10 =
 * Another fix regarding the \r\n line breaks
