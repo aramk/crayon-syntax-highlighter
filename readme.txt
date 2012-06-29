@@ -200,6 +200,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.9.12 =
+* Fixed a bug caused by unescaped HTML elements in the plain code breaking the page markup, reverted to escaped and uses the new sanitisation method. 
+
 = 1.9.11 =
 * Fixed an issue with IE 8 throwing JS errors for setStyleProperty
 * Fixed yet another issue with \r\n causing incorrect span tags, refactored code.
