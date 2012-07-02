@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=PPqWIQJ0
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 1.9.11
+Stable tag: 1.9.12
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
@@ -138,6 +138,7 @@ A handful of articles from others written about Crayon, thanks guys!
 * Performance, minimised resources
 * Theme Editor
 * Line wrapping
+* Go language support
 
 == Installation ==
 
