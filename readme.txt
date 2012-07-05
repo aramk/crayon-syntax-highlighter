@@ -95,6 +95,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 **International Languages**
 
 * Chinese (Simplified, thanks to <a href="http://smerpup.com/" target="_blank">Dezhi Liu</a> & <a href="http://neverno.me/" target="_blank">Jash Yin</a>)
+* Dutch (thanks to <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>)
 * French
 * German (thanks to <a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&szlig;</a>)
 * Italian
