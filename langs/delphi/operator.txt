@@ -1,0 +1,25 @@
+# Grouped operators
+and
+not
+or
+div
+mod
+:=
+<>
+<=
+>=
+
+# Single operators
+%
+^
+~
+&
+|
+!
+=
+<
+>
++
+-
+*
+/

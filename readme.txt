@@ -72,6 +72,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * C#
 * C++
 * CSS
+* Delphi/Pascal (thanks to <a href="http://squashbrain.com/" target="_blank">Chris McClenny</a>)
 * Haskell
 * HTML (XML/XHTML)
 * Lua
@@ -204,6 +205,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 1.9.13 =
 * Added Dutch translation thanks to <a href="https://twitter.com/#!/chilionsnoek">@chilionsnoek</a>.
+* Added Delphi/Pascal thanks to Chris McClenny (http://squashbrain.com/)
 
 = 1.9.12 =
 * Fixed a bug caused by unescaped HTML elements in the plain code breaking the page markup, reverted to escaped and uses the new sanitisation method. 
@@ -647,6 +649,7 @@ Make sure to upgrade to the latest release when possible to ensure you avoid bug
 
 Thanks to all those who donate to my project, your support keeps the Crayons going!
 
+* Jeff Benshetler, USA
 * Oldrich Strachota, (http://www.strachota.net/), Czech Republic
 * Dividend Ninja, (http://dividendninja.com/), Canada
 * Chris Wiegman, (http://bit51.com/), USA
