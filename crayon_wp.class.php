@@ -614,9 +614,10 @@ class CrayonWP {
 		$content = $matches[6];
 		
 		// If we find a crayon=false in the attributes, or a crayon[:_]false in the class, then we should not capture
-		$ignore_regex = '#crayon\s*=\s*(["\'])\s*(false|no|0)\s*\1#msi';
+		$ignore_regex_atts = '#crayon\s*=\s*(["\'])\s*(false|no|0)\s*\1#msi';
+		$ignore_regex_class = '#crayon\s*[:_]\s*(false|no|0)#msi';
 		if (preg_match($ignore_regex, $atts) !== 0 ||
-				preg_match($ignore_regex, $class) !== 0 ) {
+				preg_match($ignore_regex_class, $class) !== 0 ) {
 			return $matches[0];
 		}
 		

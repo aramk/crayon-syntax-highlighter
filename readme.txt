@@ -206,6 +206,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 1.9.13 =
 * Added Dutch translation thanks to <a href="https://twitter.com/#!/chilionsnoek">@chilionsnoek</a>.
 * Added Delphi/Pascal thanks to Chris McClenny (http://squashbrain.com/)
+* Fixed a bug causing crayon:false to be ignored in the class tag 
 
 = 1.9.12 =
 * Fixed a bug caused by unescaped HTML elements in the plain code breaking the page markup, reverted to escaped and uses the new sanitisation method. 
