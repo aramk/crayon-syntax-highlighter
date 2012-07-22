@@ -141,6 +141,7 @@ A handful of articles from others written about Crayon, thanks guys!
 * Theme Editor
 * Line wrapping
 * Go language support
+* Integrated commenting
 
 == Installation ==
 
