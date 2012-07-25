@@ -209,7 +209,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added Dutch translation thanks to <a href="https://twitter.com/#!/chilionsnoek">@chilionsnoek</a>.
 * Added Delphi/Pascal thanks to Chris McClenny (http://squashbrain.com/)
 * Added AppleScript
-* Language is automatically selected from the Tag Editor dropdown as you type a URL with an extension (e.g. typing "cs" would select "C#")  
+* Language is automatically selected from the Tag Editor dropdown as you type a URL with an extension (e.g. typing "cs" would select "C#")
+* Fixed a preventing language being detected from extension  
 * Fixed a bug causing crayon:false to be ignored in the class tag 
 
 = 1.9.12 =
