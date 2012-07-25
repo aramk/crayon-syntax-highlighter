@@ -66,6 +66,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * ABAP
 * ActionScript
 * Apache
+* AppleScript
 * Assembly (x86)
 * AutoIt
 * C
@@ -207,6 +208,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 1.9.13 =
 * Added Dutch translation thanks to <a href="https://twitter.com/#!/chilionsnoek">@chilionsnoek</a>.
 * Added Delphi/Pascal thanks to Chris McClenny (http://squashbrain.com/)
+* Added AppleScript
 * Fixed a bug causing crayon:false to be ignored in the class tag 
 
 = 1.9.12 =
