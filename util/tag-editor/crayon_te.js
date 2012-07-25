@@ -99,12 +99,28 @@ var CrayonTagEditor = new function() {
         	
         	var url = jQuery(s.url_css);
         	var url_info = jQuery(s.url_info_css);
+        	var exts = CrayonTagEditorSettings.extensions;
         	url_refresh = function () {
         		if (url.val().length > 0 && !url_info.is(":visible")) {
         			url_info.show();
         			url.removeClass(gs.selected);
         		} else if (url.val().length <= 0) {
         			url_info.hide();
+        		}
+        		
+        		// Check for extensions and select language automatically
+        		var ext = CrayonSyntaxUtil.getExt(url.val());
+        		if (ext) {
+        			var lang = exts[ext];
+        			// Otherwise use the extention as the lang
+        			var lang_id = lang ? lang : ext;
+        			var final_lang = CrayonTagEditorSettings.fallback_lang;
+        			jQuery(s.lang_css + ' option').each(function() {
+        				if (jQuery(this).val() == lang_id) {
+        					final_lang = lang_id; 
+        				}
+        			});
+        			jQuery(s.lang_css).val(final_lang);
         		}
         	};
         	url.keyup(url_refresh);

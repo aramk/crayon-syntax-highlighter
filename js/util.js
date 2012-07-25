@@ -52,6 +52,21 @@ function crayon_encode_html(str) {
             .replace(/>/g, '&gt;');
 }
 
+var CrayonSyntaxUtil = new function() {
+	this.getExt = function(str) {
+		if (str.indexOf('.') == -1) {
+			return undefined;
+		}
+		var ext = str.split('.');
+		if (ext.length) {
+			ext = ext[ext.length-1];
+		} else {
+			ext = '';
+		}
+		return ext;
+	};
+};
+
 //http://stackoverflow.com/questions/2360655/jquery-event-handlers-always-execute-in-order-they-were-bound-any-way-around-t
 
 //[name] is the name of the event "click", "mouseover", .. 

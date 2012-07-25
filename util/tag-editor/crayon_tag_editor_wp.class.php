@@ -22,6 +22,7 @@ class CrayonTagEditorWP {
 	}
 	
 	public static function init_settings() {
+		
 		if (!self::$settings) {
 			// Add settings
 			CrayonSettingsWP::load_settings(TRUE);
@@ -58,6 +59,7 @@ class CrayonTagEditorWP {
 					'dialog_title_edit' => crayon__('Edit Crayon Code'),
 					'submit_add' => crayon__('Add'),
 					'submit_edit' => crayon__('Save'),
+					'extensions' => CrayonResources::langs()->extensions_inverted()
 			);
 		}
 	}

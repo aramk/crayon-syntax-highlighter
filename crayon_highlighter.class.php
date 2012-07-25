@@ -40,6 +40,7 @@ class CrayonHighlighter {
 		if ($url !== NULL) {
 			$this->url($url);
 		}
+		
 		if ($language !== NULL) {
 			$this->language($language);
 		}
@@ -154,7 +155,9 @@ class CrayonHighlighter {
 		}
 		
 		if ($this->language === NULL) {
-			$this->language($this->setting_val(CrayonSettings::FALLBACK_LANG));
+			$this->language_detect();
+// 			$this->language($this->setting_val(CrayonSettings::FALLBACK_LANG));
+// 			$this->language(NULL);
 		}
 		if ($this->needs_format) {
 			$tmr->start();
@@ -240,15 +243,19 @@ class CrayonHighlighter {
 			// Set the language if it exists or look for an alias
 			$this->language = $lang;
 		} else {
-			// Attempt to detect the language
-			if (!empty($id)) {
-				$this->log("The language '$id' could not be loaded.");
-			}
-			$this->language = CrayonResources::langs()->detect($this->url, $this->setting_val(CrayonSettings::FALLBACK_LANG));
+			$this->language_detect();
 		}
 		
 		// Prepare the language for use, even if we have no code, we need the name
 		CrayonParser::parse($this->language->id());
+	}
+	
+	function language_detect() {
+		// Attempt to detect the language
+		if (!empty($id)) {
+			$this->log("The language '$id' could not be loaded.");
+		}
+		$this->language = CrayonResources::langs()->detect($this->url, $this->setting_val(CrayonSettings::FALLBACK_LANG));
 	}
 
 	function url($url = NULL) {
