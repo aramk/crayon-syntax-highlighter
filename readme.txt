@@ -100,7 +100,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Dutch (thanks to <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>)
 * French
 * German (thanks to <a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&szlig;</a>)
-* Italian
+* Italian (thanks to <a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>)
 * Lithuanian (thanks to <a href="http://www.host1free.com" target="_blank">Vincent G</a>)
 * Spanish
 * Japanese (thanks to <a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>)
@@ -211,7 +211,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added AppleScript
 * Language is automatically selected from the Tag Editor dropdown as you type a URL with an extension (e.g. typing "cs" would select "C#")
 * Fixed a preventing language being detected from extension  
-* Fixed a bug causing crayon:false to be ignored in the class tag 
+* Fixed a bug causing crayon:false to be ignored in the class tag
+* Added Italian translation thanks to Federico Bellucci (http://www.federicobellucci.net/) 
 
 = 1.9.12 =
 * Fixed a bug caused by unescaped HTML elements in the plain code breaking the page markup, reverted to escaped and uses the new sanitisation method. 
