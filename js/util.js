@@ -1,3 +1,6 @@
+// To avoid duplicates conflicting
+var jQueryCrayon = jQuery.noConflict();
+
 var CRAYON_DEBUG = false;
 
 if (typeof CrayonTagEditorSettings == 'undefined') {
@@ -72,11 +75,10 @@ var CrayonSyntaxUtil = new function() {
 //[name] is the name of the event "click", "mouseover", .. 
 //same as you'd pass it to bind()
 //[fn] is the handler function
-jQuery.fn.bindFirst = function(name, fn) {
+jQueryCrayon.fn.bindFirst = function(name, fn) {
 	// bind as you normally would
 	// don't want to miss out on any jQuery magic
 	this.bind(name, fn);
-
 	// Thanks to a comment by @Martin, adding support for
 	// namespaced events too.
 	var handlers = this.data('events')[name.split('.')[0]];
@@ -85,3 +87,4 @@ jQuery.fn.bindFirst = function(name, fn) {
 	// move it at the beginning
 	handlers.splice(0, 0, handler);
 };
+

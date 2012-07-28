@@ -19,79 +19,82 @@ jqueryPopup.defaultSettings = {
 		event:'click'
 	};
 
-function popupWindow(object, instanceSettings, beforeCallback, afterCallback) {
-	beforeCallback = typeof beforeCallback !== 'undefined' ? beforeCallback : null;
-	afterCallback = typeof afterCallback !== 'undefined' ? afterCallback : null;
+(function ($) {
 
-	if (typeof object == 'string') {
-		object = jQuery(object);
-	}
-	if (!(object instanceof jQuery)) {
-		return false;
-	}
-	var settings = jQuery.extend({}, jqueryPopup.defaultSettings, instanceSettings || {});
-	object.handler = jQuery(object).bind(settings.event, function() {
-		
-		if (beforeCallback) {
-			beforeCallback();
-		}
-		
-		var windowFeatures =    'height=' + settings.height +
-								',width=' + settings.width +
-								',toolbar=' + settings.toolbar +
-								',scrollbars=' + settings.scrollbars +
-								',status=' + settings.status + 
-								',resizable=' + settings.resizable +
-								',location=' + settings.location +
-								',menuBar=' + settings.menubar;
+	popupWindow = function (object, instanceSettings, beforeCallback, afterCallback) {
+		beforeCallback = typeof beforeCallback !== 'undefined' ? beforeCallback : null;
+		afterCallback = typeof afterCallback !== 'undefined' ? afterCallback : null;
 	
-		settings.windowName = settings.windowName || jQuery(this).attr('name');
-		var href = jQuery(this).attr('href');
-		if (!settings.windowURL && !(href == '#') && !(href == '')) {
-			settings.windowURL = jQuery(this).attr('href');
+		if (typeof object == 'string') {
+			object = jQuery(object);
 		}
+		if (!(object instanceof jQuery)) {
+			return false;
+		}
+		var settings = jQuery.extend({}, jqueryPopup.defaultSettings, instanceSettings || {});
+		object.handler = jQuery(object).bind(settings.event, function() {
+			
+			if (beforeCallback) {
+				beforeCallback();
+			}
+			
+			var windowFeatures =    'height=' + settings.height +
+									',width=' + settings.width +
+									',toolbar=' + settings.toolbar +
+									',scrollbars=' + settings.scrollbars +
+									',status=' + settings.status + 
+									',resizable=' + settings.resizable +
+									',location=' + settings.location +
+									',menuBar=' + settings.menubar;
 		
-		var centeredY,centeredX;
-		
-		var win = null;
-		if (settings.centerBrowser) {
-			if (jQuery.browser.msie) {//hacked together for IE browsers
-				centeredY = (window.screenTop - 120) + ((((document.documentElement.clientHeight + 120)/2) - (settings.height/2)));
-				centeredX = window.screenLeft + ((((document.body.offsetWidth + 20)/2) - (settings.width/2)));
+			settings.windowName = settings.windowName || jQuery(this).attr('name');
+			var href = jQuery(this).attr('href');
+			if (!settings.windowURL && !(href == '#') && !(href == '')) {
+				settings.windowURL = jQuery(this).attr('href');
+			}
+			
+			var centeredY,centeredX;
+			
+			var win = null;
+			if (settings.centerBrowser) {
+				if (jQuery.browser.msie) {//hacked together for IE browsers
+					centeredY = (window.screenTop - 120) + ((((document.documentElement.clientHeight + 120)/2) - (settings.height/2)));
+					centeredX = window.screenLeft + ((((document.body.offsetWidth + 20)/2) - (settings.width/2)));
+				} else {
+					centeredY = window.screenY + (((window.outerHeight/2) - (settings.height/2)));
+					centeredX = window.screenX + (((window.outerWidth/2) - (settings.width/2)));
+				}
+				win = window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + centeredX +',top=' + centeredY);
+			} else if (settings.centerScreen) {
+				centeredY = (screen.height - settings.height)/2;
+				centeredX = (screen.width - settings.width)/2;
+				win = window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + centeredX +',top=' + centeredY);
 			} else {
-				centeredY = window.screenY + (((window.outerHeight/2) - (settings.height/2)));
-				centeredX = window.screenX + (((window.outerWidth/2) - (settings.width/2)));
+				win = window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + settings.left +',top=' + settings.top);
 			}
-			win = window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + centeredX +',top=' + centeredY);
-		} else if (settings.centerScreen) {
-			centeredY = (screen.height - settings.height)/2;
-			centeredX = (screen.width - settings.width)/2;
-			win = window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + centeredX +',top=' + centeredY);
-		} else {
-			win = window.open(settings.windowURL, settings.windowName, windowFeatures+',left=' + settings.left +',top=' + settings.top);
-		}
-		if (win != null) {
-			win.focus();
-			if (settings.data) {
-				win.document.write(settings.data);
+			if (win != null) {
+				win.focus();
+				if (settings.data) {
+					win.document.write(settings.data);
+				}
 			}
-		}
-		
-		if (afterCallback) {
-			afterCallback();
-		}
-	});
-	return settings;
-}
+			
+			if (afterCallback) {
+				afterCallback();
+			}
+		});
+		return settings;
+	};
 
-function popdownWindow(object, event) {
-	if (typeof event == 'undefined') {
-		event = 'click';
-	}
-	object = jQuery(object);
-	if (!(object instanceof jQuery)) {
-		return false;
-	}
-	object.unbind(event, object.handler);
-}
+	popdownWindow = function(object, event) {
+		if (typeof event == 'undefined') {
+			event = 'click';
+		}
+		object = jQuery(object);
+		if (!(object instanceof jQuery)) {
+			return false;
+		}
+		object.unbind(event, object.handler);
+	};
 
+})(jQueryCrayon);
