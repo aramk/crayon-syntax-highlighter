@@ -1,5 +1,0 @@
-
-[Crayon Syntax Highlighter Log Entry - 3:08:33 PM - 25 Jul 2012]
-
- str "Local url (/Users/Aram/Development/Web/crayon/wp_load.php) could not be loaded"
- str "The provided URL ('wp_load.php'), parsed remotely as ('http://wp_load.php'), could not be accessed."
