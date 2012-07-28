@@ -213,6 +213,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fixed a preventing language being detected from extension  
 * Fixed a bug causing crayon:false to be ignored in the class tag
 * Cleaned up crayon's js so it's not possible to overwrite the jQuery instance
+* Fixed bug causing repeats of Crayon due to broken tags from using Mini Tags
+* Fixed isses with ignoring Mini Tags with $
 * Added Italian translation thanks to Federico Bellucci (http://www.federicobellucci.net/) 
 
 = 1.9.12 =
