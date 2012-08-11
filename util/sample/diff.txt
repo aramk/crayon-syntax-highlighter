@@ -1,0 +1,9 @@
+*** testing ***
+ It is important to spell
+--- testing ---
+-check this dokument. On
++check this document. On
+ the other hand, a
+! misspelled word isn't
+ the end of the world.
+@@ -22,3 +22,7 @@

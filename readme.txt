@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=PPqWIQJ0
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 1.10
+Stable tag: _1.10.1_beta
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
@@ -74,6 +74,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * C++
 * CSS
 * Delphi/Pascal (thanks to <a href="http://squashbrain.com/" target="_blank">Chris McClenny</a>)
+* Diff (thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>)
 * Haskell
 * HTML (XML/XHTML)
 * Lua
@@ -204,6 +205,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 4. Tag Editor.
 
 == Changelog ==
+
+= 1.10.1 =
+* Added diff language thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>
+* Fixed CSS rule for plain-wrap
 
 = 1.10 =
 * Added Dutch translation thanks to <a href="https://twitter.com/#!/chilionsnoek">@chilionsnoek</a>.

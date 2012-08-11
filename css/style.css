@@ -327,7 +327,10 @@ coloring etc.
 }
 
 .crayon-syntax .crayon-plain-wrap {
-
+	height: auto !important;
+	height: width !important;
+	padding: 0 !important;
+	margin: 0 !important;
 }
 
 .crayon-syntax .crayon-plain {
