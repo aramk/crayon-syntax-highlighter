@@ -341,7 +341,7 @@
 			}
 			var code = crayon[uid].plain_visible ? crayon[uid].plain : crayon[uid].main;
 			var settings = crayon[uid].popup_settings;
-			settings.data = get_all_css() + '<body style="padding:0; margin:0;"><div class="' + crayon[uid].attr('class') + 
+			settings.data = get_all_css() + '<body class="crayon-popup-window" style="padding:0; margin:0;"><div class="' + crayon[uid].attr('class') + 
 				' crayon-popup">' + remove_css_inline(get_jquery_str(code)) + '</div></body>';
 			if (typeof settings == 'undefined') {
 				return;

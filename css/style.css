@@ -43,18 +43,6 @@ coloring etc.
     overflow: auto;
 }
 
-/*.crayon-popup .crayon-main,
-.crayon-popup .crayon-table {
-	max-width: 0;
-	max-height: 0;
-	display: block !important;
-	opacity: 100 !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	width: 100% !important;
-	height: auto !important;
-}*/
-
 .crayon-syntax,
 .crayon-syntax .crayon-main,
 .crayon-syntax .crayon-plain,
@@ -100,7 +88,7 @@ coloring etc.
 
 /* Popup ========================= */
 .crayon-popup {
-	/*position: static !important;*/
+	
 }
 
 .crayon-popup .crayon-plain {
@@ -109,6 +97,9 @@ coloring etc.
 	height: 100% !important;
 	opacity: 100 !important;
 	position: relative !important;
+}
+.crayon-popup-window {
+	background: #fff;
 }
 /* End Popup ========================= */
 
