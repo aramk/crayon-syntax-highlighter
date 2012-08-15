@@ -211,6 +211,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added diff language thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>
 * Fixed CSS rule for plain-wrap
 * Added CSS class and white background to popup window
+* Removed noConflict() that was causing jQuery to fail on scripts that used $
 
 = 1.10 =
 * Added Dutch translation thanks to <a href="https://twitter.com/#!/chilionsnoek">@chilionsnoek</a>.

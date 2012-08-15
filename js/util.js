@@ -1,5 +1,5 @@
 // To avoid duplicates conflicting
-var jQueryCrayon = jQuery.noConflict();
+var jQueryCrayon = jQuery;
 
 var CRAYON_DEBUG = false;
 

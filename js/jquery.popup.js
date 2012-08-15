@@ -98,3 +98,4 @@ jqueryPopup.defaultSettings = {
 	};
 
 })(jQueryCrayon);
+
