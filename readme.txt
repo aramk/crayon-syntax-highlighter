@@ -213,6 +213,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added CSS class and white background to popup window
 * Removed noConflict() that was causing jQuery to fail on scripts that used $
 * Fixed an issue in the German translation causing "%gt;" (should be "&") to be recognised as an argument in printf.
+* The new method for using the wp_load.php path provided through a GET request from Crayon's js to its PHP should allow redefinitions WP directories in wp_config 
 
 = 1.10 =
 * Added Dutch translation thanks to <a href="https://twitter.com/#!/chilionsnoek">@chilionsnoek</a>.

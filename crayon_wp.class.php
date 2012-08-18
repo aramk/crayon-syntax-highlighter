@@ -808,8 +808,11 @@ class CrayonWP {
 	}
 	
 	public static function wp_load_path() {
-		$wp_root_path = dirname(dirname(dirname(CRAYON_ROOT_PATH)));
-		return $wp_root_path . '/wp-load.php';
+		if (defined('ABSPATH')) {
+			return ABSPATH . 'wp-load.php';
+		} else {
+			CrayonLog::syslog('wp_load_path could not find value for ABSPATH');
+		}
 	}
 	
 	public static function pre_excerpt($e) {

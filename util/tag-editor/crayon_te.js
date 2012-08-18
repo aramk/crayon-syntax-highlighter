@@ -52,7 +52,9 @@ var CrayonTagEditor = new function() {
     	}
     	
         // Load the editor content 
-        jQuery.get(s.url, function(data) {
+    	var url = s.url + '?wp_load=' + CrayonSyntaxSettings.wp_load + '&';
+		url += 'crayon_wp=' + CrayonSyntaxSettings.crayon_wp + '&';
+        jQuery.get(url, function(data) {
         	dialog = jQuery('<div id="'+s.css+'"></div>');
             dialog.appendTo('body').hide();
         	dialog.html(data);

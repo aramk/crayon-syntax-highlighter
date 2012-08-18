@@ -2,9 +2,9 @@
 
 <?php 
 
-$crayon_root_te = dirname(dirname(dirname(__FILE__)));
-require_once ($crayon_root_te . '/crayon_wp.class.php');
-require_once (CrayonWP::wp_load_path());
+require_once ($_GET['crayon_wp']);
+require_once ($_GET['wp_load']);
+
 require_once (CRAYON_TE_PHP);
 require_once (CRAYON_PARSER_PHP);
 

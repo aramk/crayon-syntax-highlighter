@@ -85,6 +85,8 @@ class CrayonSettingsWP {
 		self::load_settings(TRUE);
 		if (!self::$js_settings) {
 			self::$js_settings = array(
+					'wp_load' => CrayonWP::wp_load_path(),
+					'crayon_wp' => CRAYON_ROOT_PATH . 'crayon_wp.class.php', 
 					'prefix' => CrayonSettings::PREFIX,
 					'setting' => CrayonSettings::SETTING,
 					'selected' => CrayonSettings::SETTING_SELECTED,
@@ -285,14 +287,6 @@ class CrayonSettingsWP {
 	}
 	
 	// Paths
-	
-	public static function wp_root_path() {
-		return preg_replace('#wp\-content.*#', '', CRAYON_ROOT_PATH);
-	}
-	
-	public static function wp_load_path() {
-		return self::wp_root_path() . 'wp-load.php';
-	}
 
 	public static function admin_init() {
 		// Load default settings if they don't exist
@@ -476,7 +470,7 @@ class CrayonSettingsWP {
 		if (CrayonGlobalSettings::val(CrayonSettings::HIDE_HELP)) {
 			return;
 		}
-		$url = plugins_url(CRAYON_AJAX_PHP, __FILE__) . '?' . CrayonSettings::HIDE_HELP . '=1';
+		$url = plugins_url(CRAYON_AJAX_PHP, __FILE__) . '?wp_load=' . self::$js_settings['wp_load'] . '&crayon_wp=' . self::$js_settings['crayon_wp'] . '&' . CrayonSettings::HIDE_HELP . '=1';
 		$web = $CRAYON_WEBSITE;
 		echo '
 <div id="crayon-help" class="updated settings-error crayon-help">

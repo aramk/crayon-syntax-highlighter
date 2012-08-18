@@ -43,7 +43,7 @@
 
 		base.init = function() {
 			console_log('admin init');
-
+			
 			// Wraps
 			main_wrap = $('#crayon-main-wrap');
 			theme_editor_wrap = $('#crayon-theme-editor-wrap');
@@ -151,7 +151,8 @@
 		/* Whenever a control changes preview */
 		var preview_update = function() {
 			// console_log('preview_update');
-			preview_get = '?';
+			preview_get = '?wp_load=' + CrayonSyntaxSettings.wp_load + '&';
+			preview_get += 'crayon_wp=' + CrayonSyntaxSettings.crayon_wp + '&';
 			var val = 0;
 			var obj;
 			for ( var i = 0; i < preview_obj_names.length; i++) {
@@ -216,9 +217,6 @@
 
 		// Register all event handlers for preview objects
 		var preview_register = function() {
-			// console_log('preview_register');
-			preview_get = '?';
-
 			// Instant callback
 			preview_callback = function() {
 				preview_update();
