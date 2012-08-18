@@ -212,6 +212,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fixed CSS rule for plain-wrap
 * Added CSS class and white background to popup window
 * Removed noConflict() that was causing jQuery to fail on scripts that used $
+* Fixed an issue in the German translation causing "%gt;" (should be "&") to be recognised as an argument in printf.
 
 = 1.10 =
 * Added Dutch translation thanks to <a href="https://twitter.com/#!/chilionsnoek">@chilionsnoek</a>.
