@@ -184,6 +184,19 @@ function crayon_vargs(&$var, $default) {
 	$var = isset($var) ? $var: $default;
 }
 
+// Checks if the input is a valid PHP file and matches the $valid filename
+function crayon_is_php_file($filepath, $valid) {
+	$path_wp_load = pathinfo($filepath);
+	return is_file($filepath) && $path_wp_load['extension'] === 'php' && $path_wp_load['filename'] === $valid;
+}
+
+// Stops the script if crayon_is_php_file() returns false
+function crayon_die_if_not_php($filepath, $valid) {
+	if (!crayon_is_php_file($filepath, $valid)) {
+		die("Incorrect arguments for '$valid'");
+	}
+}
+
 // LANGUAGE TRANSLATION FUNCTIONS
 
 function crayon_load_plugin_textdomain() {

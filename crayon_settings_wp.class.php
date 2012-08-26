@@ -470,7 +470,7 @@ class CrayonSettingsWP {
 		if (CrayonGlobalSettings::val(CrayonSettings::HIDE_HELP)) {
 			return;
 		}
-		$url = plugins_url(CRAYON_AJAX_PHP, __FILE__) . '?wp_load=' . self::$js_settings['wp_load'] . '&crayon_wp=' . self::$js_settings['crayon_wp'] . '&' . CrayonSettings::HIDE_HELP . '=1';
+		$url = plugins_url(CRAYON_AJAX_PHP, __FILE__) . '?wp_load=' . self::$js_settings['wp_load'] . '&' . CrayonSettings::HIDE_HELP . '=1';// . '&crayon_wp=' . self::$js_settings['crayon_wp'] . '&';
 		$web = $CRAYON_WEBSITE;
 		echo '
 <div id="crayon-help" class="updated settings-error crayon-help">

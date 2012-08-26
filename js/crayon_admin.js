@@ -152,7 +152,7 @@
 		var preview_update = function() {
 			// console_log('preview_update');
 			preview_get = '?wp_load=' + CrayonSyntaxSettings.wp_load + '&';
-			preview_get += 'crayon_wp=' + CrayonSyntaxSettings.crayon_wp + '&';
+//			preview_get += 'crayon_wp=' + CrayonSyntaxSettings.crayon_wp + '&';
 			var val = 0;
 			var obj;
 			for ( var i = 0; i < preview_obj_names.length; i++) {
@@ -374,4 +374,3 @@
 	};
 
 })(jQueryCrayon);
-
