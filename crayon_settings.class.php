@@ -96,8 +96,7 @@ class CrayonSettings {
 	const TINYMCE_USED = 'tinymce-used';
 	const ATTR_SEP = 'attr-sep';
 	const EXCERPT_STRIP = 'excerpt-strip';
-//	const TINYMCE_LINE_BREAK = 'tinymce-line-break';
-//	const TINYMCE_ADD_OVERRIDDEN = 'tinymce-add-overridden';
+	const RANGES = 'ranges';
 	
 	private static $cache_array;
 	
@@ -216,8 +215,7 @@ class CrayonSettings {
 			new CrayonSetting(self::TINYMCE_USED, FALSE),
 			new CrayonSetting(self::ATTR_SEP, array(':', '_')),
 			new CrayonSetting(self::EXCERPT_STRIP, FALSE),
-//			new CrayonSetting(self::TINYMCE_LINE_BREAK, array(crayon__('Before & After'), crayon__('After'), crayon__('Before'), crayon__('None'))),
-//			new CrayonSetting(self::TINYMCE_ADD_OVERRIDDEN, TRUE),
+			new CrayonSetting(self::RANGES, TRUE)
 		);
 		
 		$this->set($settings);

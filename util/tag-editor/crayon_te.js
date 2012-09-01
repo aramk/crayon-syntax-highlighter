@@ -68,17 +68,6 @@ var CrayonTagEditor = new function() {
         	
         	submit = dialog.find('.'+s.submit_css);
         	
-        	// Save default global settings
-//        	defaults = [];
-//    		jQuery('.'+gs.setting+'[id]').each(function() {
-//        		var id = jQuery(this).attr('id');
-//        		var value = jQuery(this).attr(s.data_value);
-//        		// Remove prefix
-////        		id = admin.removePrefixFromID(id);
-//        		atts[id] = value;
-////        		console_log(id + ' ' + value);
-//        	});
-        	
         	code = jQuery(s.code_css);
         	clear = jQuery('#crayon-te-clear');
         	code_refresh = function () {
@@ -203,10 +192,6 @@ var CrayonTagEditor = new function() {
 				var matches = re.execAll(currClasses);
 				// Retain all other classes, remove settings
 				currClasses = jQuery.trim(currClasses.replace(re, ''));
-//				console_log('classes:');
-//				console_log(currClasses);
-//				console_log('load match:');
-//				console_log(matches);
 				var atts = {};
 				for (var i in matches) {
 					var id = matches[i][1];
@@ -265,7 +250,7 @@ var CrayonTagEditor = new function() {
 		    				highlight.addClass(gs.changed);
 		    			}
 					}
-					console_log('loaded: ' + att + ':' + atts[att]);
+					console_log('loaded: ' + att + ':' + value);
 				}
 				
 				editing = true;
@@ -297,19 +282,13 @@ var CrayonTagEditor = new function() {
 			is_inline = jQuery(this).is(':checked');
 			var inline_hide = jQuery('.' + s.inline_hide_css);
 			var inline_single = jQuery('.' + s.inline_hide_only_css);
-			var disabled = [s.mark_css, s.title_css, s.url_css];
-//			var mark = jQuery(s.mark_css);
-//			var title = jQuery(s.title_css);
-//			var url = jQuery(s.url_css);
+			var disabled = [s.mark_css, s.range_css, s.title_css, s.url_css];
 			
 			for (var i in disabled) {
 				var obj = jQuery(disabled[i]);
 				obj.attr('disabled', is_inline);
 			}
 			
-//			mark.attr('disabled', is_inline);
-//			title.attr('disabled', is_inline);
-//			url.attr('disabled', is_inline);
 			if (is_inline) {
 				inline_hide.hide();
 				inline_single.hide();
@@ -318,9 +297,6 @@ var CrayonTagEditor = new function() {
 					var obj = jQuery(disabled[i]);
 					obj.addClass('crayon-disabled');
 				}
-//				mark.addClass('crayon-disabled');
-//				title.addClass('crayon-disabled');
-//				url.addClass('crayon-disabled');
 			} else {
 				inline_hide.show();
 				inline_single.show();
@@ -329,9 +305,6 @@ var CrayonTagEditor = new function() {
 					var obj = jQuery(disabled[i]);
 					obj.removeClass('crayon-disabled');
 				}
-//				mark.removeClass('crayon-disabled');
-//				title.removeClass('crayon-disabled');
-//				title.removeClass('crayon-disabled');
 			}
 		});
 		inline.change();
@@ -435,14 +408,17 @@ var CrayonTagEditor = new function() {
     		// Remove prefix
     		id = admin.removePrefixFromID(id);
     		atts[id] = value;
-//    		console_log(id + ' ' + value);
     	});
 		
 		// Settings
 		atts['lang'] = jQuery(s.lang_css).val();
 		var mark = jQuery(s.mark_css).val();
 		if (mark.length != 0 && !is_inline) {
-			atts['mark'] = mark;			
+			atts['mark'] = mark;
+		}
+		var range = jQuery(s.range_css).val();
+		if (range.length != 0 && !is_inline) {
+			atts['range'] = range;
 		}
 		
 		// XXX Code highlighting, checked means 0!
@@ -458,7 +434,6 @@ var CrayonTagEditor = new function() {
     	
 		for (var id in atts) {
     		// Remove prefix, if exists
-//    		var id = admin.removePrefixFromID(att);
     		var value = atts[id];
     		console_log('add '+id+':'+value);
 			shortcode += id + s.attr_sep + value + ' ';
@@ -571,8 +546,12 @@ var CrayonTagEditor = new function() {
 	};
 	
 	this.validate = function(atts) {
-		if (typeof atts['mark'] != 'undefined') {
-			atts['mark'] = atts['mark'].replace(/\s/g, '');
+		var fields = ['range', 'mark'];
+		for (var i in fields) {
+			var field = fields[i];
+			if (typeof atts[field] != 'undefined') {
+				atts[field] = atts[field].replace(/\s/g, '');
+			}
 		}
 		return atts;
 	};

@@ -368,6 +368,8 @@
 
 #crayon-te-clear {
 	display: none;
+	margin: 0;
+	margin-top: 10px;
 }
 
 .crayon-syntax-pre {

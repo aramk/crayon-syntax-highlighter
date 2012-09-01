@@ -69,21 +69,23 @@ class CrayonTEContent {
 					<?php CrayonTEContent::checkbox('inline'); ?>
 					<span class="crayon-te-section"><?php crayon_e('Inline'); ?></span>
 				</span>
+				<span id="crayon-te-sub-section">
+					<?php CrayonTEContent::checkbox('highlight'); ?>
+					<span class="crayon-te-section"><?php crayon_e("Don't Highlight"); ?></span>
+				</span>
 			</td>
 		</tr>
 		<tr class="crayon-tr-center">
 			<th><?php crayon_e('Language'); ?></th>
 			<td class="crayon-nowrap">
 				<?php CrayonTEContent::select_resource('lang', $langs, $curr_lang); ?>
+				<span class="crayon-te-section"><?php crayon_e('Line Range'); ?></span>
+				<?php CrayonTEContent::textbox('range', array('placeholder'=>crayon__('(e.g. 3-5 or 3)'))); ?>
 				<span class="crayon-te-section"><?php crayon_e('Marked Lines'); ?></span>
 				<?php CrayonTEContent::textbox('mark', array('placeholder'=>crayon__('(e.g. 1,2,3-5)'))); ?>
-				<span id="crayon-te-sub-section">
-					<?php CrayonTEContent::checkbox('highlight'); ?>
-					<span class="crayon-te-section"><?php crayon_e('Disable Highlighting'); ?></span>
-				</span>
 			</td>
 		</tr>
-		<tr class="crayon-tr-center">
+		<tr class="crayon-tr-center" style="text-align: center;">
 			<th><?php crayon_e('Code'); ?> <input type="button" id="crayon-te-clear" class="secondary-primary" value="<?php crayon_e('Clear'); ?>" name="clear" /></th>
 			<td><textarea id="crayon-code" name="code" placeholder="<?php crayon_e('Paste your code here, or type it in manually.'); ?>"></textarea></td>
 		</tr>

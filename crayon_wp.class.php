@@ -3,7 +3,7 @@
 Plugin Name: Crayon Syntax Highlighter
 Plugin URI: http://ak.net84.net/projects/crayon-syntax-highlighter
 Description: Supports multiple languages, themes, highlighting from a URL, local file or post text.
-Version: 1.10
+Version: _1.10.2_beta
 Author: Aram Kocharyan
 Author URI: http://ak.net84.net/
 Text Domain: crayon-syntax-highlighter
@@ -111,7 +111,7 @@ class CrayonWP {
 		CrayonLog::debug('shortcode');
 		
 		// Load attributes from shortcode
-		$allowed_atts = array('url' => NULL, 'lang' => NULL, 'title' => NULL, 'mark' => NULL, 'inline' => NULL);
+		$allowed_atts = array('url' => NULL, 'lang' => NULL, 'title' => NULL, 'mark' => NULL, 'range' => NULL, 'inline' => NULL);
 		$filtered_atts = shortcode_atts($allowed_atts, $atts);
 		
 		// Clean attributes
@@ -130,7 +130,7 @@ class CrayonWP {
 			$extra_attr = array_diff_key($atts, $allowed_atts);
 			$extra_attr = CrayonSettings::smart_settings($extra_attr);
 		}
-		$url = $lang = $title = $mark = $inline = '';
+		$url = $lang = $title = $mark = $range = $inline = '';
 		extract($filtered_atts);
 		
 		$crayon = self::instance($extra_attr, $id);
@@ -142,6 +142,7 @@ class CrayonWP {
 		$crayon->language($lang);
 		$crayon->title($title);
 		$crayon->marked($mark);
+		$crayon->range($range);
 		
 		$crayon->is_inline($inline);
 		

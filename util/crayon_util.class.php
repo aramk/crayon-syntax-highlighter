@@ -138,6 +138,20 @@ class CrayonUtil {
 		}
 		return FALSE;
 	}
+	
+	// Creates an array out of a single range string (e.i "x-y")
+	public static function range_str_single($str) {
+		$match = preg_match('#(\d+)(?:\s*-\s*(\d+))?#', $str, $matches);
+		if ($match > 0) {
+			if (empty($matches[2])) {
+				$matches[2] = $matches[1];
+			}
+			if ($matches[1] <= $matches[2]) {
+				return array($matches[1], $matches[2]);
+			}
+		}
+		return FALSE;
+	}
 
 	// Sets a variable to a string if valid
 	public static function str(&$var, $str, $escape = TRUE) {

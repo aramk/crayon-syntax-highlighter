@@ -42,6 +42,7 @@ class CrayonTagEditorWP {
 					'lang_css' => '#crayon-lang',
 					'title_css' => '#crayon-title',
 					'mark_css' => '#crayon-mark',
+					'range_css' => '#crayon-range',
 					'inline_css' => 'crayon-inline',
 					'inline_hide_css' => 'crayon-hide-inline',
 					'inline_hide_only_css' => 'crayon-hide-inline-only',

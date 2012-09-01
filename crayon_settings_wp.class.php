@@ -569,6 +569,7 @@ class CrayonSettingsWP {
 		echo '<div id="crayon-section-lines" class="crayon-hide-inline">';
 		self::checkbox(array(CrayonSettings::STRIPED, crayon__('Display striped code lines')));
 		self::checkbox(array(CrayonSettings::MARKING, crayon__('Enable line marking for important lines')));
+		self::checkbox(array(CrayonSettings::RANGES, crayon__('Enable line ranges for showing only parts of code')));
 		self::checkbox(array(CrayonSettings::NUMS, crayon__('Display line numbers by default')));
 		self::checkbox(array(CrayonSettings::NUMS_TOGGLE, crayon__('Enable line number toggling')));
 		self::span(crayon__('Start line numbers from').' ');

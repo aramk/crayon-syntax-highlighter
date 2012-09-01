@@ -17,6 +17,7 @@ class CrayonHighlighter {
 	private $title = '';
 	private $line_count = 0;
 	private $marked_lines = array();
+	private $range = NULL;
 	private $error = '';
 	// Determine whether the code needs to be loaded, parsed or formatted
 	private $needs_load = FALSE;
@@ -312,6 +313,18 @@ class CrayonHighlighter {
 			}
 		}
 		return CrayonUtil::arr($this->marked_lines, $lines);
+	}
+	
+	function range($str = NULL) {
+		if ($str === NULL) {
+			return $this->range;
+		} else {
+			$range = CrayonUtil::range_str_single($str);
+			if ($range) {
+				$this->range = $range;
+			}
+		}
+		return FALSE;
 	}
 
 	function log($var) {
