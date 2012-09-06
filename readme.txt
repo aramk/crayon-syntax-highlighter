@@ -79,6 +79,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * HTML (XML/XHTML)
 * Lua
 * Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
+* Microsoft Registry (thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>)
 * Java
 * JavaScript
 * Objective-C
@@ -209,6 +210,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 1.10.2 =
 * Added the ability to specify <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">line ranges</a>
+* Added Microsoft Registry language thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>
 
 = 1.10.1 =
 * Added diff language thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>

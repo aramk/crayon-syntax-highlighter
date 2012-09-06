@@ -1,0 +1,14 @@
+### SHELL LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Microsoft Registry
+    VERSION             5
+
+    STRING				(?default)
+    HEADERVER:ENTITY [regv]     \b(?alt:version.txt)
+    TYPE      [regt]     (hex\([02457b]\))|\b(?alt:type.txt)\b
+	ROOTKEYS:KEYWORD  [regk]     \b(?alt:rootkeys.txt)\b
+	OPERATOR  [rego]     \b(?alt:operator.txt)\b
+	COMMENT   [regc]     (;.*?$)
+	VARIABLE  [regva]  	 @

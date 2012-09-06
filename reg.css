@@ -1,0 +1,19 @@
+/* Custom Syntax Highlighting ============= */
+.crayon-theme-classic .crayon-pre .regt {
+    color: #800080 !important;
+}
+.crayon-theme-classic .crayon-pre .regk {
+    color: #800000 !important;
+}
+.crayon-theme-classic .crayon-pre .rego {
+    color: #000 !important;
+}
+.crayon-theme-classic .crayon-pre .regc {
+    color: #009900 !important;
+}
+.crayon-theme-classic .crayon-pre .regva {
+    color: #0000FF !important;
+}
+.crayon-theme-classic .crayon-pre .regv {
+    color: #0000FF !important;
+}
