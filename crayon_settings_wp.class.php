@@ -48,6 +48,8 @@ class CrayonSettingsWP {
 		register_setting(self::FIELDS, self::OPTIONS, 'CrayonSettingsWP::settings_validate');
 		add_action("admin_head-$admin_page", 'CrayonSettingsWP::admin_init');
 		// Register settings for post page
+		add_action("admin_print_styles-post-new.php", 'CrayonSettingsWP::admin_scripts');
+		add_action("admin_print_styles-post.php", 'CrayonSettingsWP::admin_scripts');
 		add_action("admin_print_styles-post-new.php", 'CrayonSettingsWP::admin_styles');
 		add_action("admin_print_styles-post.php", 'CrayonSettingsWP::admin_styles');
 				
@@ -62,6 +64,7 @@ class CrayonSettingsWP {
 	
 	public static function admin_styles() {
 		global $CRAYON_VERSION;
+		wp_enqueue_style('crayon_global_style', plugins_url(CRAYON_STYLE_GLOBAL, __FILE__), array(), $CRAYON_VERSION);
 		wp_enqueue_style('crayon_admin_style', plugins_url(CRAYON_STYLE_ADMIN, __FILE__), array(), $CRAYON_VERSION);
 		wp_enqueue_style('crayon_theme_editor_style', plugins_url(CRAYON_THEME_EDITOR_STYLE, __FILE__), array(), $CRAYON_VERSION);
 	}
@@ -95,8 +98,9 @@ class CrayonSettingsWP {
 					'orig_value' => CrayonSettings::SETTING_ORIG_VALUE 
 					);
 		}
-		wp_localize_script('crayon_admin_js', 'CrayonSyntaxSettings', self::$js_settings);
-		CrayonThemeEditorWP::admin_scripts();
+		//wp_localize_script('crayon_admin_js', 'CrayonSyntaxSettings', self::$js_settings);
+		wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
+		//CrayonThemeEditorWP::admin_scripts();
 	}
 
 	public static function settings() {
@@ -710,6 +714,7 @@ class CrayonSettingsWP {
 		$sep = sprintf(crayon__('Use %s to separate setting names from values in the &lt;pre&gt; class attribute'),
 						self::dropdown(CrayonSettings::ATTR_SEP, FALSE, FALSE, FALSE));
 		echo '<span>', $sep, ' <a href="http://bit.ly/H3xW3D" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', '</span>';
+		self::checkbox(array(CrayonSettings::TAG_EDITOR_FRONT, crayon__('Display Tag Editor on frontend where possible.')));
 	}
 
 	public static function misc() {

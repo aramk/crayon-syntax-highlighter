@@ -40,7 +40,7 @@ var CrayonTinyMCE = new function() {
 	
 	this.loadTinyMCE = function() {
 	    tinymce.PluginManager.requireLangPack(name);
-
+	    
 	    tinymce.create('tinymce.plugins.Crayon', {
 	        init : function(ed, url) {
 	    		jQuery(function() {

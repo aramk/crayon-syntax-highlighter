@@ -97,6 +97,7 @@ class CrayonSettings {
 	const ATTR_SEP = 'attr-sep';
 	const EXCERPT_STRIP = 'excerpt-strip';
 	const RANGES = 'ranges';
+	const TAG_EDITOR_FRONT = 'tag-editor-front';
 	
 	private static $cache_array;
 	
@@ -215,7 +216,8 @@ class CrayonSettings {
 			new CrayonSetting(self::TINYMCE_USED, FALSE),
 			new CrayonSetting(self::ATTR_SEP, array(':', '_')),
 			new CrayonSetting(self::EXCERPT_STRIP, FALSE),
-			new CrayonSetting(self::RANGES, TRUE)
+			new CrayonSetting(self::RANGES, TRUE),
+			new CrayonSetting(self::TAG_EDITOR_FRONT, TRUE)
 		);
 		
 		$this->set($settings);
