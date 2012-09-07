@@ -548,7 +548,7 @@ class CrayonSettingsWP {
 		echo '<div id="crayon-subsection-float">';
 		self::checkbox(array(CrayonSettings::FLOAT_ENABLE, crayon__('Allow floating elements to surround Crayon')), FALSE, FALSE);
 		echo '</div>';
-		echo '<span class="crayon-span-100">' . crayon__('Inline Margin') . '</span>';
+		echo '<span class="crayon-span-100">' . crayon__('Inline Margin') . ' </span>';
 		self::textbox(array('id' => CrayonSettings::INLINE_MARGIN, 'size' => 2));
 		echo '<span class="crayon-span-margin">', crayon__('Pixels'), '</span>';
 		echo '</div>';

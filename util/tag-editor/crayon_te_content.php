@@ -1,4 +1,15 @@
-<div id="crayon-te-content">
+<div id="crayon-te-content" class="crayon-te">
+
+<div id="crayon-te-bar">
+	<div id="crayon-te-bar-content">
+		<div id="crayon-te-title">Title</div>
+		<div id="crayon-te-controls">
+			<a id="crayon-te-ok" href="#">Ok</a>
+			<span class="crayon-te-seperator">|</span>
+			<a id="crayon-te-cancel" href="#">Cancel</a>
+		</div>
+	</div>
+</div>
 
 <?php 
 
@@ -86,7 +97,7 @@ class CrayonTEContent {
 			</td>
 		</tr>
 		<tr class="crayon-tr-center" style="text-align: center;">
-			<th><?php crayon_e('Code'); ?> <input type="button" id="crayon-te-clear" class="secondary-primary" value="<?php crayon_e('Clear'); ?>" name="clear" /></th>
+			<th><div><?php crayon_e('Code'); ?></div><input type="button" id="crayon-te-clear" class="secondary-primary" value="<?php crayon_e('Clear'); ?>" name="clear" /></th>
 			<td><textarea id="crayon-code" name="code" placeholder="<?php crayon_e('Paste your code here, or type it in manually.'); ?>"></textarea></td>
 		</tr>
 		<tr class="crayon-tr-center">

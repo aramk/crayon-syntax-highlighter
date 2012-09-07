@@ -208,7 +208,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 1.10.2 =
+= 1.11 =
+* Added bbPress support.
+* Integrated Tag Editor with Fancybox, switched from the discontinued ThickBox, a fair amount of changes took place.
+* Crayon should now appear pretty much anywhere TinyMCE does, and this can be tweaked to add more options later.
 * Added the ability to specify <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">line ranges</a>
 * Added Microsoft Registry language thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>
 

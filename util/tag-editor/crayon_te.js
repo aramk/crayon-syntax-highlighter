@@ -6,7 +6,7 @@
 			if (this.ajax_url && !this.used) {
 				is_used = is_used ? '1' : '0';
 				this.used = is_used; // Save the setting
-				var used_url = this.ajax_url + '?' + this.used_setting + '=' + is_used;
+				var used_url = this.ajax_url + '?' + this.used_setting + '=' + is_used + '&wp_load=' + CrayonSyntaxSettings.wp_load;
 				$.get(used_url);
 			}
 		}
@@ -19,6 +19,8 @@
 		var editing = false;
 		var insertCallback = null;
 		var editCallback = null;
+		var showCallback = null;
+		var hideCallback = null;
 		// Used for encoding, decoding
 		var inputHTML = null;
 		var outputHTML = null;
@@ -69,7 +71,7 @@
 	        	
 	        	me.setOrigValues();
 	        	
-	        	submit = dialog.find('.'+s.submit_css);
+	        	submit = dialog.find(s.submit_css);
 	        	
 	        	code = $(s.code_css);
 	        	clear = $('#crayon-te-clear');
@@ -159,12 +161,14 @@
 	    };
 	    
 	    // XXX Displays the dialog.
-		base.showDialog = function(insert, edit, editor_str, ed, node, input, output) {
+		base.showDialog = function(insert, edit, show, hide, editor_str, ed, node, input, output) {
 			// Need to reset all settings back to original, clear yellow highlighting
 			me.resetSettings();
 			// Save these for when we add a Crayon
 			insertCallback = insert;
 	    	editCallback = edit;
+	    	showCallback = show;
+	    	hideCallback = hide;
 	    	inputHTML = input;
 	    	outputHTML = output;
 	    	editor_name = editor_str;
@@ -183,6 +187,7 @@
 	    	submit.unbind();
 	    	submit.click(function() {
 	    		me.submitButton();
+	    		return false;
 	    	});
 	    	me.setSubmitText(s.submit_add);
 			
@@ -314,7 +319,20 @@
 			
 			// Show the dialog
 			var dialog_title = editing ? s.dialog_title_edit : s.dialog_title_add;
-			tb_show(dialog_title, '#TB_inline?inlineId=' + s.css);
+//			if (tb_show) {
+//				tb_show(dialog_title, '#TB_inline?inlineId=' + s.css);
+//			} else {
+				$(s.dialog_title_css).html(dialog_title);
+				if (showCallback) {
+					showCallback();
+				}
+//			}
+			
+			//tb_show(dialog_title, '#TB_inline?inlineId=' + s.css);
+//			console.log($("#crayon-te-table"));
+//			$("#bbp_topic_content_crayon_tinymce").fancybox({afterLoad: function() {
+//				alert();
+//			}, content: '#crayon-te-table'});
 			
 	    	code.focus();
 	    	code_refresh();
@@ -325,7 +343,7 @@
 	    	}
 	    	
 	    	// Position submit button
-			$('#TB_title').append(submit);
+//			$('#TB_title').append(submit);
 	    	
 	    	var ajax_window = $('#TB_window');
 	    	ajax_window.hide();
@@ -490,14 +508,17 @@
 		
 		base.hideDialog = function() {
 			console_log('hide');
+			if (hideCallback) {
+				hideCallback();
+			}
 			// Hide dialog
-			tb_remove();
-			var ajax = $('#TB_ajaxContent');
-	    	if ( typeof ajax == 'undefined' ) {
-	    		ajax.removeClass('crayon-te-ajax');
-	    	}
+//			tb_remove();
+//			var ajax = $('#TB_ajaxContent');
+//	    	if ( typeof ajax == 'undefined' ) {
+//	    		ajax.removeClass('crayon-te-ajax');
+//	    	}
 	    	// Title is destroyed, so move the submit out
-	    	$(s.submit_wrapper_css).append(submit);
+//	    	$(s.submit_wrapper_css).append(submit);
 		};
 		
 		// XXX Auxiliary methods
@@ -576,7 +597,7 @@
 		};
 		
 		base.setSubmitText = function(text) {
-			submit.val(text);
+			submit.html(text);
 		}; 
 		
 	};

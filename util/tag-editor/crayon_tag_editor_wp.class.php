@@ -58,8 +58,11 @@ class CrayonTagEditorWP {
 					'hl_css' => '#crayon-highlight',
 					'switch_html' => '#content-html',
 					'switch_tmce' => '#content-tmce',
-					'tinymce_button' => '#content_crayon_tinymce',
-					'submit_css' => 'crayon-te-submit',
+					'tinymce_button' => '#bbp_topic_content_crayon_tinymce,#content_crayon_tinymce',
+					'submit_css' => '#crayon-te-ok',
+					'cancel_css' => '#crayon-te-cancel',
+					'content_css' => '#crayon-te-content',
+					'dialog_title_css' => '#crayon-te-title',
 					'submit_wrapper_css' => '#crayon-te-submit-wrapper',
 					'data_value' => 'data-value',
 					'attr_sep' => CrayonGlobalSettings::val_str(CrayonSettings::ATTR_SEP),
@@ -69,6 +72,8 @@ class CrayonTagEditorWP {
 					'dialog_title_edit' => crayon__('Edit Crayon Code'),
 					'submit_add' => crayon__('Add'),
 					'submit_edit' => crayon__('Save'),
+					'bar' => '#crayon-te-bar',
+					'bar_content' => '#crayon-te-bar-content',
 					'extensions' => CrayonResources::langs()->extensions_inverted()
 			);
 		}
@@ -95,11 +100,15 @@ class CrayonTagEditorWP {
 	public static function enqueue_resources() {
 		global $CRAYON_VERSION;
 		self::init_settings();
-		wp_enqueue_style('thickbox');
+		//wp_enqueue_style('thickbox');
 // 		wp_enqueue_style('admin-bar');
 // 		wp_enqueue_style('wp-admin');
-		wp_enqueue_style('colors-fresh');
-		wp_enqueue_style('editor');
+// 		wp_enqueue_style('colors-fresh');
+// 		wp_enqueue_style('editor');
+
+		wp_enqueue_style('crayon_fancybox', plugins_url(CRAYON_CSS_FANCYBOX, dirname(dirname(__FILE__))), array(), $CRAYON_VERSION);
+		wp_enqueue_script('crayon_fancybox', plugins_url(CRAYON_JS_FANCYBOX, dirname(dirname(__FILE__))), array('jquery'), $CRAYON_VERSION);
+		
 		wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, dirname(dirname(__FILE__))), array('jquery'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, dirname(dirname(__FILE__))), array('jquery', 'crayon_util_js'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_te_js', plugins_url(CRAYON_TE_JS, __FILE__), array('crayon_admin_js', 'thickbox'), $CRAYON_VERSION);

@@ -71,6 +71,8 @@ define('CRAYON_JS', CRAYON_JS_DIR . 'crayon.js');
 define('CRAYON_JS_ADMIN', CRAYON_JS_DIR . 'crayon_admin.js');
 define('CRAYON_JS_UTIL', CRAYON_JS_DIR . 'util.js');
 define('CRAYON_CSSJSON_JS', CRAYON_JS_DIR . 'cssjson.js');
+define('CRAYON_JS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.pack.js');
+define('CRAYON_CSS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.css');
 // TODO rename TE
 define('CRAYON_TE_JS', 'crayon_te.js');
 define('CRAYON_TE_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.class.php');
