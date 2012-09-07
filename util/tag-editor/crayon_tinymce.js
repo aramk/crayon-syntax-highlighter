@@ -51,6 +51,10 @@
         		beforeShow : function () {
             		$(this.outer).prepend($(s.bar_content));
         		},
+        		afterShow : function () {
+        			console.log($(s.code_css));
+        			$(s.code_css).focus();
+        		},
         		beforeClose : function () {
         			$(s.bar).prepend($(s.bar_content));
         		},
