@@ -677,7 +677,8 @@ Make sure to upgrade to the latest release when possible to ensure you avoid bug
 
 Thanks to all those who donate to my project, your support keeps the Crayons going!
 
-* Jeff Benshetler, USA
+* Tarek Sakr, (http://centrivision.com/), USA
+* Jeff Benshetler, (http://branchpoint.net/), USA
 * Oldrich Strachota, (http://www.strachota.net/), Czech Republic
 * Dividend Ninja, (http://dividendninja.com/), Canada
 * Chris Wiegman, (http://bit51.com/), USA
