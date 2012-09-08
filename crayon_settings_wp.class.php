@@ -713,8 +713,8 @@ class CrayonSettingsWP {
 	public static function tag_editor() {
 		$sep = sprintf(crayon__('Use %s to separate setting names from values in the &lt;pre&gt; class attribute'),
 						self::dropdown(CrayonSettings::ATTR_SEP, FALSE, FALSE, FALSE));
-		echo '<span>', $sep, ' <a href="http://bit.ly/H3xW3D" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', '</span>';
-		self::checkbox(array(CrayonSettings::TAG_EDITOR_FRONT, crayon__('Display Tag Editor on frontend where possible.')));
+		echo '<span>', $sep, ' <a href="http://bit.ly/H3xW3D" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', '</span><br/>';
+		self::checkbox(array(CrayonSettings::TAG_EDITOR_FRONT, crayon__("Display the Tag Editor in any TinyMCE instances on the frontend. Note that this will always need to load Crayon's resources.")));
 	}
 
 	public static function misc() {

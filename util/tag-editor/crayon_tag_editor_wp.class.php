@@ -11,17 +11,16 @@ class CrayonTagEditorWP {
 		// Hooks
 		if (CRAYON_TAG_EDITOR) {
 			self::addbuttons();
+			CrayonSettingsWP::load_settings(TRUE);
 			if (is_admin()) {
-				// TODO this fails!
 				add_action('admin_print_scripts-post-new.php', 'CrayonTagEditorWP::enqueue_resources');
 				add_action('admin_print_scripts-post.php', 'CrayonTagEditorWP::enqueue_resources');
 				add_filter('tiny_mce_before_init', 'CrayonTagEditorWP::init_tinymce');
 				// Must come after
 				add_action("admin_print_scripts-post-new.php", 'CrayonSettingsWP::init_js_settings');
 				add_action("admin_print_scripts-post.php", 'CrayonSettingsWP::init_js_settings');
-			} else {
-				//if () {
-				// TODO this fails!
+			} else if ( CrayonGlobalSettings::val(CrayonSettings::TAG_EDITOR_FRONT) ) {
+				// XXX This will always need to enqueue
 				add_action('wp', 'CrayonTagEditorWP::enqueue_resources');
 				add_filter('tiny_mce_before_init', 'CrayonTagEditorWP::init_tinymce');
 				// Must come after
@@ -34,7 +33,6 @@ class CrayonTagEditorWP {
 		
 		if (!self::$settings) {
 			// Add settings
-			CrayonSettingsWP::load_settings(TRUE);
 			self::$settings = array(
 					'url' => plugins_url(CRAYON_TE_CONTENT_PHP, __FILE__),
 					'home_url' => home_url(),

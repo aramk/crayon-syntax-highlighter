@@ -46,6 +46,7 @@
         		margin : [40,10,40,10],
         		padding : 0,
         		width : 690,
+        		height : '100%',
         		autoSize : false,
         		title : '',
         		beforeShow : function () {

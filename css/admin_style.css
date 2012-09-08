@@ -175,6 +175,10 @@
 	text-align: center;
 }
 
+#crayon-subsection-lang-info {
+	margin-top: 5px;
+}
+
 #crayon-theme-editor-admin-buttons {
 	display: inline;
 }
