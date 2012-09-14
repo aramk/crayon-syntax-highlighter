@@ -81,6 +81,15 @@ class CrayonFormatter {
 	public static function print_code($hl, $code, $line_numbers = TRUE, $print = TRUE) {
 		global $CRAYON_VERSION;
 		
+		$before = $hl->setting_val(CrayonSettings::WHITESPACE_BEFORE);
+		if ($before > 0) {
+			$code = str_repeat("\n", $before) . $code;
+		}
+		$after = $hl->setting_val(CrayonSettings::WHITESPACE_AFTER);
+		if ($after > 0) {
+			$code = $code . str_repeat("\n", $after);
+		}
+		
 		// We can print either block or inline, inline is treated differently, factor out common stuff here
 		$output = '';
 		// Used for style tag

@@ -676,10 +676,7 @@ class CrayonSettingsWP {
 		echo '</span>';
 		self::checkbox(array(CrayonSettings::POPUP, crayon__('Enable opening code in a window')));
 		self::checkbox(array(CrayonSettings::SCROLL, crayon__('Always display scrollbars')));
-		self::span(crayon__('Tab size in spaces').': ');
-		self::textbox(array('id' => CrayonSettings::TAB_SIZE, 'size' => 2, 'break' => TRUE));
 		echo '</div>';
-		
 		if (!$editor) {
 			self::checkbox(array(CrayonSettings::DECODE, crayon__('Decode HTML entities in code')));
 		}
@@ -691,6 +688,12 @@ class CrayonSettingsWP {
 		echo '<div class="crayon-hide-inline-only">';
 		self::checkbox(array(CrayonSettings::SHOW_MIXED, crayon__('Show Mixed Language Icon (+)')));
 		echo '</div>';
+		self::span(crayon__('Tab size in spaces').': ');
+		self::textbox(array('id' => CrayonSettings::TAB_SIZE, 'size' => 2, 'break' => TRUE));
+		self::span(crayon__('Blank lines before code:') . ' ');
+		self::textbox(array('id' => CrayonSettings::WHITESPACE_BEFORE, 'size' => 2, 'break' => TRUE));
+		self::span(crayon__('Blank lines after code:') . ' ');
+		self::textbox(array('id' => CrayonSettings::WHITESPACE_AFTER, 'size' => 2, 'break' => TRUE));
 	}
 	
 	public static function tags() {

@@ -2,6 +2,10 @@
 	/*width: 100%;*/
 }
 
+#crayon-main-wrap .form-table th {
+	width: 100px;
+}
+
 #crayon-log {
 	display: none;
 	max-height: 200px;

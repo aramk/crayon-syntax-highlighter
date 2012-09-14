@@ -59,6 +59,8 @@ class CrayonSettings {
 	const NUMS = 'nums';
 	const NUMS_TOGGLE = 'nums-toggle';
 	const TRIM_WHITESPACE = 'trim-whitespace';
+	const WHITESPACE_BEFORE = 'whitespace_before';
+	const WHITESPACE_AFTER = 'whitespace_after';
 	const TAB_SIZE = 'tab-size';
 	const FALLBACK_LANG = 'fallback-lang';
 	const LOCAL_PATH = 'local-path';
@@ -177,7 +179,9 @@ class CrayonSettings {
 			new CrayonSetting(self::START_LINE, 1),
 			new CrayonSetting(self::NUMS, TRUE), 
 			new CrayonSetting(self::NUMS_TOGGLE, TRUE),
-			new CrayonSetting(self::TRIM_WHITESPACE, TRUE), 
+			new CrayonSetting(self::TRIM_WHITESPACE, TRUE),
+			new CrayonSetting(self::WHITESPACE_BEFORE, 0),
+			new CrayonSetting(self::WHITESPACE_AFTER, 0),
 			new CrayonSetting(self::TAB_SIZE, 4), 
 			new CrayonSetting(self::FALLBACK_LANG, CrayonLangs::DEFAULT_LANG), 
 			new CrayonSetting(self::LOCAL_PATH, ''), 
@@ -390,11 +394,11 @@ class CrayonSettings {
 			return '';
 		}
 		// Validations
-		if ($name == CrayonSettings::HEIGHT || $name == CrayonSettings::WIDTH) {
-			if ($value < 0) {
-				$value = 0;
-			}
+		$pos_names = array(CrayonSettings::TAB_SIZE, CrayonSettings::HEIGHT, CrayonSettings::WIDTH, CrayonSettings::WHITESPACE_AFTER, CrayonSettings::WHITESPACE_BEFORE);
+		if ( in_array($name, $pos_names) && $value < 0 ) {
+			$value = abs($value);
 		}
+		
 		switch ($name) {
 			case CrayonSettings::LOCAL_PATH:
 				$path = parse_url($value, PHP_URL_PATH);
@@ -407,9 +411,6 @@ class CrayonSettings {
 					$path .= '/';
 				}
 				return $path;
-			case CrayonSettings::TAB_SIZE:
-				$value = abs($value);
-				break;
 			case CrayonSettings::FONT_SIZE:
 				if ($value < 1) {
 					$value = 1;
