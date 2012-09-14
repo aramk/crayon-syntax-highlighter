@@ -1,0 +1,23 @@
+### XHTML LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                MIVA Script
+    VERSION             1.11
+
+    COMMENT             (\<!--.*?--\>)|(<MvCOMMENT>.*?</MvCOMMENT>)
+    # !!! Text containing "" are not strings
+    TEXT:IDENTIFIER     (?<=\>)[^\<\>]*(?=\<)
+    MIVA_STR:CONSTANT     (["']\s*\{)|(\}\s*["'])
+    ATT_STR:STRING      (((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)'))
+    NOTATION            <!.*?>
+    
+    HTML_TAG:RESERVED	(</?\s*[^<\s>]+\s*>?)|(\s*/?>)
+
+    ENTITY              (?default)
+    VARIABLE              (?default)
+    ATTR:VARIABLE         [\w-]+(?=\s*=\s*["'])
+    IDENTIFIER          (?default)
+	OPERATOR            (?default)
+    SYMBOL              (?default)
+

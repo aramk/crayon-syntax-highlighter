@@ -215,6 +215,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added setting to disable Tag Editor on front end, and/or disable its settings.
 * Added the ability to specify <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">line ranges</a>
 * Added Microsoft Registry language thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>
+* Added MIVA Script language
 * Added option to add blank lines before and after the code
 
 = 1.10.1 =
