@@ -123,6 +123,12 @@ class CrayonTEContent {
 <!--		</tr>-->
 		<tr>
 			<td colspan="2">
+			<?php
+			var_dump();
+				if (!is_admin() && !$_GET['is_admin'] && !CrayonGlobalSettings::val(CrayonSettings::TAG_EDITOR_SETTINGS)) {
+					exit;
+				}
+			 ?>
 			<hr />
 			<div><h2 class="crayon-te-heading"><?php crayon_e('Settings'); ?></h2></div>
 			<div id="crayon-te-settings-info" class="crayon-te-info">

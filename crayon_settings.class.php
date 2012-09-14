@@ -59,8 +59,8 @@ class CrayonSettings {
 	const NUMS = 'nums';
 	const NUMS_TOGGLE = 'nums-toggle';
 	const TRIM_WHITESPACE = 'trim-whitespace';
-	const WHITESPACE_BEFORE = 'whitespace_before';
-	const WHITESPACE_AFTER = 'whitespace_after';
+	const WHITESPACE_BEFORE = 'whitespace-before';
+	const WHITESPACE_AFTER = 'whitespace-after';
 	const TAB_SIZE = 'tab-size';
 	const FALLBACK_LANG = 'fallback-lang';
 	const LOCAL_PATH = 'local-path';
@@ -100,6 +100,7 @@ class CrayonSettings {
 	const EXCERPT_STRIP = 'excerpt-strip';
 	const RANGES = 'ranges';
 	const TAG_EDITOR_FRONT = 'tag-editor-front';
+	const TAG_EDITOR_SETTINGS = 'tag-editor-front-hide';
 	
 	private static $cache_array;
 	
@@ -221,7 +222,8 @@ class CrayonSettings {
 			new CrayonSetting(self::ATTR_SEP, array(':', '_')),
 			new CrayonSetting(self::EXCERPT_STRIP, FALSE),
 			new CrayonSetting(self::RANGES, TRUE),
-			new CrayonSetting(self::TAG_EDITOR_FRONT, TRUE)
+			new CrayonSetting(self::TAG_EDITOR_FRONT, TRUE),
+			new CrayonSetting(self::TAG_EDITOR_SETTINGS, TRUE)
 		);
 		
 		$this->set($settings);

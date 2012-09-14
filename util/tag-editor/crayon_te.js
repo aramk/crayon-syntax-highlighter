@@ -47,6 +47,38 @@
 		// CSS
 		var dialog = code = clear = submit = null;
 		
+		base.init = function(button) {
+			$(button).fancybox({
+        		href : s.content_css,
+        		margin : [40,10,40,10],
+        		padding : 0,
+        		width : 690,
+        		//height : '100%',
+        		//autoSize : false,
+        		title : '',
+        		beforeShow : function () {
+            		$(this.outer).prepend($(s.bar_content));
+        		},
+        		afterShow : function () {
+        			$(s.code_css).focus();
+        		},
+        		beforeClose : function () {
+        			$(s.bar).prepend($(s.bar_content));
+        		},
+        		closeBtn : false
+        	});
+			
+			$(s.cancel_css).live('click', function () {
+				$.fancybox.close();
+				return false;
+			});
+		};
+		
+		base.hide = function() {
+    		$.fancybox.close();
+			return false;
+		};
+		
 		// XXX Loads dialog contents
 	    base.loadDialog = function() {
 	    	// Loaded once url is given
@@ -57,7 +89,7 @@
 	    	}
 	    	
 	        // Load the editor content 
-	    	var url = s.url + '?wp_load=' + CrayonSyntaxSettings.wp_load + '&';
+	    	var url = s.url + '?wp_load=' + CrayonSyntaxSettings.wp_load + '&' + 'is_admin=' + CrayonSyntaxSettings.is_admin;
 	//		url += 'crayon_wp=' + CrayonSyntaxSettings.crayon_wp + '&';
 	        $.get(url, function(data) {
 	        	dialog = $('<div id="'+s.css+'"></div>');

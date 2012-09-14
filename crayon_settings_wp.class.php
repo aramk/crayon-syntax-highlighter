@@ -89,6 +89,7 @@ class CrayonSettingsWP {
 		if (!self::$js_settings) {
 			self::$js_settings = array(
 					'wp_load' => CrayonWP::wp_load_path(),
+					'is_admin' => is_admin(),
 					'crayon_wp' => CRAYON_ROOT_PATH . 'crayon_wp.class.php', 
 					'prefix' => CrayonSettings::PREFIX,
 					'setting' => CrayonSettings::SETTING,
@@ -717,7 +718,8 @@ class CrayonSettingsWP {
 		$sep = sprintf(crayon__('Use %s to separate setting names from values in the &lt;pre&gt; class attribute'),
 						self::dropdown(CrayonSettings::ATTR_SEP, FALSE, FALSE, FALSE));
 		echo '<span>', $sep, ' <a href="http://bit.ly/H3xW3D" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', '</span><br/>';
-		self::checkbox(array(CrayonSettings::TAG_EDITOR_FRONT, crayon__("Display the Tag Editor in any TinyMCE instances on the frontend. Note that this will always need to load Crayon's resources.")));
+		self::checkbox(array(CrayonSettings::TAG_EDITOR_FRONT, crayon__("Display the Tag Editor in any TinyMCE instances on the frontend")));
+		self::checkbox(array(CrayonSettings::TAG_EDITOR_SETTINGS, crayon__("Display Tag Editor settings on the frontend")));
 	}
 
 	public static function misc() {

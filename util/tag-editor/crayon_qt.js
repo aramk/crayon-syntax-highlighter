@@ -6,15 +6,15 @@
 		
 		jQuery(function() {CrayonTagEditor.loadDialog(); });
 		
-		base.sel = '#qt_content_crayon_quicktag, #qt_bbp_topic_content_crayon_quicktag';
+		base.sel = '*[id*="crayon_quicktag"],*[class*="crayon_quicktag"]';
 		
 		QTags.addButton( 'crayon_quicktag', 'crayon', function() {
-			CrayonTinyMCE.init(base.sel);
+			CrayonTagEditor.init(base.sel);
 			CrayonTagEditor.showDialog(
 				function(shortcode) {
 					QTags.insertContent(shortcode);
 				},
-				function(shortcode) {/* Can't edit */}, null, CrayonTinyMCE.hide, 'html', null, null, null, 'encode');
+				function(shortcode) {/* Can't edit */}, null, CrayonTagEditor.hide, 'html', null, null, null, 'encode');
 			jQuery(base.sel).removeClass('qt_crayon_highlight');
 		});
 		

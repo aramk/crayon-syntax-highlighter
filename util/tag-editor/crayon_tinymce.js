@@ -41,36 +41,7 @@
 		};
 		
 		base.init = function(button) {
-			$(button).fancybox({
-        		href : s.content_css,
-        		margin : [40,10,40,10],
-        		padding : 0,
-        		width : 690,
-        		height : '100%',
-        		autoSize : false,
-        		title : '',
-        		beforeShow : function () {
-            		$(this.outer).prepend($(s.bar_content));
-        		},
-        		afterShow : function () {
-        			console.log($(s.code_css));
-        			$(s.code_css).focus();
-        		},
-        		beforeClose : function () {
-        			$(s.bar).prepend($(s.bar_content));
-        		},
-        		closeBtn : false
-        	});
-			
-			$(s.cancel_css).live('click', function () {
-				$.fancybox.close();
-				return false;
-			});
-		};
-		
-		base.hide = function() {
-    		$.fancybox.close();
-			return false;
+			// TODO
 		};
 		
 		base.loadTinyMCE = function() {
@@ -103,7 +74,7 @@
 		    		
 		    		ed.onInit.add(function(ed) {
 	    				base.setHighlight(!s.used);
-	    				base.init(s.tinymce_button);
+	    				CrayonTagEditor.init(s.tinymce_button);
 		    	    });
 		    		
 		            ed.addCommand('showCrayon', function() {
@@ -117,7 +88,7 @@
 			            		$(currPre).replaceWith(newPre);
 			            		// XXX DOM element not jQuery
 			            		currPre = newPre[0];
-			            	}, null, base.hide, 'tinymce', ed, currPre, 'decode', 'encode');
+			            	}, null, CrayonTagEditor.hide, 'tinymce', ed, currPre, 'decode', 'encode');
 		            	
 		            	if (!currPre) {
 		            		// If no pre is selected, then button highlight depends on if it's used 
