@@ -3,7 +3,7 @@ Contributors: akarmenia
 Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=PPqWIQJ0gEZp4pVGNnYzhcwFGvx3MGwD95tvUcZgeYlHIEjBS7x6QHG34B4&dispatch=5885d80a13c0db1f8e263663d3faee8d0288a7fd2903afb85a5540fd44243d03
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter
 Requires at least: 3.0
-Tested up to: 3.4.1
+Tested up to: 3.4.2
 Stable tag: 1.10.1
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
@@ -78,8 +78,9 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Haskell
 * HTML (XML/XHTML)
 * Lua
-* Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
 * Microsoft Registry (thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>)
+* MIVA Script
+* Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
 * Java
 * JavaScript
 * Objective-C
@@ -91,6 +92,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Ruby
 * Scheme (thanks to <a href="https://github.com/harry75369" target="_blank">Harry75369</a>)
 * Shell (Unix)
+* Transact-SQL
 * TeX
 * Visual Basic
 * YAML
@@ -216,7 +218,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added the ability to specify <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">line ranges</a>
 * Added Microsoft Registry language thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>
 * Added MIVA Script language
+* Added Transact-SQL language
 * Added option to add blank lines before and after the code
+* Wrote a neat GeSHi language file scraper, makes it easier to scrape GeSHi files for grouped keywords and add them as Crayon languages 
 
 = 1.10.1 =
 * Added diff language thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>

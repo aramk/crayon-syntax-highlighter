@@ -1,0 +1,4 @@
+IF DATEPART(dw, GETDATE()) = 7 OR DATEPART(dw, GETDATE()) = 1
+   PRINT 'It is the weekend.'
+ELSE
+   PRINT 'It is a weekday.'

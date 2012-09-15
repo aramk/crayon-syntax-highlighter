@@ -1,0 +1,14 @@
+uniqueidentifier
+smalldatetime
+sql_variant
+smallmoney
+varbinary
+datetime
+nvarchar
+tinyint
+bigint
+image
+money
+ntext
+text
+
