@@ -785,6 +785,7 @@ class CrayonSettingsWP {
 			Lithuanian (<a href="http://www.host1free.com" target="_blank">Vincent G</a>),
 			Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>), 
 			Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>),
+			Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
 			Turkish (<a href="http://kazancexpert.com" target="_blank">Hakan</a>)';
 		
 		$links = '<a id="twitter-icon" href="' . $CRAYON_TWITTER . '" target="_blank"></a>

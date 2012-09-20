@@ -124,7 +124,6 @@ class CrayonTEContent {
 		<tr>
 			<td colspan="2">
 			<?php
-			var_dump();
 				if (!is_admin() && !$_GET['is_admin'] && !CrayonGlobalSettings::val(CrayonSettings::TAG_EDITOR_SETTINGS)) {
 					exit;
 				}

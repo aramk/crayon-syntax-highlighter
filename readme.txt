@@ -106,7 +106,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * German (thanks to <a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&szlig;</a>)
 * Italian (thanks to <a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>)
 * Lithuanian (thanks to <a href="http://www.host1free.com" target="_blank">Vincent G</a>)
-* Spanish
+* Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
 * Japanese (thanks to <a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>)
 * Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
 * Turkish (thanks to <a href="http://kazancexpert.com" target="_blank">Hakan</a>)
@@ -220,7 +220,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added MIVA Script language
 * Added Transact-SQL language
 * Added option to add blank lines before and after the code
-* Wrote a neat GeSHi language file scraper, makes it easier to scrape GeSHi files for grouped keywords and add them as Crayon languages 
+* Wrote a neat GeSHi language file scraper, makes it easier to scrape GeSHi files for grouped keywords and add them as Crayon languages
+* Added improved Spanish translation (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>) 
 
 = 1.10.1 =
 * Added diff language thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>
