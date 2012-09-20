@@ -1,6 +1,7 @@
 === Crayon Syntax Highlighter ===
 Contributors: akarmenia
 Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=PPqWIQJ0gEZp4pVGNnYzhcwFGvx3MGwD95tvUcZgeYlHIEjBS7x6QHG34B4&dispatch=5885d80a13c0db1f8e263663d3faee8d0288a7fd2903afb85a5540fd44243d03
+License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter
 Requires at least: 3.0
 Tested up to: 3.4.2
@@ -148,6 +149,29 @@ A handful of articles from others written about Crayon, thanks guys!
 * Line wrapping
 * Go language support
 * Integrated commenting
+
+**Donations**
+
+Thanks to all those who donate to my project, your support keeps the Crayons going!
+
+* Tarek Sakr, (http://centrivision.com/), USA
+* Jeff Benshetler, (http://branchpoint.net/), USA
+* Oldrich Strachota, (http://www.strachota.net/), Czech Republic
+* Dividend Ninja, (http://dividendninja.com/), Canada
+* Chris Wiegman, (http://bit51.com/), USA
+* Sven Meier, (http://www.codesix.net/), Germany
+* Christy Wiggins, (http://www.jinxyisms.com/), USA
+* eSnipe, Inc. (http://esnipe.com/), USA (again!)
+* Aliseya Wright, (http://blog.xoxothemes.com/), USA
+* Jeremy Worboys (http://complexcompulsions.com/), Australia
+* Steve McGough, Spider Creations, LLC. (http://spidercreations.net/), USA
+* eSnipe, Inc. (http://esnipe.com/), USA
+* Gerald Drouillard (http://www.drouillard.biz/), USA
+* Greg Pettit (http://blog.monkey-house.ca/), Canada
+* Waimanu Solutions (http://daveblog.waimanu.web44.net/), USA
+* Andrew McDonnell (http://blog.oldcomputerjunk.net/), Australia
+* Perry Bonewell (http://pointatthemoon.co.uk/), United Kingdom
+* Nick Weisser (http://www.openstream.ch/), Switzerland
 
 == Installation ==
 
@@ -680,27 +704,4 @@ http://wordpress.org/support/topic/plugin-crayon-syntax-highlighter-this-plugin-
 == Upgrade Notice ==
 
 Make sure to upgrade to the latest release when possible to ensure you avoid bugs others have found and enjoy new features. 
-
-== Donations ==
-
-Thanks to all those who donate to my project, your support keeps the Crayons going!
-
-* Tarek Sakr, (http://centrivision.com/), USA
-* Jeff Benshetler, (http://branchpoint.net/), USA
-* Oldrich Strachota, (http://www.strachota.net/), Czech Republic
-* Dividend Ninja, (http://dividendninja.com/), Canada
-* Chris Wiegman, (http://bit51.com/), USA
-* Sven Meier, (http://www.codesix.net/), Germany
-* Christy Wiggins, (http://www.jinxyisms.com/), USA
-* eSnipe, Inc. (http://esnipe.com/), USA (again!)
-* Aliseya Wright, (http://blog.xoxothemes.com/), USA
-* Jeremy Worboys (http://complexcompulsions.com/), Australia
-* Steve McGough, Spider Creations, LLC. (http://spidercreations.net/), USA
-* eSnipe, Inc. (http://esnipe.com/), USA
-* Gerald Drouillard (http://www.drouillard.biz/), USA
-* Greg Pettit (http://blog.monkey-house.ca/), Canada
-* Waimanu Solutions (http://daveblog.waimanu.web44.net/), USA
-* Andrew McDonnell (http://blog.oldcomputerjunk.net/), Australia
-* Perry Bonewell (http://pointatthemoon.co.uk/), United Kingdom
-* Nick Weisser (http://www.openstream.ch/), Switzerland
 

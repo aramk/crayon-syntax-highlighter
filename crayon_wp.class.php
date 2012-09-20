@@ -9,7 +9,7 @@ Author URI: http://ak.net84.net/
 Text Domain: crayon-syntax-highlighter
 Domain Path: /trans/
 License: GPL2
-	Copyright 2011	Aram Kocharyan	(email : akarmenia@gmail.com)
+	Copyright 2012	Aram Kocharyan	(email : akarmenia@gmail.com)
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as 
 	published by the Free Software Foundation.
