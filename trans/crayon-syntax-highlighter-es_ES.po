@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Crayon Syntax Highlighter v1.10.1\n"
+"Project-Id-Version: Crayon Syntax Highlighter v1.11\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-20 15:27+1000\n"
-"PO-Revision-Date: 2012-09-20 15:27+1000\n"
+"POT-Creation-Date: 2012-09-21 10:23+1000\n"
+"PO-Revision-Date: 2012-09-21 10:25+1000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "crayon__;crayon_n;crayon_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.5.3\n"
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: .\n"
 
@@ -164,8 +165,8 @@ msgstr "Se produjo un error. Por favor, inténtelo de nuevo más tarde."
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:44 ../crayon_settings_wp.class.php:128
-#: ../crayon_settings_wp.class.php:817
-#: ../util/tag-editor/crayon_te_content.php:133
+#: ../crayon_settings_wp.class.php:818
+#: ../util/tag-editor/crayon_te_content.php:132
 msgid "Settings"
 msgstr "Configuración"
 
@@ -237,9 +238,8 @@ msgstr "Archivos"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:315
-#, fuzzy
 msgid "Tag Editor"
-msgstr "Editor de  etiquetas"
+msgstr "Editor de etiquetas"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:316
@@ -360,9 +360,10 @@ msgstr "Mostrar las líneas de código alternando colores"
 msgid "Enable line marking for important lines"
 msgstr "Activar el marcado de líneas importantes"
 
+# @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:577
 msgid "Enable line ranges for showing only parts of code"
-msgstr ""
+msgstr "Activar rangos de línea para mostrar sólo partes del código"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:578
@@ -372,7 +373,7 @@ msgstr "Mostrar números de línea por defecto"
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:579
 msgid "Enable line number toggling"
-msgstr "Activar alternación de números de línea"
+msgstr "Mostrar los fondos de los números de línea alternando colores"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:580
@@ -386,9 +387,9 @@ msgstr "Cuando no se proporciona el lenguaje, usar"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:596
-#, fuzzy, php-format
+#, php-format
 msgid "%d language has been detected."
-msgstr "Ha sido detectado %d lenguaje."
+msgstr "%d lenguaje ha sido detectado."
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:597
@@ -481,7 +482,7 @@ msgstr "Listar fuentes en la cabecera (más eficiente)."
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:671
 msgid "Enable plain code view and display"
-msgstr "Activa el texto plano"
+msgstr "Activar el texto plano"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:674
@@ -538,13 +539,15 @@ msgstr "Mostrar icono de lenguaje mixto (+)"
 msgid "Tab size in spaces"
 msgstr "Tamaño fijo en espacios"
 
+# @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:694
 msgid "Blank lines before code:"
-msgstr ""
+msgstr "Líneas en blanco antes del código:"
 
+# @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:696
 msgid "Blank lines after code:"
-msgstr ""
+msgstr "Líneas en blanco después del código:"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:701
@@ -601,13 +604,16 @@ msgstr ""
 "Utilice %s para separar los nombres de ajuste de los valores en el atributo "
 "&lt;pre&gt;"
 
+# @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:721
 msgid "Display the Tag Editor in any TinyMCE instances on the frontend"
 msgstr ""
+"Mostrar el Editor de Etiquetas en cualquier instancia TinyMCE de la interfaz"
 
+# @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:722
 msgid "Display Tag Editor settings on the frontend"
-msgstr ""
+msgstr "Mostrar el Editor de Etiquetas en la interfaz"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:726
@@ -629,7 +635,7 @@ msgstr "Intentar cargar CSS y JavaScript de Crayón sólo cuando sea necesario"
 #: ../crayon_settings_wp.class.php:730
 msgid "Disable enqueuing for page templates that may contain The Loop."
 msgstr ""
-"Desactivar la carga en plantillas de página que pueden contener el Loop."
+"Desactivar la carga en plantillas de página que puedan contener el Loop."
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:731
@@ -731,7 +737,7 @@ msgstr "Versión"
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:779
 msgid "Developer"
-msgstr "Diseñador"
+msgstr "Desarrollador"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:780
@@ -739,7 +745,7 @@ msgid "Translators"
 msgstr "Traductores"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:805
+#: ../crayon_settings_wp.class.php:806
 msgid ""
 "The result of innumerable hours of hard work over many months. It's an "
 "ongoing project, keep me motivated!"
@@ -748,19 +754,18 @@ msgstr ""
 "un proyecto en curso, ¡me mantiene motivado!"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:819
+#: ../crayon_settings_wp.class.php:820
 #: ../util/theme-editor/theme_editor_content.php:27
 msgid "Theme Editor"
 msgstr "Editor de Temas"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:821
+#: ../crayon_settings_wp.class.php:822
 msgid "Donate"
 msgstr "Donar"
 
 # @ crayon-syntax-highlighter
 #: ../util/tag-editor/crayon_tag_editor_wp.class.php:70
-#, fuzzy
 msgid "Add Crayon Code"
 msgstr "Agregar código Crayon"
 
@@ -781,7 +786,6 @@ msgstr "Guardar"
 
 # @ crayon-syntax-highlighter
 #: ../util/tag-editor/crayon_te_content.php:76
-#, fuzzy
 msgid "Title"
 msgstr "Título"
 
@@ -792,29 +796,26 @@ msgstr "Una breve descripción"
 
 # @ crayon-syntax-highlighter
 #: ../util/tag-editor/crayon_te_content.php:81
-#, fuzzy
 msgid "Inline"
 msgstr "En línea"
 
 # @ crayon-syntax-highlighter
 #: ../util/tag-editor/crayon_te_content.php:85
-#, fuzzy
 msgid "Don't Highlight"
 msgstr "Resaltador de sintaxis Crayon"
 
 # @ crayon-syntax-highlighter
 #: ../util/tag-editor/crayon_te_content.php:90
-#, fuzzy
 msgid "Language"
 msgstr "Lenguaje"
 
+# @ crayon-syntax-highlighter
 #: ../util/tag-editor/crayon_te_content.php:93
 msgid "Line Range"
-msgstr ""
+msgstr "Rango de líneas"
 
 # @ crayon-syntax-highlighter
 #: ../util/tag-editor/crayon_te_content.php:94
-#, fuzzy
 msgid "(e.g. 3-5 or 3)"
 msgstr "(por ejemplo, 1,2,3-5)"
 
@@ -830,7 +831,6 @@ msgstr "(por ejemplo, 1,2,3-5)"
 
 # @ crayon-syntax-highlighter
 #: ../util/tag-editor/crayon_te_content.php:100
-#, fuzzy
 msgid "Clear"
 msgstr "Limpiar"
 
@@ -869,18 +869,18 @@ msgstr ""
 "configuración de %sCrayon &gt; Archivos%s."
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_te_content.php:136
+#: ../util/tag-editor/crayon_te_content.php:135
 msgid "Change the following settings to override their global values."
 msgstr ""
 "Cambie las siguientes configuraciones para anular sus valores globales."
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_te_content.php:138
+#: ../util/tag-editor/crayon_te_content.php:137
 msgid "Only changes (shown yellow) are applied."
 msgstr "Sólo los cambios (que se muestran en amarillo) se aplicarán."
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_te_content.php:140
+#: ../util/tag-editor/crayon_te_content.php:139
 #, php-format
 msgid ""
 "Future changes to the global settings under %sCrayon &gt; Settings%s won't "
@@ -905,8 +905,3 @@ msgstr "Creando el tema \"%s\""
 #: ../util/theme-editor/theme_editor_content.php:39
 msgid "Back To Settings"
 msgstr "Volver a la configuración"
-
-# @ crayon-syntax-highlighter
-#, fuzzy
-#~ msgid "Disable Highlighting"
-#~ msgstr "Desactivar resaltado"

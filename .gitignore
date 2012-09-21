@@ -5,3 +5,4 @@ Thumbs.db
 # .settings
 # .buildpath
 *.pyc
+.idea/
