@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'UbuntuMonoRegular';
+    src: url('ubuntu-mono/ubuntu-mono-webfont.eot');
+    src: url('ubuntu-mono/ubuntu-mono-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ubuntu-mono/ubuntu-mono-webfont.woff') format('woff'),
+         url('ubuntu-mono/ubuntu-mono-webfont.ttf') format('truetype'),
+         url('ubuntu-mono/ubuntu-mono-webfont.svg#UbuntuMonoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.crayon-font-ubuntu-mono * {
+    font-family: Ubuntu Mono, 'UbuntuMonoRegular', 'Courier New', monospace !important;
+}

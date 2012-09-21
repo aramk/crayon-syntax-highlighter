@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'InconsolataRegular';
+    src: url('inconsolata/inconsolata-webfont.eot');
+    src: url('inconsolata/inconsolata-webfont.eot?#iefix') format('embedded-opentype'),
+         url('inconsolata/inconsolata-webfont.woff') format('woff'),
+         url('inconsolata/inconsolata-webfont.ttf') format('truetype'),
+         url('inconsolata/inconsolata-webfont.svg#InconsolataRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.crayon-font-inconsolata * {
+    font-family: Inconsolata, 'InconsolataRegular', 'Courier New', monospace !important;
+}

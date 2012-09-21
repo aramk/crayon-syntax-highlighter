@@ -234,6 +234,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.12 =
+* Added 4 new fonts suggested by <a href="http://andrealazzarotto.com/" target="_blank">Andrea Lazzarotto</a>.
+
 = 1.11 =
 * Added bbPress support.
 * Integrated Tag Editor with Fancybox, switched from the discontinued ThickBox, a fair amount of changes took place.

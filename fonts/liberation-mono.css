@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'LiberationMonoRegular';
+    src: url('liberation-mono/liberation-mono-webfont.eot');
+    src: url('liberation-mono/liberation-mono-webfont.eot?#iefix') format('embedded-opentype'),
+         url('liberation-mono/liberation-mono-webfont.woff') format('woff'),
+         url('liberation-mono/liberation-mono-webfont.ttf') format('truetype'),
+         url('liberation-mono/liberation-mono-webfont.svg#LiberationMonoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.crayon-font-liberation-mono * {
+    font-family: Liberation Mono, 'LiberationMonoRegular', 'Courier New', monospace !important;
+}
