@@ -235,8 +235,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 1.12 =
-* Added 4 new fonts suggested by <a href="http://andrealazzarotto.com/" target="_blank">Andrea Lazzarotto</a>.
-* Updated Turkish translation.
+* Added Go Language
+* Added 4 new fonts suggested by <a href="http://andrealazzarotto.com/" target="_blank">Andrea Lazzarotto</a>
+* Fixed mixed highlighting + icon from showing all the time, only shows with mixed language code
+* Updated Turkish translation
 
 = 1.11 =
 * Added bbPress support.
