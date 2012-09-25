@@ -1,12 +1,11 @@
 <?php
 
 require_once (CRAYON_ROOT_PATH . 'crayon_settings_wp.class.php');
-//require_once (CRAYON_UTIL_PHP);
 
 class CrayonTagEditorWP {
 
 	public static $settings = null;
-	
+
 	public static function init() {
 		// Hooks
 		if (CRAYON_TAG_EDITOR) {
@@ -29,9 +28,9 @@ class CrayonTagEditorWP {
 			}
 		}
 	}
-	
+
 	public static function init_settings() {
-		
+
 		if (!self::$settings) {
 			// Add settings
 			self::$settings = array(
@@ -45,8 +44,6 @@ class CrayonTagEditorWP {
 					'code_css' => '#crayon-code',
 					'url_css' => '#crayon-url',
 					'url_info_css' => '#crayon-te-url-info',
-// 					'abs_home_path' => get_home_url(),
-// 					'local_path' => CrayonGlobalSettings::val(CrayonSettings::LOCAL_PATH),
 					'lang_css' => '#crayon-lang',
 					'title_css' => '#crayon-title',
 					'mark_css' => '#crayon-mark',
@@ -77,55 +74,44 @@ class CrayonTagEditorWP {
 			);
 		}
 	}
-	
+
 	public static function init_tinymce($init) {
 		$init['extended_valid_elements'] .= ',pre[*],code[*],iframe[*]';
 		return $init;
 	}
-	
+
 	public static function addbuttons() {
-		// Don't bother doing this stuff if the current user lacks permissions
-// 		if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
-// 	   		return;
-// 		}
-		
 		// Add only in Rich Editor mode
 		//if ( get_user_option('rich_editing') == 'true') {
-			add_filter('mce_external_plugins', 'CrayonTagEditorWP::add_plugin');
-			add_filter('mce_buttons', 'CrayonTagEditorWP::register_buttons');
-		//}
+		add_filter('mce_external_plugins', 'CrayonTagEditorWP::add_plugin');
+		add_filter('mce_buttons', 'CrayonTagEditorWP::register_buttons');
 	}
-	
+
 	public static function enqueue_resources() {
 		global $CRAYON_VERSION;
 		self::init_settings();
-		//wp_enqueue_style('thickbox');
-// 		wp_enqueue_style('admin-bar');
-// 		wp_enqueue_style('wp-admin');
-// 		wp_enqueue_style('colors-fresh');
-// 		wp_enqueue_style('editor');
 
 		wp_enqueue_style('crayon_fancybox', plugins_url(CRAYON_CSS_FANCYBOX, dirname(dirname(__FILE__))), array(), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_fancybox', plugins_url(CRAYON_JS_FANCYBOX, dirname(dirname(__FILE__))), array('jquery'), $CRAYON_VERSION);
-		
+
 		wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, dirname(dirname(__FILE__))), array('jquery'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, dirname(dirname(__FILE__))), array('jquery', 'crayon_util_js'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_te_js', plugins_url(CRAYON_TE_JS, __FILE__), array('crayon_admin_js', 'thickbox', 'crayon_fancybox'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_qt_js', plugins_url(CRAYON_QUICKTAGS_JS, __FILE__), array('quicktags','crayon_te_js'), $CRAYON_VERSION, TRUE);
 		wp_localize_script('crayon_te_js', 'CrayonTagEditorSettings', self::$settings);
 	}
-	 
+
 	public static function register_buttons($buttons) {
 		array_push($buttons, 'separator', 'crayon_tinymce');
 		return $buttons;
 	}
-	 
+
 	// Load the TinyMCE plugin : editor_plugin.js (wp2.5)
 	public static function add_plugin($plugin_array) {
 		$plugin_array['crayon_tinymce'] = plugins_url(CRAYON_TINYMCE_JS, __FILE__);
 		return $plugin_array;
 	}
-	
+
 }
 
 if (defined('ABSPATH') /*&& is_admin()*/) {

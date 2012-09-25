@@ -4,8 +4,6 @@
 	
 		var base = this;
 		
-		jQuery(function() {CrayonTagEditor.loadDialog(); });
-		
 		base.sel = '*[id*="crayon_quicktag"],*[class*="crayon_quicktag"]';
 		
 		QTags.addButton( 'crayon_quicktag', 'crayon', function() {

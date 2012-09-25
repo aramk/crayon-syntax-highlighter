@@ -315,14 +315,14 @@
 		base.show_main = function() {
 			theme_editor_wrap.hide();
 			main_wrap.show();
-			$(window).scrollTop(0);
+			//$(window).scrollTop(0);
 			return false;
 		};
 
 		base.show_theme_editor_now = function(button) {
 			main_wrap.hide();
 			theme_editor_wrap.show();
-			$(window).scrollTop(0);
+			//$(window).scrollTop(0);
 
 			theme_editor_loading = false;
 			button.html(button.attr('loaded'));

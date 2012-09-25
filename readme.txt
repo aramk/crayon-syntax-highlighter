@@ -76,6 +76,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * CSS
 * Delphi/Pascal (thanks to <a href="http://squashbrain.com/" target="_blank">Chris McClenny</a>)
 * Diff (thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>)
+* Go
 * Haskell
 * HTML (XML/XHTML)
 * Lua
@@ -238,6 +239,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added Go Language
 * Added 4 new fonts suggested by <a href="http://andrealazzarotto.com/" target="_blank">Andrea Lazzarotto</a>
 * Fixed mixed highlighting + icon from showing all the time, only shows with mixed language code
+* Fixed a bug introduced in 1.11 that caused the page to scroll up to the top on refresh
 * Updated Turkish translation
 
 = 1.11 =
