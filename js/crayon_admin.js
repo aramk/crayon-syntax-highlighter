@@ -43,7 +43,7 @@
 
 		base.init = function() {
 			console_log('admin init');
-			
+
 			// Wraps
 			main_wrap = $('#crayon-main-wrap');
 			theme_editor_wrap = $('#crayon-theme-editor-wrap');
@@ -89,6 +89,19 @@
 					preview_toggle();
 				});
 			}
+
+			// Convert
+			$('#crayon-settings-form input').live('focusin focusout mouseup', function() {
+				$('#crayon-settings-form').data('lastSelected', $(this));
+			});
+			$('#crayon-settings-form').submit(function() {
+				var last = $(this).data('lastSelected').get(0);
+				var target = $('#convert').get(0);
+				if (last == target) {
+					var r = confirm("Please BACKUP your database first! Converting will update your post content. Do you wish to continue?");
+					return r;
+				}
+			});
 
 			// Alignment
 			align_drop = base.cssElem('#h-align');
@@ -152,7 +165,8 @@
 		var preview_update = function() {
 			// console_log('preview_update');
 			preview_get = '?wp_load=' + CrayonSyntaxSettings.wp_load + '&';
-//			preview_get += 'crayon_wp=' + CrayonSyntaxSettings.crayon_wp + '&';
+			// preview_get += 'crayon_wp=' + CrayonSyntaxSettings.crayon_wp +
+			// '&';
 			var val = 0;
 			var obj;
 			for ( var i = 0; i < preview_obj_names.length; i++) {
@@ -295,7 +309,7 @@
 
 		base.show_langs = function(url) {
 			$.get(url, function(data) {
-				 $('#lang-info').hide();
+				$('#lang-info').hide();
 				$('#crayon-subsection-lang-info').html(data);
 			});
 			return false;
@@ -314,14 +328,14 @@
 		base.show_main = function() {
 			theme_editor_wrap.hide();
 			main_wrap.show();
-			//$(window).scrollTop(0);
+			// $(window).scrollTop(0);
 			return false;
 		};
 
 		base.show_theme_editor_now = function(button) {
 			main_wrap.hide();
 			theme_editor_wrap.show();
-			//$(window).scrollTop(0);
+			// $(window).scrollTop(0);
 
 			theme_editor_loading = false;
 			button.html(button.attr('loaded'));

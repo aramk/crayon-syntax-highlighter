@@ -127,7 +127,7 @@ class CrayonSettingsWP {
 </div>
 <h2>Crayon Syntax Highlighter <?php crayon_e('Settings'); ?></h2>
 <?php self::help(); ?>
-<form action="options.php" method="post"><?php
+<form id="crayon-settings-form" action="options.php" method="post"><?php
 		settings_fields(self::FIELDS);
 		?>
 
