@@ -242,6 +242,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added ability to convert all legacy Crayon tags in blog posts to &lt;pre&gt; tags, retaining all attributes. These are the accepted standard for the Tag Editor and they're backwards compatible (if Crayon is off or you're using another highlighter).
 * Added Go Language
 * Added 4 new fonts suggested by <a href="http://andrealazzarotto.com/" target="_blank">Andrea Lazzarotto</a>
+* Added Ado theme thanks to <a href="http://adostudio.it/" target="_blank">adostudio.it</a>
 * Superfluous &lt;code&gt; tags wrapping around the code are removed 
 * Fixed mixed highlighting + icon from showing all the time, only shows with mixed language code
 * Fixed a bug introduced in 1.11 that caused the page to scroll up to the top on refresh
