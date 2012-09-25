@@ -758,6 +758,8 @@ class CrayonWP {
 
 		if (CrayonGlobalSettings::val(CrayonSettings::CAPTURE_PRE)) {
 			$the_content = str_ireplace(array($ignore_flag.'<pre', 'pre>'.$ignore_flag), array('<pre', 'pre>'), $the_content);
+			// Remove any <code> tags wrapping around the whole code, since we won't needed them
+			$the_content = preg_replace('#(^\s*<\s*code[^>]*>)|(<\s*/\s*code[^>]*>\s*$)#msi', '', $the_content);
 		}
 		if (CrayonGlobalSettings::val(CrayonSettings::PLAIN_TAG)) {
 			$the_content = str_ireplace(array($ignore_flag.'[plain', 'plain]'.$ignore_flag), array('[plain', 'plain]'), $the_content);
