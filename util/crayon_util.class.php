@@ -2,6 +2,7 @@
 
 /* Common utility functions mainly for formatting, parsing etc. */
 class CrayonUtil {
+	
 	// Used to detect touchscreen devices
 	private static $touchscreen = NULL;
 
@@ -162,6 +163,7 @@ class CrayonUtil {
 		return FALSE;
 	}
 	
+	// Converts all special charactres to entities
 	public static function htmlentities($str) {
 		return htmlentities($str, ENT_COMPAT, 'UTF-8');
 	}
@@ -170,6 +172,7 @@ class CrayonUtil {
 		return html_entity_decode($str, ENT_NOQUOTES, 'UTF-8');
 	}
 	
+	// Converts <, >, & into entities
 	public static function htmlspecialchars($str) {
 		return htmlspecialchars($str, ENT_NOQUOTES, 'UTF-8');
 	}
@@ -190,6 +193,16 @@ class CrayonUtil {
 			return TRUE;
 		}
 		return FALSE;
+	}
+	
+	// Sets a variable to an array if valid
+	public static function set_array($var, $array, $false = FALSE) {
+		return isset($array[$var]) ? $array[$var] : $false;
+	}
+	
+	// Sets a variable to null if not set
+	public static function set_var(&$var, $false = null) {
+		$var = isset($var) ? $var : $false;
 	}
 	
 	// Thanks, http://www.php.net/manual/en/function.str-replace.php#102186
@@ -476,5 +489,23 @@ class CrayonUtil {
 		$str = str_replace($wp_entities, $wp_replace, $str);
 		return $str;
 	}
+	
+	// Constructs an html element
+	// If $content = FALSE, then element is closed
+	public static function html_element($name, $content = NULL, $attributes = array()) {
+		$atts = self::html_attributes($attributes);
+		$tag = "<$name $atts";
+		$tag .= $content === FALSE ? '/>' : ">$content</$name>";
+		return $tag;
+	}
+	
+	public static function html_attributes($attributes, $assign = '=', $quote = '"', $glue = ' ') {
+		$atts = '';
+		foreach ($attributes as $k=>$v) {
+			$atts .= $k.$assign.$quote.$v.$quote.$glue;
+		}
+		return $atts;
+	}
+	
 }
 ?>

@@ -294,9 +294,8 @@
 		};
 
 		base.show_langs = function(url) {
-			// $('#show-lang').hide();
 			$.get(url, function(data) {
-				// $('#lang-info').show();
+				 $('#lang-info').hide();
 				$('#crayon-subsection-lang-info').html(data);
 			});
 			return false;

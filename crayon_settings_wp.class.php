@@ -352,6 +352,10 @@ class CrayonSettingsWP {
 			self::clear_cache();
 			return array();
 		}
+		// Convert old tags
+		if (array_key_exists('convert', $inputs)) {
+			CrayonWP::convert_tags();
+		}
 		// Clear the log if needed
 		if (array_key_exists(self::LOG_CLEAR, $_POST)) {
 			CrayonLog::clear();
@@ -459,6 +463,15 @@ class CrayonSettingsWP {
 		} else {
 			return $return;
 		}
+	}
+	
+	private static function button($args = array()) {
+		extract($args);
+		CrayonUtil::set_var($id, '');
+		CrayonUtil::set_var($class, '');
+		CrayonUtil::set_var($onclick, '');
+		CrayonUtil::set_var($title, '');
+		return '<a id="'.$id.'" class="button-primary '.$class.'" onclick="'.$onclick.'">'.$title.'</a>';
 	}
 	
 	private static function info_span($name, $text) {
@@ -603,8 +616,7 @@ class CrayonSettingsWP {
 					echo '<br/><span class="crayon-error">', sprintf(crayon__('The selected language with id %s could not be loaded'), '<strong>'.$db_fallback.'</strong>'), '. </span>';
 				}
 				// Language parsing info
-				echo CRAYON_BR, '<div id="crayon-subsection-lang-info"><div><a id="show-lang" class="button-primary" onclick="CrayonSyntaxAdmin.show_langs(\'', plugins_url(CRAYON_LIST_LANGS_PHP, __FILE__),
-					'\');">', crayon__('Show Languages'), '</a></div></div>';
+				echo CRAYON_BR, '<div id="crayon-subsection-lang-info"><div>'.self::button(array('id'=>'show-lang', 'title'=>crayon__('Show Languages'), 'onclick'=>'CrayonSyntaxAdmin.show_langs(\''.plugins_url(CRAYON_LIST_LANGS_PHP, __FILE__).'\');')).'</div></div>';
 			} else {
 				echo 'No languages could be parsed.';
 			}
@@ -715,6 +727,18 @@ class CrayonSettingsWP {
 	}
 	
 	public static function tag_editor() {
+		//echo self::button(array('id'=>'convert-tags', 'title'=>crayon__('Convert Legacy Tags')));
+		$can_convert = CrayonWP::can_convert_tags();
+		if ($can_convert) {
+			$disabled = '';
+			$convert_text = crayon__('Convert Legacy Tags');
+		} else {
+			$disabled = 'disabled="disabled"';
+			$convert_text = crayon__('No Legacy Tags Found');
+		}
+		
+		echo '<input type="submit" name="', self::OPTIONS, '[convert]" id="convert" class="button-primary" value="', $convert_text, '"', $disabled, ' />';
+		echo '<span class="crayon-span-10"></span><span>' . crayon__('Convert existing Crayon tags to Tag Editor format (&lt;pre&gt;)'), '</span>', ' <a href="#" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', CRAYON_BR, CRAYON_BR;
 		$sep = sprintf(crayon__('Use %s to separate setting names from values in the &lt;pre&gt; class attribute'),
 						self::dropdown(CrayonSettings::ATTR_SEP, FALSE, FALSE, FALSE));
 		echo '<span>', $sep, ' <a href="http://bit.ly/H3xW3D" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', '</span><br/>';
