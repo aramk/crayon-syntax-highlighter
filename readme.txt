@@ -2,7 +2,7 @@
 Contributors: akarmenia
 Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=PPqWIQJ0gEZp4pVGNnYzhcwFGvx3MGwD95tvUcZgeYlHIEjBS7x6QHG34B4&dispatch=5885d80a13c0db1f8e263663d3faee8d0288a7fd2903afb85a5540fd44243d03
 License: GPLv2 or later
-Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter
+Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
 Tested up to: 3.4.2
 Stable tag: 1.11
@@ -21,6 +21,7 @@ It also supports some neat features like:
 * Toggled line numbers
 * Copy/paste code
 * Open code in a new window (popup)
+* bbPress 2 support
 * <a href="http://bit.ly/ReRr0i" target="_blank">Converting legacy code in blog posts to &lt;pre&gt;</a>
 * Remote request caching
 * <a href="http://ak.net84.net/projects/mixed-language-highlighting-in-crayon/" target="_blank">Mixed Language Highlighting</a> in a single Crayon
