@@ -21,7 +21,7 @@ It also supports some neat features like:
 * Toggled line numbers
 * Copy/paste code
 * Open code in a new window (popup)
-* <a href="#" target="_blank">Converting existing code from blog posts into &lt;pre&gt;</a>
+* <a href="http://bit.ly/ReRr0i" target="_blank">Converting legacy code in blog posts to &lt;pre&gt;</a>
 * Remote request caching
 * <a href="http://ak.net84.net/projects/mixed-language-highlighting-in-crayon/" target="_blank">Mixed Language Highlighting</a> in a single Crayon
 * <a href="http://ak.net84.net/projects/mini-tags-in-crayon/" target="_blank">Mini Tags</a> like [php][/php]

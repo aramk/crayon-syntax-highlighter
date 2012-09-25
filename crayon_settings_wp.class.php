@@ -727,7 +727,6 @@ class CrayonSettingsWP {
 	}
 	
 	public static function tag_editor() {
-		//echo self::button(array('id'=>'convert-tags', 'title'=>crayon__('Convert Legacy Tags')));
 		$can_convert = CrayonWP::can_convert_tags();
 		if ($can_convert) {
 			$disabled = '';
@@ -738,7 +737,7 @@ class CrayonSettingsWP {
 		}
 		
 		echo '<input type="submit" name="', self::OPTIONS, '[convert]" id="convert" class="button-primary" value="', $convert_text, '"', $disabled, ' />';
-		echo '<span class="crayon-span-10"></span><span>' . crayon__('Convert existing Crayon tags to Tag Editor format (&lt;pre&gt;)'), '</span>', ' <a href="#" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', CRAYON_BR, CRAYON_BR;
+		echo '<span class="crayon-span-10"></span><span>' . crayon__('Convert existing Crayon tags to Tag Editor format (&lt;pre&gt;)'), '</span>', ' <a href="http://bit.ly/ReRr0i" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', CRAYON_BR, CRAYON_BR;
 		$sep = sprintf(crayon__('Use %s to separate setting names from values in the &lt;pre&gt; class attribute'),
 						self::dropdown(CrayonSettings::ATTR_SEP, FALSE, FALSE, FALSE));
 		echo '<span>', $sep, ' <a href="http://bit.ly/H3xW3D" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', '</span><br/>';
