@@ -22,7 +22,7 @@ It also supports some neat features like:
 * Copy/paste code
 * Open code in a new window (popup)
 * bbPress 2 support
-* <a href="http://bit.ly/ReRr0i" target="_blank">Converting legacy code in blog posts to &lt;pre&gt;</a>
+* <a href="http://bit.ly/ReRr0i" target="_blank">Converting legacy code in blog posts/comments to &lt;pre&gt;</a>
 * Remote request caching
 * <a href="http://ak.net84.net/projects/mixed-language-highlighting-in-crayon/" target="_blank">Mixed Language Highlighting</a> in a single Crayon
 * <a href="http://ak.net84.net/projects/mini-tags-in-crayon/" target="_blank">Mini Tags</a> like [php][/php]
@@ -39,6 +39,7 @@ It also supports some neat features like:
 * Toggled toolbar
 * Striped lines
 * Line marking (for important lines)
+* <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">Line ranges (showing only parts of the code)</a>
 * Starting line number (default is 1)
 * Local directory to search for local files
 * File extension detection
@@ -121,6 +122,10 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 
 These are helpful for discovering new features.
 
+* <a href="http://ak.net84.net/crayon/internal-post-management-crayon/" target="_blank">Internal Post Management in Crayon</a>
+* <a href="http://ak.net84.net/crayon/converting-legacy-tags-to-pre/" target="_blank">Converting Legacy Tags to &lt;pre&gt;</a>
+* <a href="http://ak.net84.net/crayon/crayon-with-bbpress/" target="_blank">Crayon with bbPress</a>
+* <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">Line Ranges in Crayon</a>
 * <a href="http://ak.net84.net/projects/crayon-tag-editor/" target="_blank">Crayon Tag Editor</a>
 * <a href="http://ak.net84.net/projects/mixed-language-highlighting-in-crayon/" target="_blank">Mixed Language Highlighting in Crayon</a>
 * <a href="http://ak.net84.net/projects/mini-tags-in-crayon/" target="_blank">Mini Tags And Plain Tags In Crayon</a>
@@ -131,6 +136,7 @@ These are helpful for discovering new features.
 
 A handful of articles from others written about Crayon, thanks guys!
 
+* <a href="http://bbpress.org/forums/topic/state-of-syntax-highlighter-support-in-bbpress-2/" target="_blank">State of syntax highlighter support in bbPress 2</a>
 * <a href="http://www.techbrunch.fr/informations/plugin-wordpress-afficher-code-source/" target="_blank">The ultimate plugin for displaying code in WordPress (French)</a>
 * <a href="http://www.trynull.com/2012/06/15/finally-wordpress-code-syntax-highlighting-that-works/" target="_blank">Finally!‚A WordPress code syntax highlighting that works</a>
 * <a href="http://selfpwnt.com/crayon-syntax-highlighter-and-its-studly-author/" target="_blank">Crayon Syntax Highlighter (and its studly author)</a>
@@ -239,7 +245,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 1.12 =
-* Added ability to convert all legacy Crayon tags in blog posts to &lt;pre&gt; tags, retaining all attributes. These are the accepted standard for the Tag Editor and they're backwards compatible (if Crayon is off or you're using another highlighter).
+* Added ability to convert all legacy Crayon tags in blog posts and comments to &lt;pre&gt; tags, retaining all attributes. These are the accepted standard for the Tag Editor and they're backwards compatible (if Crayon is off or you're using another highlighter).
+* Added a button in the settings page to display the list of posts with Crayon tags
+* Fixed a bug causing posts with Crayon tags only in the comments (not the post content) to be ignored. 
 * Added Go Language
 * Added 4 new fonts suggested by <a href="http://andrealazzarotto.com/" target="_blank">Andrea Lazzarotto</a>
 * Added Ado theme thanks to <a href="http://adostudio.it/" target="_blank">adostudio.it</a>

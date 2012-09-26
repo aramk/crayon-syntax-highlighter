@@ -105,6 +105,7 @@ define('CRAYON_EXCEPTIONS_PHP', CRAYON_UTIL_DIR . 'exceptions.php');
 define('CRAYON_TIMER_PHP', CRAYON_UTIL_DIR . 'crayon_timer.class.php');
 define('CRAYON_LOG_PHP', CRAYON_UTIL_DIR . 'crayon_log.class.php');
 define('CRAYON_LIST_LANGS_PHP', CRAYON_UTIL_DIR . 'list_langs.php');
+define('CRAYON_LIST_POSTS_PHP', CRAYON_UTIL_DIR . 'list_posts.php');
 define('CRAYON_PREVIEW_PHP', CRAYON_UTIL_DIR . 'preview.php');
 define('CRAYON_AJAX_PHP', CRAYON_UTIL_DIR . 'ajax.php');
 

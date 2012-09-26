@@ -98,10 +98,15 @@ class CrayonSettingsWP {
 					'special' => CrayonSettings::SETTING_SPECIAL,
 					'orig_value' => CrayonSettings::SETTING_ORIG_VALUE 
 					);
+			
+			if (is_admin()) {
+				self::$js_settings['plugins_url'] = plugins_url();
+				self::$js_settings['crayon_dir'] = CRAYON_DIR;
+				self::$js_settings['list_langs'] = CRAYON_LIST_LANGS_PHP;
+				self::$js_settings['list_posts'] = CRAYON_LIST_POSTS_PHP; 
+			}
 		}
-		//wp_localize_script('crayon_admin_js', 'CrayonSyntaxSettings', self::$js_settings);
 		wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
-		//CrayonThemeEditorWP::admin_scripts();
 	}
 
 	public static function settings() {
@@ -208,6 +213,10 @@ class CrayonSettingsWP {
 	}
 	
 	// Crayons posts
+	
+	/**
+	 * This loads the posts marked as containing Crayons
+	 */
 	public static function load_posts() {
 		if (self::$crayon_posts === NULL) {
 			// Load from db
@@ -220,10 +229,16 @@ class CrayonSettingsWP {
 		return self::$crayon_posts;
 	}
 	
+	/**
+	 * This looks through all posts and marks those which contain Crayons
+	 */
 	public static function scan_and_save_posts() {
-		self::save_posts(CrayonWP::scan_posts());
+		self::save_posts(CrayonWP::scan_posts(TRUE, TRUE));
 	}
 	
+	/**
+	 * Saves the marked posts to the db 
+	 */
 	public static function save_posts($posts = NULL) {
 		if ($posts === NULL) {
 			$posts = self::$crayon_posts;
@@ -232,6 +247,9 @@ class CrayonSettingsWP {
 		self::load_posts();
 	}
 	
+	/**
+	 * Adds a post as containing a Crayon
+	 */
 	public static function add_post($id) {
 		self::load_posts();
 		if (!in_array($id, self::$crayon_posts)) {
@@ -240,6 +258,9 @@ class CrayonSettingsWP {
 		self::save_posts();
 	}
 	
+	/**
+	 * Removes a post as not containing a Crayon
+	 */
 	public static function remove_post($id) {
 		self::load_posts();
 		$key = array_search($id, self::$crayon_posts);
@@ -251,6 +272,7 @@ class CrayonSettingsWP {
 	}
 	
 	// Cache
+	
 	public static function add_cache($name) {
 		self::load_cache();
 		if (!in_array($name, self::$cache)) {
@@ -312,6 +334,7 @@ class CrayonSettingsWP {
 		self::add_field(self::GENERAL, crayon__('Tags'), 'tags');
 		self::add_field(self::GENERAL, crayon__('Languages'), 'langs');
 		self::add_field(self::GENERAL, crayon__('Files'), 'files');
+		self::add_field(self::GENERAL, crayon__('Posts'), 'posts');
 		self::add_field(self::GENERAL, crayon__('Tag Editor'), 'tag_editor');
 		self::add_field(self::GENERAL, crayon__('Misc'), 'misc');
 
@@ -621,6 +644,11 @@ class CrayonSettingsWP {
 				echo 'No languages could be parsed.';
 			}
 		}
+	}
+	
+	public static function posts() {
+		echo '<a name="posts"></a>';
+		echo '<div id="crayon-subsection-posts-info">'.self::button(array('id'=>'show-posts', 'title'=>crayon__('Show Crayon Posts'))).'<span class="crayon-span-10"></span><a href="http://bit.ly/NQfZN5" target="_blank" class="crayon-question">' . crayon__('?') . '</a></div>' ;
 	}
 
 	public static function theme($editor = FALSE) {

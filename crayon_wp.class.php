@@ -216,13 +216,18 @@ class CrayonWP {
 	}
 
 	// TODO put args into an array
-	public static function capture_crayons($wp_id, $wp_content, $extra_settings = array(), $callback = NULL, $ignore = TRUE, $preserve_atts = FALSE, $flags = NULL) {
+	public static function capture_crayons($wp_id, $wp_content, $extra_settings = array(), $args = array()) {
+		extract($args);
+		CrayonUtil::set_var($callback, NULL);
+		CrayonUtil::set_var($ignore, TRUE);
+		CrayonUtil::set_var($preserve_atts, FALSE);
+		CrayonUtil::set_var($flags, NULL);
+		
 		// Will contain captured crayons and altered $wp_content
 		$capture = array('capture' => array(), 'content' => $wp_content, 'has_captured' => FALSE);
 
 		// Flags for which Crayons to convert
 		$in_flag = self::in_flag($flags);
-		//var_dump($in_flag);
 		
 		CrayonLog::debug('capture for id ' . $wp_id . ' len ' . strlen($wp_content));
 
@@ -381,6 +386,8 @@ class CrayonWP {
 
 	/* Search for Crayons in posts and queue them for creation */
 	public static function the_posts($posts) {
+		var_dump($posts); exit;
+		
 		CrayonLog::debug('the_posts');
 
 		// Whether to enqueue syles/scripts
@@ -389,7 +396,7 @@ class CrayonWP {
 
 		self::init_tags_regex();
 		$crayon_posts = CrayonSettingsWP::load_posts(); // Loads posts containing crayons
-
+		
 		// Search for shortcode in posts
 		foreach ($posts as $post) {
 			$wp_id = $post->ID;
@@ -399,10 +406,9 @@ class CrayonWP {
 				if (CrayonGlobalSettings::val(CrayonSettings::SAFE_ENQUEUE) && is_page($wp_id)) {
 					CrayonGlobalSettings::set(CrayonSettings::ENQUEUE_THEMES, false);
 					CrayonGlobalSettings::set(CrayonSettings::ENQUEUE_FONTS, false);
-				} else {
-					// Only include crayon posts
-					continue;
 				}
+				// Only include crayon posts
+				continue;
 			}
 
 			$id_str = strval($wp_id);
@@ -801,17 +807,51 @@ class CrayonWP {
 		}
 	}
 
-	public static function save_post($id, $post) {
-		CrayonSettingsWP::load_settings(TRUE);
-		if (wp_is_post_revision($id)) {
-			// Ignore revisions
-			return;
-		}
+	public static function save_post($update_id, $post) {
+// 		if (wp_is_post_revision($id)) {
+// 			// Ignore revisions
+// 			return;
+// 		}
+
+		$id = $post->ID;
+		
 		self::init_tags_regex();
+		
 		if (preg_match(self::$tags_regex, $post->post_content)) {
 			CrayonSettingsWP::add_post($id);
 		} else {
-			CrayonSettingsWP::remove_post($id);
+			$found = FALSE;
+			CrayonSettingsWP::load_settings(TRUE);
+			if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
+				$comments = get_comments(array('post_id' => $id));
+				foreach ($comments as $comment) {
+					$found = self::save_comment($comment->comment_ID, NULL, $comment);
+					if ($found) {
+						break;
+					}
+				}
+			}
+			if (!$found) {
+				CrayonSettingsWP::remove_post($id);
+			}
+		}
+	}
+	
+	public static function save_comment($id, $is_spam = NULL, $comment = NULL) {
+		self::init_tags_regex();
+		
+		if ($comment == NULL) {
+			$comment = get_comment($id);
+		}
+		
+		$content = $comment->comment_content;
+		$post_id = $comment->comment_post_ID;
+		
+		if (preg_match(self::$tags_regex, $content)) {
+			CrayonSettingsWP::add_post($post_id);
+			return TRUE;
+		} else {
+			return FALSE;
 		}
 	}
 
@@ -836,8 +876,11 @@ class CrayonWP {
 		crayon_load_plugin_textdomain();
 	}
 
-	// Return an array of post IDs where crayons occur
-	public static function scan_posts($init_regex = TRUE) {
+	/**
+	 * Return an array of post IDs where crayons occur.
+	 * Comments are ignored by default.
+	 */ 
+	public static function scan_posts($init_regex = TRUE, $check_comments = FALSE) {
 		if ($init_regex) {
 			// We can skip this if needed
 			self::init_tags_regex();
@@ -846,8 +889,20 @@ class CrayonWP {
 		$crayon_posts = array();
 		$query = new WP_Query(array('post_type' => 'any', 'suppress_filters' => TRUE, 'posts_per_page' => '-1'));
 		foreach ($query->posts as $post) {
+			$post_id = $post->ID;
 			if (preg_match(self::$tags_regex, $post->post_content)) {
-				$crayon_posts[] = $post->ID;
+				$crayon_posts[] = $post_id;
+			} else if ($check_comments) {
+				CrayonSettingsWP::load_settings(TRUE);
+				if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
+					$comments = get_comments(array('post_id' => $post_id));
+					foreach ($comments as $comment) {
+						if (preg_match(self::$tags_regex, $comment->comment_content)) {
+							$crayon_posts[] = $post_id;
+							break;
+						}
+					}
+				}
 			}
 		}
 		return $crayon_posts;
@@ -924,27 +979,46 @@ class CrayonWP {
 	/**
 	 * Converts Crayon tags found in WP to <pre> form.
 	 * XXX: This will alter blog content, so backup before calling.
-	 * XXX: Do NOT call this while updating posts, since it also updates posts and may clash.
+	 * XXX: Do NOT call this while updating posts or comments, it may cause an infinite loop or fail
 	 */
 	public static function convert_tags($just_check = FALSE) {
 		$result = self::can_convert_tags(TRUE);
 		$crayon_posts = $result[0];
 		$flags = $result[1];
 		
+		$args = array(
+				'callback' => 'CrayonWP::capture_replace_pre',
+				'ignore' => FALSE,
+				'preserve_atts' => TRUE,
+				'flags' => $flags
+		);
+		
 		foreach ($crayon_posts as $postID) {
 			$post = get_post($postID);
 			$post_content = $post->post_content;
-			$captures = self::capture_crayons($postID, $post_content, array(), 'CrayonWP::capture_replace_pre', FALSE, TRUE, $flags);
+			$post_captures = self::capture_crayons($postID, $post_content, array(), $args);
+			
 			$post_obj = array();
 			$post_obj['ID'] = $postID;
-			$post_obj['post_content'] = $captures['content'];
-			
-			//var_dump($post_obj);
-			
-			//CrayonLog::log("Converted Crayons in post ID $postID to pre tags", 'CONVERT');
+			$post_obj['post_content'] = $post_captures['content'];
 			wp_update_post($post_obj);
+			CrayonLog::syslog("Converted Crayons in post ID $postID to pre tags", 'CONVERT');
+			
+			if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
+				$comments = get_comments(array('post_id' => $postID));
+				foreach ($comments as $comment) {
+					$commentID = $comment->comment_ID;
+					$comment_captures = self::capture_crayons($commentID, $comment->comment_content, array(CrayonSettings::DECODE => TRUE), $args);
+					
+					$comment_obj = array();
+					$comment_obj['comment_ID'] = $commentID;
+					$comment_obj['comment_content'] = $comment_captures['content'];
+					wp_update_comment($comment_obj);
+					CrayonLog::syslog("Converted Crayons in post ID $postID, comment ID $commentID to pre tags", 'CONVERT');
+				}
+			}
+			
 		}
-// 		exit;
 	}
 	
 	public static function can_convert_tags($return = FALSE) {
@@ -953,11 +1027,13 @@ class CrayonWP {
 		$flags = self::tag_bit(CrayonSettings::CAPTURE_MINI_TAG) |
 		self::tag_bit(CrayonSettings::INLINE_TAG) |
 		self::tag_bit(CrayonSettings::PLAIN_TAG);
-		self::init_tags_regex(TRUE,$flags);
+		self::init_tags_regex(TRUE, $flags);
 		
-		// These posts will contian the old tag markup
-		$crayon_posts = self::scan_posts(false);
+		// These posts (or comments) will contain the old tag markup
+		$crayon_posts = self::scan_posts(FALSE, TRUE);
 		
+		// Reset to all flags for other queries
+		self::init_tags_regex(TRUE);
 		if (count($crayon_posts) > 0) {
 			if ($return) {
 				return array($crayon_posts, $flags);
@@ -1019,6 +1095,10 @@ if (defined('ABSPATH')) {
 	} else {
 		// For marking a post as containing a Crayon
 		add_action('save_post', 'CrayonWP::save_post', 10, 2);
+		if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
+			//add_action('comment_post', 'CrayonWP::save_comment', 10, 2);
+			add_action('edit_comment', 'CrayonWP::save_comment', 10, 2);
+		}
 	}
 }
 

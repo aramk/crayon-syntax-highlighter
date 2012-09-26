@@ -89,6 +89,13 @@
 					preview_toggle();
 				});
 			}
+			
+			$('#show-posts').click(function() {
+				var url = settings.plugins_url + '/' + settings.crayon_dir + settings.list_posts + '?wp_load=' + settings.wp_load; 
+				$.get(url, function(data) {
+					$('#crayon-subsection-posts-info').html(data);
+				});
+			});
 
 			// Convert
 			$('#crayon-settings-form input').live('focusin focusout mouseup', function() {

@@ -64,7 +64,7 @@ class CrayonLog {
 
 	public static function syslog($var = NULL, $title = '', $trim_url = TRUE) {
 		if (CrayonGlobalSettings::val(CrayonSettings::ERROR_LOG_SYS)) {
-			$title = (empty($title)) ? 'SYSTEM ERROR' : $title;
+			$title = (empty($title)) ? 'SYSTEM LOG' : $title;
 			self::log($var, $title, $trim_url);
 		}
 	}

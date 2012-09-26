@@ -201,7 +201,7 @@ class CrayonUtil {
 	}
 	
 	// Sets a variable to null if not set
-	public static function set_var(&$var, $false = null) {
+	public static function set_var(&$var, $false = NULL) {
 		$var = isset($var) ? $var : $false;
 	}
 	
