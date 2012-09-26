@@ -386,8 +386,6 @@ class CrayonWP {
 
 	/* Search for Crayons in posts and queue them for creation */
 	public static function the_posts($posts) {
-		var_dump($posts); exit;
-		
 		CrayonLog::debug('the_posts');
 
 		// Whether to enqueue syles/scripts
