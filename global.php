@@ -56,7 +56,11 @@ define('CRAYON_THEME_EDITOR_PATH', CRAYON_ROOT_PATH . CRAYON_UTIL_DIR . CRAYON_T
 
 // Files
 
-define('CRAYON_LOG_FILE', CRAYON_ROOT_PATH . 'log.txt');
+if(($udir = wp_upload_dir()) && isset($udir['path'])) {
+    define('CRAYON_LOG_FILE', trailingslashit($udir['path']) . 'crayon-log.txt');
+} else {
+    define('CRAYON_LOG_FILE', CRAYON_ROOT_PATH . 'log.txt');
+}
 define('CRAYON_TOUCH_FILE', CRAYON_UTIL_PATH . 'touch.txt');
 define('CRAYON_LOG_MAX_SIZE', 50000); // Bytes
 
