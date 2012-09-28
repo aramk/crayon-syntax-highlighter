@@ -252,6 +252,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added 4 new fonts suggested by <a href="http://andrealazzarotto.com/" target="_blank">Andrea Lazzarotto</a>
 * Added Ado theme thanks to <a href="http://adostudio.it/" target="_blank">adostudio.it</a>
 * Superfluous &lt;code&gt; tags wrapping around the code are removed 
+* Fixed encoding bug in rss feeds, now takes decode setting into account
 * Fixed mixed highlighting + icon from showing all the time, only shows with mixed language code
 * Fixed a bug introduced in 1.11 that caused the page to scroll up to the top on refresh
 * Updated Turkish translation

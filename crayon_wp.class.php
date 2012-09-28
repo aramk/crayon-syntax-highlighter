@@ -613,7 +613,7 @@ class CrayonWP {
 				$crayon = self::shortcode($atts, $content, $id);
 				if (is_feed()) {
 					// Convert the plain code to entities and put in a <pre></pre> tag
-					$crayon_formatted = CrayonFormatter::plain_code($crayon->code());
+					$crayon_formatted = CrayonFormatter::plain_code($crayon->code(), $crayon->setting_val(CrayonSettings::DECODE));
 				} else {
 					// Apply shortcode to the content
 					$crayon_formatted = $crayon->output(TRUE, FALSE);
