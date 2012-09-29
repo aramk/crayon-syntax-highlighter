@@ -5,7 +5,7 @@ License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 1.11
+Stable tag: 1.12
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
@@ -255,7 +255,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fixed encoding bug in rss feeds, now takes decode setting into account
 * Fixed mixed highlighting + icon from showing all the time, only shows with mixed language code
 * Fixed a bug introduced in 1.11 that caused the page to scroll up to the top on refresh
-* Updated Turkish translation
+* Updated Spanish and Turkish translations
 
 = 1.11 =
 * Added bbPress support.
