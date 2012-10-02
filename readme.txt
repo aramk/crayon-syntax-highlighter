@@ -164,6 +164,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to my project, your support keeps the Crayons going!
 
+* Tricia Aanderud, USA
 * Tarek Sakr, (http://centrivision.com/), USA
 * Jeff Benshetler, (http://branchpoint.net/), USA
 * Oldrich Strachota, (http://www.strachota.net/), Czech Republic
