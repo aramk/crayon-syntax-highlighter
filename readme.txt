@@ -245,6 +245,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.12.1 =
+* Fixed a bug with bbPress preventing posts from appearing.
+
 = 1.12 =
 * Added ability to convert all legacy Crayon tags in blog posts and comments to &lt;pre&gt; tags, retaining all attributes. These are the accepted standard for the Tag Editor and they're backwards compatible (if Crayon is off or you're using another highlighter).
 * Added a button in the settings page to display the list of posts with Crayon tags
