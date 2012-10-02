@@ -5,7 +5,7 @@ License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 1.12
+Stable tag: 1.12.1
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
@@ -164,6 +164,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to my project, your support keeps the Crayons going!
 
+* Will, Simple Phishing Toolkit (http://www.sptoolkit.com/), USA
 * Tricia Aanderud, USA
 * Tarek Sakr, (http://centrivision.com/), USA
 * Jeff Benshetler, (http://branchpoint.net/), USA
