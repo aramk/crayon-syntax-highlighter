@@ -613,6 +613,8 @@ class CrayonSettingsWP {
 		self::checkbox(array(CrayonSettings::RANGES, crayon__('Enable line ranges for showing only parts of code')));
 		self::checkbox(array(CrayonSettings::NUMS, crayon__('Display line numbers by default')));
 		self::checkbox(array(CrayonSettings::NUMS_TOGGLE, crayon__('Enable line number toggling')));
+		self::checkbox(array(CrayonSettings::WRAP, crayon__('Wrap lines by default')));
+		self::checkbox(array(CrayonSettings::WRAP_TOGGLE, crayon__('Enable line wrap toggling')));
 		self::span(crayon__('Start line numbers from').' ');
 		self::textbox(array('id' => CrayonSettings::START_LINE, 'size' => 2, 'break' => TRUE));
 		echo '</div>';

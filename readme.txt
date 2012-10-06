@@ -21,6 +21,7 @@ It also supports some neat features like:
 * Toggled line numbers
 * Copy/paste code
 * Open code in a new window (popup)
+* Line wrapping
 * bbPress 2 support
 * <a href="http://bit.ly/ReRr0i" target="_blank">Converting legacy code in blog posts/comments to &lt;pre&gt;</a>
 * Remote request caching
@@ -156,8 +157,6 @@ A handful of articles from others written about Crayon, thanks guys!
 
 * Performance, minimised resources
 * Theme Editor
-* Line wrapping
-* Go language support
 * Integrated commenting
 
 **Donations**
@@ -245,6 +244,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 4. Tag Editor.
 
 == Changelog ==
+
+= 1.13 =
+* Added line wrapping.
 
 = 1.12.1 =
 * Fixed a bug with bbPress preventing posts from appearing.

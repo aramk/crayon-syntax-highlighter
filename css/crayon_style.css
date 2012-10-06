@@ -26,6 +26,10 @@ coloring etc.
     text-align: left;
 }
 
+.crayon-syntax.crayon-loading {
+	visibility: hidden;
+}
+
 .crayon-syntax,
 .crayon-syntax .crayon-main,
 .crayon-syntax .crayon-toolbar,
@@ -175,6 +179,11 @@ coloring etc.
 	background-image: url('images/toolbar/plain.png');
 }
 
+/* Plain Button */
+.crayon-toolbar a.crayon-button.crayon-wrap-button {
+	background-image: url('images/toolbar/wrap.png');
+}
+
 /* Copy Button */
 .crayon-toolbar a.crayon-button.crayon-copy-button {
 	background-image: url('images/toolbar/copy.png');
@@ -272,7 +281,13 @@ coloring etc.
 }
 
 .crayon-syntax .crayon-line {
-    padding: 0 5px;
+    padding: 0 5px;    
+}
+
+.crayon-syntax.crayon-wrapped .crayon-line {
+	/* width: 500px !important; */
+	white-space: pre-wrap !important;
+	/*    word-wrap:break-word !important;*/
 }
 
 .crayon-syntax-inline .crayon-pre,
@@ -301,6 +316,10 @@ coloring etc.
 .crayon-syntax .crayon-num,
 .crayon-syntax .crayon-line {
 	height: 15px;
+}
+.crayon-syntax.crayon-wrapped .crayon-line {
+	min-height: 15px;
+	height: auto;
 }
 
 .crayon-syntax .crayon-num,

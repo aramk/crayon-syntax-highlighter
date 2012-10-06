@@ -89,10 +89,15 @@
 	var CRAYON_PLAIN = '.crayon-plain';
 	var CRAYON_MAIN = '.crayon-main';
 	var CRAYON_TABLE = '.crayon-table';
+	var CRAYON_LOADING = '.crayon-loading';
 	var CRAYON_CODE = '.crayon-code';
 	var CRAYON_NUMS = '.crayon-nums';
+	var CRAYON_NUM = '.crayon-num';
+	var CRAYON_LINE = '.crayon-line';
+	var CRAYON_WRAPPED = 'crayon-wrapped';
 	var CRAYON_NUMS_CONTENT = '.crayon-nums-content';
 	var CRAYON_NUMS_BUTTON = '.crayon-nums-button';
+	var CRAYON_WRAP_BUTTON = '.crayon-wrap-button';
 	var CRAYON_POPUP_BUTTON = '.crayon-popup-button';
 	var CRAYON_COPY_BUTTON = '.crayon-copy-button';
 	var CRAYON_PLAIN_BUTTON = '.crayon-plain-button';
@@ -143,6 +148,7 @@
 	        var nums = c.find(CRAYON_NUMS);
 	        var nums_content = c.find(CRAYON_NUMS_CONTENT);
 	        var nums_button = c.find(CRAYON_NUMS_BUTTON);
+	        var wrap_button = c.find(CRAYON_WRAP_BUTTON);
 	        var popup_button = c.find(CRAYON_POPUP_BUTTON);
 	        var copy_button = c.find(CRAYON_COPY_BUTTON);
 	        var plain_button = c.find(CRAYON_PLAIN_BUTTON);
@@ -157,10 +163,12 @@
 	        crayon[uid].nums = nums;
 	        crayon[uid].nums_content = nums_content;
 	        crayon[uid].nums_button = nums_button;
+	        crayon[uid].wrap_button = wrap_button;
 	        crayon[uid].popup_button = popup_button;
 	        crayon[uid].copy_button = copy_button;
 	        crayon[uid].plain_button = plain_button;
 	        crayon[uid].nums_visible = true;
+	        crayon[uid].wrapped = false;
 	        crayon[uid].plain_visible = false;
 	        
 	        crayon[uid].toolbar_delay = 0;
@@ -185,6 +193,7 @@
 	        
 	        // Register click events
 	        nums_button.click(function() { CrayonSyntax.toggle_nums(uid); });
+	        wrap_button.click(function() { CrayonSyntax.toggle_wrap(uid); });
 	        plain_button.click(function() { CrayonSyntax.toggle_plain(uid); });
 	        copy_button.click(function() { CrayonSyntax.copy_plain(uid); });
 	        
@@ -193,8 +202,6 @@
 	        		crayon[uid].scroll_block_fix = true;
 	        	}
 	        	
-	//        	reconsile_dimensions(uid);
-	    	    
 	            // If nums hidden by default
 	            if (nums.filter('[data-settings~="hide"]').length != 0) {
 	            	nums_content.ready(function() {
@@ -205,26 +212,23 @@
 	            	update_nums_button(uid);
 	            }
 	            
+				//reconsile_lines(uid);
+
 	            // TODO If width has changed or timeout, stop timer
 	            if (/*last_num_width != nums.width() ||*/ i == 5) {
 	            	clearInterval(load_timer);
+	            	//crayon[uid].removeClass(CRAYON_LOADING);
 	            	crayon[uid].loading = false;
 	            }
 	            i++;
 	        };
-	//        main.ready(function() {
-	//        	alert();
-	        	load_timer = setInterval(load_func, 300);
-	        	fix_scroll_blank(uid);
-	//        });
+        	load_timer = setInterval(load_func, 300);
+        	fix_scroll_blank(uid);
+        	//reconsile_lines(uid);
 	        
 	        // Used for toggling
 	        main.css('position', 'relative');
 	        main.css('z-index', 1);
-	        
-	        // Update clickable buttons
-	        update_nums_button(uid);
-	        update_plain_button(uid);
 	        
 	        // Disable certain features for touchscreen devices
 	        touchscreen = (c.filter('[data-settings~="touchscreen"]').length != 0);
@@ -315,8 +319,18 @@
 	            crayon[uid].time = 0;
 	        }
 	        
+	        // Wrap
+	        if ( c.filter('[data-settings~="wrap"]').length != 0 ) {
+	            crayon[uid].wrapped = true;
+	        }
+	        
 	        // Determine if Mac
 	        crayon[uid].mac = c.hasClass('crayon-os-mac');
+	        
+	        // Update clickable buttons
+	        update_nums_button(uid);
+	        update_plain_button(uid);
+	        update_wrap(uid);
 		};
 		
 		var make_uid = function(uid) {
@@ -507,8 +521,8 @@
 			crayon[uid].scroll_changed = false;
 			
 			// Hide scrollbars during toggle to avoid Chrome weird draw error
-	//		visible.css('overflow', 'hidden');
-	//		hidden.css('overflow', 'hidden');
+			// visible.css('overflow', 'hidden');
+			// hidden.css('overflow', 'hidden');
 			
 			fix_scroll_blank(uid);
 			
@@ -517,18 +531,11 @@
 		    visible.fadeTo(animt(500, uid), 0,
 				function() {
 					visible.css('z-index', 0);
-	//				if (!crayon[uid].scroll_changed) {
-	//					visible.css('overflow', vis_over);
-	//				}
 				});
 		    hidden.stop(true);
 		    hidden.fadeTo(animt(500, uid), 1,
 				function() {
 					hidden.css('z-index', 1);
-	//				if (!crayon[uid].scroll_changed) {
-	//					hidden.css('overflow', hid_over);
-	//				}
-					
 					// Give focus to plain code
 					if (hidden == plain) {
 						if (select) {
@@ -616,6 +623,28 @@
 		    return false;
 		};
 		
+		this.toggle_wrap = function(uid) {
+			crayon[uid].wrapped = !crayon[uid].wrapped;
+			update_wrap(uid);
+		};
+		
+		var update_wrap = function(uid) {
+			if (crayon[uid].wrapped) {
+				crayon[uid].addClass(CRAYON_WRAPPED);
+			} else {
+				crayon[uid].removeClass(CRAYON_WRAPPED);
+			}
+			update_wrap_button(uid);
+			crayon[uid].wrap_times = 0;
+			crayon[uid].wrap_timer = setInterval(function() {
+				reconsile_lines(uid);
+				crayon[uid].wrap_times++;
+				if (crayon[uid].wrap_times == 5) {
+					clearInterval(crayon[uid].wrap_timer);
+				}
+			}, 200);
+		};
+		
 		var fix_table_width = function(uid) {
 			if (typeof crayon[uid] == 'undefined') {
 				make_uid(uid);
@@ -650,6 +679,20 @@
 			}
 		};
 		
+		var update_wrap_button = function(uid) {
+			if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].wrapped == 'undefined') {
+				return;
+			}
+			if (crayon[uid].wrapped) {
+				crayon[uid].wrap_button.removeClass(UNPRESSED);
+				crayon[uid].wrap_button.addClass(PRESSED);
+			} else {
+				// TODO doesn't work on iPhone
+				crayon[uid].wrap_button.removeClass(PRESSED);
+				crayon[uid].wrap_button.addClass(UNPRESSED);
+			}
+		};
+		
 		var update_plain_button = function(uid) {
 			if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].plain_visible == 'undefined') {
 				return;
@@ -678,7 +721,6 @@
 		    }
 		    
 		    crayon_slide(uid, toolbar, show, anim_time, hide_delay);
-	//	    reconsile_dimensions(uid);
 		};
 		
 		var toggle_scroll = function(uid, show) {
@@ -749,9 +791,21 @@
 		var reconsile_dimensions = function(uid) {
 			// Reconsile dimensions
 			crayon[uid].plain.height(crayon[uid].main.height());
-			//crayon[uid].plain.width(crayon[uid].main.width());
-			
-	//		console_log('main: ' + crayon[uid].main.height() + ' plain: ' + crayon[uid].plain.height());
+		};
+
+		var reconsile_lines = function(uid) {
+			$(CRAYON_NUM).each(function() {
+				var line_id = $(this).attr('data-line');
+				var line = $('#' + line_id);
+				if (crayon[uid].wrapped) {
+					$(this).css('height', line.height());
+				} else {
+					$(this).css('height', '');
+				}
+			});
+			var main = crayon[uid].main;
+			var height = main.css('height');
+			main.css('height', '');
 		};
 		
 		var animt = function(x, uid) {

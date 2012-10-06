@@ -101,6 +101,8 @@ class CrayonSettings {
 	const RANGES = 'ranges';
 	const TAG_EDITOR_FRONT = 'tag-editor-front';
 	const TAG_EDITOR_SETTINGS = 'tag-editor-front-hide';
+	const WRAP_TOGGLE = 'wrap-toggle';
+	const WRAP = 'wrap';
 	
 	private static $cache_array;
 	
@@ -223,7 +225,9 @@ class CrayonSettings {
 			new CrayonSetting(self::EXCERPT_STRIP, FALSE),
 			new CrayonSetting(self::RANGES, TRUE),
 			new CrayonSetting(self::TAG_EDITOR_FRONT, TRUE),
-			new CrayonSetting(self::TAG_EDITOR_SETTINGS, TRUE)
+			new CrayonSetting(self::TAG_EDITOR_SETTINGS, TRUE),
+			new CrayonSetting(self::WRAP_TOGGLE, TRUE),
+			new CrayonSetting(self::WRAP, FALSE)
 		);
 		
 		$this->set($settings);
