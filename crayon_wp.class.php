@@ -981,8 +981,12 @@ class CrayonWP {
 	 */
 	public static function convert_tags($just_check = FALSE) {
 		$result = self::can_convert_tags(TRUE);
-		$crayon_posts = $result[0];
-		$flags = $result[1];
+		if ($result === FALSE) {
+			return;
+		} else {
+			$crayon_posts = $result[0];
+			$flags = $result[1];
+		}
 
 		$args = array(
 				'callback' => 'CrayonWP::capture_replace_pre',

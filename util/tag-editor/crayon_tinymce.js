@@ -49,10 +49,6 @@
 		    
 		    tinymce.create('tinymce.plugins.Crayon', {
 		        init : function(ed, url) {
-		    		$(function() {
-		    			te.loadDialog();
-		        	});
-		    		
 		    		ed.onInit.add(function(ed) {
 		    			ed.dom.loadCSS(url + '/crayon_te.css');
 					});

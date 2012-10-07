@@ -247,6 +247,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 1.13 =
 * Added line wrapping.
+* Fixed a bug in converting tags.
+* Fixed a bug preventing Tag Editor from opening in HTML editor.
 
 = 1.12.1 =
 * Fixed a bug with bbPress preventing posts from appearing.

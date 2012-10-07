@@ -5,9 +5,9 @@
 		var base = this;
 		
 		base.sel = '*[id*="crayon_quicktag"],*[class*="crayon_quicktag"]';
+		CrayonTagEditor.init(base.sel);
 		
 		QTags.addButton( 'crayon_quicktag', 'crayon', function() {
-			CrayonTagEditor.init(base.sel);
 			CrayonTagEditor.showDialog(
 				function(shortcode) {
 					QTags.insertContent(shortcode);

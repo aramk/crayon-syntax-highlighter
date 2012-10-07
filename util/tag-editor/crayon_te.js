@@ -48,6 +48,7 @@
 		var dialog = code = clear = submit = null;
 		
 		base.init = function(button) {
+			base.loadDialog();
 			$(button).fancybox({
         		href : s.content_css,
         		margin : [40,10,40,10],
