@@ -84,13 +84,11 @@ class CrayonSettingsWP {
 	}
 	
 	public static function init_js_settings() {
-		// TODO Create a global CrayonSyntaxSettings object here
+		// This stores JS variables used in AJAX calls and in the JS files 
 		self::load_settings(TRUE);
 		if (!self::$js_settings) {
 			self::$js_settings = array(
-					'wp_load' => CrayonWP::wp_load_path(),
-					'is_admin' => is_admin(),
-					'crayon_wp' => CRAYON_ROOT_PATH . 'crayon_wp.class.php', 
+					'is_admin' => is_admin(), 
 					'prefix' => CrayonSettings::PREFIX,
 					'setting' => CrayonSettings::SETTING,
 					'selected' => CrayonSettings::SETTING_SELECTED,
@@ -100,6 +98,7 @@ class CrayonSettingsWP {
 					);
 			
 			if (is_admin()) {
+				self::$js_settings['wp_load'] = CrayonWP::wp_load_path();
 				self::$js_settings['plugins_url'] = plugins_url();
 				self::$js_settings['crayon_dir'] = CRAYON_DIR;
 				self::$js_settings['list_langs'] = CRAYON_LIST_LANGS_PHP;
@@ -511,7 +510,7 @@ class CrayonSettingsWP {
 		if (CrayonGlobalSettings::val(CrayonSettings::HIDE_HELP)) {
 			return;
 		}
-		$url = plugins_url(CRAYON_AJAX_PHP, __FILE__) . '?wp_load=' . self::$js_settings['wp_load'] . '&' . CrayonSettings::HIDE_HELP . '=1';// . '&crayon_wp=' . self::$js_settings['crayon_wp'] . '&';
+		$url = plugins_url(CRAYON_AJAX_PHP, __FILE__) . '?wp_load=' . self::$js_settings['wp_load'] . '&' . CrayonSettings::HIDE_HELP . '=1';
 		$web = $CRAYON_WEBSITE;
 		echo '
 <div id="crayon-help" class="updated settings-error crayon-help">

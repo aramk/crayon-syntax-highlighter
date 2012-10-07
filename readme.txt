@@ -249,6 +249,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Added line wrapping.
 * Fixed a bug in converting tags.
 * Fixed a bug preventing Tag Editor from opening in HTML editor.
+* From now on, only the wp-admin will reveal your wordpress install directory. 
 
 = 1.12.1 =
 * Fixed a bug with bbPress preventing posts from appearing.
