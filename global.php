@@ -194,7 +194,7 @@ function crayon_is_php_file($filepath, $valid) {
 	return is_file($filepath) && $path['extension'] === 'php' && $path['filename'] === $valid;
 }
 
-// Stops the script if crayon_is_php_file() returns false
+// Stops the script if crayon_is_php_file() returns false or a remote path is given
 function crayon_die_if_not_php($filepath, $valid) {
 	if (!crayon_is_php_file($filepath, $valid) || crayon_is_path_url($filepath)) {
 		die("Incorrect arguments for '$valid'");
