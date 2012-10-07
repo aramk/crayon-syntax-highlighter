@@ -367,6 +367,10 @@ coloring etc.
     background: #FFF;
 }
 
+.crayon-syntax.crayon-wrapped .crayon-plain {
+	white-space: pre-wrap;
+}
+
 /* End Code ======================== */
 
 /* End AK Code Table ============================================= */

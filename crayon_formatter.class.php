@@ -329,7 +329,6 @@ class CrayonFormatter {
 			$plain_style = "-moz-tab-size:$tab; -o-tab-size:$tab; -webkit-tab-size:$tab; tab-size:$tab;";
 			$readonly = $touch ? '' : 'readonly';
 			$print_plain = $print_plain_button = '';
-			// TODO remove wrap
 			$textwrap = !$hl->setting_val(CrayonSettings::WRAP) ? 'wrap="off"' : '';
 			$print_plain = '<textarea '.$textwrap.' class="crayon-plain print-no" data-settings="' . $plain_settings . '" '. $readonly .' style="' . $plain_style .' '. $font_style . '">' . self::clean_code($hl->code()) . '</textarea>';
 		} else {
