@@ -251,6 +251,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fixed a bug preventing Tag Editor from opening in HTML editor.
 * From now on, only the wp-admin will reveal your wordpress install directory.
 * The plain code now wraps based on the toggle setting.
+* Spanish updated
 
 = 1.12.1 =
 * Fixed a bug with bbPress preventing posts from appearing.
