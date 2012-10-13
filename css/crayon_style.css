@@ -318,7 +318,7 @@ coloring etc.
 	height: 15px;
 }
 .crayon-syntax.crayon-wrapped .crayon-line {
-	min-height: 15px;
+/*	min-height: 15px;*/
 	height: auto;
 }
 
@@ -334,6 +334,11 @@ coloring etc.
 .crayon-syntax .crayon-toolbar .crayon-tools,
 .crayon-syntax .crayon-toolbar .crayon-tools * {
 	height: inherit !important;
+}
+
+.crayon-syntax .crayon-toolbar .crayon-tools {
+    position: absolute;
+    right: 0;
 }
 
 .crayon-syntax .crayon-plain-wrap {

@@ -224,8 +224,16 @@
 	        };
         	load_timer = setInterval(load_func, 300);
         	fix_scroll_blank(uid);
-        	//reconsile_lines(uid);
-	        
+
+            $(CRAYON_NUM, crayon[uid]).each(function() {
+                var line_id = $(this).attr('data-line');
+                var line = $('#' + line_id);
+                var height = line.style('height');
+                if (height) {
+                    line.attr('data-height', height);
+                }
+            });
+
 	        // Used for toggling
 	        main.css('position', 'relative');
 	        main.css('z-index', 1);
@@ -794,13 +802,19 @@
 		};
 
 		var reconsile_lines = function(uid) {
-			$(CRAYON_NUM).each(function() {
+			$(CRAYON_NUM, crayon[uid]).each(function() {
 				var line_id = $(this).attr('data-line');
 				var line = $('#' + line_id);
 				if (crayon[uid].wrapped) {
+                    line.css('height', '');
 					$(this).css('height', line.height());
+					// TODO toolbar should overlay title if needed
 				} else {
-					$(this).css('height', '');
+                    var height = line.attr('data-height');
+                    if (height) {
+                        line.css('height', height);
+                        $(this).css('height', height);
+                    }
 				}
 			});
 			var main = crayon[uid].main;

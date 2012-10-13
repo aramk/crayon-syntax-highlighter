@@ -115,7 +115,6 @@ class CrayonFormatter {
 		// Inline margin
 		if ($hl->is_inline()) {
 			$inline_margin = $hl->setting_val(CrayonSettings::INLINE_MARGIN) . 'px !important;';
-			//$output .= '<style type="text/css" media="all">' . "#$uid { margin: 0 {$inline_margin} }</style>";
 		}
 		
 		// Determine font size
@@ -125,34 +124,22 @@ class CrayonFormatter {
 			$font_height = $font_size * 1.25 . 'px !important;';
 			$toolbar_height = $font_size * 1.5 . 'px !important;';
 			$info_height = $font_size * 1.25 . 'px !important;';
-			//$font_style .= "#$uid * { font-size: $font_size line-height: $font_height }";
 			
 			$font_style .= "font-size: $font_size line-height: $font_height";
-//			$inline_font_style .= "font-size: $font_size line-height: $font_height";
 			$line_style .= "height: $font_height";
 			
 			if ($hl->is_inline()) {
-				//$font_style .= "#$uid { font-size: $font_size }\n";
 				$font_style .= "font-size: $font_size";
 			} else {
-				//$font_style .= "#$uid .crayon-toolbar, #$uid .crayon-toolbar * { height: $toolbar_height line-height: $toolbar_height }\n";
 				$toolbar_style .= "height: $toolbar_height line-height: $toolbar_height";
 				$info_style .= "min-height: $info_height line-height: $info_height";
-//				$font_style .= "#$uid .crayon-num, #$uid .crayon-line, #$uid .crayon-toolbar a.crayon-button { height: $font_height }\n";
+
 			}
 		} else if (!$hl->is_inline()) {
 			if (($font_size = CrayonGlobalSettings::get(CrayonSettings::FONT_SIZE)) !== FALSE) {
 				$font_size = $font_size->def() . 'px !important;';
 				$font_height = ($font_size + 4) . 'px !important;';
-				// Correct font CSS for WP 3.3
-//				$font_style .= "#$uid .crayon-plain { font-size: $font_size line-height: $font_height }";
 			}
-		}
-		
-		// Produce style for individual crayon
-		// TODO
-		if (!empty($font_style)) {
-			//$output .= '<style type="text/css" media="all">'.$font_style.'</style>';
 		}
 		
 		// This will return from function with inline print
@@ -218,7 +205,7 @@ class CrayonFormatter {
 			$line_id = $uid.'-' . $line_num;
 			$print_code .= '<div class="crayon-line' . $marked_line . $striped_line . '" id="'.$line_id.'" style="'.$line_style.'">' . $code_line . '</div>';
 			if (!is_string($line_numbers)) {
-				$print_nums .= '<div class="crayon-num' . $marked_num . $striped_num . '" data-line="'.$line_id.'" style="'.$line_style.'">' . $line_num . '</div>';
+				$print_nums .= '<div class="crayon-num' . $marked_num . $striped_num . '" data-line="'.$line_id.'" style_="'.$line_style.'">' . $line_num . '</div>';
 			}
 		}
 		// If $line_numbers is a string, display it
