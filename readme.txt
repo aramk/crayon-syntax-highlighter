@@ -5,7 +5,7 @@ License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 1.12.1
+Stable tag: 1.13
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
@@ -251,6 +251,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fixed a bug preventing Tag Editor from opening in HTML editor.
 * From now on, only the wp-admin will reveal your wordpress install directory.
 * The plain code now wraps based on the toggle setting.
+* Fixed a potential vulnerability when loading components through AJAX and a remote PHP file path is provided.
 * Spanish updated
 
 = 1.12.1 =
