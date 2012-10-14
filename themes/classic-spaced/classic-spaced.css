@@ -1,0 +1,190 @@
+/*
+Theme Name: Classic Spaced
+Description: Clean, crisp and colorful. 
+Version: 1.3
+Author: Aram Kocharyan
+Author URI: http://ak.net84.net/
+*/
+
+/* Code Style ====================== */
+.crayon-theme-classic-spaced {
+    border: 1px #999 solid !important;
+    text-shadow: none !important;
+}
+
+.crayon-theme-classic-spaced,
+.crayon-theme-classic-spaced .crayon-nums,
+.crayon-theme-classic-spaced .crayon-plain,
+.crayon-theme-classic-spaced .crayon-pre {
+	font-size: 12px !important;
+	line-height: 20px !important;
+}
+.crayon-theme-classic-spaced .crayon-num,
+.crayon-theme-classic-spaced .crayon-line {
+	height: 20px;
+}
+
+.crayon-theme-classic-spaced,
+.crayon-theme-classic-spaced .crayon-code {
+	background: #fdfdfd !important;
+}
+
+/* Inline Style */
+.crayon-theme-classic-spaced-inline {
+	border: 1px solid #ddd !important;
+	background: #fafafa !important;
+}
+
+/* Line Numbers */
+.crayon-theme-classic-spaced .crayon-nums {
+	background: #dfefff !important;
+	color: #5499de !important;
+	border-right: 1px solid #b3d3f3 !important;
+}
+
+/* Selection */
+.crayon-theme-classic-spaced .crayon-code::selection,
+.crayon-theme-classic-spaced .crayon-code *::selection {
+    background: #ddeeff !important;
+    color: #316ba5 !important;
+}
+.crayon-theme-classic-spaced::selection,
+.crayon-theme-classic-spaced .crayon-toolbar::selection,
+.crayon-theme-classic-spaced .crayon-toolbar *::selection,
+.crayon-theme-classic-spaced .crayon-info::selection,
+.crayon-theme-classic-spaced .crayon-info *::selection,
+.crayon-theme-classic-spaced .crayon-nums::selection,
+.crayon-theme-classic-spaced .crayon-nums *::selection {
+    background: transparent !important;
+}
+
+/* Striped Lines */
+.crayon-theme-classic-spaced .crayon-striped-line {
+    background: #f7f7f7 !important;
+    border: 1px #CCC !important;
+}
+.crayon-theme-classic-spaced .crayon-striped-num {
+    background: #c8e1fa !important;
+    border: 1px #CCC !important;
+    color: #317cc5 !important;
+}
+
+/* Marked Lines */
+.crayon-theme-classic-spaced .crayon-marked-line {
+    background: #fffee2 !important;
+    border: 1px #e9e579 !important;
+}
+.crayon-theme-classic-spaced .crayon-marked-num {
+    color: #1561ac !important;
+    background: #b3d3f4 !important;
+    border: 1px #5999d9 !important;
+}
+.crayon-theme-classic-spaced .crayon-marked-line.crayon-striped-line {
+    background: #faf8d1 !important;
+}
+.crayon-theme-classic-spaced .crayon-marked-num.crayon-striped-num {
+    background: #9ec5ec !important;
+    color: #105395 !important;
+}
+.crayon-theme-classic-spaced .crayon-marked-line.crayon-top,
+.crayon-theme-classic-spaced .crayon-marked-num.crayon-top {
+    border-top-style: solid !important;
+}
+.crayon-theme-classic-spaced .crayon-marked-line.crayon-bottom,
+.crayon-theme-classic-spaced .crayon-marked-num.crayon-bottom {
+    border-bottom-style: solid !important;
+}
+
+/* Info */
+.crayon-theme-classic-spaced .crayon-info {
+    background: #faf9d7 !important;
+    border-bottom: 1px #b1af5e solid !important;
+    color: #7e7d34;
+}
+
+/* Toolbar */
+.crayon-theme-classic-spaced .crayon-toolbar {
+    background: #DDD !important;
+    border-bottom: 1px #BBB solid !important;
+}
+.crayon-theme-classic-spaced .crayon-toolbar > div {
+    float: left !important;
+}
+.crayon-theme-classic-spaced .crayon-toolbar .crayon-tools {
+    float: right !important;
+}
+.crayon-theme-classic-spaced .crayon-title {
+    color: #333 !important;
+}
+.crayon-theme-classic-spaced .crayon-language {
+    color: #999 !important;
+}
+
+/* Buttons */
+.crayon-theme-classic-spaced a.crayon-button {
+	background-color: transparent;
+}
+.crayon-theme-classic-spaced a.crayon-button:hover,
+.crayon-theme-classic-spaced a.crayon-button.crayon-pressed:hover {
+	background-color: #EEE;
+    color: #666;
+}
+/* :active MUST come after :hover */
+.crayon-theme-classic-spaced a.crayon-button.crayon-pressed,
+.crayon-theme-classic-spaced a.crayon-button.crayon-pressed:active,
+.crayon-theme-classic-spaced a.crayon-button:active {
+	background-color: #BCBCBC;
+    color: #FFF;
+}
+
+/* End Code Style ================== */
+
+/* Syntax Highlighting ============= */
+.crayon-theme-classic-spaced .crayon-pre .c {
+    color: #ff8000 !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .p {
+    color: #b85c00 !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .s {
+    color: #008000 !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .k,
+.crayon-theme-classic-spaced .crayon-pre .st,
+.crayon-theme-classic-spaced .crayon-pre .r,
+.crayon-theme-classic-spaced .crayon-pre .t,
+.crayon-theme-classic-spaced .crayon-pre .m {
+    color: #800080 !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .i {
+    color: #000 !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .v {
+    color: #002D7A !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .e {
+	color: #004ed0 !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .cn {
+    color: #ce0000 !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .o,
+.crayon-theme-classic-spaced .crayon-pre .h {
+    color: #006fe0 !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .sy {
+	color: #333 !important;
+}
+.crayon-theme-classic-spaced .crayon-pre .n {
+	color: #666 !important;
+	font-style: italic;
+}
+.crayon-theme-classic-spaced .crayon-pre .f {
+	color: #999 !important;
+}
+/* End Syntax Highlighting ========= */
+
+/* End Classic Scheme ============================================ */
