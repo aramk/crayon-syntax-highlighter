@@ -245,6 +245,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.13.1 =
+* Fixed an issue with file paths on Windows causing false positives for the security checks needed to load AJAX requests.
+
 = 1.13 =
 * Added line wrapping.
 * Fixed a bug in converting tags.

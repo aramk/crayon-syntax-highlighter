@@ -190,7 +190,7 @@ function crayon_vargs(&$var, $default) {
 
 // Checks if the input is a valid PHP file and matches the $valid filename
 function crayon_is_php_file($filepath, $valid) {
-	$path = pathinfo($filepath);
+	$path = pathinfo(crayon_pf($filepath));
 	return is_file($filepath) && $path['extension'] === 'php' && $path['filename'] === $valid;
 }
 
@@ -203,7 +203,7 @@ function crayon_die_if_not_php($filepath, $valid) {
 
 function crayon_is_path_url($path) {
 	$parts = parse_url($path);
-	return isset($parts['scheme']);
+	return isset($parts['scheme']) && strlen($parts['scheme']) > 1;
 }
 
 // LANGUAGE TRANSLATION FUNCTIONS
