@@ -246,7 +246,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 1.13.1 =
-* Fixed an issue with file paths on Windows causing false positives for the security checks needed to load AJAX requests.
+* Fixed an issue with file paths on Windows causing false positives for the security checks needed to load AJAX requests thanks to Andreas Giemza.
+* Fixed bug in list_posts.php, also thanks to Andreas.
 
 = 1.13 =
 * Added line wrapping.
@@ -254,7 +255,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fixed a bug preventing Tag Editor from opening in HTML editor.
 * From now on, only the wp-admin will reveal your wordpress install directory.
 * The plain code now wraps based on the toggle setting.
-* Fixed a potential vulnerability when loading components through AJAX and a remote PHP file path is provided.
+* Fixed a potential vulnerability when loading components through AJAX and a remote PHP file path is provided. Thanks to Charlie Eriksen via Secunia SVCRP.
 * Spanish updated
 
 = 1.12.1 =

@@ -13,7 +13,7 @@ echo '<table class="crayon-table" cellspacing="0" cellpadding="0"><tr class="cra
 for ($i = 0; $i < count($posts); $i++) {
 	$postID = $posts[$i];
 	$post = get_post($postID);
-	$tr = ($i == count($langs) - 1) ? 'crayon-table-last' : '';
+	$tr = ($i == count($posts) - 1) ? 'crayon-table-last' : '';
 	echo '<tr class="', $tr, '">',
 	'<td>', $postID, '</td>',
 	'<td><a href="', $post->guid ,'" target="_blank">', $post->post_title, '</a></td>',
