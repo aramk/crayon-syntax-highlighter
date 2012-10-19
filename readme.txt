@@ -248,6 +248,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 1.13.1 =
 * Fixed an bug with file paths on Windows causing false positives for the security checks needed to load AJAX requests; thanks to Andreas Giemza.
 * Fixed a bug in list_posts.php, also thanks to Andreas.
+* Added a more spaced classic theme, mostly for testing at the moment.
 
 = 1.13 =
 * Added line wrapping.
