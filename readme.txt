@@ -163,6 +163,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to my project, your support keeps the Crayons going!
 
+* Ross Barbieri, USA
 * Will, Simple Phishing Toolkit (http://www.sptoolkit.com/), USA
 * Tricia Aanderud, USA
 * Tarek Sakr, (http://centrivision.com/), USA
