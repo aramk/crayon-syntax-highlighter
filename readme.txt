@@ -246,6 +246,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.14 =
+* Updated German translation.
+
 = 1.13.1 =
 * Fixed an bug with file paths on Windows causing false positives for the security checks needed to load AJAX requests; thanks to Andreas Giemza.
 * Fixed a bug in list_posts.php, also thanks to Andreas.
