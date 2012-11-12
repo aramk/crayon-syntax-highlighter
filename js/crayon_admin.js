@@ -71,7 +71,7 @@
 			help = $('.crayon-help-close');
 			help.click(function() {
 				$('.crayon-help').hide();
-				$.get(help.attr('url'));
+				$.get(CrayonSyntaxSettings.ajaxurl, {action : 'crayon-ajax', 'hide-help' : 1});
 			});
 
 			// Preview

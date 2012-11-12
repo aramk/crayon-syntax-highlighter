@@ -95,7 +95,7 @@ class CrayonSettings {
 	const COMMENTS = 'comments';
 	const DECODE = 'decode';
 	const DECODE_ATTRIBUTES = 'decode-attributes';
-	const TINYMCE_USED = 'tinymce-used';
+// 	const TINYMCE_USED = 'tinymce-used';
 	const ATTR_SEP = 'attr-sep';
 	const EXCERPT_STRIP = 'excerpt-strip';
 	const RANGES = 'ranges';
@@ -220,7 +220,7 @@ class CrayonSettings {
 			new CrayonSetting(self::COMMENTS, TRUE),
 			new CrayonSetting(self::DECODE, FALSE),
 			new CrayonSetting(self::DECODE_ATTRIBUTES, TRUE),
-			new CrayonSetting(self::TINYMCE_USED, FALSE),
+// 			new CrayonSetting(self::TINYMCE_USED, FALSE),
 			new CrayonSetting(self::ATTR_SEP, array(':', '_')),
 			new CrayonSetting(self::EXCERPT_STRIP, FALSE),
 			new CrayonSetting(self::RANGES, TRUE),

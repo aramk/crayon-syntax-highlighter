@@ -69,7 +69,6 @@
 					});
 		    		
 		    		ed.onInit.add(function(ed) {
-	    				base.setHighlight(!s.used);
 	    				CrayonTagEditor.init(s.tinymce_button);
 		    	    });
 		    		
@@ -85,11 +84,6 @@
 			            		// XXX DOM element not jQuery
 			            		currPre = newPre[0];
 			            	}, null, CrayonTagEditor.hide, 'tinymce', ed, currPre, 'decode', 'encode');
-		            	
-		            	if (!currPre) {
-		            		// If no pre is selected, then button highlight depends on if it's used 
-		            		base.setHighlight(!s.used);
-		            	}
 		            });
 		            
 		            // Remove onclick and call ourselves
@@ -132,7 +126,6 @@
 			            		base.setHighlight(true);
 			            	} else {
 			            		// No pre selected
-			            		base.setHighlight(!s.used);
 			            	}
 			            	var tooltip = currPre ? s.dialog_title_edit : s.dialog_title_add;
 			            	$(s.tinymce_button).attr('title', tooltip);

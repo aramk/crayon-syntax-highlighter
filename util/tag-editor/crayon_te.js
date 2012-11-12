@@ -1,16 +1,4 @@
 (function($) {
-	
-	// Sets the TINYMCE_USED setting
-	window.CrayonTagEditorSettings.setUsed = function(is_used) {
-		if (typeof this.ajax_url != 'undefined') {
-			if (this.ajax_url && !this.used) {
-				is_used = is_used ? '1' : '0';
-				this.used = is_used; // Save the setting
-				var used_url = this.ajax_url + '?' + this.used_setting + '=' + is_used + '&wp_load=' + CrayonSyntaxSettings.wp_load;
-				$.get(used_url);
-			}
-		}
-	};
 
 	window.CrayonTagEditor = new function() {
 		var base = this;
@@ -401,8 +389,6 @@
 	        	}
 	        	ajax_class_timer_count++;
 	    	}, 40);
-	    	
-	    	s.setUsed(true);
 	    };
 	    
 	    // XXX Add Crayon to editor

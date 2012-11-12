@@ -20,9 +20,6 @@
 		var find_qt_crayon = setInterval(function() {
 			qt_crayon = jQuery(base.sel).first();
 			if (typeof qt_crayon != 'undefined') {
-				if (!CrayonTagEditorSettings.used) {
-					qt_crayon.addClass('qt_crayon_highlight');
-				}
 				clearInterval(find_qt_crayon);
 			}
 		}, 100);

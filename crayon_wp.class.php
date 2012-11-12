@@ -874,14 +874,19 @@ class CrayonWP {
 		crayon_load_plugin_textdomain();
 	}
 	
+	public static function init_ajax() {
+		add_action('wp_ajax_crayon-ajax', 'CrayonWP::ajax');
+		add_action('wp_ajax_crayon-tag-editor', 'CrayonTagEditorWP::content');
+	}
+	
 	public static function ajax() {
-		// TODO only if option is set
-		add_action( 'wp_ajax_crayon-tag-editor', 'CrayonTagEditorWP::content' );
-		
-// 		function crayon_tag_editor() {
-// 			echo "BAM!";
-// 			die();
-// 		}
+		$allowed = array(CrayonSettings::HIDE_HELP);
+		foreach ($allowed as $allow) {
+			if (array_key_exists($allow, $_GET) ) {
+				CrayonGlobalSettings::set($allow, $_GET[$allow]);
+				CrayonSettingsWP::save_settings();
+			}
+		}
 	}
 
 	/**
@@ -1116,7 +1121,7 @@ if (defined('ABSPATH')) {
 			//add_action('comment_post', 'CrayonWP::save_comment', 10, 2);
 			add_action('edit_comment', 'CrayonWP::save_comment', 10, 2);
 		}
-		add_filter('init', 'CrayonWP::ajax');
+		add_filter('init', 'CrayonWP::init_ajax');
 	}
 }
 

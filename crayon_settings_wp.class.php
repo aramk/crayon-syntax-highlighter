@@ -99,7 +99,8 @@ class CrayonSettingsWP {
 					);
 			
 			if (is_admin()) {
-				self::$js_settings['wp_load'] = CrayonWP::wp_load_path();
+				// TODO phase these out
+// 				self::$js_settings['wp_load'] = CrayonWP::wp_load_path();
 				self::$js_settings['plugins_url'] = plugins_url();
 				self::$js_settings['crayon_dir'] = CRAYON_DIR;
 				self::$js_settings['list_langs'] = CRAYON_LIST_LANGS_PHP;
@@ -410,7 +411,7 @@ class CrayonSettingsWP {
 		// If settings don't exist in input, set them to default
 		$global_settings = CrayonSettings::get_defaults();
 
-		$ignored = array(CrayonSettings::HIDE_HELP, CrayonSettings::TINYMCE_USED);
+		$ignored = array(CrayonSettings::HIDE_HELP);
 		
 		foreach ($global_settings as $setting) {
 			// XXX Ignore some settings
@@ -511,11 +512,10 @@ class CrayonSettingsWP {
 		if (CrayonGlobalSettings::val(CrayonSettings::HIDE_HELP)) {
 			return;
 		}
-		$url = plugins_url(CRAYON_AJAX_PHP, __FILE__) . '?wp_load=' . self::$js_settings['wp_load'] . '&' . CrayonSettings::HIDE_HELP . '=1';
 		$web = $CRAYON_WEBSITE;
 		echo '
 <div id="crayon-help" class="updated settings-error crayon-help">
-	<p><strong>Howdy, coder!</strong> Thanks for using Crayon. Use <strong>help</strong> on the top of this page to learn how to use the shortcode and basic features, or check out my <a href="#info">Twitter & Email</a>. For online help and info, visit <a target="_blank" href="'.$web,'">here</a>. <a class="crayon-help-close" url="'.$url.'">X</a></p>
+	<p><strong>Howdy, coder!</strong> Thanks for using Crayon. Use <strong>help</strong> on the top of this page to learn how to use the shortcode and basic features, or check out my <a href="#info">Twitter & Email</a>. For online help and info, visit <a target="_blank" href="'.$web,'">here</a>. <a class="crayon-help-close">X</a></p>
 </div>
 ';
 	}
