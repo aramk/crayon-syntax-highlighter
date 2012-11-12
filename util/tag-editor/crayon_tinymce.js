@@ -172,10 +172,12 @@
 		    
 		    tinymce.PluginManager.add(name, tinymce.plugins.Crayon);
 		};	
-		
-		// Load TinyMCE
-		base.loadTinyMCE();
-		
+
 	};
+
+    $(document).ready(function() {
+        // Load TinyMCE
+        CrayonTinyMCE.loadTinyMCE();
+    });
 	
 })(jQueryCrayon);

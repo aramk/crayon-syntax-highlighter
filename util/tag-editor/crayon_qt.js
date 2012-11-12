@@ -28,7 +28,9 @@
 		}, 100);
 		
 	};
-	
-	CrayonQuickTags();
+
+    $(document).ready(function() {
+        CrayonQuickTags();
+    });
 
 })(jQueryCrayon);
