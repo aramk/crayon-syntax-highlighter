@@ -308,13 +308,18 @@ coloring etc.
     font-family: Monaco, 'MonacoRegular', 'Courier New', monospace;
     font-weight: 500;
 }
+/*
+
+This has been disabled to allow more flexibility in changing font sizes.
+
 .crayon-syntax,
 .crayon-syntax .crayon-nums,
 .crayon-syntax .crayon-plain,
 .crayon-syntax .crayon-pre {
-	/*font-size: 12px !important;*/
-	/*line-height: 15px !important;*/
+	font-size: 12px !important;
+	line-height: 15px !important;
 }
+*/
 .crayon-syntax .crayon-num,
 .crayon-syntax .crayon-line {
 	/*height: 15px;*/
