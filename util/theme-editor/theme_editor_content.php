@@ -3,8 +3,6 @@
 // TODO this needs lots of work! remove the old wp_load procedure
 
 require_once('../../crayon_wp.class.php');
-crayon_die_if_not_php($_GET['wp_load'], 'wp-load');
-require_once ($_GET['wp_load']);
 
 $theme = CrayonResources::themes()->get_default();
 $editing = false;

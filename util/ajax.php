@@ -1,5 +1,7 @@
 <?php
 
+// Depreciated since 1.14
+
 // Used to send requests to db from jQuery
 
 require_once('../crayon_wp.class.php');

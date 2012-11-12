@@ -1,8 +1,8 @@
 <?php
 
+// Depreciated since 1.14
+
 require_once('../crayon_wp.class.php');
-crayon_die_if_not_php($_GET['wp_load'], 'wp-load');
-require_once($_GET['wp_load']);
 
 echo '<link rel="stylesheet" href="', plugins_url(CRAYON_STYLE, dirname(__FILE__)),
 	'?ver=', $CRAYON_VERSION, '" type="text/css" media="all" />';

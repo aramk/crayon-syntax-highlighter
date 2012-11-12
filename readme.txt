@@ -247,6 +247,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 1.14 =
+* All AJAX functions are now using the wp_ajax action and admin-ajax.php method defined here: http://codex.wordpress.org/AJAX_in_Plugins. This means Crayon no longer passes around the wp_load path and doesn't use it as a $_GET variable to load AJAX requests. The security vulnerability in 1.13 is no longer present and that code has been removed.
+* Fixed a bug preventing Tag Editor from showing on the front end (related to the AJAX fix) 
 * Updated German translation.
 
 = 1.13.1 =

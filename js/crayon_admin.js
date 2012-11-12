@@ -91,9 +91,15 @@
 			}
 			
 			$('#show-posts').click(function() {
-				var url = settings.plugins_url + '/' + settings.crayon_dir + settings.list_posts + '?wp_load=' + settings.wp_load; 
-				$.get(url, function(data) {
+				$.get(CrayonSyntaxSettings.ajaxurl, {action : 'crayon-show-posts'}, function(data) {
 					$('#crayon-subsection-posts-info').html(data);
+				});
+			});
+			
+			$('#show-langs').click(function() {
+				$.get(CrayonSyntaxSettings.ajaxurl, {action : 'crayon-show-langs'}, function(data) {
+					$('#lang-info').hide();
+					$('#crayon-subsection-langs-info').html(data);
 				});
 			});
 
@@ -202,7 +208,7 @@
 			// }, 1000);
 
 			// Load Preview
-			$.get(preview_url + preview_get, function(data) {
+			$.get(CrayonSyntaxSettings.ajaxurl, {action : 'crayon-show-preview'}, function(data) {
 				preview.html(data);
 				// Important! Calls the crayon.js init
 				CrayonSyntax.init();
@@ -312,14 +318,6 @@
 			} else {
 				overlay.hide();
 			}
-		};
-
-		base.show_langs = function(url) {
-			$.get(url, function(data) {
-				$('#lang-info').hide();
-				$('#crayon-subsection-lang-info').html(data);
-			});
-			return false;
 		};
 
 		base.get_vars = function() {
