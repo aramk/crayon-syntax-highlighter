@@ -9,19 +9,19 @@ Author URI: http://ak.net84.net/
 Text Domain: crayon-syntax-highlighter
 Domain Path: /trans/
 License: GPL2
-	Copyright 2012	Aram Kocharyan	(email : akarmenia@gmail.com)
-	This program is free software; you can redistribute it and/or modify
-	it under the terms of the GNU General Public License, version 2, as
-	published by the Free Software Foundation.
-	
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-	
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+Copyright 2012	Aram Kocharyan	(email : akarmenia@gmail.com)
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License, version 2, as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 require_once ('global.php');
 require_once (CRAYON_HIGHLIGHTER_PHP);
@@ -493,7 +493,7 @@ class CrayonWP {
 		if ($force || self::$tags_regex == "") {
 			// Check which tags are in $flags. If it's NULL, then all flags are true.
 			$in_flag = self::in_flag($flags);
-				
+
 			if ( ($in_flag[CrayonSettings::CAPTURE_MINI_TAG] && CrayonGlobalSettings::val(CrayonSettings::CAPTURE_MINI_TAG)) ||
 					($in_flag[CrayonSettings::INLINE_TAG] && CrayonGlobalSettings::val(CrayonSettings::INLINE_TAG)) ) {
 				$aliases = CrayonResources::langs()->ids_and_aliases();
@@ -506,10 +506,10 @@ class CrayonWP {
 					self::$alias_regex .= $alias_regex;
 				}
 			}
-				
+
 			// Add other tags
 			self::$tags_regex = '#(?<!\$)(?:(\s*\[\s*crayon\b)';
-				
+
 			$tag_regexes = array(
 					CrayonSettings::CAPTURE_MINI_TAG => '([\[]\s*('.self::$alias_regex.')\b)',
 					CrayonSettings::CAPTURE_PRE => '(<\s*pre\b)',
@@ -517,15 +517,15 @@ class CrayonWP {
 					CrayonSettings::PLAIN_TAG => '(\s*\[\s*plain\b)',
 					CrayonSettings::BACKQUOTE => '(`[^`]*`)'
 			);
-				
+
 			foreach ($tag_regexes as $tag=>$regex) {
 				if ($in_flag[$tag] && CrayonGlobalSettings::val($tag)) {
 					self::$tags_regex .= '|' . $regex;
 				}
 			}
 			self::$tags_regex .= ')#msi';
-				
-				
+
+
 			// 			if (CrayonGlobalSettings::val(CrayonSettings::CAPTURE_MINI_TAG)) {
 			// 				self::$tags_regex .= '|([\[]\s*('.self::$alias_regex.'))';
 			// 			}
@@ -873,6 +873,16 @@ class CrayonWP {
 		CrayonLog::debug('init');
 		crayon_load_plugin_textdomain();
 	}
+	
+	public static function ajax() {
+		// TODO only if option is set
+		add_action( 'wp_ajax_crayon-tag-editor', 'CrayonTagEditorWP::content' );
+		
+// 		function crayon_tag_editor() {
+// 			echo "BAM!";
+// 			die();
+// 		}
+	}
 
 	/**
 	 * Return an array of post IDs where crayons occur.
@@ -999,19 +1009,19 @@ class CrayonWP {
 			$post = get_post($postID);
 			$post_content = $post->post_content;
 			$post_captures = self::capture_crayons($postID, $post_content, array(), $args);
-				
+
 			$post_obj = array();
 			$post_obj['ID'] = $postID;
 			$post_obj['post_content'] = $post_captures['content'];
 			wp_update_post($post_obj);
 			CrayonLog::syslog("Converted Crayons in post ID $postID to pre tags", 'CONVERT');
-				
+
 			if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
 				$comments = get_comments(array('post_id' => $postID));
 				foreach ($comments as $comment) {
 					$commentID = $comment->comment_ID;
 					$comment_captures = self::capture_crayons($commentID, $comment->comment_content, array(CrayonSettings::DECODE => TRUE), $args);
-						
+
 					$comment_obj = array();
 					$comment_obj['comment_ID'] = $commentID;
 					$comment_obj['comment_content'] = $comment_captures['content'];
@@ -1019,7 +1029,7 @@ class CrayonWP {
 					CrayonLog::syslog("Converted Crayons in post ID $postID, comment ID $commentID to pre tags", 'CONVERT');
 				}
 			}
-				
+
 		}
 	}
 
@@ -1058,20 +1068,16 @@ class CrayonWP {
 		return str_replace($original, CrayonUtil::html_element('pre', $capture['code'], $atts), $wp_content);
 	}
 
-	public static function test($wfw, $efr) {
-		exit();
-		return "123";
-	}
-
 }
 
-// Only if WP is loaded and not in admin
+// Only if WP is loaded
 if (defined('ABSPATH')) {
 	if (!is_admin()) {
 		register_activation_hook(__FILE__, 'CrayonWP::install');
 		register_deactivation_hook(__FILE__, 'CrayonWP::uninstall');
 
 		// Filters and Actions
+
 		add_filter('init', 'CrayonWP::init');
 
 		CrayonSettingsWP::load_settings(TRUE);
@@ -1085,10 +1091,10 @@ if (defined('ABSPATH')) {
 		add_filter('the_content', 'CrayonWP::the_content', 100);
 
 		// Highlight bbPress content
-		add_filter( 'bbp_get_reply_content', 'CrayonWP::highlight', 100);
-		add_filter( 'bbp_get_topic_content', 'CrayonWP::highlight', 100);
-		add_filter( 'bbp_get_forum_content', 'CrayonWP::highlight', 100);
-		add_filter( 'bbp_get_topic_excerpt', 'CrayonWP::highlight', 100);
+		add_filter('bbp_get_reply_content', 'CrayonWP::highlight', 100);
+		add_filter('bbp_get_topic_content', 'CrayonWP::highlight', 100);
+		add_filter('bbp_get_forum_content', 'CrayonWP::highlight', 100);
+		add_filter('bbp_get_topic_excerpt', 'CrayonWP::highlight', 100);
 
 		if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
 			/* XXX This is called first to match Crayons, then higher priority replaces after other filters.
@@ -1110,6 +1116,7 @@ if (defined('ABSPATH')) {
 			//add_action('comment_post', 'CrayonWP::save_comment', 10, 2);
 			add_action('edit_comment', 'CrayonWP::save_comment', 10, 2);
 		}
+		add_filter('init', 'CrayonWP::ajax');
 	}
 }
 

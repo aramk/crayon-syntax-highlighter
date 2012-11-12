@@ -90,9 +90,9 @@
 	    	}
 	    	
 	        // Load the editor content 
-	    	var url = s.url + '?wp_load=' + CrayonSyntaxSettings.wp_load + '&' + 'is_admin=' + CrayonSyntaxSettings.is_admin;
-	//		url += 'crayon_wp=' + CrayonSyntaxSettings.crayon_wp + '&';
-	        $.get(url, function(data) {
+//	    	var url = s.url + '?wp_load=' + CrayonSyntaxSettings.wp_load + '&' + 'is_admin=' + CrayonSyntaxSettings.is_admin;
+	        //$.get(url, function(data) {
+            $.get(CrayonSyntaxSettings.ajaxurl, {action : 'crayon-tag-editor'}, function(data) {
 	        	dialog = $('<div id="'+s.css+'"></div>');
 	            dialog.appendTo('body').hide();
 	        	dialog.html(data);

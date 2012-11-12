@@ -77,7 +77,6 @@ define('CRAYON_CSS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.css');
 define('CRAYON_TE_JS', 'crayon_te.js');
 define('CRAYON_TE_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.class.php');
 // TODO Fix these
-define('CRAYON_TE_CONTENT_PHP', 'crayon_te_content.php');
 define('CRAYON_TINYMCE_JS', 'crayon_tinymce.js');
 define('CRAYON_QUICKTAGS_JS', 'crayon_qt.js');
 define('CRAYON_STYLE', CRAYON_CSS_DIR . 'crayon_style.css');
