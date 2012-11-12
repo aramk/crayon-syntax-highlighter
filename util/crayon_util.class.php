@@ -268,6 +268,11 @@ class CrayonUtil {
 	public static function esc_atomic($regex) {
 		return preg_replace('#(?<!\\\\)\((?!\?)#', '(?:', $regex);
 	}
+	
+	// Returns the current HTTP URL
+	public static function current_url() {
+		return "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	}
 
 	// Removes crayon plugin path from absolute path
 	public static function path_rel($url) {

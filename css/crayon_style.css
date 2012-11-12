@@ -312,12 +312,12 @@ coloring etc.
 .crayon-syntax .crayon-nums,
 .crayon-syntax .crayon-plain,
 .crayon-syntax .crayon-pre {
-	font-size: 12px !important;
-	line-height: 15px !important;
+	/*font-size: 12px !important;*/
+	/*line-height: 15px !important;*/
 }
 .crayon-syntax .crayon-num,
 .crayon-syntax .crayon-line {
-	height: 15px;
+	/*height: 15px;*/
 }
 .crayon-syntax.crayon-wrapped .crayon-line {
 /*	min-height: 15px;*/

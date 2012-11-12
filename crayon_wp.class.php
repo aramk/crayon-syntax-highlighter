@@ -932,31 +932,45 @@ class CrayonWP {
 
 	}
 
-	public  static function update() {
-		// Upgrade database and settings
+	public static function update() {
 		global $CRAYON_VERSION;
+		CrayonSettingsWP::load_settings(TRUE);
 		$settings = CrayonSettingsWP::get_settings();
 		if ($settings === NULL || !isset($settings[CrayonSettings::VERSION])) {
 			return;
 		}
 
 		$version = $settings[CrayonSettings::VERSION];
-		$defaults = CrayonSettings::get_defaults_array();
-		$touched = FALSE;
-
-		if ($version < '1.7.21') {
-			$settings[CrayonSettings::SCROLL] = $defaults[CrayonSettings::SCROLL];
-			$touched = TRUE;
-		}
-
-		if ($version < '1.7.23' && $settings[CrayonSettings::FONT] == 'theme-font') {
-			$settings[CrayonSettings::FONT] = $defaults[CrayonSettings::FONT];
-			$touched = TRUE;
-		}
-
-		if ($touched) {
+		
+		// Only upgrade if the version differs
+		if ($version != $CRAYON_VERSION) {
+			$defaults = CrayonSettings::get_defaults_array();
+			$touched = FALSE;
+			
+			// Upgrade database and settings
+			
+			if ($version < '1.7.21') {
+				$settings[CrayonSettings::SCROLL] = $defaults[CrayonSettings::SCROLL];
+				$touched = TRUE;
+			}
+			
+			if ($version < '1.7.23' && $settings[CrayonSettings::FONT] == 'theme-font') {
+				$settings[CrayonSettings::FONT] = $defaults[CrayonSettings::FONT];
+				$touched = TRUE;
+			}
+			
+			if ($version < '1.14') {
+				$settings[CrayonSettings::FONT_SIZE_ENABLE] = true;
+			}
+			
+			// Save new version
 			$settings[CrayonSettings::VERSION] = $CRAYON_VERSION;
 			CrayonSettingsWP::save_settings($settings);
+			CrayonLog::syslog("Updated from $version to $CRAYON_VERSION");
+			
+			// Refresh to show new settings
+			header('Location: ' . CrayonUtil::current_url());
+			exit();
 		}
 	}
 
@@ -1118,6 +1132,8 @@ if (defined('ABSPATH')) {
 
 		add_action('template_redirect', 'CrayonWP::wp_head');
 	} else {
+		// Update between versions
+		CrayonWP::update();
 		// For marking a post as containing a Crayon
 		add_action('save_post', 'CrayonWP::save_post', 10, 2);
 		if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {

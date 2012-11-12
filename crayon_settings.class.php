@@ -148,7 +148,7 @@ class CrayonSettings {
 			new CrayonSetting(self::VERSION, $CRAYON_VERSION, NULL, TRUE),
 			new CrayonSetting(self::THEME, CrayonThemes::DEFAULT_THEME), 
 			new CrayonSetting(self::FONT, CrayonFonts::DEFAULT_FONT), 
-			new CrayonSetting(self::FONT_SIZE_ENABLE, FALSE),
+			new CrayonSetting(self::FONT_SIZE_ENABLE, TRUE),
 			new CrayonSetting(self::FONT_SIZE, 12), 
 			new CrayonSetting(self::PREVIEW, TRUE),
 			new CrayonSetting(self::HEIGHT_SET, FALSE), 

@@ -328,9 +328,6 @@ class CrayonSettingsWP {
 		// Load default settings if they don't exist
 		self::load_settings();
 
-		// Update db
-		CrayonWP::update();
-
 		// General
 		// Some of these will the $editor arguments, if TRUE it will alter for use in the Tag Editor
 		self::add_section(self::GENERAL, crayon__('General'));
@@ -712,8 +709,6 @@ class CrayonSettingsWP {
 	}
 	
 	public static function show_preview() {
-// 		echo '<link rel="stylesheet" href="', plugins_url(CRAYON_STYLE, dirname(__FILE__)),
-// 		'?ver=', $CRAYON_VERSION, '" type="text/css" media="all" />';
 		echo '<div id="content">';
 		
 		self::load_settings(); // Run first to ensure global settings loaded
