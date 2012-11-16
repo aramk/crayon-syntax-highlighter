@@ -68,7 +68,7 @@ There are many ways you can help!
 Languages are defined in language files using Regular Expressions to capture elements.
 See the <a href="http://ak.net84.net/projects/crayon-language-file-specification/" target="_blank">Crayon Language File Specification</a> to learn how to make your own.
 
-* Default Langauge (one size fits all, highlights generic code)
+* Default Language (one size fits all, highlights generic code)
 * ABAP
 * ActionScript
 * Apache
