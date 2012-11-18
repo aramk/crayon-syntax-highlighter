@@ -1,6 +1,6 @@
 === Crayon Syntax Highlighter ===
 Contributors: akarmenia
-Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=aAgfTo4BGaspOoFxdFzdUgqC1O2FQ6rQ44ZgvLfv5Dr1C5LHlCWDN9BfhUu&dispatch=5885d80a13c0db1f8e263663d3faee8d0b7e678a25d883d0fa72c947f193f8fd
+Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=74DeCNRDtHGARRJTWr1RQ3JPKe1X77pIzSyuDvpqY2JT8XWjkP7n8xc0qXq&dispatch=5885d80a13c0db1f8e263663d3faee8d0b7e678a25d883d0fa72c947f193f8fd
 License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
@@ -61,7 +61,7 @@ There are many ways you can help!
 * Make a Theme and share
 * Add support for your favourite <a href="http://ak.net84.net/projects/crayon-language-file-specification/" target="_blank">Language</a>
 * Write a post about your pastel experiences and share
-* <a href="https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=aAgfTo4BGaspOoFxdFzdUgqC1O2FQ6rQ44ZgvLfv5Dr1C5LHlCWDN9BfhUu&dispatch=5885d80a13c0db1f8e263663d3faee8d0b7e678a25d883d0fa72c947f193f8fd" target="_blank">Donate</a> to the project
+* <a href="https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=74DeCNRDtHGARRJTWr1RQ3JPKe1X77pIzSyuDvpqY2JT8XWjkP7n8xc0qXq&dispatch=5885d80a13c0db1f8e263663d3faee8d0b7e678a25d883d0fa72c947f193f8fd" target="_blank">Donate</a> to the project
 
 **Supported Languages**
 
@@ -163,6 +163,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to my project, your support keeps the Crayons going!
 
+* Jack Fruh, (http://basementjack.com/), USA
 * Ross Barbieri, USA
 * Will, Simple Phishing Toolkit (http://www.sptoolkit.com/), USA
 * Tricia Aanderud, USA
