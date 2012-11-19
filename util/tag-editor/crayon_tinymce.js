@@ -4,8 +4,7 @@
 		
 		// TinyMCE specific
 		var name = 'crayon_tinymce';
-		var s = CrayonTagEditorSettings;
-		var te = CrayonTagEditor;
+		var s, te = null;
 		var isHighlighted = false;
 		var currPre = null;
 		// Switch events
@@ -45,10 +44,14 @@
 		};
 		
 		base.loadTinyMCE = function() {
+			s = CrayonTagEditorSettings;
+			te = CrayonTagEditor;
+			
 		    tinymce.PluginManager.requireLangPack(name);
 		    
 		    tinymce.create('tinymce.plugins.Crayon', {
 		        init : function(ed, url) {
+		        	
 		    		ed.onInit.add(function(ed) {
 		    			ed.dom.loadCSS(url + '/crayon_te.css');
 					});

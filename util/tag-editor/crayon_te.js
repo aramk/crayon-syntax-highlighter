@@ -26,9 +26,7 @@
 		var is_inline = false;
 		
 		// Generated in WP and contains the settings
-		var s = CrayonTagEditorSettings;
-		var gs = CrayonSyntaxSettings;
-		var admin = CrayonSyntaxAdmin;
+		var s, gs, admin = null;
 		// For use in async functions
 		var me = this;
 		
@@ -36,6 +34,10 @@
 		var dialog = code = clear = submit = null;
 		
 		base.init = function(button) {
+			s = CrayonTagEditorSettings;
+			gs = CrayonSyntaxSettings;
+			admin = CrayonSyntaxAdmin;
+
 			base.loadDialog();
 			$(button).fancybox({
         		href : s.content_css,
@@ -78,7 +80,7 @@
 	    	}
 	    	
 	        // Load the editor content 
-            $.get(CrayonSyntaxSettings.ajaxurl, {action : 'crayon-tag-editor'}, function(data) {
+            $.get(gs.ajaxurl, {action : 'crayon-tag-editor'}, function(data) {
 	        	dialog = $('<div id="'+s.css+'"></div>');
 	            dialog.appendTo('body').hide();
 	        	dialog.html(data);

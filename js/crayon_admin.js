@@ -25,7 +25,7 @@
 		// var theme_editor_loaded = false;
 		// var theme_editor_loading = false;
 
-		var settings = CrayonSyntaxSettings;
+		var settings = null;
 
 		base.cssElem = function(id) {
 			return $(base.addPrefixToID(id));
@@ -43,6 +43,7 @@
 
 		base.init = function() {
 			console_log('admin init');
+			settings = CrayonSyntaxSettings;
 
 			// Wraps
 			main_wrap = $('#crayon-main-wrap');
