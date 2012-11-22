@@ -143,8 +143,9 @@
 	background: #ddebf2 !important;
 }
 
-.mce_crayon_tinymce_highlight span.mce_crayon_tinymce,.wp_themeSkin .mceButtonEnabled:hover span.mce_crayon_tinymce,.wp_themeSkin .mceButtonActive span.mce_crayon_tinymce
-	{
+/* .mce_crayon_tinymce_highlight span.mce_crayon_tinymce, */
+.wp_themeSkin .mceButtonEnabled:hover span.mce_crayon_tinymce,
+.wp_themeSkin .mceButtonActive span.mce_crayon_tinymce {
 	background-position: -20px 0;
 }
 

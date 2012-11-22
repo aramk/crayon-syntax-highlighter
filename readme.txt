@@ -138,6 +138,7 @@ These are helpful for discovering new features.
 
 A handful of articles from others written about Crayon, thanks guys!
 
+* <a href="http://themesplugins.com/wordpress-Plugin/add-php-java-html-codes-posts-pages/" target="_blank">Crayon Syntax Highlighter – Plugin</a>
 * <a href="http://bbpress.org/forums/topic/state-of-syntax-highlighter-support-in-bbpress-2/" target="_blank">State of syntax highlighter support in bbPress 2</a>
 * <a href="http://www.techbrunch.fr/informations/plugin-wordpress-afficher-code-source/" target="_blank">The ultimate plugin for displaying code in WordPress (French)</a>
 * <a href="http://www.trynull.com/2012/06/15/finally-wordpress-code-syntax-highlighting-that-works/" target="_blank">Finally!‚A WordPress code syntax highlighting that works</a>
@@ -248,6 +249,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.14.1 =
+* Improved version updating
+
 = 1.14 =
 * All AJAX functions are now using the wp_ajax action and admin-ajax.php method defined here: http://codex.wordpress.org/AJAX_in_Plugins. This means Crayon no longer passes around the wp_load path and doesn't use it as a $_GET variable to load AJAX requests. The security vulnerability in 1.13 is no longer present and that code has been removed.
 * font-size and line-height has been removed from the crayon style CSS and is specified using the settings screen - the custom font size is enabled at 12px. This allows you to disable the custom font size and allow your own CSS to take control of the sizing for you. With the custom size disabled the inherited size is applied, so the code will appear at the size of its parent element based on your wordpress theme.
@@ -258,7 +262,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fixed a bug where post previews were not displaying any Crayon code
 * Fixed an issue with code wrap not reverting when disabled
 * Fixed a bug causing code wrap from distorting the style of the popup
-* Added Erlang thanks to Daniel (http://netroid.de/)
+* Added Erlang thanks to Daniel (<a href="http://netroid.de/" target="_blank">adostudio.it</a>)
 * Fixed a bug where languages were parsed too late to pick up language modes
 * Updated German translation.
 

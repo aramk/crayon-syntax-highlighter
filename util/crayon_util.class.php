@@ -354,7 +354,7 @@ class CrayonUtil {
 	}
 	
 	// Creates a unique ID from a string
-	function get_var_str() {
+	public static function get_var_str() {
 		$get_vars = array();
 		foreach ($_GET as $get=>$val) {
 			$get_vars[] = $get . '=' . $val;
@@ -363,7 +363,7 @@ class CrayonUtil {
 	}
 	
 	// Creates a unique ID from a string
-	function str_uid($str) {
+	public static function str_uid($str) {
 		$uid = 0;
 		for ($i = 1; $i < strlen($str); $i++) {
 			$uid += round(ord($str[$i]) * ($i / strlen($str)), 2) * 100;
@@ -371,6 +371,37 @@ class CrayonUtil {
 		return strval(dechex(strlen($str))).strval(dechex($uid));
 	}
 
+	// Breaks up a version string into parts
+	public static function version_parts($version) {
+		preg_match('#[\d+\.]+#msi', $version, $match);
+		if (count($match[0])) {
+			return split('\.', $match[0]);
+		} else {
+			return array();
+		}
+	}
+	
+	// Compares two version strings lexicographically
+	public static function version_compare($a, $b) {
+		$a_parts = self::version_parts($a);
+		$b_parts = self::version_parts($b);
+		return self::array_compare_lexi($a_parts, $b_parts);
+	}
+	
+	// Compares two arrays lexicographically
+	// This could be extended with a compare function argument
+	public static function array_compare_lexi($a, $b) {
+		$short = count($a) < count($b) ? $a : $b;
+		for ($i = 0; $i < count($short); $i++) {
+			if ($a[$i] > $b[$i]) {
+				return 1;
+			} else if ($a[$i] < $b[$i]) {
+				return -1;
+			}
+		}
+		return 0;
+	}
+	
 	// strpos with an array of $needles
 	public static function strposa($haystack, $needles, $insensitive = FALSE) {
 		if (is_array($needles)) {
