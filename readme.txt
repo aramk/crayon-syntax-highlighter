@@ -254,7 +254,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fixed a bug preventing Tag Editor from showing on the front end (related to the AJAX fix)
 * Moved global js variables to the init functions which are called on ready()
 * Fancybox now uses "fancybox" as the script name and checks if another version is already queued
-* Fixed a bug where post previews were not displaying any Crayon code  
+* Fixed a bug where post previews were not displaying any Crayon code
+* Fixed an issue with code wrap not reverting when disabled  
 * Updated German translation.
 
 = 1.13.1 =

@@ -811,7 +811,8 @@
 					// TODO toolbar should overlay title if needed
 				} else {
                     var height = line.attr('data-height');
-                    if (height) {
+                    height = height ? height : ''; 
+                    if (typeof height != 'undefined') {
                         line.css('height', height);
                         $(this).css('height', height);
                     }

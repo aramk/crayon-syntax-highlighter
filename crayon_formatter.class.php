@@ -205,7 +205,7 @@ class CrayonFormatter {
 			$line_id = $uid.'-' . $line_num;
 			$print_code .= '<div class="crayon-line' . $marked_line . $striped_line . '" id="'.$line_id.'">' . $code_line . '</div>';
 			if (!is_string($line_numbers)) {
-				$print_nums .= '<div class="crayon-num' . $marked_num . $striped_num . '" data-line="'.$line_id.'" style_="'.$line_style.'">' . $line_num . '</div>';
+				$print_nums .= '<div class="crayon-num' . $marked_num . $striped_num . '" data-line="'.$line_id.'">' . $line_num . '</div>';
 			}
 		}
 		// If $line_numbers is a string, display it
