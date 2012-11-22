@@ -252,7 +252,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * font-size and line-height has been removed from the crayon style CSS and is specified using the settings screen - the custom font size is enabled at 12px. This allows you to disable the custom font size and allow your own CSS to take control of the sizing for you. With the custom size disabled the inherited size is applied, so the code will appear at the size of its parent element based on your wordpress theme.
 * Update functionality has been improved so the CrayonWP::update() function is only called when an update is detected from a change in the version string, not every time you load the page! If using lower than 1.14 the custom font size setting is enabled for you, since this setting was disabled by default in previous versions.
 * Fixed a bug preventing Tag Editor from showing on the front end (related to the AJAX fix)
-* Moved global js variables to the init functions which are called on ready() 
+* Moved global js variables to the init functions which are called on ready()
+* Fancybox now uses "fancybox" as the script name and checks if another version is already queued 
 * Updated German translation.
 
 = 1.13.1 =
