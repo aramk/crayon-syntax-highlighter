@@ -255,7 +255,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Moved global js variables to the init functions which are called on ready()
 * Fancybox now uses "fancybox" as the script name and checks if another version is already queued
 * Fixed a bug where post previews were not displaying any Crayon code
-* Fixed an issue with code wrap not reverting when disabled  
+* Fixed an issue with code wrap not reverting when disabled
+* Fixed a bug causing code wrap from distorting the style of the popup  
 * Updated German translation.
 
 = 1.13.1 =

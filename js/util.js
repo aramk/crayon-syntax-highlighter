@@ -12,9 +12,9 @@ if (typeof CrayonTagEditorSettings == 'undefined') {
 RegExp.prototype.execAll = function(string) {
 	var matches = [];
 	var match = null;
-	while ( (match = this.exec(string)) != null ) {
+	while ((match = this.exec(string)) != null) {
 		var matchArray = [];
-		for (var i in match) {
+		for ( var i in match) {
 			if (parseInt(i) == i) {
 				matchArray.push(match[i]);
 			}
@@ -24,35 +24,35 @@ RegExp.prototype.execAll = function(string) {
 	return matches;
 };
 
+String.prototype.sliceReplace = function(start, end, repl) {
+	return this.substring(0, start) + repl + this.substring(end);
+};
+
 function console_log(string) {
-    if (typeof console != 'undefined' && CRAYON_DEBUG) {
-        console.log(string);
-    }
+	if (typeof console != 'undefined' && CRAYON_DEBUG) {
+		console.log(string);
+	}
 }
 
-//# is left unencoded
+// # is left unencoded
 function crayon_escape(string) {
-    if (typeof encodeURIComponent == 'function') {
-    	return encodeURIComponent(string);
-    } else if (typeof escape != 'function') {
-    	return escape(string);
-    } else {
-    	return string;
-    }
+	if (typeof encodeURIComponent == 'function') {
+		return encodeURIComponent(string);
+	} else if (typeof escape != 'function') {
+		return escape(string);
+	} else {
+		return string;
+	}
 }
 
 function crayon_decode_html(str) {
-    return String(str)
-            .replace(/&amp;/g, '&')
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>');
+	return String(str).replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(
+			/&gt;/g, '>');
 }
 
 function crayon_encode_html(str) {
-    return String(str)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;');
+	return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
+			/>/g, '&gt;');
 }
 
 var CrayonSyntaxUtil = new function() {
@@ -62,7 +62,7 @@ var CrayonSyntaxUtil = new function() {
 		}
 		var ext = str.split('.');
 		if (ext.length) {
-			ext = ext[ext.length-1];
+			ext = ext[ext.length - 1];
 		} else {
 			ext = '';
 		}
@@ -70,11 +70,11 @@ var CrayonSyntaxUtil = new function() {
 	};
 };
 
-//http://stackoverflow.com/questions/2360655/jquery-event-handlers-always-execute-in-order-they-were-bound-any-way-around-t
+// http://stackoverflow.com/questions/2360655/jquery-event-handlers-always-execute-in-order-they-were-bound-any-way-around-t
 
-//[name] is the name of the event "click", "mouseover", .. 
-//same as you'd pass it to bind()
-//[fn] is the handler function
+// [name] is the name of the event "click", "mouseover", ..
+// same as you'd pass it to bind()
+// [fn] is the handler function
 jQueryCrayon.fn.bindFirst = function(name, fn) {
 	// bind as you normally would
 	// don't want to miss out on any jQuery magic
@@ -87,4 +87,3 @@ jQueryCrayon.fn.bindFirst = function(name, fn) {
 	// move it at the beginning
 	handlers.splice(0, 0, handler);
 };
-

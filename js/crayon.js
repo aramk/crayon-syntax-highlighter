@@ -211,8 +211,6 @@
 	            } else {
 	            	update_nums_button(uid);
 	            }
-	            
-				//reconsile_lines(uid);
 
 	            // TODO If width has changed or timeout, stop timer
 	            if (/*last_num_width != nums.width() ||*/ i == 5) {
@@ -361,13 +359,39 @@
 			if (typeof crayon[uid] == 'undefined') {
 			    return make_uid(uid);
 			}
-			var code = crayon[uid].plain_visible ? crayon[uid].plain : crayon[uid].main;
 			var settings = crayon[uid].popup_settings;
-			settings.data = get_all_css() + '<body class="crayon-popup-window" style="padding:0; margin:0;"><div class="' + crayon[uid].attr('class') + 
-				' crayon-popup">' + remove_css_inline(get_jquery_str(code)) + '</div></body>';
-			if (typeof settings == 'undefined') {
+			if (settings.data) {
+				// Already done
 				return;
 			}
+			
+			var clone = crayon[uid].clone(true);
+			clone.removeClass('crayon-wrapped');
+			
+			// Unwrap
+			if (crayon[uid].wrapped) {
+				$(CRAYON_NUM, clone).each(function() {
+					var line_id = $(this).attr('data-line');
+					var line = $('#' + line_id);
+					var height = line.attr('data-height');
+	                height = height ? height : ''; 
+	                if (typeof height != 'undefined') {
+	                    line.css('height', height);
+	                    $(this).css('height', height);
+	                }
+				});
+				clone.find(CRAYON_MAIN).css('height', '');
+			}
+			
+			var code = '';
+			if (crayon[uid].plain_visible) {
+				code = clone.find(CRAYON_PLAIN);
+			} else {
+				code = clone.find(CRAYON_MAIN);
+			}
+			
+			settings.data = get_all_css() + '<body class="crayon-popup-window" style="padding:0; margin:0;"><div class="' + clone.attr('class') + 
+				' crayon-popup">' + remove_css_inline(get_jquery_str(code)) + '</div></body>';
 		};
 		
 		var get_jquery_str = function(object) {
@@ -375,7 +399,18 @@
 		};
 		
 		var remove_css_inline = function(string) {
-			return string.replace(/style\s*=\s*["'][^"]+["']/gmi, '');
+			var reStyle = /style\s*=\s*"([^"]+)"/gmi; 
+			
+			var match = null;
+			while ((match = reStyle.exec(string)) != null) {
+				var repl = match[1];
+				repl = repl.replace(/\bwidth\s*:[^;]+;/gmi, '');
+				string = string.sliceReplace(match.index, match.index + match[0].length, 'style="' + repl + '"');
+			}
+			
+			console.log(string);
+			
+			return string;
 		};
 		
 		// Get all CSS on the page as a string
