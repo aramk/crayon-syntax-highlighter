@@ -99,11 +99,6 @@ class CrayonSettingsWP {
 					'special' => CrayonSettings::SETTING_SPECIAL,
 					'orig_value' => CrayonSettings::SETTING_ORIG_VALUE
 			);
-			// 			if (is_admin()) {
-			// 				// No longer used for AJAX
-			// 				self::$js_settings['plugins_url'] = plugins_url();
-			// 				self::$js_settings['crayon_dir'] = CRAYON_DIR;
-			// 			}
 		}
 		wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
 	}
