@@ -1,0 +1,24 @@
+### ERLANG ###
+
+# ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+	NAME				Erlang
+	VERSION				1.14
+	ALLOW_MIXED			NO
+
+	COMMENT				(%.*?$)
+	PREPROCESSOR 		(#.*?$)
+	STRING				((?<!\\)".*?(?<!\\)")
+
+	STATEMENT			\b(?alt:statements.txt)\b
+	RESERVED				(?default)
+	TYPE					(?default)
+	MODIFIER				\b(?alt:modifier.txt)\b
+
+	ENTITY				(?default)
+    
+	VARIABLE				(\b[A-Z]([A-Za-z0-9_]*?)\b)
+	IDENTIFIER			(?default)
+	CONSTANT				(\b[a-z]([A-Za-z0-9_]*?)\b)|((?<!\\)'.*?(?<!\\)')
+	OPERATOR				(?alt:operators.txt)
+	SYMBOL				(?default)

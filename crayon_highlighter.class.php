@@ -180,6 +180,7 @@ class CrayonHighlighter {
 				$this->code = $code;
 				
 				// Allow mixed if langauge supports it and setting is set
+				CrayonParser::parse($this->language->id());
 				if (!$this->setting_val(CrayonSettings::MIXED) || !$this->language->mode(CrayonParser::ALLOW_MIXED)) {
 					// Format the code with the generated regex and elements
 					$this->formatted_code = CrayonFormatter::format_code($code, $this->language, $this);

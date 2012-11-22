@@ -740,7 +740,7 @@ class CrayonSettingsWP {
 		
 		// Load custom code based on language
 		$lang = $crayon->setting_val(CrayonSettings::FALLBACK_LANG);
-		$path = crayon_pf( dirname(__FILE__) . '/sample/' . $lang . '.txt', FALSE );
+		$path = crayon_pf( CRAYON_UTIL_PATH . '/sample/' . $lang . '.txt', FALSE );
 		
 		if ($lang && @file_exists($path)) {
 			$crayon->url($path);

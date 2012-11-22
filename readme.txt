@@ -81,6 +81,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * CSS
 * Delphi/Pascal (thanks to <a href="http://squashbrain.com/" target="_blank">Chris McClenny</a>)
 * Diff (thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>)
+* Erlang (thanks to <a href="http://netroid.de/" target="_blank">Daniel</a>)
 * Go
 * Haskell
 * HTML (XML/XHTML)
@@ -256,7 +257,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fancybox now uses "fancybox" as the script name and checks if another version is already queued
 * Fixed a bug where post previews were not displaying any Crayon code
 * Fixed an issue with code wrap not reverting when disabled
-* Fixed a bug causing code wrap from distorting the style of the popup  
+* Fixed a bug causing code wrap from distorting the style of the popup
+* Added Erlang thanks to Daniel (http://netroid.de/)
+* Fixed a bug where languages were parsed too late to pick up language modes
 * Updated German translation.
 
 = 1.13.1 =
