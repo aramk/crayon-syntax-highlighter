@@ -380,8 +380,8 @@
 	                    $(this).css('height', height);
 	                }
 				});
-				clone.find(CRAYON_MAIN).css('height', '');
 			}
+			clone.find(CRAYON_MAIN).css('height', '');
 			
 			var code = '';
 			if (crayon[uid].plain_visible) {
