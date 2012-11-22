@@ -394,7 +394,7 @@ class CrayonWP {
 
 		self::init_tags_regex();
 		$crayon_posts = CrayonSettingsWP::load_posts(); // Loads posts containing crayons
-
+		
 		// Search for shortcode in posts
 		foreach ($posts as $post) {
 			$wp_id = $post->ID;
@@ -410,6 +410,11 @@ class CrayonWP {
 			}
 
 			$id_str = strval($wp_id);
+			
+			if (wp_is_post_revision($wp_id)) {
+				// Ignore post revisions, use the parent, which has the updated post content
+				continue;
+			}
 
 			if ( isset(self::$post_captures[$id_str]) ) {
 				// Don't capture twice
@@ -420,7 +425,7 @@ class CrayonWP {
 				continue;
 			}
 			// Capture post Crayons
-			$captures = self::capture_crayons($post->ID, $post->post_content);
+			$captures = self::capture_crayons(intval($post->ID), $post->post_content);
 
 			// XXX Careful not to undo changes by other plugins
 			// XXX Must replace to remove $ for ignored Crayons
@@ -432,7 +437,7 @@ class CrayonWP {
 				foreach ($captures['capture'] as $capture_id=>$capture_content) {
 					self::$post_queue[$id_str][$capture_id] = $capture_content;
 				}
-			}
+			}	
 
 			// Search for shortcode in comments
 			if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
@@ -456,6 +461,7 @@ class CrayonWP {
 				}
 			}
 		}
+// 		exit;
 
 		if (!is_admin() && $enqueue && !self::$enqueued) {
 			// Crayons have been found and we enqueue efficiently
@@ -607,6 +613,7 @@ class CrayonWP {
 			$the_content = preg_replace_callback('#' . self::REGEX_BETWEEN_PARAGRAPH_SIMPLE . '#msi', 'CrayonWP::add_paragraphs', $the_content);
 			// Loop through Crayons
 			$post_in_queue = self::$post_queue[$post_id];
+			
 			foreach ($post_in_queue as $id=>$v) {
 				$atts = $v['atts'];
 				$content = $v['code']; // The code we replace post content with
