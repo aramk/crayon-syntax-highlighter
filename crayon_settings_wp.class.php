@@ -783,7 +783,7 @@ class Human {
 			'<a id="crayon-theme-editor-create-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Create'), '" >', crayon__('Create'), '</a></br></div>';
 		}
 		// Preview Box
-		echo '<div id="crayon-live-preview" url="', plugins_url(CRAYON_PREVIEW_PHP, __FILE__), '"></div>';
+		echo '<div id="crayon-live-preview"></div>';
 		echo '<div id="crayon-preview-info">';
 		printf(crayon__('Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked.'), '<a href="#langs">', '</a>');
 		echo '</div>';

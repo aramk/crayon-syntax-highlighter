@@ -121,12 +121,12 @@ define('CRAYON_LINE', "---------------------------------------------------------
 // Load utilities
 
 require_once (CRAYON_UTIL_PHP);
-require_once (CRAYON_EXCEPTIONS_PHP);
+//require_once (CRAYON_EXCEPTIONS_PHP);
 require_once (CRAYON_TIMER_PHP);
 require_once (CRAYON_LOG_PHP);
 
 // Turn on the error & exception handlers
-crayon_handler_on();
+//crayon_handler_on();
 
 // GLOBAL FUNCTIONS
 
