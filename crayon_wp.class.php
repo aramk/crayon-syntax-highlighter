@@ -3,7 +3,7 @@
  Plugin Name: Crayon Syntax Highlighter
 Plugin URI: http://ak.net84.net/projects/crayon-syntax-highlighter
 Description: Supports multiple languages, themes, highlighting from a URL, local file or post text.
-Version: _1.14.1_beta
+Version: _2.0_beta
 Author: Aram Kocharyan
 Author URI: http://ak.net84.net/
 Text Domain: crayon-syntax-highlighter
@@ -25,8 +25,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 require_once ('global.php');
 require_once (CRAYON_HIGHLIGHTER_PHP);
-require_once (CRAYON_TE_PHP);
-require_once (CRAYON_THEME_EDITOR_PHP);
+if (CRAYON_TAG_EDITOR) {
+	require_once (CRAYON_TE_PHP);
+}
+if (CRAYON_THEME_EDITOR) {
+	require_once (CRAYON_THEME_EDITOR_PHP);
+}
 require_once ('crayon_settings_wp.class.php');
 
 if (defined('ABSPATH')) {

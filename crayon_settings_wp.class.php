@@ -76,11 +76,7 @@ class CrayonSettingsWP {
 		wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_util_js'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_jquery_popup', plugins_url(CRAYON_JQUERY_POPUP, __FILE__), array('jquery'), $CRAYON_VERSION);
-		wp_enqueue_script('cssjson_js', plugins_url(CRAYON_CSSJSON_JS, __FILE__), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS, __FILE__), array('jquery', 'crayon_jquery_popup', 'crayon_util_js'), $CRAYON_VERSION);
-		if (CRAYON_THEME_EDITOR) {
-			wp_enqueue_script('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_JS, __FILE__), array('jquery', 'cssjson_js'), $CRAYON_VERSION);
-		}
 		// XXX Must come after
 		self::init_js_settings();
 	}
@@ -780,7 +776,8 @@ class Human {
 			// 			echo '<a id="crayon-theme-editor-button" class="button-primary crayon-admin-button" loading="'. crayon__('Loading...') .'" loaded="'. crayon__('Theme Editor') .'" >'. crayon__('Theme Editor') .'</a></br>';
 			echo '<div id="crayon-theme-editor-admin-buttons">',
 			'<a id="crayon-theme-editor-edit-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Edit'), '" >', crayon__('Edit'), '</a>',
-			'<a id="crayon-theme-editor-create-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Create'), '" >', crayon__('Create'), '</a></br></div>';
+			'<a id="crayon-theme-editor-create-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Create'), '" >', crayon__('Create'), '</a>',
+			'<a id="crayon-theme-editor-delete-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Delete'), '" >', crayon__('Delete'), '</a></br></div>';
 		}
 		// Preview Box
 		echo '<div id="crayon-live-preview"></div>';

@@ -269,7 +269,7 @@ class CrayonTagEditorWP {
 
 }
 
-if (defined('ABSPATH') /*&& is_admin()*/) {
+if (defined('ABSPATH')) {
 	add_action('init', 'CrayonTagEditorWP::init');
 }
 
