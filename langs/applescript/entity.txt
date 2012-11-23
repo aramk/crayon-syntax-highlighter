@@ -1,0 +1,152 @@
+set the clipboard to
+choose from list
+do shell script
+default answer
+display dialog
+strikethrough
+do JavaScript
+AppleScript
+choose folder
+missing value
+the clipboard
+diacriticals
+application
+punctuation
+superscript
+choose file
+quoted form
+invisibles
+delimiters
+paragraphs
+POSIX path
+POSIX file
+properties
+duplicate
+expansion
+condensed
+subscript
+underline
+wednesday
+september
+shut down
+offset of
+paragraph
+receiving
+selection
+extension
+anything
+expanded
+thursday
+saturday
+february
+november
+december
+contents
+activate
+document
+info for
+path to
+integer
+version
+hyphens
+outline
+weekday
+tuesday
+january
+october
+minutes
+folders
+restart
+buttons
+desktop
+content
+between
+against
+delete
+exists
+launch
+reopen
+saving
+number
+string
+result
+hidden
+italic
+shadow
+monday
+friday
+sunday
+august
+folder
+window
+reveal
+adding
+bounds
+close
+count
+print
+alias
+space
+plain
+false
+month
+march
+april
+quote
+hours
+weeks
+files
+eject
+sleep
+items
+make
+move
+open
+quit
+save
+idle
+list
+text
+case
+bold
+true
+june
+july
+name
+days
+file
+disk
+item
+beep
+into
+onto
+run
+tab
+ask
+yes
+mon
+tue
+wed
+thu
+fri
+sat
+sun
+jan
+feb
+mar
+apr
+may
+jun
+jul
+aug
+sep
+oct
+nov
+dec
+new
+it
+me
+pi
+no
+id
+by

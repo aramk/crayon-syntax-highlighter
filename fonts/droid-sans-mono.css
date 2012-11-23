@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'DroidSansMonoRegular';
+    src: url('droid-sans-mono/droid-sans-mono-webfont.eot');
+    src: url('droid-sans-mono/droid-sans-mono-webfont.eot?#iefix') format('embedded-opentype'),
+         url('droid-sans-mono/droid-sans-mono-webfont.woff') format('woff'),
+         url('droid-sans-mono/droid-sans-mono-webfont.ttf') format('truetype'),
+         url('droid-sans-mono/droid-sans-mono-webfont.svg#DroidSansMonoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.crayon-font-droid-sans-mono * {
+    font-family: Droid Sans Mono, 'DroidSansMonoRegular', 'Courier New', monospace !important;
+}

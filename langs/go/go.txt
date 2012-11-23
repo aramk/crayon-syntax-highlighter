@@ -1,0 +1,25 @@
+### GO LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Go
+    VERSION             1.12
+
+    COMMENT             (?default)
+    PREPROCESSOR        (?default)
+    STRING              (?default)
+    
+    STATEMENT           (?default)
+    RESERVED            (?default)|\b(?alt:reserved.txt)\b
+    TYPE                (?default)
+    MODIFIER            (?default)
+
+    ENTITY              (?default)
+    POINTER_TYPE:ENTITY (?default)
+    
+    VARIABLE            (?default)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)
+    

@@ -212,6 +212,17 @@ class CrayonLangs extends CrayonResourceCollection {
 		return $this->fetch(CrayonLangsResourceType::DELIMITER, $reload);
 	}
 	
+	public function extensions_inverted($reload = FALSE) {
+		$extensions = $this->extensions($reload);
+		$inverted = array();
+		foreach ($extensions as $lang=>$exts) {
+			foreach ($exts as $ext) {
+				$inverted[$ext] = $lang;
+			}
+		}
+		return $inverted;
+	}
+	
 	public function ids_and_aliases($reload = FALSE) {
 		$fetch = $this->fetch(CrayonLangsResourceType::ALIAS, $reload, TRUE);
 		foreach ($fetch as $id=>$alias_array) {

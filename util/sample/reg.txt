@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft]
+"Value A"="<String value data>"
+"Value B"=hex:<Binary data (as comma-delimited list of hexadecimal values)>
+"Value C"=dword:<DWORD value integer>
+"Value D"=hex(7):<Multi-string value data (as comma-delimited list of hexadecimal values)>
+"Value E"=hex(2):<Expandable string value data (as comma-delimited list of hexadecimal values)>

@@ -59,6 +59,8 @@ class CrayonSettings {
 	const NUMS = 'nums';
 	const NUMS_TOGGLE = 'nums-toggle';
 	const TRIM_WHITESPACE = 'trim-whitespace';
+	const WHITESPACE_BEFORE = 'whitespace-before';
+	const WHITESPACE_AFTER = 'whitespace-after';
 	const TAB_SIZE = 'tab-size';
 	const FALLBACK_LANG = 'fallback-lang';
 	const LOCAL_PATH = 'local-path';
@@ -93,11 +95,14 @@ class CrayonSettings {
 	const COMMENTS = 'comments';
 	const DECODE = 'decode';
 	const DECODE_ATTRIBUTES = 'decode-attributes';
-	const TINYMCE_USED = 'tinymce-used';
+// 	const TINYMCE_USED = 'tinymce-used';
 	const ATTR_SEP = 'attr-sep';
 	const EXCERPT_STRIP = 'excerpt-strip';
-//	const TINYMCE_LINE_BREAK = 'tinymce-line-break';
-//	const TINYMCE_ADD_OVERRIDDEN = 'tinymce-add-overridden';
+	const RANGES = 'ranges';
+	const TAG_EDITOR_FRONT = 'tag-editor-front';
+	const TAG_EDITOR_SETTINGS = 'tag-editor-front-hide';
+	const WRAP_TOGGLE = 'wrap-toggle';
+	const WRAP = 'wrap';
 	
 	private static $cache_array;
 	
@@ -143,7 +148,7 @@ class CrayonSettings {
 			new CrayonSetting(self::VERSION, $CRAYON_VERSION, NULL, TRUE),
 			new CrayonSetting(self::THEME, CrayonThemes::DEFAULT_THEME), 
 			new CrayonSetting(self::FONT, CrayonFonts::DEFAULT_FONT), 
-			new CrayonSetting(self::FONT_SIZE_ENABLE, FALSE),
+			new CrayonSetting(self::FONT_SIZE_ENABLE, TRUE),
 			new CrayonSetting(self::FONT_SIZE, 12), 
 			new CrayonSetting(self::PREVIEW, TRUE),
 			new CrayonSetting(self::HEIGHT_SET, FALSE), 
@@ -177,7 +182,9 @@ class CrayonSettings {
 			new CrayonSetting(self::START_LINE, 1),
 			new CrayonSetting(self::NUMS, TRUE), 
 			new CrayonSetting(self::NUMS_TOGGLE, TRUE),
-			new CrayonSetting(self::TRIM_WHITESPACE, TRUE), 
+			new CrayonSetting(self::TRIM_WHITESPACE, TRUE),
+			new CrayonSetting(self::WHITESPACE_BEFORE, 0),
+			new CrayonSetting(self::WHITESPACE_AFTER, 0),
 			new CrayonSetting(self::TAB_SIZE, 4), 
 			new CrayonSetting(self::FALLBACK_LANG, CrayonLangs::DEFAULT_LANG), 
 			new CrayonSetting(self::LOCAL_PATH, ''), 
@@ -213,11 +220,14 @@ class CrayonSettings {
 			new CrayonSetting(self::COMMENTS, TRUE),
 			new CrayonSetting(self::DECODE, FALSE),
 			new CrayonSetting(self::DECODE_ATTRIBUTES, TRUE),
-			new CrayonSetting(self::TINYMCE_USED, FALSE),
+// 			new CrayonSetting(self::TINYMCE_USED, FALSE),
 			new CrayonSetting(self::ATTR_SEP, array(':', '_')),
 			new CrayonSetting(self::EXCERPT_STRIP, FALSE),
-//			new CrayonSetting(self::TINYMCE_LINE_BREAK, array(crayon__('Before & After'), crayon__('After'), crayon__('Before'), crayon__('None'))),
-//			new CrayonSetting(self::TINYMCE_ADD_OVERRIDDEN, TRUE),
+			new CrayonSetting(self::RANGES, TRUE),
+			new CrayonSetting(self::TAG_EDITOR_FRONT, TRUE),
+			new CrayonSetting(self::TAG_EDITOR_SETTINGS, TRUE),
+			new CrayonSetting(self::WRAP_TOGGLE, TRUE),
+			new CrayonSetting(self::WRAP, FALSE)
 		);
 		
 		$this->set($settings);
@@ -390,11 +400,11 @@ class CrayonSettings {
 			return '';
 		}
 		// Validations
-		if ($name == CrayonSettings::HEIGHT || $name == CrayonSettings::WIDTH) {
-			if ($value < 0) {
-				$value = 0;
-			}
+		$pos_names = array(CrayonSettings::TAB_SIZE, CrayonSettings::HEIGHT, CrayonSettings::WIDTH, CrayonSettings::WHITESPACE_AFTER, CrayonSettings::WHITESPACE_BEFORE);
+		if ( in_array($name, $pos_names) && $value < 0 ) {
+			$value = abs($value);
 		}
+		
 		switch ($name) {
 			case CrayonSettings::LOCAL_PATH:
 				$path = parse_url($value, PHP_URL_PATH);
@@ -407,9 +417,6 @@ class CrayonSettings {
 					$path .= '/';
 				}
 				return $path;
-			case CrayonSettings::TAB_SIZE:
-				$value = abs($value);
-				break;
 			case CrayonSettings::FONT_SIZE:
 				if ($value < 1) {
 					$value = 1;

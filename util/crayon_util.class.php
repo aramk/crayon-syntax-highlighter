@@ -2,6 +2,7 @@
 
 /* Common utility functions mainly for formatting, parsing etc. */
 class CrayonUtil {
+	
 	// Used to detect touchscreen devices
 	private static $touchscreen = NULL;
 
@@ -138,6 +139,20 @@ class CrayonUtil {
 		}
 		return FALSE;
 	}
+	
+	// Creates an array out of a single range string (e.i "x-y")
+	public static function range_str_single($str) {
+		$match = preg_match('#(\d+)(?:\s*-\s*(\d+))?#', $str, $matches);
+		if ($match > 0) {
+			if (empty($matches[2])) {
+				$matches[2] = $matches[1];
+			}
+			if ($matches[1] <= $matches[2]) {
+				return array($matches[1], $matches[2]);
+			}
+		}
+		return FALSE;
+	}
 
 	// Sets a variable to a string if valid
 	public static function str(&$var, $str, $escape = TRUE) {
@@ -148,6 +163,7 @@ class CrayonUtil {
 		return FALSE;
 	}
 	
+	// Converts all special charactres to entities
 	public static function htmlentities($str) {
 		return htmlentities($str, ENT_COMPAT, 'UTF-8');
 	}
@@ -156,6 +172,7 @@ class CrayonUtil {
 		return html_entity_decode($str, ENT_NOQUOTES, 'UTF-8');
 	}
 	
+	// Converts <, >, & into entities
 	public static function htmlspecialchars($str) {
 		return htmlspecialchars($str, ENT_NOQUOTES, 'UTF-8');
 	}
@@ -176,6 +193,16 @@ class CrayonUtil {
 			return TRUE;
 		}
 		return FALSE;
+	}
+	
+	// Sets a variable to an array if valid
+	public static function set_array($var, $array, $false = FALSE) {
+		return isset($array[$var]) ? $array[$var] : $false;
+	}
+	
+	// Sets a variable to null if not set
+	public static function set_var(&$var, $false = NULL) {
+		$var = isset($var) ? $var : $false;
 	}
 	
 	// Thanks, http://www.php.net/manual/en/function.str-replace.php#102186
@@ -240,6 +267,11 @@ class CrayonUtil {
 	// Ensure all parenthesis are atomic to avoid conflicting with element matches
 	public static function esc_atomic($regex) {
 		return preg_replace('#(?<!\\\\)\((?!\?)#', '(?:', $regex);
+	}
+	
+	// Returns the current HTTP URL
+	public static function current_url() {
+		return "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	}
 
 	// Removes crayon plugin path from absolute path
@@ -322,7 +354,7 @@ class CrayonUtil {
 	}
 	
 	// Creates a unique ID from a string
-	function get_var_str() {
+	public static function get_var_str() {
 		$get_vars = array();
 		foreach ($_GET as $get=>$val) {
 			$get_vars[] = $get . '=' . $val;
@@ -331,7 +363,7 @@ class CrayonUtil {
 	}
 	
 	// Creates a unique ID from a string
-	function str_uid($str) {
+	public static function str_uid($str) {
 		$uid = 0;
 		for ($i = 1; $i < strlen($str); $i++) {
 			$uid += round(ord($str[$i]) * ($i / strlen($str)), 2) * 100;
@@ -339,6 +371,37 @@ class CrayonUtil {
 		return strval(dechex(strlen($str))).strval(dechex($uid));
 	}
 
+	// Breaks up a version string into parts
+	public static function version_parts($version) {
+		preg_match('#[\d+\.]+#msi', $version, $match);
+		if (count($match[0])) {
+			return split('\.', $match[0]);
+		} else {
+			return array();
+		}
+	}
+	
+	// Compares two version strings lexicographically
+	public static function version_compare($a, $b) {
+		$a_parts = self::version_parts($a);
+		$b_parts = self::version_parts($b);
+		return self::array_compare_lexi($a_parts, $b_parts);
+	}
+	
+	// Compares two arrays lexicographically
+	// This could be extended with a compare function argument
+	public static function array_compare_lexi($a, $b) {
+		$short = count($a) < count($b) ? $a : $b;
+		for ($i = 0; $i < count($short); $i++) {
+			if ($a[$i] > $b[$i]) {
+				return 1;
+			} else if ($a[$i] < $b[$i]) {
+				return -1;
+			}
+		}
+		return 0;
+	}
+	
 	// strpos with an array of $needles
 	public static function strposa($haystack, $needles, $insensitive = FALSE) {
 		if (is_array($needles)) {
@@ -462,5 +525,23 @@ class CrayonUtil {
 		$str = str_replace($wp_entities, $wp_replace, $str);
 		return $str;
 	}
+	
+	// Constructs an html element
+	// If $content = FALSE, then element is closed
+	public static function html_element($name, $content = NULL, $attributes = array()) {
+		$atts = self::html_attributes($attributes);
+		$tag = "<$name $atts";
+		$tag .= $content === FALSE ? '/>' : ">$content</$name>";
+		return $tag;
+	}
+	
+	public static function html_attributes($attributes, $assign = '=', $quote = '"', $glue = ' ') {
+		$atts = '';
+		foreach ($attributes as $k=>$v) {
+			$atts .= $k.$assign.$quote.$v.$quote.$glue;
+		}
+		return $atts;
+	}
+	
 }
 ?>

@@ -1,10 +1,11 @@
 === Crayon Syntax Highlighter ===
 Contributors: akarmenia
-Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=PPqWIQJ0gEZp4pVGNnYzhcwFGvx3MGwD95tvUcZgeYlHIEjBS7x6QHG34B4&dispatch=5885d80a13c0db1f8e263663d3faee8d0288a7fd2903afb85a5540fd44243d03
-Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter
+Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=4FKp23py2y97iYDcCYZ9zOSEMedaceiEpb8Pvf_qQyezHR3TQROKd_IeRfC&dispatch=5885d80a13c0db1f8e263663d3faee8d0b7e678a25d883d0fa72c947f193f8fd
+License: GPLv2 or later
+Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
-Tested up to: 3.4
-Stable tag: 1.9.10
+Tested up to: 3.4.2
+Stable tag: 1.14
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
@@ -20,6 +21,9 @@ It also supports some neat features like:
 * Toggled line numbers
 * Copy/paste code
 * Open code in a new window (popup)
+* Line wrapping
+* bbPress 2 support
+* <a href="http://bit.ly/ReRr0i" target="_blank">Converting legacy code in blog posts/comments to &lt;pre&gt;</a>
 * Remote request caching
 * <a href="http://ak.net84.net/projects/mixed-language-highlighting-in-crayon/" target="_blank">Mixed Language Highlighting</a> in a single Crayon
 * <a href="http://ak.net84.net/projects/mini-tags-in-crayon/" target="_blank">Mini Tags</a> like [php][/php]
@@ -36,6 +40,7 @@ It also supports some neat features like:
 * Toggled toolbar
 * Striped lines
 * Line marking (for important lines)
+* <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">Line ranges (showing only parts of the code)</a>
 * Starting line number (default is 1)
 * Local directory to search for local files
 * File extension detection
@@ -45,6 +50,7 @@ It also supports some neat features like:
 
 **Links**
 
+* <a href="https://github.com/aramkocharyan/crayon-syntax-highlighter" target="_blank">Beta Releases</a>
 * <a href="http://aksandbox.webege.com/?p=1" target="_blank">Live Demo</a>
 * <a href="http://ak.net84.net/projects/crayon-syntax-highlighter/" target="_blank">Short How-To</a>
 
@@ -55,26 +61,33 @@ There are many ways you can help!
 * Make a Theme and share
 * Add support for your favourite <a href="http://ak.net84.net/projects/crayon-language-file-specification/" target="_blank">Language</a>
 * Write a post about your pastel experiences and share
-* <a href="https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=PPqWIQJ0gEZp4pVGNnYzhcwFGvx3MGwD95tvUcZgeYlHIEjBS7x6QHG34B4&dispatch=5885d80a13c0db1f8e263663d3faee8d0288a7fd2903afb85a5540fd44243d03" target="_blank">Donate</a> to the project
+* <a href="https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=4FKp23py2y97iYDcCYZ9zOSEMedaceiEpb8Pvf_qQyezHR3TQROKd_IeRfC&dispatch=5885d80a13c0db1f8e263663d3faee8d0b7e678a25d883d0fa72c947f193f8fd" target="_blank">Donate</a> to the project
 
 **Supported Languages**
 
 Languages are defined in language files using Regular Expressions to capture elements.
 See the <a href="http://ak.net84.net/projects/crayon-language-file-specification/" target="_blank">Crayon Language File Specification</a> to learn how to make your own.
 
-* Default Langauge (one size fits all, highlights generic code)
+* Default Language (one size fits all, highlights generic code)
 * ABAP
 * ActionScript
 * Apache
+* AppleScript
 * Assembly (x86)
 * AutoIt
 * C
 * C#
 * C++
 * CSS
+* Delphi/Pascal (thanks to <a href="http://squashbrain.com/" target="_blank">Chris McClenny</a>)
+* Diff (thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>)
+* Erlang (thanks to <a href="http://netroid.de/" target="_blank">Daniel</a>)
+* Go
 * Haskell
 * HTML (XML/XHTML)
 * Lua
+* Microsoft Registry (thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>)
+* MIVA Script
 * Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
 * Java
 * JavaScript
@@ -87,6 +100,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Ruby
 * Scheme (thanks to <a href="https://github.com/harry75369" target="_blank">Harry75369</a>)
 * Shell (Unix)
+* Transact-SQL
 * TeX
 * Visual Basic
 * YAML
@@ -95,20 +109,25 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 **International Languages**
 
 * Chinese (Simplified, thanks to <a href="http://smerpup.com/" target="_blank">Dezhi Liu</a> & <a href="http://neverno.me/" target="_blank">Jash Yin</a>)
+* Dutch (thanks to <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>)
 * French
 * German (thanks to <a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&szlig;</a>)
-* Italian
+* Italian (thanks to <a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>)
 * Lithuanian (thanks to <a href="http://www.host1free.com" target="_blank">Vincent G</a>)
-* Spanish
+* Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
 * Japanese (thanks to <a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>)
 * Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
-* Turkish (thanks to <a href="http://kazancexpert.com" target="_blank">Hakan</a>)
+* Turkish (thanks to <a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)
 * Help from translators at improving/adding to this list greatly appreciated!
 
 **Articles**
 
 These are helpful for discovering new features.
 
+* <a href="http://ak.net84.net/crayon/internal-post-management-crayon/" target="_blank">Internal Post Management in Crayon</a>
+* <a href="http://ak.net84.net/crayon/converting-legacy-tags-to-pre/" target="_blank">Converting Legacy Tags to &lt;pre&gt;</a>
+* <a href="http://ak.net84.net/crayon/crayon-with-bbpress/" target="_blank">Crayon with bbPress</a>
+* <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">Line Ranges in Crayon</a>
 * <a href="http://ak.net84.net/projects/crayon-tag-editor/" target="_blank">Crayon Tag Editor</a>
 * <a href="http://ak.net84.net/projects/mixed-language-highlighting-in-crayon/" target="_blank">Mixed Language Highlighting in Crayon</a>
 * <a href="http://ak.net84.net/projects/mini-tags-in-crayon/" target="_blank">Mini Tags And Plain Tags In Crayon</a>
@@ -119,7 +138,10 @@ These are helpful for discovering new features.
 
 A handful of articles from others written about Crayon, thanks guys!
 
-
+* <a href="http://themesplugins.com/wordpress-Plugin/add-php-java-html-codes-posts-pages/" target="_blank">Crayon Syntax Highlighter – Plugin</a>
+* <a href="http://bbpress.org/forums/topic/state-of-syntax-highlighter-support-in-bbpress-2/" target="_blank">State of syntax highlighter support in bbPress 2</a>
+* <a href="http://www.techbrunch.fr/informations/plugin-wordpress-afficher-code-source/" target="_blank">The ultimate plugin for displaying code in WordPress (French)</a>
+* <a href="http://www.trynull.com/2012/06/15/finally-wordpress-code-syntax-highlighting-that-works/" target="_blank">Finally!‚A WordPress code syntax highlighting that works</a>
 * <a href="http://selfpwnt.com/crayon-syntax-highlighter-and-its-studly-author/" target="_blank">Crayon Syntax Highlighter (and its studly author)</a>
 * <a href="http://bit51.com/add-code-to-your-wordpress-posts-with-crayon-syntax-highlighter/" target="_blank">Add Code To Your WordPress Posts With Crayon Syntax Highlighter</a>
 * <a href="http://www.wpsquare.com/syntax-highlighter-wordpress-plugins/" target="_blank">15 Best Syntax Highlighter WordPress Plugins</a>
@@ -137,6 +159,34 @@ A handful of articles from others written about Crayon, thanks guys!
 
 * Performance, minimised resources
 * Theme Editor
+* Integrated commenting
+
+**Donations**
+
+Thanks to all those who donate to my project, your support keeps the Crayons going!
+
+* Jack Fruh, (http://basementjack.com/), USA
+* Ross Barbieri, USA
+* Will, Simple Phishing Toolkit (http://www.sptoolkit.com/), USA
+* Tricia Aanderud, USA
+* Tarek Sakr, (http://centrivision.com/), USA
+* Jeff Benshetler, (http://branchpoint.net/), USA
+* Oldrich Strachota, (http://www.strachota.net/), Czech Republic
+* Dividend Ninja, (http://dividendninja.com/), Canada
+* Chris Wiegman, (http://bit51.com/), USA
+* Sven Meier, (http://www.codesix.net/), Germany
+* Christy Wiggins, (http://www.jinxyisms.com/), USA
+* eSnipe, Inc. (http://esnipe.com/), USA (again!)
+* Aliseya Wright, (http://blog.xoxothemes.com/), USA
+* Jeremy Worboys (http://complexcompulsions.com/), Australia
+* Steve McGough, Spider Creations, LLC. (http://spidercreations.net/), USA
+* eSnipe, Inc. (http://esnipe.com/), USA
+* Gerald Drouillard (http://www.drouillard.biz/), USA
+* Greg Pettit (http://blog.monkey-house.ca/), Canada
+* Waimanu Solutions (http://daveblog.waimanu.web44.net/), USA
+* Andrew McDonnell (http://blog.oldcomputerjunk.net/), Australia
+* Perry Bonewell (http://pointatthemoon.co.uk/), United Kingdom
+* Nick Weisser (http://www.openstream.ch/), Switzerland
 
 == Installation ==
 
@@ -199,8 +249,92 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.14.1 =
+* Improved version updating
+
+= 1.14 =
+* All AJAX functions are now using the wp_ajax action and admin-ajax.php method defined here: http://codex.wordpress.org/AJAX_in_Plugins. This means Crayon no longer passes around the wp_load path and doesn't use it as a $_GET variable to load AJAX requests. The security vulnerability in 1.13 is no longer present and that code has been removed.
+* font-size and line-height has been removed from the crayon style CSS and is specified using the settings screen - the custom font size is enabled at 12px. This allows you to disable the custom font size and allow your own CSS to take control of the sizing for you. With the custom size disabled the inherited size is applied, so the code will appear at the size of its parent element based on your wordpress theme.
+* Update functionality has been improved so the CrayonWP update function is only called when an update is detected from a change in the version string, not every time you load the page! If using lower than 1.14 the custom font size setting is enabled for you, since this setting was disabled by default in previous versions.
+* Fixed a bug preventing Tag Editor from showing on the front end (related to the AJAX fix)
+* Moved global js variables to the init functions which are called on ready()
+* Fancybox now uses "fancybox" as the script name and checks if another version is already queued
+* Fixed a bug where post previews were not displaying any Crayon code
+* Fixed an issue with code wrap not reverting when disabled
+* Fixed a bug causing code wrap from distorting the style of the popup
+* Added Erlang thanks to Daniel (<a href="http://netroid.de/" target="_blank">adostudio.it</a>)
+* Fixed a bug where languages were parsed too late to pick up language modes
+* Updated German translation.
+
+= 1.13.1 =
+* Fixed an bug with file paths on Windows causing false positives for the security checks needed to load AJAX requests; thanks to Andreas Giemza.
+* Fixed a bug in list_posts.php, also thanks to Andreas.
+* Added a more spaced classic theme, mostly for testing at the moment.
+
+= 1.13 =
+* Added line wrapping.
+* Fixed a bug in converting tags.
+* Fixed a bug preventing Tag Editor from opening in HTML editor.
+* From now on, only the wp-admin will reveal your wordpress install directory.
+* The plain code now wraps based on the toggle setting.
+* Fixed a potential vulnerability when loading components through AJAX and a remote PHP file path is provided. Thanks to Charlie Eriksen via Secunia SVCRP.
+* Spanish updated
+
+= 1.12.1 =
+* Fixed a bug with bbPress preventing posts from appearing.
+
+= 1.12 =
+* Added ability to convert all legacy Crayon tags in blog posts and comments to &lt;pre&gt; tags, retaining all attributes. These are the accepted standard for the Tag Editor and they're backwards compatible (if Crayon is off or you're using another highlighter).
+* Added a button in the settings page to display the list of posts with Crayon tags
+* Fixed a bug causing posts with Crayon tags only in the comments (not the post content) to be ignored. 
+* Added Go Language
+* Added 4 new fonts suggested by <a href="http://andrealazzarotto.com/" target="_blank">Andrea Lazzarotto</a>
+* Added Ado theme thanks to <a href="http://adostudio.it/" target="_blank">adostudio.it</a>
+* Superfluous &lt;code&gt; tags wrapping around the code are removed 
+* Fixed encoding bug in rss feeds, now takes decode setting into account
+* Fixed mixed highlighting + icon from showing all the time, only shows with mixed language code
+* Fixed a bug introduced in 1.11 that caused the page to scroll up to the top on refresh
+* Updated Spanish and Turkish translations
+
+= 1.11 =
+* Added bbPress support.
+* Integrated Tag Editor with Fancybox, switched from the discontinued ThickBox, a fair amount of changes took place.
+* Crayon should now appear pretty much anywhere TinyMCE does, and this can be tweaked to add more options later.
+* Added setting to disable Tag Editor on front end, and/or disable its settings.
+* Added the ability to specify <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">line ranges</a>
+* Added Microsoft Registry language thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>
+* Added MIVA Script language
+* Added Transact-SQL language
+* Added option to add blank lines before and after the code
+* Wrote a neat GeSHi language file scraper, makes it easier to scrape GeSHi files for grouped keywords and add them as Crayon languages
+* Added improved Spanish translation (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>) 
+
+= 1.10.1 =
+* Added diff language thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>
+* Fixed CSS rule for plain-wrap
+* Added CSS class and white background to popup window
+* Removed noConflict() that was causing jQuery to fail on scripts that used $
+* Fixed an issue in the German translation causing "%gt;" (should be "&") to be recognised as an argument in printf.
+* The new method for using the wp_load.php path provided through a GET request from Crayon's js to its PHP should allow redefinitions WP directories in wp_config 
+
+= 1.10 =
+* Added Dutch translation thanks to <a href="https://twitter.com/#!/chilionsnoek">@chilionsnoek</a>.
+* Added Delphi/Pascal thanks to Chris McClenny (http://squashbrain.com/)
+* Added AppleScript
+* Language is automatically selected from the Tag Editor dropdown as you type a URL with an extension (e.g. typing "cs" would select "C#")
+* Fixed a preventing language being detected from extension  
+* Fixed a bug causing crayon:false to be ignored in the class tag
+* Cleaned up crayon's js so it's not possible to overwrite the jQuery instance
+* Fixed bug causing repeats of Crayon due to broken tags from using Mini Tags
+* Fixed isses with ignoring Mini Tags with $
+* Added Italian translation thanks to Federico Bellucci (http://www.federicobellucci.net/) 
+
+= 1.9.12 =
+* Fixed a bug caused by unescaped HTML elements in the plain code breaking the page markup, reverted to escaped and uses the new sanitisation method. 
+
 = 1.9.11 =
 * Fixed an issue with IE 8 throwing JS errors for setStyleProperty
+* Fixed yet another issue with \r\n causing incorrect span tags, refactored code.
 
 = 1.9.10 =
 * Another fix regarding the \r\n line breaks
@@ -632,25 +766,4 @@ http://wordpress.org/support/topic/plugin-crayon-syntax-highlighter-this-plugin-
 == Upgrade Notice ==
 
 Make sure to upgrade to the latest release when possible to ensure you avoid bugs others have found and enjoy new features. 
-
-== Donations ==
-
-Thanks to all those who donate to my project, your support keeps the Crayons going!
-
-* Oldrich Strachota, (http://www.strachota.net/), Czech Republic
-* Dividend Ninja, (http://dividendninja.com/), Canada
-* Chris Wiegman, (http://bit51.com/), USA
-* Sven Meier, (http://www.codesix.net/), Germany
-* Christy Wiggins, (http://www.jinxyisms.com/), USA
-* eSnipe, Inc. (http://esnipe.com/), USA (again!)
-* Aliseya Wright, (http://blog.xoxothemes.com/), USA
-* Jeremy Worboys (http://complexcompulsions.com/), Australia
-* Steve McGough, Spider Creations, LLC. (http://spidercreations.net/), USA
-* eSnipe, Inc. (http://esnipe.com/), USA
-* Gerald Drouillard (http://www.drouillard.biz/), USA
-* Greg Pettit (http://blog.monkey-house.ca/), Canada
-* Waimanu Solutions (http://daveblog.waimanu.web44.net/), USA
-* Andrew McDonnell (http://blog.oldcomputerjunk.net/), Australia
-* Perry Bonewell (http://pointatthemoon.co.uk/), United Kingdom
-* Nick Weisser (http://www.openstream.ch/), Switzerland
 

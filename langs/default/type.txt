@@ -7,6 +7,7 @@ boolean
 integer
 package
 double
+struct
 string
 signed
 object

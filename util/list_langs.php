@@ -1,4 +1,7 @@
 <?php
+
+// Depreciated since 1.14
+
 require_once (dirname(dirname(__FILE__)) . '/global.php');
 require_once (CRAYON_PARSER_PHP);
 if (($langs = CrayonParser::parse_all()) != FALSE) {

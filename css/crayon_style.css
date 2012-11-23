@@ -15,6 +15,8 @@ coloring etc.
 .crayon-syntax {
     overflow: hidden !important;
     position: relative !important;
+    direction: ltr;
+    text-align: left;
 }
 
 .crayon-syntax div {
@@ -24,6 +26,10 @@ coloring etc.
 	padding: 0px;
     margin: 0px;
     text-align: left;
+}
+
+.crayon-syntax.crayon-loading {
+	visibility: hidden;
 }
 
 .crayon-syntax,
@@ -42,18 +48,6 @@ coloring etc.
 	   http://edskes.net/ie8overflowandexpandingboxbugs.htm */
     overflow: auto;
 }
-
-/*.crayon-popup .crayon-main,
-.crayon-popup .crayon-table {
-	max-width: 0;
-	max-height: 0;
-	display: block !important;
-	opacity: 100 !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	width: 100% !important;
-	height: auto !important;
-}*/
 
 .crayon-syntax,
 .crayon-syntax .crayon-main,
@@ -100,7 +94,7 @@ coloring etc.
 
 /* Popup ========================= */
 .crayon-popup {
-	/*position: static !important;*/
+	
 }
 
 .crayon-popup .crayon-plain {
@@ -109,6 +103,9 @@ coloring etc.
 	height: 100% !important;
 	opacity: 100 !important;
 	position: relative !important;
+}
+.crayon-popup-window {
+	background: #fff;
 }
 /* End Popup ========================= */
 
@@ -182,6 +179,11 @@ coloring etc.
 /* Plain Button */
 .crayon-toolbar a.crayon-button.crayon-plain-button {
 	background-image: url('images/toolbar/plain.png');
+}
+
+/* Plain Button */
+.crayon-toolbar a.crayon-button.crayon-wrap-button {
+	background-image: url('images/toolbar/wrap.png');
 }
 
 /* Copy Button */
@@ -281,7 +283,13 @@ coloring etc.
 }
 
 .crayon-syntax .crayon-line {
-    padding: 0 5px;
+    padding: 0 5px;    
+}
+
+.crayon-syntax.crayon-wrapped .crayon-line {
+	/* width: 500px !important; */
+	white-space: pre-wrap !important;
+	/*    word-wrap:break-word !important;*/
 }
 
 .crayon-syntax-inline .crayon-pre,
@@ -300,6 +308,10 @@ coloring etc.
     font-family: Monaco, 'MonacoRegular', 'Courier New', monospace;
     font-weight: 500;
 }
+/*
+
+This has been disabled to allow more flexibility in changing font sizes.
+
 .crayon-syntax,
 .crayon-syntax .crayon-nums,
 .crayon-syntax .crayon-plain,
@@ -307,9 +319,14 @@ coloring etc.
 	font-size: 12px !important;
 	line-height: 15px !important;
 }
+*/
 .crayon-syntax .crayon-num,
 .crayon-syntax .crayon-line {
-	height: 15px;
+	/*height: 15px;*/
+}
+.crayon-syntax.crayon-wrapped .crayon-line {
+/*	min-height: 15px;*/
+	height: auto;
 }
 
 .crayon-syntax .crayon-num,
@@ -326,8 +343,16 @@ coloring etc.
 	height: inherit !important;
 }
 
-.crayon-syntax .crayon-plain-wrap {
+.crayon-syntax .crayon-toolbar .crayon-tools {
+    position: absolute;
+    right: 0;
+}
 
+.crayon-syntax .crayon-plain-wrap {
+	height: auto !important;
+	height: width !important;
+	padding: 0 !important;
+	margin: 0 !important;
 }
 
 .crayon-syntax .crayon-plain {
@@ -352,6 +377,10 @@ coloring etc.
 	resize: none;
 	color: #000;
     background: #FFF;
+}
+
+.crayon-syntax.crayon-wrapped .crayon-plain {
+	white-space: pre-wrap;
 }
 
 /* End Code ======================== */

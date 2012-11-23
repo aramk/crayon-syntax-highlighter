@@ -1,0 +1,13 @@
+### DIFF LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                diff
+    VERSION             1.10.1
+
+    RESERVED            ^([\-\*]{3}.+?)$
+    INS:STRING          ^([\+>].+?)$
+    DEL:CONSTANT        ^([\-<].+?)$
+    COMMENT             ^(@@.+?)$
+    SAME:ENTITY         ^(!.+?)$
+    SYMBOL              ^\s.+?$

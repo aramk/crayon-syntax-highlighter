@@ -71,15 +71,17 @@ define('CRAYON_JS', CRAYON_JS_DIR . 'crayon.js');
 define('CRAYON_JS_ADMIN', CRAYON_JS_DIR . 'crayon_admin.js');
 define('CRAYON_JS_UTIL', CRAYON_JS_DIR . 'util.js');
 define('CRAYON_CSSJSON_JS', CRAYON_JS_DIR . 'cssjson.js');
+define('CRAYON_JS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.pack.js');
+define('CRAYON_CSS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.css');
 // TODO rename TE
 define('CRAYON_TE_JS', 'crayon_te.js');
 define('CRAYON_TE_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.class.php');
 // TODO Fix these
-define('CRAYON_TE_CONTENT_PHP', 'crayon_te_content.php');
 define('CRAYON_TINYMCE_JS', 'crayon_tinymce.js');
 define('CRAYON_QUICKTAGS_JS', 'crayon_qt.js');
-define('CRAYON_STYLE', CRAYON_CSS_DIR . 'style.css');
+define('CRAYON_STYLE', CRAYON_CSS_DIR . 'crayon_style.css');
 define('CRAYON_STYLE_ADMIN', CRAYON_CSS_DIR . 'admin_style.css');
+define('CRAYON_STYLE_GLOBAL', CRAYON_CSS_DIR . 'global_style.css');
 define('CRAYON_LOGO', CRAYON_CSS_DIR . 'images/crayon_logo.png');
 define('CRAYON_DONATE_BUTTON', CRAYON_CSS_DIR . 'images/donate.png');
 define('CRAYON_THEME_EDITOR_PHP', CRAYON_THEME_EDITOR_PATH . 'theme_editor.php');
@@ -101,9 +103,6 @@ define('CRAYON_UTIL_PHP', CRAYON_UTIL_DIR . 'crayon_util.class.php');
 define('CRAYON_EXCEPTIONS_PHP', CRAYON_UTIL_DIR . 'exceptions.php');
 define('CRAYON_TIMER_PHP', CRAYON_UTIL_DIR . 'crayon_timer.class.php');
 define('CRAYON_LOG_PHP', CRAYON_UTIL_DIR . 'crayon_log.class.php');
-define('CRAYON_LIST_LANGS_PHP', CRAYON_UTIL_DIR . 'list_langs.php');
-define('CRAYON_PREVIEW_PHP', CRAYON_UTIL_DIR . 'preview.php');
-define('CRAYON_AJAX_PHP', CRAYON_UTIL_DIR . 'ajax.php');
 
 // Script time
 
@@ -122,12 +121,12 @@ define('CRAYON_LINE', "---------------------------------------------------------
 // Load utilities
 
 require_once (CRAYON_UTIL_PHP);
-require_once (CRAYON_EXCEPTIONS_PHP);
+//require_once (CRAYON_EXCEPTIONS_PHP);
 require_once (CRAYON_TIMER_PHP);
 require_once (CRAYON_LOG_PHP);
 
 // Turn on the error & exception handlers
-crayon_handler_on();
+//crayon_handler_on();
 
 // GLOBAL FUNCTIONS
 
@@ -182,6 +181,24 @@ function crayon_set_info_key($key, $array, &$info) {
 
 function crayon_vargs(&$var, $default) {
 	$var = isset($var) ? $var: $default;
+}
+
+// Checks if the input is a valid PHP file and matches the $valid filename
+function crayon_is_php_file($filepath, $valid) {
+	$path = pathinfo(crayon_pf($filepath));
+	return is_file($filepath) && $path['extension'] === 'php' && $path['filename'] === $valid;
+}
+
+// Stops the script if crayon_is_php_file() returns false or a remote path is given
+function crayon_die_if_not_php($filepath, $valid) {
+	if (!crayon_is_php_file($filepath, $valid) || crayon_is_path_url($filepath)) {
+		die("[ERROR] '$filepath' is not a valid PHP file for '$valid'");
+	}
+}
+
+function crayon_is_path_url($path) {
+	$parts = parse_url($path);
+	return isset($parts['scheme']) && strlen($parts['scheme']) > 1;
 }
 
 // LANGUAGE TRANSLATION FUNCTIONS

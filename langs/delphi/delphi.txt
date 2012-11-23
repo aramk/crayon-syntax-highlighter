@@ -1,0 +1,23 @@
+### DELPHI LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Delphi/Pascal
+    VERSION             1.0.0
+
+    COMMENT             (?default)
+    STRING              (?default)
+    
+    NOTATION            \@[\w-]+
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            (?default)|\b(?alt:reserved.txt)\b
+    TYPE                (?default)|\b(?alt:type.txt)\b
+    MODIFIER            \b(?alt:modifier.txt)\b
+    
+    ENTITY              (?default)|\b[a-z_]\w+\s*\|\s*[a-z_]\w+\b\s+(?=\b[a-z_]\w+\b)
+    VARIABLE            (?default)
+    GENERIC:ENTITY      <\w+>
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            \b(?alt:operator.txt)\b
+    SYMBOL              (?default)

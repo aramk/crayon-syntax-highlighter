@@ -1,0 +1,172 @@
+/*
+Theme Name: Ado
+Description: Classic extended. 
+Version: 1
+Author: Andrea Dell'Orco
+Author URI: http://www.adostudio.it/
+*/
+
+/* Code Style ====================== */
+.crayon-theme-ado {
+    border: 1px #999 solid !important;
+    text-shadow: none !important;
+    background: #fdfdfd !important;
+}
+
+/* Inline Style */
+.crayon-theme-ado-inline {
+	border: 1px solid #ddd !important;
+	background: #fafafa !important;
+}
+
+/* Line Numbers */
+.crayon-theme-ado .crayon-nums {
+	background: #333333 !important;
+	color: #DEDEDE !important;
+	border-right: 1px solid #202020 !important;
+}
+
+/* Selection */
+.crayon-theme-ado .crayon-code::selection,.crayon-theme-ado .crayon-code *::selection {
+    background: #BBEEDA !important;
+    color: #269B6C !important;
+}
+.crayon-theme-ado::selection,
+.crayon-theme-ado .crayon-toolbar::selection,
+.crayon-theme-ado .crayon-toolbar *::selection,
+.crayon-theme-ado .crayon-info::selection,
+.crayon-theme-ado .crayon-info *::selection,
+.crayon-theme-ado .crayon-nums::selection,
+.crayon-theme-ado .crayon-nums *::selection {
+    background: transparent !important;
+}
+
+/* Striped Lines */
+.crayon-theme-ado .crayon-striped-line {
+    background: #f7f7f7 !important;
+    border: 1px #CCC !important;
+}
+.crayon-theme-ado .crayon-striped-num {
+    background: #5B5B5B !important;
+    border: 1px #333 !important;
+    color: #fff !important;
+}
+
+/* Marked Lines */
+.crayon-theme-ado .crayon-marked-line {
+    background: #C7F1ED !important;
+    border: 1px #9AE7DF !important;
+}
+.crayon-theme-ado .crayon-marked-num {
+    color: #82DFC4 !important;
+	background: #333333 !important;	border-right: 1px solid #202020 !important;
+}
+.crayon-theme-ado .crayon-marked-line.crayon-striped-line {
+    background: #B7EEE9 !important;
+}
+.crayon-theme-ado .crayon-marked-num.crayon-striped-num {
+    background: #5B5B5B !important;
+    color: #82DFC4 !important;
+}
+.crayon-theme-ado .crayon-marked-line.crayon-top,
+.crayon-theme-ado .crayon-marked-num.crayon-top {
+    border-top-style: solid !important;
+}
+.crayon-theme-ado .crayon-marked-line.crayon-bottom,
+.crayon-theme-ado .crayon-marked-num.crayon-bottom {
+    border-bottom-style: solid !important;
+}
+
+/* Info */
+.crayon-theme-ado .crayon-info {
+    background: #E8E8E8 !important;
+    border-bottom: 1px #888888 solid !important;
+    color: #595959;
+}
+
+/* Toolbar */
+.crayon-theme-ado .crayon-toolbar {
+    background: #DDD !important;
+    border-bottom: 1px #BBB solid !important;
+}
+.crayon-theme-ado .crayon-toolbar > div {
+    float: left !important;
+}
+.crayon-theme-ado .crayon-toolbar .crayon-tools {
+    float: right !important;
+}
+.crayon-theme-ado .crayon-title {
+    color: #333 !important;
+}
+.crayon-theme-ado .crayon-language {
+    color: #999 !important;
+}
+
+/* Buttons */
+.crayon-theme-ado a.crayon-button {
+	background-color: transparent;
+}
+.crayon-theme-ado a.crayon-button:hover,
+.crayon-theme-ado a.crayon-button.crayon-pressed:hover {
+	background-color: #F2F2F2;
+    color: #666;
+}
+/* :active MUST come after :hover */
+.crayon-theme-ado a.crayon-button.crayon-pressed,
+.crayon-theme-ado a.crayon-button.crayon-pressed:active,
+.crayon-theme-ado a.crayon-button:active {
+	background-color: #BBB;
+    color: #FFF;
+}
+
+/* End Code Style ================== */
+
+/* Syntax Highlighting ============= */
+.crayon-theme-ado .crayon-pre .c {
+    color: #ff8000 !important;
+}
+.crayon-theme-ado .crayon-pre .p {
+    color: #b85c00 !important;
+}
+.crayon-theme-ado .crayon-pre .s {
+    color: #008000 !important;
+}
+.crayon-theme-ado .crayon-pre .k,
+.crayon-theme-ado .crayon-pre .st,
+.crayon-theme-ado .crayon-pre .r,
+.crayon-theme-ado .crayon-pre .t,
+.crayon-theme-ado .crayon-pre .m {
+    color: #800080 !important;
+}
+.crayon-theme-ado .crayon-pre .ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-ado .crayon-pre .i {
+    color: #000 !important;
+}
+.crayon-theme-ado .crayon-pre .v {
+    color: #002D7A !important;
+}
+.crayon-theme-ado .crayon-pre .e {
+	color: #004ed0 !important;
+}
+.crayon-theme-ado .crayon-pre .cn {
+    color: #ce0000 !important;
+}
+.crayon-theme-ado .crayon-pre .o,
+.crayon-theme-ado .crayon-pre .h {
+    color: #006fe0 !important;
+}
+.crayon-theme-ado .crayon-pre .sy {
+	color: #333 !important;
+}
+.crayon-theme-ado .crayon-pre .n {
+	color: #666 !important;
+	font-style: italic;
+}
+.crayon-theme-ado .crayon-pre .f {
+	color: #999 !important;
+}
+/* End Syntax Highlighting ========= */
+
+/* End Classic Scheme ============================================ *//* ADO Specific */.crayon-syntax {	-moz-border-radius: 5px;	-webkit-border-radius: 5px;	border-radius: 5px;}.crayon-table{	-moz-border-radius: 5px;	-webkit-border-radius: 5px;	border-radius: 5px;	overflow: hidden!important;	}

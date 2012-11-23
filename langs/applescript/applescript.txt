@@ -1,0 +1,19 @@
+### APPLESCRIPT LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                AppleScript
+    VERSION             1.9.13
+
+    COMMENT             ((--|#).*?$)|(\(\*.*?\*\))
+    STRING              (?default)
+    
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            \b(?alt:reserved.txt)\b
+    
+	CONSTANT            (?default)
+    ENTITY              \b(?alt:entity.txt)\b
+    
+    IDENTIFIER          (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)
