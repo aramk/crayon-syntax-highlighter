@@ -24,8 +24,29 @@ RegExp.prototype.execAll = function(string) {
 	return matches;
 };
 
+// Escape regex chars with \
+RegExp.prototype.escape = function(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
 String.prototype.sliceReplace = function(start, end, repl) {
 	return this.substring(0, start) + repl + this.substring(end);
+};
+
+String.prototype.escape = function() {
+    var tagsToReplace = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;'
+    };
+    return this.replace(/[&<>]/g, function(tag) {
+        return tagsToReplace[tag] || tag;
+    });
+};
+
+String.prototype.linkify = function(target) {
+    target = typeof target != 'undefined' ? target : '';
+    return this.replace(/(http(s)?:\/\/(\S)+)/gmi, '<a href="$1" target="' + target + '">$1</a>');
 };
 
 function console_log(string) {

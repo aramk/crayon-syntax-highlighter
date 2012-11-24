@@ -251,6 +251,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 2.0.0 =
 * Improved version updating
+* Fixed a bug preventing max/min-height/width from taking effect from the Tag Editor
+* Fixed a bug causing a width discrepancy
 
 = 1.14 =
 * All AJAX functions are now using the wp_ajax action and admin-ajax.php method defined here: http://codex.wordpress.org/AJAX_in_Plugins. This means Crayon no longer passes around the wp_load path and doesn't use it as a $_GET variable to load AJAX requests. The security vulnerability in 1.13 is no longer present and that code has been removed.

@@ -222,7 +222,6 @@ class CrayonFormatter {
 		// Determine whether to print language
 		$print_lang = '';
 		// XXX Use for printing the regex
-//		var_dump($hl->language()->regex()); exit;
 		if ($hl->language()) {
 			$lang = $hl->language()->name();
 			switch ($hl->setting_index(CrayonSettings::SHOW_LANG)) {

@@ -4,9 +4,12 @@
 
     CrayonSyntaxThemeEditor = new function () {
 
+        var base = this;
+
+        var adminSettings = CrayonThemeEditorSettings;
         var settings = CrayonThemeEditorSettings;
 
-        this.init = function (callback, crayon) {
+        base.init = function (callback, crayon) {
 
             console_log(CrayonThemeEditorSettings);
 
@@ -17,7 +20,7 @@
             CrayonSyntax.process(crayon, true);
             preview.html(crayon);
 
-            jQuery.get(settings.themes_url + settings.curr_theme + '/' + settings.curr_theme + '.css', function (css) {
+            jQuery.get(adminSettings.themes_url + adminSettings.curr_theme + '/' + adminSettings.curr_theme + '.css', function (css) {
                 console_log(css);
 
                 var json = CSSJSON.toJSON(css, true);
@@ -26,7 +29,12 @@
 
             callback();
 
+            base.initUI();
         };
+
+        base.initUI = function() {
+            $('#crayon-editor-controls').tabs();
+        }
 
     };
 

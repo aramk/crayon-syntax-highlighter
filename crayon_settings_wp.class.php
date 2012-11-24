@@ -19,6 +19,7 @@ class CrayonSettingsWP {
 	private static $cache = NULL;
 	// Array of settings to pass to js
 	private static $js_settings = NULL;
+	private static $admin_js_settings = NULL;
 	private static $admin_page = '';
 	private static $is_fully_loaded = FALSE;
 
@@ -79,6 +80,7 @@ class CrayonSettingsWP {
 		wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS, __FILE__), array('jquery', 'crayon_jquery_popup', 'crayon_util_js'), $CRAYON_VERSION);
 		// XXX Must come after
 		self::init_js_settings();
+		self::init_admin_js_settings();
 	}
 
 	public static function init_js_settings() {
@@ -97,6 +99,21 @@ class CrayonSettingsWP {
 			);
 		}
 		wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
+	}
+	
+	public static function init_admin_js_settings() {
+		if (!self::$admin_js_settings) {
+			$themes_ = CrayonResources::themes()->get();
+			$themes = array();
+			foreach ($themes_ as $theme) {
+				$themes[$theme->id()] = $theme->name();
+			}
+			self::$admin_js_settings = array(
+					'themes' => $themes,
+					'themes_url' => plugins_url(CRAYON_THEME_DIR, __FILE__)
+			);
+		}
+		wp_localize_script('crayon_admin_js', 'CrayonAdminSettings', self::$admin_js_settings);
 	}
 
 	public static function settings() {
@@ -767,7 +784,7 @@ class Human {
 			$db_theme = '';
 		}
 		$themes_array = CrayonResources::themes()->get_array();
-		self::dropdown(CrayonSettings::THEME,FALSE,TRUE,TRUE,$themes_array);
+		self::dropdown(CrayonSettings::THEME,FALSE,FALSE,TRUE,$themes_array);
 		if ($editor) {
 			return;
 		}
@@ -780,12 +797,26 @@ class Human {
 			'<a id="crayon-theme-editor-delete-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Delete'), '" >', crayon__('Delete'), '</a></br></div>';
 		}
 		// Preview Box
-		echo '<div id="crayon-live-preview"></div>';
-		echo '<div id="crayon-preview-info">';
-		printf(crayon__('Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked.'), '<a href="#langs">', '</a>');
-		echo '</div>';
+		?>
+		<table id="crayon-theme-panel">
+			<tr>
+				<td class="left">
+					<table id="crayon-theme-info">
+						<tr><td class="desc" colspan="2"></td></tr>
+						<tr><td class="version field">Version</td><td></td></tr>
+						<tr><td class="author field">Author</td><td></td></tr>
+					</table>
+				</td>
+				<td class="right">
+					<div id="crayon-live-preview"></div>
+					<div id="crayon-preview-info">
+						<?php printf(crayon__('Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked.'), '<a href="#langs">', '</a>'); ?>
+					</div>
+				</td>
+			<tr>
+		</table>
+		<?php
 		// Preview checkbox
-		echo '<div style="height:10px;"></div>';
 		self::checkbox(array(CrayonSettings::PREVIEW, crayon__('Enable Live Preview')), FALSE, FALSE);
 		echo '</select><span class="crayon-span-10"></span>';
 		self::checkbox(array(CrayonSettings::ENQUEUE_THEMES, crayon__('Enqueue themes in the header (more efficient).') . ' <a href="http://bit.ly/zTUAQV" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
@@ -978,9 +1009,6 @@ class Human {
 		global $CRAYON_DONATE;
 		if ($file == CrayonWP::basename()) {
 			$meta[] = '<a href="options-general.php?page=crayon_settings">' . crayon__('Settings') . '</a>';
-			if (CRAYON_THEME_EDITOR) {
-				$meta[] = '<a href="options-general.php?page=crayon_settings&subpage=theme_editor">' . crayon__('Theme Editor') . '</a>';
-			}
 			$meta[] = '<a href="'.$CRAYON_DONATE.'" target="_blank">' . crayon__('Donate') . '</a>';
 		}
 		return $meta;

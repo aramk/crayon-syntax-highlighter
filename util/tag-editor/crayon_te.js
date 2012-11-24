@@ -408,7 +408,7 @@
 			// Spacing only for <pre>
 			var br_before = br_after = '';
 			if (!editing) {
-				// Don't add spaces if editting
+				// Don't add spaces if editing
 				if (!is_inline) {
 					if (editor_name == 'html') {
 						br_after = br_before = ' \n'; 
