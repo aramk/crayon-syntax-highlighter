@@ -3,7 +3,6 @@
 // TODO this needs lots of work! remove the old wp_load procedure
 
 require_once('../../crayon_wp.class.php');
-
 $theme = CrayonResources::themes()->get_default();
 $editing = false;
 

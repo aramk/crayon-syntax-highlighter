@@ -339,7 +339,7 @@
                         var val = fields[field];
                         if (match) {
                             if (val != null) {
-                                val.html(match[1].escape().linkify());
+                                val.html(match[1].escape().linkify('_blank'));
                             } else if (field == 'Author URI') {
                                 theme_author.html('<a href="' + match[1] + '" target="_blank">' + theme_author.text() + '</a>');
                             }
@@ -362,7 +362,7 @@
 
             // Load theme editor
             $.get(editor_url + '?curr_theme='
-                + CrayonThemeEditorSettings.curr_theme + '&editing='
+                + adminSettings.curr_theme + '&editing='
                 + editing, function (data) {
                 theme_editor_wrap.html(data);
                 // Load preview into editor
