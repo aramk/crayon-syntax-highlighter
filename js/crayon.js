@@ -407,9 +407,7 @@
 				repl = repl.replace(/\bwidth\s*:[^;]+;/gmi, '');
 				string = string.sliceReplace(match.index, match.index + match[0].length, 'style="' + repl + '"');
 			}
-			
-			console.log(string);
-			
+
 			return string;
 		};
 		
