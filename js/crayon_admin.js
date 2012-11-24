@@ -26,25 +26,13 @@
 
         var settings = null;
         var adminSettings = null;
-
-        base.cssElem = function (id) {
-            return $(base.addPrefixToID(id));
-        };
-
-        // Used in Tag Editor
-        base.addPrefixToID = function (id) {
-            return id.replace(/^([#.])?(.*)$/, '$1' + settings.prefix + '$2');
-        };
-
-        base.removePrefixFromID = function (id) {
-            var re = new RegExp('^[#.]?' + settings.prefix, 'i');
-            return id.replace(re, '');
-        };
+        var util = null;
 
         base.init = function () {
             console_log('admin init');
             settings = CrayonSyntaxSettings;
             adminSettings = CrayonAdminSettings;
+            util = CrayonUtil;
 
             // Wraps
             main_wrap = $('#crayon-main-wrap');
@@ -77,13 +65,13 @@
             help = $('.crayon-help-close');
             help.click(function () {
                 $('.crayon-help').hide();
-                $.get(CrayonSyntaxSettings.ajaxurl, {action : 'crayon-ajax', 'hide-help' : 1});
+                $.get(settings.ajaxurl, {action : 'crayon-ajax', 'hide-help' : 1});
             });
 
             // Preview
             preview = $('#crayon-live-preview');
             preview_info = $('#crayon-preview-info');
-            preview_cbox = base.cssElem('#preview');
+            preview_cbox = util.cssElem('#preview');
             if (preview.length != 0) {
                 // Preview not needed in Tag Editor
                 preview_register();
@@ -96,13 +84,13 @@
             }
 
             $('#show-posts').click(function () {
-                $.get(CrayonSyntaxSettings.ajaxurl, {action : 'crayon-show-posts'}, function (data) {
+                $.get(settings.ajaxurl, {action : 'crayon-show-posts'}, function (data) {
                     $('#crayon-subsection-posts-info').html(data);
                 });
             });
 
             $('#show-langs').click(function () {
-                $.get(CrayonSyntaxSettings.ajaxurl, {action : 'crayon-show-langs'}, function (data) {
+                $.get(settings.ajaxurl, {action : 'crayon-show-langs'}, function (data) {
                     $('#lang-info').hide();
                     $('#crayon-subsection-langs-info').html(data);
                 });
@@ -122,7 +110,7 @@
             });
 
             // Alignment
-            align_drop = base.cssElem('#h-align');
+            align_drop = util.cssElem('#h-align');
             float = $('#crayon-subsection-float');
             align_drop.change(function () {
                 float_toggle();
@@ -132,8 +120,8 @@
             });
 
             // Custom Error
-            msg_cbox = base.cssElem('#error-msg-show');
-            msg = base.cssElem('#error-msg');
+            msg_cbox = util.cssElem('#error-msg-show');
+            msg = util.cssElem('#error-msg');
             toggle_error();
             msg_cbox.change(function () {
                 toggle_error();
@@ -141,14 +129,14 @@
 
             // Toolbar
             overlay = $('#crayon-subsection-toolbar');
-            toolbar = base.cssElem('#toolbar');
+            toolbar = util.cssElem('#toolbar');
             toggle_toolbar();
             toolbar.change(function () {
                 toggle_toolbar();
             });
 
             // Copy
-            plain = base.cssElem('#plain');
+            plain = util.cssElem('#plain');
             copy = $('#crayon-subsection-copy-check');
             plain.change(function () {
                 if (plain.is(':checked')) {
@@ -198,7 +186,7 @@
             }
 
             // Load Preview
-            $.get(CrayonSyntaxSettings.ajaxurl, getVars, function (data) {
+            $.get(settings.ajaxurl, getVars, function (data) {
                 preview.html(data);
                 // Important! Calls the crayon.js init
                 CrayonSyntax.init();
@@ -279,7 +267,7 @@
                 var obj = $(this);
                 var id = obj.attr('id');
                 // XXX Remove prefix
-                id = base.removePrefixFromID(id);
+                id = util.removePrefixFromID(id);
                 preview_obj_names[i] = id;
                 preview_objs[i] = obj;
                 // To capture key up events when typing

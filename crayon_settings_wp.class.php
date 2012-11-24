@@ -72,15 +72,21 @@ class CrayonSettingsWP {
 		wp_enqueue_style('crayon_theme_editor_style', plugins_url(CRAYON_THEME_EDITOR_STYLE, __FILE__), array(), $CRAYON_VERSION);
 	}
 
-	public static function admin_scripts() {
+	public static function admin_base_scripts() {
 		global $CRAYON_VERSION;
 		wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
-		wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_util_js'), $CRAYON_VERSION);
+		self::init_js_settings();
+		if (is_admin()) {
+			wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_util_js'), $CRAYON_VERSION);
+			self::init_admin_js_settings();
+		}
+	}
+	
+	public static function admin_scripts() {
+		global $CRAYON_VERSION;
+		self::admin_base_scripts();
 		wp_enqueue_script('crayon_jquery_popup', plugins_url(CRAYON_JQUERY_POPUP, __FILE__), array('jquery'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS, __FILE__), array('jquery', 'crayon_jquery_popup', 'crayon_util_js'), $CRAYON_VERSION);
-		// XXX Must come after
-		self::init_js_settings();
-		self::init_admin_js_settings();
 	}
 
 	public static function init_js_settings() {
@@ -97,8 +103,8 @@ class CrayonSettingsWP {
 					'special' => CrayonSettings::SETTING_SPECIAL,
 					'orig_value' => CrayonSettings::SETTING_ORIG_VALUE
 			);
+			wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
 		}
-		wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
 	}
 	
 	public static function init_admin_js_settings() {
@@ -112,8 +118,8 @@ class CrayonSettingsWP {
 					'themes' => $themes,
 					'themes_url' => plugins_url(CRAYON_THEME_DIR, __FILE__)
 			);
+			wp_localize_script('crayon_admin_js', 'CrayonAdminSettings', self::$admin_js_settings);
 		}
-		wp_localize_script('crayon_admin_js', 'CrayonAdminSettings', self::$admin_js_settings);
 	}
 
 	public static function settings() {

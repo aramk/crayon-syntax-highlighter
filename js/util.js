@@ -3,6 +3,30 @@ var jQueryCrayon = jQuery;
 
 var CRAYON_DEBUG = false;
 
+(function ($) {
+	
+	CrayonUtil = new function() {
+		
+		var base = this;
+		var settings = CrayonSyntaxSettings;
+		
+		base.addPrefixToID = function (id) {
+	        return id.replace(/^([#.])?(.*)$/, '$1' + settings.prefix + '$2');
+	    };
+	    
+	    base.removePrefixFromID = function(id) {
+	        var re = new RegExp('^[#.]?' + settings.prefix, 'i');
+	        return id.replace(re, '');
+	    };
+	    
+	    base.cssElem = function (id) {
+	        return $(base.addPrefixToID(id));
+	    };
+	    
+	};
+
+})(jQueryCrayon);
+
 if (typeof CrayonTagEditorSettings == 'undefined') {
 	// WP may have already added it
 	CrayonTagEditorSettings = {};
