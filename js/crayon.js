@@ -394,16 +394,12 @@
 
         var remove_css_inline = function(string) {
             var reStyle = /style\s*=\s*"([^"]+)"/gmi;
-
             var match = null;
             while ((match = reStyle.exec(string)) != null) {
                 var repl = match[1];
                 repl = repl.replace(/\bwidth\s*:[^;]+;/gmi, '');
                 string = string.sliceReplace(match.index, match.index + match[0].length, 'style="' + repl + '"');
             }
-
-            console.log(string);
-
             return string;
         };
 
