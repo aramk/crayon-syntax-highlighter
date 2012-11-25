@@ -57,9 +57,10 @@ class CrayonWP {
 	private static $wp_head = FALSE;
 	// Used to keep Crayon IDs
 	private static $next_id = 0;
-	// String to store the regex for capturing mini tags
+	// String to store the regex for capturing tags
 	private static $alias_regex = '';
 	private static $tags_regex = '';
+	private static $tags_regex_legacy = '';
 	private static $tag_regexes = array();
 	// Defined constants used in bitwise flags
 	private static $tag_types = array(
@@ -467,7 +468,6 @@ class CrayonWP {
 				}
 			}
 		}
-// 		exit;
 
 		if (!is_admin() && $enqueue && !self::$enqueued) {
 			// Crayons have been found and we enqueue efficiently
@@ -499,10 +499,16 @@ class CrayonWP {
 		self::$enqueued = TRUE;
 	}
 
-	private static function init_tags_regex($force = FALSE, $flags = NULL) {
+	private static function init_tags_regex($force = FALSE, $flags = NULL, &$tags_regex = NULL) {
 		self::init_tag_bits();
+		
+		// Default output
+		if ($tags_regex === NULL) {
+			$tags_regex = &self::$tags_regex;
+		}
+		
 
-		if ($force || self::$tags_regex == "") {
+		if ($force || $tags_regex === "") {
 			// Check which tags are in $flags. If it's NULL, then all flags are true.
 			$in_flag = self::in_flag($flags);
 
@@ -520,7 +526,7 @@ class CrayonWP {
 			}
 
 			// Add other tags
-			self::$tags_regex = '#(?<!\$)(?:(\s*\[\s*crayon\b)';
+			$tags_regex = '#(?<!\$)(?:(\s*\[\s*crayon\b)';
 
 			$tag_regexes = array(
 					CrayonSettings::CAPTURE_MINI_TAG => '([\[]\s*('.self::$alias_regex.')\b)',
@@ -532,28 +538,10 @@ class CrayonWP {
 
 			foreach ($tag_regexes as $tag=>$regex) {
 				if ($in_flag[$tag] && CrayonGlobalSettings::val($tag)) {
-					self::$tags_regex .= '|' . $regex;
+					$tags_regex .= '|' . $regex;
 				}
 			}
-			self::$tags_regex .= ')#msi';
-
-
-			// 			if (CrayonGlobalSettings::val(CrayonSettings::CAPTURE_MINI_TAG)) {
-			// 				self::$tags_regex .= '|([\[]\s*('.self::$alias_regex.'))';
-			// 			}
-			// 			if (CrayonGlobalSettings::val(CrayonSettings::CAPTURE_PRE)) {
-			// 				self::$tags_regex .= '|(<\s*pre\b)';
-			// 			}
-			// 			if (CrayonGlobalSettings::val(CrayonSettings::INLINE_TAG)) {
-			// 				self::$tags_regex .= '|('.self::REGEX_INLINE_CLASS.')'.'|([\{]\s*('.self::$alias_regex.'))';
-			// 			}
-			// 			if (CrayonGlobalSettings::val(CrayonSettings::PLAIN_TAG)) {
-			// 				self::$tags_regex .= '|(\s*\[\s*plain\b)';
-			// 			}
-			// 			if (CrayonGlobalSettings::val(CrayonSettings::BACKQUOTE)) {
-			// 				self::$tags_regex .= '|(`[^`]*`)';
-			// 			}
-			// 			self::$tags_regex .= '#msi';
+			$tags_regex .= ')#msi';
 		}
 	}
 
@@ -585,10 +573,13 @@ class CrayonWP {
 	}
 	
 	private static function init_legacy_tag_bits() {
-		if (self::$legacy_flags == NULL) {
+		if (self::$legacy_flags === NULL) {
 			self::$legacy_flags = self::tag_bit(CrayonSettings::CAPTURE_MINI_TAG) |
 			self::tag_bit(CrayonSettings::INLINE_TAG) |
 			self::tag_bit(CrayonSettings::PLAIN_TAG);
+		}
+		if (self::$tags_regex_legacy === "") {
+			self::init_tags_regex(TRUE, self::$legacy_flags, self::$tags_regex_legacy);
 		}
 	}
 
@@ -835,34 +826,33 @@ class CrayonWP {
 	}
 	
 	public static function refresh_post($post, $refresh_legacy = TRUE) {
-		if (CrayonWP::scan_post(TRUE, $post)) {
-			CrayonSettingsWP::add_post($post->ID);
+		$postID = $post->ID;
+		if (CrayonWP::scan_post($post)) {
+			CrayonSettingsWP::add_post($postID);
 			if ($refresh_legacy) {
 				if (self::scan_legacy_post($post)) {
-					CrayonSettingsWP::add_legacy_post($post->ID);
+					CrayonSettingsWP::add_legacy_post($postID);
 				} else {
-					CrayonSettingsWP::remove_legacy_post($post->ID);
+					CrayonSettingsWP::remove_legacy_post($postID);
 				}
 			}
 		} else {
-			CrayonSettingsWP::remove_post($post->ID);
-			CrayonSettingsWP::remove_legacy_post($post->ID);
+			CrayonSettingsWP::remove_post($postID);
+			CrayonSettingsWP::remove_legacy_post($postID);
 		}
 	}
 	
 	public static function refresh_posts() {
 		CrayonSettingsWP::remove_posts();
 		CrayonSettingsWP::remove_legacy_posts();
-// 		var_dump(CrayonSettingsWP::load_legacy_posts());
-// 		var_dump(CrayonSettingsWP::load_posts());
-// 		foreach (CrayonWP::get_posts() as $post) {
-// 			self::refresh_post($post);
-// 		}
+		foreach (CrayonWP::get_posts() as $post) {
+			self::refresh_post($post);
+		}
 	}
 
 	public static function save_comment($id, $is_spam = NULL, $comment = NULL) {
 		self::init_tags_regex();
-		if ($comment == NULL) {
+		if ($comment === NULL) {
 			$comment = get_comment($id);
 		}
 		$content = $comment->comment_content;
@@ -922,14 +912,24 @@ class CrayonWP {
 	 * Return an array of post IDs where crayons occur.
 	 * Comments are ignored by default.
 	 */
-	public static function scan_posts($init_regex = TRUE, $check_comments = FALSE) {
+	public static function scan_posts($check_comments = FALSE) {
+		$crayon_posts = array();
+		foreach (self::get_posts() as $post) {
+			if (self::scan_post($post)) {
+				$crayon_posts[] = $post->ID;
+			}
+		}
+		return $crayon_posts;
+	}
+	
+	public static function scan_legacy_posts($init_regex = TRUE, $check_comments = FALSE) {
 		if ($init_regex) {
 			// We can skip this if needed
 			self::init_tags_regex();
 		}
 		$crayon_posts = array();
 		foreach (self::get_posts() as $post) {
-			if (self::scan_post($init_regex, $post)) {
+			if (self::scan_legacy_post($post)) { // TODO this part is different
 				$crayon_posts[] = $post->ID;
 			}
 		}
@@ -939,19 +939,21 @@ class CrayonWP {
 	/**
 	 * Returns TRUE if a given post contains a Crayon tag
 	 */
-	public static function scan_post($init_regex = TRUE, $post, $scan_comments = TRUE) {
-		if ($init_regex) {
+	public static function scan_post($post, $scan_comments = TRUE, $tags_regex = NULL) {
+		if ($tags_regex === NULL) {
 			self::init_tags_regex();
+			$tags_regex = self::$tags_regex;
 		}
+		
 		$id = $post->ID;
-		if (preg_match(self::$tags_regex, $post->post_content)) {
+		if (preg_match($tags_regex, $post->post_content)) {
 			return TRUE;
 		} else if ($scan_comments) {
 			CrayonSettingsWP::load_settings(TRUE);
 			if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
 				$comments = get_comments(array('post_id' => $id));
 				foreach ($comments as $comment) {
-					if (self::scan_comment($comment)) {
+					if (self::scan_comment($comment, $tags_regex)) {
 						return TRUE;
 					}
 				}
@@ -962,16 +964,18 @@ class CrayonWP {
 	
 	public static function scan_legacy_post($post, $scan_comments = TRUE) {
 		self::init_legacy_tag_bits();
-		self::init_tags_regex(TRUE, self::$legacy_flags);
-		return self::scan_post(FALSE, $post, $scan_comments);
+		return self::scan_post($post, $scan_comments, self::$tags_regex_legacy);
 	}
 	
 	/**
 	 * Returns TRUE if the comment contains a Crayon tag
 	 */
-	public static function scan_comment($comment) {
-		self::init_tags_regex();
-		if (preg_match(self::$tags_regex, $comment->comment_content)) {
+	public static function scan_comment($comment, $tags_regex = NULL) {
+		if ($tags_regex === NULL) {
+			self::init_tags_regex();
+			$tags_regex = self::$tags_regex;
+		}
+		if (preg_match($tags_regex, $comment->comment_content)) {
 			return TRUE;
 		} else {
 			return FALSE;
@@ -1079,12 +1083,12 @@ class CrayonWP {
 				'preserve_atts' => TRUE,
 				'flags' => self::$legacy_flags
 		);
-
+		
 		foreach ($crayon_posts as $postID) {
 			$post = get_post($postID);
 			$post_content = $post->post_content;
 			$post_captures = self::capture_crayons($postID, $post_content, array(), $args);
-
+			
 			$post_obj = array();
 			$post_obj['ID'] = $postID;
 			$post_obj['post_content'] = $post_captures['content'];
@@ -1104,8 +1108,9 @@ class CrayonWP {
 					CrayonLog::syslog("Converted Crayons in post ID $postID, comment ID $commentID to pre tags", 'CONVERT');
 				}
 			}
-
 		}
+		
+		self::refresh_posts();
 	}
 
 	// Used as capture_crayons callback

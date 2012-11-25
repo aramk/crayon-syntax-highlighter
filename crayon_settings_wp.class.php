@@ -129,7 +129,6 @@ class CrayonSettingsWP {
 		if (!current_user_can('manage_options')) {
 			wp_die(crayon__('You do not have sufficient permissions to access this page.'));
 		}
-
 		// Go through and find all Crayons in posts on each reload
 		//self::scan_and_save_posts();
 
@@ -311,8 +310,8 @@ class CrayonSettingsWP {
 		if (self::$crayon_legacy_posts === NULL) {
 			// Load from db
 			if (!(self::$crayon_legacy_posts = get_option(self::LEGACY_POSTS))) {
-				// Posts don't exist! Scan for them. This will fill self::$crayon_posts
-				self::$crayon_legacy_posts = CrayonWP::scan_posts();
+				// Posts don't exist! Scan for them. This will fill self::$crayon_legacy_posts
+				self::$crayon_legacy_posts = CrayonWP::scan_legacy_posts();
 				update_option(self::LEGACY_POSTS, self::$crayon_legacy_posts);
 			}
 		}
@@ -772,27 +771,37 @@ class CrayonSettingsWP {
 
 	public static function posts() {
 		echo '<a name="posts"></a>';
-		echo '<div id="crayon-subsection-posts-info">'.self::button(array('id'=>'show-posts', 'title'=>crayon__('Show Crayon Posts')));
+		echo self::button(array('id'=>'show-posts', 'title'=>crayon__('Show Crayon Posts')));
 		echo ' <input type="submit" name="', self::OPTIONS, '[refresh_tags]" id="refresh_tags" class="button-primary" value="', crayon__('Refresh') ,'" />';
-		echo ' <a href="http://bit.ly/NQfZN5" target="_blank" class="crayon-question">' . crayon__('?') . '</a></div>';
+		echo ' <a href="http://bit.ly/NQfZN5" target="_blank" class="crayon-question">' . crayon__('?') . '</a>';
+		echo '<div id="crayon-subsection-posts-info"></div>';
 	}
 
 	public static function show_posts() {
 		$posts = self::load_posts();
+		$legacy_posts = self::load_legacy_posts();
+		// Avoids O(n^2) by using a hash map, tradeoff in using strval
+		$legacy_map = array();
+		foreach ($legacy_posts as $legacyID) {
+			$legacy_map[strval($legacyID)] = TRUE;
+		}
 		arsort($posts);
 
 		echo '<table class="crayon-table" cellspacing="0" cellpadding="0"><tr class="crayon-table-header">',
-		'<td>ID</td><td>Title</td><td>Posted</td><td>Modified</td></tr>';
+		'<td>', crayon__('ID'), '</td><td>', crayon__('Title'), '</td><td>', crayon__('Posted'), '</td><td>', crayon__('Modifed'), '</td><td>', crayon__('Contains Legacy Tags?'), '</td></tr>';
 
 		for ($i = 0; $i < count($posts); $i++) {
 			$postID = $posts[$i];
 			$post = get_post($postID);
+			$title = $post->post_title;
+			$title = !empty($title) ? $title : 'N/A';
 			$tr = ($i == count($posts) - 1) ? 'crayon-table-last' : '';
 			echo '<tr class="', $tr, '">',
 			'<td>', $postID, '</td>',
-			'<td><a href="', $post->guid ,'" target="_blank">', $post->post_title, '</a></td>',
+			'<td><a href="', $post->guid ,'" target="_blank">', $title, '</a></td>',
 			'<td>', $post->post_date, '</td>',
 			'<td>', $post->post_modified, '</td>',
+			'<td>', isset($legacy_map[strval($postID)]) ? '<span style="color: red;">'.crayon__('Yes').'</a>' : crayon__('No'), '</td>',
 			'</tr>';
 		}
 
@@ -991,8 +1000,6 @@ class Human {
 			$disabled = 'disabled="disabled"';
 			$convert_text = crayon__('No Legacy Tags Found');
 		}
-		
-		var_dump($can_convert);
 
 		echo '<input type="submit" name="', self::OPTIONS, '[convert]" id="convert" class="button-primary" value="', $convert_text, '"', $disabled, ' /> ';
 		echo '<a href="http://bit.ly/ReRr0i" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', CRAYON_BR, CRAYON_BR;
