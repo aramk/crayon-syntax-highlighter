@@ -362,7 +362,7 @@
             var match = null;
             while ((match = reStyle.exec(string)) != null) {
                 var repl = match[1];
-                repl = repl.replace(/\bwidth\s*:[^;]+;/gmi, '');
+                repl = repl.replace(/\b(?:width|height)\s*:[^;]+;/gmi, '');
                 string = string.sliceReplace(match.index, match.index + match[0].length, 'style="' + repl + '"');
             }
             return string;
