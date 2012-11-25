@@ -228,6 +228,21 @@ class CrayonHighlighter {
 			if ($this->setting_val(CrayonSettings::TRIM_WHITESPACE)) {
 				$code = preg_replace("#(?:^\\s*\\r?\\n)|(?:\\r?\\n\\s*$)#", '', $code);
 			}
+			
+			// Add a \n to the end if one doesn't exist
+			if (preg_match('#(?<!\n)$#msi', $code)) {
+				$code .= "\n";
+			}
+			
+			$before = $this->setting_val(CrayonSettings::WHITESPACE_BEFORE);
+			if ($before > 0) {
+				$code = str_repeat("\n", $before) . $code;
+			}
+			$after = $this->setting_val(CrayonSettings::WHITESPACE_AFTER);
+			if ($after > 0) {
+				$code = $code . str_repeat("\n", $after);
+			}
+			
 			if (!empty($code)) {
 				$this->code = $code;
 // 				$this->needs_load = FALSE; // No need to load, code provided
