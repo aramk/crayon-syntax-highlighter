@@ -8,37 +8,6 @@
         return this.length !== 0;
     };
 
-    // This makes IE < 9 doesn't support CSSStyleDeclaration, can't use this
-    CrayonSyntaxUnused = function () {
-        // For those who need them (< IE 9), add support for CSS functions
-        var isStyleFuncSupported = null;
-        if (typeof(CSSStyleDeclaration) != 'undefined') {
-            isStyleFuncSupported = CSSStyleDeclaration.prototype.getPropertyValue != null;
-            if (!isStyleFuncSupported) {
-                CSSStyleDeclaration.prototype.getPropertyValue = function(a) {
-                    return this.getAttribute(a);
-                };
-                CSSStyleDeclaration.prototype.setProperty = function(styleName, value, priority) {
-                    this.setAttribute(styleName,value);
-                    var priority = typeof priority != 'undefined' ? priority : '';
-                    if (priority != '') {
-                        // Add priority manually
-                        var rule = new RegExp(RegExp.escape(styleName) + '\\s*:\\s*' + RegExp.escape(value) + '(\\s*;)?', 'gmi');
-                        this.cssText = this.cssText.replace(rule, styleName + ': ' + value + ' !' + priority + ';');
-                    }
-                };
-                CSSStyleDeclaration.prototype.removeProperty = function(a) {
-                    return this.removeAttribute(a);
-                };
-                CSSStyleDeclaration.prototype.getPropertyPriority = function(styleName) {
-                    var rule = new RegExp(RegExp.escape(styleName) + '\\s*:\\s*[^\\s]*\\s*!important(\\s*;)?', 'gmi');
-                    return rule.test(this.cssText) ? 'important' : '';
-                };
-            }
-        }
-    };
-
-    var hasCSSStyleDeclaration = typeof(CSSStyleDeclaration) != 'undefined';
     $.fn.style = function(styleName, value, priority) {
         // DOM node
         var node = this.get(0);
@@ -60,11 +29,7 @@
                 }
             } else {
                 // Get style property
-                if (hasCSSStyleDeclaration) {
-                    return style.getPropertyValue(styleName);
-                } else {
-                    return style.styleName;
-                }
+                return style.styleName;
             }
         } else {
             // Get CSSStyleDeclaration

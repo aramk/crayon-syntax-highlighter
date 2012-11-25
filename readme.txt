@@ -256,6 +256,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fixed a bug preventing before and after whitespace from displaying correctly
 * Fixed a bug causing code opened in a new window to use the current wp theme css
 * Added theme information to the settings page
+* Fixed IE 8 compatibility issues
 * Minor improvements
 
 = 1.14 =
