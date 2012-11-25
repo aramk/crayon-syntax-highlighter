@@ -254,6 +254,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Fixed a bug preventing max/min-height/width from taking effect from the Tag Editor
 * Fixed a bug causing a width discrepancy
 * Fixed a bug preventing before and after whitespace from displaying correctly
+* Fixed a bug causing code opened in a new window to use the current wp theme css
 * Added theme information to the settings page
 * Minor improvements
 

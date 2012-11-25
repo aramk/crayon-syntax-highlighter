@@ -406,7 +406,7 @@
         // Get all CSS on the page as a string
         var get_all_css = function() {
             var css_str = '';
-            css = $('link[rel="stylesheet"]').each(function() {
+            css = $('link[rel="stylesheet"][href*="crayon-syntax-highlighter"]').each(function() {
                 var string = get_jquery_str($(this));
                 css_str += string;
             });
