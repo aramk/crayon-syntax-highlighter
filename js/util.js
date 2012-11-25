@@ -3,6 +3,30 @@ var jQueryCrayon = jQuery;
 
 var CRAYON_DEBUG = false;
 
+(function ($) {
+	
+	CrayonUtil = new function() {
+		
+		var base = this;
+		var settings = CrayonSyntaxSettings;
+		
+		base.addPrefixToID = function (id) {
+	        return id.replace(/^([#.])?(.*)$/, '$1' + settings.prefix + '$2');
+	    };
+	    
+	    base.removePrefixFromID = function(id) {
+	        var re = new RegExp('^[#.]?' + settings.prefix, 'i');
+	        return id.replace(re, '');
+	    };
+	    
+	    base.cssElem = function (id) {
+	        return $(base.addPrefixToID(id));
+	    };
+	    
+	};
+
+})(jQueryCrayon);
+
 if (typeof CrayonTagEditorSettings == 'undefined') {
 	// WP may have already added it
 	CrayonTagEditorSettings = {};
@@ -24,8 +48,29 @@ RegExp.prototype.execAll = function(string) {
 	return matches;
 };
 
+// Escape regex chars with \
+RegExp.prototype.escape = function(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
 String.prototype.sliceReplace = function(start, end, repl) {
 	return this.substring(0, start) + repl + this.substring(end);
+};
+
+String.prototype.escape = function() {
+    var tagsToReplace = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;'
+    };
+    return this.replace(/[&<>]/g, function(tag) {
+        return tagsToReplace[tag] || tag;
+    });
+};
+
+String.prototype.linkify = function(target) {
+    target = typeof target != 'undefined' ? target : '';
+    return this.replace(/(http(s)?:\/\/(\S)+)/gmi, '<a href="$1" target="' + target + '">$1</a>');
 };
 
 function console_log(string) {

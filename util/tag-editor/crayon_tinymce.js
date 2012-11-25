@@ -129,6 +129,7 @@
 			            		base.setHighlight(true);
 			            	} else {
 			            		// No pre selected
+			            		base.setHighlight(false);
 			            	}
 			            	var tooltip = currPre ? s.dialog_title_edit : s.dialog_title_add;
 			            	$(s.tinymce_button).attr('title', tooltip);

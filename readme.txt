@@ -1,6 +1,6 @@
 === Crayon Syntax Highlighter ===
 Contributors: akarmenia
-Donate link: https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=4FKp23py2y97iYDcCYZ9zOSEMedaceiEpb8Pvf_qQyezHR3TQROKd_IeRfC&dispatch=5885d80a13c0db1f8e263663d3faee8d0b7e678a25d883d0fa72c947f193f8fd
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=AW99EMEPQ4CFE&lc=AU&item_name=Crayon%20Syntax%20Highlighter%20Donation&item_number=crayon%2ddonate&currency_code=AUD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
 License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
@@ -61,7 +61,7 @@ There are many ways you can help!
 * Make a Theme and share
 * Add support for your favourite <a href="http://ak.net84.net/projects/crayon-language-file-specification/" target="_blank">Language</a>
 * Write a post about your pastel experiences and share
-* <a href="https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&SESSION=4FKp23py2y97iYDcCYZ9zOSEMedaceiEpb8Pvf_qQyezHR3TQROKd_IeRfC&dispatch=5885d80a13c0db1f8e263663d3faee8d0b7e678a25d883d0fa72c947f193f8fd" target="_blank">Donate</a> to the project
+* <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=AW99EMEPQ4CFE&lc=AU&item_name=Crayon%20Syntax%20Highlighter%20Donation&item_number=crayon%2ddonate&currency_code=AUD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" target="_blank">Donate</a> to the project
 
 **Supported Languages**
 
@@ -250,9 +250,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 1.14.1 =
-
 * Improved version updating
-* Minor improvements here and there
+* Fixed a bug preventing max/min-height/width from taking effect from the Tag Editor
+* Fixed a bug causing a width discrepancy
+* Minor improvements
 
 = 1.14 =
 * All AJAX functions are now using the wp_ajax action and admin-ajax.php method defined here: http://codex.wordpress.org/AJAX_in_Plugins. This means Crayon no longer passes around the wp_load path and doesn't use it as a $_GET variable to load AJAX requests. The security vulnerability in 1.13 is no longer present and that code has been removed.

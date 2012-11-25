@@ -92,12 +92,11 @@ class CrayonTagEditorWP {
 			wp_enqueue_style('fancybox', plugins_url(CRAYON_CSS_FANCYBOX, dirname(dirname(__FILE__))), array(), $CRAYON_VERSION);
 			wp_enqueue_script('fancybox', plugins_url(CRAYON_JS_FANCYBOX, dirname(dirname(__FILE__))), array('jquery'), $CRAYON_VERSION);
 		}
-
-		wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, dirname(dirname(__FILE__))), array('jquery'), $CRAYON_VERSION);
-		wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, dirname(dirname(__FILE__))), array('jquery', 'crayon_util_js'), $CRAYON_VERSION);
-		wp_enqueue_script('crayon_te_js', plugins_url(CRAYON_TE_JS, __FILE__), array('crayon_admin_js', 'fancybox'), $CRAYON_VERSION);
+		
+		wp_enqueue_script('crayon_te_js', plugins_url(CRAYON_TE_JS, __FILE__), array('fancybox', 'crayon_util_js'), $CRAYON_VERSION);
 		wp_enqueue_script('crayon_qt_js', plugins_url(CRAYON_QUICKTAGS_JS, __FILE__), array('quicktags','crayon_te_js'), $CRAYON_VERSION, TRUE);
 		wp_localize_script('crayon_te_js', 'CrayonTagEditorSettings', self::$settings);
+		CrayonSettingsWP::admin_base_scripts();
 	}
 
 	public static function register_buttons($buttons) {
@@ -171,9 +170,9 @@ class CrayonTagEditorWP {
 		<div id="crayon-te-bar-content">
 			<div id="crayon-te-title">Title</div>
 			<div id="crayon-te-controls">
-				<a id="crayon-te-ok" href="#">Ok</a> <span
+				<a id="crayon-te-ok" href="#"><?php crayon_e('OK'); ?></a> <span
 					class="crayon-te-seperator">|</span> <a id="crayon-te-cancel"
-					href="#">Cancel</a>
+					href="#"><?php crayon_e('Cancel'); ?></a>
 			</div>
 		</div>
 	</div>
@@ -269,7 +268,7 @@ class CrayonTagEditorWP {
 
 }
 
-if (defined('ABSPATH') /*&& is_admin()*/) {
+if (defined('ABSPATH')) {
 	add_action('init', 'CrayonTagEditorWP::init');
 }
 

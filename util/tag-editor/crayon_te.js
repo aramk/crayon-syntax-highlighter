@@ -5,18 +5,12 @@
 		
 		var loaded = false;
 		var editing = false;
-		var insertCallback = null;
-		var editCallback = null;
-		var showCallback = null;
-		var hideCallback = null;
+		var insertCallback, editCallback, showCallback, hideCallback = null;
 		// Used for encoding, decoding
-		var inputHTML = null;
-		var outputHTML = null;
-		var editor_name = null;
-		var ajax_class_timer = null;
+		var inputHTML, outputHTML, editor_name, ajax_class_timer = null;
 		var ajax_class_timer_count = 0;
 		
-		var code_refresh = url_refresh = null;
+		var code_refresh, url_refresh = null;
 		
 		// Current $ obj of pre node
 		var currCrayon = null;
@@ -26,17 +20,17 @@
 		var is_inline = false;
 		
 		// Generated in WP and contains the settings
-		var s, gs, admin = null;
+		var s, gs, util = null;
 		// For use in async functions
 		var me = this;
 		
 		// CSS
-		var dialog = code = clear = submit = null;
+		var dialog, code, clear, submit = null;
 		
 		base.init = function(button) {
 			s = CrayonTagEditorSettings;
 			gs = CrayonSyntaxSettings;
-			admin = CrayonSyntaxAdmin;
+			util = CrayonUtil;
 
 			base.loadDialog();
 			$(button).fancybox({
@@ -84,11 +78,6 @@
 	        	dialog = $('<div id="'+s.css+'"></div>');
 	            dialog.appendTo('body').hide();
 	        	dialog.html(data);
-	        	
-	        	dialog.ready(function() {
-	        		// Some settings have dependencies, need to load js for that
-	        		admin.init();
-	        	});
 	        	
 	        	me.setOrigValues();
 	        	
@@ -408,7 +397,7 @@
 			// Spacing only for <pre>
 			var br_before = br_after = '';
 			if (!editing) {
-				// Don't add spaces if editting
+				// Don't add spaces if editing
 				if (!is_inline) {
 					if (editor_name == 'html') {
 						br_after = br_before = ' \n'; 
@@ -447,7 +436,7 @@
 	    		var id = $(this).attr('id');
 	    		var value = $(this).attr(s.data_value);
 	    		// Remove prefix
-	    		id = admin.removePrefixFromID(id);
+	    		id = util.removePrefixFromID(id);
 	    		atts[id] = value;
 	    	});
 			

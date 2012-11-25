@@ -27,9 +27,7 @@ class CrayonFormatter {
 	public static function format_code($code, $language, $hl = NULL) {
 		// Ensure the language is defined
 		if ($language != NULL && $hl->is_highlighted) {
-			
 			$code = self::clean_code($code, FALSE, FALSE, FALSE, TRUE);
-			
 			/* Perform the replace on the code using the regex, pass the captured matches for
 			 formatting before they are replaced */
 			try {
@@ -224,7 +222,6 @@ class CrayonFormatter {
 		// Determine whether to print language
 		$print_lang = '';
 		// XXX Use for printing the regex
-//		var_dump($hl->language()->regex()); exit;
 		if ($hl->language()) {
 			$lang = $hl->language()->name();
 			switch ($hl->setting_index(CrayonSettings::SHOW_LANG)) {
