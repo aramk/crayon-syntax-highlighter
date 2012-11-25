@@ -731,10 +731,9 @@
 
             var main = crayon[uid].main;
             var plain = crayon[uid].plain;
-            var height = main.height();
-            var width = main.width() - 2; // Remove border
-
+            
             if (show) {
+            	// Show scrollbars
                 main.css('overflow', 'auto');
                 plain.css('overflow', 'auto');
                 if (typeof crayon[uid].top != 'undefined') {
@@ -745,30 +744,20 @@
                     visible.scrollLeft(crayon[uid].left-1);
                     visible.scrollLeft(crayon[uid].left);
                 }
-                if (!crayon[uid].scroll_block_fix) {
-                    // Fix dimensions so scrollbars stay inside
-                    main.css('height', height);
-                    main.css('width', width);
-                } else {
-                    // Relax dimensions so scrollbars are visible
-                    main.css('height', '');
-                    main.css('max-height', '');
-                    main.css('min-height', '');
-                    main.css('width', '');
-                }
+                main.css('height', main.height());
+                main.css('width', main.width());
             } else {
+            	// Hide scrollbars
                 visible = (main.css('z-index') == 1 ? main : plain);
                 crayon[uid].top = visible.scrollTop();
                 crayon[uid].left = visible.scrollLeft();
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
-                if (!crayon[uid].scroll_block_fix) {
-                    // Restore dimensions
-                    main.css('height', crayon[uid].main_style['height']);
-                    main.css('max-height', crayon[uid].main_style['max-height']);
-                    main.css('min-height', crayon[uid].main_style['min-height']);
-                    main.css('width', crayon[uid].main_style['width']);
-                }
+                // Restore dimensions
+                main.css('height', crayon[uid].main_style['height']);
+                main.css('max-height', crayon[uid].main_style['max-height']);
+                main.css('min-height', crayon[uid].main_style['min-height']);
+                main.css('width', crayon[uid].main_style['width']);
             }
             // Register that overflow has changed
             crayon[uid].scroll_changed = true;
