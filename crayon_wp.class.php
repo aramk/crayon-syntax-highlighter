@@ -821,41 +821,21 @@ class CrayonWP {
 		// 			// Ignore revisions
 		// 			return;
 		// 		}
-
-		$id = $post->ID;
-
-		self::init_tags_regex();
-
-		if (preg_match(self::$tags_regex, $post->post_content)) {
-			CrayonSettingsWP::add_post($id);
+		$found = self::scan_post($post);
+		if ($found) {
+			CrayonSettingsWP::add_post($post->ID);
 		} else {
-			$found = FALSE;
-			CrayonSettingsWP::load_settings(TRUE);
-			if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
-				$comments = get_comments(array('post_id' => $id));
-				foreach ($comments as $comment) {
-					$found = self::save_comment($comment->comment_ID, NULL, $comment);
-					if ($found) {
-						break;
-					}
-				}
-			}
-			if (!$found) {
-				CrayonSettingsWP::remove_post($id);
-			}
+			CrayonSettingsWP::remove_post($post->ID);
 		}
 	}
 
 	public static function save_comment($id, $is_spam = NULL, $comment = NULL) {
 		self::init_tags_regex();
-
 		if ($comment == NULL) {
 			$comment = get_comment($id);
 		}
-
 		$content = $comment->comment_content;
 		$post_id = $comment->comment_post_ID;
-
 		if (preg_match(self::$tags_regex, $content)) {
 			CrayonSettingsWP::add_post($post_id);
 			return TRUE;
@@ -933,6 +913,40 @@ class CrayonWP {
 			}
 		}
 		return $crayon_posts;
+	}
+	
+	/**
+	 * Returns TRUE if a given post contains a Crayon tag
+	 */
+	public static function scan_post($post, $scan_comments = TRUE) {
+		$id = $post->ID;
+		self::init_tags_regex();
+		if (preg_match(self::$tags_regex, $post->post_content)) {
+			return TRUE;
+		} else if ($scan_comments) {
+			CrayonSettingsWP::load_settings(TRUE);
+			if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
+				$comments = get_comments(array('post_id' => $id));
+				foreach ($comments as $comment) {
+					if (self::scan_comment($comment)) {
+						return TRUE;
+					}
+				}
+			}
+		}
+		return FALSE;
+	}
+	
+	/**
+	 * Returns TRUE if the comment contains a Crayon tag
+	 */
+	public static function scan_comment($comment) {
+		self::init_tags_regex();
+		if (preg_match(self::$tags_regex, $comment->comment_content)) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
 	}
 
 	public static function install() {
@@ -1095,10 +1109,6 @@ class CrayonWP {
 	public static function capture_replace_pre($capture, $original, $id, $is_inline, $wp_content) {
 		$atts = array();
 		$atts['class'] = CrayonUtil::html_attributes($capture['atts'], CrayonGlobalSettings::val_str(CrayonSettings::ATTR_SEP), '');
-		// 		$has_decode = isset($capture['atts'][CrayonSettings::DECODE]);
-		// 		$default = CrayonGlobalSettings::val(CrayonSettings::DECODE);
-		// 		$encoded = $has_decode ? CrayonUtil::str_to_bool($capture['atts'][CrayonSettings::DECODE], $default) : $default;
-		// 		CrayonUtil::bool_to_str($encoded);
 		return str_replace($original, CrayonUtil::html_element('pre', $capture['code'], $atts), $wp_content);
 	}
 
