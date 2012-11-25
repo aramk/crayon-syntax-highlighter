@@ -131,7 +131,7 @@ class CrayonSettingsWP {
 		}
 
 		// Go through and find all Crayons in posts on each reload
-		self::scan_and_save_posts();
+		//self::scan_and_save_posts();
 
 		?>
 
@@ -258,9 +258,9 @@ class CrayonSettingsWP {
 	/**
 	 * This looks through all posts and marks those which contain Crayons
 	 */
-	public static function scan_and_save_posts() {
-		self::save_posts(CrayonWP::scan_posts(TRUE, TRUE));
-	}
+// 	public static function scan_and_save_posts() {
+// 		self::save_posts(CrayonWP::scan_posts(TRUE, TRUE));
+// 	}
 
 	/**
 	 * Saves the marked posts to the db
@@ -294,6 +294,11 @@ class CrayonSettingsWP {
 			return;
 		}
 		unset(self::$crayon_posts[$key]);
+		self::save_posts();
+	}
+	
+	public static function remove_posts() {
+		self::$crayon_posts = array();
 		self::save_posts();
 	}
 	
@@ -353,6 +358,11 @@ class CrayonSettingsWP {
 			return;
 		}
 		unset(self::$crayon_legacy_posts[$key]);
+		self::save_legacy_posts();
+	}
+	
+	public static function remove_legacy_posts() {
+		self::$crayon_legacy_posts = array();
 		self::save_legacy_posts();
 	}
 
@@ -460,6 +470,10 @@ class CrayonSettingsWP {
 		// Convert old tags
 		if (array_key_exists('convert', $inputs)) {
 			CrayonWP::convert_tags();
+		}
+		// Refresh internal tag management
+		if (array_key_exists('refresh_tags', $inputs)) {
+			CrayonWP::refresh_posts();
 		}
 		// Clear the log if needed
 		if (array_key_exists(self::LOG_CLEAR, $_POST)) {
@@ -758,7 +772,9 @@ class CrayonSettingsWP {
 
 	public static function posts() {
 		echo '<a name="posts"></a>';
-		echo '<div id="crayon-subsection-posts-info">'.self::button(array('id'=>'show-posts', 'title'=>crayon__('Show Crayon Posts'))).'<span class="crayon-span-10"></span><a href="http://bit.ly/NQfZN5" target="_blank" class="crayon-question">' . crayon__('?') . '</a></div>' ;
+		echo '<div id="crayon-subsection-posts-info">'.self::button(array('id'=>'show-posts', 'title'=>crayon__('Show Crayon Posts')));
+		echo ' <input type="submit" name="', self::OPTIONS, '[refresh_tags]" id="refresh_tags" class="button-primary" value="', crayon__('Refresh') ,'" />';
+		echo ' <a href="http://bit.ly/NQfZN5" target="_blank" class="crayon-question">' . crayon__('?') . '</a></div>';
 	}
 
 	public static function show_posts() {
@@ -967,7 +983,7 @@ class Human {
 	}
 
 	public static function tag_editor() {
-		$can_convert = CrayonWP::can_convert_tags();
+		$can_convert = self::load_legacy_posts();
 		if ($can_convert) {
 			$disabled = '';
 			$convert_text = crayon__('Convert Legacy Tags');
@@ -975,9 +991,11 @@ class Human {
 			$disabled = 'disabled="disabled"';
 			$convert_text = crayon__('No Legacy Tags Found');
 		}
+		
+		var_dump($can_convert);
 
-		echo '<input type="submit" name="', self::OPTIONS, '[convert]" id="convert" class="button-primary" value="', $convert_text, '"', $disabled, ' />';
-		echo '<span class="crayon-span-10"></span><span>' . crayon__('Convert existing Crayon tags to Tag Editor format (&lt;pre&gt;)'), '</span>', ' <a href="http://bit.ly/ReRr0i" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', CRAYON_BR, CRAYON_BR;
+		echo '<input type="submit" name="', self::OPTIONS, '[convert]" id="convert" class="button-primary" value="', $convert_text, '"', $disabled, ' /> ';
+		echo '<a href="http://bit.ly/ReRr0i" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', CRAYON_BR, CRAYON_BR;
 		$sep = sprintf(crayon__('Use %s to separate setting names from values in the &lt;pre&gt; class attribute'),
 				self::dropdown(CrayonSettings::ATTR_SEP, FALSE, FALSE, FALSE));
 		echo '<span>', $sep, ' <a href="http://bit.ly/H3xW3D" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', '</span><br/>';

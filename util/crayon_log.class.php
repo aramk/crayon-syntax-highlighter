@@ -37,7 +37,7 @@ class CrayonLog {
 				// Remove stupid formatting from wampserver
 				$buffer = str_replace('&apos;', '"', $buffer);
 				$buffer = preg_replace('#^string\([^\)]*\)#mi', 'str', $buffer);
-				$title = (!empty($title) && is_string($title) ? " [$title]" : '');
+				$title = (!empty($title) ? " [$title]" : '');
 
 				// Remove absolute path to plugin directory from buffer
 				if ($trim_url) {
