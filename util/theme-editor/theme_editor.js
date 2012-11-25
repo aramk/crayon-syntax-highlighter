@@ -18,7 +18,7 @@
             CrayonSyntax.process(crayon, true);
             preview.html(crayon);
 
-            console.log(adminSettings.curr_theme_str);
+            //console.log(adminSettings.curr_theme_str);
 
             callback();
             base.initUI();
