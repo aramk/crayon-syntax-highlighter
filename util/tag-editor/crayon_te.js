@@ -80,7 +80,7 @@
 	    	}
 	    	
 	        // Load the editor content 
-            $.get(gs.ajaxurl, {action : 'crayon-tag-editor'}, function(data) {
+            $.get(ajaxurl, {action : 'crayon-tag-editor'}, function(data) {
 	        	dialog = $('<div id="'+s.css+'"></div>');
 	            dialog.appendTo('body').hide();
 	        	dialog.html(data);
