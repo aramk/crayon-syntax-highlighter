@@ -797,10 +797,12 @@ class Human {
 		// Theme editor
 		if (CRAYON_THEME_EDITOR) {
 			// 			echo '<a id="crayon-theme-editor-button" class="button-primary crayon-admin-button" loading="'. crayon__('Loading...') .'" loaded="'. crayon__('Theme Editor') .'" >'. crayon__('Theme Editor') .'</a></br>';
-			echo '<div id="crayon-theme-editor-admin-buttons">',
-			'<a id="crayon-theme-editor-edit-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Edit'), '" >', crayon__('Edit'), '</a>',
-			'<a id="crayon-theme-editor-create-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Create'), '" >', crayon__('Create'), '</a>',
-			'<a id="crayon-theme-editor-delete-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', crayon__('Delete'), '" >', crayon__('Delete'), '</a></br></div>';
+			echo '<div id="crayon-theme-editor-admin-buttons">';
+			$buttons = array('edit' => crayon__('Edit'), 'duplicate' => crayon__('Duplicate'), 'create' => crayon__('Create'), 'delete' => crayon__('Delete'));
+			foreach ($buttons as $k=>$v) {
+				echo '<a id="crayon-theme-editor-', $k, '-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', $v, '" >', $v, '</a>';
+			}
+			echo '</br></div>';
 		}
 		// Preview Box
 		?>
