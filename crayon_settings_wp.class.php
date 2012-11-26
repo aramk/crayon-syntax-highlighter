@@ -98,7 +98,7 @@ class CrayonSettingsWP {
 		if (!self::$js_settings) {
 			self::$js_settings = array(
 					'is_admin' => is_admin(),
-// 					'ajaxurl' => admin_url('admin-ajax.php'),
+					'ajaxurl' => admin_url('admin-ajax.php'),
 					'prefix' => CrayonSettings::PREFIX,
 					'setting' => CrayonSettings::SETTING,
 					'selected' => CrayonSettings::SETTING_SELECTED,

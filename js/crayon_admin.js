@@ -65,7 +65,7 @@
             help = $('.crayon-help-close');
             help.click(function () {
                 $('.crayon-help').hide();
-                $.get(ajaxurl, {action : 'crayon-ajax', 'hide-help' : 1});
+                $.get(settings.ajaxurl, {action : 'crayon-ajax', 'hide-help' : 1});
             });
 
             // Preview
@@ -84,13 +84,13 @@
             }
 
             $('#show-posts').click(function () {
-                $.get(ajaxurl, {action : 'crayon-show-posts'}, function (data) {
+                $.get(settings.ajaxurl, {action : 'crayon-show-posts'}, function (data) {
                     $('#crayon-subsection-posts-info').html(data);
                 });
             });
 
             $('#show-langs').click(function () {
-                $.get(ajaxurl, {action : 'crayon-show-langs'}, function (data) {
+                $.get(settings.ajaxurl, {action : 'crayon-show-langs'}, function (data) {
                     $('#lang-info').hide();
                     $('#crayon-subsection-langs-info').html(data);
                 });
@@ -186,7 +186,7 @@
             }
 
             // Load Preview
-            $.get(ajaxurl, getVars, function (data) {
+            $.get(settings.ajaxurl, getVars, function (data) {
                 preview.html(data);
                 // Important! Calls the crayon.js init
                 CrayonSyntax.init();

@@ -255,7 +255,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* The settings page shows which posts contains legacy tags, and the buttons do not hide when showing the table. 
 	* Added theme information to the settings page
 	* Improved version updating
-	* Code in a new window loses size constraints 
+	* Code in a new window loses size constraints
 	* Minor improvements
 * FIXED:
 	* max/min-height/width didn't work on Tag Editor
