@@ -259,6 +259,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Code in a new window loses size constraints
 	* Minor improvements
 * FIXED:
+	* Fancybox issues have been fixed: http://ak.net84.net/crayon/initialising-fancybox-with-custom-objects/
 	* max/min-height/width didn't work on Tag Editor
 	* Width discrepancy before and after mouseover from 1px border
 	* Before and after whitespace didn't display correctly

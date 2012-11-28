@@ -33,7 +33,7 @@
 			util = CrayonUtil;
 
 			base.loadDialog();
-			$(button).fancybox({
+			$(button).crayonFancybox({
         		href : s.content_css,
         		margin : [40,10,40,10],
         		padding : 0,
@@ -54,13 +54,13 @@
         	});
 			
 			$(s.cancel_css).live('click', function () {
-				$.fancybox.close();
+				$.crayonFancybox.close();
 				return false;
 			});
 		};
 		
 		base.hide = function() {
-    		$.fancybox.close();
+    		$.crayonFancybox.close();
 			return false;
 		};
 		
@@ -329,20 +329,10 @@
 			
 			// Show the dialog
 			var dialog_title = editing ? s.dialog_title_edit : s.dialog_title_add;
-//			if (tb_show) {
-//				tb_show(dialog_title, '#TB_inline?inlineId=' + s.css);
-//			} else {
-				$(s.dialog_title_css).html(dialog_title);
-				if (showCallback) {
-					showCallback();
-				}
-//			}
-			
-			//tb_show(dialog_title, '#TB_inline?inlineId=' + s.css);
-//			console.log($("#crayon-te-table"));
-//			$("#bbp_topic_content_crayon_tinymce").fancybox({afterLoad: function() {
-//				alert();
-//			}, content: '#crayon-te-table'});
+			$(s.dialog_title_css).html(dialog_title);
+			if (showCallback) {
+				showCallback();
+			}
 			
 	    	code.focus();
 	    	code_refresh();
@@ -351,9 +341,6 @@
 	    		clearInterval(ajax_class_timer);
 	    		ajax_class_timer_count = 0;
 	    	}
-	    	
-	    	// Position submit button
-//			$('#TB_title').append(submit);
 	    	
 	    	var ajax_window = $('#TB_window');
 	    	ajax_window.hide();
@@ -519,14 +506,6 @@
 			if (hideCallback) {
 				hideCallback();
 			}
-			// Hide dialog
-//			tb_remove();
-//			var ajax = $('#TB_ajaxContent');
-//	    	if ( typeof ajax == 'undefined' ) {
-//	    		ajax.removeClass('crayon-te-ajax');
-//	    	}
-	    	// Title is destroyed, so move the submit out
-//	    	$(s.submit_wrapper_css).append(submit);
 		};
 		
 		// XXX Auxiliary methods
