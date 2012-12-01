@@ -191,33 +191,18 @@
 	margin-left: 5px;
 }
 
-#crayon-theme-panel {
-    width: 100%;
-    padding: 0;
-    padding-bottom: 10px;
-}
-#crayon-theme-panel .left,
-#crayon-theme-panel .right {
-    text-align: left;
-    vertical-align: top;
-    padding: 0;
-}
-#crayon-theme-panel .left {
-    width: 180px;
-}
-
 #crayon-theme-info {
-    margin-top: 8px;
-    width: 180px;
+    float: left;
 }
-#crayon-theme-info td {
-    padding: 0;
-    padding-right: 8px;
-    margin: 0;
-    vertical-align: top;
+#crayon-theme-info * {
+    float: left;
 }
 #crayon-theme-info .field {
-    font-weight: bold;
+	font-weight: bold;
+}
+#crayon-theme-info .field,
+#crayon-theme-info .value {
+	margin-left: 5px;
 }
 
 #crayon-editor-table td {

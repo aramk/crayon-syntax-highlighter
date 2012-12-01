@@ -52,8 +52,8 @@
             // Themes
             theme_select = $('#crayon-theme');
             theme_info = $('#crayon-theme-info');
-            theme_ver = theme_info.find('.version').next('td');
-            theme_author = theme_info.find('.author').next('td');
+            theme_ver = theme_info.find('.version').next('div');
+            theme_author = theme_info.find('.author').next('div');
             theme_desc = theme_info.find('.desc');
             base.show_theme_info();
             theme_select.change(function () {

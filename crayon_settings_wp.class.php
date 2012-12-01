@@ -895,23 +895,18 @@ class Human {
 		}
 		// Preview Box
 		?>
-		<table id="crayon-theme-panel">
-			<tr>
-				<td class="left">
-					<table id="crayon-theme-info">
-						<tr><td class="desc" colspan="2"></td></tr>
-						<tr><td class="version field">Version</td><td></td></tr>
-						<tr><td class="author field">Author</td><td></td></tr>
-					</table>
-				</td>
-				<td class="right">
-					<div id="crayon-live-preview"></div>
-					<div id="crayon-preview-info">
-						<?php printf(crayon__('Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked.'), '<a href="#langs">', '</a>'); ?>
-					</div>
-				</td>
-			<tr>
-		</table>
+		<div id="crayon-theme-panel">
+			<div id="crayon-theme-info">
+				<div class="desc"></div>
+				<div class="version field">Version:</div><div class="value"></div>
+				<div class="author field">Author:</div><div class="value"></div>
+			</div>
+			
+			<div id="crayon-live-preview"></div>
+			<div id="crayon-preview-info">
+				<?php printf(crayon__('Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked.'), '<a href="#langs">', '</a>'); ?>
+			</div>
+		</div>
 		<?php
 		// Preview checkbox
 		self::checkbox(array(CrayonSettings::PREVIEW, crayon__('Enable Live Preview')), FALSE, FALSE);
