@@ -802,7 +802,8 @@ class CrayonWP {
 			CrayonLog::debug('head: missed enqueue');
 			// We have missed our chance to check before enqueuing. Use setting to either load always or only in the_post
 			CrayonSettingsWP::load_settings(TRUE); // Ensure settings are loaded
-			if (!CrayonGlobalSettings::val(CrayonSettings::EFFICIENT_ENQUEUE)) {
+			// If we need the tag editor loaded at all times, we must enqueue at all times
+			if (!CrayonGlobalSettings::val(CrayonSettings::EFFICIENT_ENQUEUE) || CrayonGlobalSettings::val(CrayonSettings::TAG_EDITOR_FRONT)) {
 				CrayonLog::debug('head: force enqueue');
 				// Efficient enqueuing disabled, always load despite enqueuing or not in the_post
 				self::enqueue_resources();

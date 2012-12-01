@@ -224,7 +224,7 @@ class CrayonSettings {
 			new CrayonSetting(self::ATTR_SEP, array(':', '_')),
 			new CrayonSetting(self::EXCERPT_STRIP, FALSE),
 			new CrayonSetting(self::RANGES, TRUE),
-			new CrayonSetting(self::TAG_EDITOR_FRONT, TRUE),
+			new CrayonSetting(self::TAG_EDITOR_FRONT, FALSE),
 			new CrayonSetting(self::TAG_EDITOR_SETTINGS, TRUE),
 			new CrayonSetting(self::WRAP_TOGGLE, TRUE),
 			new CrayonSetting(self::WRAP, FALSE)

@@ -775,7 +775,7 @@ class CrayonSettingsWP {
 		echo '<a name="posts"></a>';
 		echo self::button(array('id'=>'show-posts', 'title'=>crayon__('Show Crayon Posts')));
 		echo ' <input type="submit" name="', self::OPTIONS, '[refresh_tags]" id="refresh_tags" class="button-primary" value="', crayon__('Refresh') ,'" />';
-		echo ' <a href="http://bit.ly/NQfZN5" target="_blank" class="crayon-question">' . crayon__('?') . '</a>';
+		echo self::help_button('http://bit.ly/NQfZN5');
 		echo '<div id="crayon-subsection-posts-info"></div>';
 	}
 
@@ -916,7 +916,7 @@ class Human {
 		// Preview checkbox
 		self::checkbox(array(CrayonSettings::PREVIEW, crayon__('Enable Live Preview')), FALSE, FALSE);
 		echo '</select><span class="crayon-span-10"></span>';
-		self::checkbox(array(CrayonSettings::ENQUEUE_THEMES, crayon__('Enqueue themes in the header (more efficient).') . ' <a href="http://bit.ly/zTUAQV" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
+		self::checkbox(array(CrayonSettings::ENQUEUE_THEMES, crayon__('Enqueue themes in the header (more efficient).') . self::help_button('http://bit.ly/zTUAQV')));
 		// Check if theme from db is loaded
 		if (!CrayonResources::themes()->is_loaded($db_theme) || !CrayonResources::themes()->exists($db_theme)) {
 			echo '<span class="crayon-error">', sprintf(crayon__('The selected theme with id %s could not be loaded'), '<strong>'.$db_theme.'</strong>'), '. </span>';
@@ -942,7 +942,7 @@ class Human {
 			return;
 		}
 		echo '<div style="height:10px;"></div>';
-		self::checkbox(array(CrayonSettings::ENQUEUE_FONTS, crayon__('Enqueue fonts in the header (more efficient).') . ' <a href="http://bit.ly/zTUAQV" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
+		self::checkbox(array(CrayonSettings::ENQUEUE_FONTS, crayon__('Enqueue fonts in the header (more efficient).') . self::help_button('http://bit.ly/zTUAQV')));
 	}
 
 	public static function code($editor = FALSE) {
@@ -964,7 +964,7 @@ class Human {
 		echo '<div class="crayon-hide-inline-only">';
 		self::checkbox(array(CrayonSettings::TRIM_WHITESPACE, crayon__('Remove whitespace surrounding the shortcode content')));
 		echo '</div>';
-		self::checkbox(array(CrayonSettings::MIXED, crayon__('Allow Mixed Language Highlighting with delimiters and tags.') . ' <a href="http://bit.ly/ukwts2" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
+		self::checkbox(array(CrayonSettings::MIXED, crayon__('Allow Mixed Language Highlighting with delimiters and tags.') . self::help_button('http://bit.ly/ukwts2')));
 		echo '<div class="crayon-hide-inline-only">';
 		self::checkbox(array(CrayonSettings::SHOW_MIXED, crayon__('Show Mixed Language Icon (+)')));
 		echo '</div>';
@@ -977,12 +977,12 @@ class Human {
 	}
 
 	public static function tags() {
-		self::checkbox(array(CrayonSettings::CAPTURE_MINI_TAG, crayon__('Capture Mini Tags like [php][/php] as Crayons.') . ' <a href="http://bit.ly/rRZuzk" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
-		self::checkbox(array(CrayonSettings::INLINE_TAG, crayon__('Capture Inline Tags like {php}{/php} inside sentences.') . ' <a href="http://bit.ly/yFafFL" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
-		self::checkbox(array(CrayonSettings::INLINE_WRAP, crayon__('Wrap Inline Tags') . ' <a href="http://bit.ly/yFafFL" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
-		self::checkbox(array(CrayonSettings::BACKQUOTE, crayon__('Capture `backquotes` as &lt;code&gt;') . ' <a href="http://bit.ly/yFafFL" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
-		self::checkbox(array(CrayonSettings::CAPTURE_PRE, crayon__('Capture &lt;pre&gt; tags as Crayons') . ' <a href="http://bit.ly/rRZuzk" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
-		self::checkbox(array(CrayonSettings::PLAIN_TAG, crayon__('Enable [plain][/plain] tag.') . ' <a href="http://bit.ly/rRZuzk" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
+		self::checkbox(array(CrayonSettings::CAPTURE_MINI_TAG, crayon__('Capture Mini Tags like [php][/php] as Crayons.') . self::help_button('http://bit.ly/rRZuzk')));
+		self::checkbox(array(CrayonSettings::INLINE_TAG, crayon__('Capture Inline Tags like {php}{/php} inside sentences.') . self::help_button('http://bit.ly/yFafFL')));
+		self::checkbox(array(CrayonSettings::INLINE_WRAP, crayon__('Wrap Inline Tags') . self::help_button('http://bit.ly/yFafFL')));
+		self::checkbox(array(CrayonSettings::BACKQUOTE, crayon__('Capture `backquotes` as &lt;code&gt;') . self::help_button('http://bit.ly/yFafFL')));
+		self::checkbox(array(CrayonSettings::CAPTURE_PRE, crayon__('Capture &lt;pre&gt; tags as Crayons') . self::help_button('http://bit.ly/rRZuzk')));
+		self::checkbox(array(CrayonSettings::PLAIN_TAG, crayon__('Enable [plain][/plain] tag.') . self::help_button('http://bit.ly/rRZuzk')));
 	}
 
 	public static function files() {
@@ -1004,11 +1004,11 @@ class Human {
 		}
 
 		echo '<input type="submit" name="', self::OPTIONS, '[convert]" id="convert" class="button-primary" value="', $convert_text, '"', $disabled, ' /> ';
-		echo '<a href="http://bit.ly/ReRr0i" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', CRAYON_BR, CRAYON_BR;
+		echo self::help_button('http://bit.ly/ReRr0i') , CRAYON_BR, CRAYON_BR;
 		$sep = sprintf(crayon__('Use %s to separate setting names from values in the &lt;pre&gt; class attribute'),
 				self::dropdown(CrayonSettings::ATTR_SEP, FALSE, FALSE, FALSE));
-		echo '<span>', $sep, ' <a href="http://bit.ly/H3xW3D" target="_blank" class="crayon-question">' . crayon__('?') . '</a>', '</span><br/>';
-		self::checkbox(array(CrayonSettings::TAG_EDITOR_FRONT, crayon__("Display the Tag Editor in any TinyMCE instances on the frontend")));
+		echo '<span>', $sep, self::help_button('http://bit.ly/H3xW3D'), '</span><br/>';
+		self::checkbox(array(CrayonSettings::TAG_EDITOR_FRONT, crayon__("Display the Tag Editor in any TinyMCE instances on the frontend (e.g. bbPress)") . self::help_button('http://bit.ly/TyYyll')));
 		self::checkbox(array(CrayonSettings::TAG_EDITOR_SETTINGS, crayon__("Display Tag Editor settings on the frontend")));
 	}
 
@@ -1016,8 +1016,8 @@ class Human {
 		echo crayon__('Clear the cache used to store remote code requests'),': ';
 		self::dropdown(CrayonSettings::CACHE, false);
 		echo '<input type="submit" id="crayon-cache-clear" name="crayon-cache-clear" class="button-secondary" value="', crayon__('Clear Now'), '" /><br/>';
-		self::checkbox(array(CrayonSettings::EFFICIENT_ENQUEUE, crayon__('Attempt to load Crayon\'s CSS and JavaScript only when needed').'. <a href="http://ak.net84.net/?p=660" target="_blank" class="crayon-question">'.crayon__('?').'</a>'));
-		self::checkbox(array(CrayonSettings::SAFE_ENQUEUE, crayon__('Disable enqueuing for page templates that may contain The Loop.') . ' <a href="http://bit.ly/AcWRNY" target="_blank" class="crayon-question">' . crayon__('?') . '</a>'));
+		self::checkbox(array(CrayonSettings::EFFICIENT_ENQUEUE, crayon__('Attempt to load Crayon\'s CSS and JavaScript only when needed'). self::help_button('http://ak.net84.net/?p=660')));
+		self::checkbox(array(CrayonSettings::SAFE_ENQUEUE, crayon__('Disable enqueuing for page templates that may contain The Loop.') . self::help_button('http://bit.ly/AcWRNY')));
 		self::checkbox(array(CrayonSettings::COMMENTS, crayon__('Allow Crayons inside comments')));
 		self::checkbox(array(CrayonSettings::EXCERPT_STRIP, crayon__('Remove Crayons from excerpts')));
 		self::checkbox(array(CrayonSettings::MAIN_QUERY, crayon__('Load Crayons only from the main Wordpress query')));
@@ -1100,6 +1100,10 @@ class Human {
 		  </tr>
 				</table>';
 
+	}
+	
+	public static function help_button($link) {
+		return ' <a href="' . $link . '" target="_blank" class="crayon-question">' . crayon__('?') . '</a>';
 	}
 
 	public static function plugin_row_meta($meta, $file) {
