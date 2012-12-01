@@ -52,27 +52,27 @@ Author URI: http://ethanschoonover.com/
     border: 1px #CCC !important;
 }
 .crayon-theme-solarized-dark .crayon-striped-num {
-    background: #073642 !important;
-    border: 1px #CCC !important;
+	border: 1px #CCC !important;
     color: #586e75 !important;
+	background: #054150 !important;
 }
 
 /* Marked Lines */
 .crayon-theme-solarized-dark .crayon-marked-line {
-    background: #073642 !important;
-    border: 1px #e9e579 !important;
+    background: #2f4d54 !important;
+	border-color: #446b73;
+	border-width: 1px;
 }
 .crayon-theme-solarized-dark .crayon-marked-num {
     color: #586e75 !important;
-    background: #073642 !important;
-    border: 1px #5999d9 !important;
+    background: #024e61 !important;
+    border: 1px #4e747d !important;
 }
 .crayon-theme-solarized-dark .crayon-marked-line.crayon-striped-line {
-    background: #faf8d1 !important;
+	background: #2b474e !important;
 }
 .crayon-theme-solarized-dark .crayon-marked-num.crayon-striped-num {
-    background: #9ec5ec !important;
-    color: #105395 !important;
+    background: #2a444a !important;
 }
 .crayon-theme-solarized-dark .crayon-marked-line.crayon-top,
 .crayon-theme-solarized-dark .crayon-marked-num.crayon-top {
