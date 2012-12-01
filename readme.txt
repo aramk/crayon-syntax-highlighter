@@ -89,6 +89,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Microsoft Registry (thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>)
 * MIVA Script
 * Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
+* MS-DOS Batch (thanks to <a href="http://www.amigalog.com/?p=334" target="_blank">http://www.amigalog.com/?p=334</a>)
 * Java
 * JavaScript
 * Objective-C
@@ -257,6 +258,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Added theme information to the settings page
 	* Improved version updating
 	* Code in a new window loses size constraints
+	* MS-DOS batch language (thanks to <a href="http://www.amigalog.com/?p=334" target="_blank">http://www.amigalog.com/?p=334</a>)
 	* Minor improvements
 * FIXED:
 	* Fancybox issues have been fixed: http://ak.net84.net/crayon/initialising-fancybox-with-custom-objects/
@@ -265,6 +267,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Before and after whitespace didn't display correctly
 	* Code opened in a new window didn't display if the current wp theme css was included
 	* IE 8 compatibility issues
+	* Dropdown of languages in settings and Tag Editor are now sorted by name, not id
 
 = 1.14 =
 * All AJAX functions are now using the wp_ajax action and admin-ajax.php method defined here: http://codex.wordpress.org/AJAX_in_Plugins. This means Crayon no longer passes around the wp_load path and doesn't use it as a $_GET variable to load AJAX requests. The security vulnerability in 1.13 is no longer present and that code has been removed.

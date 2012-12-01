@@ -1,0 +1,11 @@
+if [%3]==[] (
+    goto :usage
+)
+if not exist %3 (
+    echo Creating %3 dir...
+    mkdir %3
+)
+echo Copying original files to %3 dir...
+copy %2\* %3 >nul
+echo Adding background...
+mogrify -background #%1 -flatten %3\*

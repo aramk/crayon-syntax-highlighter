@@ -714,12 +714,13 @@ class CrayonSettingsWP {
 		self::textbox(array('id' => CrayonSettings::START_LINE, 'size' => 2, 'break' => TRUE));
 		echo '</div>';
 	}
-
+	
 	public static function langs() {
 		echo '<a name="langs"></a>';
 		// Specialised dropdown for languages
 		if (array_key_exists(CrayonSettings::FALLBACK_LANG, self::$options)) {
 			if (($langs = CrayonParser::parse_all()) != FALSE) {
+				$langs = CrayonLangs::sort_by_name($langs);
 				self::span(crayon__('When no language is provided, use the fallback').': ');
 				self::dropdown(CrayonSettings::FALLBACK_LANG,FALSE,TRUE,TRUE,$langs);
 				// Information about parsing
@@ -746,6 +747,7 @@ class CrayonSettingsWP {
 	public static function show_langs() {
 		require_once (CRAYON_PARSER_PHP);
 		if (($langs = CrayonParser::parse_all()) != FALSE) {
+			$langs = CrayonLangs::sort_by_name($langs);
 			echo '<table class="crayon-table" cellspacing="0" cellpadding="0"><tr class="crayon-table-header">',
 			'<td>ID</td><td>Name</td><td>Version</td><td>File Extensions</td><td>Aliases</td><td>State</td></tr>';
 			$keys = array_values($langs);
