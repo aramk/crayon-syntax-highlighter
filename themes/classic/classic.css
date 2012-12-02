@@ -24,10 +24,10 @@ Author URI: http://ak.net84.net/
 }
 
 /* Line Numbers */
-.crayon-theme-classic .crayon-nums {
+.crayon-theme-classic .crayon-table .crayon-nums {
 	background: #dfefff !important;
 	color: #5499de !important;
-	border-right: 1px solid #b3d3f3 !important;
+	/* border-right: 1px solid #b3d3f3 !important; */
 }
 
 /* Selection */
@@ -49,11 +49,9 @@ Author URI: http://ak.net84.net/
 /* Striped Lines */
 .crayon-theme-classic .crayon-striped-line {
     background: #f7f7f7 !important;
-    border: 1px #CCC !important;
 }
 .crayon-theme-classic .crayon-striped-num {
     background: #c8e1fa !important;
-    border: 1px #CCC !important;
     color: #317cc5 !important;
 }
 
