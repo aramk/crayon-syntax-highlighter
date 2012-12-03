@@ -114,9 +114,10 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * French
 * German (thanks to <a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&szlig;</a>)
 * Italian (thanks to <a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>)
-* Lithuanian (thanks to <a href="http://www.host1free.com" target="_blank">Vincent G</a>)
-* Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
 * Japanese (thanks to <a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>)
+* Lithuanian (thanks to <a href="http://www.host1free.com" target="_blank">Vincent G</a>)
+* Portuguese (thanks to <a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>)
+* Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
 * Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
 * Turkish (thanks to <a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)
 * Help from translators at improving/adding to this list greatly appreciated!
@@ -250,6 +251,12 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 4. Tag Editor.
 
 == Changelog ==
+
+= 1.16 =
+* ADDED:
+	* Portuguese translation
+* FIXED:
+	* Updated Turkish translation
 
 = 1.15 =
 * ADDED:

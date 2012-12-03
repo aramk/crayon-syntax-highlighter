@@ -1,0 +1,723 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2012-12-02 20:47-0300\n"
+"PO-Revision-Date: 2012-12-02 20:47-0300\n"
+"Last-Translator: Adonai Silveira Canez <adonaicanez@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;crayon__;crayon_n\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: C:\\Users\\Adonai\\Desktop\\crayon\n"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_formatter.class.php:263
+msgid "Toggle Plain Code"
+msgstr "Exibir código simples"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_formatter.class.php:264
+msgid "Toggle Line Wrap"
+msgstr "Alternar quebras de linha"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_formatter.class.php:266
+#, php-format
+msgid "Press %s to Copy, %s to Paste"
+msgstr "Pressione %s para Copiar, %s para Colar"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_formatter.class.php:266
+msgid "Copy Plain Code"
+msgstr "Copiar Código Simples"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_formatter.class.php:268
+msgid "Open Code In New Window"
+msgstr "Abrir código em nova janela"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_formatter.class.php:270
+msgid "Toggle Line Numbers"
+msgstr "Alternar números de linha"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_formatter.class.php:273
+msgid "Contains Mixed Languages"
+msgstr "Contem Várias Linguagens"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:143
+msgid "Hourly"
+msgstr "A cada hora"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:143
+msgid "Daily"
+msgstr "Diário"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:144
+msgid "Weekly"
+msgstr "Semanal"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:144
+msgid "Monthly"
+msgstr "Mensal"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:145
+msgid "Immediately"
+msgstr "Imediatamente"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:155
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:159
+msgid "Max"
+msgstr "Max"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:155
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:159
+msgid "Min"
+msgstr "Min"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:155
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:159
+msgid "Static"
+msgstr "Estático"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:157
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:161
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:676
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:685
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:931
+msgid "Pixels"
+msgstr "Pixels"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:157
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:161
+msgid "Percent"
+msgstr "Porcento"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:170
+msgid "None"
+msgstr "Nenhum"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:170
+msgid "Left"
+msgstr "Esqueda"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:170
+msgid "Center"
+msgstr "Centro"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:170
+msgid "Right"
+msgstr "Direita"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:172
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:196
+msgid "On MouseOver"
+msgstr "Quando o Mouse estiver sobre"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:172
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:178
+msgid "Always"
+msgstr "Sempre"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:172
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:178
+msgid "Never"
+msgstr "Nunca"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:178
+msgid "When Found"
+msgstr "Quando encontrar"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:196
+msgid "On Double Click"
+msgstr "Duplo clique"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:196
+msgid "On Single Click"
+msgstr "Um clique"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:196
+msgid "Disable Mouse Events"
+msgstr "Desabilitar eventos de Mouse"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings.class.php:203
+msgid "An error has occurred. Please try again later."
+msgstr "Ocorreu um erro. Por favor, tente novamente mais tarde."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:49
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1107
+msgid "Settings"
+msgstr "Configurações"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:130
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+"Você não tem permissões de acesso suficientes para acessar esta página."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:418
+msgid "General"
+msgstr "Geral"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:419
+msgid "Theme"
+msgstr "Tema"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:420
+msgid "Font"
+msgstr "Fonte"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:421
+msgid "Metrics"
+msgstr "Métrica"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:422
+msgid "Toolbar"
+msgstr "Barra de ferramentas"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:423
+msgid "Lines"
+msgstr "Linhas"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:424
+msgid "Code"
+msgstr "Código"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:425
+msgid "Tags"
+msgstr "Tags"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:426
+msgid "Languages"
+msgstr "Linguagens"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:427
+msgid "Files"
+msgstr "Arquivos"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:428
+msgid "Posts"
+msgstr "Posts"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:429
+msgid "Tag Editor"
+msgstr "Editor de Tags"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:430
+msgid "Misc"
+msgstr "Miscelânea"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:433
+msgid "Debug"
+msgstr "Debug"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:434
+msgid "Errors"
+msgstr "Erros"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:435
+msgid "Log"
+msgstr "Log"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:438
+msgid "About"
+msgstr "Sobre"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:638
+msgid "Crayon Help"
+msgstr "Crayon Ajuda"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:653
+msgid "Height"
+msgstr "Altura"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:659
+msgid "Width"
+msgstr "Largura"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:665
+msgid "Top Margin"
+msgstr "Margem superior"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:666
+msgid "Bottom Margin"
+msgstr "Margem inferior"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:667
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:672
+msgid "Left Margin"
+msgstr "Margem Esquerda"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:668
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:672
+msgid "Right Margin"
+msgstr "Margem Direita"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:678
+msgid "Horizontal Alignment"
+msgstr "Alinhamento horizontal"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:681
+msgid "Allow floating elements to surround Crayon"
+msgstr "Permitir elementos flutuantes para cercar Crayon"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:683
+msgid "Inline Margin"
+msgstr "Margem em linha"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:691
+msgid "Display the Toolbar"
+msgstr "Exibir a barra de ferramentas"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:694
+msgid "Overlay the toolbar on code rather than push it down when possible"
+msgstr ""
+"Sobrepor a barra de ferramentas sobre o código, em vez de empurrá-lo para "
+"baixo quando possível"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:695
+msgid "Toggle the toolbar on single click when it is overlayed"
+msgstr "Alterne a barra de ferramentas no único clique quando ele é sobreposto"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:696
+msgid "Delay hiding the toolbar on MouseOut"
+msgstr "Atraso para ocultar a barra de ferramentas quando o mouse sair de cima"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:698
+msgid "Display the title when provided"
+msgstr "Exibir o título quando disponível"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:699
+msgid "Display the language"
+msgstr "Exibir a linguagem"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:706
+msgid "Display striped code lines"
+msgstr "Exibir linhas de código listradas"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:707
+msgid "Enable line marking for important lines"
+msgstr "Habilitar marcação de linhas para linhas importantes"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:708
+msgid "Enable line ranges for showing only parts of code"
+msgstr "Habilitar faixas de linha para mostrar apenas partes do código"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:709
+msgid "Display line numbers by default"
+msgstr "Exibir o número das linhas por padrão"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:710
+msgid "Enable line number toggling"
+msgstr "Habilitar alternancia no número de linhas"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:711
+msgid "Wrap lines by default"
+msgstr "Quebra linhas por padrão"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:712
+msgid "Enable line wrap toggling"
+msgstr "Ativar alternância de quebra de linha"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:713
+msgid "Start line numbers from"
+msgstr "Comece a numeração de linha a partir de"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:724
+msgid "When no language is provided, use the fallback"
+msgstr "Quando nenhuma linguagem é informada, use o padrão"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:730
+#, php-format
+msgid "%d language has been detected."
+msgstr "Lenguagem %d foi detectada."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:731
+msgid "Parsing was successful"
+msgstr "A análise foi bem sucedida"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:731
+msgid "Parsing was unsuccessful"
+msgstr "A análise não foi bem sucedida"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:737
+#, php-format
+msgid "The selected language with id %s could not be loaded"
+msgstr "O idioma selecionado com o id %s não pôde ser carregado"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:740
+msgid "Show Languages"
+msgstr "Exibir linguagens"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:776
+msgid "Show Crayon Posts"
+msgstr "Exibir Crayon Posts"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:777
+msgid "Refresh"
+msgstr "Atualizar"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:793
+msgid "ID"
+msgstr "ID"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:793
+msgid "Title"
+msgstr "Titulo"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:793
+msgid "Posted"
+msgstr "Posts"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:793
+msgid "Modifed"
+msgstr "Modificado"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:793
+msgid "Contains Legacy Tags?"
+msgstr "Contém Tags antigas?"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:806
+msgid "Yes"
+msgstr "Sim"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:806
+msgid "No"
+msgstr "Não"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:890
+msgid "Edit"
+msgstr "Editar"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:890
+msgid "Duplicate"
+msgstr "Duplicado"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:890
+msgid "Create"
+msgstr "Criar"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:890
+msgid "Delete"
+msgstr "Apagar"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:892
+msgid "Loading..."
+msgstr "Carregando..."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:907
+#, php-format
+msgid ""
+"Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 "
+"are marked."
+msgstr ""
+"Altere a %1$slinguagem padrão%2$s para alterar o código de exemplo. Linhas "
+"5-7 estão marcadas"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:912
+msgid "Enable Live Preview"
+msgstr "Ativar Visualização Dinâmica"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:914
+msgid "Enqueue themes in the header (more efficient)."
+msgstr "Colocar temas no cabeçalho (mais eficiente)."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:917
+#, php-format
+msgid "The selected theme with id %s could not be loaded"
+msgstr "O tema selecionado com o id %s não pode ser carregado"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:929
+msgid "Custom Font Size"
+msgstr "Tamanho de fonte pesonalizado"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:934
+#, php-format
+msgid "The selected font with id %s could not be loaded"
+msgstr "A fonte selecionada com o id %s não pode ser carregada"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:940
+msgid "Enqueue fonts in the header (more efficient)."
+msgstr "Colocar fontes no cabeçalho (mais eficiente)."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:945
+msgid "Enable plain code view and display"
+msgstr "Habilitar visualização e exibição de código simples"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:948
+msgid "Enable plain code toggling"
+msgstr "Ativar alternância de código simples"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:949
+msgid "Show the plain code by default"
+msgstr "Exibir código simples por padrão"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:950
+msgid "Enable code copy/paste"
+msgstr "Habilitar Copiar/Colar código"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:952
+msgid "Enable opening code in a window"
+msgstr "Habilitar abrir código em uma janela"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:953
+msgid "Always display scrollbars"
+msgstr "Sempre exibir barra de rolagem"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:956
+msgid "Decode HTML entities in code"
+msgstr "Decodificar entidades HTML em código"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:958
+msgid "Decode HTML entities in attributes"
+msgstr "Decodificar entidades HTML em atributos"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:960
+msgid "Remove whitespace surrounding the shortcode content"
+msgstr "Remover espaço em branco em torno do código"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:962
+msgid "Allow Mixed Language Highlighting with delimiters and tags."
+msgstr "Permitir realçar linguagem mista com delimitadores e tags."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:964
+msgid "Show Mixed Language Icon (+)"
+msgstr "Exibir icone para inúmeras linguagens (+)"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:966
+msgid "Tab size in spaces"
+msgstr "Tamanho do Tab em espaços"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:968
+msgid "Blank lines before code:"
+msgstr "Linhas em branco antes do código:"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:970
+msgid "Blank lines after code:"
+msgstr "Linhas em branco após o código:"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:975
+msgid "Capture Mini Tags like [php][/php] as Crayons."
+msgstr "Capturar Mini Tags como [php][/php] como Crayons."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:976
+msgid "Capture Inline Tags like {php}{/php} inside sentences."
+msgstr "Capturar Tag inline como {php} {/php} dentro das sentenças."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:977
+msgid "Wrap Inline Tags"
+msgstr "Encapsular Tags inline"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:978
+msgid "Capture `backquotes` as &lt;code&gt;"
+msgstr "Capturar `backquotes` como &lt;code&gt;"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:979
+msgid "Capture &lt;pre&gt; tags as Crayons"
+msgstr "Capturar &lt;pre&gt; tags como Crayons"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:980
+msgid "Enable [plain][/plain] tag."
+msgstr "Habilitar [plain][/plain] tag."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:985
+msgid ""
+"When loading local files and a relative path is given for the URL, use the "
+"absolute path"
+msgstr ""
+"Ao carregar arquivos locais e um caminho relativo é dado para a URL, use o "
+"caminho absoluto"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:988
+msgid "Followed by your relative URL."
+msgstr "Seguido pela sua URL relativa."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:995
+msgid "Convert Legacy Tags"
+msgstr "Converter Tags antigas"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:998
+msgid "No Legacy Tags Found"
+msgstr "Não foram encontradas Tags antigas"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1003
+#, php-format
+msgid ""
+"Use %s to separate setting names from values in the &lt;pre&gt; class "
+"attribute"
+msgstr ""
+"Use %s para separar nomes de configuração de valores &lt;pre&gt; do atributo "
+"de classe"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1006
+msgid ""
+"Display the Tag Editor in any TinyMCE instances on the frontend (e.g. "
+"bbPress)"
+msgstr ""
+"Exibir o editor de Tags em todas instâncias TinyMCE da interface. (ex. "
+"bbPress)"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1007
+msgid "Display Tag Editor settings on the frontend"
+msgstr "Exibir as configurações do Editor de Tags na parte frontal"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1011
+msgid "Clear the cache used to store remote code requests"
+msgstr "Limpar o cache usado para armazenar solicitações de código remoto"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1013
+msgid "Clear Now"
+msgstr "Limpar agora"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1014
+msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
+msgstr "Tentar carregar CSS Crayon e JavaScript apenas quando necessário"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1015
+msgid "Disable enqueuing for page templates that may contain The Loop."
+msgstr "Desativar enqueuing para modelos de página que pode conter a Loop."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1016
+msgid "Allow Crayons inside comments"
+msgstr "Permitir comentários sobre os Crayons"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1017
+msgid "Remove Crayons from excerpts"
+msgstr "Remover Crayons dos trechos"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1018
+msgid "Load Crayons only from the main Wordpress query"
+msgstr "Carregar Crayons apenas a partir da consulta principal do Wordpress."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1019
+msgid "Disable mouse gestures for touchscreen devices (eg. MouseOver)"
+msgstr ""
+"Desabilitar movimentos de mouse para dispositivos touchscreen (eg. MouseOver)"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1020
+msgid "Disable animations"
+msgstr "Desabilitar animações"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1021
+msgid "Disable runtime stats"
+msgstr "Desabilitar estatisticas em tempo de execução"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1027
+msgid "Log errors for individual Crayons"
+msgstr "Logar erros Crayons individuais."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1028
+msgid "Log system-wide errors"
+msgstr "Logar todos os erros do sistema"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1029
+msgid "Display custom message for errors"
+msgstr "Exibir mensagens customizadas para erros"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1041
+msgid "Show Log"
+msgstr "Exibir Log"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1041
+msgid "Hide Log"
+msgstr "Ocultar Log"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1043
+msgid "Clear Log"
+msgstr "Limpar Log"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1044
+msgid "Email Admin"
+msgstr "Email para Admin"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1046
+msgid "Email Developer"
+msgstr "Email para o Desenvolvedor"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1048
+msgid "The log is currently empty."
+msgstr "O Log está vazio atualmente."
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1062
+msgid "Version"
+msgstr "Versão"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1064
+msgid "Developer"
+msgstr "Desenvolvedor"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1065
+msgid "Translators"
+msgstr "Tradutores"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1091
+msgid ""
+"The result of innumerable hours of hard work over many months. It's an "
+"ongoing project, keep me motivated!"
+msgstr ""
+"O resultado de inúmeras horas de trabalho duro ao longo de muitos meses. "
+"Este é um projeto em andamento, ajude-me a manter-me motivado!"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1101
+msgid "?"
+msgstr "?"
+
+#: C:\Users\Adonai\Desktop\crayon/crayon_settings_wp.class.php:1108
+msgid "Donate"
+msgstr "Doação"
+
+#: C:\Users\Adonai\Desktop\crayon/util/tag-editor/crayon_tag_editor_wp.class.php:64
+msgid "Add Crayon Code"
+msgstr "Adicionar código Crayon"
+
+#: C:\Users\Adonai\Desktop\crayon/util/tag-editor/crayon_tag_editor_wp.class.php:65
+msgid "Edit Crayon Code"
+msgstr "Editar código do Crayon"
+
+#: C:\Users\Adonai\Desktop\crayon/util/tag-editor/crayon_tag_editor_wp.class.php:66
+msgid "Add"
+msgstr "Adicionar"
+
+#: C:\Users\Adonai\Desktop\crayon/util/tag-editor/crayon_tag_editor_wp.class.php:67
+msgid "Save"
+msgstr "Salvar"
+
+#: C:\Users\Adonai\Desktop\crayon/util/tag-editor/crayon_tag_editor_wp.class.php:184
+msgid "A short description"
+msgstr "Descrição curta"
+
+#: C:\Users\Adonai\Desktop\crayon/util/tag-editor/crayon_tag_editor_wp.class.php:197
+msgid "(e.g. 3-5 or 3)"
+msgstr "(ex. 3-5 ou 3)"
+
+#: C:\Users\Adonai\Desktop\crayon/util/tag-editor/crayon_tag_editor_wp.class.php:199
+msgid "(e.g. 1,2,3-5)"
+msgstr "(ex. 1,2,3-5)"
+
+#: C:\Users\Adonai\Desktop\crayon/util/tag-editor/crayon_tag_editor_wp.class.php:216
+msgid "Relative local path or absolute URL"
+msgstr "Caminho local relativo ou uma URL absoluta"
+
+#: C:\Users\Adonai\Desktop\crayon/util/tag-editor/crayon_tag_editor_wp.class.php:221
+#, php-format
+msgid ""
+"If a relative local path is given it will be appended to %s - which is "
+"defined in %sCrayon &gt; Settings &gt; Files%s."
+msgstr ""
+"Se um caminho relativo for informado ele será adicionado a %s - que está "
+"definido na %s &gt; Configurações &gt; do Crayon%s."
+
+#: C:\Users\Adonai\Desktop\crayon/util/tag-editor/crayon_tag_editor_wp.class.php:250
+#, php-format
+msgid ""
+"Future changes to the global settings under %sCrayon &gt; Settings%s won't "
+"affect overridden settings."
+msgstr ""
+"Futuras alterações nas configurações globais de %sCrayon &gt; Configurações"
+"%s não afetará configurações substituídas."
+
+#: C:\Users\Adonai\Desktop\crayon/util/theme-editor/theme_editor_content.php:29
+#, php-format
+msgid "Editing \"%s\" Theme"
+msgstr "Editando \"%s\" Tema"
+
+#: C:\Users\Adonai\Desktop\crayon/util/theme-editor/theme_editor_content.php:31
+#, php-format
+msgid "Creating Theme From \"%s\""
+msgstr "Tema criado por \"%s\""
