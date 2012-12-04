@@ -256,6 +256,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
 	* French translation (thanks to <a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>)
 	* Portuguese translation
+	* Expanding code beyond the page border on mouseover - enable the setting under Settings > Crayon > Code
 * FIXED:
 	* Carriage returns and new line characters were being treated differently and not being detected correctly. I'm using a new regex which detects both and also captures the line content: (?:^|(?<=\r\n|\n))[^\r\n]*
 	* JS variable bugs when minifying with W3 Total Cache

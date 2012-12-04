@@ -337,6 +337,11 @@ class CrayonFormatter {
 			$code_settings .= ' wrap';
 		}
 		
+		// Wrap
+		if ($hl->setting_val(CrayonSettings::EXPAND)) {
+			$code_settings .= ' expand';
+		}
+		
 		// Determine dimensions
 		if ($hl->setting_val(CrayonSettings::HEIGHT_SET)) {
 			$height_style = self::dimension_style($hl, CrayonSettings::HEIGHT);

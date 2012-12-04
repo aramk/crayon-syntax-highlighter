@@ -55,19 +55,6 @@ var CRAYON_DEBUG = false;
 		handlers.splice(0, 0, handler);
 	};
 
-	// XXX This modifies the existing CSS function and allows passing an object
-	var oldCSSMethod = $.fn.css;
-	$.fn.css = function(o) {
-		if (typeof o == 'object') {
-			var me = this;
-			$.each(o, function (k, v) {
-				oldCSSMethod.apply(me, [k, v]);
-			});
-		} else {
-			return oldCSSMethod.apply(this, arguments);
-		}
-	};
-
 })(jQueryCrayon);
 
 if (typeof CrayonTagEditorSettings == 'undefined') {

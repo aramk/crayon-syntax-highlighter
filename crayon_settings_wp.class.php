@@ -967,6 +967,7 @@ class Human {
 		echo '</span>';
 		self::checkbox(array(CrayonSettings::POPUP, crayon__('Enable opening code in a window')));
 		self::checkbox(array(CrayonSettings::SCROLL, crayon__('Always display scrollbars')));
+		self::checkbox(array(CrayonSettings::EXPAND, crayon__('Expand code beyond page borders on mouseover')));
 		echo '</div>';
 		if (!$editor) {
 			self::checkbox(array(CrayonSettings::DECODE, crayon__('Decode HTML entities in code')));
