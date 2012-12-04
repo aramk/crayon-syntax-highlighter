@@ -66,20 +66,21 @@
     });
 
     CrayonSyntax = new function() {
+    	var base = this;
         var crayon = new Object();
         var currUID = 0;
 
-        this.init = function() {
+        base.init = function() {
             if (typeof crayon == 'undefined') {
                 crayon = new Object();
             }
 
             $(CRAYON_SYNTAX).each(function() {
-                CrayonSyntax.process(this);
+                base.process(this);
             });
         };
 
-        this.process = function(c, replace) {
+        base.process = function(c, replace) {
             c = $(c);
             var uid = c.attr('id');
             if (uid == 'crayon-') {
@@ -349,7 +350,7 @@
                 code = clone.find(CRAYON_MAIN);
             }
 
-            settings.data = get_all_css() + '<body class="crayon-popup-window" style="padding:0; margin:0;"><div class="' + clone.attr('class') +
+            settings.data = base.get_all_css() + '<body class="crayon-popup-window" style="padding:0; margin:0;"><div class="' + clone.attr('class') +
                 ' crayon-popup">' + remove_css_inline(get_jquery_str(code)) + '</div></body>';
         };
 
@@ -369,23 +370,32 @@
         };
 
         // Get all CSS on the page as a string
-        var get_all_css = function() {
+        base.get_all_css = function() {
             var css_str = '';
-            css = $('link[rel="stylesheet"][href*="crayon-syntax-highlighter"]').each(function() {
+            var css = $('link[rel="stylesheet"]');
+            var filtered = [];
+            if (css.length == 1) {
+            	// For minified CSS, only allow a single file
+            	filtered = css;
+            } else {
+            	// Filter all others for Crayon CSS
+            	filtered = css.filter('[href*="crayon-syntax-highlighter"]');
+            }
+            filtered.each(function() {
                 var string = get_jquery_str($(this));
                 css_str += string;
             });
             return css_str;
         };
 
-        this.copy_plain = function(uid, hover) {
+        base.copy_plain = function(uid, hover) {
             if (typeof crayon[uid] == 'undefined') {
                 return make_uid(uid);
             }
 
             var plain = crayon[uid].plain;
 
-            this.toggle_plain(uid, true, true);
+            base.toggle_plain(uid, true, true);
             toolbar_toggle(uid, true);
 
             key = crayon[uid].mac ? '\u2318' : 'CTRL';
@@ -474,7 +484,7 @@
             }
         };
 
-        this.toggle_plain = function(uid, hover, select) {
+        base.toggle_plain = function(uid, hover, select) {
             if (typeof crayon[uid] == 'undefined') {
                 return make_uid(uid);
             }
@@ -562,7 +572,7 @@
             return false;
         };
 
-        this.toggle_nums = function(uid, hide, instant) {
+        base.toggle_nums = function(uid, hide, instant) {
             if (typeof crayon[uid] == 'undefined') {
                 make_uid(uid);
                 return false;
@@ -621,7 +631,7 @@
             return false;
         };
 
-        this.toggle_wrap = function(uid) {
+        base.toggle_wrap = function(uid) {
             crayon[uid].wrapped = !crayon[uid].wrapped;
             update_wrap(uid);
         };
