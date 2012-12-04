@@ -5,10 +5,18 @@ var CRAYON_DEBUG = false;
 
 (function ($) {
 	
+	$(document).ready(function() {
+		CrayonUtil.init();
+    });
+	
 	CrayonUtil = new function() {
 		
 		var base = this;
-		var settings = CrayonSyntaxSettings;
+		var settings = null;
+		
+		base.init = function() {
+			settings = CrayonSyntaxSettings;			
+		};
 		
 		base.addPrefixToID = function (id) {
 	        return id.replace(/^([#.])?(.*)$/, '$1' + settings.prefix + '$2');
