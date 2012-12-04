@@ -260,7 +260,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Carriage returns and new line characters were being treated differently and not being detected correctly. I'm using a new regex which detects both and also captures the line content: (?:^|(?<=\r\n|\n))[^\r\n]*
 	* JS variable bugs when minifying with W3 Total Cache
 	* CSS did not load in newly opened code window if minified
-	* Saved comments did not capture Crayons until they were updated or the post list was refreshed in settings 
+	* Saved comments did not capture Crayons until they were updated or the post list was refreshed in settings
+	* Posts in settings are sorted now descending based on modified date
 	* Updated Turkish translation
 
 = 1.15 =
