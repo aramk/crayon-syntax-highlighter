@@ -266,7 +266,7 @@ class CrayonFormatter {
 				$toolbar_settings .= '';
 			}
 			
-			$print_plain_button = $hl->setting_val(CrayonSettings::PLAIN_TOGGLE) ? '<a class="crayon-plain-button crayon-button" title="'.crayon__('Toggle Plain Code').'"></a>' : '';
+			$print_plain_button = $hl->setting_val(CrayonSettings::PLAIN) && $hl->setting_val(CrayonSettings::PLAIN_TOGGLE) ? '<a class="crayon-plain-button crayon-button" title="'.crayon__('Toggle Plain Code').'"></a>' : '';
 			$print_wrap_button = $hl->setting_val(CrayonSettings::WRAP_TOGGLE) ? '<a class="crayon-wrap-button crayon-button" title="'.crayon__('Toggle Line Wrap').'"></a>' : '';
 			$print_copy_button = !$touch && $hl->setting_val(CrayonSettings::PLAIN) && $hl->setting_val(CrayonSettings::COPY) ?
 				'<a class="crayon-copy-button crayon-button" data-text="'.crayon__('Press %s to Copy, %s to Paste').'" title="'.crayon__('Copy Plain Code').'"></a>' : '';

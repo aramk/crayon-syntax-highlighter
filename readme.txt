@@ -263,6 +263,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* CSS did not load in newly opened code window if minified
 	* Saved comments did not capture Crayons until they were updated or the post list was refreshed in settings
 	* Posts in settings are sorted now descending based on modified date
+	* Toggle plain code button appeared when plain code was disabled
 	* Updated Turkish translation
 
 = 1.15 =
