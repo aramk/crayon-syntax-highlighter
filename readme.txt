@@ -252,10 +252,11 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 1.16 =
+= 1.15.1 =
 * ADDED:
 	* Portuguese translation
 * FIXED:
+	* Carriage returns and new line characters were being treated differently and not being detected correctly. I'm using a new regex which detects both and also captures the line content: (?:^|(?<=\r\n|\n))[^\r\n]*
 	* Updated Turkish translation
 
 = 1.15 =

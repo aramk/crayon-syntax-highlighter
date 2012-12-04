@@ -146,7 +146,7 @@ class CrayonFormatter {
 		// Generate the code lines and separate each line as a div
 		$print_code = '';
 		$print_nums = '';
-		$hl->line_count(preg_match_all("|^.*$|m", $code, $code_lines));
+		$hl->line_count(preg_match_all("#(?:^|(?<=\r\n|\n))[^\r\n]*#", $code, $code_lines));
 		
 		// The line number to start from
 		$start_line = $hl->setting_val(CrayonSettings::START_LINE);
@@ -163,6 +163,12 @@ class CrayonFormatter {
 				}
 			}
 			$code_line = $code_lines[0][$i - 1];
+			
+			// If line is blank, add a space so the div has the correct height
+			if (empty($code_line)) {
+				$code_line = '&nbsp;';
+			}
+			
 			// Check if the current line has been selected
 			$marked_lines = $hl->marked();
 			// Check if lines need to be marked as important

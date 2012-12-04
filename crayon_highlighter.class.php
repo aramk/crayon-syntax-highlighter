@@ -157,8 +157,6 @@ class CrayonHighlighter {
 		
 		if ($this->language === NULL) {
 			$this->language_detect();
-// 			$this->language($this->setting_val(CrayonSettings::FALLBACK_LANG));
-// 			$this->language(NULL);
 		}
 		if ($this->needs_format) {
 			$tmr->start();
@@ -229,11 +227,6 @@ class CrayonHighlighter {
 				$code = preg_replace("#(?:^\\s*\\r?\\n)|(?:\\r?\\n\\s*$)#", '', $code);
 			}
 			
-			// Add a \n to the end if one doesn't exist
-			if (preg_match('#(?<!\n)$#msi', $code)) {
-				$code .= "\n";
-			}
-			
 			$before = $this->setting_val(CrayonSettings::WHITESPACE_BEFORE);
 			if ($before > 0) {
 				$code = str_repeat("\n", $before) . $code;
@@ -245,7 +238,6 @@ class CrayonHighlighter {
 			
 			if (!empty($code)) {
 				$this->code = $code;
-// 				$this->needs_load = FALSE; // No need to load, code provided
 				$this->needs_format = TRUE;
 			}
 		}
@@ -282,12 +274,6 @@ class CrayonHighlighter {
 			$this->url = $url;
 			$this->needs_load = TRUE;
 		}
-		
-//		if (CrayonUtil::str($this->url, $url)) {
-//			$this->needs_load = TRUE;
-//		} else {
-//			return $this->url;
-//		}
 	}
 
 	function title($title = NULL) {

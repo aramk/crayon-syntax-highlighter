@@ -3,7 +3,7 @@
  Plugin Name: Crayon Syntax Highlighter
 Plugin URI: http://ak.net84.net/projects/crayon-syntax-highlighter
 Description: Supports multiple languages, themes, highlighting from a URL, local file or post text.
-Version: _1.16_beta
+Version: _1.15.1_beta
 Author: Aram Kocharyan
 Author URI: http://ak.net84.net/
 Text Domain: crayon-syntax-highlighter
@@ -75,11 +75,11 @@ class CrayonWP {
 
 	// Used to detect the shortcode
 	const REGEX_CLOSED = '(?:\[\s*crayon(?:-(\w+))?\b([^\]]*)/\s*\])'; // [crayon atts="" /]
-	const REGEX_TAG =    '(?:\[\s*crayon(?:-(\w+))?\b([^\]]*)\][\r\n]*?(.*?)[\r\n]*?\[\s*/\s*crayon\s*\])'; // [crayon atts=""] ... [/crayon]
+	const REGEX_TAG =    '(?:\[\s*crayon(?:-(\w+))?\b([^\]]*)\](.*?)\[\s*/\s*crayon\s*\])'; // [crayon atts=""] ... [/crayon]
 	const REGEX_INLINE_CLASS = '\bcrayon-inline\b';
 
 	const REGEX_CLOSED_NO_CAPTURE = '(?:\[\s*crayon\b[^\]]*/\])';
-	const REGEX_TAG_NO_CAPTURE =    '(?:\[\s*crayon\b[^\]]*\][\r\n]*?.*?[\r\n]*?\[/crayon\])';
+	const REGEX_TAG_NO_CAPTURE =    '(?:\[\s*crayon\b[^\]]*\].*?\[/crayon\])';
 
 	const REGEX_QUICK_CAPTURE = '(?:\[\s*crayon[^\]]*\].*?\[\s*/\s*crayon\s*\])|(?:\[\s*crayon[^\]]*/\s*\])';
 
