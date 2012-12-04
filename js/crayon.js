@@ -143,8 +143,11 @@
                 'height': main_style && main_style.height || '',
                 'max-height': main_style && main_style.maxHeight || '',
                 'min-height': main_style && main_style.minHeight || '',
-                'width': main_style && main_style.width || ''
+                'width': main_style && main_style.width || '',
+                'max-width': main_style && main_style.maxWidth || '',
+                'min-width': main_style && main_style.minWidth || '',
             };
+            console.log(crayon[uid].main_style);
 
             var load_timer;
             var i = 0;
@@ -249,10 +252,10 @@
                 // Use .hover() for chrome, but in firefox mouseover/mouseout worked best
                 c.mouseenter(function() { toolbar_toggle(uid, true); })
                     .mouseleave(function() { toolbar_toggle(uid, false); });
-
             } else if (touchscreen) {
                 toolbar.show();
             }
+            
             // Plain show events
             if (plain.length != 0 && !touchscreen) {
                 if (plain.filter('[data-settings~="dblclick"]').length != 0) {
@@ -269,7 +272,9 @@
                     CrayonSyntax.toggle_plain(uid, true);
                 }
             }
+            
             // Scrollbar show events
+            var unfold = true;// c.filter('[data-settings~="unfold"]').length != 0;
             if (!touchscreen && c.filter('[data-settings~="scroll-mouseover"]').length != 0) {
                 // Disable on touchscreen devices and when set to mouseover
                 main.css('overflow', 'hidden');
@@ -277,9 +282,10 @@
 
                 console_log(plain.css('overflow'));
 
-                c.mouseenter(function() { toggle_scroll(uid, true); })
-                    .mouseleave(function() { toggle_scroll(uid, false); });
+                c.mouseenter(function() { toggle_scroll(uid, true, unfold); })
+                    .mouseleave(function() { toggle_scroll(uid, false, unfold); });
             }
+            
             // Disable animations
             if ( c.filter('[data-settings~="disable-anim"]').length != 0 ) {
                 crayon[uid].time = 0;
@@ -730,15 +736,35 @@
 
             crayon_slide(uid, toolbar, show, anim_time, hide_delay);
         };
+        
+//        var toggle_unfold = function(uid, unfold) {
+//        	if (typeof crayon[uid] == 'undefined') {
+//                return make_uid(uid);
+//            }
+//        	if (typeof unfold == 'undefined') {
+//                return;
+//            }
+//        	
+//        	var main = crayon[uid].main;
+//            var plain = crayon[uid].plain;
+//        	
+//        	if (unfold) {
+//        		
+//        	} else {
+//        		restore_dimensions(uid);
+//        	}
+//        	reconsile_dimensions(uid);
+//        };
 
-        var toggle_scroll = function(uid, show) {
+        var toggle_scroll = function(uid, show, unfold) {
             if (typeof crayon[uid] == 'undefined') {
                 return make_uid(uid);
             }
             if (typeof show == 'undefined') {
                 return;
             }
-
+            unfold = CrayonUtil.setDefault(unfold, false);
+            
             var main = crayon[uid].main;
             var plain = crayon[uid].plain;
             
@@ -754,8 +780,27 @@
                     visible.scrollLeft(crayon[uid].left-1);
                     visible.scrollLeft(crayon[uid].left);
                 }
-                main.css('height', main.height());
-                main.css('width', main.width());
+                if (!unfold) {
+                	main.css('height', main.height());
+                    main.css('width', main.width());
+                } else {
+                	// TODO
+//                	main.css('height', '1000px');
+//                    main.css('width', '');
+                	
+                	var unfold = {
+                		'width' : 'auto',
+                		'min-width' : 'none',
+                		'max-width' : 'none',
+                	};
+                	
+                    main.css(unfold);
+                    crayon[uid].css(unfold);
+                    
+//                	crayon[uid].css('max-width', 'none');
+//                    main.css('max-width', 'none');
+                    //console.log(main.css('max-width'));
+                }
             } else {
             	// Hide scrollbars
                 visible = (main.css('z-index') == 1 ? main : plain);
@@ -763,11 +808,7 @@
                 crayon[uid].left = visible.scrollLeft();
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
-                // Restore dimensions
-                main.css('height', crayon[uid].main_style['height']);
-                main.css('max-height', crayon[uid].main_style['max-height']);
-                main.css('min-height', crayon[uid].main_style['min-height']);
-                main.css('width', crayon[uid].main_style['width']);
+                restore_dimensions(uid);
             }
             // Register that overflow has changed
             crayon[uid].scroll_changed = true;
@@ -785,6 +826,17 @@
             }, 10);
         };
 
+        var restore_dimensions = function(uid) {
+        	// Restore dimensions
+        	var main = crayon[uid].main;
+        	var main_style = crayon[uid].main_style;
+        	main.css(main_style);
+        	// Width styles also apply to crayon
+        	crayon[uid].css('width', main_style['width']);
+        	crayon[uid].css('max-width', main_style['max-width']);
+        	crayon[uid].css('min-width', main_style['min-width']);
+        };
+        
         var reconsile_dimensions = function(uid) {
             // Reconsile dimensions
             crayon[uid].plain.height(crayon[uid].main.height());

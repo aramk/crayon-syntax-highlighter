@@ -31,6 +31,41 @@ var CRAYON_DEBUG = false;
 	        return $(base.addPrefixToID(id));
 	    };
 	    
+	    base.setDefault = function (v, d) {
+	    	return (typeof v == 'undefined') ? d : v;
+	    };
+	    
+	};
+	
+	// http://stackoverflow.com/questions/2360655/jquery-event-handlers-always-execute-in-order-they-were-bound-any-way-around-t
+
+	// [name] is the name of the event "click", "mouseover", ..
+	// same as you'd pass it to bind()
+	// [fn] is the handler function
+	$.fn.bindFirst = function(name, fn) {
+		// bind as you normally would
+		// don't want to miss out on any jQuery magic
+		this.bind(name, fn);
+		// Thanks to a comment by @Martin, adding support for
+		// namespaced events too.
+		var handlers = this.data('events')[name.split('.')[0]];
+		// take out the handler we just inserted from the end
+		var handler = handlers.pop();
+		// move it at the beginning
+		handlers.splice(0, 0, handler);
+	};
+
+	// XXX This modifies the existing CSS function and allows passing an object
+	var oldCSSMethod = $.fn.css;
+	$.fn.css = function(o) {
+		if (typeof o == 'object') {
+			var me = this;
+			$.each(o, function (k, v) {
+				oldCSSMethod.apply(me, [k, v]);
+			});
+		} else {
+			return oldCSSMethod.apply(this, arguments);
+		}
 	};
 
 })(jQueryCrayon);
@@ -121,22 +156,4 @@ var CrayonSyntaxUtil = new function() {
 		}
 		return ext;
 	};
-};
-
-// http://stackoverflow.com/questions/2360655/jquery-event-handlers-always-execute-in-order-they-were-bound-any-way-around-t
-
-// [name] is the name of the event "click", "mouseover", ..
-// same as you'd pass it to bind()
-// [fn] is the handler function
-jQueryCrayon.fn.bindFirst = function(name, fn) {
-	// bind as you normally would
-	// don't want to miss out on any jQuery magic
-	this.bind(name, fn);
-	// Thanks to a comment by @Martin, adding support for
-	// namespaced events too.
-	var handlers = this.data('events')[name.split('.')[0]];
-	// take out the handler we just inserted from the end
-	var handler = handlers.pop();
-	// move it at the beginning
-	handlers.splice(0, 0, handler);
 };
