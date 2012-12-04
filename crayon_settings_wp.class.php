@@ -778,23 +778,39 @@ class CrayonSettingsWP {
 		echo self::help_button('http://bit.ly/NQfZN5');
 		echo '<div id="crayon-subsection-posts-info"></div>';
 	}
+	
+	public static function post_cmp($a, $b) {
+		$a = $a->post_modified;
+		$b = $b->post_modified;
+		if ($a == $b) {
+			return 0;
+		} else {
+			return $a < $b ? 1 : -1; 
+		}
+	}
 
 	public static function show_posts() {
-		$posts = self::load_posts();
+		$postIDs = self::load_posts();
 		$legacy_posts = self::load_legacy_posts();
 		// Avoids O(n^2) by using a hash map, tradeoff in using strval
 		$legacy_map = array();
 		foreach ($legacy_posts as $legacyID) {
 			$legacy_map[strval($legacyID)] = TRUE;
 		}
-		arsort($posts);
 
 		echo '<table class="crayon-table" cellspacing="0" cellpadding="0"><tr class="crayon-table-header">',
 		'<td>', crayon__('ID'), '</td><td>', crayon__('Title'), '</td><td>', crayon__('Posted'), '</td><td>', crayon__('Modifed'), '</td><td>', crayon__('Contains Legacy Tags?'), '</td></tr>';
 
+		$posts = array();
+		for ($i = 0; $i < count($postIDs); $i++) {
+			$posts[$i] = get_post($postIDs[$i]);
+		}
+
+		usort($posts, 'CrayonSettingsWP::post_cmp');
+		
 		for ($i = 0; $i < count($posts); $i++) {
-			$postID = $posts[$i];
-			$post = get_post($postID);
+			$post = $posts[$i];
+			$postID = $post->ID;
 			$title = $post->post_title;
 			$title = !empty($title) ? $title : 'N/A';
 			$tr = ($i == count($posts) - 1) ? 'crayon-table-last' : '';
