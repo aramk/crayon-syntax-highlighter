@@ -800,11 +800,14 @@
                         crayon[uid].width(main.width());
                         main.css(expand);
                         main.css(expandMain);
+                        crayon[uid].isExpanding = true;
                         crayon[uid].css(expand);
                         crayon[uid].animate({
                             width: finalWidth,
                             height: finalHeight
-                        }, animt(anim_time, uid), 'easeOutQuad');
+                        }, animt(anim_time, uid), 'easeOutQuad', function() {
+                        	crayon[uid].isExpanding = false;
+                        });
                     }
                 }
             } else {
@@ -815,12 +818,14 @@
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
                 
-//            	var initialWidth = crayon[uid].initialWidth;
             	var initialSize = crayon[uid].initialSize;
             	var delay = crayon[uid].toolbar_delay;
             	if (initialSize) {
             		crayon[uid].stop(true);
-            		crayon[uid].delay(delay).animate({
+            		if (!crayon[uid].isExpanding) {
+            			crayon[uid].delay(delay);            			
+            		}
+            		crayon[uid].animate({
                         width: initialSize.width,
                         height: initialSize.height
                     }, animt(anim_time, uid), 'easeOutQuad', function() {
