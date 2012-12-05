@@ -35,6 +35,18 @@ var CRAYON_DEBUG = false;
 	    	return (typeof v == 'undefined') ? d : v;
 	    };
 	    
+	    base.setMax = function (v, max) {
+	    	return v <= max ? v : max; 
+	    };
+	    
+	    base.setMin = function (v, min) {
+	    	return v >= min ? v : min; 
+	    };
+	    
+	    base.setRange = function (v, min, max) {
+	    	return base.setMax(base.setMin(v, min), max); 
+	    };
+	    
 	};
 	
 	// http://stackoverflow.com/questions/2360655/jquery-event-handlers-always-execute-in-order-they-were-bound-any-way-around-t

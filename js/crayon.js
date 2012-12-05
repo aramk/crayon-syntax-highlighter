@@ -36,6 +36,16 @@
             return style;
         }
     };
+    
+    $.extend($.easing,
+    		{
+    		    easeInQuad: function (x, t, b, c, d) {
+    		        return c*(t/=d)*t + b;
+    		    },
+    		    easeOutQuad: function (x, t, b, c, d) {
+    		        return -c *(t/=d)*(t-2) + b;
+    		    }
+    		});
 
     // END AUXILIARY FUNCTIONS
 
@@ -735,25 +745,6 @@
 
             crayon_slide(uid, toolbar, show, anim_time, hide_delay);
         };
-        
-//        var toggle_expand = function(uid, expand) {
-//        	if (typeof crayon[uid] == 'undefined') {
-//                return make_uid(uid);
-//            }
-//        	if (typeof expand == 'undefined') {
-//                return;
-//            }
-//        	
-//        	var main = crayon[uid].main;
-//            var plain = crayon[uid].plain;
-//        	
-//        	if (expand) {
-//        		
-//        	} else {
-//        		restore_dimensions(uid);
-//        	}
-//        	reconsile_dimensions(uid);
-//        };
 
         var toggle_scroll = function(uid, show, expand) {
             if (typeof crayon[uid] == 'undefined') {
@@ -766,6 +757,7 @@
             
             var main = crayon[uid].main;
             var plain = crayon[uid].plain;
+            var anim_time = CrayonUtil.setDefault(anim_time, CrayonUtil.setRange(diffWidth / 3, 300, 800));
             
             if (show) {
             	// Show scrollbars
@@ -783,25 +775,37 @@
                 	main.css('height', main.height());
                     main.css('width', main.width());
                 } else {
-                	// TODO
-                	var expand = {
-                		'width' : 'auto',
-                		'min-width' : 'none',
-                		'max-width' : 'none',
-                	};
-                	var expandMain = {
-                		'height' : 'auto',
-                		'min-height' : 'none',
-                		'max-height' : 'none',
-                	};
-                    main.css(expand);
-                    main.css(expandMain);
-                    crayon[uid].css(expand);
-                    crayon[uid].css('width', crayon[uid].table.css('width'));
-//                    crayon[uid].css(expand);
-//                    crayon[uid].css({
-//                    	'width' : '1000px'
-//                    });
+                	var initialWidth = crayon[uid].width();
+                    var finalWidth = crayon[uid].table.width();
+                    var diffWidth = finalWidth - initialWidth;  
+                    
+                    var initialHeight = crayon[uid].height();
+                    var finalHeight = crayon[uid].table.height();
+                    var diffHeight = finalHeight - initialHeight;
+                    
+                    crayon[uid].initialSize = {width: initialWidth, height: initialHeight};
+                    
+                    if (diffWidth > 0) {
+                    	var expand = {
+                    		//'width' : main.width(),
+                    		'min-width' : 'none',
+                    		'max-width' : 'none',
+                    	};
+                    	var expandMain = {
+//                    		'height' : 'auto',
+                    		'min-height' : 'none',
+                    		'max-height' : 'none',
+                    	};
+                    	crayon[uid].height(main.height());
+                        crayon[uid].width(main.width());
+                        main.css(expand);
+                        main.css(expandMain);
+                        crayon[uid].css(expand);
+                        crayon[uid].animate({
+                            width: finalWidth,
+                            height: finalHeight
+                        }, animt(anim_time, uid), 'easeOutQuad');
+                    }
                 }
             } else {
             	// Hide scrollbars
@@ -810,7 +814,23 @@
                 crayon[uid].left = visible.scrollLeft();
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
-                restore_dimensions(uid);
+                
+//            	var initialWidth = crayon[uid].initialWidth;
+            	var initialSize = crayon[uid].initialSize;
+            	var delay = crayon[uid].toolbar_delay;
+            	if (initialSize) {
+            		crayon[uid].stop(true);
+            		crayon[uid].delay(delay).animate({
+                        width: initialSize.width,
+                        height: initialSize.height
+                    }, animt(anim_time, uid), 'easeOutQuad', function() {
+                    	restore_dimensions(uid);
+                    });
+            	} else {
+            		setTimeout(function() {
+            			restore_dimensions(uid);
+            		}, delay);
+            	}
             }
             // Register that overflow has changed
             crayon[uid].scroll_changed = true;
