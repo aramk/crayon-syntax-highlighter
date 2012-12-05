@@ -291,8 +291,10 @@
                 // Disable on touchscreen devices and when set to mouseover
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
-                c.mouseenter(function() { toggle_scroll(uid, true, expand); })
+                if (!expand) {
+                	c.mouseenter(function() { toggle_scroll(uid, true, expand); })
                     .mouseleave(function() { toggle_scroll(uid, false, expand); });
+                }
             }
             
             if (expand) {
