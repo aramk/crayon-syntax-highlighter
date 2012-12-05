@@ -757,7 +757,6 @@
             
             var main = crayon[uid].main;
             var plain = crayon[uid].plain;
-            var anim_time = CrayonUtil.setDefault(anim_time, CrayonUtil.setRange(diffWidth / 3, 300, 800));
             
             if (show) {
             	// Show scrollbars
@@ -775,17 +774,22 @@
                 	main.css('height', main.height());
                     main.css('width', main.width());
                 } else {
-                	var initialWidth = crayon[uid].width();
-                    var finalWidth = crayon[uid].table.width();
-                    var diffWidth = finalWidth - initialWidth;  
+                	
+                	if (typeof crayon[uid].isExpanding == 'undefined') {
+                		crayon[uid].initialSize = {width: crayon[uid].width(), height: crayon[uid].height()};
+                		crayon[uid].finalSize = {width: crayon[uid].table.width(), height: crayon[uid].table.height()};
+                		crayon[uid].diffSize = {
+            				width: crayon[uid].finalSize.width - crayon[uid].initialSize.width,
+            				height: crayon[uid].finalSize.height - crayon[uid].initialSize.height
+                		};
+                		crayon[uid].expandTime = CrayonUtil.setRange(crayon[uid].diffSize.width / 3, 300, 800);
+                	}
+                	
+                	var initialSize = crayon[uid].initialSize;
+                	var diffSize = crayon[uid].diffSize;
+                    var finalSize = crayon[uid].finalSize;
                     
-                    var initialHeight = crayon[uid].height();
-                    var finalHeight = crayon[uid].table.height();
-                    var diffHeight = finalHeight - initialHeight;
-                    
-                    crayon[uid].initialSize = {width: initialWidth, height: initialHeight};
-                    
-                    if (diffWidth > 0) {
+                    if (diffSize.width > 0) {
                     	var expand = {
                     		//'width' : main.width(),
                     		'min-width' : 'none',
@@ -802,10 +806,11 @@
                         main.css(expandMain);
                         crayon[uid].isExpanding = true;
                         crayon[uid].css(expand);
+                        crayon[uid].stop(true);
                         crayon[uid].animate({
-                            width: finalWidth,
-                            height: finalHeight
-                        }, animt(anim_time, uid), 'easeOutQuad', function() {
+                            width: finalSize.width,
+                            height: finalSize.height
+                        }, animt(crayon[uid].expandTime, uid), 'easeOutQuad', function() {
                         	crayon[uid].isExpanding = false;
                         });
                     }
@@ -828,7 +833,7 @@
             		crayon[uid].animate({
                         width: initialSize.width,
                         height: initialSize.height
-                    }, animt(anim_time, uid), 'easeOutQuad', function() {
+                    }, animt(crayon[uid].expandTime, uid), 'easeOutQuad', function() {
                     	restore_dimensions(uid);
                     });
             	} else {
