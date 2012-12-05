@@ -774,17 +774,24 @@
                 var finalSize = crayon[uid].finalSize;
                 
                 if (diffSize.width > 0) {
-                	var expand = {
-                		'width' : 'auto',
-                		'min-width' : 'none',
-                		'max-width' : 'none',
+                	var expandHeight = {
                 		'height' : 'auto',
                 		'min-height' : 'none',
                 		'max-height' : 'none'
                 	};
+                	var expandWidth = {
+            			'width' : 'auto',
+                		'min-width' : 'none',
+                		'max-width' : 'none',
+                	};
                 	crayon[uid].height(crayon[uid].height());
                     crayon[uid].width(crayon[uid].width());
-                    main.css(expand);
+                    crayon[uid].css({
+                    	'min-width' : 'none',
+                		'max-width' : 'none'
+                    });
+                    main.css(expandHeight);
+                    main.css(expandWidth);
                     crayon[uid].isExpanding = true;
                     crayon[uid].stop(true);
                     crayon[uid].animate({
