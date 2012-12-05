@@ -36,16 +36,6 @@
             return style;
         }
     };
-    
-    $.extend($.easing,
-    		{
-    		    easeInQuad: function (x, t, b, c, d) {
-    		        return c*(t/=d)*t + b;
-    		    },
-    		    easeOutQuad: function (x, t, b, c, d) {
-    		        return -c *(t/=d)*(t-2) + b;
-    		    }
-    		});
 
     // END AUXILIARY FUNCTIONS
 
@@ -791,12 +781,12 @@
                     
                     if (diffSize.width > 0) {
                     	var expand = {
-                    		//'width' : main.width(),
+                    		//'width' : 'auto'
                     		'min-width' : 'none',
                     		'max-width' : 'none',
                     	};
                     	var expandMain = {
-//                    		'height' : 'auto',
+                    		//'height' : 'auto',
                     		'min-height' : 'none',
                     		'max-height' : 'none',
                     	};
@@ -810,7 +800,7 @@
                         crayon[uid].animate({
                             width: finalSize.width,
                             height: finalSize.height
-                        }, animt(crayon[uid].expandTime, uid), 'easeOutQuad', function() {
+                        }, animt(crayon[uid].expandTime, uid), function() {
                         	crayon[uid].isExpanding = false;
                         });
                     }
@@ -833,7 +823,7 @@
             		crayon[uid].animate({
                         width: initialSize.width,
                         height: initialSize.height
-                    }, animt(crayon[uid].expandTime, uid), 'easeOutQuad', function() {
+                    }, animt(crayon[uid].expandTime, uid), function() {
                     	restore_dimensions(uid);
                     });
             	} else {
