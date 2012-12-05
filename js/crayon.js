@@ -273,16 +273,18 @@
             }
             
             // Scrollbar show events
-            var expand =  c.filter('[data-settings~="expand"]').length != 0;
+            var expand = c.filter('[data-settings~="expand"]').length != 0;
             if (!touchscreen && c.filter('[data-settings~="scroll-mouseover"]').length != 0) {
                 // Disable on touchscreen devices and when set to mouseover
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
-
-                console_log(plain.css('overflow'));
-
                 c.mouseenter(function() { toggle_scroll(uid, true, expand); })
                     .mouseleave(function() { toggle_scroll(uid, false, expand); });
+            }
+            
+            if (expand) {
+            	c.mouseenter(function() { toggle_expand(uid, true); })
+                	.mouseleave(function() { toggle_expand(uid, false); });
             }
             
             // Disable animations
@@ -736,83 +738,58 @@
             crayon_slide(uid, toolbar, show, anim_time, hide_delay);
         };
 
-        var toggle_scroll = function(uid, show, expand) {
-            if (typeof crayon[uid] == 'undefined') {
+        var toggle_expand = function(uid, expand) {
+        	if (typeof crayon[uid] == 'undefined') {
                 return make_uid(uid);
             }
-            if (typeof show == 'undefined') {
+            if (typeof expand == 'undefined') {
                 return;
             }
-            expand = CrayonUtil.setDefault(expand, false);
-            
-            var main = crayon[uid].main;
+        	
+        	var main = crayon[uid].main;
             var plain = crayon[uid].plain;
-            
-            if (show) {
-            	// Show scrollbars
-                main.css('overflow', 'auto');
-                plain.css('overflow', 'auto');
-                if (typeof crayon[uid].top != 'undefined') {
-                    visible = (main.css('z-index') == 1 ? main : plain);
-                    // Browser will not render until scrollbar moves, move it manually
-                    visible.scrollTop(crayon[uid].top-1);
-                    visible.scrollTop(crayon[uid].top);
-                    visible.scrollLeft(crayon[uid].left-1);
-                    visible.scrollLeft(crayon[uid].left);
-                }
-                if (!expand) {
-                	main.css('height', main.height());
-                    main.css('width', main.width());
-                } else {
-                	
-                	if (typeof crayon[uid].isExpanding == 'undefined') {
-                		crayon[uid].initialSize = {width: crayon[uid].width(), height: crayon[uid].height()};
-                		crayon[uid].finalSize = {width: crayon[uid].table.width(), height: crayon[uid].table.height()};
-                		crayon[uid].diffSize = {
-            				width: crayon[uid].finalSize.width - crayon[uid].initialSize.width,
-            				height: crayon[uid].finalSize.height - crayon[uid].initialSize.height
-                		};
-                		crayon[uid].expandTime = CrayonUtil.setRange(crayon[uid].diffSize.width / 3, 300, 800);
-                	}
-                	
-                	var initialSize = crayon[uid].initialSize;
-                	var diffSize = crayon[uid].diffSize;
-                    var finalSize = crayon[uid].finalSize;
-                    
-                    if (diffSize.width > 0) {
-                    	var expand = {
-                    		//'width' : 'auto'
-                    		'min-width' : 'none',
-                    		'max-width' : 'none',
-                    	};
-                    	var expandMain = {
-                    		//'height' : 'auto',
-                    		'min-height' : 'none',
-                    		'max-height' : 'none',
-                    	};
-                    	crayon[uid].height(main.height());
-                        crayon[uid].width(main.width());
-                        main.css(expand);
-                        main.css(expandMain);
-                        crayon[uid].isExpanding = true;
-                        crayon[uid].css(expand);
-                        crayon[uid].stop(true);
-                        crayon[uid].animate({
-                            width: finalSize.width,
-                            height: finalSize.height
-                        }, animt(crayon[uid].expandTime, uid), function() {
-                        	crayon[uid].isExpanding = false;
-                        });
-                    }
+        	
+            if (expand) {
+            	if (typeof crayon[uid].isExpanding == 'undefined') {
+            		crayon[uid].initialSize = {width: crayon[uid].width(), height: crayon[uid].height()};
+            		crayon[uid].finalSize = {width: crayon[uid].table.width(), height: crayon[uid].table.height()};
+            		crayon[uid].diffSize = {
+        				width: crayon[uid].finalSize.width - crayon[uid].initialSize.width,
+        				height: crayon[uid].finalSize.height - crayon[uid].initialSize.height
+            		};
+            		crayon[uid].expandTime = CrayonUtil.setRange(crayon[uid].diffSize.width / 3, 300, 800);
+            	}
+            	
+            	var initialSize = crayon[uid].initialSize;
+            	var diffSize = crayon[uid].diffSize;
+                var finalSize = crayon[uid].finalSize;
+                
+                if (diffSize.width > 0) {
+                	var expand = {
+                		//'width' : 'auto'
+                		'min-width' : 'none',
+                		'max-width' : 'none',
+                	};
+                	var expandMain = {
+                		//'height' : 'auto',
+                		'min-height' : 'none',
+                		'max-height' : 'none',
+                	};
+                	crayon[uid].height(main.height());
+                    crayon[uid].width(main.width());
+                    main.css(expand);
+                    main.css(expandMain);
+                    crayon[uid].isExpanding = true;
+                    crayon[uid].css(expand);
+                    crayon[uid].stop(true);
+                    crayon[uid].animate({
+                        width: finalSize.width,
+                        height: finalSize.height
+                    }, animt(crayon[uid].expandTime, uid), function() {
+                    	crayon[uid].isExpanding = false;
+                    });
                 }
             } else {
-            	// Hide scrollbars
-                visible = (main.css('z-index') == 1 ? main : plain);
-                crayon[uid].top = visible.scrollTop();
-                crayon[uid].left = visible.scrollLeft();
-                main.css('overflow', 'hidden');
-                plain.css('overflow', 'hidden');
-                
             	var initialSize = crayon[uid].initialSize;
             	var delay = crayon[uid].toolbar_delay;
             	if (initialSize) {
@@ -832,13 +809,52 @@
             		}, delay);
             	}
             }
-            // Register that overflow has changed
-            crayon[uid].scroll_changed = true;
-            fix_scroll_blank(uid);
+            
             reconsile_dimensions(uid);
             if (expand) {
             	update_wrap(uid);
             }
+        };
+        
+        var toggle_scroll = function(uid, show, expand) {
+            if (typeof crayon[uid] == 'undefined') {
+                return make_uid(uid);
+            }
+            if (typeof show == 'undefined') {
+                return;
+            }
+            
+            var main = crayon[uid].main;
+            var plain = crayon[uid].plain;
+            
+            if (show) {
+            	// Show scrollbars
+                main.css('overflow', 'auto');
+                plain.css('overflow', 'auto');
+                if (typeof crayon[uid].top != 'undefined') {
+                    visible = (main.css('z-index') == 1 ? main : plain);
+                    // Browser will not render until scrollbar moves, move it manually
+                    visible.scrollTop(crayon[uid].top-1);
+                    visible.scrollTop(crayon[uid].top);
+                    visible.scrollLeft(crayon[uid].left-1);
+                    visible.scrollLeft(crayon[uid].left);
+                }
+                if (!expand) {
+                	// TODO
+                	main.css('height', main.height());
+                    main.css('width', main.width());
+                }
+            } else {
+            	// Hide scrollbars
+                visible = (main.css('z-index') == 1 ? main : plain);
+                crayon[uid].top = visible.scrollTop();
+                crayon[uid].left = visible.scrollLeft();
+                main.css('overflow', 'hidden');
+                plain.css('overflow', 'hidden');
+            }
+            // Register that overflow has changed
+            crayon[uid].scroll_changed = true;
+            fix_scroll_blank(uid);
         };
 
         /* Fix weird draw error, causes blank area to appear where scrollbar once was. */
