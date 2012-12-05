@@ -766,21 +766,17 @@
                 
                 if (diffSize.width > 0) {
                 	var expand = {
-                		//'width' : 'auto'
+                		'width' : 'auto',
                 		'min-width' : 'none',
                 		'max-width' : 'none',
-                	};
-                	var expandMain = {
-                		//'height' : 'auto',
+                		'height' : 'auto',
                 		'min-height' : 'none',
-                		'max-height' : 'none',
+                		'max-height' : 'none'
                 	};
-                	crayon[uid].height(main.height());
-                    crayon[uid].width(main.width());
+                	crayon[uid].height(crayon[uid].height());
+                    crayon[uid].width(crayon[uid].width());
                     main.css(expand);
-                    main.css(expandMain);
                     crayon[uid].isExpanding = true;
-                    crayon[uid].css(expand);
                     crayon[uid].stop(true);
                     crayon[uid].animate({
                         width: finalSize.width,
@@ -839,11 +835,6 @@
                     visible.scrollLeft(crayon[uid].left-1);
                     visible.scrollLeft(crayon[uid].left);
                 }
-                if (!expand) {
-                	// TODO
-                	main.css('height', main.height());
-                    main.css('width', main.width());
-                }
             } else {
             	// Hide scrollbars
                 visible = (main.css('z-index') == 1 ? main : plain);
@@ -900,9 +891,6 @@
                     }
                 }
             });
-            var main = crayon[uid].main;
-            var height = main.css('height');
-            main.css('height', '');
         };
 
         var animt = function(x, uid) {
