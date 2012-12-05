@@ -57,6 +57,7 @@
     var CRAYON_NUMS_CONTENT = '.crayon-nums-content';
     var CRAYON_NUMS_BUTTON = '.crayon-nums-button';
     var CRAYON_WRAP_BUTTON = '.crayon-wrap-button';
+    var CRAYON_EXPAND_BUTTON = '.crayon-expand-button';
     var CRAYON_POPUP_BUTTON = '.crayon-popup-button';
     var CRAYON_COPY_BUTTON = '.crayon-copy-button';
     var CRAYON_PLAIN_BUTTON = '.crayon-plain-button';
@@ -109,6 +110,7 @@
             var nums_content = c.find(CRAYON_NUMS_CONTENT);
             var nums_button = c.find(CRAYON_NUMS_BUTTON);
             var wrap_button = c.find(CRAYON_WRAP_BUTTON);
+            var expand_button = c.find(CRAYON_EXPAND_BUTTON);
             var popup_button = c.find(CRAYON_POPUP_BUTTON);
             var copy_button = c.find(CRAYON_COPY_BUTTON);
             var plain_button = c.find(CRAYON_PLAIN_BUTTON);
@@ -124,6 +126,7 @@
             crayon[uid].nums_content = nums_content;
             crayon[uid].nums_button = nums_button;
             crayon[uid].wrap_button = wrap_button;
+            crayon[uid].expand_button = expand_button;
             crayon[uid].popup_button = popup_button;
             crayon[uid].copy_button = copy_button;
             crayon[uid].plain_button = plain_button;
@@ -156,6 +159,7 @@
             // Register click events
             nums_button.click(function() { CrayonSyntax.toggle_nums(uid); });
             wrap_button.click(function() { CrayonSyntax.toggle_wrap(uid); });
+            expand_button.click(function() { CrayonSyntax.toggle_expand(uid); });
             plain_button.click(function() { CrayonSyntax.toggle_plain(uid); });
             copy_button.click(function() { CrayonSyntax.copy_plain(uid); });
 
@@ -641,6 +645,11 @@
         base.toggle_wrap = function(uid) {
             crayon[uid].wrapped = !crayon[uid].wrapped;
             update_wrap(uid);
+        };
+        
+        base.toggle_expand = function(uid) {
+            crayon[uid].isExpanded = !crayon[uid].isExpanded;
+            toggle_expand(uid, crayon[uid].isExpanded);
         };
 
         var update_wrap = function(uid) {

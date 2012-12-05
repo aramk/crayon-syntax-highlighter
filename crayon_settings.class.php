@@ -104,6 +104,7 @@ class CrayonSettings {
 	const WRAP_TOGGLE = 'wrap-toggle';
 	const WRAP = 'wrap';
 	const EXPAND = 'expand';
+	const EXPAND_TOGGLE = 'expand-toggle';
 	
 	private static $cache_array;
 	
@@ -229,7 +230,8 @@ class CrayonSettings {
 			new CrayonSetting(self::TAG_EDITOR_SETTINGS, TRUE),
 			new CrayonSetting(self::WRAP_TOGGLE, TRUE),
 			new CrayonSetting(self::WRAP, FALSE),
-			new CrayonSetting(self::EXPAND, FALSE)
+			new CrayonSetting(self::EXPAND, FALSE),
+			new CrayonSetting(self::EXPAND_TOGGLE, TRUE)
 		);
 		
 		$this->set($settings);

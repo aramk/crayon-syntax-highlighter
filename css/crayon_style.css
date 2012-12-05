@@ -181,9 +181,14 @@ coloring etc.
 	background-image: url('images/toolbar/plain.png');
 }
 
-/* Plain Button */
+/* Wrap Button */
 .crayon-toolbar a.crayon-button.crayon-wrap-button {
 	background-image: url('images/toolbar/wrap.png');
+}
+
+/* Expand Button */
+.crayon-toolbar a.crayon-button.crayon-expand-button {
+	background-image: url('images/toolbar/expand.png');
 }
 
 /* Copy Button */
