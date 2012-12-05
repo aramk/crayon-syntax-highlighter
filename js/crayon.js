@@ -177,6 +177,15 @@
                 } else {
                     update_nums_button(uid);
                 }
+                
+                if (typeof crayon[uid].expanded == 'undefined') {
+                	// Determine if we should enable code expanding toggling 
+	                if (Math.abs(crayon[uid].main.width() - crayon[uid].table.width()) < 10) {
+	                	crayon[uid].expand_button.hide();
+	                } else {
+	                	crayon[uid].expand_button.show();
+	                }
+                }
 
                 // TODO If width has changed or timeout, stop timer
                 if (/*last_num_width != nums.width() ||*/ i == 5) {
@@ -648,8 +657,8 @@
         };
         
         base.toggle_expand = function(uid) {
-            crayon[uid].isExpanded = !crayon[uid].isExpanded;
-            toggle_expand(uid, crayon[uid].isExpanded);
+        	var expand = !CrayonUtil.setDefault(crayon[uid].expanded, false);
+        	toggle_expand(uid, expand);
         };
 
         var update_wrap = function(uid) {
@@ -716,6 +725,21 @@
                 crayon[uid].wrap_button.addClass(UNPRESSED);
             }
         };
+        
+        var update_expand_button = function(uid) {
+            if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].expanded == 'undefined') {
+                return;
+            }
+            
+            if (crayon[uid].expanded) {
+                crayon[uid].expand_button.removeClass(UNPRESSED);
+                crayon[uid].expand_button.addClass(PRESSED);
+            } else {
+                // TODO doesn't work on iPhone
+                crayon[uid].expand_button.removeClass(PRESSED);
+                crayon[uid].expand_button.addClass(UNPRESSED);
+            }
+        };
 
         var update_plain_button = function(uid) {
             if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].plain_visible == 'undefined') {
@@ -759,7 +783,7 @@
             var plain = crayon[uid].plain;
         	
             if (expand) {
-            	if (typeof crayon[uid].isExpanding == 'undefined') {
+            	if (typeof crayon[uid].expanded == 'undefined') {
             		crayon[uid].initialSize = {width: crayon[uid].width(), height: crayon[uid].height()};
             		crayon[uid].finalSize = {width: crayon[uid].table.width(), height: crayon[uid].table.height()};
             		crayon[uid].diffSize = {
@@ -767,6 +791,7 @@
         				height: crayon[uid].finalSize.height - crayon[uid].initialSize.height
             		};
             		crayon[uid].expandTime = CrayonUtil.setRange(crayon[uid].diffSize.width / 3, 300, 800);
+            		crayon[uid].expanded = false;
             	}
             	
             	var initialSize = crayon[uid].initialSize;
@@ -792,13 +817,13 @@
                     });
                     main.css(expandHeight);
                     main.css(expandWidth);
-                    crayon[uid].isExpanding = true;
                     crayon[uid].stop(true);
                     crayon[uid].animate({
                         width: finalSize.width,
                         height: finalSize.height
                     }, animt(crayon[uid].expandTime, uid), function() {
-                    	crayon[uid].isExpanding = false;
+                    	crayon[uid].expanded = true;
+                    	update_expand_button(uid);
                     });
                 }
             } else {
@@ -806,18 +831,22 @@
             	var delay = crayon[uid].toolbar_delay;
             	if (initialSize) {
             		crayon[uid].stop(true);
-            		if (!crayon[uid].isExpanding) {
+            		if (!crayon[uid].expanded) {
             			crayon[uid].delay(delay);            			
             		}
             		crayon[uid].animate({
                         width: initialSize.width,
                         height: initialSize.height
                     }, animt(crayon[uid].expandTime, uid), function() {
+                    	crayon[uid].expanded = false;
                     	restore_dimensions(uid);
+                    	update_expand_button(uid);
                     });
             	} else {
             		setTimeout(function() {
+            			crayon[uid].expanded = false;
             			restore_dimensions(uid);
+            			update_expand_button(uid);
             		}, delay);
             	}
             }
@@ -880,6 +909,7 @@
         	var main_style = crayon[uid].main_style;
         	main.css(main_style);
         	// Width styles also apply to crayon
+        	crayon[uid].css('height', 'auto');
         	crayon[uid].css('width', main_style['width']);
         	crayon[uid].css('max-width', main_style['max-width']);
         	crayon[uid].css('min-width', main_style['min-width']);
