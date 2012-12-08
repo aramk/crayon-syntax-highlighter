@@ -21,7 +21,7 @@
         // Log
         var log_button, log_text;
 
-        var main_wrap, theme_editor_wrap, editor_url, theme_editor_edit_button, theme_editor_create_button;
+        var main_wrap, theme_editor_wrap, theme_editor_loading, editor_url, theme_editor_edit_button, theme_editor_create_button;
         var theme_select, theme_info, theme_ver, theme_author, theme_desc;
 
         var settings = null;
@@ -321,13 +321,6 @@
             return false;
         };
 
-        base.show_theme_editor_now = function (button) {
-            main_wrap.hide();
-            theme_editor_wrap.show();
-            theme_editor_loading = false;
-            button.html(button.attr('loaded'));
-        };
-        
         base.refresh_theme_info = function () {
         	adminSettings.curr_theme = $('#crayon-theme').val();
             adminSettings.curr_theme_url = adminSettings.themes_url + adminSettings.curr_theme + '/' + adminSettings.curr_theme + '.css';
@@ -369,22 +362,30 @@
 
         base.show_theme_editor = function (button, editing) {
         	base.refresh_theme_info();
-        	
             button.html(button.attr('loading'));
-
             adminSettings.editing = editing;
-
+            theme_editor_loading = true;
             // Load theme editor
             $.get(editor_url + '?curr_theme='
                 + adminSettings.curr_theme + '&editing='
                 + editing, function (data) {
                 theme_editor_wrap.html(data);
                 // Load preview into editor
-                CrayonSyntaxThemeEditor.init(function () {
+                if (theme_editor_loading) {
+                	CrayonSyntaxThemeEditor.init();
+                }
+                CrayonSyntaxThemeEditor.load(function () {
                     base.show_theme_editor_now(button);
                 }, preview.clone());
             });
             return false;
+        };
+        
+        base.show_theme_editor_now = function (button) {
+            main_wrap.hide();
+            theme_editor_wrap.show();
+            theme_editor_loading = false;
+            button.html(button.attr('loaded'));
         };
 
     };
