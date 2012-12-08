@@ -143,7 +143,14 @@ function crayon_encode_html(str) {
 }
 
 var CrayonSyntaxUtil = new function() {
-	this.getExt = function(str) {
+	
+	var base = this;
+	
+	base.init = function() {
+		base.initGET();
+	};
+	
+	base.getExt = function(str) {
 		if (str.indexOf('.') == -1) {
 			return undefined;
 		}
@@ -155,4 +162,24 @@ var CrayonSyntaxUtil = new function() {
 		}
 		return ext;
 	};
+	
+	base.initGET = function() {
+		// URLs
+		window.currentURL = window.location.protocol + '//' + window.location.host + window.location.pathname;
+		window.currentDir = window.currentURL.substring(0, window.currentURL.lastIndexOf('/'));
+
+		// http://stackoverflow.com/questions/439463
+		function getQueryParams(qs) {
+		    qs = qs.split("+").join(" ");
+		    var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+		    while (tokens = re.exec(qs)) {
+		        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+		    }
+		    return params;
+		}
+		window.GET = getQueryParams(document.location.search);
+	};
+	
+	base.init();
+	
 };

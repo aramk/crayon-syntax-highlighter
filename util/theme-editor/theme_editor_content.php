@@ -7,7 +7,10 @@ $theme = CrayonResources::themes()->get_default();
 $editing = false;
 
 if ( isset($_GET['curr_theme']) ) {
-	$theme = CrayonResources::themes()->get($_GET['curr_theme']);
+	$currTheme = CrayonResources::themes()->get($_GET['curr_theme']);
+	if ($currTheme) {
+		$theme = $currTheme;
+	}
 }
 
 if ( isset($_GET['editing']) ) {
@@ -59,15 +62,7 @@ if ( isset($_GET['editing']) ) {
 					<li><a href="#tabs-3">Aenean lacinia</a></li>
 				</ul>
 				<div id="tabs-1">
-					<p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a,
-						risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris.
-						Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem.
-						Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo.
-						Vivamus sed magna quis ligula eleifend adipiscing. Duis orci.
-						Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam
-						molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut
-						dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique
-						tempus lectus.</p>
+					<p>..</p>
 				</div>
 				<div id="tabs-2">
 					<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus

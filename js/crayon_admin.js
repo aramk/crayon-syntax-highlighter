@@ -44,6 +44,10 @@
                 CrayonSyntaxAdmin.show_theme_editor(theme_editor_edit_button,
                     true);
             });
+            if (window.GET.themeeditor) {
+            	CrayonSyntaxAdmin.show_theme_editor(theme_editor_edit_button,
+                        true);
+            }
             theme_editor_create_button.click(function () {
                 CrayonSyntaxAdmin.show_theme_editor(theme_editor_create_button,
                     false);
@@ -319,10 +323,14 @@
             theme_editor_loading = false;
             button.html(button.attr('loaded'));
         };
+        
+        base.refresh_theme_info = function () {
+        	adminSettings.curr_theme = $('#crayon-theme').val();
+            adminSettings.curr_theme_url = adminSettings.themes_url + adminSettings.curr_theme + '/' + adminSettings.curr_theme + '.css';
+        };
 
         base.show_theme_info = function (callback) {
-            adminSettings.curr_theme = $('#crayon-theme').val();
-            adminSettings.curr_theme_url = adminSettings.themes_url + adminSettings.curr_theme + '/' + adminSettings.curr_theme + '.css';
+        	base.refresh_theme_info();
             $.ajax({
                 url : adminSettings.curr_theme_url,
                 success : function (data) {
@@ -356,6 +364,8 @@
         };
 
         base.show_theme_editor = function (button, editing) {
+        	base.refresh_theme_info();
+        	
             button.html(button.attr('loading'));
 
             adminSettings.editing = editing;
