@@ -26,9 +26,16 @@
         	crayon.attr('id', 'theme-editor-instance');
             CrayonSyntax.process(crayon, true);
             preview.html(crayon);
+            
+            base.loadTheme();
+            
             if (callback) {
             	callback();            	
             }
+        };
+        
+        base.loadTheme = function() {
+        	console.log(adminSettings.curr_theme_str);
         };
 
         base.initUI = function() {

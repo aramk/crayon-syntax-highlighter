@@ -264,6 +264,7 @@ class CrayonTagEditorWP {
 </div>
 
 <?php
+		exit();
 	}
 
 }

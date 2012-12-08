@@ -176,9 +176,7 @@ class CrayonSettingsWP {
 	</form>
 </div>
 
-<div
-	id="crayon-theme-editor-wrap" class="wrap"
-	url="<?php echo plugins_url(CRAYON_THEME_EDITOR_CONTENT_PHP, __FILE__); ?>"></div>
+<div id="crayon-theme-editor-wrap" class="wrap"></div>
 
 <?php
 	}

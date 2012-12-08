@@ -88,7 +88,6 @@ define('CRAYON_STYLE_GLOBAL', CRAYON_CSS_DIR . 'global_style.css');
 define('CRAYON_LOGO', CRAYON_CSS_DIR . 'images/crayon_logo.png');
 define('CRAYON_DONATE_BUTTON', CRAYON_CSS_DIR . 'images/donate.png');
 define('CRAYON_THEME_EDITOR_PHP', CRAYON_THEME_EDITOR_PATH . 'theme_editor.php');
-define('CRAYON_THEME_EDITOR_CONTENT_PHP', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR  . 'theme_editor_content.php');
 define('CRAYON_THEME_EDITOR_JS', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR . 'theme_editor.js');
 define('CRAYON_THEME_EDITOR_STYLE', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR . 'theme_editor.css');
 define('CRAYON_THEME_EDITOR_BUTTON', CRAYON_CSS_DIR . 'images/theme_editor.png');
@@ -216,7 +215,7 @@ function crayon__($text) {
 	if (function_exists('__')) {
 		return __($text, CRAYON_DOMAIN);
 	} else {
-		return $text . CRAYON_DOMAIN;
+		return $text;
 	}
 }
 

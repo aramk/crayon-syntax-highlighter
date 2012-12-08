@@ -9,7 +9,6 @@ Converts CSS to JSON and back.
 
 // String functions
 var StringExtensions = new function() {
-	// Added natively now
 	this.trim = function() {
     	return this.replace(/^\s+|\s+$/g, '');
 	};
