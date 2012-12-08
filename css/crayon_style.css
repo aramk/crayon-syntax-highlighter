@@ -388,6 +388,10 @@ This has been disabled to allow more flexibility in changing font sizes.
 	white-space: pre-wrap;
 }
 
+.bbp-body .crayon-syntax {
+	clear: none !important;
+}
+
 /* End Code ======================== */
 
 /* End AK Code Table ============================================= */

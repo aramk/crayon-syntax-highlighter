@@ -264,6 +264,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* CSS did not load in newly opened code window if minified
 	* Saved comments did not capture Crayons until they were updated or the post list was refreshed in settings
 	* Posts in settings are sorted now descending based on modified date
+	* bbPress posts showed Crayons on the bottom of posts irrespective of their position in the post content.
 	* Toggle plain code button appeared when plain code was disabled
 	* Updated Turkish translation
 
