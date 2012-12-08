@@ -83,11 +83,11 @@ function form($inputs) {
 		<td id="crayon-editor-control-wrapper">
 			<div id="crayon-editor-controls">
 				<ul>
-					<li><a href="#tabs-1" title="General Info"></a></li>
-					<li><a href="#tabs-2" title="Highlighting"></a></li>
-					<li><a href="#tabs-3" title="Lines"></a></li>
-					<li><a href="#tabs-3" title="Numbers"></a></li>
-					<li><a href="#tabs-3" title="Toolbars"></a></li>
+					<li title="General Info"><a href="#tabs-1"></a></li>
+					<li title="Highlighting"><a href="#tabs-2"></a></li>
+					<li title="Lines"><a href="#tabs-3"></a></li>
+					<li title="Numbers"><a href="#tabs-3"></a></li>
+					<li title="Toolbars"><a href="#tabs-3"></a></li>
 				</ul>
 				<div id="tabs-1">
 					<?php 
