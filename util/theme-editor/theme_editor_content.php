@@ -37,8 +37,8 @@ if ( isset($_GET['editing']) ) {
 </h3>
 
 <p>
-	<a class="button-primary" onclick="CrayonSyntaxAdmin.show_main();"><?php crayon_e('Back To Settings'); ?>
-	</a>
+	<a id="crayon-editor-back" class="button-primary"><?php crayon_e('Back To Settings'); ?></a>
+	<a id="crayon-editor-save" class="button-primary"><?php crayon_e('Save'); ?></a>
 </p>
 
 <?php //crayon_e('Use the Sidebar on the right to change the Theme of the Preview window.') ?>
@@ -52,17 +52,21 @@ if ( isset($_GET['editing']) ) {
 		<td id="crayon-editor-preview-wrapper">
 			<div id="crayon-editor-preview"></div>
 		</td>
-	</tr>
-	<tr>
+<!-- 	</tr> -->
+<!-- 	<tr> -->
 		<td id="crayon-editor-control-wrapper">
 			<div id="crayon-editor-controls">
 				<ul>
-					<li><a href="#tabs-1">Nunc tincidunt</a></li>
-					<li><a href="#tabs-2">Proin dolor</a></li>
-					<li><a href="#tabs-3">Aenean lacinia</a></li>
+					<li><a href="#tabs-1">General Info</a></li>
+					<li><a href="#tabs-2">Highlighting</a></li>
+					<li><a href="#tabs-3">Lines</a></li>
+					<li><a href="#tabs-3">Numbers</a></li>
+					<li><a href="#tabs-3">Toolbars</a></li>
 				</ul>
 				<div id="tabs-1">
-					<p>..</p>
+					<form>
+						<label for="name">Name</label><input id="name" />
+					</form>
 				</div>
 				<div id="tabs-2">
 					<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus

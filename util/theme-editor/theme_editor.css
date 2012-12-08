@@ -6,6 +6,16 @@
 	
 }
 
+#crayon-editor-preview .crayon-syntax {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
 #crayon-editor-control-wrapper {
-	
+	min-width: 400px;
+	padding-left: 20px; 
+}
+
+#crayon-editor-save {
+	margin: 0 5px;
 }

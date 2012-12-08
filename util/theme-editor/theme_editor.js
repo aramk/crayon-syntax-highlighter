@@ -18,15 +18,15 @@
             CrayonSyntax.process(crayon, true);
             preview.html(crayon);
 
-            //console.log(adminSettings.curr_theme_str);
-
             callback();
             base.initUI();
         };
 
         base.initUI = function() {
             $('#crayon-editor-controls').tabs();
-        }
+            $('#crayon-editor-back').click(CrayonSyntaxAdmin.show_main);
+            
+        };
 
     };
 

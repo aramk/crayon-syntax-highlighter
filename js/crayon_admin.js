@@ -6,23 +6,23 @@
         var base = this;
 
         // Preview
-        var preview, preview_info, preview_cbox, preview_delay_timer, preview_get = null;
+        var preview, preview_info, preview_cbox, preview_delay_timer, preview_get, preview_loaded;
         // The DOM object ids that trigger a preview update
         var preview_obj_names = [];
         // The jQuery objects for these objects
         var preview_objs = [];
         var preview_last_values = [];
         // Alignment
-        var align_drop = float = null;
+        var align_drop, float;
         // Toolbar
-        var overlay = toolbar = null;
+        var overlay, toolbar;
         // Error
-        var msg_cbox = msg = null;
+        var msg_cbox, msg;
         // Log
-        var log_button = log_text = null;
+        var log_button, log_text;
 
-        var main_wrap, theme_editor_wrap, editor_url, theme_editor_edit_button, theme_editor_create_button = null;
-        var theme_select, theme_info, theme_ver, theme_author, theme_desc = null;
+        var main_wrap, theme_editor_wrap, editor_url, theme_editor_edit_button, theme_editor_create_button;
+        var theme_select, theme_info, theme_ver, theme_author, theme_desc;
 
         var settings = null;
         var adminSettings = null;
@@ -44,10 +44,6 @@
                 CrayonSyntaxAdmin.show_theme_editor(theme_editor_edit_button,
                     true);
             });
-            if (window.GET.themeeditor) {
-            	CrayonSyntaxAdmin.show_theme_editor(theme_editor_edit_button,
-                        true);
-            }
             theme_editor_create_button.click(function () {
                 CrayonSyntaxAdmin.show_theme_editor(theme_editor_create_button,
                     false);
@@ -158,17 +154,15 @@
             var hide_log = log_button.attr('hide_txt');
             clog = $('#crayon-log');
             log_button.val(show_log);
-            log_button
-                .click(function () {
-                    clog.width(log_wrapper.width());
-                    clog.toggle();
-                    // Scrolls content
-                    clog.scrollTop(log_text.height());
-                    var text = (log_button.val() == show_log ? hide_log
-                        : show_log);
-                    log_button.val(text);
-                });
-
+            log_button.click(function () {
+                clog.width(log_wrapper.width());
+                clog.toggle();
+                // Scrolls content
+                clog.scrollTop(log_text.height());
+                var text = (log_button.val() == show_log ? hide_log
+                    : show_log);
+                log_button.val(text);
+            });
         };
 
         /* Whenever a control changes preview */
@@ -194,7 +188,17 @@
                 preview.html(data);
                 // Important! Calls the crayon.js init
                 CrayonSyntax.init();
+                base.preview_ready();
             });
+        };
+        
+        base.preview_ready = function () {
+        	if (!preview_loaded) {
+        		preview_loaded = true;
+        		if (window.GET.themeeditor) {
+                	CrayonSyntaxAdmin.show_theme_editor(theme_editor_edit_button, true);
+                }
+        	}
         };
 
         var preview_toggle = function () {
