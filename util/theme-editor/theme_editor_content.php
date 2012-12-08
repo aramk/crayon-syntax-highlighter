@@ -17,6 +17,32 @@ if ( isset($_GET['editing']) ) {
 	$editing = CrayonUtil::str_to_bool($_GET['editing'], FALSE);
 }
 
+class Input {
+	public $id;
+	public $name;
+	public $value;
+	public $type;
+	
+	public function __construct($id, $name, $value = '', $type = 'text') {
+		$this->id = $id;
+		$this->name = $name;
+		$this->value = $value;
+		$this->type = $type;
+	}
+	
+	public function __toString() {
+		return '<input id="crayon-theme-editor-'.$this->id.'" class="crayon-theme-editor-'.$this->type.'" type="'.$this->type.'" />';
+	}
+}
+
+function form($inputs) {
+	echo '<form class="crayon-theme-editor-form"><table>';
+	foreach($inputs as $input) {
+		echo '<tr><td class="field">',$input->name,'</td><td class="value">',$input,'</td></tr>';
+	}
+	echo '</table></form>';
+}
+
 ?>
 
 <div
@@ -64,9 +90,15 @@ if ( isset($_GET['editing']) ) {
 					<li><a href="#tabs-3">Toolbars</a></li>
 				</ul>
 				<div id="tabs-1">
-					<form>
-						<label for="name">Name</label><input id="name" />
-					</form>
+					<?php 
+						form(array(
+							new Input('name', 'Name'),
+							new Input('desc', 'Description'),
+							new Input('version', 'Version'),
+							new Input('author', 'Author'),
+							new Input('url', 'Author URI'),
+						));
+					?>
 				</div>
 				<div id="tabs-2">
 					<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus

@@ -152,9 +152,9 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 .ui-widget { font-family: sans-serif; font-size: 12px; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: sans-serif; font-size: 1em; }
-.ui-widget-content { border: 1px solid #dddddd; background: #eeeeee url(images/ui-bg_highlight-soft_100_eeeeee_1x100.png) 50% top repeat-x; color: #333333; }
+.ui-widget-content { border: 1px solid #dddddd; background: #f5f5f5 50% top repeat-x; color: #333333; }
 .ui-widget-content a { color: #333333; }
-.ui-widget-header { border: 1px solid #b3b3b3; background: #dedede url(images/ui-bg_highlight-soft_60_dedede_1x100.png) 50% 50% repeat-x; color: #474747; font-weight: bold; }
+.ui-widget-header { border: 1px solid #b3b3b3; background: #dedede; color: #474747; font-weight: bold; }
 .ui-widget-header a { color: #474747; }
 
 /* Interaction states

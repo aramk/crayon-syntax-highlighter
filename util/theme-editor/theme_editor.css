@@ -19,3 +19,36 @@
 #crayon-editor-save {
 	margin: 0 5px;
 }
+
+#crayon-editor-controls label {
+	margin-right: 10px;
+	width: 70px;
+	float: left;
+}
+
+#crayon-editor-controls .field {
+	line-height: 28px;
+	border: 0px;
+}
+#crayon-editor-controls input {
+	line-height: 23px;
+	border: 1px solid #999;
+	padding: 0 5px;
+	margin: 2px 0;
+}
+
+#crayon-editor-controls .ui-tabs-panel {
+	padding: 5px;
+}
+
+.crayon-theme-editor-form table {
+	width: 100%;
+}
+#crayon-editor-controls .crayon-theme-editor-form table td {
+	padding: 0;
+	margin: 0;
+}
+
+.crayon-theme-editor-form table .value input {
+	width: 100%;
+}
