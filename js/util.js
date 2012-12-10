@@ -4,7 +4,7 @@ var jQueryCrayon = jQuery;
 var CRAYON_DEBUG = false;
 
 (function ($) {
-	
+
 	$(document).ready(function() {
 		CrayonUtil.init();
     });
@@ -46,6 +46,13 @@ var CRAYON_DEBUG = false;
 	    base.setRange = function (v, min, max) {
 	    	return base.setMax(base.setMin(v, min), max); 
 	    };
+
+	    base.initFancybox = function() {
+	    	if (fancyboxInit) {
+				// Initialise a custom version of Fancybox to avoid conflicting
+				fancyboxInit(window, document, $, 'crayonFancybox');
+	    	}
+	    }
 	    
 	};
 	

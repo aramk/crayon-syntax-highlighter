@@ -72,7 +72,7 @@
 					});
 		    		
 		    		ed.onInit.add(function(ed) {
-	    				CrayonTagEditor.init(s.tinymce_button);
+	    				CrayonTagEditor.bind(s.tinymce_button);
 		    	    });
 		    		
 		            ed.addCommand('showCrayon', function() {

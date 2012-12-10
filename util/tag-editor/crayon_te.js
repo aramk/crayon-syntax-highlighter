@@ -3,14 +3,15 @@
 	window.CrayonTagEditor = new function() {
 		var base = this;
 		
+		var isInit = false;
 		var loaded = false;
 		var editing = false;
-		var insertCallback, editCallback, showCallback, hideCallback = null;
+		var insertCallback, editCallback, showCallback, hideCallback;
 		// Used for encoding, decoding
-		var inputHTML, outputHTML, editor_name, ajax_class_timer = null;
+		var inputHTML, outputHTML, editor_name, ajax_class_timer;
 		var ajax_class_timer_count = 0;
 		
-		var code_refresh, url_refresh = null;
+		var code_refresh, url_refresh;
 		
 		// Current $ obj of pre node
 		var currCrayon = null;
@@ -20,19 +21,32 @@
 		var is_inline = false;
 		
 		// Generated in WP and contains the settings
-		var s, gs, util = null;
+		var s, gs, util;
 		// For use in async functions
 		var me = this;
 		
 		// CSS
-		var dialog, code, clear, submit = null;
+		var dialog, code, clear, submit;
 		
-		base.init = function(button) {
+		base.init = function() {
 			s = CrayonTagEditorSettings;
 			gs = CrayonSyntaxSettings;
 			util = CrayonUtil;
-
+			
+			$(s.cancel_css).live('click', function () {
+				$.crayonFancybox.close();
+				return false;
+			});
+		};
+		
+		base.bind = function(button) {
+			if (!isInit) {
+				isInit = true;
+				base.init();
+			}
+			
 			base.loadDialog();
+			util.initFancybox();
 			$(button).crayonFancybox({
         		href : s.content_css,
         		margin : [40,10,40,10],
@@ -52,11 +66,6 @@
         		},
         		closeBtn : false
         	});
-			
-			$(s.cancel_css).live('click', function () {
-				$.crayonFancybox.close();
-				return false;
-			});
 		};
 		
 		base.hide = function() {

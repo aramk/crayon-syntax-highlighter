@@ -252,6 +252,11 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.17 =
+* FIXED:
+	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
+	* Updated Turkish
+
 = 1.16 =
 * ADDED:
 	* Expanding code beyond the page border on mouseover - enable the setting under Settings > Crayon > Code.
