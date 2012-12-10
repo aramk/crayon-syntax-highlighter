@@ -75,7 +75,7 @@ class CrayonSettingsWP {
 		wp_enqueue_style('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_STYLE, __FILE__), array(), $CRAYON_VERSION);
 	}
 
-	public static function admin_base_scripts() {
+	public static function admin_scripts() {
 		global $CRAYON_VERSION;
 		wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
 		self::init_js_settings();
@@ -83,13 +83,18 @@ class CrayonSettingsWP {
 			wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_util_js'), $CRAYON_VERSION);
 			self::init_admin_js_settings();
 		}
+		self::other_scripts();
 	}
 	
-	public static function admin_scripts() {
+	public static function other_scripts() {
 		global $CRAYON_VERSION;
-		self::admin_base_scripts();
-		wp_enqueue_script('crayon_jquery_popup', plugins_url(CRAYON_JQUERY_POPUP, __FILE__), array('jquery'), $CRAYON_VERSION);
-		wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS, __FILE__), array('jquery', 'crayon_jquery_popup', 'crayon_util_js'), $CRAYON_VERSION);
+		self::load_settings(TRUE);
+		$deps = array('jquery', 'crayon_util_js');
+		if (CrayonGlobalSettings::val(CrayonSettings::POPUP) || is_admin()) {
+			wp_enqueue_script('crayon_jquery_popup', plugins_url(CRAYON_JQUERY_POPUP, __FILE__), array('jquery'), $CRAYON_VERSION);
+			$deps[] = 'crayon_jquery_popup';
+		}
+		wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS, __FILE__), $deps, $CRAYON_VERSION);
 	}
 
 	public static function init_js_settings() {
@@ -603,27 +608,26 @@ class CrayonSettingsWP {
 
 	// General Fields =========================================================
 	public static function help() {
-		global $CRAYON_WEBSITE;
+		global $CRAYON_WEBSITE, $CRAYON_TWITTER, $CRAYON_GIT, $CRAYON_PLUGIN_WP;
 		if (CrayonGlobalSettings::val(CrayonSettings::HIDE_HELP)) {
 			return;
 		}
-		$web = $CRAYON_WEBSITE;
 		echo '
 				<div id="crayon-help" class="updated settings-error crayon-help">
-				<p><strong>Howdy, coder!</strong> Thanks for using Crayon. Use <strong>help</strong> on the top of this page to learn how to use the shortcode and basic features, or check out my <a href="#info">Twitter & Email</a>. For online help and info, visit <a target="_blank" href="'.$web,'">here</a>. <a class="crayon-help-close">X</a></p>
+				<p><strong>Howdy, coder!</strong> Thanks for using Crayon. <strong>Useful Links:</strong> <a href="'.$CRAYON_WEBSITE.'" target="_blank">Documentation</a>, <a href="'.$CRAYON_GIT.'" target="_blank">GitHub</a>, <a href="'.$CRAYON_PLUGIN_WP.'" target="_blank">Plugin Page</a>, <a href="'.$CRAYON_TWITTER.'" target="_blank">Twitter</a>. <a class="crayon-help-close">X</a></p>
 						</div>
 						';
 	}
 
-	public static function get_crayon_help_file() {
-		// Load help
-		if ( ($help = @file_get_contents(CRAYON_HELP_FILE)) !== FALSE) {
-			$help = str_replace('{PLUGIN}', CrayonGlobalSettings::plugin_path(), $help);
-		} else {
-			$help = 'Help failed to load... Try <a href="#info">these</a> instead.';
-		}
-		return $help;
-	}
+// 	public static function get_crayon_help_file() {
+// 		// Load help
+// 		if ( ($help = @file_get_contents(CRAYON_HELP_FILE)) !== FALSE) {
+// 			$help = str_replace('{PLUGIN}', CrayonGlobalSettings::plugin_path(), $help);
+// 		} else {
+// 			$help = 'Help failed to load... Try <a href="#info">these</a> instead.';
+// 		}
+// 		return $help;
+// 	}
 
 	public static function help_screen() {
 		$screen = get_current_screen();
@@ -633,20 +637,20 @@ class CrayonSettingsWP {
 		}
 	  
 		// Add my_help_tab if current screen is My Admin Page
-		$screen->add_help_tab( array(
-				'id'		=> 'crayon_help_tab',
-				'title'		=> crayon__('Crayon Help'),
-				'content'	=> self::get_crayon_help_file() // TODO consider adding tranlations for help
-		) );
+// 		$screen->add_help_tab( array(
+// 				'id'		=> 'crayon_help_tab',
+// 				'title'		=> crayon__('Crayon Help'),
+// 				'content'	=> self::get_crayon_help_file() // TODO consider adding tranlations for help
+// 		) );
 	}
 
 	// XXX Depreciated since WP 3.3
-	public static function cont_help($contextual_help, $screen_id, $screen) {
-		if ($screen_id == self::$admin_page) {
-			return self::get_crayon_help_file();
-		}
-		return $contextual_help;
-	}
+// 	public static function cont_help($contextual_help, $screen_id, $screen) {
+// 		if ($screen_id == self::$admin_page) {
+// 			return self::get_crayon_help_file();
+// 		}
+// 		return $contextual_help;
+// 	}
 
 	public static function metrics() {
 		echo '<div id="crayon-section-metrics" class="crayon-hide-inline">';
@@ -1075,7 +1079,7 @@ class Human {
 	// About Fields ===========================================================
 
 	public static function info() {
-		global $CRAYON_VERSION, $CRAYON_DATE, $CRAYON_AUTHOR, $CRAYON_TWITTER, $CRAYON_EMAIL, $CRAYON_AUTHOR_SITE, $CRAYON_DONATE;
+		global $CRAYON_VERSION, $CRAYON_DATE, $CRAYON_AUTHOR, $CRAYON_WEBSITE, $CRAYON_TWITTER, $CRAYON_GIT, $CRAYON_PLUGIN_WP, $CRAYON_AUTHOR_SITE, $CRAYON_DONATE;
 		echo '<a name="info"></a>';
 		$version = '<strong>'.crayon__('Version').':</strong> ' . $CRAYON_VERSION;
 		$date = $CRAYON_DATE;
@@ -1093,8 +1097,15 @@ class Human {
 				Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
 				Turkish (<a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)';
 
-		$links = '<a id="twitter-icon" href="' . $CRAYON_TWITTER . '" target="_blank"></a>
-				<a id="gmail-icon" href="mailto:' . $CRAYON_EMAIL . '" target="_blank"></a><div id="crayon-donate"><a href="' . $CRAYON_DONATE . '" target="_blank"><img src="'.plugins_url(CRAYON_DONATE_BUTTON, __FILE__).'"></a></div>';
+		$links = '
+	 			<a id="docs-icon" class="small-icon" title="Documentation" href="' . $CRAYON_WEBSITE . '" target="_blank"></a>
+				<a id="git-icon" class="small-icon" title="GitHub" href="' . $CRAYON_GIT . '" target="_blank"></a>
+				<a id="wp-icon" class="small-icon" title="Plugin Page" href="' . $CRAYON_PLUGIN_WP . '" target="_blank"></a>
+	 			<a id="twitter-icon" class="small-icon" title="Twitter" href="' . $CRAYON_TWITTER . '" target="_blank"></a>
+				<a id="gmail-icon" class="small-icon" title="Email" href="mailto:' . $CRAYON_EMAIL . '" target="_blank"></a>
+				<div id="crayon-donate"><a href="' . $CRAYON_DONATE . '" title="Donate" target="_blank">
+					<img src="'.plugins_url(CRAYON_DONATE_BUTTON, __FILE__).'"></a>
+				</div>';
 
 		echo '
 				<table id="crayon-info" border="0">

@@ -222,19 +222,21 @@
             }
 
             // Used for code popup
-            crayon[uid].popup_settings = popupWindow(popup_button, {
-                height:screen.height - 200,
-                width:screen.width - 100,
-                top:75,
-                left:50,
-                scrollbars:1,
-                windowURL:'',
-                data:'' // Data overrides URL
-            }, function() {
-                code_popup(uid);
-            }, function() {
-                //console_log('after');
-            });
+            if (c.filter('[data-settings~="no-popup"]').length == 0) {
+            	crayon[uid].popup_settings = popupWindow(popup_button, {
+                    height:screen.height - 200,
+                    width:screen.width - 100,
+                    top:75,
+                    left:50,
+                    scrollbars:1,
+                    windowURL:'',
+                    data:'' // Data overrides URL
+                }, function() {
+                    code_popup(uid);
+                }, function() {
+                    //console_log('after');
+                });
+            }
 
             plain.css('opacity', 0);
             // If a toolbar with mouseover was found

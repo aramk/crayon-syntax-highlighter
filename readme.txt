@@ -255,6 +255,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 1.17 =
 * FIXED:
 	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
+	* Disabling popup now removes the JS resource
+	* Removed contextual help and added more useful links, including online help
 	* Updated Turkish
 
 = 1.16 =

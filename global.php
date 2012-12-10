@@ -24,6 +24,8 @@ $CRAYON_DONATE = 'http://bit.ly/crayondonate';
 $CRAYON_WEBSITE = 'http://ak.net84.net/projects/crayon-syntax-highlighter';
 $CRAYON_EMAIL = 'crayon.syntax@gmail.com';
 $CRAYON_TWITTER = 'http://twitter.com/crayonsyntax';
+$CRAYON_GIT = 'http://github.com/aramkocharyan/crayon-syntax-highlighter/';
+$CRAYON_PLUGIN_WP = 'http://wordpress.org/extend/plugins/crayon-syntax-highlighter/';
 
 // XXX Used to name the class
 

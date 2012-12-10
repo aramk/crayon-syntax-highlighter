@@ -209,7 +209,7 @@
 	vertical-align: top;
 }
 
-#gmail-icon, #twitter-icon, #donate-icon {
+.small-icon {
 	width: 24px;
 	height: 24px;
 	display: inline-block;
@@ -219,9 +219,17 @@
 #twitter-icon {
 	background: url(images/twitter.png);
 }
-
 #gmail-icon {
 	background: url(images/google.png);
+}
+#docs-icon {
+	background: url(images/docs.png);
+}
+#git-icon {
+	background: url(images/github.png);
+}
+#wp-icon {
+	background: url(images/wordpress-blue.png);
 }
 
 #donate-icon {

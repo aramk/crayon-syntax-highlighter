@@ -243,6 +243,11 @@ class CrayonFormatter {
 			$code_settings .= ' touchscreen';
 		}
 		
+		// Disabling Popup
+		if (!$hl->setting_val(CrayonSettings::POPUP)) {
+			$code_settings .= ' no-popup';
+		}
+		
 		// Draw the plain code and toolbar
 		$toolbar_settings = $print_plain_button = $print_copy_button = '';
 		if (empty($error) && $hl->setting_index(CrayonSettings::TOOLBAR) != 2) {
