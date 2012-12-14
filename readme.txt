@@ -22,6 +22,7 @@ It also supports some neat features like:
 * Copy/paste code
 * Open code in a new window (popup)
 * Line wrapping
+* Code expanding
 * bbPress 2 support
 * <a href="http://bit.ly/ReRr0i" target="_blank">Converting legacy code in blog posts/comments to &lt;pre&gt;</a>
 * Remote request caching
@@ -38,6 +39,7 @@ It also supports some neat features like:
 * Tab sizes
 * Code title
 * Toggled toolbar
+* Retina buttons
 * Striped lines
 * Line marking (for important lines)
 * <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">Line ranges (showing only parts of the code)</a>
@@ -255,6 +257,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 1.17 =
 * ADDED:
 	* Selected text in the TinyMCE editor is now added into the code box of the Tag Editor
+	* Retina buttons for the toolbar
 * FIXED:
 	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
 	* Disabling popup now removes the JS resource

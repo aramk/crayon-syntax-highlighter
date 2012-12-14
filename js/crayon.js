@@ -163,6 +163,9 @@
             plain_button.click(function() { CrayonSyntax.toggle_plain(uid); });
             copy_button.click(function() { CrayonSyntax.copy_plain(uid); });
 
+            // Enable retina if supported
+            retina(uid);
+
             var load_func = function() {
                 if (main.height() < 30) {
                     crayon[uid].scroll_block_fix = true;
@@ -458,6 +461,18 @@
                 crayon_slide(uid, info, false);
             }
 
+        };
+
+        var retina = function(uid) {
+            if (window.devicePixelRatio > 1) {
+                var buttons = $('.crayon-button', crayon[uid].toolbar);
+                buttons.each(function () {
+                    var lowres = $(this).css('background-image');
+                    var highres = lowres.replace(/\.(?=[^\.]+$)/g, '@2x.');
+                    $(this).css('background-size', '48px 16px');
+                    $(this).css('background-image', highres);
+                });
+            }
         };
 
         var crayon_is_slide_hidden = function(object) {
