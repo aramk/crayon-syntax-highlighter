@@ -263,6 +263,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Disabling popup now removes the JS resource
 	* Refactored Tag Editor functions
 	* Removed contextual help and added more useful links, including online help
+	* Checkboxes have labels instead of spans thanks to https://github.com/toszcze
+	* Undefined php variable fix thanks to https://github.com/toszcze
 	* Updated Turkish
 
 = 1.16 =
