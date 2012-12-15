@@ -567,7 +567,7 @@ class CrayonSettingsWP {
 		$checked = (!array_key_exists($id, self::$options)) ? FALSE : self::$options[$id] == TRUE;
 		$checked_str = $checked ? ' checked="checked"' : '';
 		echo '<input id="', CrayonSettings::PREFIX, $id, '" name="', self::OPTIONS, '[', $id, ']" type="checkbox" class="'.CrayonSettings::SETTING.'" value="1"', $checked_str,
-		' crayon-preview="', ($preview ? 1 : 0), '" /> ', '<span>', $text, '</span>', ($line_break ? CRAYON_BR : '');
+		' crayon-preview="', ($preview ? 1 : 0), '" /> ', '<label for="', CrayonSettings::PREFIX, $id, '">', $text, '</label>', ($line_break ? CRAYON_BR : '');
 	}
 
 	// Draws a dropdown by loading the default value (an array) from a setting
