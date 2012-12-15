@@ -3,14 +3,15 @@
 	window.CrayonTagEditor = new function() {
 		var base = this;
 		
+		var isInit = false;
 		var loaded = false;
 		var editing = false;
-		var insertCallback, editCallback, showCallback, hideCallback = null;
+		var insertCallback, editCallback, showCallback, hideCallback, selectCallback;
 		// Used for encoding, decoding
-		var inputHTML, outputHTML, editor_name, ajax_class_timer = null;
+		var inputHTML, outputHTML, editor_name, ajax_class_timer;
 		var ajax_class_timer_count = 0;
 		
-		var code_refresh, url_refresh = null;
+		var code_refresh, url_refresh;
 		
 		// Current $ obj of pre node
 		var currCrayon = null;
@@ -20,19 +21,30 @@
 		var is_inline = false;
 		
 		// Generated in WP and contains the settings
-		var s, gs, util = null;
-		// For use in async functions
-		var me = this;
+		var s, gs, util;
 		
 		// CSS
-		var dialog, code, clear, submit = null;
+		var dialog, code, clear, submit;
 		
-		base.init = function(button) {
+		base.init = function() {
 			s = CrayonTagEditorSettings;
 			gs = CrayonSyntaxSettings;
 			util = CrayonUtil;
-
+			
+			$(s.cancel_css).live('click', function () {
+				$.crayonFancybox.close();
+				return false;
+			});
+		};
+		
+		base.bind = function(button) {
+			if (!isInit) {
+				isInit = true;
+				base.init();
+			}
+			
 			base.loadDialog();
+			util.initFancybox();
 			$(button).crayonFancybox({
         		href : s.content_css,
         		margin : [40,10,40,10],
@@ -52,11 +64,6 @@
         		},
         		closeBtn : false
         	});
-			
-			$(s.cancel_css).live('click', function () {
-				$.crayonFancybox.close();
-				return false;
-			});
 		};
 		
 		base.hide = function() {
@@ -79,7 +86,7 @@
 	            dialog.appendTo('body').hide();
 	        	dialog.html(data);
 	        	
-	        	me.setOrigValues();
+	        	base.setOrigValues();
 	        	
 	        	submit = dialog.find(s.submit_css);
 	        	
@@ -139,7 +146,7 @@
 	        			orig_value = '';
 	        		}
 	        		// Depends on type
-	        		var value = me.settingValue(setting);
+	        		var value = base.settingValue(setting);
 	        		console_log(setting.attr('id') + ' value: ' + value);
 	        		var highlight = null;
 	        		if (setting.is('input[type=checkbox]')) {
@@ -161,7 +168,7 @@
 	     				}
 	    			}
 	    			// Save standardized value for later
-	    			me.settingValue(setting, value);
+	    			base.settingValue(setting, value);
 	    		};
 	        	$('.'+gs.setting+'[id]:not(.'+gs.special+')').each(function() {
 	        		$(this).change(setting_change);
@@ -171,37 +178,43 @@
 	    };
 	    
 	    // XXX Displays the dialog.
-		base.showDialog = function(insert, edit, show, hide, editor_str, ed, node, input, output) {
+		base.showDialog = function(args) {
+            args = $.extend({
+                insert: null,
+                edit: null,
+                show: null,
+                hide: base.hide,
+                select: null,
+                editor_str: null,
+                ed: null,
+                node: null,
+                input: null,
+                output: null
+            }, args);
+
 			// Need to reset all settings back to original, clear yellow highlighting
-			me.resetSettings();
+			base.resetSettings();
 			// Save these for when we add a Crayon
-			insertCallback = insert;
-	    	editCallback = edit;
-	    	showCallback = show;
-	    	hideCallback = hide;
-	    	inputHTML = input;
-	    	outputHTML = output;
-	    	editor_name = editor_str;
-			// If we have selected a Crayon, load in the contents
-			// TODO put this in a separate function
-			var currNode = null;
+			insertCallback = args.insert;
+	    	editCallback = args.edit;
+	    	showCallback = args.show;
+	    	hideCallback = args.hide;
+            selectCallback = args.select;
+	    	inputHTML = args.input;
+	    	outputHTML = args.output;
+	    	editor_name = args.editor_str;
+			var currNode = args.node;
 			is_inline = false;
-			if (typeof node != 'undefined' && node != null) {
-				currNode = node;
-			} else {
-				// Get it from editor selection, not as precise
-				currNode = ed != null ? ed.selection.getNode() : null;
-			}
 			
 	    	// Unbind submit
 	    	submit.unbind();
 	    	submit.click(function() {
-	    		me.submitButton();
+	    		base.submitButton();
 	    		return false;
 	    	});
-	    	me.setSubmitText(s.submit_add);
+	    	base.setSubmitText(s.submit_add);
 			
-			if (me.isCrayon(currNode)) {
+			if (base.isCrayon(currNode)) {
 				currCrayon = $(currNode); 
 				if (currCrayon.length != 0) {
 					// Read back settings for editing
@@ -251,13 +264,13 @@
 					}
 					
 					// Validate the attributes
-					atts = me.validate(atts);
+					atts = base.validate(atts);
 					
 					// Load in attributes, add prefix
 					for (var att in atts) {
 						var setting = $('#' + gs.prefix + att + '.' + gs.setting);
 						var value = atts[att];
-						me.settingValue(setting, value);
+						base.settingValue(setting, value);
 						// Update highlights 
 						setting.change();
 						// If global setting changes and we access settings, it should declare loaded settings as changed even if they equal the global value, just so they aren't lost on save
@@ -272,7 +285,7 @@
 					}
 					
 					editing = true;
-					me.setSubmitText(s.submit_edit);
+					base.setSubmitText(s.submit_edit);
 					
 					// Code
 					var content = currCrayon.html();
@@ -287,9 +300,13 @@
 					console_log('cannot load currNode of type pre');
 				}
 			} else {
+				if (selectCallback) {
+					// Add selected content as code
+					code.val(selectCallback);
+				}
 				// We are creating a new Crayon, not editing
 				editing = false;
-				me.setSubmitText(s.submit_add);
+				base.setSubmitText(s.submit_add);
 				currCrayon = null;
 				currClasses = '';
 			}
@@ -447,7 +464,7 @@
 	    	atts['decode'] = 'true';
 	    	
 	    	// Validate the attributes
-			atts = me.validate(atts);
+			atts = base.validate(atts);
 	    	
 			for (var id in atts) {
 	    		// Remove prefix, if exists
@@ -482,11 +499,11 @@
 			}
 			content = typeof content != 'undefined' ? content : '';
 			shortcode += '>' + content + '</' + tag + '>' + br_after;
-			
-			if (editing) {
-				// Edit the current selected node, update refere
-				/*currPre =*/ editCallback(shortcode);
-			} else {
+
+			if (editing && editCallback) {
+				// Edit the current selected node
+				editCallback(shortcode);
+			} else if (insertCallback) {
 				// Insert the tag and hide dialog
 				insertCallback(shortcode);
 			}
@@ -496,8 +513,8 @@
 		
 		base.submitButton = function() {
 			console_log('submit');
-			if (me.addCrayon() != false) {
-				me.hideDialog();
+			if (base.addCrayon() != false) {
+				base.hideDialog();
 			}
 		};
 		
@@ -513,7 +530,7 @@
 		base.setOrigValues = function() {
 			$('.'+gs.setting+'[id]').each(function() {
 				var setting = $(this);
-				setting.attr(gs.orig_value, me.settingValue(setting));
+				setting.attr(gs.orig_value, base.settingValue(setting));
 			});
 		};
 		
@@ -521,7 +538,7 @@
 			console_log('reset');
 			$('.'+gs.setting).each(function() {
 				var setting = $(this);
-				me.settingValue(setting, setting.attr(gs.orig_value));
+				base.settingValue(setting, setting.attr(gs.orig_value));
 				// Update highlights
 				setting.change();
 			});

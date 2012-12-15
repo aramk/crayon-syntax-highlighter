@@ -24,6 +24,8 @@ $CRAYON_DONATE = 'http://bit.ly/crayondonate';
 $CRAYON_WEBSITE = 'http://ak.net84.net/projects/crayon-syntax-highlighter';
 $CRAYON_EMAIL = 'crayon.syntax@gmail.com';
 $CRAYON_TWITTER = 'http://twitter.com/crayonsyntax';
+$CRAYON_GIT = 'http://github.com/aramkocharyan/crayon-syntax-highlighter/';
+$CRAYON_PLUGIN_WP = 'http://wordpress.org/extend/plugins/crayon-syntax-highlighter/';
 
 // XXX Used to name the class
 
@@ -72,7 +74,6 @@ define('CRAYON_JS_ADMIN', CRAYON_JS_DIR . 'crayon_admin.js');
 define('CRAYON_JS_UTIL', CRAYON_JS_DIR . 'util.js');
 define('CRAYON_CSSJSON_JS', CRAYON_JS_DIR . 'cssjson.js');
 define('CRAYON_JS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.init.pack.js');
-define('CRAYON_JS_FANCYBOX_INIT', CRAYON_JS_DIR . 'fancybox/fancybox_init.js');
 define('CRAYON_CSS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.css');
 define('CRAYON_CSS_JQUERY_UI', CRAYON_JS_DIR . 'jquery-ui/jquery-ui.css');
 define('CRAYON_JS_JQUERY_UI', CRAYON_JS_DIR . 'jquery-ui/jquery-ui.js');

@@ -163,6 +163,9 @@
             plain_button.click(function() { CrayonSyntax.toggle_plain(uid); });
             copy_button.click(function() { CrayonSyntax.copy_plain(uid); });
 
+            // Enable retina if supported
+            retina(uid);
+
             var load_func = function() {
                 if (main.height() < 30) {
                     crayon[uid].scroll_block_fix = true;
@@ -222,19 +225,21 @@
             }
 
             // Used for code popup
-            crayon[uid].popup_settings = popupWindow(popup_button, {
-                height:screen.height - 200,
-                width:screen.width - 100,
-                top:75,
-                left:50,
-                scrollbars:1,
-                windowURL:'',
-                data:'' // Data overrides URL
-            }, function() {
-                code_popup(uid);
-            }, function() {
-                //console_log('after');
-            });
+            if (c.filter('[data-settings~="no-popup"]').length == 0) {
+            	crayon[uid].popup_settings = popupWindow(popup_button, {
+                    height:screen.height - 200,
+                    width:screen.width - 100,
+                    top:75,
+                    left:50,
+                    scrollbars:1,
+                    windowURL:'',
+                    data:'' // Data overrides URL
+                }, function() {
+                    code_popup(uid);
+                }, function() {
+                    //console_log('after');
+                });
+            }
 
             plain.css('opacity', 0);
             // If a toolbar with mouseover was found
@@ -456,6 +461,18 @@
                 crayon_slide(uid, info, false);
             }
 
+        };
+
+        var retina = function(uid) {
+            if (window.devicePixelRatio > 1) {
+                var buttons = $('.crayon-button', crayon[uid].toolbar);
+                buttons.each(function () {
+                    var lowres = $(this).css('background-image');
+                    var highres = lowres.replace(/\.(?=[^\.]+$)/g, '@2x.');
+                    $(this).css('background-size', '48px 16px');
+                    $(this).css('background-image', highres);
+                });
+            }
         };
 
         var crayon_is_slide_hidden = function(object) {
@@ -788,6 +805,9 @@
             	if (typeof crayon[uid].expanded == 'undefined') {
             		crayon[uid].initialSize = {width: crayon[uid].width(), height: crayon[uid].height()};
             		crayon[uid].finalSize = {width: crayon[uid].table.width(), height: crayon[uid].table.height()};
+                    // Ensure we don't shrink
+                    crayon[uid].finalSize.width = CrayonUtil.setMin(crayon[uid].finalSize.width, crayon[uid].initialSize.width);
+                    crayon[uid].finalSize.height = CrayonUtil.setMin(crayon[uid].finalSize.height, crayon[uid].initialSize.height);
             		crayon[uid].diffSize = {
         				width: crayon[uid].finalSize.width - crayon[uid].initialSize.width,
         				height: crayon[uid].finalSize.height - crayon[uid].initialSize.height
@@ -799,35 +819,33 @@
             	var initialSize = crayon[uid].initialSize;
             	var diffSize = crayon[uid].diffSize;
                 var finalSize = crayon[uid].finalSize;
-                
-                if (diffSize.width > 0) {
-                	var expandHeight = {
-                		'height' : 'auto',
-                		'min-height' : 'none',
-                		'max-height' : 'none'
-                	};
-                	var expandWidth = {
-            			'width' : 'auto',
-                		'min-width' : 'none',
-                		'max-width' : 'none',
-                	};
-                	crayon[uid].height(crayon[uid].height());
-                    crayon[uid].width(crayon[uid].width());
-                    crayon[uid].css({
-                    	'min-width' : 'none',
-                		'max-width' : 'none'
-                    });
-                    main.css(expandHeight);
-                    main.css(expandWidth);
-                    crayon[uid].stop(true);
-                    crayon[uid].animate({
-                        width: finalSize.width,
-                        height: finalSize.height
-                    }, animt(crayon[uid].expandTime, uid), function() {
-                    	crayon[uid].expanded = true;
-                    	update_expand_button(uid);
-                    });
-                }
+
+                var expandHeight = {
+                    'height' : 'auto',
+                    'min-height' : 'none',
+                    'max-height' : 'none'
+                };
+                var expandWidth = {
+                    'width' : 'auto',
+                    'min-width' : 'none',
+                    'max-width' : 'none',
+                };
+                crayon[uid].height(crayon[uid].height());
+                crayon[uid].width(crayon[uid].width());
+                crayon[uid].css({
+                    'min-width' : 'none',
+                    'max-width' : 'none'
+                });
+                main.css(expandHeight);
+                main.css(expandWidth);
+                crayon[uid].stop(true);
+                crayon[uid].animate({
+                    width: finalSize.width,
+                    height: finalSize.height
+                }, animt(crayon[uid].expandTime, uid), function() {
+                    crayon[uid].expanded = true;
+                    update_expand_button(uid);
+                });
             } else {
             	var initialSize = crayon[uid].initialSize;
             	var delay = crayon[uid].toolbar_delay;

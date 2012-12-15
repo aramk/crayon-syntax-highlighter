@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=AW99E
 License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 1.15
+Tested up to: 3.5
+Stable tag: 1.16
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
@@ -22,6 +22,7 @@ It also supports some neat features like:
 * Copy/paste code
 * Open code in a new window (popup)
 * Line wrapping
+* Code expanding
 * bbPress 2 support
 * <a href="http://bit.ly/ReRr0i" target="_blank">Converting legacy code in blog posts/comments to &lt;pre&gt;</a>
 * Remote request caching
@@ -38,6 +39,7 @@ It also supports some neat features like:
 * Tab sizes
 * Code title
 * Toggled toolbar
+* Retina buttons
 * Striped lines
 * Line marking (for important lines)
 * <a href="http://ak.net84.net/crayon/line-ranges-in-crayon/" target="_blank">Line ranges (showing only parts of the code)</a>
@@ -141,7 +143,7 @@ These are helpful for discovering new features.
 A handful of articles from others written about Crayon, thanks guys!
 
 * <a href="http://icrunched.co/top-5-syntax-highlighter-wordpress-plugins/" target="_blank">Top 5 Syntax Highlighter WordPress Plugins</a>
-* <a href="http://themesplugins.com/wordpress-Plugin/add-php-java-html-codes-posts-pages/" target="_blank">Crayon Syntax Highlighter Ð Plugin</a>
+* <a href="http://themesplugins.com/wordpress-Plugin/add-php-java-html-codes-posts-pages/" target="_blank">Crayon Syntax Highlighter ï¿½ Plugin</a>
 * <a href="http://bbpress.org/forums/topic/state-of-syntax-highlighter-support-in-bbpress-2/" target="_blank">State of syntax highlighter support in bbPress 2</a>
 * <a href="http://www.techbrunch.fr/informations/plugin-wordpress-afficher-code-source/" target="_blank">The ultimate plugin for displaying code in WordPress (French)</a>
 * <a href="http://www.trynull.com/2012/06/15/finally-wordpress-code-syntax-highlighting-that-works/" target="_blank">Finally!, A WordPress code syntax highlighting that works</a>
@@ -251,6 +253,20 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 4. Tag Editor.
 
 == Changelog ==
+
+= 1.17 =
+* ADDED:
+	* Selected text in the TinyMCE editor is now added into the code box of the Tag Editor
+	* Retina buttons for the toolbar
+* FIXED:
+	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
+	* Disabling popup now removes the JS resource
+	* Refactored Tag Editor functions
+	* Removed contextual help and added more useful links, including online help
+	* Checkboxes have labels instead of spans thanks to https://github.com/toszcze
+	* Undefined php variable fix thanks to https://github.com/toszcze
+	* Expanding code shrunk instead if the toolbar was visible
+	* Updated Turkish
 
 = 1.16 =
 * ADDED:

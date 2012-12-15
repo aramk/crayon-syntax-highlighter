@@ -1,33 +1,47 @@
 (function($) {
 
-	window.CrayonQuickTags = function() {
+	window.CrayonQuickTags = new function() {
 	
 		var base = this;
+
+		base.init = function() {
+			base.sel = '*[id*="crayon_quicktag"],*[class*="crayon_quicktag"]';
+			CrayonTagEditor.bind(base.sel);
+			QTags.addButton( 'crayon_quicktag', 'crayon', function() {
+				CrayonTagEditor.showDialog({
+                    insert: function(shortcode) {
+                        QTags.insertContent(shortcode);
+                    },
+                    select: base.getSelectedText,
+                    editor_str: 'html',
+                    output: 'encode'
+                });
+				$(base.sel).removeClass('qt_crayon_highlight');
+			});
+			var qt_crayon;
+			var find_qt_crayon = setInterval(function() {
+				qt_crayon = $(base.sel).first();
+				if (typeof qt_crayon != 'undefined') {
+					clearInterval(find_qt_crayon);
+				}
+			}, 100);
+		}
 		
-		base.sel = '*[id*="crayon_quicktag"],*[class*="crayon_quicktag"]';
-		CrayonTagEditor.init(base.sel);
-		
-		QTags.addButton( 'crayon_quicktag', 'crayon', function() {
-			CrayonTagEditor.showDialog(
-				function(shortcode) {
-					QTags.insertContent(shortcode);
-				},
-				function(shortcode) {/* Can't edit */}, null, CrayonTagEditor.hide, 'html', null, null, null, 'encode');
-			jQuery(base.sel).removeClass('qt_crayon_highlight');
-		});
-		
-		var qt_crayon;
-		var find_qt_crayon = setInterval(function() {
-			qt_crayon = jQuery(base.sel).first();
-			if (typeof qt_crayon != 'undefined') {
-				clearInterval(find_qt_crayon);
+		base.getSelectedText = function() {
+			if (QTags.instances.length == 0) {
+				return null;
+			} else {
+				var qt = QTags.instances[0];
+				var startPos = qt.canvas.selectionStart;
+				var endPos = qt.canvas.selectionEnd;
+				return qt.canvas.value.substring(startPos, endPos);
 			}
-		}, 100);
-		
+		};
+
 	};
 
     $(document).ready(function() {
-        CrayonQuickTags();
+        CrayonQuickTags.init();
     });
 
 })(jQueryCrayon);
