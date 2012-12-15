@@ -1079,7 +1079,7 @@ class Human {
 	// About Fields ===========================================================
 
 	public static function info() {
-		global $CRAYON_VERSION, $CRAYON_DATE, $CRAYON_AUTHOR, $CRAYON_WEBSITE, $CRAYON_TWITTER, $CRAYON_GIT, $CRAYON_PLUGIN_WP, $CRAYON_AUTHOR_SITE, $CRAYON_DONATE;
+		global $CRAYON_VERSION, $CRAYON_DATE, $CRAYON_AUTHOR, $CRAYON_WEBSITE, $CRAYON_TWITTER, $CRAYON_GIT, $CRAYON_PLUGIN_WP, $CRAYON_AUTHOR_SITE, $CRAYON_EMAIL, $CRAYON_DONATE;
 		echo '<a name="info"></a>';
 		$version = '<strong>'.crayon__('Version').':</strong> ' . $CRAYON_VERSION;
 		$date = $CRAYON_DATE;
