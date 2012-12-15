@@ -805,6 +805,9 @@
             	if (typeof crayon[uid].expanded == 'undefined') {
             		crayon[uid].initialSize = {width: crayon[uid].width(), height: crayon[uid].height()};
             		crayon[uid].finalSize = {width: crayon[uid].table.width(), height: crayon[uid].table.height()};
+                    // Ensure we don't shrink
+                    crayon[uid].finalSize.width = CrayonUtil.setMin(crayon[uid].finalSize.width, crayon[uid].initialSize.width);
+                    crayon[uid].finalSize.height = CrayonUtil.setMin(crayon[uid].finalSize.height, crayon[uid].initialSize.height);
             		crayon[uid].diffSize = {
         				width: crayon[uid].finalSize.width - crayon[uid].initialSize.width,
         				height: crayon[uid].finalSize.height - crayon[uid].initialSize.height
@@ -816,35 +819,33 @@
             	var initialSize = crayon[uid].initialSize;
             	var diffSize = crayon[uid].diffSize;
                 var finalSize = crayon[uid].finalSize;
-                
-                if (diffSize.width > 0) {
-                	var expandHeight = {
-                		'height' : 'auto',
-                		'min-height' : 'none',
-                		'max-height' : 'none'
-                	};
-                	var expandWidth = {
-            			'width' : 'auto',
-                		'min-width' : 'none',
-                		'max-width' : 'none',
-                	};
-                	crayon[uid].height(crayon[uid].height());
-                    crayon[uid].width(crayon[uid].width());
-                    crayon[uid].css({
-                    	'min-width' : 'none',
-                		'max-width' : 'none'
-                    });
-                    main.css(expandHeight);
-                    main.css(expandWidth);
-                    crayon[uid].stop(true);
-                    crayon[uid].animate({
-                        width: finalSize.width,
-                        height: finalSize.height
-                    }, animt(crayon[uid].expandTime, uid), function() {
-                    	crayon[uid].expanded = true;
-                    	update_expand_button(uid);
-                    });
-                }
+
+                var expandHeight = {
+                    'height' : 'auto',
+                    'min-height' : 'none',
+                    'max-height' : 'none'
+                };
+                var expandWidth = {
+                    'width' : 'auto',
+                    'min-width' : 'none',
+                    'max-width' : 'none',
+                };
+                crayon[uid].height(crayon[uid].height());
+                crayon[uid].width(crayon[uid].width());
+                crayon[uid].css({
+                    'min-width' : 'none',
+                    'max-width' : 'none'
+                });
+                main.css(expandHeight);
+                main.css(expandWidth);
+                crayon[uid].stop(true);
+                crayon[uid].animate({
+                    width: finalSize.width,
+                    height: finalSize.height
+                }, animt(crayon[uid].expandTime, uid), function() {
+                    crayon[uid].expanded = true;
+                    update_expand_button(uid);
+                });
             } else {
             	var initialSize = crayon[uid].initialSize;
             	var delay = crayon[uid].toolbar_delay;

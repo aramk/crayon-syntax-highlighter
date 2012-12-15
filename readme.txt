@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=AW99E
 License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
-Tested up to: 3.4.2
+Tested up to: 3.5
 Stable tag: 1.16
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
@@ -265,6 +265,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Removed contextual help and added more useful links, including online help
 	* Checkboxes have labels instead of spans thanks to https://github.com/toszcze
 	* Undefined php variable fix thanks to https://github.com/toszcze
+	* Expanding code shrunk instead if the toolbar was visible
 	* Updated Turkish
 
 = 1.16 =
