@@ -87,7 +87,7 @@ class CrayonUtil {
 
     public static function deleteDir($path) {
         if (!is_dir($path)) {
-            throw new InvalidArgumentException("$path must be a directory");
+            throw new InvalidArgumentException("$path is not a directory");
         }
         if (substr($path, strlen($path) - 1, 1) != '/') {
             $path .= '/';
@@ -222,6 +222,11 @@ class CrayonUtil {
     // Sets a variable to null if not set
     public static function set_var(&$var, $false = NULL) {
         $var = isset($var) ? $var : $false;
+    }
+
+    // Sets a variable to null if not set
+    public static function set_default(&$var, $false = NULL) {
+        return isset($var) ? $var : $false;
     }
 
     // Thanks, http://www.php.net/manual/en/function.str-replace.php#102186

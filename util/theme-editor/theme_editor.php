@@ -174,13 +174,16 @@ class CrayonThemeEditorWP {
 
     /**
      * Saves the given theme id and css, making any necessary path and id changes to ensure the new theme is valid.
+     * Echos 0 on failure, 1 on success and 2 on success and if paths have changed.
      */
     public static function save($change_settings = TRUE) {
         CrayonSettingsWP::load_settings(TRUE);
         $oldID = $_GET['id'];
         $name = $_GET['name'];
         $css = $_GET['css'];
-        if (!empty($oldID) && !empty($css)) {
+        $change_settings = CrayonUtil::set_default($_GET['change_settings'], TRUE);
+
+        if (!empty($oldID) && !empty($css) && !empty($name)) {
             $oldPath = CrayonResources::themes()->path($oldID);
             $oldDir = CrayonResources::themes()->dirpath($oldID);
             $newID = CrayonResource::clean_id($name);
@@ -199,20 +202,20 @@ class CrayonThemeEditorWP {
             $result = @file_put_contents($newPath, $css);
             $success = $result !== FALSE;
             if ($success && $oldPath !== $newPath) {
-                try {
-                    // Delete the old path
-                    CrayonUtil::deleteDir($oldDir);
-                } catch(Exception $e) {
-                    CrayonLog::syslog($e->getMessage(), "THEME SAVE");
+                if ($oldID !== CrayonThemes::DEFAULT_THEME) {
+                    // Only delete the old path if it isn't the default theme
+                    try {
+                        // Delete the old path
+                        CrayonUtil::deleteDir($oldDir);
+                    } catch(Exception $e) {
+                        CrayonLog::syslog($e->getMessage(), "THEME SAVE");
+                    }
                 }
                 // Set the new theme in settings
                 if ($change_settings) {
                     CrayonGlobalSettings::set(CrayonSettings::THEME, $newID);
                     CrayonSettingsWP::save_settings();
                 }
-            }
-            // Return 0 on failure, 1 on success and 2 on success and if paths have changed
-            if ($success && $oldPath !== $newPath) {
                 echo 2;
             } else {
                 echo intval($success);

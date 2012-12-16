@@ -66,8 +66,17 @@
                 css: newThemeStr
             }, function (result) {
                 status.show();
-                if (parseInt(result) === 1) {
+                result = parseInt(result);
+                if (result !== 0) {
                     status.html("Success!");
+                    if (result === 2) {
+                        window.GET['theme-editor'] == 1;
+                        var get = '?';
+                        for (var i in window.GET) {
+                            get += i + '=' + window.GET[i] + '&';
+                        }
+                        window.location = window.currentURL + get;
+                    }
                 } else {
                     status.html("Failed!");
                 }
@@ -181,6 +190,7 @@
             admin.preview_update();
             admin.show_theme_info();
             admin.show_main();
+            preview.html('');
         };
 
         base.updateTitle = function () {
