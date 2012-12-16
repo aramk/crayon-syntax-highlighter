@@ -92,6 +92,7 @@ class CrayonThemeEditorWP {
 //			}
 			?>
 		</h3>
+        <div id="crayon-theme-editor-info"></div>
 		
 		<p>
 			<a id="crayon-editor-back" class="button-primary"><?php crayon_e('Back To Settings'); ?></a>

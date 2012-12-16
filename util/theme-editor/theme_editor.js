@@ -11,7 +11,7 @@
         var settings = CrayonThemeEditorSettings;
         var admin = CrayonSyntaxAdmin;
 
-        var preview, status, title;
+        var preview, status, title, info;
         var changed = false;
         var themeID, themeJSON, themeCSS, themeStr, themeInfo;
 
@@ -46,6 +46,7 @@
             console.log(settings);
             themeInfo = base.readCSSThemeInfo(themeStr);
             base.updateTitle();
+            base.updateInfo();
             base.setFieldValues(themeInfo);
         };
 
@@ -129,6 +130,7 @@
             preview = $('#crayon-editor-preview');
             status = $('#crayon-editor-status');
             title = $('#crayon-theme-editor-name');
+            info = $('#crayon-theme-editor-info');
             base.getField('name').bind('change keydown', function () {
                 themeInfo.name = base.getFieldValue('name');
                 base.updateTitle();
@@ -162,6 +164,10 @@
             } else {
                 title.html('Creating Theme: ' + themeInfo.name);
             }
+        };
+
+        base.updateInfo = function() {
+            info.html('<a target="_blank" href="' + adminSettings.curr_theme_url + '">' + adminSettings.curr_theme_url + '</a>');
         };
 
         base.createDialog = function (args) {

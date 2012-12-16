@@ -1026,7 +1026,11 @@ class CrayonWP {
 
             if (CrayonUtil::version_compare($version, '1.14') < 0) {
                 CrayonLog::syslog("Updated to v1.14: Font size enabled");
-                $settings[CrayonSettings::FONT_SIZE_ENABLE] = true;
+                $settings[CrayonSettings::FONT_SIZE_ENABLE] = TRUE;
+            }
+
+            if (CrayonUtil::version_compare($version, '1.17') < 0) {
+                $settings[CrayonSettings::HIDE_HELP] = FALSE;
             }
 
             // Save new version
