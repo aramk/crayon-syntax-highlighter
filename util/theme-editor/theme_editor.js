@@ -39,10 +39,10 @@
             themeStr = adminSettings.curr_theme_str;
             themeID = adminSettings.curr_theme;
             themeJSON = CSSJSON.toJSON(themeStr, {
-                comments: false,
+                stripComments: true,
                 split: true
             });
-            console.log(themeStr);
+            console.log(themeJSON.children['.crayon-theme-classic .crayon-table .crayon-nums'].attributes);
             console.log(settings);
             themeInfo = base.readThemeInfo(themeStr);
             for (var field in themeInfo) {

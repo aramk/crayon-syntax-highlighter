@@ -19,16 +19,15 @@ var CSSJSON = new function() {
 	};
 	base.init();
 
-	// These aren't used, just shown for convenience
 	var selX = /([^\s\;\{\}][^\;\{\}]*)\{/g;
 	var endX = /\}/g;
 	var lineX = /([^\;\{\}]*)\;/g;
-	var commentX = /\/\*.*?\*\//g;
+	var commentX = /\/\*[\s\S]*?\*\//g;
 	var lineAttrX = /([^\:]+):([^\;]*);/;
 
 	// This is used, a concatenation of all above. We use alternation to
 	// capture.
-	var altX = /(\/\*[\s\S]*?\*\/)|([^\s\;\{\}][^\;\{\}]*(?=\{))|(\})|([^\;\{\}]+\;)/gmi;
+	var altX = /(\/\*[\s\S]*?\*\/)|([^\s\;\{\}][^\;\{\}]*(?=\{))|(\})|([^\;\{\}]+\;(?!\s*\*\/))/gmi;
 
 	// Capture groups
 	var capComment = 1;
@@ -62,9 +61,14 @@ var CSSJSON = new function() {
 			var args = {
 				ordered : false,
 				comments : false,
+                stripComments : false,
 				split : false
 			};
 		}
+        if (args.stripComments) {
+            args.comments = false;
+            cssString = cssString.replace(commentX, '');
+        }
 
 		while ((match = altX.exec(cssString)) != null) {
 			if (!isEmpty(match[capComment]) && args.comments) {
@@ -91,12 +95,19 @@ var CSSJSON = new function() {
 					}
 					if (args.split) {
 						var bits = name.split(',');
-						for (i in bits) {
-							node.children[bits[i].trim()] = newNode;
-						}
 					} else {
-						node.children[name] = newNode;
+						var bits = [name];
 					}
+                    for (i in bits) {
+                        var sel = bits[i].trim();
+                        if (sel in node.children) {
+                            for (var att in newNode.attributes) {
+                                node.children[sel].attributes[att] = newNode.attributes[att];
+                            }
+                        } else {
+                            node.children[sel] = newNode;
+                        }
+                    }
 				}
 			} else if (!isEmpty(match[capEnd])) {
 				// Node has finished
