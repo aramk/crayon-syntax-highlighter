@@ -170,6 +170,26 @@ class CrayonThemeEditorWP {
 		exit();
 	}
 
+    public static function save() {
+        CrayonSettingsWP::load_settings(TRUE);
+        $id = $_GET['id'];
+        $css = $_GET['css'];
+        if (!empty($id) && !empty($css)) {
+            $path = CrayonResources::themes()->path($id);
+            if (!is_file($path)) {
+                $dir = CrayonResources::themes()->dirpath($id);
+                if (!is_dir($dir)) {
+                    mkdir($dir, 0777, TRUE);
+                }
+            }
+            $result = @file_put_contents($path, $css);
+            echo intval($result !== FALSE);
+        } else {
+            echo 0;
+        }
+        exit();
+    }
+
 }
 
 if (defined('ABSPATH') && is_admin()) {

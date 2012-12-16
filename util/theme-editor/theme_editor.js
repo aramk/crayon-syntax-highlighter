@@ -6,12 +6,13 @@
 
         var base = this;
 
+        var crayonSettings = CrayonSyntaxSettings;
         var adminSettings = CrayonAdminSettings;
         var settings = CrayonThemeEditorSettings;
 
         var preview;
 
-        var themeJSON, themeCSS, themeStr, themeInfo;
+        var themeID, themeJSON, themeCSS, themeStr, themeInfo;
 
         base.init = function (callback) {
             // Called only once
@@ -28,9 +29,7 @@
             crayon.attr('id', 'theme-editor-instance');
             CrayonSyntax.process(crayon, true);
             preview.html(crayon);
-
             base.loadTheme();
-
             if (callback) {
                 callback();
             }
@@ -38,13 +37,14 @@
 
         base.loadTheme = function () {
             themeStr = adminSettings.curr_theme_str;
+            themeID = adminSettings.curr_theme;
             themeJSON = CSSJSON.toJSON(themeStr, {
                 comments: false,
                 split: true
             });
-            console.log(themeJSON);
+            console.log(themeStr);
             console.log(settings);
-            themeInfo = base.getThemeDetails(themeStr);
+            themeInfo = base.readThemeInfo(themeStr);
             for (var field in themeInfo) {
                 $('#' + settings.cssPrefix + field).val(themeInfo[field]);
             }
@@ -52,10 +52,19 @@
 
         base.saveTheme = function () {
             themeCSS = CSSJSON.toCSS(themeJSON);
-            console.log(themeCSS);
+            var info = {};
+            for (var field in themeInfo) {
+                info[settings.fields[field]] = themeInfo[field];
+            }
+            var newThemeStr = base.writeThemeInfo(info) + themeCSS;
+            $.get(crayonSettings.ajaxurl, {
+                action : 'crayon-theme-editor-save',
+                id : themeID,
+                css : newThemeStr
+            });
         };
 
-        base.getThemeDetails = function (cssStr) {
+        base.readThemeInfo = function (cssStr) {
             var infoStr = /^\s*\/\*[\s\S]*?\*\//gmi.exec(cssStr);
             var themeInfo = {};
             var match = null;
@@ -67,6 +76,14 @@
                 }
             }
             return themeInfo;
+        };
+
+        base.writeThemeInfo = function (info) {
+            var infoStr = '/*\n';
+            for (field in info) {
+                infoStr += field + ': ' + info[field] + '\n';
+            }
+            return infoStr + '*/\n';
         };
 
         base.initUI = function () {

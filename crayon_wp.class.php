@@ -894,6 +894,7 @@ class CrayonWP {
         add_action('wp_ajax_crayon-ajax', 'CrayonWP::ajax');
         add_action('wp_ajax_crayon-tag-editor', 'CrayonTagEditorWP::content');
         add_action('wp_ajax_crayon-theme-editor', 'CrayonThemeEditorWP::content');
+        add_action('wp_ajax_crayon-theme-editor-save', 'CrayonThemeEditorWP::save');
         add_action('wp_ajax_crayon-show-posts', 'CrayonSettingsWP::show_posts');
         add_action('wp_ajax_crayon-show-langs', 'CrayonSettingsWP::show_langs');
         add_action('wp_ajax_crayon-show-preview', 'CrayonSettingsWP::show_preview');

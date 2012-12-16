@@ -351,7 +351,7 @@
 					var fields = {
 						'Version' : theme_ver,
 						'Author' : theme_author,
-						'Author URI' : null,
+						'URL' : null,
 						'Description' : theme_desc
 					};
 					for (field in fields) {

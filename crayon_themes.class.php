@@ -20,8 +20,12 @@ class CrayonThemes extends CrayonUsedResourceCollection {
 
 	// XXX Override
 	public function path($id) {
-		return CRAYON_THEME_PATH . $id . "/$id.css";
+		return $this->dirpath($id) . "/$id.css";
 	}
+
+    public function dirpath($id) {
+        return CRAYON_THEME_PATH . $id;
+    }
 	
 	// XXX Override
 	public function get_url($id) {
