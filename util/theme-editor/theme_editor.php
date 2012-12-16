@@ -83,19 +83,20 @@ class CrayonThemeEditorWP {
 			<?php crayon_e('Theme Editor'); ?>
 		</h2>
 		
-		<h3>
-			<?php 
-			if ($editing) {
-				echo sprintf(crayon__('Editing "%s" Theme'), $theme->name());
-			} else {
-				echo sprintf(crayon__('Creating Theme From "%s"'), $theme->name());
-			}
+		<h3 id="crayon-theme-editor-name">
+			<?php
+//			if ($editing) {
+//				echo sprintf(crayon__('Editing "%s" Theme'), $theme->name());
+//			} else {
+//				echo sprintf(crayon__('Creating Theme From "%s"'), $theme->name());
+//			}
 			?>
 		</h3>
 		
 		<p>
 			<a id="crayon-editor-back" class="button-primary"><?php crayon_e('Back To Settings'); ?></a>
 			<a id="crayon-editor-save" class="button-primary"><?php crayon_e('Save'); ?></a>
+            <span id="crayon-editor-status"></span>
 		</p>
 		
 		<?php //crayon_e('Use the Sidebar on the right to change the Theme of the Preview window.') ?>
@@ -185,6 +186,7 @@ class CrayonThemeEditorWP {
             $result = @file_put_contents($path, $css);
             echo intval($result !== FALSE);
         } else {
+            CrayonLog::syslog("$result=$result\n\n$path=$path", "THEME SAVE");
             echo 0;
         }
         exit();
