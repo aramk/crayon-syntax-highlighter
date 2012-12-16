@@ -49,8 +49,8 @@
                 base.show_theme_editor(theme_editor_create_button,
                     false);
             });
-            theme_editor_duplicate_button.click(base.duplicate_theme);
-            theme_editor_delete_button.click(base.delete_theme);
+            theme_editor_duplicate_button.click(CrayonSyntaxThemeEditor.duplicate);
+            theme_editor_delete_button.click(CrayonSyntaxThemeEditor.delete);
 
             // Themes
             theme_select = $('#crayon-theme');
@@ -398,7 +398,7 @@
                 if (theme_editor_loading) {
                     CrayonSyntaxThemeEditor.init();
                 }
-                CrayonSyntaxThemeEditor.load(function () {
+                CrayonSyntaxThemeEditor.show(function () {
                     base.show_theme_editor_now(button);
                 }, preview.clone());
             });
@@ -412,13 +412,13 @@
             button.html(button.attr('loaded'));
         };
 
-        base.delete_theme = function () {
-            adminSettings.curr_theme
-        };
+//        base.delete_theme = function () {
+//            adminSettings.curr_theme
+//        };
 
-        base.duplicate_theme = function () {
-
-        };
+//        base.duplicate_theme = function () {
+//
+//        };
 
     };
 

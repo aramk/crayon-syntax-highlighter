@@ -12,7 +12,7 @@
         var admin = CrayonSyntaxAdmin;
 
         var preview, status, title, info;
-        var changed = false;
+        var changed;
         var themeID, themeJSON, themeCSS, themeStr, themeInfo;
 
         base.init = function (callback) {
@@ -24,33 +24,34 @@
             }
         };
 
-        base.load = function (callback, crayon) {
+        base.show = function (callback, crayon) {
             // Called each time editor is shown
             crayon.attr('id', 'theme-editor-instance');
             CrayonSyntax.process(crayon, true);
             preview.html(crayon);
-            base.loadTheme();
+            base.load();
             if (callback) {
                 callback();
             }
         };
 
-        base.loadTheme = function () {
+        base.load = function () {
             themeStr = adminSettings.curr_theme_str;
             themeID = adminSettings.curr_theme;
+            changed = false;
             themeJSON = CSSJSON.toJSON(themeStr, {
                 stripComments: true,
                 split: true
             });
-            console.log(themeJSON.children['.crayon-theme-classic .crayon-table .crayon-nums'].attributes);
-            console.log(settings);
+//            console.log(themeJSON.children['.crayon-theme-classic .crayon-table .crayon-nums'].attributes);
+//            console.log(settings);
             themeInfo = base.readCSSThemeInfo(themeStr);
             base.updateTitle();
             base.updateInfo();
             base.setFieldValues(themeInfo);
         };
 
-        base.saveTheme = function () {
+        base.save = function () {
             themeCSS = CSSJSON.toCSS(themeJSON);
             themeInfo = base.getFieldValues($.keys(themeInfo));
             var info = {};
@@ -73,6 +74,26 @@
                 setTimeout(function () {
                     status.fadeOut();
                 }, 1000);
+            });
+        };
+
+        base.delete = function () {
+            base.createDialog({
+                html: "Are you sure you want to delete the '" + themeInfo.name + "' theme?",
+                title: "Confirm",
+                yes: function () {
+                    // TODO implement delete
+                }
+            });
+        };
+
+        base.duplicate = function () {
+            base.createPrompt({
+                html: "Are you sure you want to duplicate the '" + themeInfo.name + "' theme?",
+                title: "Confirm",
+                yes: function () {
+                    // TODO implement delete
+                }
             });
         };
 
@@ -135,6 +156,9 @@
                 themeInfo.name = base.getFieldValue('name');
                 base.updateTitle();
             });
+            $('#crayon-editor-controls input, #crayon-editor-controls select').change(function () {
+                changed = true;
+            });
             $('#crayon-editor-controls').tabs();
             $('#crayon-editor-back').click(function () {
                 if (changed) {
@@ -149,7 +173,7 @@
                     showMain();
                 }
             });
-            $('#crayon-editor-save').click(base.saveTheme);
+            $('#crayon-editor-save').click(base.save);
         };
 
         var showMain = function () {
@@ -171,31 +195,34 @@
         };
 
         base.createDialog = function (args) {
+            args.yesLabel = CrayonUtil.setDefault(args.yesLabel, 'Yes');
+            args.noLabel = CrayonUtil.setDefault(args.noLabel, 'No');
+            var options = {
+                modal: true, title: args.title, zIndex: 10000, autoOpen: true,
+                width: 'auto', resizable: false,
+                buttons: {
+                },
+                close: function (event, ui) {
+                    $(this).remove();
+                }
+            };
+            options.buttons[args.yesLabel] = function () {
+                // $(obj).removeAttr('onclick');
+                // $(obj).parents('.Parent').remove();
+                if (args.yes) {
+                    args.yes();
+                }
+                $(this).dialog("close");
+            };
+            options.buttons[args.noLabel] = function () {
+                if (args.no) {
+                    args.no();
+                }
+                $(this).dialog("close");
+            };
             $('<div></div>').appendTo('body')
                 .html(args.html)
-                .dialog({
-                    modal: true, title: args.title, zIndex: 10000, autoOpen: true,
-                    width: 'auto', resizable: false,
-                    buttons: {
-                        Yes: function () {
-                            // $(obj).removeAttr('onclick');
-                            // $(obj).parents('.Parent').remove();
-                            if (args.yes) {
-                                args.yes();
-                            }
-                            $(this).dialog("close");
-                        },
-                        No: function () {
-                            if (args.no) {
-                                args.no();
-                            }
-                            $(this).dialog("close");
-                        }
-                    },
-                    close: function (event, ui) {
-                        $(this).remove();
-                    }
-                });
+                .dialog(options);
         }
 
     };

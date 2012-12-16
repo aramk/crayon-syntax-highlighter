@@ -243,3 +243,9 @@
 	display: inline;
 	padding: 0;
 }
+
+#crayon-theme-editor-info a {
+    text-decoration: none !important;
+    font-style: italic !important;
+    color: #666 !important;
+}
