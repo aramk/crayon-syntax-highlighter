@@ -180,7 +180,7 @@ class CrayonThemeEditorWP {
         CrayonSettingsWP::load_settings(TRUE);
         $oldID = $_GET['id'];
         $name = $_GET['name'];
-        $css = $_GET['css'];
+        $css = stripslashes($_GET['css']);
         $change_settings = CrayonUtil::set_default($_GET['change_settings'], TRUE);
 
         if (!empty($oldID) && !empty($css) && !empty($name)) {
@@ -211,14 +211,14 @@ class CrayonThemeEditorWP {
                         CrayonLog::syslog($e->getMessage(), "THEME SAVE");
                     }
                 }
-                // Set the new theme in settings
-                if ($change_settings) {
-                    CrayonGlobalSettings::set(CrayonSettings::THEME, $newID);
-                    CrayonSettingsWP::save_settings();
-                }
                 echo 2;
             } else {
                 echo intval($success);
+            }
+            // Set the new theme in settings
+            if ($change_settings) {
+                CrayonGlobalSettings::set(CrayonSettings::THEME, $newID);
+                CrayonSettingsWP::save_settings();
             }
         } else {
             CrayonLog::syslog("$oldID=$oldID\n\n$name=$name", "THEME SAVE");

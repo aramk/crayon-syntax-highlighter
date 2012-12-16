@@ -100,7 +100,7 @@ class CrayonUtil {
                 unlink($file);
             }
         }
-        rmdir($path);
+        @rmdir($path);
     }
 
     // Detects if device is touchscreen or mobile

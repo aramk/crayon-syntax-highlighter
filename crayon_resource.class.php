@@ -318,6 +318,7 @@ class CrayonResource {
 	
 	// Override
 	static function clean_id($id) {
+        $id = preg_replace('#\W#msi', '', $id);
 		return CrayonUtil::space_to_hyphen( strtolower(trim($id)) );
 	}
 	
