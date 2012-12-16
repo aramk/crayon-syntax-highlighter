@@ -62,6 +62,7 @@
             $.get(crayonSettings.ajaxurl, {
                 action: 'crayon-theme-editor-save',
                 id: themeID,
+                name: themeInfo.name,
                 css: newThemeStr
             }, function (result) {
                 status.show();

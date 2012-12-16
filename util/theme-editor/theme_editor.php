@@ -172,22 +172,53 @@ class CrayonThemeEditorWP {
 		exit();
 	}
 
-    public static function save() {
+    /**
+     * Saves the given theme id and css, making any necessary path and id changes to ensure the new theme is valid.
+     */
+    public static function save($change_settings = TRUE) {
         CrayonSettingsWP::load_settings(TRUE);
-        $id = $_GET['id'];
+        $oldID = $_GET['id'];
+        $name = $_GET['name'];
         $css = $_GET['css'];
-        if (!empty($id) && !empty($css)) {
-            $path = CrayonResources::themes()->path($id);
-            if (!is_file($path)) {
-                $dir = CrayonResources::themes()->dirpath($id);
-                if (!is_dir($dir)) {
-                    mkdir($dir, 0777, TRUE);
+        if (!empty($oldID) && !empty($css)) {
+            $oldPath = CrayonResources::themes()->path($oldID);
+            $oldDir = CrayonResources::themes()->dirpath($oldID);
+            $newID = CrayonResource::clean_id($name);
+            $newPath = CrayonResources::themes()->path($newID);
+            $newDir = CrayonResources::themes()->dirpath($newID);
+            // Create the new path if needed
+            if (!is_file($newPath)) {
+                if (!is_dir($newDir)) {
+                    mkdir($newDir, 0777, TRUE);
                 }
             }
-            $result = @file_put_contents($path, $css);
-            echo intval($result !== FALSE);
+            // Replace ids in the CSS
+            if ($oldID !== $newID) {
+                $css = preg_replace('#(?<=.crayon-theme-)' . $oldID . '\b#msi', $newID, $css);
+            }
+            $result = @file_put_contents($newPath, $css);
+            $success = $result !== FALSE;
+            if ($success && $oldPath !== $newPath) {
+                try {
+                    // Delete the old path
+                    CrayonUtil::deleteDir($oldDir);
+                } catch(Exception $e) {
+                    CrayonLog::syslog($e->getMessage(), "THEME SAVE");
+                }
+                // Set the new theme in settings
+                if ($change_settings) {
+                    CrayonGlobalSettings::set(CrayonSettings::THEME, $newID);
+                    CrayonSettingsWP::save_settings();
+                }
+            }
+            // Return 0 on failure, 1 on success and 2 on success and if paths have changed
+            if ($success && $oldPath !== $newPath) {
+                echo 2;
+            } else {
+                echo intval($success);
+            }
         } else {
-            CrayonLog::syslog("$result=$result\n\n$path=$path", "THEME SAVE");
+            CrayonLog::syslog("$oldID=$oldID\n\n$name=$name", "THEME SAVE");
             echo 0;
         }
         exit();

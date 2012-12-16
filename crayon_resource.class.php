@@ -153,11 +153,6 @@ class CrayonResourceCollection {
 	public function resource_instance($id, $name = NULL) {
 		return new CrayonResource($id, $name);
 	}
-	
-//	/* Override in subclasses to clean differently */
-//	public function clean_id($id) {
-//		return CrayonUtil::space_to_hyphen( strtolower(trim($id)) );
-//	}
 
 	public function add($id, $resource) {
 		if (is_string($id) && !empty($id)) {
@@ -300,7 +295,7 @@ class CrayonResource {
 	private $name = '';
 
 	function __construct($id, $name = NULL) {
-		$id = $this->clean_id($id);
+		$id = self::clean_id($id);
 		CrayonUtil::str($this->id, $id);
 		( empty($name) ) ? $this->name( $this->clean_name($this->id) ) : $this->name($name);
 	}
@@ -322,12 +317,12 @@ class CrayonResource {
 	}
 	
 	// Override
-	function clean_id($id) {
+	static function clean_id($id) {
 		return CrayonUtil::space_to_hyphen( strtolower(trim($id)) );
 	}
 	
 	// Override
-	function clean_name($id) {
+	static function clean_name($id) {
 		$id = CrayonUtil::hyphen_to_space( strtolower(trim($id)) );
 		return CrayonUtil::ucwords($id);
 	}
