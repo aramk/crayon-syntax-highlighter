@@ -7,6 +7,7 @@ class Input {
 	public $name;
 	public $value;
 	public $type;
+    public static $cssPrefix = "crayon-theme-input-";
 
 	public function __construct($id, $name, $value = '', $type = 'text') {
 		$this->id = $id;
@@ -16,11 +17,19 @@ class Input {
 	}
 
 	public function __toString() {
-		return '<input id="crayon-theme-editor-'.$this->id.'" class="crayon-theme-editor-'.$this->type.'" type="'.$this->type.'" />';
+		return '<input id="'.self::$cssPrefix.$this->id.'" class="'.self::$cssPrefix.$this->type.'" type="'.$this->type.'" />';
 	}
 }
 
 class CrayonThemeEditorWP {
+
+    public static $fields = array(
+        'name' => 'Name',
+        'desc' => 'Description',
+        'version' => 'Version',
+        'author' => 'Author',
+        'url' => 'URL'
+    );
 
 	public static function init() {
 		self::admin_resources();
@@ -30,6 +39,9 @@ class CrayonThemeEditorWP {
 		global $CRAYON_VERSION;
 		$settings = array(
 			// Only things the theme editor needs
+            'cssPrefix' => Input::$cssPrefix,
+            'fields' => self::$fields,
+            'fieldsInverse' => array_flip(self::$fields)
 		);
 		wp_enqueue_script('cssjson_js', plugins_url(CRAYON_CSSJSON_JS, dirname(dirname(__FILE__))), $CRAYON_VERSION);
 		wp_enqueue_script('jquery_ui_js', plugins_url(CRAYON_JS_JQUERY_UI, dirname(dirname(__FILE__))), array('jquery'), $CRAYON_VERSION);
@@ -108,13 +120,11 @@ class CrayonThemeEditorWP {
 						</ul>
 						<div id="tabs-1">
 							<?php 
-								self::form(array(
-									new Input('name', 'Name'),
-									new Input('desc', 'Description'),
-									new Input('version', 'Version'),
-									new Input('author', 'Author'),
-									new Input('url', 'Author URI'),
-								));
+								$inputs = array();
+                                foreach (self::$fields as $id=>$name) {
+                                    $inputs[] = new Input($id, $name);
+                                }
+                                self::form($inputs);
 							?>
 						</div>
 						<div id="tabs-2">

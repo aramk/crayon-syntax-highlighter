@@ -207,7 +207,7 @@
 		base.preview_ready = function() {
 			if (!preview_loaded) {
 				preview_loaded = true;
-				if (window.GET.themeeditor) {
+				if (window.GET['theme-editor']) {
 					CrayonSyntaxAdmin.show_theme_editor(
 							theme_editor_edit_button, true);
 				}
