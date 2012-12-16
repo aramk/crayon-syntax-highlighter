@@ -124,6 +124,7 @@ class CrayonSettingsWP {
             }
             self::$admin_js_settings = array(
                 'themes' => $themes,
+                'default_theme' => CrayonThemes::DEFAULT_THEME,
                 'themes_url' => plugins_url(CRAYON_THEME_DIR, __FILE__)
             );
             wp_localize_script('crayon_admin_js', 'CrayonAdminSettings', self::$admin_js_settings);

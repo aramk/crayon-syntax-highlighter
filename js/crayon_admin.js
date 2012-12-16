@@ -50,7 +50,12 @@
                     false);
             });
             theme_editor_duplicate_button.click(CrayonSyntaxThemeEditor.duplicate);
-            theme_editor_delete_button.click(CrayonSyntaxThemeEditor.delete);
+            theme_editor_delete_button.click(function () {
+                if (!theme_editor_edit_button.attr('disabled')) {
+                    CrayonSyntaxThemeEditor.delete();
+                }
+                return false;
+            });
 
             // Themes
             theme_select = $('#crayon-theme');
@@ -198,6 +203,10 @@
                 }
                 getVars[preview_obj_names[i]] = crayon_escape(val);
             }
+
+            var disabled = theme_select.val() == adminSettings.default_theme;
+            theme_editor_edit_button.attr('disabled', disabled);
+            theme_editor_delete_button.attr('disabled', disabled);
 
             // Load Preview
             $.get(settings.ajaxurl, getVars, function (data) {
@@ -383,6 +392,9 @@
         };
 
         base.show_theme_editor = function (button, editing) {
+            if (theme_editor_edit_button.attr('disabled')) {
+                return false;
+            }
             base.refresh_theme_info();
             button.html(button.attr('loading'));
             adminSettings.editing_theme = editing;
