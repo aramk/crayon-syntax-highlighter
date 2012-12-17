@@ -266,6 +266,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Removed contextual help and added more useful links, including online help
 	* Checkboxes have labels instead of spans thanks to https://github.com/toszcze
 	* Undefined php variable fix thanks to https://github.com/toszcze
+	* On iOS the fonts appeared larger for code than for line numbers.
 	* Expanding code shrunk instead if the toolbar was visible
 	* Updated Turkish
 

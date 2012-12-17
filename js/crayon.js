@@ -201,6 +201,7 @@
             load_timer = setInterval(load_func, 300);
             fix_scroll_blank(uid);
 
+            // Add ref to num for each line
             $(CRAYON_NUM, crayon[uid]).each(function() {
                 var line_id = $(this).attr('data-line');
                 var line = $('#' + line_id);
@@ -955,6 +956,8 @@
                         line.css('height', height);
                         $(this).css('height', height);
                     }
+                    //line.css('height', line.css('line-height'));
+                    //console.log(line.css('line-height'));
                 }
             });
         };
