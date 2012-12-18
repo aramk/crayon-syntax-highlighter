@@ -940,7 +940,8 @@
             }
 
             if (show) {
-                crayon[uid].height(crayon[uid].height());
+                main.height(main.height());
+                plain.height(plain.height());
                 // Show scrollbars
                 main.css('overflow', 'auto');
                 plain.css('overflow', 'auto');
@@ -959,7 +960,8 @@
                 crayon[uid].left = visible.scrollLeft();
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
-                crayon[uid].height(crayon[uid].initialSize.height);
+                main.height(crayon[uid].initialSize.height);
+                plain.height(crayon[uid].initialSize.height);
             }
             // Register that overflow has changed
             crayon[uid].scroll_changed = true;
