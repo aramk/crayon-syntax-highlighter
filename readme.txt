@@ -259,10 +259,12 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
 	* Selected text in the TinyMCE editor is now added into the code box of the Tag Editor
 	* Retina buttons for the toolbar
+	* Support for Wordpress 3.5
 * FIXED:
 	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
 	* Disabling popup now removes the JS resource
 	* Refactored Tag Editor functions
+	* Display Tag Editor settings on the frontend wasn't working
 	* Removed contextual help and added more useful links, including online help
 	* Checkboxes have labels instead of spans thanks to https://github.com/toszcze
 	* Undefined php variable fix thanks to https://github.com/toszcze
