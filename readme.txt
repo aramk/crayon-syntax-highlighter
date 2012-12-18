@@ -5,7 +5,7 @@ License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 1.16
+Stable tag: 1.17
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
