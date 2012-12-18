@@ -729,6 +729,9 @@
                 crayon[uid].removeClass(CRAYON_WRAPPED);
             }
             update_wrap_button(uid);
+            if (!crayon[uid].expanded) {
+                restore_dimensions(uid);
+            }
             crayon[uid].wrap_times = 0;
             crayon[uid].wrap_timer = setInterval(function () {
                 reconsile_lines(uid);
@@ -905,21 +908,26 @@
                         width: initialSize.width,
                         height: initialSize.height
                     }, animt(crayon[uid].expandTime, uid), function () {
-                        crayon[uid].expanded = false;
-                        restore_dimensions(uid);
-                        update_expand_button(uid);
+                        expand_finish(uid);
                     });
                 } else {
                     setTimeout(function () {
-                        crayon[uid].expanded = false;
-                        restore_dimensions(uid);
-                        update_expand_button(uid);
+                        expand_finish(uid);
                     }, delay);
                 }
             }
 
             reconsile_dimensions(uid);
             if (expand) {
+                update_wrap(uid);
+            }
+        };
+
+        var expand_finish = function(uid) {
+            crayon[uid].expanded = false;
+            restore_dimensions(uid);
+            update_expand_button(uid);
+            if (crayon[uid].wrapped) {
                 update_wrap(uid);
             }
         };
@@ -960,8 +968,14 @@
                 crayon[uid].left = visible.scrollLeft();
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
-                main.height(crayon[uid].initialSize.height);
-                plain.height(crayon[uid].initialSize.height);
+//                main.height(crayon[uid].initialSize.height);
+//                plain.height(crayon[uid].initialSize.height);
+
+                if (!crayon[uid].expanded) {
+                    restore_dimensions(uid);
+                }
+
+                //restore_dimensions(uid);
             }
             // Register that overflow has changed
             crayon[uid].scroll_changed = true;
