@@ -343,7 +343,7 @@ class CrayonFormatter {
 			$code_settings .= ' wrap';
 		}
 		
-		// Wrap
+		// Expand
 		if ($hl->setting_val(CrayonSettings::EXPAND)) {
 			$code_settings .= ' expand';
 		}
