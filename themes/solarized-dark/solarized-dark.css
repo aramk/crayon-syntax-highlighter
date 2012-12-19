@@ -8,8 +8,8 @@ Author URI: http://ethanschoonover.com/
 
 /* Code Style ====================== */
 .crayon-theme-solarized-dark {
-    border: 1px #999 solid !important;
-    text-shadow: none !important;
+	border: 1px #999 solid !important;
+	text-shadow: none !important;
 }
 
 .crayon-theme-solarized-dark,
@@ -33,8 +33,8 @@ Author URI: http://ethanschoonover.com/
 /* Selection */
 .crayon-theme-solarized-dark .crayon-code::selection,
 .crayon-theme-solarized-dark .crayon-code *::selection {
-    background: #ddeeff !important;
-    color: #316ba5 !important;
+	background: #ddeeff !important;
+	color: #316ba5 !important;
 }
 .crayon-theme-solarized-dark::selection,
 .crayon-theme-solarized-dark .crayon-toolbar::selection,
@@ -43,69 +43,69 @@ Author URI: http://ethanschoonover.com/
 .crayon-theme-solarized-dark .crayon-info *::selection,
 .crayon-theme-solarized-dark .crayon-nums::selection,
 .crayon-theme-solarized-dark .crayon-nums *::selection {
-    background: transparent !important;
+	background: transparent !important;
 }
 
 /* Striped Lines */
 .crayon-theme-solarized-dark .crayon-striped-line {
-    background: #073642 !important;
-    border: 1px #CCC !important;
+	background: #073642 !important;
+	border: 1px #CCC !important;
 }
 .crayon-theme-solarized-dark .crayon-striped-num {
 	border: 1px #CCC !important;
-    color: #586e75 !important;
+	color: #586e75 !important;
 	background: #054150 !important;
 }
 
 /* Marked Lines */
 .crayon-theme-solarized-dark .crayon-marked-line {
-    background: #2f4d54 !important;
+	background: #2f4d54 !important;
 	border-color: #446b73;
 	border-width: 1px;
 }
 .crayon-theme-solarized-dark .crayon-marked-num {
-    color: #586e75 !important;
-    background: #024e61 !important;
-    border: 1px #4e747d !important;
+	color: #586e75 !important;
+	background: #024e61 !important;
+	border: 1px #4e747d !important;
 }
 .crayon-theme-solarized-dark .crayon-marked-line.crayon-striped-line {
 	background: #2b474e !important;
 }
 .crayon-theme-solarized-dark .crayon-marked-num.crayon-striped-num {
-    background: #2a444a !important;
+	background: #2a444a !important;
 }
 .crayon-theme-solarized-dark .crayon-marked-line.crayon-top,
 .crayon-theme-solarized-dark .crayon-marked-num.crayon-top {
-    border-top-style: solid !important;
+	border-top-style: solid !important;
 }
 .crayon-theme-solarized-dark .crayon-marked-line.crayon-bottom,
 .crayon-theme-solarized-dark .crayon-marked-num.crayon-bottom {
-    border-bottom-style: solid !important;
+	border-bottom-style: solid !important;
 }
 
 /* Info */
 .crayon-theme-solarized-dark .crayon-info {
-    background: #faf9d7 !important;
-    border-bottom: 1px #b1af5e solid !important;
-    color: #7e7d34;
+	background: #faf9d7 !important;
+	border-bottom: 1px #b1af5e solid !important;
+	color: #7e7d34;
 }
 
 /* Toolbar */
 .crayon-theme-solarized-dark .crayon-toolbar {
-    background: #DDD !important;
-    border-bottom: 1px #BBB solid !important;
+	background: #DDD !important;
+	border-bottom: 1px #BBB solid !important;
 }
 .crayon-theme-solarized-dark .crayon-toolbar > div {
-    float: left !important;
+	float: left !important;
 }
 .crayon-theme-solarized-dark .crayon-toolbar .crayon-tools {
-    float: right !important;
+	float: right !important;
 }
 .crayon-theme-solarized-dark .crayon-title {
-    color: #333 !important;
+	color: #333 !important;
 }
 .crayon-theme-solarized-dark .crayon-language {
-    color: #999 !important;
+	color: #999 !important;
 }
 
 /* Buttons */
@@ -115,67 +115,82 @@ Author URI: http://ethanschoonover.com/
 .crayon-theme-solarized-dark a.crayon-button:hover,
 .crayon-theme-solarized-dark a.crayon-button.crayon-pressed:hover {
 	background-color: #EEE;
-    color: #666;
+	color: #666;
 }
 /* :active MUST come after :hover */
 .crayon-theme-solarized-dark a.crayon-button.crayon-pressed,
 .crayon-theme-solarized-dark a.crayon-button.crayon-pressed:active,
 .crayon-theme-solarized-dark a.crayon-button:active {
 	background-color: #BCBCBC;
-    color: #FFF;
+	color: #FFF;
 }
 
 /* End Code Style ================== */
 
 /* Syntax Highlighting ============= */
 .crayon-theme-solarized-dark .crayon-pre .c {
-    color: #586e75 !important;
-}
-.crayon-theme-solarized-dark .crayon-pre .p {
-    color: #839496 !important;
+	color: #586e75 !important;
 }
 .crayon-theme-solarized-dark .crayon-pre .s {
-    color: #2aa198 !important;
+	color: #2aa198 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .k,
-.crayon-theme-solarized-dark .crayon-pre .r,
-.crayon-theme-solarized-dark .crayon-pre .st,
+
+.crayon-theme-solarized-dark .crayon-pre .k {
+	color: #cb4b16 !important;
+}
+.crayon-theme-solarized-dark .crayon-pre .st {
+	color: #859900 !important;
+}
+.crayon-theme-solarized-dark .crayon-pre .r {
+	color: #cb4b16 !important;
+}
 .crayon-theme-solarized-dark .crayon-pre .t {
-    color: #b58900 !important;
+	color: #b58900 !important;
 }
 .crayon-theme-solarized-dark .crayon-pre .m {
-    color: #859900 !important;
+	color: #b58900 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .ta {
-	color: #FF0000 !important;
-}
+
 .crayon-theme-solarized-dark .crayon-pre .i {
-    color: #839496 !important;
-}
-.crayon-theme-solarized-dark .crayon-pre .v {
-    color: #839496 !important;
+	color: #839496 !important;
 }
 .crayon-theme-solarized-dark .crayon-pre .e {
 	color: #839496 !important;
 }
+.crayon-theme-solarized-dark .crayon-pre .v {
+	color: #268bd2 !important;
+}
+
 .crayon-theme-solarized-dark .crayon-pre .cn {
-    color: #ce0000 !important;
+	color: #2aa198 !important;
 }
+
 .crayon-theme-solarized-dark .crayon-pre .o {
-    color: #839496 !important;
+	color: #859900 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .h {
-    color: #dc322f !important;
-}
+
 .crayon-theme-solarized-dark .crayon-pre .sy {
-	color: #839496 !important;
+	color: #dc322f !important;
 }
+
 .crayon-theme-solarized-dark .crayon-pre .n {
 	color: #666 !important;
 	font-style: italic;
 }
+
 .crayon-theme-solarized-dark .crayon-pre .f {
 	color: #999 !important;
+}
+
+.crayon-theme-solarized-dark .crayon-pre .h {
+	color: #dc322f !important;
+}
+
+.crayon-theme-solarized-dark .crayon-pre .p {
+	color: #dc322f !important;
+}
+.crayon-theme-solarized-dark .crayon-pre .ta {
+	color: #268bd2 !important;
 }
 /* End Syntax Highlighting ========= */
 
