@@ -60,13 +60,10 @@ Author URI: http://ethanschoonover.com/
 /* Marked Lines */
 .crayon-theme-solarized-light .crayon-marked-line {
 	background: #eee8d5 !important;
-	border-color: #446b73;
-	border-width: 1px;
 }
 .crayon-theme-solarized-light .crayon-marked-num {
 	color: #93a1a1 !important;
 	background: #fdf6e3 !important;
-	border: 1px #4e747d !important;
 }
 .crayon-theme-solarized-light .crayon-marked-line.crayon-striped-line {
 	background: #eee8d5 !important;
@@ -77,10 +74,14 @@ Author URI: http://ethanschoonover.com/
 .crayon-theme-solarized-light .crayon-marked-line.crayon-top,
 .crayon-theme-solarized-light .crayon-marked-num.crayon-top {
 	border-top-style: solid !important;
+	border-color: #839496 !important;
+	border-width: 1px !important;
 }
 .crayon-theme-solarized-light .crayon-marked-line.crayon-bottom,
 .crayon-theme-solarized-light .crayon-marked-num.crayon-bottom {
 	border-bottom-style: solid !important;
+	border-color: #839496 !important;
+	border-width: 1px !important;
 }
 
 /* Info */
