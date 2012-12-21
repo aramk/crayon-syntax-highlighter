@@ -73,6 +73,9 @@ class CrayonTagEditorWP {
     }
 
     public static function init_tinymce($init) {
+    	if(!array_key_exists('extended_valid_elements', $init)) {
+            $init['extended_valid_elements'] = '';
+        }
         $init['extended_valid_elements'] .= ',pre[*],code[*],iframe[*]';
         return $init;
     }
