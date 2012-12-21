@@ -264,6 +264,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Solarized themes (thanks to <a href="https://github.com/Greduan" target="_blank">Greduan</a>)
 * FIXED:
 	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
+	* Minor improvements to Objective-C
 
 = 1.17 =
 * ADDED:

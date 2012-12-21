@@ -12,16 +12,18 @@
     
     STATEMENT           (?alt:statement_at.txt)\b|\b(?alt:statement.txt)\b
     RESERVED            (?alt:reserved_at.txt)\b|\b(?alt:reserved.txt)\b
-    TYPE                \b(?alt:type.txt)\b|(\b[a-z_]\w+\b\s+(?=\b[a-z_][\w]+\b(?!\s*\:)))
+    TYPE                \b(?alt:type.txt)\b|(?-i:\b[A-Z][\w]+)
+                        # |(\b[a-z_]\w+\b\s+(?=\b[a-z_][\w]+\b(?!\s*\:)))
     MODIFIER            (?alt:modifier_at.txt)\b|\b(?alt:modifier.txt)\b
     
 	CONSTANT            (?default)|\b(?alt:constant.txt)\b
-    ENTITY              (\b[a-z_]\w*\b(?=\s*\([^\)]*\)))|(\b[a-z_]\w+\b\s+(?=\b[a-z_][\w]+\b(?!\s*\:)))|(?-i:NS[\w]+)
-    FUNC:ENTITY			\b\w+\b\s*(?=:[^;]*[\{;])
+    ENTITY              (\b[a-z_]\w*\b(?=\s*\([^\)]*\)))|(\b[a-z_]\w+\b\s+(?=\b[a-z_][\w]+\b(?!\s*\:)))
+    FUNC:ENTITY			\s*(\b\w+\b\s*(?=:[^;]*[\{;])|(?<=\])\s*\w+)
+    #FUNC:ENTITY
     POINTER_TYPE:TYPE	(\b[a-z_]\w*\s*(?=\*)|\*(?=\s*\)))
     RETURN:TYPE			\b\w+\b(?=\s*\)\s*\w+\s*[:;\{])
     
-    VARIABLE            (?default)|(\*\w+)
-    IDENTIFIER          (?default)
+    VARIABLE            (?default)|(\*[a-z]\w*)|((?<=\[)[a-z]\w*)|(:\s*([a-z]\w*))|([a-z]\w*)
+    IDENTIFIER          (?<!\))(?default)
     OPERATOR            (?default)
     SYMBOL              (?default)
