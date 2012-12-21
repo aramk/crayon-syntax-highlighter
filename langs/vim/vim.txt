@@ -1,0 +1,20 @@
+### MS DOS BATCH SCRIPT ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Vim
+    VERSION             1.0
+
+    COMMENT             \s*"[^"]*?$
+    STRING              (?default)
+    
+    VARIABLE            (([a-z]:|&|@|&l|&g|$)\w+)|((?<=let)\b\s+\w+(:\w+)?)
+
+    STATEMENT           \b(?alt:statement.txt)\b
+    
+    ENTITY              (?default)
+    
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

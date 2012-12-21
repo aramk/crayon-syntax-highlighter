@@ -105,6 +105,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Shell (Unix)
 * Transact-SQL
 * TeX
+* Vim
 * Visual Basic
 * YAML
 * Others will be added when requested
@@ -118,6 +119,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Italian (thanks to <a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>)
 * Japanese (thanks to <a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>)
 * Lithuanian (thanks to <a href="http://www.host1free.com" target="_blank">Vincent G</a>)
+* Polish (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
 * Portuguese (thanks to <a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>)
 * Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
 * Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
@@ -254,6 +256,14 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 4. Tag Editor.
 
 == Changelog ==
+
+= 1.18 =
+* ADDED:
+	* Polish translation (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
+	* Vim language
+	* Solarized themes (thanks to <a href="https://github.com/Greduan" target="_blank">Greduan</a>)
+* FIXED:
+	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
 
 = 1.17 =
 * ADDED:

@@ -1092,6 +1092,7 @@ class Human {
 				Italian (<a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>),
 				Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
 				Lithuanian (<a href="http://www.host1free.com" target="_blank">Vincent G</a>),
+				Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
 				Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
 				Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>),
 				Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
