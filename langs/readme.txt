@@ -14,6 +14,10 @@ highlight them, you must add your custom CSS class into a Theme file.
     COMMENT                 [c]
     STRING                  [s]
 
+    PREPROCESSOR            [p]
+
+    TAG                     [ta]
+
     KEYWORD                 [k]
         STATEMENT           [st]
         RESERVED            [r]
