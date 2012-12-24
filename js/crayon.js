@@ -25,11 +25,11 @@
                 if (typeof style.setProperty != 'undefined') {
                     style.setProperty(styleName, value, priority);
                 } else {
-                    style.styleName = value + ' ' + priority;
+                    style[styleName] = value + ' ' + priority;
                 }
             } else {
                 // Get style property
-                return style.styleName;
+                return style[styleName];
             }
         } else {
             // Get CSSStyleDeclaration
@@ -177,10 +177,6 @@
             retina(uid);
 
             var load_func = function () {
-                if (main.height() < 30) {
-                    crayon[uid].scroll_block_fix = true;
-                }
-
                 // If nums hidden by default
                 if (nums.filter('[data-settings~="hide"]').length != 0) {
                     nums_content.ready(function () {
@@ -722,14 +718,15 @@
             toggle_expand(uid, expand);
         };
 
-        var update_wrap = function (uid) {
+        var update_wrap = function (uid, restore) {
+            restore = CrayonUtil.setDefault(restore, true);
             if (crayon[uid].wrapped) {
                 crayon[uid].addClass(CRAYON_WRAPPED);
             } else {
                 crayon[uid].removeClass(CRAYON_WRAPPED);
             }
             update_wrap_button(uid);
-            if (!crayon[uid].expanded) {
+            if (!crayon[uid].expanded && restore) {
                 restore_dimensions(uid);
             }
             crayon[uid].wrap_times = 0;
@@ -836,8 +833,10 @@
         };
 
         var initSize = function (uid) {
-            // Shared for scrollbars and expanding
-            crayon[uid].initialSize = {width: crayon[uid].width(), height: crayon[uid].height()};
+            if (typeof crayon[uid].initialSize == 'undefined') {
+                // Shared for scrollbars and expanding
+                crayon[uid].initialSize = {width: crayon[uid].main.width(), height: crayon[uid].main.height()};
+            }
         };
 
         var toggle_expand = function (uid, expand) {
@@ -880,19 +879,25 @@
                     'min-width': 'none',
                     'max-width': 'none'
                 };
-                crayon[uid].height(crayon[uid].height());
+
                 crayon[uid].width(crayon[uid].width());
                 crayon[uid].css({
                     'min-width': 'none',
                     'max-width': 'none'
                 });
+                var newSize = {
+                    width: finalSize.width
+                };
+                if (finalSize.height > crayon[uid].toolbar.height() * 2) {
+                    newSize.height = finalSize.height;
+                    crayon[uid].height(crayon[uid].height());
+                }
+
                 main.css(expandHeight);
                 main.css(expandWidth);
                 crayon[uid].stop(true);
-                crayon[uid].animate({
-                    width: finalSize.width,
-                    height: finalSize.height
-                }, animt(crayon[uid].expandTime, uid), function () {
+
+                crayon[uid].animate(newSize, animt(crayon[uid].expandTime, uid), function () {
                     crayon[uid].expanded = true;
                     update_expand_button(uid);
                 });
@@ -904,10 +909,13 @@
                     if (!crayon[uid].expanded) {
                         crayon[uid].delay(delay);
                     }
-                    crayon[uid].animate({
-                        width: initialSize.width,
-                        height: initialSize.height
-                    }, animt(crayon[uid].expandTime, uid), function () {
+                    var newSize = {
+                        width: initialSize.width
+                    };
+                    if (crayon[uid].style('height') != 'auto') {
+                        newSize.height = initialSize.height;
+                    }
+                    crayon[uid].animate(newSize, animt(crayon[uid].expandTime, uid), function () {
                         expand_finish(uid);
                     });
                 } else {
@@ -919,7 +927,7 @@
 
             reconsile_dimensions(uid);
             if (expand) {
-                update_wrap(uid);
+                update_wrap(uid, false);
             }
         };
 
@@ -943,13 +951,11 @@
             var main = crayon[uid].main;
             var plain = crayon[uid].plain;
 
-            if (typeof crayon[uid].initialSize == 'undefined') {
-                initSize(uid);
-            }
+            initSize(uid);
 
             if (show) {
-                main.height(main.height());
-                plain.height(plain.height());
+//                main.height(main.height());
+//                plain.height(plain.height());
                 // Show scrollbars
                 main.css('overflow', 'auto');
                 plain.css('overflow', 'auto');
@@ -1025,7 +1031,6 @@
                         $(this).css('height', height);
                     }
                     //line.css('height', line.css('line-height'));
-                    //console.log(line.css('line-height'));
                 }
             });
         };
