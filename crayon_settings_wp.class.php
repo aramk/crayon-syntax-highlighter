@@ -473,7 +473,8 @@ class CrayonSettingsWP {
 		}
 		// Convert old tags
 		if (array_key_exists('convert', $inputs)) {
-			CrayonWP::convert_tags();
+            $encode = array_key_exists('convert_encode', $inputs);
+			CrayonWP::convert_tags($encode);
 		}
 		// Refresh internal tag management
 		if (array_key_exists('refresh_tags', $inputs)) {
@@ -1020,7 +1021,8 @@ class Human {
 			$convert_text = crayon__('No Legacy Tags Found');
 		}
 
-		echo '<input type="submit" name="', self::OPTIONS, '[convert]" id="convert" class="button-primary" value="', $convert_text, '"', $disabled, ' /> ';
+		echo '<input type="submit" name="', self::OPTIONS, '[convert]" id="convert" class="button-primary" value="', $convert_text, '"', $disabled, ' />&nbsp; ';
+        self::checkbox(array('convert_encode', crayon__("Encode")), FALSE);
 		echo self::help_button('http://bit.ly/ReRr0i') , CRAYON_BR, CRAYON_BR;
 		$sep = sprintf(crayon__('Use %s to separate setting names from values in the &lt;pre&gt; class attribute'),
 				self::dropdown(CrayonSettings::ATTR_SEP, FALSE, FALSE, FALSE));

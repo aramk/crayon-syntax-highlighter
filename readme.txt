@@ -262,6 +262,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Polish translation (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
 	* Vim language
 	* Solarized themes (thanks to <a href="https://github.com/Greduan" target="_blank">Greduan</a>)
+	* Converting legacy tags now has an "encode" option. If selected, any legacy tag where the "decode" attribute is missing (neither true or false) has its code encoded and decode="true" specified.
 * FIXED:
 	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
 	* Improved expanding with shirt

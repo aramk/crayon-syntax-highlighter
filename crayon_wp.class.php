@@ -226,6 +226,7 @@ class CrayonWP {
     public static function capture_crayons($wp_id, $wp_content, $extra_settings = array(), $args = array()) {
         extract($args);
         CrayonUtil::set_var($callback, NULL);
+        CrayonUtil::set_var($callback_extra_args, NULL);
         CrayonUtil::set_var($ignore, TRUE);
         CrayonUtil::set_var($preserve_atts, FALSE);
         CrayonUtil::set_var($flags, NULL);
@@ -369,7 +370,7 @@ class CrayonWP {
                 if ($callback === NULL) {
                     $wp_content = str_replace($full_matches[$i], '[crayon-' . $id . $is_inline . '/]', $wp_content);
                 } else {
-                    $wp_content = call_user_func($callback, $c, $full_matches[$i], $id, $is_inline, $wp_content);
+                    $wp_content = call_user_func($callback, $c, $full_matches[$i], $id, $is_inline, $wp_content, $callback_extra_args);
                 }
             }
 
@@ -1073,9 +1074,10 @@ class CrayonWP {
     /**
      * Converts Crayon tags found in WP to <pre> form.
      * XXX: This will alter blog content, so backup before calling.
-     * XXX: Do NOT call this while updating posts or comments, it may cause an infinite loop or fail
+     * XXX: Do NOT call this while updating posts or comments, it may cause an infinite loop or fail.
+     * @param $encode Whether to detect missing "decode" attribute and encode html entities in the code.
      */
-    public static function convert_tags($just_check = FALSE) {
+    public static function convert_tags($encode = FALSE) {
         $crayon_posts = CrayonSettingsWP::load_legacy_posts();
         if ($crayon_posts === NULL) {
             return;
@@ -1084,6 +1086,7 @@ class CrayonWP {
         self::init_legacy_tag_bits();
         $args = array(
             'callback' => 'CrayonWP::capture_replace_pre',
+            'callback_extra_args' => array('encode' => $encode),
             'ignore' => FALSE,
             'preserve_atts' => TRUE,
             'flags' => self::$legacy_flags
@@ -1119,10 +1122,18 @@ class CrayonWP {
     }
 
     // Used as capture_crayons callback
-    public static function capture_replace_pre($capture, $original, $id, $is_inline, $wp_content) {
-        $atts = array();
-        $atts['class'] = CrayonUtil::html_attributes($capture['atts'], CrayonGlobalSettings::val_str(CrayonSettings::ATTR_SEP), '');
-        return str_replace($original, CrayonUtil::html_element('pre', $capture['code'], $atts), $wp_content);
+    public static function capture_replace_pre($capture, $original, $id, $is_inline, $wp_content, $args = array()) {
+        $code = $capture['code'];
+        $oldAtts = $capture['atts'];
+        $newAtts = array();
+        $encode = isset($args['encode']) ? $args['encode'] : FALSE;
+        if (!isset($oldAtts[CrayonSettings::DECODE]) && $encode) {
+            // Encode the content, since no decode information exists.
+            $code = CrayonUtil::htmlentities($code);
+            $oldAtts[CrayonSettings::DECODE] = TRUE;
+        }
+        $newAtts['class'] = CrayonUtil::html_attributes($oldAtts, CrayonGlobalSettings::val_str(CrayonSettings::ATTR_SEP), '');
+        return str_replace($original, CrayonUtil::html_element('pre', $code, $newAtts), $wp_content);
     }
 
 }
