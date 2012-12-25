@@ -45,7 +45,7 @@
             });
 //            console.log(themeJSON.children['.crayon-theme-classic .crayon-table .crayon-nums'].attributes);
 //            console.log(settings);
-            themeInfo = base.readCSSThemeInfo(themeStr);
+            themeInfo = base.readCSSInfo(themeStr);
             base.initInfoUI();
             base.updateTitle();
             base.updateInfo();
@@ -55,15 +55,17 @@
         base.save = function () {
             themeCSS = CSSJSON.toCSS(themeJSON);
             themeInfo = base.getFieldValues($.keys(themeInfo));
+            // Get the names of the fields and map them to their values
+            var names = base.getFieldNames(themeInfo);
             var info = {};
-            for (var field in themeInfo) {
-                info[settings.fields[field]] = themeInfo[field];
+            for (var id in themeInfo) {
+                info[names[id]] = themeInfo[id];
             }
-            var newThemeStr = base.writeThemeInfo(info) + themeCSS;
+            var newThemeStr = base.writeCSSInfo(info) + themeCSS;
             $.post(crayonSettings.ajaxurl, {
                 action: 'crayon-theme-editor-save',
                 id: themeID,
-                name: themeInfo.name,
+                name: base.getName(),
                 css: newThemeStr
             }, function (result) {
                 status.show();
@@ -108,11 +110,11 @@
             });
         };
 
-        base.readCSSThemeInfo = function (cssStr) {
+        base.readCSSInfo = function (cssStr) {
             var infoStr = /^\s*\/\*[\s\S]*?\*\//gmi.exec(cssStr);
             var themeInfo = {};
             var match = null;
-            var infoRegex = /([^\r\n:]+)\s*:\s*([^\r\n]+)/gmi;
+            var infoRegex = /([^\r\n:]*[^\r\n\s:])\s*:\s*([^\r\n]+)/gmi;
             while ((match = infoRegex.exec(infoStr)) != null) {
 //                var fieldID = settings.fieldsInverse[match[1]];
 //                var fieldID = base.convertToID(match[1]);
@@ -123,19 +125,29 @@
             }
             return themeInfo;
         };
+        
+        base.getFieldNames = function (fields) {
+            var names = {};
+            for (var id in fields) {
+                var name = '';
+                if (id in settings.fields) {
+                    name = settings.fields[id];
+                } else {
+                    name = base.idToName(id);
+                }
+                names[id] = name;
+            }
+            return names;
+        };
 
         base.initInfoUI = function () {
             console.log(themeInfo);
             // TODO abstract
+            var names = base.getFieldNames(themeInfo);
             var fields = {};
-            for (var field in themeInfo) {
-                var name = '';
-                if (field in settings.fields) {
-                    name = settings.fields[field];
-                } else {
-                    name = base.idToName(field);
-                }
-                fields[name] = base.createInput(field);
+            for (var id in names) {
+                var name = names[id];
+                fields[name] = base.createInput(id, themeInfo[id]);
             }
             $('#tabs-1').html(base.createForm(fields));
         };
@@ -147,6 +159,14 @@
         base.idToName = function (id) {
             id = id.replace('-', ' ');
             return id.toTitleCase();
+        };
+
+        base.getName = function () {
+            var name = themeInfo.name;
+            if (!name) {
+                name = base.idToName(themeID);
+            }
+            return name;
         };
 
         base.getField = function (id) {
@@ -177,7 +197,7 @@
             }
         };
 
-        base.writeThemeInfo = function (info) {
+        base.writeCSSInfo = function (info) {
             var infoStr = '/*\n';
             for (field in info) {
                 infoStr += field + ': ' + info[field] + '\n';
@@ -237,10 +257,11 @@
         };
 
         base.updateTitle = function () {
+            var name = base.getName();
             if (adminSettings.editing_theme) {
-                title.html('Editing Theme: ' + themeInfo.name);
+                title.html('Editing Theme: ' + name);
             } else {
-                title.html('Creating Theme: ' + themeInfo.name);
+                title.html('Creating Theme: ' + name);
             }
         };
 
