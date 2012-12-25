@@ -182,7 +182,7 @@ class CrayonUtil {
         return FALSE;
     }
 
-    // Converts all special charactres to entities
+    // Converts all special characters to entities
     public static function htmlentities($str) {
         return htmlentities($str, ENT_COMPAT, 'UTF-8');
     }

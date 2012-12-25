@@ -325,17 +325,13 @@ This has been disabled to allow more flexibility in changing font sizes.
 	line-height: 15px !important;
 }
 */
-.crayon-syntax .crayon-num,
-.crayon-syntax .crayon-line {
-	/*height: 15px;*/
-}
 .crayon-syntax.crayon-wrapped .crayon-line {
 /*	min-height: 15px;*/
 	height: auto;
 }
 
 .crayon-syntax .crayon-num,
-.crayon-syntax .crayon-line,
+.crayon-syntax .crayon-pre .crayon-line,
 .crayon-syntax .crayon-toolbar *,
 .crayon-syntax .crayon-pre * {
 	font-family: inherit;
@@ -343,6 +339,13 @@ This has been disabled to allow more flexibility in changing font sizes.
 	line-height: inherit !important;
 	font-weight: inherit !important;
 }
+
+.crayon-syntax .crayon-pre .crayon-line span {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
 .crayon-syntax .crayon-toolbar .crayon-tools,
 .crayon-syntax .crayon-toolbar .crayon-tools * {
 	height: inherit !important;

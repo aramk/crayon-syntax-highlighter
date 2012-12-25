@@ -73,6 +73,9 @@ class CrayonTagEditorWP {
     }
 
     public static function init_tinymce($init) {
+        if (!array_key_exists('extended_valid_elements', $init)) {
+            $init['extended_valid_elements'] = '';
+        }
         $init['extended_valid_elements'] .= ',pre[*],code[*],iframe[*]';
         return $init;
     }
@@ -89,7 +92,7 @@ class CrayonTagEditorWP {
         self::init_settings();
         wp_enqueue_style('crayon_fancybox', plugins_url(CRAYON_CSS_FANCYBOX, dirname(dirname(__FILE__))), array(), $CRAYON_VERSION);
         wp_enqueue_script('crayon_fancybox', plugins_url(CRAYON_JS_FANCYBOX, dirname(dirname(__FILE__))), array('jquery'), $CRAYON_VERSION);
-        wp_enqueue_script('crayon_te_js', plugins_url(CRAYON_TE_JS, __FILE__), array('crayon_fancybox'), $CRAYON_VERSION);
+        wp_enqueue_script('crayon_te_js', plugins_url(CRAYON_TE_JS, __FILE__), array('crayon_fancybox', 'crayon_util_js'), $CRAYON_VERSION);
         wp_enqueue_script('crayon_qt_js', plugins_url(CRAYON_QUICKTAGS_JS, __FILE__), array('quicktags', 'crayon_te_js'), $CRAYON_VERSION, TRUE);
         wp_localize_script('crayon_te_js', 'CrayonTagEditorSettings', self::$settings);
         CrayonSettingsWP::other_scripts();
@@ -151,8 +154,7 @@ class CrayonTagEditorWP {
     public static function content() {
 
         CrayonSettingsWP::load_settings();
-        $langs = CrayonParser::parse_all();
-        $langs = CrayonLangs::sort_by_name($langs);
+        $langs = CrayonLangs::sort_by_name(CrayonParser::parse_all());
         $curr_lang = CrayonGlobalSettings::val(CrayonSettings::FALLBACK_LANG);
         $themes = CrayonResources::themes()->get();
         $curr_theme = CrayonGlobalSettings::val(CrayonSettings::THEME);
@@ -231,7 +233,8 @@ class CrayonTagEditorWP {
             <!--		</tr>-->
             <tr>
                 <td colspan="2"><?php
-                    if (!is_admin() && !$_GET['is_admin'] && !CrayonGlobalSettings::val(CrayonSettings::TAG_EDITOR_SETTINGS)) {
+                    $admin = isset($_GET['is_admin']) ? intval($_GET['is_admin']) : is_admin();
+                    if (!$admin && !CrayonGlobalSettings::val(CrayonSettings::TAG_EDITOR_SETTINGS)) {
                         exit;
                     }
                     ?>

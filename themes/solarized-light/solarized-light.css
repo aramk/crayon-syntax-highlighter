@@ -1,0 +1,201 @@
+/*
+Theme Name: Solarized Light
+Description: Clean, crisp and colorful. 
+Version: 1.0.0 Beta 2
+Author: Ethan Schoonover
+Author URI: http://ethanschoonover.com/
+Maintainer: Eduan Lavaque
+Maintainer URI: http://eduantech.com/
+Maintainer Note: I don't provide striped lines because it would break the original purpose of this colorscheme.
+*/
+
+/* Code Style ====================== */
+.crayon-theme-solarized-light {
+	border: 1px #999 solid !important;
+	text-shadow: none !important;
+}
+
+.crayon-theme-solarized-light,
+.crayon-theme-solarized-light .crayon-code {
+	background: #fdf6e3 !important;
+}
+
+/* Inline Style */
+.crayon-theme-solarized-light-inline {
+	border: 1px solid #ddd !important;
+	background: #fdf6e3 !important;
+}
+
+/* Line Numbers */
+.crayon-theme-solarized-light .crayon-nums {
+	background: #eee8d5 !important;
+	color: #93a1a1 !important;
+	border-right: 1px solid #b3d3f3 !important;
+}
+
+/* Selection */
+.crayon-theme-solarized-light .crayon-code::selection,
+.crayon-theme-solarized-light .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-solarized-light::selection,
+.crayon-theme-solarized-light .crayon-toolbar::selection,
+.crayon-theme-solarized-light .crayon-toolbar *::selection,
+.crayon-theme-solarized-light .crayon-info::selection,
+.crayon-theme-solarized-light .crayon-info *::selection,
+.crayon-theme-solarized-light .crayon-nums::selection,
+.crayon-theme-solarized-light .crayon-nums *::selection {
+	background: transparent !important;
+}
+
+/* Striped Lines */
+.crayon-theme-solarized-light .crayon-striped-line {
+	background: #fdf6e3 !important;
+	border: 1px #CCC !important;
+}
+.crayon-theme-solarized-light .crayon-striped-num {
+	border: 1px #CCC !important;
+	color: #93a1a1 !important;
+	background: #eee8d5 !important;
+}
+
+/* Marked Lines */
+.crayon-theme-solarized-light .crayon-marked-line {
+	background: #eee8d5 !important;
+}
+.crayon-theme-solarized-light .crayon-marked-num {
+	color: #93a1a1 !important;
+	background: #fdf6e3 !important;
+}
+.crayon-theme-solarized-light .crayon-marked-line.crayon-striped-line {
+	background: #eee8d5 !important;
+}
+.crayon-theme-solarized-light .crayon-marked-num.crayon-striped-num {
+	background: #fdf6e3 !important;
+}
+.crayon-theme-solarized-light .crayon-marked-line.crayon-top,
+.crayon-theme-solarized-light .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+	border-color: #839496 !important;
+	border-width: 1px !important;
+}
+.crayon-theme-solarized-light .crayon-marked-line.crayon-bottom,
+.crayon-theme-solarized-light .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+	border-color: #839496 !important;
+	border-width: 1px !important;
+}
+
+/* Info */
+.crayon-theme-solarized-light .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom: 1px #b1af5e solid !important;
+	color: #7e7d34;
+}
+
+/* Toolbar */
+.crayon-theme-solarized-light .crayon-toolbar {
+	background: #DDD !important;
+	border-bottom: 1px #BBB solid !important;
+}
+.crayon-theme-solarized-light .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-solarized-light .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-solarized-light .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-solarized-light .crayon-language {
+	color: #999 !important;
+}
+
+/* Buttons */
+.crayon-theme-solarized-light a.crayon-button {
+	background-color: transparent;
+}
+.crayon-theme-solarized-light a.crayon-button:hover,
+.crayon-theme-solarized-light a.crayon-button.crayon-pressed:hover {
+	background-color: #EEE;
+	color: #666;
+}
+/* :active MUST come after :hover */
+.crayon-theme-solarized-light a.crayon-button.crayon-pressed,
+.crayon-theme-solarized-light a.crayon-button.crayon-pressed:active,
+.crayon-theme-solarized-light a.crayon-button:active {
+	background-color: #BCBCBC;
+	color: #FFF;
+}
+
+/* End Code Style ================== */
+
+/* Syntax Highlighting ============= */
+.crayon-theme-solarized-light .crayon-pre .c {
+	color: #93a1a1 !important;
+}
+.crayon-theme-solarized-light .crayon-pre .s {
+	color: #2aa198 !important;
+}
+
+.crayon-theme-solarized-light .crayon-pre .k {
+	color: #cb4b16 !important;
+}
+.crayon-theme-solarized-light .crayon-pre .st {
+	color: #859900 !important;
+}
+.crayon-theme-solarized-light .crayon-pre .r {
+	color: #cb4b16 !important;
+}
+.crayon-theme-solarized-light .crayon-pre .t {
+	color: #b58900 !important;
+}
+.crayon-theme-solarized-light .crayon-pre .m {
+	color: #b58900 !important;
+}
+
+.crayon-theme-solarized-light .crayon-pre .i {
+	color: #839496 !important;
+}
+.crayon-theme-solarized-light .crayon-pre .e {
+	color: #839496 !important;
+}
+.crayon-theme-solarized-light .crayon-pre .v {
+	color: #268bd2 !important;
+}
+
+.crayon-theme-solarized-light .crayon-pre .cn {
+	color: #2aa198 !important;
+}
+
+.crayon-theme-solarized-light .crayon-pre .o {
+	color: #859900 !important;
+}
+
+.crayon-theme-solarized-light .crayon-pre .sy {
+	color: #dc322f !important;
+}
+
+.crayon-theme-solarized-light .crayon-pre .n {
+	color: #666 !important;
+	font-style: italic;
+}
+
+.crayon-theme-solarized-light .crayon-pre .f {
+	color: #999 !important;
+}
+
+.crayon-theme-solarized-light .crayon-pre .h {
+	color: #dc322f !important;
+}
+
+.crayon-theme-solarized-light .crayon-pre .p {
+	color: #dc322f !important;
+}
+.crayon-theme-solarized-light .crayon-pre .ta {
+	color: #268bd2 !important;
+}
+/* End Syntax Highlighting ========= */
+
+/* End Classic Scheme ============================================ */

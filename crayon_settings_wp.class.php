@@ -102,7 +102,7 @@ class CrayonSettingsWP {
         self::load_settings(TRUE);
         if (!self::$js_settings) {
             self::$js_settings = array(
-                'is_admin' => is_admin(),
+                'is_admin' => intval(is_admin()),
                 'ajaxurl' => admin_url('admin-ajax.php'),
                 'prefix' => CrayonSettings::PREFIX,
                 'setting' => CrayonSettings::SETTING,
@@ -472,7 +472,8 @@ class CrayonSettingsWP {
         }
         // Convert old tags
         if (array_key_exists('convert', $inputs)) {
-            CrayonWP::convert_tags();
+            $encode = array_key_exists('convert_encode', $inputs);
+            CrayonWP::convert_tags($encode);
         }
         // Refresh internal tag management
         if (array_key_exists('refresh_tags', $inputs)) {
@@ -1020,7 +1021,8 @@ class Human {
             $convert_text = crayon__('No Legacy Tags Found');
         }
 
-        echo '<input type="submit" name="', self::OPTIONS, '[convert]" id="convert" class="button-primary" value="', $convert_text, '"', $disabled, ' /> ';
+        echo '<input type="submit" name="', self::OPTIONS, '[convert]" id="convert" class="button-primary" value="', $convert_text, '"', $disabled, ' />&nbsp; ';
+        self::checkbox(array('convert_encode', crayon__("Encode")), FALSE);
         echo self::help_button('http://bit.ly/ReRr0i'), CRAYON_BR, CRAYON_BR;
         $sep = sprintf(crayon__('Use %s to separate setting names from values in the &lt;pre&gt; class attribute'),
             self::dropdown(CrayonSettings::ATTR_SEP, FALSE, FALSE, FALSE));
@@ -1092,6 +1094,7 @@ class Human {
 				Italian (<a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>),
 				Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
 				Lithuanian (<a href="http://www.host1free.com" target="_blank">Vincent G</a>),
+				Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
 				Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
 				Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>),
 				Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),

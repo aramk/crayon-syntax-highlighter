@@ -5,7 +5,7 @@ License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 1.16
+Stable tag: 1.17
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
@@ -105,6 +105,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Shell (Unix)
 * Transact-SQL
 * TeX
+* Vim
 * Visual Basic
 * YAML
 * Others will be added when requested
@@ -118,6 +119,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Italian (thanks to <a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>)
 * Japanese (thanks to <a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>)
 * Lithuanian (thanks to <a href="http://www.host1free.com" target="_blank">Vincent G</a>)
+* Polish (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
 * Portuguese (thanks to <a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>)
 * Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
 * Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
@@ -170,6 +172,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to my project, your support keeps the Crayons going!
 
+* Johannes Luijten, (http://www.tweaking4all.com/, http://www.weethet.nl/), USA
 * Jack Fruh, (http://basementjack.com/), USA
 * Ross Barbieri, USA
 * Will, Simple Phishing Toolkit (http://www.sptoolkit.com/), USA
@@ -254,17 +257,33 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 1.18 =
+* ADDED:
+	* Polish translation (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
+	* Vim language
+	* Solarized themes (thanks to <a href="https://github.com/Greduan" target="_blank">Greduan</a>)
+	* Converting legacy tags now has an "encode" option. If selected, any legacy tag where the "decode" attribute is missing (neither true or false) has its code encoded and decode="true" specified.
+* FIXED:
+	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
+	* Improved expanding with shirt
+	* Issues with expanding a single line, other minor issues.
+	* Minor improvements to Objective-C
+
 = 1.17 =
 * ADDED:
 	* Selected text in the TinyMCE editor is now added into the code box of the Tag Editor
 	* Retina buttons for the toolbar
+	* Support for Wordpress 3.5
 * FIXED:
 	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
 	* Disabling popup now removes the JS resource
 	* Refactored Tag Editor functions
+	* Display Tag Editor settings on the frontend wasn't working
 	* Removed contextual help and added more useful links, including online help
 	* Checkboxes have labels instead of spans thanks to https://github.com/toszcze
 	* Undefined php variable fix thanks to https://github.com/toszcze
+	* Dimension fixes in js on hover
+	* On iOS the fonts appeared larger for code than for line numbers.
 	* Expanding code shrunk instead if the toolbar was visible
 	* Updated Turkish
 
