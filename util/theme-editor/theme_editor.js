@@ -59,7 +59,7 @@
                 info[settings.fields[field]] = themeInfo[field];
             }
             var newThemeStr = base.writeThemeInfo(info) + themeCSS;
-            $.get(crayonSettings.ajaxurl, {
+            $.post(crayonSettings.ajaxurl, {
                 action: 'crayon-theme-editor-save',
                 id: themeID,
                 name: themeInfo.name,

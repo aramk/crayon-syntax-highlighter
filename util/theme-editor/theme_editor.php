@@ -178,10 +178,10 @@ class CrayonThemeEditorWP {
      */
     public static function save($change_settings = TRUE) {
         CrayonSettingsWP::load_settings(TRUE);
-        $oldID = $_GET['id'];
-        $name = $_GET['name'];
-        $css = stripslashes($_GET['css']);
-        $change_settings = CrayonUtil::set_default($_GET['change_settings'], TRUE);
+        $oldID = $_POST['id'];
+        $name = $_POST['name'];
+        $css = stripslashes($_POST['css']);
+        $change_settings = CrayonUtil::set_default($_POST['change_settings'], TRUE);
 
         if (!empty($oldID) && !empty($css) && !empty($name)) {
             $oldPath = CrayonResources::themes()->path($oldID);
