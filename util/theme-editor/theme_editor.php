@@ -207,12 +207,12 @@ class CrayonThemeEditorWP {
             $newID = CrayonResource::clean_id($name);
             $newPath = CrayonResources::themes()->path($newID);
             $newDir = CrayonResources::themes()->dirpath($newID);
-            var_dump($oldPath);
-            var_dump($oldDir);
-            var_dump($newID);
-            var_dump($newPath);
-            var_dump($newDir);
-            exit();
+//            var_dump($oldPath);
+//            var_dump($oldDir);
+//            var_dump($newID);
+//            var_dump($newPath);
+//            var_dump($newDir);
+//            exit();
             // Create the new path if needed
             if (!is_file($newPath)) {
                 if (!is_dir($newDir)) {
