@@ -613,7 +613,7 @@ class CrayonSettingsWP {
         }
         echo '
 				<div id="crayon-help" class="updated settings-error crayon-help">
-				<p><strong>Howdy, coder!</strong> Thanks for using Crayon. <strong>Useful Links:</strong> <a href="' . $CRAYON_WEBSITE . '" target="_blank">Documentation</a>, <a href="' . $CRAYON_GIT . '" target="_blank">GitHub</a>, <a href="' . $CRAYON_PLUGIN_WP . '" target="_blank">Plugin Page</a>, <a href="' . $CRAYON_TWITTER . '" target="_blank">Twitter</a>. Crayon has always been free, so if you value my work please consider a <a href="'.$CRAYON_DONATE.'">small donation</a> to show your appreciation. Thanks! <a class="crayon-help-close">X</a></p></div>
+				<p><strong>Howdy, coder!</strong> Thanks for using Crayon. <strong>Useful Links:</strong> <a href="' . $CRAYON_WEBSITE . '" target="_blank">Documentation</a>, <a href="' . $CRAYON_GIT . '" target="_blank">GitHub</a>, <a href="' . $CRAYON_PLUGIN_WP . '" target="_blank">Plugin Page</a>, <a href="' . $CRAYON_TWITTER . '" target="_blank">Twitter</a>. Crayon has always been free, so if you value my work please consider a <a href="' . $CRAYON_DONATE . '">small donation</a> to show your appreciation. Thanks! <a class="crayon-help-close">X</a></p></div>
 						';
     }
 
