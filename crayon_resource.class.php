@@ -318,7 +318,7 @@ class CrayonResource {
 	
 	// Override
 	static function clean_id($id) {
-        $id = preg_replace('#[\W-]#msi', '', $id);
+        $id = preg_replace('#[^\w-]#msi', '', $id);
 		return CrayonUtil::space_to_hyphen( strtolower(trim($id)) );
 	}
 	
@@ -334,9 +334,9 @@ class CrayonResource {
 class CrayonUsedResource extends CrayonResource {
 	private $used = FALSE;
 
-	function __construct($id, $name = NULL) {
-		parent::__construct($id, $name);
-	}
+//	function __construct($id, $name = NULL) {
+//		parent::__construct($id, $name);
+//	}
 
 	function used($used = NULL) {
 		if ($used === NULL) {

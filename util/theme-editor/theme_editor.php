@@ -34,10 +34,11 @@ class CrayonThemeEditorWP {
         if (self::$fields === NULL) {
             self::$fields = array(
                 'name' => crayon__('Name'),
-                'desc' => crayon__('Description'),
+                'description' => crayon__('Description'),
                 'version' => crayon__('Version'),
                 'author' => crayon__('Author'),
-                'url' => crayon__('URL')
+                'url' => crayon__('URL'),
+                'original-author' => crayon__('Original Author')
             );
         }
     }
