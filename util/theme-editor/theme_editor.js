@@ -126,9 +126,16 @@
 
         base.initInfoUI = function () {
             console.log(themeInfo);
+            // TODO abstract
             var fields = {};
             for (var field in themeInfo) {
-                fields[base.idToName(field)] = base.createInput(field);
+                var name = '';
+                if (field in settings.fields) {
+                    name = settings.fields[field];
+                } else {
+                    name = base.idToName(field);
+                }
+                fields[name] = base.createInput(field);
             }
             $('#tabs-1').html(base.createForm(fields));
         };
