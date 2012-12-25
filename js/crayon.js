@@ -89,7 +89,7 @@
                 uid += getUID();
             }
             c.attr('id', uid);
-            console_log(uid);
+            CrayonUtil.log(uid);
 
             if (typeof replace == 'undefined') {
                 replace = false;
@@ -180,7 +180,7 @@
                 // If nums hidden by default
                 if (nums.filter('[data-settings~="hide"]').length != 0) {
                     nums_content.ready(function () {
-                        console_log('function' + uid);
+                        CrayonUtil.log('function' + uid);
                         CrayonSyntax.toggle_nums(uid, true, true);
                     });
                 } else {
@@ -250,7 +250,7 @@
                 }, function () {
                     code_popup(uid);
                 }, function () {
-                    //console_log('after');
+                    //CrayonUtil.log('after');
                 });
             }
 
@@ -365,14 +365,14 @@
         };
 
         var make_uid = function (uid) {
-            console_log(crayon);
+            CrayonUtil.log(crayon);
             if (typeof crayon[uid] == 'undefined') {
                 crayon[uid] = $('#' + uid);
-                console_log('make ' + uid);
+                CrayonUtil.log('make ' + uid);
                 return true;
             }
 
-            console_log('no make ' + uid);
+            CrayonUtil.log('no make ' + uid);
             return false;
         };
 

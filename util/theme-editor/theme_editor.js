@@ -17,7 +17,7 @@
 
         base.init = function (callback) {
             // Called only once
-            console_log('editor init');
+            CrayonUtil.log('editor init');
             base.initUI();
             if (callback) {
                 callback();
@@ -46,6 +46,7 @@
 //            console.log(themeJSON.children['.crayon-theme-classic .crayon-table .crayon-nums'].attributes);
 //            console.log(settings);
             themeInfo = base.readCSSThemeInfo(themeStr);
+            base.initInfoUI();
             base.updateTitle();
             base.updateInfo();
             base.setFieldValues(themeInfo);
@@ -113,12 +114,32 @@
             var match = null;
             var infoRegex = /([^\r\n:]+)\s*:\s*([^\r\n]+)/gmi;
             while ((match = infoRegex.exec(infoStr)) != null) {
-                var fieldID = settings.fieldsInverse[match[1]];
-                if (fieldID) {
-                    themeInfo[fieldID] = match[2];
-                }
+//                var fieldID = settings.fieldsInverse[match[1]];
+//                var fieldID = base.convertToID(match[1]);
+//                if (fieldID) {
+//                    themeInfo[fieldID] = match[2];
+//                }
+                themeInfo[base.nameToID(match[1])] = match[2];
             }
             return themeInfo;
+        };
+
+        base.initInfoUI = function () {
+            console.log(themeInfo);
+            var fields = {};
+            for (var field in themeInfo) {
+                fields[base.idToName(field)] = base.createInput(field);
+            }
+            $('#tabs-1').html(base.createForm(fields));
+        };
+
+        base.nameToID = function (name) {
+            return name.toLowerCase().replace(/\s+/, '-');
+        };
+
+        base.idToName = function (id) {
+            id = id.replace('-', ' ');
+            return id.toTitleCase();
         };
 
         base.getField = function (id) {
@@ -186,6 +207,21 @@
             $('#crayon-editor-save').click(base.save);
         };
 
+        base.createInput = function (id, value, type) {
+            value = CrayonUtil.setDefault(value, '');
+            type = CrayonUtil.setDefault(type, 'text');
+            return '<input id="' + settings.cssPrefix + id + '" class="' + settings.cssPrefix + type + '" type="' + type + '" value="' + value + '" />';
+        };
+
+        base.createForm = function (inputs) {
+            var str = '<form class="' + settings.prefix + '-form"><table>';
+            $.each(inputs, function (input) {
+                str += '<tr><td class="field">' + input + '</td><td class="value">' + inputs[input] + '</td></tr>';
+            });
+            str += '</table></form>';
+            return str;
+        };
+
         var showMain = function () {
             admin.preview_update();
             admin.show_theme_info();
@@ -201,7 +237,7 @@
             }
         };
 
-        base.updateInfo = function() {
+        base.updateInfo = function () {
             info.html('<a target="_blank" href="' + adminSettings.curr_theme_url + '">' + adminSettings.curr_theme_url + '</a>');
         };
 

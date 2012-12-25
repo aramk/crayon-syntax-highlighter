@@ -29,7 +29,7 @@
         var util = null;
 
         base.init = function () {
-            console_log('admin init');
+            CrayonUtil.log('admin init');
             settings = CrayonSyntaxSettings;
             adminSettings = CrayonAdminSettings;
             util = CrayonUtil;
@@ -201,7 +201,7 @@
                 } else {
                     val = obj.val();
                 }
-                getVars[preview_obj_names[i]] = crayon_escape(val);
+                getVars[preview_obj_names[i]] = CrayonUtil.escape(val);
             }
 
             var disabled = theme_select.val() == adminSettings.default_theme;
@@ -228,7 +228,7 @@
         };
 
         var preview_toggle = function () {
-            // console_log('preview_toggle');
+            // CrayonUtil.log('preview_toggle');
             if (preview_cbox.is(':checked')) {
                 preview.show();
                 preview_info.show();
@@ -264,13 +264,13 @@
             // Checks if the text input is changed, if so, runs the callback
             // with given event
             preview_txt_change = function (callback, event) {
-                // console_log('checking if changed');
+                // CrayonUtil.log('checking if changed');
                 var obj = event.target;
                 var last = preview_last_values[obj.id];
-                // console_log('last' + preview_last_values[obj.id]);
+                // CrayonUtil.log('last' + preview_last_values[obj.id]);
 
                 if (obj.value != last) {
-                    // console_log('changed');
+                    // CrayonUtil.log('changed');
                     // Update last value to current
                     preview_last_values[obj.id] = obj.value;
                     // Run callback with event
@@ -280,7 +280,7 @@
 
             // Only updates when text is changed
             preview_txt_callback = function (event) {
-                // console_log('txt callback');
+                // CrayonUtil.log('txt callback');
                 preview_txt_change(base.preview_update, event);
             };
 
@@ -289,7 +289,7 @@
                 preview_txt_change(function () {
                     clearInterval(preview_delay_timer);
                     preview_delay_timer = setInterval(function () {
-                        // console_log('delayed update');
+                        // CrayonUtil.log('delayed update');
                         base.preview_update();
                         clearInterval(preview_delay_timer);
                     }, 500);

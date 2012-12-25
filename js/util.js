@@ -16,6 +16,7 @@ var CRAYON_DEBUG = false;
 
         base.init = function () {
             settings = CrayonSyntaxSettings;
+            base.initGET();
         };
 
         base.addPrefixToID = function (id) {
@@ -52,7 +53,64 @@ var CRAYON_DEBUG = false;
                 // Initialise a custom version of Fancybox to avoid conflicting
                 fancyboxInit(window, document, $, 'crayonFancybox');
             }
-        }
+        };
+
+        base.getExt = function (str) {
+            if (str.indexOf('.') == -1) {
+                return undefined;
+            }
+            var ext = str.split('.');
+            if (ext.length) {
+                ext = ext[ext.length - 1];
+            } else {
+                ext = '';
+            }
+            return ext;
+        };
+
+        base.initGET = function () {
+            // URLs
+            window.currentURL = window.location.protocol + '//' + window.location.host + window.location.pathname;
+            window.currentDir = window.currentURL.substring(0, window.currentURL.lastIndexOf('/'));
+
+            // http://stackoverflow.com/questions/439463
+            function getQueryParams(qs) {
+                qs = qs.split("+").join(" ");
+                var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+                while (tokens = re.exec(qs)) {
+                    params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+                }
+                return params;
+            }
+
+            window.GET = getQueryParams(document.location.search);
+        };
+
+        base.escape = function (string) {
+            if (typeof encodeURIComponent == 'function') {
+                return encodeURIComponent(string);
+            } else if (typeof escape != 'function') {
+                return escape(string);
+            } else {
+                return string;
+            }
+        };
+
+        base.log = function (string) {
+            if (typeof console != 'undefined' && CRAYON_DEBUG) {
+                console.log(string);
+            }
+        };
+
+        base.decode_html = function (str) {
+            return String(str).replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(
+                /&gt;/g, '>');
+        };
+
+        base.encode_html = function (str) {
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
+                />/g, '&gt;');
+        };
 
     };
 
@@ -83,120 +141,60 @@ var CRAYON_DEBUG = false;
         return keys;
     }
 
+    // Prototype modifications
+
+    RegExp.prototype.execAll = function (string) {
+        var matches = [];
+        var match = null;
+        while ((match = this.exec(string)) != null) {
+            var matchArray = [];
+            for (var i in match) {
+                if (parseInt(i) == i) {
+                    matchArray.push(match[i]);
+                }
+            }
+            matches.push(matchArray);
+        }
+        return matches;
+    };
+
+    // Escape regex chars with \
+    RegExp.prototype.escape = function (text) {
+        return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+    };
+
+    String.prototype.sliceReplace = function (start, end, repl) {
+        return this.substring(0, start) + repl + this.substring(end);
+    };
+
+    String.prototype.escape = function () {
+        var tagsToReplace = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;'
+        };
+        return this.replace(/[&<>]/g, function (tag) {
+            return tagsToReplace[tag] || tag;
+        });
+    };
+
+    String.prototype.linkify = function (target) {
+        target = typeof target != 'undefined' ? target : '';
+        return this.replace(/(http(s)?:\/\/(\S)+)/gmi, '<a href="$1" target="' + target + '">$1</a>');
+    };
+
+    String.prototype.toTitleCase = function () {
+        var parts = this.split(/\s+/);
+        var title = '';
+        $.each(parts, function (i, part) {
+            if (part != '') {
+                title += part.slice(0, 1).toUpperCase() + part.slice(1, part.length);
+                if (i != parts.length - 1 && parts[i + 1] != '') {
+                    title += ' ';
+                }
+            }
+        });
+        return title;
+    };
+
 })(jQueryCrayon);
-
-if (typeof CrayonTagEditorSettings == 'undefined') {
-    // WP may have already added it
-    CrayonTagEditorSettings = {};
-    CrayonSettings = {};
-}
-
-RegExp.prototype.execAll = function (string) {
-    var matches = [];
-    var match = null;
-    while ((match = this.exec(string)) != null) {
-        var matchArray = [];
-        for (var i in match) {
-            if (parseInt(i) == i) {
-                matchArray.push(match[i]);
-            }
-        }
-        matches.push(matchArray);
-    }
-    return matches;
-};
-
-// Escape regex chars with \
-RegExp.prototype.escape = function (text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-};
-
-String.prototype.sliceReplace = function (start, end, repl) {
-    return this.substring(0, start) + repl + this.substring(end);
-};
-
-String.prototype.escape = function () {
-    var tagsToReplace = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;'
-    };
-    return this.replace(/[&<>]/g, function (tag) {
-        return tagsToReplace[tag] || tag;
-    });
-};
-
-String.prototype.linkify = function (target) {
-    target = typeof target != 'undefined' ? target : '';
-    return this.replace(/(http(s)?:\/\/(\S)+)/gmi, '<a href="$1" target="' + target + '">$1</a>');
-};
-
-function console_log(string) {
-    if (typeof console != 'undefined' && CRAYON_DEBUG) {
-        console.log(string);
-    }
-}
-
-// # is left unencoded
-function crayon_escape(string) {
-    if (typeof encodeURIComponent == 'function') {
-        return encodeURIComponent(string);
-    } else if (typeof escape != 'function') {
-        return escape(string);
-    } else {
-        return string;
-    }
-}
-
-function crayon_decode_html(str) {
-    return String(str).replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(
-        /&gt;/g, '>');
-}
-
-function crayon_encode_html(str) {
-    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
-        />/g, '&gt;');
-}
-
-var CrayonSyntaxUtil = new function () {
-
-    var base = this;
-
-    base.init = function () {
-        base.initGET();
-    };
-
-    base.getExt = function (str) {
-        if (str.indexOf('.') == -1) {
-            return undefined;
-        }
-        var ext = str.split('.');
-        if (ext.length) {
-            ext = ext[ext.length - 1];
-        } else {
-            ext = '';
-        }
-        return ext;
-    };
-
-    base.initGET = function () {
-        // URLs
-        window.currentURL = window.location.protocol + '//' + window.location.host + window.location.pathname;
-        window.currentDir = window.currentURL.substring(0, window.currentURL.lastIndexOf('/'));
-
-        // http://stackoverflow.com/questions/439463
-        function getQueryParams(qs) {
-            qs = qs.split("+").join(" ");
-            var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
-            while (tokens = re.exec(qs)) {
-                params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
-            }
-            return params;
-        }
-
-        window.GET = getQueryParams(document.location.search);
-    };
-
-    base.init();
-
-};
