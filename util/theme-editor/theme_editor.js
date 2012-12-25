@@ -54,6 +54,7 @@
 
         base.save = function () {
             themeCSS = CSSJSON.toCSS(themeJSON);
+            // Update info from form fields
             themeInfo = base.getFieldValues($.keys(themeInfo));
             // Get the names of the fields and map them to their values
             var names = base.getFieldNames(themeInfo);
@@ -78,7 +79,7 @@
                         for (var i in window.GET) {
                             get += i + '=' + window.GET[i] + '&';
                         }
-                        window.location = window.currentURL + get;
+//                        window.location = window.currentURL + get;
                     }
                 } else {
                     status.html("Failed!");
@@ -163,7 +164,8 @@
 
         base.getName = function () {
             var name = themeInfo.name;
-            if (!name) {
+            console.log(themeInfo);
+            if (name) {
                 name = base.idToName(themeID);
             }
             return name;
