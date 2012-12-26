@@ -38,7 +38,7 @@
 
         base.load = function () {
             themeStr = adminSettings.curr_theme_str;
-            themeID = adminSettings.curr_theme;
+            themeID = adminSettings.currTheme;
             changed = false;
             themeJSON = CSSJSON.toJSON(themeStr, {
                 stripComments: true,
@@ -298,7 +298,7 @@
         };
 
         base.updateInfo = function () {
-            info.html('<a target="_blank" href="' + adminSettings.curr_theme_url + '">' + adminSettings.curr_theme_url + '</a>');
+            info.html('<a target="_blank" href="' + adminSettings.currThemeURL + '">' + adminSettings.currThemeURL + '</a>');
         };
 
         base.createPrompt = function (args) {

@@ -121,13 +121,22 @@ class CrayonSettingsWP {
             CrayonSettingsWP::load_settings();
             $themes_ = CrayonResources::themes()->get();
             $themes = array();
+            $userThemes = array();
             foreach ($themes_ as $theme) {
-                $themes[$theme->id()] = $theme->name();
+                $id = $theme->id();
+                $name = $theme->name();
+                if ($theme->user()) {
+                    $userThemes[$id] = $name;
+                } else {
+                    $themes[$id] = $name;
+                }
             }
             self::$admin_js_settings = array(
                 'themes' => $themes,
-                'default_theme' => CrayonThemes::DEFAULT_THEME,
-                'themes_url' => plugins_url(CRAYON_THEME_DIR, __FILE__)
+                'userThemes' => $userThemes,
+                'defaultTheme' => CrayonThemes::DEFAULT_THEME,
+                'themesURL' => CrayonThemes::dir_url(),
+                'userThemesURL' => CrayonThemes::dir_url(true)
             );
             wp_localize_script('crayon_admin_js', 'CrayonAdminSettings', self::$admin_js_settings);
         }

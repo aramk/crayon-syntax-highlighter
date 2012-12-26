@@ -195,7 +195,7 @@
             var obj;
             var getVars = {
                 action: 'crayon-show-preview',
-                theme: adminSettings.curr_theme
+                theme: adminSettings.currTheme
             };
             for (var i = 0; i < preview_obj_names.length; i++) {
                 obj = preview_objs[i];
@@ -207,7 +207,7 @@
                 getVars[preview_obj_names[i]] = CrayonUtil.escape(val);
             }
 
-            var disabled = theme_select.val() == adminSettings.default_theme;
+            var disabled = theme_select.val() == adminSettings.defaultTheme;
             theme_editor_edit_button.attr('disabled', disabled);
             theme_editor_delete_button.attr('disabled', disabled);
 
@@ -351,16 +351,20 @@
         };
 
         base.refresh_theme_info = function () {
-            adminSettings.curr_theme = $('#crayon-theme').val();
-            adminSettings.curr_theme_url = adminSettings.themes_url
-                + adminSettings.curr_theme + '/' + adminSettings.curr_theme
-                + '.css';
+            adminSettings.currTheme = $('#crayon-theme').val();
+            var url = adminSettings.currTheme in adminSettings.userThemes ? adminSettings.userThemesURL : adminSettings.themesURL;
+            adminSettings.currThemeURL = base.get_theme_url(adminSettings.currTheme);
+        };
+
+        base.get_theme_url = function ($id) {
+            var url = $id in adminSettings.userThemes ? adminSettings.userThemesURL : adminSettings.themesURL;
+            return url + $id + '/' + $id + '.css';
         };
 
         base.show_theme_info = function (callback) {
             base.refresh_theme_info();
             $.ajax({
-                url: adminSettings.curr_theme_url,
+                url: adminSettings.currThemeURL,
                 success: function (data) {
                     adminSettings.curr_theme_str = data;
                     var fields = {
@@ -405,7 +409,7 @@
             // Load theme editor
             $.get(settings.ajaxurl, {
                 action: 'crayon-theme-editor',
-                curr_theme: adminSettings.curr_theme,
+                currTheme: adminSettings.currTheme,
                 editing: editing
             }, function (data) {
                 theme_editor_wrap.html(data);

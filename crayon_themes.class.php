@@ -63,12 +63,16 @@ class CrayonThemes extends CrayonUserResourceCollection {
         // XXX This should only be called once the theme has been loaded as a resource
         $theme = $this->get($id);
         if ($theme) {
-            $path = $theme->user() ? CrayonGlobalSettings::upload_url() : CrayonGlobalSettings::plugin_path();
-            return $path . CrayonUtil::pathf(CRAYON_THEME_DIR) . $id . '/' . $id . '.css';
+            return self::dir_url($theme->user()) . $id . '/' . $id . '.css';
         } else {
             return NULL;
         }
 	}
+
+    public static function dir_url($user = FALSE) {
+        $path = $user ? CrayonGlobalSettings::upload_url() : CrayonGlobalSettings::plugin_path();
+        return $path . CrayonUtil::pathf(CRAYON_THEME_DIR);
+    }
 
 }
 ?>
