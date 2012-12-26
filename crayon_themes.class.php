@@ -15,7 +15,7 @@ class CrayonThemes extends CrayonUserResourceCollection {
 	// Methods ================================================================
 
 	function __construct() {
-        var_dump('__construct');
+//        var_dump('__construct');
 
 		$this->directory ( CRAYON_THEME_PATH );
         $this->user_directory(CrayonGlobalSettings::upload_path() . CRAYON_THEME_DIR);
@@ -72,6 +72,19 @@ class CrayonThemes extends CrayonUserResourceCollection {
     public static function dir_url($user = FALSE) {
         $path = $user ? CrayonGlobalSettings::upload_url() : CrayonGlobalSettings::plugin_path();
         return $path . CrayonUtil::pathf(CRAYON_THEME_DIR);
+    }
+
+    public function get_array($mark_user_themes = FALSE) {
+        if ($mark_user_themes) {
+            $array = array();
+            foreach ($this->get() as $resource) {
+                $mark = $resource->user() ? ' *' : '';
+                $array[$resource->id()] = $resource->name() . $mark;
+            }
+            return $array;
+        } else {
+            return parent::get_array();
+        }
     }
 
 }

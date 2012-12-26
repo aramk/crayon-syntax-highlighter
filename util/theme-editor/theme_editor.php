@@ -241,13 +241,14 @@ class CrayonThemeEditorWP {
 //                echo 5;
 //                $replaceID = $oldID;
 //            var_dump(CrayonThemes::CSS_PREFIX . $oldID, !is_file($oldPath), stripos($css, CrayonThemes::CSS_PREFIX . $oldID) === FALSE);
-            if (!is_file($oldPath) || stripos($css, CrayonThemes::CSS_PREFIX . $oldID) === FALSE) {
+            if (!is_file($oldPath) || strpos($css, CrayonThemes::CSS_PREFIX . $oldID) === FALSE) {
                 // The old path/id is no longer valid - something has gone wrong - we should refresh afterwards
                 $refresh = TRUE;
                 // Forces the ids to be updated
                 $replaceID = '[\w-]+';
             }
-            $css = preg_replace('#(?<=' . CrayonThemes::CSS_PREFIX . ')' . $replaceID . '\b#msi', $newID, $css);
+            // XXX This is case sensitive to avoid modifying text, but it means that CSS must be in lowercase
+            $css = preg_replace('#(?<=' . CrayonThemes::CSS_PREFIX . ')' . $replaceID . '\b#ms', $newID, $css);
 
             $result = @file_put_contents($newPath, $css);
             $success = $result !== FALSE;

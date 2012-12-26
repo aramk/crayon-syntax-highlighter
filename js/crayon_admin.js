@@ -350,10 +350,47 @@
             return false;
         };
 
-        base.refresh_theme_info = function () {
+        base.refresh_theme_info = function (callback) {
             adminSettings.currTheme = $('#crayon-theme').val();
             var url = adminSettings.currTheme in adminSettings.userThemes ? adminSettings.userThemesURL : adminSettings.themesURL;
             adminSettings.currThemeURL = base.get_theme_url(adminSettings.currTheme);
+            // Load the theme file
+
+            $.ajax({
+                url: adminSettings.currThemeURL,
+                success: function (data) {
+                    adminSettings.currThemeCSS = data;
+//                    var fields = {
+//                        'Version': theme_ver,
+//                        'Author': theme_author,
+//                        'URL': null,
+//                        'Description': theme_desc
+//                    };
+//                    for (field in fields) {
+//                        var re = new RegExp('(?:^|[\\r\\n]\\s*)\\b' + field
+//                            + '\\s*:\\s*([^\\r\\n]+)', 'gmi');
+//                        var match = re.exec(data);
+//                        var val = fields[field];
+//                        if (match) {
+//                            if (val != null) {
+//                                val.html(match[1].escape().linkify('_blank'));
+//                            } else if (field == 'Author URI') {
+//                                theme_author.html('<a href="' + match[1]
+//                                    + '" target="_blank">'
+//                                    + theme_author.text() + '</a>');
+//                            }
+//                        } else if (val != null) {
+//                            val.text('N/A');
+//                        }
+//                    }
+                    if (callback) {
+                        callback();
+                    }
+                },
+                cache: false
+            });
+
+            adminSettings.currThemeCSS = '';
         };
 
         base.get_theme_url = function ($id) {
@@ -362,40 +399,58 @@
         };
 
         base.show_theme_info = function (callback) {
-            base.refresh_theme_info();
-            $.ajax({
-                url: adminSettings.currThemeURL,
-                success: function (data) {
-                    adminSettings.curr_theme_str = data;
-                    var fields = {
-                        'Version': theme_ver,
-                        'Author': theme_author,
-                        'URL': null,
-                        'Description': theme_desc
-                    };
-                    for (field in fields) {
-                        var re = new RegExp('(?:^|[\\r\\n]\\s*)\\b' + field
-                            + '\\s*:\\s*([^\\r\\n]+)', 'gmi');
-                        var match = re.exec(data);
-                        var val = fields[field];
-                        if (match) {
-                            if (val != null) {
-                                val.html(match[1].escape().linkify('_blank'));
-                            } else if (field == 'Author URI') {
-                                theme_author.html('<a href="' + match[1]
-                                    + '" target="_blank">'
-                                    + theme_author.text() + '</a>');
-                            }
-                        } else if (val != null) {
-                            val.text('N/A');
+            base.refresh_theme_info(function () {
+                var info = CrayonSyntaxThemeEditor.readCSSInfo(adminSettings.currThemeCSS);
+                var infoHTML = '';
+                for (id in info) {
+                    if (id != 'name') {
+                        if (id != 'description') {
+                            infoHTML += '<div class="' + id + ' field">' + CrayonSyntaxThemeEditor.getFieldName(id) + '</div>';
                         }
+                        infoHTML += '<div class="value">' + info[id] + '</div>';
                     }
-                    if (callback) {
-                        callback();
-                    }
-                },
-                cache: false
+                }
+                theme_info.html(infoHTML);
+                if (callback) {
+                    callback();
+                }
             });
+
+//            CrayonSyntaxThemeEditor.
+//
+//            $.ajax({
+//                url: adminSettings.currThemeURL,
+//                success: function (data) {
+//                    adminSettings.curr_theme_str = data;
+//                    var fields = {
+//                        'Version': theme_ver,
+//                        'Author': theme_author,
+//                        'URL': null,
+//                        'Description': theme_desc
+//                    };
+//                    for (field in fields) {
+//                        var re = new RegExp('(?:^|[\\r\\n]\\s*)\\b' + field
+//                            + '\\s*:\\s*([^\\r\\n]+)', 'gmi');
+//                        var match = re.exec(data);
+//                        var val = fields[field];
+//                        if (match) {
+//                            if (val != null) {
+//                                val.html(match[1].escape().linkify('_blank'));
+//                            } else if (field == 'Author URI') {
+//                                theme_author.html('<a href="' + match[1]
+//                                    + '" target="_blank">'
+//                                    + theme_author.text() + '</a>');
+//                            }
+//                        } else if (val != null) {
+//                            val.text('N/A');
+//                        }
+//                    }
+//                    if (callback) {
+//                        callback();
+//                    }
+//                },
+//                cache: false
+//            });
         };
 
         base.show_theme_editor = function (button, editing) {

@@ -312,7 +312,7 @@ class CrayonUserResourceCollection extends CrayonUsedResourceCollection {
     }
 
     public function load_resources($dir = NULL) {
-        var_dump('load_resources');
+//        var_dump('load_resources');
         $this->curr_dir = $this->directory();
         parent::load_resources($this->curr_dir);
 //        var_dump($this->get());exit;

@@ -913,7 +913,7 @@ class Human {
         if (!array_key_exists(CrayonSettings::THEME, self::$options)) {
             $db_theme = '';
         }
-        $themes_array = CrayonResources::themes()->get_array();
+        $themes_array = CrayonResources::themes()->get_array(TRUE);
         $missing_theme = !CrayonResources::themes()->is_loaded($db_theme) || !CrayonResources::themes()->exists($db_theme);
         self::dropdown(CrayonSettings::THEME, FALSE, FALSE, TRUE, $themes_array, $missing_theme ? CrayonThemes::DEFAULT_THEME : NULL);
         if ($editor) {
@@ -932,14 +932,7 @@ class Human {
         // Preview Box
         ?>
     <div id="crayon-theme-panel">
-        <div id="crayon-theme-info">
-            <div class="desc"></div>
-            <div class="version field">Version:</div>
-            <div class="value"></div>
-            <div class="author field">Author:</div>
-            <div class="value"></div>
-        </div>
-
+        <div id="crayon-theme-info"></div>
         <div id="crayon-live-preview"></div>
         <div id="crayon-preview-info">
             <?php printf(crayon__('Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked.'), '<a href="#langs">', '</a>'); ?>

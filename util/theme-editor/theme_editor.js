@@ -37,7 +37,7 @@
         };
 
         base.load = function () {
-            themeStr = adminSettings.curr_theme_str;
+            themeStr = adminSettings.currThemeCSS;
             themeID = adminSettings.currTheme;
             changed = false;
             themeJSON = CSSJSON.toJSON(themeStr, {
@@ -153,21 +153,25 @@
 //                if (fieldID) {
 //                    themeInfo[fieldID] = match[2];
 //                }
-                themeInfo[base.nameToID(match[1])] = match[2];
+                themeInfo[base.nameToID(match[1])] = CrayonUtil.encode_html(match[2]);
             }
             return themeInfo;
+        };
+
+        base.getFieldName = function (id) {
+            var name = '';
+            if (id in settings.fields) {
+                name = settings.fields[id];
+            } else {
+                name = base.idToName(id);
+            }
+            return name;
         };
 
         base.getFieldNames = function (fields) {
             var names = {};
             for (var id in fields) {
-                var name = '';
-                if (id in settings.fields) {
-                    name = settings.fields[id];
-                } else {
-                    name = base.idToName(id);
-                }
-                names[id] = name;
+                names[id] = base.getFieldName(id);
             }
             return names;
         };
