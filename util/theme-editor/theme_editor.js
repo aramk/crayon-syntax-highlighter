@@ -79,7 +79,7 @@
                         for (var i in window.GET) {
                             get += i + '=' + window.GET[i] + '&';
                         }
-//                        window.location = window.currentURL + get;
+                        window.location = window.currentURL + get;
                     }
                 } else {
                     status.html("Failed!");
@@ -151,6 +151,10 @@
                 fields[name] = base.createInput(id, themeInfo[id]);
             }
             $('#tabs-1').html(base.createForm(fields));
+            base.getField('name').bind('change keydown keyup', function () {
+                themeInfo.name = base.getFieldValue('name');
+                base.updateTitle();
+            });
         };
 
         base.nameToID = function (name) {
@@ -211,10 +215,6 @@
             status = $('#crayon-editor-status');
             title = $('#crayon-theme-editor-name');
             info = $('#crayon-theme-editor-info');
-            base.getField('name').bind('change keydown', function () {
-                themeInfo.name = base.getFieldValue('name');
-                base.updateTitle();
-            });
             $('#crayon-editor-controls input, #crayon-editor-controls select').change(function () {
                 changed = true;
             });

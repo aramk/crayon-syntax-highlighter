@@ -207,11 +207,11 @@ class CrayonThemeEditorWP {
             $newID = CrayonResource::clean_id($name);
             $newPath = CrayonResources::themes()->path($newID);
             $newDir = CrayonResources::themes()->dirpath($newID);
-            var_dump($oldPath);
-            var_dump($oldDir);
-            var_dump($newID);
-            var_dump($newPath);
-            var_dump($newDir);
+//            var_dump($oldPath);
+//            var_dump($oldDir);
+//            var_dump($newID);
+//            var_dump($newPath);
+//            var_dump($newDir);
 //            exit();
             // Create the new path if needed
             if (!is_file($newPath)) {
@@ -242,7 +242,6 @@ class CrayonThemeEditorWP {
                     try {
                         // Delete the old path
                         CrayonUtil::deleteDir($oldDir);
-                        exit;
                     } catch (Exception $e) {
                         CrayonLog::syslog($e->getMessage(), "THEME SAVE");
                     }
@@ -250,7 +249,6 @@ class CrayonThemeEditorWP {
                 // Refresh
                 echo 2;
             } else {
-//                echo "WTF!";
                 echo $refresh ? 2 : intval($success);
             }
             // Set the new theme in settings
