@@ -92,15 +92,19 @@ class CrayonUtil {
         if (substr($path, strlen($path) - 1, 1) != '/') {
             $path .= '/';
         }
-        $files = glob($path . '*', GLOB_MARK);
+        $files = glob($path . '.*', GLOB_MARK);
+        var_dump($files);
         foreach ($files as $file) {
-            if (is_dir($file)) {
+            if (basename($file) == '.' || basename($file) == '..') {
+                continue;
+            } else if (is_dir($file)) {
+//                var_dump('going into ' . $file);
                 self::deleteDir($file);
             } else {
                 unlink($file);
             }
         }
-        @rmdir($path);
+        rmdir($path);
     }
 
     // Detects if device is touchscreen or mobile

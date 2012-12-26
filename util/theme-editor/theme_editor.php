@@ -207,11 +207,11 @@ class CrayonThemeEditorWP {
             $newID = CrayonResource::clean_id($name);
             $newPath = CrayonResources::themes()->path($newID);
             $newDir = CrayonResources::themes()->dirpath($newID);
-//            var_dump($oldPath);
-//            var_dump($oldDir);
-//            var_dump($newID);
-//            var_dump($newPath);
-//            var_dump($newDir);
+            var_dump($oldPath);
+            var_dump($oldDir);
+            var_dump($newID);
+            var_dump($newPath);
+            var_dump($newDir);
 //            exit();
             // Create the new path if needed
             if (!is_file($newPath)) {
@@ -230,7 +230,9 @@ class CrayonThemeEditorWP {
                     // Only delete the old path if it isn't the default theme
                     try {
                         // Delete the old path
+                        echo 'blah';
                         CrayonUtil::deleteDir($oldDir);
+                        exit;
                     } catch (Exception $e) {
                         CrayonLog::syslog($e->getMessage(), "THEME SAVE");
                     }

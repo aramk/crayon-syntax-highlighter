@@ -164,7 +164,6 @@
 
         base.getName = function () {
             var name = themeInfo.name;
-            console.log(themeInfo);
             if (!name) {
                 name = base.idToName(themeID);
             }
