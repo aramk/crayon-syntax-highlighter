@@ -1,0 +1,191 @@
+/*
+Name: SonOfObsidian
+Description: Inspired from http://studiostyl.es/schemes/son-of-obsidian
+Version: 1.0
+Original Author: http://studiostyl.es/users/135
+Author: Phiphou
+URL: http://blog.phiphou.com
+Twitter: @__phiphou__
+*/
+.crayon-theme-sonofobsidian {
+	border: 1px #999 solid !important;
+	text-shadow: none !important;
+}
+.crayon-theme-sonofobsidian .crayon-code {
+	background: #22282a !important;
+	color: #f1f2f3 !important;
+}
+.crayon-theme-sonofobsidian-inline {
+	border: 1px solid #ddd !important;
+	background: #fafafa !important;
+}
+.crayon-theme-sonofobsidian .crayon-nums {
+	background: #22282a !important;
+	color: #808080 !important;
+	border-right: 1px solid #475459 !important;
+}
+.crayon-theme-sonofobsidian .crayon-code::selection {
+	background: #7c9299 !important;
+	color: #FFFFFF !important;
+}
+.crayon-theme-sonofobsidian .crayon-code *::selection {
+	background: #7c9299 !important;
+	color: #FFFFFF !important;
+}
+.crayon-theme-sonofobsidian::selection {
+	background: transparent !important;
+}
+.crayon-theme-sonofobsidian .crayon-toolbar::selection {
+	background: transparent !important;
+}
+.crayon-theme-sonofobsidian .crayon-toolbar *::selection {
+	background: transparent !important;
+}
+.crayon-theme-sonofobsidian .crayon-info::selection {
+	background: transparent !important;
+}
+.crayon-theme-sonofobsidian .crayon-info *::selection {
+	background: transparent !important;
+}
+.crayon-theme-sonofobsidian .crayon-nums::selection {
+	background: transparent !important;
+}
+.crayon-theme-sonofobsidian .crayon-nums *::selection {
+	background: transparent !important;
+}
+.crayon-theme-sonofobsidian .crayon-striped-line {
+	background: #22282a !important;
+	border: 1px #ccc !important;
+}
+.crayon-theme-sonofobsidian .crayon-striped-num {
+	background: #293134 !important;
+	border: 1px #22282a !important;
+	color: #808080 !important;
+}
+.crayon-theme-sonofobsidian .crayon-marked-line {
+	background: #40292c !important;
+	border: 1px #996b72 !important;
+}
+.crayon-theme-sonofobsidian .crayon-marked-num {
+	color: #808080 !important;
+	background: #40292c !important;
+	border: 1px #996b72 !important;
+}
+.crayon-theme-sonofobsidian .crayon-marked-line.crayon-striped-line {
+	background: #40292c !important;
+}
+.crayon-theme-sonofobsidian .crayon-marked-num.crayon-striped-num {
+	background: #663d43 !important;
+	border: 1px #996b72 !important;
+	color: #808080 !important;
+}
+.crayon-theme-sonofobsidian .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-sonofobsidian .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-sonofobsidian .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-sonofobsidian .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-sonofobsidian .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom: 1px #b1af5e solid !important;
+	color: #7e7d34;
+}
+.crayon-theme-sonofobsidian .crayon-toolbar {
+	background: #ddd !important;
+	border-bottom: 1px #bbb solid !important;
+}
+.crayon-theme-sonofobsidian .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-sonofobsidian .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-sonofobsidian .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-sonofobsidian .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-sonofobsidian a.crayon-button {
+	background-color: transparent;
+}
+.crayon-theme-sonofobsidian a.crayon-button:hover {
+	background-color: #eee;
+	color: #666;
+}
+.crayon-theme-sonofobsidian a.crayon-button.crayon-pressed:hover {
+	background-color: #eee;
+	color: #666;
+}
+.crayon-theme-sonofobsidian a.crayon-button.crayon-pressed {
+	background-color: #bcbcbc;
+	color: #fff;
+}
+.crayon-theme-sonofobsidian a.crayon-button.crayon-pressed:active {
+	background-color: #bcbcbc;
+	color: #fff;
+}
+.crayon-theme-sonofobsidian a.crayon-button:active {
+	background-color: #bcbcbc;
+	color: #fff;
+}
+.crayon-theme-sonofobsidian .crayon-pre .c {
+	color: #66747b !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .p {
+	color: #00FF00 !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .s {
+	color: #ec7600 !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .k {
+	color: #a082bd !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .st {
+	color: #a082bd !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .r {
+	color: #a082bd !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .t {
+	color: #a082bd !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .m {
+	color: #a082bd !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .ta {
+	color: #99daf9 !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .i {
+	color: #678cb1 !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .v {
+	color: #678cb1 !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .e {
+	color: #95c763 !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .cn {
+	color: #99daf9 !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .o {
+	color: #ffcd22 !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .h {
+	color: #ffcd22 !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .sy {
+	color: #f1f2f3 !important;
+}
+.crayon-theme-sonofobsidian .crayon-pre .n {
+	color: #f1f2f3 !important;
+	font-style: italic;
+}
+.crayon-theme-sonofobsidian .crayon-pre .f {
+}
