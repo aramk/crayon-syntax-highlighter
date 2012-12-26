@@ -9,6 +9,7 @@
         var crayonSettings = CrayonSyntaxSettings;
         var adminSettings = CrayonAdminSettings;
         var settings = CrayonThemeEditorSettings;
+        var strings = CrayonThemeEditorStrings;
         var admin = CrayonSyntaxAdmin;
 
         var preview, status, title, info;
@@ -46,6 +47,7 @@
 //            console.log(themeJSON.children['.crayon-theme-classic .crayon-table .crayon-nums'].attributes);
 //            console.log(settings);
             themeInfo = base.readCSSInfo(themeStr);
+            console.log(themeInfo);
             base.initInfoUI();
             base.updateTitle();
             base.updateInfo();
@@ -75,11 +77,12 @@
                     status.html("Success!");
                     if (result === 2) {
                         window.GET['theme-editor'] == 1;
-                        var get = '?';
-                        for (var i in window.GET) {
-                            get += i + '=' + window.GET[i] + '&';
-                        }
-                        window.location = window.currentURL + get;
+                        window.location.reload()
+//                        var get = '?';
+//                        for (var i in window.GET) {
+//                            get += i + '=' + window.GET[i] + '&';
+//                        }
+//                        window.location = window.currentURL + get;
                     }
                 } else {
                     status.html("Failed!");
@@ -91,12 +94,26 @@
             });
         };
 
-        base.delete = function () {
+        base.delete = function (id, name) {
             base.createDialog({
-                html: "Are you sure you want to delete the '" + themeInfo.name + "' theme?",
+                html: "Are you sure you want to delete the \"" + name + "\" theme?",
                 title: "Confirm",
                 yes: function () {
-                    // TODO implement delete
+                    $.post(crayonSettings.ajaxurl, {
+                        action: 'crayon-theme-editor-delete',
+                        id: id
+                    }, function (result) {
+                        if (result == 1) {
+                            window.location.reload()
+                        } else {
+                            base.createAlertDialog({
+                                html: "Delete failed! Please check the log for details."
+                            });
+                        }
+                    });
+                },
+                options: {
+                    selectedButtonIndex: 2
                 }
             });
         };
@@ -126,7 +143,7 @@
             }
             return themeInfo;
         };
-        
+
         base.getFieldNames = function (fields) {
             var names = {};
             for (var id in fields) {
@@ -270,32 +287,54 @@
             info.html('<a target="_blank" href="' + adminSettings.curr_theme_url + '">' + adminSettings.curr_theme_url + '</a>');
         };
 
+        base.createAlertDialog = function (args) {
+            args = $.extend({
+                title: 'Alert',
+                options: {
+                    buttons: {
+                        OK: function () {
+                            $(this).dialog('close');
+                        }
+                    }
+                }
+            }, args);
+            base.createDialog(args);
+        };
+
         base.createDialog = function (args) {
-            args.yesLabel = CrayonUtil.setDefault(args.yesLabel, 'Yes');
-            args.noLabel = CrayonUtil.setDefault(args.noLabel, 'No');
+            var defaultArgs = {
+                yesLabel: strings.Yes,
+                noLabel: strings.No,
+                title: 'Info'
+            };
+            args = $.extend(defaultArgs, args);
             var options = {
                 modal: true, title: args.title, zIndex: 10000, autoOpen: true,
                 width: 'auto', resizable: false,
                 buttons: {
                 },
+                selectedButtonIndex: 1, // starts from 1
                 close: function (event, ui) {
                     $(this).remove();
                 }
             };
+            options.open = function () {
+                $(this).parent().find('button:nth-child(' + options.selectedButtonIndex + ')').focus();
+            };
             options.buttons[args.yesLabel] = function () {
-                // $(obj).removeAttr('onclick');
-                // $(obj).parents('.Parent').remove();
                 if (args.yes) {
                     args.yes();
                 }
-                $(this).dialog("close");
+                $(this).dialog('close');
             };
             options.buttons[args.noLabel] = function () {
                 if (args.no) {
                     args.no();
                 }
-                $(this).dialog("close");
+                $(this).dialog('close');
             };
+            options = $.extend(options, args.options);
+
             $('<div></div>').appendTo('body')
                 .html(args.html)
                 .dialog(options);

@@ -25,6 +25,7 @@ class CrayonThemeEditorWP {
 
     public static $fields = NULL;
     public static $settings = NULL;
+    public static $strings = NULL;
 
     public static function init() {
         self::admin_resources();
@@ -45,6 +46,7 @@ class CrayonThemeEditorWP {
 
     public static function initSettings() {
         self::initFields();
+        self::initStrings();
         if (self::$settings === NULL) {
             self::$settings = array(
                 // Only things the theme editor needs
@@ -56,6 +58,16 @@ class CrayonThemeEditorWP {
         }
     }
 
+    public static function initStrings() {
+        if (self::$strings === NULL) {
+            self::$strings = array(
+                // Only things the theme editor needs
+                'No' => crayon__('No'),
+                'Yes' => crayon__('Yes')
+            );
+        }
+    }
+
     public static function admin_resources() {
         global $CRAYON_VERSION;
         self::initSettings();
@@ -63,6 +75,7 @@ class CrayonThemeEditorWP {
         wp_enqueue_script('jquery_ui_js', plugins_url(CRAYON_JS_JQUERY_UI, dirname(dirname(__FILE__))), array('jquery'), $CRAYON_VERSION);
         wp_enqueue_script('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_JS, dirname(dirname(__FILE__))), array('jquery', 'jquery_ui_js', 'crayon_util_js', 'crayon_admin_js', 'cssjson_js'), $CRAYON_VERSION);
         wp_localize_script('crayon_theme_editor', 'CrayonThemeEditorSettings', self::$settings);
+        wp_localize_script('crayon_theme_editor', 'CrayonThemeEditorStrings', self::$strings);
 
         wp_enqueue_style('jquery_ui', plugins_url(CRAYON_CSS_JQUERY_UI, dirname(dirname(__FILE__))), array(), $CRAYON_VERSION);
     }
@@ -258,6 +271,26 @@ class CrayonThemeEditorWP {
             }
         } else {
             CrayonLog::syslog("$oldID=$oldID\n\n$name=$name", "THEME SAVE");
+            echo 0;
+        }
+        exit();
+    }
+
+    public static function delete() {
+        CrayonSettingsWP::load_settings(TRUE);
+        $id = $_POST['id'];
+        $dir = CrayonResources::themes()->dirpath($id);
+        if (is_dir($dir) && CrayonResources::themes()->exists($id)) {
+            try {
+                CrayonUtil::deleteDir($dir);
+                CrayonGlobalSettings::set(CrayonSettings::THEME, CrayonThemes::DEFAULT_THEME);
+                CrayonSettingsWP::save_settings();
+                echo 1;
+            } catch (Exception $e) {
+                CrayonLog::syslog($e->getMessage(), "THEME SAVE");
+                echo 0;
+            }
+        } else {
             echo 0;
         }
         exit();

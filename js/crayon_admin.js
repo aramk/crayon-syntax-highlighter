@@ -37,6 +37,19 @@
             // Wraps
             main_wrap = $('#crayon-main-wrap');
             theme_editor_wrap = $('#crayon-theme-editor-wrap');
+
+            // Themes
+            theme_select = $('#crayon-theme');
+            theme_info = $('#crayon-theme-info');
+            theme_ver = theme_info.find('.version').next('div');
+            theme_author = theme_info.find('.author').next('div');
+            theme_desc = theme_info.find('.desc');
+            base.show_theme_info();
+            theme_select.change(function () {
+                base.show_theme_info();
+                base.preview_update();
+            });
+
             theme_editor_edit_button = $('#crayon-theme-editor-edit-button');
             theme_editor_create_button = $('#crayon-theme-editor-create-button');
             theme_editor_duplicate_button = $('#crayon-theme-editor-duplicate-button');
@@ -52,21 +65,9 @@
             theme_editor_duplicate_button.click(CrayonSyntaxThemeEditor.duplicate);
             theme_editor_delete_button.click(function () {
                 if (!theme_editor_edit_button.attr('disabled')) {
-                    CrayonSyntaxThemeEditor.delete();
+                    CrayonSyntaxThemeEditor.delete(theme_select.val(), theme_select.find('option:selected').text());
                 }
                 return false;
-            });
-
-            // Themes
-            theme_select = $('#crayon-theme');
-            theme_info = $('#crayon-theme-info');
-            theme_ver = theme_info.find('.version').next('div');
-            theme_author = theme_info.find('.author').next('div');
-            theme_desc = theme_info.find('.desc');
-            base.show_theme_info();
-            theme_select.change(function () {
-                base.show_theme_info();
-                base.preview_update();
             });
 
             // Help
