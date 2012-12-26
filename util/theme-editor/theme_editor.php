@@ -219,10 +219,21 @@ class CrayonThemeEditorWP {
                     mkdir($newDir, 0777, TRUE);
                 }
             }
+            $refresh = FALSE;
+            $replaceID = $oldID;
             // Replace ids in the CSS
-            if ($oldID !== $newID) {
-                $css = preg_replace('#(?<=.crayon-theme-)' . $oldID . '\b#msi', $newID, $css);
+//            if ($oldID !== $newID && is_file($oldPath)) {
+//                echo 5;
+//                $replaceID = $oldID;
+//            var_dump(CrayonThemes::CSS_PREFIX . $oldID, !is_file($oldPath), stripos($css, CrayonThemes::CSS_PREFIX . $oldID) === FALSE);
+            if (!is_file($oldPath) || stripos($css, CrayonThemes::CSS_PREFIX . $oldID) === FALSE) {
+                // The old path/id is no longer valid - something has gone wrong - we should refresh afterwards
+                $refresh = TRUE;
+                // Forces the ids to be updated
+                $replaceID = '[\w-]+';
             }
+            $css = preg_replace('#(?<=' . CrayonThemes::CSS_PREFIX . ')' . $replaceID . '\b#msi', $newID, $css);
+
             $result = @file_put_contents($newPath, $css);
             $success = $result !== FALSE;
             if ($success && $oldPath !== $newPath) {
@@ -236,9 +247,11 @@ class CrayonThemeEditorWP {
                         CrayonLog::syslog($e->getMessage(), "THEME SAVE");
                     }
                 }
+                // Refresh
                 echo 2;
             } else {
-                echo intval($success);
+//                echo "WTF!";
+                echo $refresh ? 2 : intval($success);
             }
             // Set the new theme in settings
             if ($change_settings) {

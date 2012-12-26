@@ -571,7 +571,7 @@ class CrayonSettingsWP {
     }
 
     // Draws a dropdown by loading the default value (an array) from a setting
-    private static function dropdown($id, $line_break = TRUE, $preview = TRUE, $echo = TRUE, $resources = NULL) {
+    private static function dropdown($id, $line_break = TRUE, $preview = TRUE, $echo = TRUE, $resources = NULL, $selected = NULL) {
         if (!array_key_exists($id, self::$options)) {
             return;
         }
@@ -579,7 +579,8 @@ class CrayonSettingsWP {
 
         $return = '<select id="' . CrayonSettings::PREFIX . $id . '" name="' . self::OPTIONS . '[' . $id . ']" class="' . CrayonSettings::SETTING . '" crayon-preview="' . ($preview ? 1 : 0) . '">';
         foreach ($resources as $k => $v) {
-            $return .= '<option value="' . $k . '" ' . selected(self::$options[$id], $k, FALSE) . '>' . $v . '</option>';
+            $is_selected = $selected !== NULL && $selected == $k ? 'selected' : selected(self::$options[$id], $k, FALSE);
+            $return .= '<option value="' . $k . '" ' . $is_selected . '>' . $v . '</option>';
         }
         $return .= '</select>' . ($line_break ? CRAYON_BR : '');
         if ($echo) {
@@ -898,7 +899,8 @@ class Human {
             $db_theme = '';
         }
         $themes_array = CrayonResources::themes()->get_array();
-        self::dropdown(CrayonSettings::THEME, FALSE, FALSE, TRUE, $themes_array);
+        $missing_theme = !CrayonResources::themes()->is_loaded($db_theme) || !CrayonResources::themes()->exists($db_theme);
+        self::dropdown(CrayonSettings::THEME, FALSE, FALSE, TRUE, $themes_array, $missing_theme ? CrayonThemes::DEFAULT_THEME : NULL);
         if ($editor) {
             return;
         }
@@ -934,7 +936,7 @@ class Human {
         echo '</select><span class="crayon-span-10"></span>';
         self::checkbox(array(CrayonSettings::ENQUEUE_THEMES, crayon__('Enqueue themes in the header (more efficient).') . self::help_button('http://bit.ly/zTUAQV')));
         // Check if theme from db is loaded
-        if (!CrayonResources::themes()->is_loaded($db_theme) || !CrayonResources::themes()->exists($db_theme)) {
+        if ($missing_theme) {
             echo '<span class="crayon-error">', sprintf(crayon__('The selected theme with id %s could not be loaded'), '<strong>' . $db_theme . '</strong>'), '. </span>';
         }
     }

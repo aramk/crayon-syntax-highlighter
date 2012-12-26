@@ -8,6 +8,7 @@ class CrayonThemes extends CrayonUsedResourceCollection {
 
 	const DEFAULT_THEME = 'classic';
 	const DEFAULT_THEME_NAME = 'Classic';
+    const CSS_PREFIX = '.crayon-theme-';
 
 	private $printed_themes = array();
 	
