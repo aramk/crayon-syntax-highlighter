@@ -74,18 +74,5 @@ class CrayonThemes extends CrayonUserResourceCollection {
         return $path . CrayonUtil::pathf(CRAYON_THEME_DIR);
     }
 
-    public function get_array($mark_user_themes = FALSE) {
-        if ($mark_user_themes) {
-            $array = array();
-            foreach ($this->get() as $resource) {
-                $mark = $resource->user() ? ' *' : '';
-                $array[$resource->id()] = $resource->name() . $mark;
-            }
-            return $array;
-        } else {
-            return parent::get_array();
-        }
-    }
-
 }
 ?>

@@ -63,11 +63,11 @@
                     false);
             });
             theme_editor_duplicate_button.click(function () {
-                CrayonSyntaxThemeEditor.duplicate(theme_select.val(), theme_select.find('option:selected').text());
+                CrayonSyntaxThemeEditor.duplicate(adminSettings.currTheme, adminSettings.currThemeName);
             });
             theme_editor_delete_button.click(function () {
                 if (!theme_editor_edit_button.attr('disabled')) {
-                    CrayonSyntaxThemeEditor.delete(theme_select.val(), theme_select.find('option:selected').text());
+                    CrayonSyntaxThemeEditor.delete(adminSettings.currTheme, adminSettings.currThemeName);
                 }
                 return false;
             });
@@ -206,10 +206,6 @@
                 }
                 getVars[preview_obj_names[i]] = CrayonUtil.escape(val);
             }
-
-            var disabled = theme_select.val() == adminSettings.defaultTheme;
-            theme_editor_edit_button.attr('disabled', disabled);
-            theme_editor_delete_button.attr('disabled', disabled);
 
             // Load Preview
             $.get(settings.ajaxurl, getVars, function (data) {
@@ -350,8 +346,11 @@
             return false;
         };
 
+
+
         base.refresh_theme_info = function (callback) {
-            adminSettings.currTheme = $('#crayon-theme').val();
+            adminSettings.currTheme = theme_select.val();
+            adminSettings.currThemeName = theme_select.find('option:selected').attr('data-value');
             adminSettings.currThemeIsUser = adminSettings.currTheme in adminSettings.userThemes;
             var url = adminSettings.currThemeIsUser ? adminSettings.userThemesURL : adminSettings.themesURL;
             adminSettings.currThemeURL = base.get_theme_url(adminSettings.currTheme);
@@ -421,6 +420,10 @@
                 }
                 infoHTML = '<div class="type ' + type + '">' + typeName + '</div><div class="content">' + infoHTML + '</div>';
                 theme_info.html(infoHTML);
+                // Disable for stock themes
+                var disabled = !adminSettings.currThemeIsUser;
+                theme_editor_edit_button.attr('disabled', disabled);
+                theme_editor_delete_button.attr('disabled', disabled);
                 if (callback) {
                     callback();
                 }

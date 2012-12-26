@@ -594,8 +594,14 @@ class CrayonSettingsWP {
 
         $return = '<select id="' . CrayonSettings::PREFIX . $id . '" name="' . self::OPTIONS . '[' . $id . ']" class="' . CrayonSettings::SETTING . '" crayon-preview="' . ($preview ? 1 : 0) . '">';
         foreach ($resources as $k => $v) {
+            if (is_array($v) && count($v)) {
+                $data = $v[0];
+                $text = $v[1];
+            } else {
+                $text = $v;
+            }
             $is_selected = $selected !== NULL && $selected == $k ? 'selected' : selected(self::$options[$id], $k, FALSE);
-            $return .= '<option value="' . $k . '" ' . $is_selected . '>' . $v . '</option>';
+            $return .= '<option ' . (isset($data) ? 'data-value="' . $data . '"' : '') . ' value="' . $k . '" ' . $is_selected . '>' . $text . '</option>';
         }
         $return .= '</select>' . ($line_break ? CRAYON_BR : '');
         if ($echo) {
@@ -913,7 +919,12 @@ class Human {
         if (!array_key_exists(CrayonSettings::THEME, self::$options)) {
             $db_theme = '';
         }
-        $themes_array = CrayonResources::themes()->get_array(TRUE);
+        $themes_array = CrayonResources::themes()->get_array();
+        // Mark user themes
+        foreach ($themes_array as $id=>$name) {
+            $mark = CrayonResources::themes()->get($id)->user() ? ' *' : '';
+            $themes_array[$id] = array($name, $name . $mark);
+        }
         $missing_theme = !CrayonResources::themes()->is_loaded($db_theme) || !CrayonResources::themes()->exists($db_theme);
         self::dropdown(CrayonSettings::THEME, FALSE, FALSE, TRUE, $themes_array, $missing_theme ? CrayonThemes::DEFAULT_THEME : NULL);
         if ($editor) {
@@ -923,10 +934,12 @@ class Human {
         if (CRAYON_THEME_EDITOR) {
             // 			echo '<a id="crayon-theme-editor-button" class="button-primary crayon-admin-button" loading="'. crayon__('Loading...') .'" loaded="'. crayon__('Theme Editor') .'" >'. crayon__('Theme Editor') .'</a></br>';
             echo '<div id="crayon-theme-editor-admin-buttons">';
-            $buttons = array('edit' => crayon__('Edit'), 'duplicate' => crayon__('Duplicate'), 'create' => crayon__('Create'), 'delete' => crayon__('Delete'));
+            $buttons = array('edit' => crayon__('Edit'), 'duplicate' => crayon__('Duplicate'), /*'create' => crayon__('Create'),*/
+                'delete' => crayon__('Delete'));
             foreach ($buttons as $k => $v) {
                 echo '<a id="crayon-theme-editor-', $k, '-button" class="button-secondary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', $v, '" >', $v, '</a>';
             }
+            echo '<span class="crayon-span-5"></span>', self::help_button('#'), '<span class="crayon-span-5"></span>', crayon__("Duplicate a Stock Theme into a User Theme to allow editing.");
             echo '</br></div>';
         }
         // Preview Box

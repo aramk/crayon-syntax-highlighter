@@ -63,11 +63,6 @@ class CrayonResourceCollection {
 		return file_exists($this->path($id));
 	}
 
-    /* Verifies a resource is added. */
-    public function added($id) {
-        return $this->get($id) !== NULL;
-    }
-
 	/* Load all the available languages. Doesn't parse them for their names and regex. */
 	public function load() {
 		// Load only once

@@ -123,6 +123,7 @@
                 //html: "Are you sure you want to duplicate the '" + name + "' theme?",
                 title: "Duplicate",
                 text: "New Name",
+                value: name + ' Copy',
                 ok: function (val) {
                     // TODO implement delete
                     $.post(crayonSettings.ajaxurl, {
@@ -309,6 +310,7 @@
             args = $.extend({
                 title: "Prompt",
                 text: "Value",
+                value: '',
                 options: {
                     buttons: {
                         "OK": function () {
@@ -322,7 +324,7 @@
                         }
                     },
                     open: function() {
-                        base.getField('prompt-text').focus();
+                        base.getField('prompt-text').val(args.value).focus();
                     }
                 }
             }, args);
