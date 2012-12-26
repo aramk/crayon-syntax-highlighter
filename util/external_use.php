@@ -4,7 +4,7 @@ require_once ('../global.php');
 require_once (CRAYON_HIGHLIGHTER_PHP);
 
 // These will depend on your framework
-CrayonGlobalSettings::site_http('http://localhost/crayon/wp-content/plugins/crayon-syntax-highlighter/');
+CrayonGlobalSettings::site_url('http://localhost/crayon/wp-content/plugins/crayon-syntax-highlighter/');
 CrayonGlobalSettings::site_path(dirname(__FILE__));
 CrayonGlobalSettings::plugin_path('http://localhost/crayon/wp-content/plugins/crayon-syntax-highlighter/');
 

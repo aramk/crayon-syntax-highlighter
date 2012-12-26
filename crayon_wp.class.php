@@ -398,7 +398,7 @@ class CrayonWP {
 
         // Whether to enqueue syles/scripts
         $enqueue = FALSE;
-        CrayonSettingsWP::load_settings(TRUE); // Load just the settings from db, for now
+        CrayonSettingsWP::load_settings(TRUE); // We will eventually need more than the settings
 
         self::init_tags_regex();
         $crayon_posts = CrayonSettingsWP::load_posts(); // Loads posts containing crayons

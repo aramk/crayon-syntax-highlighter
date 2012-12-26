@@ -45,6 +45,7 @@ class CrayonThemeEditorWP {
     }
 
     public static function initSettings() {
+
         self::initFields();
         self::initStrings();
         if (self::$settings === NULL) {
@@ -208,7 +209,7 @@ class CrayonThemeEditorWP {
      * Echos 0 on failure, 1 on success and 2 on success and if paths have changed.
      */
     public static function save() {
-        CrayonSettingsWP::load_settings(TRUE);
+        CrayonSettingsWP::load_settings();
         $oldID = $_POST['id'];
         $name = $_POST['name'];
         $css = stripslashes($_POST['css']);
@@ -307,7 +308,7 @@ class CrayonThemeEditorWP {
     }
 
     public static function delete() {
-        CrayonSettingsWP::load_settings(TRUE);
+        CrayonSettingsWP::load_settings();
         $id = $_POST['id'];
         $dir = CrayonResources::themes()->dirpath($id);
         if (is_dir($dir) && CrayonResources::themes()->exists($id)) {

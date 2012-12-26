@@ -117,6 +117,8 @@ class CrayonSettingsWP {
 
     public static function init_admin_js_settings() {
         if (!self::$admin_js_settings) {
+            // We need to load themes at this stage
+            CrayonSettingsWP::load_settings();
             $themes_ = CrayonResources::themes()->get();
             $themes = array();
             foreach ($themes_ as $theme) {
@@ -201,15 +203,19 @@ class CrayonSettingsWP {
 
         if (!self::$is_fully_loaded && !$just_load_settings) {
             // Load everything else as well
-            // Load all available languages and themes
-            CrayonResources::langs()->load();
-            CrayonResources::themes()->load();
 
             // For local file loading
             // This is used to decouple WP functions from internal Crayon classes
-            CrayonGlobalSettings::site_http(home_url());
+            CrayonGlobalSettings::site_url(home_url());
             CrayonGlobalSettings::site_path(ABSPATH);
             CrayonGlobalSettings::plugin_path(plugins_url('', __FILE__));
+            $upload = wp_upload_dir();
+            CrayonGlobalSettings::upload_path(CrayonUtil::path_slash($upload['basedir']) . CRAYON_DIR);
+            CrayonGlobalSettings::upload_url($upload['baseurl'] . '/' . CRAYON_DIR);
+
+            // Load all available languages and themes
+            CrayonResources::langs()->load();
+            CrayonResources::themes()->load();
 
             // Ensure all missing settings in db are replaced by default values
             $changed = FALSE;
