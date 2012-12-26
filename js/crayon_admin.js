@@ -352,7 +352,8 @@
 
         base.refresh_theme_info = function (callback) {
             adminSettings.currTheme = $('#crayon-theme').val();
-            var url = adminSettings.currTheme in adminSettings.userThemes ? adminSettings.userThemesURL : adminSettings.themesURL;
+            adminSettings.currThemeIsUser = adminSettings.currTheme in adminSettings.userThemes;
+            var url = adminSettings.currThemeIsUser ? adminSettings.userThemesURL : adminSettings.themesURL;
             adminSettings.currThemeURL = base.get_theme_url(adminSettings.currTheme);
             // Load the theme file
 
@@ -405,11 +406,20 @@
                 for (id in info) {
                     if (id != 'name') {
                         if (id != 'description') {
-                            infoHTML += '<div class="' + id + ' field">' + CrayonSyntaxThemeEditor.getFieldName(id) + '</div>';
+                            infoHTML += '<div class="' + id + ' field">' + CrayonSyntaxThemeEditor.getFieldName(id) + ':</div>';
                         }
-                        infoHTML += '<div class="value">' + info[id] + '</div>';
+                        infoHTML += '<div class="' + id + ' value">' + info[id].linkify('_blank') + '</div>';
                     }
                 }
+                var type, typeName;
+                if (adminSettings.currThemeIsUser) {
+                    type = 'user';
+                    typeName = CrayonThemeEditorStrings.userTheme;
+                } else {
+                    type = 'stock';
+                    typeName = CrayonThemeEditorStrings.stockTheme;
+                }
+                infoHTML = '<div class="type ' + type + '">' + typeName + '</div><div class="content">' + infoHTML + '</div>';
                 theme_info.html(infoHTML);
                 if (callback) {
                     callback();

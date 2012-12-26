@@ -63,8 +63,10 @@ class CrayonThemeEditorWP {
         if (self::$strings === NULL) {
             self::$strings = array(
                 // Only things the theme editor needs
-                'No' => crayon__('No'),
-                'Yes' => crayon__('Yes')
+                'No' => crayon__("No"),
+                'Yes' => crayon__("Yes"),
+                'userTheme' => crayon__("User-Defined Theme"),
+                'stockTheme' => crayon__("Stock Theme")
             );
         }
     }
