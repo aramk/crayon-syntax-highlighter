@@ -92,13 +92,11 @@ class CrayonUtil {
         if (substr($path, strlen($path) - 1, 1) != '/') {
             $path .= '/';
         }
-        $files = glob($path . '.*', GLOB_MARK);
-        var_dump($files);
+        $files = array_merge(glob($path . '*', GLOB_MARK), glob($path . '.*', GLOB_MARK));
         foreach ($files as $file) {
             if (basename($file) == '.' || basename($file) == '..') {
                 continue;
             } else if (is_dir($file)) {
-//                var_dump('going into ' . $file);
                 self::deleteDir($file);
             } else {
                 unlink($file);

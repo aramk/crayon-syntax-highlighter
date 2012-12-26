@@ -230,7 +230,6 @@ class CrayonThemeEditorWP {
                     // Only delete the old path if it isn't the default theme
                     try {
                         // Delete the old path
-                        echo 'blah';
                         CrayonUtil::deleteDir($oldDir);
                         exit;
                     } catch (Exception $e) {
