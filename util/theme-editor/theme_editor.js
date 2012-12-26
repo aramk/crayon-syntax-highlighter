@@ -156,6 +156,10 @@
 //                }
                 themeInfo[base.nameToID(match[1])] = CrayonUtil.encode_html(match[2]);
             }
+            // Force title case on the name
+            if (themeInfo.name) {
+                themeInfo.name = base.idToName(themeInfo.name);
+            }
             return themeInfo;
         };
 
@@ -184,7 +188,8 @@
             var fields = {};
             for (var id in names) {
                 var name = names[id];
-                fields[name] = base.createInput(id, themeInfo[id]);
+                var value = themeInfo[id];
+                fields[name] = base.createInput(id, value);
             }
             $('#tabs-1').html(base.createForm(fields));
             base.getField('name').bind('change keydown keyup', function () {

@@ -216,24 +216,28 @@ class CrayonThemeEditorWP {
         $name = $_POST['name'];
         $css = stripslashes($_POST['css']);
         $change_settings = CrayonUtil::set_default($_POST['change_settings'], TRUE);
-        $delete = CrayonUtil::set_default($_POST['delete'], FALSE);
+        $delete = CrayonUtil::set_default($_POST['delete'], TRUE);
+        $oldTheme = CrayonResources::themes()->get($oldID);
 
         if (!empty($oldID) && !empty($css) && !empty($name)) {
+            // By default, expect a user theme to be saved - prevents editing stock themes
+            $user = $oldTheme !== NULL ? $oldTheme->user() : TRUE;
             $oldPath = CrayonResources::themes()->path($oldID);
             $oldDir = CrayonResources::themes()->dirpath($oldID);
             $newID = CrayonResource::clean_id($name);
-            $newPath = CrayonResources::themes()->path($newID);
-            $newDir = CrayonResources::themes()->dirpath($newID);
+            $newPath = CrayonResources::themes()->path($newID, $user);
+            $newDir = CrayonResources::themes()->dirpath($newID, $user);
 //            var_dump($oldPath);
 //            var_dump($oldDir);
 //            var_dump($newID);
 //            var_dump($newPath);
 //            var_dump($newDir);
-//            exit();
             // Create the new path if needed
             if (!is_file($newPath)) {
                 if (!is_dir($newDir)) {
                     mkdir($newDir, 0777, TRUE);
+                    // Copy image folder
+                    CrayonUtil::copyDir($oldDir . 'images', $newDir . 'images');
                 }
             }
             $refresh = FALSE;

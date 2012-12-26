@@ -105,6 +105,22 @@ class CrayonUtil {
         rmdir($path);
     }
 
+    public static function copyDir($src, $dst) {
+        // http://stackoverflow.com/questions/2050859
+        $dir = opendir($src);
+        @mkdir($dst, 0777, TRUE);
+        while (false !== ($file = readdir($dir))) {
+            if (($file != '.') && ($file != '..')) {
+                if (is_dir($src . '/' . $file)) {
+                    self::copyDir($src . '/' . $file, $dst . '/' . $file);
+                } else {
+                    copy($src . '/' . $file, $dst . '/' . $file);
+                }
+            }
+        }
+        closedir($dir);
+    }
+
     // Detects if device is touchscreen or mobile
     public static function is_touch() {
         // Only detect once

@@ -34,39 +34,50 @@ class CrayonThemes extends CrayonUserResourceCollection {
 //    }
 
 	// XXX Override
-	public function path($id) {
+	public function path($id, $user = NULL) {
 //        var_dump($this->dirpath($id) . "/$id.css");
-		return $this->dirpath($id) . "/$id.css";
+		return $this->dirpath($id, $user) . "$id.css";
 	}
 
 //    public function add_resource($resource) {
 //        var_dump($resource);
 //    }
 
-    public function dirpath($id) {
-        $theme = $this->get($id);
-        if ($theme) {
-            $path = $theme->user() ? $this->user_directory() : $this->directory();
-        } else {
-            // We seem to be loading resources - use current directory
-            $path = $this->current_directory();
+    public function dirpath($id, $user = NULL) {
+        $path = NULL;
+        if ($user === NULL) {
+            if ($this->is_state_loading()) {
+                // We seem to be loading resources - use current directory
+                $user = $this->current_directory() == $this->user_directory();
+            } else {
+                $theme = $this->get($id);
+                if ($theme) {
+                    $user = $theme->user();
+                } else {
+                    $user = FALSE;
+                }
+            }
         }
-        if ($path) {
-            return $path . $id;
-        } else {
-            return NULL;
-        }
+        $path = $user ? $this->user_directory() : $this->directory();
+        return CrayonUtil::path_slash($path . $id);
     }
 
 	// XXX Override
-	public function get_url($id) {
-        // XXX This should only be called once the theme has been loaded as a resource
-        $theme = $this->get($id);
-        if ($theme) {
-            return self::dir_url($theme->user()) . $id . '/' . $id . '.css';
-        } else {
-            return NULL;
+	public function get_url($id, $user = NULL) {
+        if ($user === NULL) {
+            if ($this->is_state_loading()) {
+                // We seem to be loading resources - use current directory
+                $user = $this->current_directory() == $this->user_directory();
+            } else {
+                $theme = $this->get($id);
+                if ($theme) {
+                    $user = $theme->user();
+                } else {
+                    $user = FALSE;
+                }
+            }
         }
+        return self::dir_url($user) . $id . '/' . $id . '.css';
 	}
 
     public static function dir_url($user = FALSE) {
