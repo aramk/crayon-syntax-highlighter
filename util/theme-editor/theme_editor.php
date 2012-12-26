@@ -207,12 +207,13 @@ class CrayonThemeEditorWP {
      * Saves the given theme id and css, making any necessary path and id changes to ensure the new theme is valid.
      * Echos 0 on failure, 1 on success and 2 on success and if paths have changed.
      */
-    public static function save($change_settings = TRUE) {
+    public static function save() {
         CrayonSettingsWP::load_settings(TRUE);
         $oldID = $_POST['id'];
         $name = $_POST['name'];
         $css = stripslashes($_POST['css']);
         $change_settings = CrayonUtil::set_default($_POST['change_settings'], TRUE);
+        $delete = CrayonUtil::set_default($_POST['delete'], FALSE);
 
         if (!empty($oldID) && !empty($css) && !empty($name)) {
             $oldPath = CrayonResources::themes()->path($oldID);
@@ -250,7 +251,7 @@ class CrayonThemeEditorWP {
             $result = @file_put_contents($newPath, $css);
             $success = $result !== FALSE;
             if ($success && $oldPath !== $newPath) {
-                if ($oldID !== CrayonThemes::DEFAULT_THEME) {
+                if ($oldID !== CrayonThemes::DEFAULT_THEME && $delete) {
                     // Only delete the old path if it isn't the default theme
                     try {
                         // Delete the old path
@@ -274,6 +275,35 @@ class CrayonThemeEditorWP {
             echo 0;
         }
         exit();
+    }
+
+    public static function duplicate() {
+
+//        CrayonSettingsWP::load_settings(TRUE);
+//        $id = $_POST['id'];
+//        $_POST['name'] = $_POST['newName'];
+        $oldID = $_POST['id'];
+        $oldPath = CrayonResources::themes()->path($oldID);
+        $_POST['css'] = file_get_contents($oldPath);
+        $_POST['delete'] = FALSE;
+        self::save();
+//        //$newName = $_POST['newName'];
+//        $newID = ;
+//        $dir = CrayonResources::themes()->dirpath($id);
+//        if (is_dir($dir) && CrayonResources::themes()->exists($id)) {
+//            try {
+//                CrayonUtil::deleteDir($dir);
+//                CrayonGlobalSettings::set(CrayonSettings::THEME, CrayonThemes::DEFAULT_THEME);
+//                CrayonSettingsWP::save_settings();
+//                echo 1;
+//            } catch (Exception $e) {
+//                CrayonLog::syslog($e->getMessage(), "THEME SAVE");
+//                echo 0;
+//            }
+//        } else {
+//            echo 0;
+//        }
+//        exit();
     }
 
     public static function delete() {

@@ -62,7 +62,9 @@
                 base.show_theme_editor(theme_editor_create_button,
                     false);
             });
-            theme_editor_duplicate_button.click(CrayonSyntaxThemeEditor.duplicate);
+            theme_editor_duplicate_button.click(function () {
+                CrayonSyntaxThemeEditor.duplicate(theme_select.val(), theme_select.find('option:selected').text());
+            });
             theme_editor_delete_button.click(function () {
                 if (!theme_editor_edit_button.attr('disabled')) {
                     CrayonSyntaxThemeEditor.delete(theme_select.val(), theme_select.find('option:selected').text());

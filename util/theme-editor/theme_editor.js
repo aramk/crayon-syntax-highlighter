@@ -96,8 +96,8 @@
 
         base.delete = function (id, name) {
             base.createDialog({
+                title: "Delete",
                 html: "Are you sure you want to delete the \"" + name + "\" theme?",
-                title: "Confirm",
                 yes: function () {
                     $.post(crayonSettings.ajaxurl, {
                         action: 'crayon-theme-editor-delete',
@@ -106,7 +106,7 @@
                         if (result == 1) {
                             window.location.reload()
                         } else {
-                            base.createAlertDialog({
+                            base.createAlert({
                                 html: "Delete failed! Please check the log for details."
                             });
                         }
@@ -118,12 +118,26 @@
             });
         };
 
-        base.duplicate = function () {
+        base.duplicate = function (id, name) {
             base.createPrompt({
-                html: "Are you sure you want to duplicate the '" + themeInfo.name + "' theme?",
-                title: "Confirm",
-                yes: function () {
+                //html: "Are you sure you want to duplicate the '" + name + "' theme?",
+                title: "Duplicate",
+                text: "New Name",
+                ok: function (val) {
                     // TODO implement delete
+                    $.post(crayonSettings.ajaxurl, {
+                        action: 'crayon-theme-editor-duplicate',
+                        id: id,
+                        name: val
+                    }, function (result) {
+                        if (result > 0) {
+                            window.location.reload()
+                        } else {
+                            base.createAlert({
+                                html: "Duplicate failed! Please check the log for details."
+                            });
+                        }
+                    });
                 }
             });
         };
@@ -287,12 +301,37 @@
             info.html('<a target="_blank" href="' + adminSettings.curr_theme_url + '">' + adminSettings.curr_theme_url + '</a>');
         };
 
-        base.createAlertDialog = function (args) {
+        base.createPrompt = function (args) {
             args = $.extend({
-                title: 'Alert',
+                title: "Prompt",
+                text: "Value",
                 options: {
                     buttons: {
-                        OK: function () {
+                        "OK": function () {
+                            if (args.ok) {
+                                args.ok(base.getFieldValue('prompt-text'));
+                            }
+                            $(this).dialog('close');
+                        },
+                        "Cancel": function () {
+                            $(this).dialog('close');
+                        }
+                    },
+                    open: function() {
+                        base.getField('prompt-text').focus();
+                    }
+                }
+            }, args);
+            args.html = args.text + ': ' + base.createInput('prompt-text');
+            base.createDialog(args);
+        };
+
+        base.createAlert = function (args) {
+            args = $.extend({
+                title: "Alert",
+                options: {
+                    buttons: {
+                        "OK": function () {
                             $(this).dialog('close');
                         }
                     }
@@ -305,7 +344,7 @@
             var defaultArgs = {
                 yesLabel: strings.Yes,
                 noLabel: strings.No,
-                title: 'Info'
+                title: "Confirm"
             };
             args = $.extend(defaultArgs, args);
             var options = {
@@ -334,10 +373,9 @@
                 $(this).dialog('close');
             };
             options = $.extend(options, args.options);
-
-            $('<div></div>').appendTo('body')
-                .html(args.html)
-                .dialog(options);
+            $('<div></div>').appendTo('body').html(args.html).dialog(options);
+            // Can be modified afterwards
+            return args;
         }
 
     };
