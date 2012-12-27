@@ -52,6 +52,7 @@
             base.updateTitle();
             base.updateInfo();
             base.setFieldValues(themeInfo);
+            base.updateUI();
         };
 
         base.save = function () {
@@ -256,14 +257,11 @@
             status = $('#crayon-editor-status');
             title = $('#crayon-theme-editor-name');
             info = $('#crayon-theme-editor-info');
-            $('#crayon-editor-controls input, #crayon-editor-controls select').change(function () {
-                changed = true;
-            });
             $('#crayon-editor-controls').tabs();
             $('#crayon-editor-back').click(function () {
                 if (changed) {
                     base.createDialog({
-                        html: "Are you sure you want to discard any changes?",
+                        html: "Are you sure you want to discard all changes?",
                         title: "Confirm",
                         yes: function () {
                             showMain();
@@ -274,6 +272,12 @@
                 }
             });
             $('#crayon-editor-save').click(base.save);
+        };
+
+        base.updateUI = function () {
+            $('#crayon-editor-controls input, #crayon-editor-controls select').bind('change keyup keydown', function () {
+                changed = true;
+            });
         };
 
         base.createInput = function (id, value, type) {
