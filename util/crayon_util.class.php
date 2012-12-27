@@ -107,6 +107,9 @@ class CrayonUtil {
 
     public static function copyDir($src, $dst) {
         // http://stackoverflow.com/questions/2050859
+        if (!is_dir($src)) {
+            throw new InvalidArgumentException("$src is not a directory");
+        }
         $dir = opendir($src);
         @mkdir($dst, 0777, TRUE);
         while (false !== ($file = readdir($dir))) {

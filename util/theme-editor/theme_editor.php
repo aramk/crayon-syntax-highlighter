@@ -216,7 +216,7 @@ class CrayonThemeEditorWP {
      * Saves the given theme id and css, making any necessary path and id changes to ensure the new theme is valid.
      * Echos 0 on failure, 1 on success and 2 on success and if paths have changed.
      */
-    public static function save() {
+    public static function save($allow_edit_stock_theme = CRAYON_DEBUG) {
         CrayonSettingsWP::load_settings();
         $oldID = $_POST['id'];
         $name = $_POST['name'];
@@ -227,32 +227,28 @@ class CrayonThemeEditorWP {
 
         if (!empty($oldID) && !empty($css) && !empty($name)) {
             // By default, expect a user theme to be saved - prevents editing stock themes
-            $user = $oldTheme !== NULL ? $oldTheme->user() : TRUE;
+            // If in DEBUG mode, then allow editing stock themes.
+            $user = $oldTheme !== NULL && $allow_edit_stock_theme ? $oldTheme->user() : TRUE;
             $oldPath = CrayonResources::themes()->path($oldID);
             $oldDir = CrayonResources::themes()->dirpath($oldID);
             $newID = CrayonResource::clean_id($name);
             $newPath = CrayonResources::themes()->path($newID, $user);
             $newDir = CrayonResources::themes()->dirpath($newID, $user);
-//            var_dump($oldPath);
-//            var_dump($oldDir);
-//            var_dump($newID);
-//            var_dump($newPath);
-//            var_dump($newDir);
             // Create the new path if needed
             if (!is_file($newPath)) {
                 if (!is_dir($newDir)) {
                     mkdir($newDir, 0777, TRUE);
-                    // Copy image folder
-                    CrayonUtil::copyDir($oldDir . 'images', $newDir . 'images');
+                    try {
+                        // Copy image folder
+                        CrayonUtil::copyDir($oldDir . 'images', $newDir . 'images');
+                    } catch (Exception $e) {
+                        CrayonLog::syslog($e->getMessage(), "THEME SAVE");
+                    }
                 }
             }
             $refresh = FALSE;
             $replaceID = $oldID;
             // Replace ids in the CSS
-//            if ($oldID !== $newID && is_file($oldPath)) {
-//                echo 5;
-//                $replaceID = $oldID;
-//            var_dump(CrayonThemes::CSS_PREFIX . $oldID, !is_file($oldPath), stripos($css, CrayonThemes::CSS_PREFIX . $oldID) === FALSE);
             if (!is_file($oldPath) || strpos($css, CrayonThemes::CSS_PREFIX . $oldID) === FALSE) {
                 // The old path/id is no longer valid - something has gone wrong - we should refresh afterwards
                 $refresh = TRUE;
@@ -292,32 +288,12 @@ class CrayonThemeEditorWP {
     }
 
     public static function duplicate() {
-
-//        CrayonSettingsWP::load_settings(TRUE);
-//        $id = $_POST['id'];
-//        $_POST['name'] = $_POST['newName'];
+        CrayonSettingsWP::load_settings();
         $oldID = $_POST['id'];
         $oldPath = CrayonResources::themes()->path($oldID);
         $_POST['css'] = file_get_contents($oldPath);
         $_POST['delete'] = FALSE;
-        self::save();
-//        //$newName = $_POST['newName'];
-//        $newID = ;
-//        $dir = CrayonResources::themes()->dirpath($id);
-//        if (is_dir($dir) && CrayonResources::themes()->exists($id)) {
-//            try {
-//                CrayonUtil::deleteDir($dir);
-//                CrayonGlobalSettings::set(CrayonSettings::THEME, CrayonThemes::DEFAULT_THEME);
-//                CrayonSettingsWP::save_settings();
-//                echo 1;
-//            } catch (Exception $e) {
-//                CrayonLog::syslog($e->getMessage(), "THEME SAVE");
-//                echo 0;
-//            }
-//        } else {
-//            echo 0;
-//        }
-//        exit();
+        self::save(FALSE);
     }
 
     public static function delete() {
