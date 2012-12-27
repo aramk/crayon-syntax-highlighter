@@ -216,6 +216,8 @@
     color: #999;
 }
 #crayon-theme-info .type {
+    text-align: center;
+    min-width: 120px;
     font-weight: bold;
     border-right: 1px solid #ccc;
     padding-right: 5px;

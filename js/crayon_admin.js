@@ -404,10 +404,11 @@
                 var infoHTML = '';
                 for (id in info) {
                     if (id != 'name') {
+                        infoHTML += '<div class="fieldset">';
                         if (id != 'description') {
                             infoHTML += '<div class="' + id + ' field">' + CrayonSyntaxThemeEditor.getFieldName(id) + ':</div>';
                         }
-                        infoHTML += '<div class="' + id + ' value">' + info[id].linkify('_blank') + '</div>';
+                        infoHTML += '<div class="' + id + ' value">' + info[id].linkify('_blank') + '</div></div>';
                     }
                 }
                 var type, typeName;
@@ -421,7 +422,7 @@
                 infoHTML = '<div class="type ' + type + '">' + typeName + '</div><div class="content">' + infoHTML + '</div>';
                 theme_info.html(infoHTML);
                 // Disable for stock themes
-                var disabled = !adminSettings.currThemeIsUser;
+                var disabled = !adminSettings.currThemeIsUser && !adminSettings.debug;
                 theme_editor_edit_button.attr('disabled', disabled);
                 theme_editor_delete_button.attr('disabled', disabled);
                 if (callback) {

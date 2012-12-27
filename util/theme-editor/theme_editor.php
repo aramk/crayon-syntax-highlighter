@@ -34,12 +34,18 @@ class CrayonThemeEditorWP {
     public static function initFields() {
         if (self::$fields === NULL) {
             self::$fields = array(
-                'name' => crayon__('Name'),
-                'description' => crayon__('Description'),
-                'version' => crayon__('Version'),
-                'author' => crayon__('Author'),
-                'url' => crayon__('URL'),
-                'original-author' => crayon__('Original Author')
+                // These are canonical and can't be translated, since they appear in the comments of the CSS
+                'name' => 'Name',
+                'description' => 'Description',
+                'version' => 'Version',
+                'author' => 'Author',
+                'url' => 'URL',
+                'original-author' => 'Original Author',
+                'notes' => 'Notes',
+                'maintainer' => 'Maintainer',
+                'maintainer-url' => 'Maintainer URL'
+                // These appear only in the UI and can be translated
+
             );
         }
     }

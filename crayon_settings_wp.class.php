@@ -136,7 +136,8 @@ class CrayonSettingsWP {
                 'userThemes' => $userThemes,
                 'defaultTheme' => CrayonThemes::DEFAULT_THEME,
                 'themesURL' => CrayonThemes::dir_url(),
-                'userThemesURL' => CrayonThemes::dir_url(true)
+                'userThemesURL' => CrayonThemes::dir_url(true),
+                'debug' => CRAYON_DEBUG
             );
             wp_localize_script('crayon_admin_js', 'CrayonAdminSettings', self::$admin_js_settings);
         }

@@ -47,7 +47,6 @@
 //            console.log(themeJSON.children['.crayon-theme-classic .crayon-table .crayon-nums'].attributes);
 //            console.log(settings);
             themeInfo = base.readCSSInfo(themeStr);
-            console.log(themeInfo);
             base.initInfoUI();
             base.updateTitle();
             base.updateInfo();
@@ -332,7 +331,7 @@
                             $(this).dialog('close');
                         }
                     },
-                    open: function() {
+                    open: function () {
                         base.getField('prompt-text').val(args.value).focus();
                     }
                 }

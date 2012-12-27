@@ -2,7 +2,7 @@
 
 // Switches
 
-define('CRAYON_DEBUG', FALSE);
+define('CRAYON_DEBUG', TRUE);
 
 // TODO remove once done
 define('CRAYON_TAG_EDITOR', TRUE);
@@ -10,13 +10,11 @@ define('CRAYON_THEME_EDITOR', TRUE);
 
 // Constants
 
-$uid = CRAYON_DEBUG ? uniqid() : ''; // Prevent caching in debug mode
-
 // General definitions
 define('CRAYON_DOMAIN', 'crayon-syntax-highlighter');
 
 // These are overriden by functions since v1.1.1
-$CRAYON_VERSION = '1.1.1' . $uid;
+$CRAYON_VERSION = '1.1.1';
 $CRAYON_DATE = '27th September, 2011';
 $CRAYON_AUTHOR = 'Aram Kocharyan';
 $CRAYON_AUTHOR_SITE = 'http://ak.net84.net/';
@@ -161,12 +159,11 @@ function crayon_pb($url) {
 
 // Get/Set plugin information
 function crayon_set_info($info_array) {
-	global $CRAYON_VERSION, $CRAYON_DATE, $CRAYON_AUTHOR, $CRAYON_WEBSITE, $uid;
+	global $CRAYON_VERSION, $CRAYON_DATE, $CRAYON_AUTHOR, $CRAYON_WEBSITE;
 	if (!is_array($info_array)) {
 		return;
 	}
 	crayon_set_info_key('Version', $info_array, $CRAYON_VERSION);
-	$CRAYON_VERSION .= $uid;
 	if (($date = @filemtime(CRAYON_README_FILE)) !== FALSE) {
 		$CRAYON_DATE = date("jS F, Y", $date);
 	}

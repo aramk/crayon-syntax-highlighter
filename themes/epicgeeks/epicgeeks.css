@@ -5,7 +5,6 @@ Version: 1.2
 Author: J. Newing (synmuffin)
 URL: http://epicgeeks.net/
 */
-
 .crayon-theme-epicgeeks {
 	border: 1px #e1e1e1 solid !important;
 	text-shadow: none !important;
@@ -25,11 +24,11 @@ URL: http://epicgeeks.net/
 }
 .crayon-theme-epicgeeks .crayon-code::selection {
 	background: #ddeeff !important;
-	color: #316ba5 !important;	
+	color: #316ba5 !important;
 }
 .crayon-theme-epicgeeks .crayon-code *::selection {
-background: #ddeeff !important;
-color: #316ba5 !important;
+	background: #ddeeff !important;
+	color: #316ba5 !important;
 }
 .crayon-theme-epicgeeks::selection {
 	background: transparent !important;
@@ -53,29 +52,28 @@ color: #316ba5 !important;
 	background: transparent !important;
 }
 .crayon-theme-epicgeeks .crayon-striped-line {
-background: #ffffd2 !important;
-border: 1px dashed #f0f0f0;
+	background: #ffffd2 !important;
+	border: 1px dashed #f0f0f0;
 }
 .crayon-theme-epicgeeks .crayon-striped-num {
-background: #ffff7c !important;
-border: 1px dashed #cccccc !important;
-
+	background: #ffff7c !important;
+	border: 1px dashed #cccccc !important;
 }
 .crayon-theme-epicgeeks .crayon-marked-line {
-background: #fffee2 !important;
-border: 1px #e9e579 !important;
+	background: #fffee2 !important;
+	border: 1px #e9e579 !important;
 }
 .crayon-theme-epicgeeks .crayon-marked-num {
-color: #1561ac !important;
-background: #f2f24b !important;
-border: 1px #E9E579 !important;
+	color: #1561ac !important;
+	background: #f2f24b !important;
+	border: 1px #E9E579 !important;
 }
 .crayon-theme-epicgeeks .crayon-marked-line.crayon-striped-line {
 	background: #faf8d1 !important;
 }
 .crayon-theme-epicgeeks .crayon-marked-num.crayon-striped-num {
-background: #dddd1c !important;
-color: #105395 !important;
+	background: #dddd1c !important;
+	color: #105395 !important;
 }
 .crayon-theme-epicgeeks .crayon-marked-line.crayon-top {
 	border-top-style: solid !important;
@@ -134,52 +132,54 @@ color: #105395 !important;
 	color: #FFF;
 }
 .crayon-theme-epicgeeks .crayon-pre .c {
-    color: #787878 !important;
+	color: #787878 !important;
 }
 .crayon-theme-epicgeeks .crayon-pre .p {
-    color: #a3a3a3 !important;
+	color: #a3a3a3 !important;
 }
 .crayon-theme-epicgeeks .crayon-pre .s {
-    color: #90c300 !important;
+	color: #90c300 !important;
 }
-.crayon-theme-epicgeeks .crayon-pre .k,
-.crayon-theme-epicgeeks .crayon-pre .st,
-.crayon-theme-epicgeeks .crayon-pre .r,
-.crayon-theme-epicgeeks .crayon-pre .t,
+.crayon-theme-epicgeeks .crayon-pre .k {
+	color: #ff00aa !important;
+}
+.crayon-theme-epicgeeks .crayon-pre .st {
+	color: #ff00aa !important;
+}
+.crayon-theme-epicgeeks .crayon-pre .r {
+	color: #ff00aa !important;
+}
+.crayon-theme-epicgeeks .crayon-pre .t {
+	color: #ff00aa !important;
+}
 .crayon-theme-epicgeeks .crayon-pre .m {
-    color: #ff00aa !important;
+	color: #ff00aa !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .i {
-    color: #878787 !important;
+	color: #878787 !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .v {
-    color: #ca00ff !important;
+	color: #ca00ff !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .e {
 	color: #00d5ff !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .cn {
-    color: #e87b7b !important;
+	color: #e87b7b !important;
 }
-
-.crayon-theme-epicgeeks .crayon-pre .o,
+.crayon-theme-epicgeeks .crayon-pre .o {
+	color: #006fe0 !important;
+}
 .crayon-theme-epicgeeks .crayon-pre .h {
-    color: #006fe0 !important;
+	color: #006fe0 !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .sy {
 	color: #3c3c3c !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .n {
 	color: #b7b7b7 !important;
 	font-style: italic;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .f {
 	color: #cfcfcf !important;
 }
