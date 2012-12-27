@@ -15,6 +15,7 @@ class CrayonThemes extends CrayonUserResourceCollection {
 	// Methods ================================================================
 
 	function __construct() {
+//        var_dump($this->user_dire
 //        var_dump('__construct');
 
 		$this->directory ( CRAYON_THEME_PATH );
@@ -24,8 +25,7 @@ class CrayonThemes extends CrayonUserResourceCollection {
         }
 		$this->set_default ( self::DEFAULT_THEME, self::DEFAULT_THEME_NAME );
 
-//        var_dump($this->directory());
-//        var_dump($this->user_directory());
+//        var_dump($this->directoryctory());
 	}
 
 //    public function exists($id) {
@@ -86,4 +86,5 @@ class CrayonThemes extends CrayonUserResourceCollection {
     }
 
 }
+
 ?>

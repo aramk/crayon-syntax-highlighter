@@ -24,8 +24,11 @@ class Input {
 class CrayonThemeEditorWP {
 
     public static $fields = NULL;
+    public static $fieldsInverse = NULL;
     public static $settings = NULL;
     public static $strings = NULL;
+
+    const RE_COMMENT = '#^\s*\/\*[\s\S]*?\*\/#msi';
 
     public static function init() {
         self::admin_resources();
@@ -47,6 +50,7 @@ class CrayonThemeEditorWP {
                 // These appear only in the UI and can be translated
 
             );
+            self::$fieldsInverse = array_flip(self::$fields);
         }
     }
 
@@ -59,7 +63,7 @@ class CrayonThemeEditorWP {
                 // Only things the theme editor needs
                 'cssPrefix' => Input::$cssPrefix,
                 'fields' => self::$fields,
-                'fieldsInverse' => array_flip(self::$fields),
+                'fieldsInverse' => self::$fieldsInverse,
                 'prefix' => 'crayon-theme-editor'
             );
         }
@@ -258,6 +262,11 @@ class CrayonThemeEditorWP {
             // XXX This is case sensitive to avoid modifying text, but it means that CSS must be in lowercase
             $css = preg_replace('#(?<=' . CrayonThemes::CSS_PREFIX . ')' . $replaceID . '\b#ms', $newID, $css);
 
+            // Replace the name with the new one
+            $info = self::getCSSInfo($css);
+            $info['name'] = $name;
+            $css = self::setCSSInfo($css, $info);
+
             $result = @file_put_contents($newPath, $css);
             $success = $result !== FALSE;
             if ($success && $oldPath !== $newPath) {
@@ -314,6 +323,54 @@ class CrayonThemeEditorWP {
             echo 0;
         }
         exit();
+    }
+
+    public static function getCSSInfo($css) {
+        $info = array();
+        preg_match(self::RE_COMMENT, $css, $matches);
+        if (count($matches)) {
+            $comment = $matches[0];
+            preg_match_all('#([^\r\n:]*[^\r\n\s:])\s*:\s*([^\r\n]+)#msi', $comment, $matches);
+            if (count($matches)) {
+                for ($i = 0; $i < count($matches[1]); $i++) {
+                    $name = $matches[1][$i];
+                    $value = $matches[2][$i];
+                    $info[self::getFieldID($name)] = $value;
+                }
+            }
+        }
+        return $info;
+    }
+
+    public static function cssInfoToString($info) {
+        $str = "/*\n";
+        foreach ($info as $id => $value) {
+            $str .= self::getFieldName($id) . ': ' . $value . "\n";
+        }
+        $str .= "*/";
+        return $str;
+    }
+
+    public static function setCSSInfo($css, $info) {
+        return preg_replace(self::RE_COMMENT, self::cssInfoToString($info), $css);
+    }
+
+    public static function getFieldID($name) {
+        if (isset(self::$fieldsInverse[$name])) {
+            $id = self::$fieldsInverse[$name];
+        } else {
+            $id = CrayonUserResource::clean_id($name);
+        }
+        return $id;
+    }
+
+    public static function getFieldName($id) {
+        if (isset(self::$fields[$id])) {
+            $name = self::$fields[$id];
+        } else {
+            $name = CrayonUserResource::clean_name($id);
+        }
+        return $name;
     }
 
 }
