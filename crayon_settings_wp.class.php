@@ -940,7 +940,7 @@ class Human {
             foreach ($buttons as $k => $v) {
                 echo '<a id="crayon-theme-editor-', $k, '-button" class="button-secondary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', $v, '" >', $v, '</a>';
             }
-            echo '<span class="crayon-span-5"></span>', self::help_button('#'), '<span class="crayon-span-5"></span>', crayon__("Duplicate a Stock Theme into a User Theme to allow editing.");
+            echo '<span class="crayon-span-5"></span>', self::help_button('http://bit.ly/crayon-themes'), '<span class="crayon-span-5"></span>', crayon__("Duplicate a Stock Theme into a User Theme to allow editing.");
             echo '</br></div>';
         }
         // Preview Box

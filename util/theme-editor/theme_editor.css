@@ -73,9 +73,12 @@
 }
 
 #crayon-editor-controls .ui-tabs-nav,
-#crayon-editor-controls .ui-tabs-nav li {
+#crayon-editor-controls .ui-tabs-nav li,
+#crayon-editor-controls .ui-tabs-nav li a {
 	height: 32px;
 	line-height: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #crayon-editor-controls .ui-tabs-nav li:first-child {

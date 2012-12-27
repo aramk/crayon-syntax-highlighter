@@ -7,24 +7,44 @@ class Input {
     public $name;
     public $value;
     public $type;
+    public $class = '';
+    public $attributes = array();
     public static $cssPrefix = "crayon-theme-input-";
 
-    public function __construct($id, $name, $value = '', $type = 'text') {
+    public function __construct($id, $name = NULL, $value = '', $type = 'text') {
         $this->id = $id;
+        if ($name === NULL) {
+            $name = CrayonUserResource::clean_name($id);
+        }
         $this->name = $name;
         $this->value = $value;
         $this->type = $type;
     }
 
+    public function attributeString() {
+        $str = '';
+        foreach ($this->attributes as $k => $v) {
+            $str .= "$k=\"$v\" ";
+        }
+        return $str;
+    }
+
+    public function addClass($class) {
+        $this->class .= self::$cssPrefix . $class . ' ';
+    }
+
     public function __toString() {
-        return '<input id="' . self::$cssPrefix . $this->id . '" class="' . self::$cssPrefix . $this->type . '" type="' . $this->type . '" />';
+        return '<input id="' . self::$cssPrefix . $this->id . '" class="' . self::$cssPrefix . $this->type . ' ' . $this->class . '" type="' . $this->type . '" ' . $this->attributeString() . ' />';
     }
 }
 
 class CrayonThemeEditorWP {
 
-    public static $fields = NULL;
-    public static $fieldsInverse = NULL;
+    public static $attributes = NULL;
+    public static $attributeTypes = NULL;
+    public static $attributeTypesInverse = NULL;
+    public static $infoFields = NULL;
+    public static $infoFieldsInverse = NULL;
     public static $settings = NULL;
     public static $strings = NULL;
 
@@ -35,8 +55,8 @@ class CrayonThemeEditorWP {
     }
 
     public static function initFields() {
-        if (self::$fields === NULL) {
-            self::$fields = array(
+        if (self::$infoFields === NULL) {
+            self::$infoFields = array(
                 // These are canonical and can't be translated, since they appear in the comments of the CSS
                 'name' => 'Name',
                 'description' => 'Description',
@@ -47,10 +67,16 @@ class CrayonThemeEditorWP {
                 'notes' => 'Notes',
                 'maintainer' => 'Maintainer',
                 'maintainer-url' => 'Maintainer URL'
-                // These appear only in the UI and can be translated
-
             );
-            self::$fieldsInverse = array_flip(self::$fields);
+            self::$infoFieldsInverse = CrayonUtil::array_flip(self::$infoFields);
+            // A map of CSS element name and property to name
+            self::$attributes = array();
+            // A map of CSS attribute to input type
+            self::$attributeTypes = array(
+                'color' => array('background', 'border-color'),
+                'size' => array('border-width')
+            );
+            self::$attributeTypesInverse = CrayonUtil::array_flip(self::$attributeTypes);
         }
     }
 
@@ -62,8 +88,8 @@ class CrayonThemeEditorWP {
             self::$settings = array(
                 // Only things the theme editor needs
                 'cssPrefix' => Input::$cssPrefix,
-                'fields' => self::$fields,
-                'fieldsInverse' => self::$fieldsInverse,
+                'fields' => self::$infoFields,
+                'fieldsInverse' => self::$infoFieldsInverse,
                 'prefix' => 'crayon-theme-editor'
             );
         }
@@ -72,7 +98,8 @@ class CrayonThemeEditorWP {
     public static function initStrings() {
         if (self::$strings === NULL) {
             self::$strings = array(
-                // Only things the theme editor needs
+                // These appear only in the UI and can be translated
+                // TODO add the rest
                 'No' => crayon__("No"),
                 'Yes' => crayon__("Yes"),
                 'userTheme' => crayon__("User-Defined Theme"),
@@ -164,26 +191,20 @@ class CrayonThemeEditorWP {
                         <li title="Toolbars"><a href="#tabs-3"></a></li>
                     </ul>
                     <div id="tabs-1">
-                        <?php
-//                        $inputs = array();
-//                        foreach (self::$fields as $id => $name) {
-//                            $inputs[] = new Input($id, $name);
-//                        }
-//                        self::form($inputs);
-                        ?>
+                        <!-- Auto-filled by theme_editor.js -->
                     </div>
                     <div id="tabs-2">
-                        <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus
-                            gravida ante, ut pharetra massa metus id nunc. Duis scelerisque
-                            molestie turpis. Sed fringilla, massa eget luctus malesuada, metus
-                            eros molestie lectus, ut tempus eros massa ut dolor. Aenean
-                            aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit
-                            aliquam. Praesent in eros vestibulum mi adipiscing adipiscing.
-                            Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel
-                            metus. Ut posuere viverra nulla. Aliquam erat volutpat.
-                            Pellentesque convallis. Maecenas feugiat, tellus pellentesque
-                            pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel
-                            felis. Mauris consectetur tortor et purus.</p>
+                        <?php
+                        $atts = array(
+                            array('', 'background', crayon__("Background")),
+                            array('', 'border-width', crayon__("Border Width")),
+                            array('', 'border-color', crayon__("Border Color")),
+                        );
+                        for ($i = 0; $i < count($atts); $i++) {
+                            $atts[$i] = call_user_func_array('CrayonThemeEditorWP::createAttribute', $atts[$i]);
+                        }
+                        self::form($atts);
+                        ?>
                     </div>
                     <div id="tabs-3">
                         <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse
@@ -214,6 +235,18 @@ class CrayonThemeEditorWP {
 
     <?php
         exit();
+    }
+
+    public static function createAttribute($element, $attribute, $name) {
+        $input = new Input($element . '_' . $attribute, $name);
+        $type = self::getAttributeType($attribute);
+        $input->addClass('attribute');
+        $input->attributes = array(
+            'data-element' => $element,
+            'data-attribute' => $attribute,
+            'data-type' => $type
+        );
+        return $input;
     }
 
     /**
@@ -356,21 +389,27 @@ class CrayonThemeEditorWP {
     }
 
     public static function getFieldID($name) {
-        if (isset(self::$fieldsInverse[$name])) {
-            $id = self::$fieldsInverse[$name];
+        if (isset(self::$infoFieldsInverse[$name])) {
+            return self::$infoFieldsInverse[$name];
         } else {
-            $id = CrayonUserResource::clean_id($name);
+            return CrayonUserResource::clean_id($name);
         }
-        return $id;
     }
 
     public static function getFieldName($id) {
-        if (isset(self::$fields[$id])) {
-            $name = self::$fields[$id];
+        if (isset(self::$infoFields[$id])) {
+            return self::$infoFields[$id];
         } else {
-            $name = CrayonUserResource::clean_name($id);
+            return CrayonUserResource::clean_name($id);
         }
-        return $name;
+    }
+
+    public static function getAttributeType($attribute) {
+        if (isset(self::$attributeTypesInverse[$attribute])) {
+            return self::$attributeTypesInverse[$attribute];
+        } else {
+            return 'text';
+        }
     }
 
 }

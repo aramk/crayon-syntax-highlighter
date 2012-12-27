@@ -124,6 +124,29 @@ class CrayonUtil {
         closedir($dir);
     }
 
+    // Supports arrays in the values
+    public static function array_flip($array) {
+        $result = array();
+        foreach ($array as $k=>$v) {
+            if (is_array($v)) {
+                foreach ($v as $u) {
+                    self::_array_flip($result, $k, $u);
+                }
+            } else {
+                self::_array_flip($result, $k, $v);
+            }
+        }
+        return $result;
+    }
+
+    private static function _array_flip(&$array, $k, $v) {
+        if (is_string($v) || is_int($v)) {
+            $array[$v] = $k;
+        } else {
+            trigger_error("Values must be STRING or INTEGER", E_USER_WARNING);
+        }
+    }
+
     // Detects if device is touchscreen or mobile
     public static function is_touch() {
         // Only detect once

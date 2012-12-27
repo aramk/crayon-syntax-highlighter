@@ -6,11 +6,10 @@ Author: Aram Kocharyan
 URL: http://ak.net84.net/
 */
 .crayon-theme-classic {
-	border: 1px #999 solid !important;
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
 	text-shadow: none !important;
-	background: #fdfdfd !important;
-}
-.crayon-theme-classic .crayon-code {
 	background: #fdfdfd !important;
 }
 .crayon-theme-classic-inline {
@@ -21,34 +20,12 @@ URL: http://ak.net84.net/
 	background: #dfefff !important;
 	color: #5499de !important;
 }
-.crayon-theme-classic .crayon-code::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
+.crayon-theme-classic *::selection {
+	background: transparent !important;
 }
 .crayon-theme-classic .crayon-code *::selection {
 	background: #ddeeff !important;
 	color: #316ba5 !important;
-}
-.crayon-theme-classic::selection {
-	background: transparent !important;
-}
-.crayon-theme-classic .crayon-toolbar::selection {
-	background: transparent !important;
-}
-.crayon-theme-classic .crayon-toolbar *::selection {
-	background: transparent !important;
-}
-.crayon-theme-classic .crayon-info::selection {
-	background: transparent !important;
-}
-.crayon-theme-classic .crayon-info *::selection {
-	background: transparent !important;
-}
-.crayon-theme-classic .crayon-nums::selection {
-	background: transparent !important;
-}
-.crayon-theme-classic .crayon-nums *::selection {
-	background: transparent !important;
 }
 .crayon-theme-classic .crayon-striped-line {
 	background: #f7f7f7 !important;

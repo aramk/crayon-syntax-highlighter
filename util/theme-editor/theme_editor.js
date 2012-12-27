@@ -44,8 +44,7 @@
                 stripComments: true,
                 split: true
             });
-//            console.log(themeJSON.children['.crayon-theme-classic .crayon-table .crayon-nums'].attributes);
-//            console.log(settings);
+            console.log(themeJSON);
             themeInfo = base.readCSSInfo(themeStr);
             base.initInfoUI();
             base.updateTitle();
