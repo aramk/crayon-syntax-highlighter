@@ -17,6 +17,7 @@
         var themeID, themeJSON, themeCSS, themeStr, themeInfo;
         var reImportant = /\s+!important$/gmi;
         var reSize = /^[0-9-]+px$/;
+        var reCopy = /-copy-\d+$/;
         var changedAttr = 'data-value';
 
         base.init = function (callback) {
@@ -126,7 +127,7 @@
                 //html: "Are you sure you want to duplicate the '" + name + "' theme?",
                 title: "Duplicate",
                 text: "New Name",
-                value: name + ' Copy',
+                value: base.getNextAvailableName(id),
                 ok: function (val) {
                     // TODO implement delete
                     $.post(crayonSettings.ajaxurl, {
@@ -144,6 +145,33 @@
                     });
                 }
             });
+        };
+
+        base.getNextAvailableName = function (id) {
+            var next = base.getNextAvailableID(id);
+            return base.idToName(next[1]);
+        };
+
+        base.getNextAvailableID = function (id) {
+            var themes = adminSettings.themes;
+            var count = 0;
+            if (reCopy.test(id)) {
+                // Remove the "copy" if it already exists
+                var newID = id.replace(reCopy, '');
+                if (newID.length > 0) {
+                    id = newID;
+                }
+            }
+            var nextID = id;
+            while (nextID in themes) {
+                count++;
+                if (count == 1) {
+                    nextID = id + '-copy';
+                } else {
+                    nextID = id + '-copy-' + count.toString();
+                }
+            }
+            return [count, nextID];
         };
 
         base.readCSSInfo = function (cssStr) {
@@ -206,7 +234,7 @@
         };
 
         base.idToName = function (id) {
-            id = id.replace('-', ' ');
+            id = id.replace(/-/gmi, ' ');
             return id.toTitleCase();
         };
 

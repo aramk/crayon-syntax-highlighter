@@ -38,12 +38,14 @@ URL: http://ak.net84.net/
 }
 .crayon-theme-classic .crayon-marked-line {
 	background: #fffee2 !important;
-	border: 1px #e9e579 !important;
+    border-width: 1px !important;
+    border-color: #e9e579 !important;
 }
 .crayon-theme-classic .crayon-marked-num {
 	color: #1561ac !important;
 	background: #b3d3f4 !important;
-	border: 1px #5999d9 !important;
+    border-width: 1px !important;
+    border-color: #5999d9 !important;
 }
 .crayon-theme-classic .crayon-marked-line.crayon-striped-line {
 	background: #faf8d1 !important;
@@ -66,12 +68,16 @@ URL: http://ak.net84.net/
 }
 .crayon-theme-classic .crayon-info {
 	background: #faf9d7 !important;
-	border-bottom: 1px #b1af5e solid !important;
+    border-bottom-width: 1px !important;
+    border-bottom-color: #b1af5e !important;
+    border-bottom-style: solid !important;
 	color: #7e7d34;
 }
 .crayon-theme-classic .crayon-toolbar {
 	background: #DDD !important;
-	border-bottom: 1px #BBB solid !important;
+    border-bottom-width: 1px !important;
+    border-bottom-color: #BBB !important;
+    border-bottom-style: solid !important;
 }
 .crayon-theme-classic .crayon-toolbar > div {
 	float: left !important;

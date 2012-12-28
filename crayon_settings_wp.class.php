@@ -120,7 +120,7 @@ class CrayonSettingsWP {
             // We need to load themes at this stage
             CrayonSettingsWP::load_settings();
             $themes_ = CrayonResources::themes()->get();
-            $themes = array();
+            $stockThemes = array();
             $userThemes = array();
             foreach ($themes_ as $theme) {
                 $id = $theme->id();
@@ -128,11 +128,12 @@ class CrayonSettingsWP {
                 if ($theme->user()) {
                     $userThemes[$id] = $name;
                 } else {
-                    $themes[$id] = $name;
+                    $stockThemes[$id] = $name;
                 }
             }
             self::$admin_js_settings = array(
-                'themes' => $themes,
+                'themes' => array_merge($stockThemes, $userThemes),
+                'stockThemes' => $stockThemes,
                 'userThemes' => $userThemes,
                 'defaultTheme' => CrayonThemes::DEFAULT_THEME,
                 'themesURL' => CrayonThemes::dir_url(),

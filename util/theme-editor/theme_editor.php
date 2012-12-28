@@ -142,7 +142,7 @@ class CrayonThemeEditorWP {
             self::$attributeTypes = array(
                 'color' => array('background', 'border-color', 'color'),
                 'size' => array('border-width'),
-                'select' => array('border-style')
+                'border-style' => array('border-style', 'border-bottom-style', 'border-top-style')
             );
             self::$attributeTypesInverse = CrayonUtil::array_flip(self::$attributeTypes);
         }
@@ -246,6 +246,15 @@ class CrayonThemeEditorWP {
             $editing = CrayonUtil::str_to_bool($_GET['editing'], FALSE);
         }
 
+        $tBackground = crayon__("Background");
+        $tText = crayon__("Text");
+        $tBorder = crayon__("Border");
+        $tTopBorder = crayon__("Top Border");
+        $tBottomBorder = crayon__("Bottom Border");
+
+        $top = '.crayon-top';
+        $bottom = '.crayon-bottom';
+
         ?>
 
     <div
@@ -289,8 +298,8 @@ class CrayonThemeEditorWP {
                         <li title="General Info"><a href="#tabs-1"></a></li>
                         <li title="Highlighting"><a href="#tabs-2"></a></li>
                         <li title="Lines"><a href="#tabs-3"></a></li>
-                        <li title="Numbers"><a href="#tabs-3"></a></li>
-                        <li title="Toolbars"><a href="#tabs-3"></a></li>
+                        <li title="Numbers"><a href="#tabs-4"></a></li>
+                        <li title="Toolbar"><a href="#tabs-5"></a></li>
                     </ul>
                     <div id="tabs-1">
                         <!-- Auto-filled by theme_editor.js -->
@@ -301,17 +310,17 @@ class CrayonThemeEditorWP {
                         self::createAttributesForm(array(
                             new Title(crayon__("Foundation")),
                             new Separator(crayon__("Regular")),
-                            self::createAttribute('', 'background', crayon__("Background")),
+                            self::createAttribute('', 'background', $tBackground),
                             array(
-                                crayon__("Border"),
+                                $tBorder,
                                 self::createAttribute('', 'border-width'),
                                 self::createAttribute('', 'border-color'),
                                 self::createAttribute('', 'border-style')
                             ),
                             new Separator(crayon__("Inline")),
-                            self::createAttribute($inline, 'background', crayon__("Background")),
+                            self::createAttribute($inline, 'background', $tBackground),
                             array(
-                                crayon__("Border"),
+                                $tBorder,
                                 self::createAttribute($inline, 'border-width'),
                                 self::createAttribute($inline, 'border-color'),
                                 self::createAttribute($inline, 'border-style')
@@ -321,6 +330,30 @@ class CrayonThemeEditorWP {
                     </div>
                     <div id="tabs-3">
                         <?php
+                        $stripedLine = ' .crayon-striped-line';
+                        $markedLine = ' .crayon-marked-line';
+                        $stripedMarkedLine = ' .crayon-marked-line.crayon-striped-line';
+                        self::createAttributesForm(array(
+                            new Title(crayon__("Lines")),
+                            new Separator(crayon__("Striped")),
+                            self::createAttribute($stripedLine, 'background', $tBackground),
+                            new Separator(crayon__("Marked")),
+                            self::createAttribute($markedLine, 'background', $tBackground),
+                            array(
+                                $tBorder,
+                                self::createAttribute($markedLine, 'border-width'),
+                                self::createAttribute($markedLine, 'border-color'),
+                                self::createAttribute($markedLine, 'border-style'),
+                            ),
+                            self::createAttribute($markedLine.$top, 'border-top-style', $tTopBorder),
+                            self::createAttribute($markedLine.$bottom, 'border-bottom-style', $tBottomBorder),
+                            new Separator(crayon__("Striped & Marked")),
+                            self::createAttribute($stripedMarkedLine, 'background', $tBackground),
+                        ));
+                        ?>
+                    </div>
+                    <div id="tabs-4">
+                        <?php
                         $nums = ' .crayon-table .crayon-nums';
                         $stripedNum = ' .crayon-striped-num';
                         $markedNum = ' .crayon-marked-num';
@@ -328,19 +361,21 @@ class CrayonThemeEditorWP {
                         self::createAttributesForm(array(
                             new Title(crayon__("Line Numbers")),
                             new Separator(crayon__("Normal")),
-                            self::createAttribute($nums, 'background', crayon__("Background")),
-                            self::createAttribute($nums, 'color', crayon__("Text")),
+                            self::createAttribute($nums, 'background', $tBackground),
+                            self::createAttribute($nums, 'color', $tText),
                             new Separator(crayon__("Striped")),
-                            self::createAttribute($stripedNum, 'background', crayon__("Background")),
-                            self::createAttribute($stripedNum, 'color', crayon__("Text")),
+                            self::createAttribute($stripedNum, 'background', $tBackground),
+                            self::createAttribute($stripedNum, 'color', $tText),
                             new Separator(crayon__("Marked")),
-                            self::createAttribute($markedNum, 'background', crayon__("Background")),
-                            self::createAttribute($markedNum, 'color', crayon__("Text")),
+                            self::createAttribute($markedNum, 'background', $tBackground),
+                            self::createAttribute($markedNum, 'color', $tText),
                             new Separator(crayon__("Striped & Marked")),
-                            self::createAttribute($stripedMarkedNum, 'background', crayon__("Background")),
-                            self::createAttribute($stripedMarkedNum, 'color', crayon__("Text")),
+                            self::createAttribute($stripedMarkedNum, 'background', $tBackground),
+                            self::createAttribute($stripedMarkedNum, 'color', $tText),
                         ));
                         ?>
+                    </div>
+                    <div id="tabs-5">
                     </div>
                 </div>
             </td>
@@ -354,23 +389,21 @@ class CrayonThemeEditorWP {
 
     public static function createAttribute($element, $attribute, $name = NULL) {
         $type = self::getAttributeType($attribute);
-        if ($type == 'select') {
+        if ($type == 'border-style') {
             $input = new Select($element . '_' . $attribute, $name);
-            if ($attribute == 'border-style') {
-                $input->addOptions(array(
-                    'none',
-                    'hidden',
-                    'dotted',
-                    'dashed',
-                    'solid',
-                    'double',
-                    'groove',
-                    'ridge',
-                    'inset',
-                    'outset',
-                    'inherit'
-                ));
-            }
+            $input->addOptions(array(
+                'none',
+                'hidden',
+                'dotted',
+                'dashed',
+                'solid',
+                'double',
+                'groove',
+                'ridge',
+                'inset',
+                'outset',
+                'inherit'
+            ));
         } else {
             $input = new Input($element . '_' . $attribute, $name);
         }
