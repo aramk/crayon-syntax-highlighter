@@ -13,7 +13,7 @@
         var admin = CrayonSyntaxAdmin;
 
         var preview, previewCrayon, previewCSS, status, title, info;
-        var changed;
+        var changed, loaded;
         var themeID, themeJSON, themeCSS, themeStr, themeInfo;
         var reImportant = /\s+!important$/gmi;
         var reSize = /^[0-9-]+px$/;
@@ -42,6 +42,7 @@
         };
 
         base.load = function () {
+            loaded = false;
             themeStr = adminSettings.currThemeCSS;
             themeID = adminSettings.currTheme;
             changed = false;
@@ -56,7 +57,9 @@
             base.updateInfo();
             base.setFieldValues(themeInfo);
             base.populateAttributes();
+            base.updateLiveCSS();
             base.updateUI();
+            loaded = true;
         };
 
         base.save = function () {
@@ -330,7 +333,7 @@
             });
         };
 
-        base.populateAttributes = function () {
+        base.populateAttributes = function ($change) {
             var elems = themeJSON.children;
             var root = settings.cssThemePrefix + base.nameToID(themeInfo.name);
             CrayonUtil.log(elems, root);
@@ -413,15 +416,9 @@
                     };
                     attr.colorpicker(args);
                     attr.bind('change', function () {
-
-//                        CrayonUtil.log('change!!!');
-
-                        var hex = attr.val();// color.formatted;
+                        var hex = attr.val();
                         attr.css('background-color', hex);
                         attr.css('color', CrayonUtil.getReadableColor(hex));
-
-
-//                        args.select(null, {formatted: attr.val()});
                     });
                 } else if (type == 'size') {
                     attr.bind('change', function () {
@@ -450,19 +447,25 @@
                     } else {
                         attr.attr(changedAttr, attr.val());
                     }
-                    if (previewCrayon) {
+                    if (loaded) {
                         // For the preview we want to write defaults to override the loaded CSS
                         base.persistAttribute(attr, false);
-                        var id = previewCrayon.attr('id');
-                        var json = $.extend(true, {}, themeJSON);
-                        $.each(json.children, function (child) {
-                            json.children['#' + id + child] = json.children[child];
-                            delete json.children[child];
-                        });
-                        base.appendStyle(CSSJSON.toCSS(json));
+                        base.updateLiveCSS();
                     }
                 });
             });
+        };
+
+        base.updateLiveCSS = function () {
+            if (previewCrayon) {
+                var id = previewCrayon.attr('id');
+                var json = $.extend(true, {}, themeJSON);
+                $.each(json.children, function (child) {
+                    json.children['#' + id + child] = json.children[child];
+                    delete json.children[child];
+                });
+                base.appendStyle(CSSJSON.toCSS(json));
+            }
         };
 
         base.updateUI = function () {
