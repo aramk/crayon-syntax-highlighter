@@ -222,7 +222,7 @@
                 var value = themeInfo[id];
                 fields[name] = base.createInput(id, value);
             }
-            $('#tabs-1').html(base.createForm(fields));
+            $('#tabs-1-contents').html(base.createForm(fields));
             base.getField('name').bind('change keydown keyup', function () {
                 themeInfo.name = base.getFieldValue('name');
                 base.updateTitle();
@@ -298,26 +298,33 @@
             return $('.' + settings.cssInputPrefix + settings.attribute);
         };
 
-        base.persistAttributes = function () {
+        base.persistAttributes = function (remove_default) {
+            remove_default = CrayonUtil.setDefault(remove_default, true);
             base.getAttributes().each(function () {
-                base.persistAttribute($(this));
+                base.persistAttribute($(this), remove_default);
             });
         };
 
-        base.persistAttribute = function (attr) {
+        base.persistAttribute = function (attr, remove_default) {
             // TODO refactor with populate
+            remove_default = CrayonUtil.setDefault(remove_default, true);
             var elems = themeJSON.children;
             var root = settings.cssThemePrefix + base.nameToID(themeInfo.name);
             var dataElem = attr.attr('data-element');
             var dataAttr = attr.attr('data-attribute');
             var elem = elems[root + dataElem];
             if (elem) {
-                console.log(elem);
-                if (dataAttr in elem.attributes) {
-                    var val = base.addImportant(base.getElemValue(attr));
-                    elem.attributes[dataAttr] = val;
-                    console.log(elem.attributes);
+//                console.log(elem);
+//                if (dataAttr in elem.attributes) {
+
+                if (remove_default && attr.prop('tagName') == 'SELECT' && attr.val() == attr.attr('data-default')) {
+                    // If default is selected in a dropdown, then remove
+                    delete elem.attributes[dataAttr];
+                    return;
                 }
+                var val = base.addImportant(base.getElemValue(attr));
+                elem.attributes[dataAttr] = val;
+                console.log(dataElem + ' ' + dataAttr);
             }
         };
 
@@ -446,7 +453,8 @@
                         console.log('update');
                     }
                     if (previewCrayon) {
-                        base.persistAttribute(attr);
+                        // For the preview we want to write defaults to override the loaded CSS
+                        base.persistAttribute(attr, false);
                         console.log(attr.val());
                         var id = previewCrayon.attr('id');
                         var json = $.extend(true, {}, themeJSON);

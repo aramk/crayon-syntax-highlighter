@@ -117,11 +117,14 @@ URL: http://ak.net84.net/
 .crayon-theme-classic .crayon-pre .c {
 	color: #ff8000 !important;
 }
+.crayon-theme-classic .crayon-pre .s {
+    color: #008000 !important;
+}
 .crayon-theme-classic .crayon-pre .p {
 	color: #b85c00 !important;
 }
-.crayon-theme-classic .crayon-pre .s {
-	color: #008000 !important;
+.crayon-theme-classic .crayon-pre .ta {
+    color: #FF0000 !important;
 }
 .crayon-theme-classic .crayon-pre .k {
 	color: #800080 !important;
@@ -138,17 +141,14 @@ URL: http://ak.net84.net/
 .crayon-theme-classic .crayon-pre .m {
 	color: #800080 !important;
 }
-.crayon-theme-classic .crayon-pre .ta {
-	color: #FF0000 !important;
-}
 .crayon-theme-classic .crayon-pre .i {
 	color: #000 !important;
 }
+.crayon-theme-classic .crayon-pre .e {
+    color: #004ed0 !important;
+}
 .crayon-theme-classic .crayon-pre .v {
 	color: #002D7A !important;
-}
-.crayon-theme-classic .crayon-pre .e {
-	color: #004ed0 !important;
 }
 .crayon-theme-classic .crayon-pre .cn {
 	color: #ce0000 !important;
@@ -156,16 +156,16 @@ URL: http://ak.net84.net/
 .crayon-theme-classic .crayon-pre .o {
 	color: #006fe0 !important;
 }
-.crayon-theme-classic .crayon-pre .h {
-	color: #006fe0 !important;
-}
 .crayon-theme-classic .crayon-pre .sy {
-	color: #333 !important;
+    color: #333 !important;
 }
 .crayon-theme-classic .crayon-pre .n {
-	color: #666 !important;
-	font-style: italic;
+    color: #666 !important;
+    font-style: italic;
 }
 .crayon-theme-classic .crayon-pre .f {
 	color: #999 !important;
+}
+.crayon-theme-classic .crayon-pre .h {
+    color: #006fe0 !important;
 }
