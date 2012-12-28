@@ -12,8 +12,12 @@
 }
 
 #crayon-editor-control-wrapper {
-    min-width: 400px;
     padding-left: 20px;
+}
+#crayon-editor-control-wrapper,
+#crayon-editor-controls {
+    width: 428px;
+    overflow: hidden;
 }
 
 #crayon-editor-save {
@@ -142,8 +146,11 @@
 #crayon-editor-controls .ui-tabs-nav li a {
     height: 32px;
     line-height: 32px;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
+}
+
+#crayon-editor-controls .ui-tabs-nav li {
+    width: 70px;
 }
 
 #crayon-editor-controls .ui-tabs-nav li:first-child {
@@ -156,6 +163,8 @@
 }
 
 #crayon-editor-controls .ui-widget-header {
+    width: 1000px;
+    overflow: hidden;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }

@@ -319,7 +319,7 @@ class CrayonThemeEditorWP {
                         <li title="<?php echo $tFoundation ?>"><a href="#tabs-3"></a></li>
                         <li title="<?php echo $tLines ?>"><a href="#tabs-4"></a></li>
                         <li title="<?php echo $tNumbers ?>"><a href="#tabs-5"></a></li>
-                        <li title="<?php echo $tText ?>"><a href="#tabs-6"></a></li>
+                        <li title="<?php echo $tToolbar ?>"><a href="#tabs-6"></a></li>
                     </ul>
                     <div id="tabs-1">
                         <?php
