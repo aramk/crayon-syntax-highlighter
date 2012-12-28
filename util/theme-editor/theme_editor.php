@@ -189,6 +189,7 @@ class CrayonThemeEditorWP {
             <td id="crayon-editor-preview-wrapper">
                 <div id="crayon-editor-preview"></div>
             </td>
+            <div id="crayon-editor-preview-css"></div>
             <td id="crayon-editor-control-wrapper">
                 <div id="crayon-editor-controls">
                     <ul>

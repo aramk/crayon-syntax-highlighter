@@ -12,7 +12,7 @@
         var strings = CrayonThemeEditorStrings;
         var admin = CrayonSyntaxAdmin;
 
-        var preview, status, title, info;
+        var preview, previewCrayon, previewCSS, status, title, info;
         var changed;
         var themeID, themeJSON, themeCSS, themeStr, themeInfo;
         var reImportant = /\s+!important$/gmi;
@@ -28,6 +28,7 @@
 
         base.show = function (callback, crayon) {
             // Called each time editor is shown
+            previewCrayon = crayon.find('.crayon-syntax');
             crayon.attr('id', 'theme-editor-instance');
             CrayonSyntax.process(crayon, true);
             preview.html(crayon);
@@ -66,7 +67,7 @@
             }
             // Update attributes
             base.persistAttributes();
-            return false;
+//            return false;
             // Save
             themeCSS = CSSJSON.toCSS(themeJSON);
             var newThemeStr = base.writeCSSInfo(info) + themeCSS;
@@ -268,23 +269,26 @@
         };
 
         base.persistAttributes = function () {
+            base.getAttributes().each(function () {
+                base.persistAttribute($(this));
+            });
+        };
+
+        base.persistAttribute = function (attr) {
+            // TODO refactor with populate
             var elems = themeJSON.children;
             var root = settings.cssThemePrefix + base.nameToID(themeInfo.name);
-            console.log(elems, root);
-            base.getAttributes().each(function () {
-                var attr = $(this);
-                var dataElem = attr.attr('data-element');
-                var dataAttr = attr.attr('data-attribute');
-                var elem = elems[root + dataElem];
-                if (elem) {
-                    console.log(elem);
-                    if (dataAttr in elem.attributes) {
-                        var val = base.addImportant(base.getElemValue(attr));
-                        elem.attributes[dataAttr] = val;
-                        console.log(elem.attributes);
-                    }
+            var dataElem = attr.attr('data-element');
+            var dataAttr = attr.attr('data-attribute');
+            var elem = elems[root + dataElem];
+            if (elem) {
+                console.log(elem);
+                if (dataAttr in elem.attributes) {
+                    var val = base.addImportant(base.getElemValue(attr));
+                    elem.attributes[dataAttr] = val;
+                    console.log(elem.attributes);
                 }
-            });
+            }
         };
 
         base.populateAttributes = function () {
@@ -317,6 +321,10 @@
             return attr.replace(reImportant, '');
         };
 
+        base.appendStyle = function (css) {
+            previewCSS.html('<style>' + css + '</style>');
+        };
+
         base.writeCSSInfo = function (info) {
             var infoStr = '/*\n';
             for (field in info) {
@@ -328,6 +336,7 @@
         base.initUI = function () {
             // Bind events
             preview = $('#crayon-editor-preview');
+            previewCSS = $('#crayon-editor-preview-css');
             status = $('#crayon-editor-status');
             title = $('#crayon-theme-editor-name');
             info = $('#crayon-theme-editor-info');
@@ -349,7 +358,6 @@
 
             // Set up jQuery UI
             base.getAttributes().each(function () {
-                console.log(1);
                 var attr = $(this);
                 var type = attr.attr('data-type');
                 if (type == 'color') {
@@ -359,17 +367,24 @@
                         colorFormat: '#HEX'
                     };
                     args.select = function (e, color) {
-                        var hex = color.formatted;
-                        attr.css('background-color', hex);
-                        attr.css('color', CrayonUtil.getReadableColor(hex));
+                        attr.trigger('change');
                     };
                     args.close = function (e, color) {
-                        attr.val(color.formatted);
-                        args.select(e, color);
+//                        attr.val(color.formatted);
+//                        args.select(e, color);
+                        attr.trigger('change');
                     };
                     attr.colorpicker(args);
                     attr.bind('change', function () {
-                        args.select(null, {formatted: attr.val()});
+
+//                        console.log('change!!!');
+
+                        var hex = attr.val();// color.formatted;
+                        attr.css('background-color', hex);
+                        attr.css('color', CrayonUtil.getReadableColor(hex));
+
+
+//                        args.select(null, {formatted: attr.val()});
                     });
                 } else if (type == 'size') {
                     attr.bind('change', function () {
@@ -379,6 +394,19 @@
                         }
                     });
                 }
+                attr.bind('change', function () {
+                    if (previewCrayon) {
+                        base.persistAttribute(attr);
+                        console.log(attr.val());
+                        var id = previewCrayon.attr('id');
+                        var json = $.extend(true, {}, themeJSON);
+                        $.each(json.children, function (child) {
+                            json.children['#' + id + child] = json.children[child];
+                            delete json.children[child];
+                        });
+                        base.appendStyle(CSSJSON.toCSS(json));
+                    }
+                });
             });
         };
 
