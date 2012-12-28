@@ -880,7 +880,7 @@ class CrayonSettingsWP {
         // Print the theme CSS
         $theme_id = $crayon->setting_val(CrayonSettings::THEME);
         if ($theme_id != NULL) {
-            echo CrayonResources::themes()->get_css($theme_id);
+            echo CrayonResources::themes()->get_css($theme_id, date('U'));
         }
 
         $font_id = $crayon->setting_val(CrayonSettings::FONT);

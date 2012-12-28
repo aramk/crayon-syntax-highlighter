@@ -225,9 +225,9 @@ class CrayonResourceCollection {
 		return '';
 	}
 	
-	public function get_css($id) {
+	public function get_css($id, $ver = NULL) {
 		$resource = $this->get($id);
-		return '<link rel="stylesheet" type="text/css" href="' . $this->get_url($resource->id()) . '" />' . CRAYON_NL;
+		return '<link rel="stylesheet" type="text/css" href="' . $this->get_url($resource->id()) . ($ver ? "?ver=$ver" : '') . '" />' . CRAYON_NL;
 	}
 }
 
