@@ -298,6 +298,15 @@
             return $('.' + settings.cssInputPrefix + settings.attribute);
         };
 
+        base.visitAttribute = function (attr, callback) {
+            var elems = themeJSON.children;
+            var root = settings.cssThemePrefix + base.nameToID(themeInfo.name);
+            var dataElem = attr.attr('data-element');
+            var dataAttr = attr.attr('data-attribute');
+            var elem = elems[root + dataElem];
+            callback(attr, elem, dataElem, dataAttr, root, elems);
+        };
+
         base.persistAttributes = function (remove_default) {
             remove_default = CrayonUtil.setDefault(remove_default, true);
             base.getAttributes().each(function () {
@@ -306,26 +315,19 @@
         };
 
         base.persistAttribute = function (attr, remove_default) {
-            // TODO refactor with populate
             remove_default = CrayonUtil.setDefault(remove_default, true);
-            var elems = themeJSON.children;
-            var root = settings.cssThemePrefix + base.nameToID(themeInfo.name);
-            var dataElem = attr.attr('data-element');
-            var dataAttr = attr.attr('data-attribute');
-            var elem = elems[root + dataElem];
-            if (elem) {
-//                console.log(elem);
-//                if (dataAttr in elem.attributes) {
-
-                if (remove_default && attr.prop('tagName') == 'SELECT' && attr.val() == attr.attr('data-default')) {
-                    // If default is selected in a dropdown, then remove
-                    delete elem.attributes[dataAttr];
-                    return;
+            base.visitAttribute(attr, function (attr, elem, dataElem, dataAttr, root, elems) {
+                if (elem) {
+                    if (remove_default && attr.prop('tagName') == 'SELECT' && attr.val() == attr.attr('data-default')) {
+                        // If default is selected in a dropdown, then remove
+                        delete elem.attributes[dataAttr];
+                        return;
+                    }
+                    var val = base.addImportant(base.getElemValue(attr));
+                    elem.attributes[dataAttr] = val;
+                    console.log(dataElem + ' ' + dataAttr);
                 }
-                var val = base.addImportant(base.getElemValue(attr));
-                elem.attributes[dataAttr] = val;
-                console.log(dataElem + ' ' + dataAttr);
-            }
+            });
         };
 
         base.populateAttributes = function () {
@@ -333,17 +335,15 @@
             var root = settings.cssThemePrefix + base.nameToID(themeInfo.name);
             console.log(elems, root);
             base.getAttributes().each(function () {
-                var attr = $(this);
-                var dataElem = attr.attr('data-element');
-                var dataAttr = attr.attr('data-attribute');
-                var elem = elems[root + dataElem];
-                if (elem) {
-                    if (dataAttr in elem.attributes) {
-                        var val = base.removeImportant(elem.attributes[dataAttr]);
-                        base.setElemValue(attr, val);
-                        attr.trigger('change');
+                base.visitAttribute($(this), function (attr, elem, dataElem, dataAttr, root, elems) {
+                    if (elem) {
+                        if (dataAttr in elem.attributes) {
+                            var val = base.removeImportant(elem.attributes[dataAttr]);
+                            base.setElemValue(attr, val);
+                            attr.trigger('change');
+                        }
                     }
-                }
+                });
             });
         };
 
@@ -445,17 +445,14 @@
                 }
                 // Update CSS changes to the live instance
                 attr.bind('change', function () {
-                    console.log('change');
                     if (attr.attr(changedAttr) == attr.val()) {
                         return;
                     } else {
                         attr.attr(changedAttr, attr.val());
-                        console.log('update');
                     }
                     if (previewCrayon) {
                         // For the preview we want to write defaults to override the loaded CSS
                         base.persistAttribute(attr, false);
-                        console.log(attr.val());
                         var id = previewCrayon.attr('id');
                         var json = $.extend(true, {}, themeJSON);
                         $.each(json.children, function (child) {
