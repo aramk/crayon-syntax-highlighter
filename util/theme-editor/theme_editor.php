@@ -140,7 +140,7 @@ class CrayonThemeEditorWP {
             self::$attributes = array();
             // A map of CSS attribute to input type
             self::$attributeTypes = array(
-                'color' => array('background', 'border-color'),
+                'color' => array('background', 'border-color', 'color'),
                 'size' => array('border-width'),
                 'select' => array('border-style')
             );
@@ -297,6 +297,7 @@ class CrayonThemeEditorWP {
                     </div>
                     <div id="tabs-2">
                         <?php
+                        $inline = '-inline';
                         self::createAttributesForm(array(
                             new Title(crayon__("Foundation")),
                             new Separator(crayon__("Regular")),
@@ -308,18 +309,38 @@ class CrayonThemeEditorWP {
                                 self::createAttribute('', 'border-style')
                             ),
                             new Separator(crayon__("Inline")),
-                            self::createAttribute('-inline', 'background', crayon__("Background")),
+                            self::createAttribute($inline, 'background', crayon__("Background")),
                             array(
                                 crayon__("Border"),
-                                self::createAttribute('-inline', 'border-width'),
-                                self::createAttribute('-inline', 'border-color'),
-                                self::createAttribute('-inline', 'border-style')
+                                self::createAttribute($inline, 'border-width'),
+                                self::createAttribute($inline, 'border-color'),
+                                self::createAttribute($inline, 'border-style')
                             ),
                         ));
                         ?>
                     </div>
                     <div id="tabs-3">
-
+                        <?php
+                        $nums = ' .crayon-table .crayon-nums';
+                        $stripedNum = ' .crayon-striped-num';
+                        $markedNum = ' .crayon-marked-num';
+                        $stripedMarkedNum = ' .crayon-marked-num.crayon-striped-num';
+                        self::createAttributesForm(array(
+                            new Title(crayon__("Line Numbers")),
+                            new Separator(crayon__("Normal")),
+                            self::createAttribute($nums, 'background', crayon__("Background")),
+                            self::createAttribute($nums, 'color', crayon__("Text")),
+                            new Separator(crayon__("Striped")),
+                            self::createAttribute($stripedNum, 'background', crayon__("Background")),
+                            self::createAttribute($stripedNum, 'color', crayon__("Text")),
+                            new Separator(crayon__("Marked")),
+                            self::createAttribute($markedNum, 'background', crayon__("Background")),
+                            self::createAttribute($markedNum, 'color', crayon__("Text")),
+                            new Separator(crayon__("Striped & Marked")),
+                            self::createAttribute($stripedMarkedNum, 'background', crayon__("Background")),
+                            self::createAttribute($stripedMarkedNum, 'color', crayon__("Text")),
+                        ));
+                        ?>
                     </div>
                 </div>
             </td>
