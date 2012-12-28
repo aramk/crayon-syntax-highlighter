@@ -9,6 +9,9 @@ class Input {
     public $type;
     public $class = '';
     public $attributes = array();
+    public $closed = TRUE;
+    public $tag = 'input';
+    public $contents = NULL;
     public static $cssInputPrefix = "crayon-theme-input-";
 
     public function __construct($id, $name = NULL, $value = '', $type = 'text') {
@@ -34,7 +37,41 @@ class Input {
     }
 
     public function __toString() {
-        return '<input id="' . self::$cssInputPrefix . $this->id . '" class="' . self::$cssInputPrefix . $this->type . ' ' . $this->class . '" type="' . $this->type . '" ' . $this->attributeString() . ' />';
+        return '<' . $this->tag . ' id="' . self::$cssInputPrefix . $this->id . '" class="' . self::$cssInputPrefix . $this->type . ' ' . $this->class . '" type="' . $this->type . '" ' . $this->attributeString() . ($this->closed ? ' />' : ' >' . $this->contents . "</$this->tag>");
+    }
+}
+
+class Select extends Input {
+    public $options;
+    public $selected = NULL;
+
+    public function __construct($id, $name = NULL, $value = '', $options = array()) {
+        parent::__construct($id, $name, 'select');
+        $this->tag = 'select';
+        $this->closed = FALSE;
+        $this->addOptions($options);
+    }
+
+    public function addOptions($options) {
+        for ($i = 0; $i < count($options); $i++) {
+            $key = $options[$i];
+            $value = isset($options[$key]) ? $options[$key] : $key;
+            $this->options[$key] = $value;
+        }
+    }
+
+    public function getOptionsString() {
+        $str = '';
+        foreach ($this->options as $k => $v) {
+            $selected = $this->selected == $k ? 'selected="selected"' : '';
+            $str .= "<option value=\"$k\" $selected>$v</option>";
+        }
+        return $str;
+    }
+
+    public function __toString() {
+        $this->contents = $this->getOptionsString();
+        return parent::__toString();
     }
 }
 
@@ -76,7 +113,8 @@ class CrayonThemeEditorWP {
             // A map of CSS attribute to input type
             self::$attributeTypes = array(
                 'color' => array('background', 'border-color'),
-                'size' => array('border-width')
+                'size' => array('border-width'),
+                'select' => array('border-style')
             );
             self::$attributeTypesInverse = CrayonUtil::array_flip(self::$attributeTypes);
         }
@@ -180,8 +218,7 @@ class CrayonThemeEditorWP {
 
     <?php //crayon_e('Use the Sidebar on the right to change the Theme of the Preview window.') ?>
 
-    <div
-            id="crayon-editor-top-controls"></div>
+    <div id="crayon-editor-top-controls"></div>
 
     <table id="crayon-editor-table" style="width: 100%;" cellspacing="5"
            cellpadding="0">
@@ -204,15 +241,13 @@ class CrayonThemeEditorWP {
                     </div>
                     <div id="tabs-2">
                         <?php
-                        $atts = array(
+                        self::createAttributesForm(array(
                             array('', 'background', crayon__("Background")),
                             array('', 'border-width', crayon__("Border Width")),
                             array('', 'border-color', crayon__("Border Color")),
-                        );
-                        for ($i = 0; $i < count($atts); $i++) {
-                            $atts[$i] = call_user_func_array('CrayonThemeEditorWP::createAttribute', $atts[$i]);
-                        }
-                        self::form($atts);
+                            array('', 'border-style', crayon__("Border Style"))
+                        ));
+                        exit;
                         ?>
                     </div>
                     <div id="tabs-3">
@@ -247,8 +282,27 @@ class CrayonThemeEditorWP {
     }
 
     public static function createAttribute($element, $attribute, $name) {
-        $input = new Input($element . '_' . $attribute, $name);
         $type = self::getAttributeType($attribute);
+        if ($type == 'select') {
+            $input = new Select($element . '_' . $attribute, $name);
+            if ($attribute == 'border-style') {
+                $input->addOptions(array(
+                    'none',
+                    'hidden',
+                    'dotted',
+                    'dashed',
+                    'solid',
+                    'double',
+                    'groove',
+                    'ridge',
+                    'inset',
+                    'outset',
+                    'inherit'
+                ));
+            }
+        } else {
+            $input = new Input($element . '_' . $attribute, $name);
+        }
         $input->addClass(self::ATTRIBUTE);
         $input->attributes = array(
             'data-element' => $element,
@@ -256,6 +310,13 @@ class CrayonThemeEditorWP {
             'data-type' => $type
         );
         return $input;
+    }
+
+    public static function createAttributesForm($atts) {
+        for ($i = 0; $i < count($atts); $i++) {
+            $atts[$i] = call_user_func_array('CrayonThemeEditorWP::createAttribute', $atts[$i]);
+        }
+        return self::form($atts);
     }
 
     /**
