@@ -109,7 +109,8 @@ class CrayonSettingsWP {
                 'selected' => CrayonSettings::SETTING_SELECTED,
                 'changed' => CrayonSettings::SETTING_CHANGED,
                 'special' => CrayonSettings::SETTING_SPECIAL,
-                'orig_value' => CrayonSettings::SETTING_ORIG_VALUE
+                'orig_value' => CrayonSettings::SETTING_ORIG_VALUE,
+                'debug' => CRAYON_DEBUG
             );
             wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
         }
@@ -137,8 +138,7 @@ class CrayonSettingsWP {
                 'userThemes' => $userThemes,
                 'defaultTheme' => CrayonThemes::DEFAULT_THEME,
                 'themesURL' => CrayonThemes::dir_url(),
-                'userThemesURL' => CrayonThemes::dir_url(true),
-                'debug' => CRAYON_DEBUG
+                'userThemesURL' => CrayonThemes::dir_url(true)
             );
             wp_localize_script('crayon_admin_js', 'CrayonAdminSettings', self::$admin_js_settings);
         }

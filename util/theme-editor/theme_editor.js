@@ -49,7 +49,7 @@
                 stripComments: true,
                 split: true
             });
-            console.log(themeJSON);
+            CrayonUtil.log(themeJSON);
             themeInfo = base.readCSSInfo(themeStr);
             base.initInfoUI();
             base.updateTitle();
@@ -213,7 +213,7 @@
         };
 
         base.initInfoUI = function () {
-            console.log(themeInfo);
+            CrayonUtil.log(themeInfo);
             // TODO abstract
             var names = base.getFieldNames(themeInfo);
             var fields = {};
@@ -325,7 +325,7 @@
                     }
                     var val = base.addImportant(base.getElemValue(attr));
                     elem.attributes[dataAttr] = val;
-                    console.log(dataElem + ' ' + dataAttr);
+                    CrayonUtil.log(dataElem + ' ' + dataAttr);
                 }
             });
         };
@@ -333,7 +333,7 @@
         base.populateAttributes = function () {
             var elems = themeJSON.children;
             var root = settings.cssThemePrefix + base.nameToID(themeInfo.name);
-            console.log(elems, root);
+            CrayonUtil.log(elems, root);
             base.getAttributes().each(function () {
                 base.visitAttribute($(this), function (attr, elem, dataElem, dataAttr, root, elems) {
                     if (elem) {
@@ -414,7 +414,7 @@
                     attr.colorpicker(args);
                     attr.bind('change', function () {
 
-//                        console.log('change!!!');
+//                        CrayonUtil.log('change!!!');
 
                         var hex = attr.val();// color.formatted;
                         attr.css('background-color', hex);
@@ -438,7 +438,7 @@
                     // For regular text boxes, capture changes on keys
                     attr.bind('keydown keyup', function () {
                         if (attr.attr(changedAttr) != attr.val()) {
-                            console.log('triggering', attr.attr(changedAttr), attr.val());
+                            CrayonUtil.log('triggering', attr.attr(changedAttr), attr.val());
                             attr.trigger('change');
                         }
                     });

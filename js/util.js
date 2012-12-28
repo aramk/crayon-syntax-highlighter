@@ -1,8 +1,6 @@
 // To avoid duplicates conflicting
 var jQueryCrayon = jQuery;
 
-var CRAYON_DEBUG = false;
-
 (function ($) {
 
     $(document).ready(function () {
@@ -105,7 +103,7 @@ var CRAYON_DEBUG = false;
         };
 
         base.log = function (string) {
-            if (typeof console != 'undefined' && CRAYON_DEBUG) {
+            if (typeof console != 'undefined' && settings.debug) {
                 console.log(string);
             }
         };
