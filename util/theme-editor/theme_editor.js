@@ -16,6 +16,8 @@
         var changed;
         var themeID, themeJSON, themeCSS, themeStr, themeInfo;
         var reImportant = /\s+!important$/gmi;
+        var reSize = /^[0-9-]+px$/;
+        var changedAttr = 'data-value';
 
         base.init = function (callback) {
             // Called only once
@@ -388,13 +390,33 @@
                     });
                 } else if (type == 'size') {
                     attr.bind('change', function () {
-                        var val = CrayonUtil.removeChars('^0-9-', attr.val());
-                        if (val != '') {
-                            attr.val(val + 'px');
+                        var val = attr.val();
+                        if (!reSize.test(val)) {
+                            val = CrayonUtil.removeChars('^0-9-', val);
+                            if (val != '') {
+                                attr.val(val + 'px');
+                            }
                         }
                     });
                 }
+                if (type != 'color') {
+                    // For regular text boxes, capture changes on keys
+                    attr.bind('keydown keyup', function () {
+                        if (attr.attr(changedAttr) != attr.val()) {
+                            console.log('triggering', attr.attr(changedAttr), attr.val());
+                            attr.trigger('change');
+                        }
+                    });
+                }
+                // Update CSS changes to the live instance
                 attr.bind('change', function () {
+                    console.log('change');
+                    if (attr.attr(changedAttr) == attr.val()) {
+                        return;
+                    } else {
+                        attr.attr(changedAttr, attr.val());
+                        console.log('update');
+                    }
                     if (previewCrayon) {
                         base.persistAttribute(attr);
                         console.log(attr.val());
@@ -411,7 +433,7 @@
         };
 
         base.updateUI = function () {
-            $('#crayon-editor-controls input, #crayon-editor-controls select').bind('change keyup keydown', function () {
+            $('#crayon-editor-controls input, #crayon-editor-controls select').bind('change', function () {
                 changed = true;
             });
         };
