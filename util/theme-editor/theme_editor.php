@@ -231,15 +231,15 @@ class CrayonThemeEditorWP {
                     $fields .= '<td ' . $class . ' style="width: ' . $percent . '%">' . $input[$i] . '</td>';
                 }
                 $fields .= '</tr></table>';
-                $str .= self::formField($name, $fields);
+                $str .= self::formField($name, $fields, 'split');
             }
         }
         $str .= '</table></form>';
         return $str;
     }
 
-    public static function formField($name, $field) {
-        return '<tr><td class="field">' . $name . '</td><td class="value">' . $field . '</td></tr>';
+    public static function formField($name, $field, $class = '') {
+        return '<tr><td class="field ' . $class . '">' . $name . '</td><td class="value ' . $class . '">' . $field . '</td></tr>';
     }
 
     public static function content() {

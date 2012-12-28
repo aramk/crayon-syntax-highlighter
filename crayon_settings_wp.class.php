@@ -148,9 +148,6 @@ class CrayonSettingsWP {
         if (!current_user_can('manage_options')) {
             wp_die(crayon__('You do not have sufficient permissions to access this page.'));
         }
-        // Go through and find all Crayons in posts on each reload
-        //self::scan_and_save_posts();
-
         ?>
 
     <script type="text/javascript">
@@ -923,7 +920,7 @@ class Human {
         }
         $themes_array = CrayonResources::themes()->get_array();
         // Mark user themes
-        foreach ($themes_array as $id=>$name) {
+        foreach ($themes_array as $id => $name) {
             $mark = CrayonResources::themes()->get($id)->user() ? ' *' : '';
             $themes_array[$id] = array($name, $name . $mark);
         }
