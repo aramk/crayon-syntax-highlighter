@@ -532,7 +532,7 @@ class CrayonThemeEditorWP {
         $input->addAttributes(array(
             'data-element' => $element,
             'data-attribute' => $attribute,
-            'data-type' => $type
+            'data-group' => $group
         ));
         return $input;
     }

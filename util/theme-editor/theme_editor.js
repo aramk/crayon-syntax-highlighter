@@ -396,7 +396,7 @@
             // Set up jQuery UI
             base.getAttributes().each(function () {
                 var attr = $(this);
-                var type = attr.attr('data-type');
+                var type = attr.attr('data-group');
                 if (type == 'color') {
                     var args = {
                         parts: 'full',

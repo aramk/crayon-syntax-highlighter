@@ -76,8 +76,10 @@
 #crayon-editor-controls .split-field select {
     width: 100%;
 }
-#crayon-editor-controls .crayon-theme-editor-form table td.split {
+#crayon-editor-controls .crayon-theme-editor-form table td.value.split {
     padding-left: 0;
+}
+#crayon-editor-controls .crayon-theme-editor-form table td.field.split {
     padding-right: 0;
 }
 
