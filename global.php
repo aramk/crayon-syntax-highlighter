@@ -75,6 +75,9 @@ define('CRAYON_JS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.init.pack
 define('CRAYON_CSS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.css');
 define('CRAYON_CSS_JQUERY_UI', CRAYON_JS_DIR . 'jquery-ui/jquery-ui.css');
 define('CRAYON_JS_JQUERY_UI', CRAYON_JS_DIR . 'jquery-ui/jquery-ui.js');
+define('CRAYON_CSS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.css');
+define('CRAYON_JS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.js');
+define('CRAYON_JS_TINYCOLOR', CRAYON_JS_DIR . 'tinycolor-min.js');
 // TODO rename TE
 define('CRAYON_TE_JS', 'crayon_te.js');
 define('CRAYON_TE_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.class.php');

@@ -9,7 +9,7 @@ class Input {
     public $type;
     public $class = '';
     public $attributes = array();
-    public static $cssPrefix = "crayon-theme-input-";
+    public static $cssInputPrefix = "crayon-theme-input-";
 
     public function __construct($id, $name = NULL, $value = '', $type = 'text') {
         $this->id = $id;
@@ -30,11 +30,11 @@ class Input {
     }
 
     public function addClass($class) {
-        $this->class .= self::$cssPrefix . $class . ' ';
+        $this->class .= self::$cssInputPrefix . $class . ' ';
     }
 
     public function __toString() {
-        return '<input id="' . self::$cssPrefix . $this->id . '" class="' . self::$cssPrefix . $this->type . ' ' . $this->class . '" type="' . $this->type . '" ' . $this->attributeString() . ' />';
+        return '<input id="' . self::$cssInputPrefix . $this->id . '" class="' . self::$cssInputPrefix . $this->type . ' ' . $this->class . '" type="' . $this->type . '" ' . $this->attributeString() . ' />';
     }
 }
 
@@ -47,6 +47,8 @@ class CrayonThemeEditorWP {
     public static $infoFieldsInverse = NULL;
     public static $settings = NULL;
     public static $strings = NULL;
+
+    const ATTRIBUTE = 'attribute';
 
     const RE_COMMENT = '#^\s*\/\*[\s\S]*?\*\/#msi';
 
@@ -87,7 +89,9 @@ class CrayonThemeEditorWP {
         if (self::$settings === NULL) {
             self::$settings = array(
                 // Only things the theme editor needs
-                'cssPrefix' => Input::$cssPrefix,
+                'cssThemePrefix' => CrayonThemes::CSS_PREFIX,
+                'cssInputPrefix' => Input::$cssInputPrefix,
+                'attribute' => self::ATTRIBUTE,
                 'fields' => self::$infoFields,
                 'fieldsInverse' => self::$infoFieldsInverse,
                 'prefix' => 'crayon-theme-editor'
@@ -111,13 +115,17 @@ class CrayonThemeEditorWP {
     public static function admin_resources() {
         global $CRAYON_VERSION;
         self::initSettings();
-        wp_enqueue_script('cssjson_js', plugins_url(CRAYON_CSSJSON_JS, dirname(dirname(__FILE__))), $CRAYON_VERSION);
-        wp_enqueue_script('jquery_ui_js', plugins_url(CRAYON_JS_JQUERY_UI, dirname(dirname(__FILE__))), array('jquery'), $CRAYON_VERSION);
-        wp_enqueue_script('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_JS, dirname(dirname(__FILE__))), array('jquery', 'jquery_ui_js', 'crayon_util_js', 'crayon_admin_js', 'cssjson_js'), $CRAYON_VERSION);
+        $path = dirname(dirname(__FILE__));
+        wp_enqueue_script('cssjson_js', plugins_url(CRAYON_CSSJSON_JS, $path), $CRAYON_VERSION);
+        wp_enqueue_script('jquery_ui_js', plugins_url(CRAYON_JS_JQUERY_UI, $path), array('jquery'), $CRAYON_VERSION);
+        wp_enqueue_script('jquery_colorpicker_js', plugins_url(CRAYON_JS_JQUERY_COLORPICKER, $path), array('jquery'), $CRAYON_VERSION);
+        wp_enqueue_script('jquery_tinycolor_js', plugins_url(CRAYON_JS_TINYCOLOR, $path), array(), $CRAYON_VERSION);
+        wp_enqueue_script('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_JS, $path), array('jquery', 'jquery_ui_js', 'crayon_util_js', 'crayon_admin_js', 'cssjson_js', 'jquery_colorpicker_js', 'jquery_tinycolor_js'), $CRAYON_VERSION);
         wp_localize_script('crayon_theme_editor', 'CrayonThemeEditorSettings', self::$settings);
         wp_localize_script('crayon_theme_editor', 'CrayonThemeEditorStrings', self::$strings);
 
-        wp_enqueue_style('jquery_ui', plugins_url(CRAYON_CSS_JQUERY_UI, dirname(dirname(__FILE__))), array(), $CRAYON_VERSION);
+        wp_enqueue_style('jquery_ui', plugins_url(CRAYON_CSS_JQUERY_UI, $path), array(), $CRAYON_VERSION);
+        wp_enqueue_style('jquery_colorpicker', plugins_url(CRAYON_CSS_JQUERY_COLORPICKER, $path), array(), $CRAYON_VERSION);
     }
 
     public static function form($inputs) {
@@ -240,7 +248,7 @@ class CrayonThemeEditorWP {
     public static function createAttribute($element, $attribute, $name) {
         $input = new Input($element . '_' . $attribute, $name);
         $type = self::getAttributeType($attribute);
-        $input->addClass('attribute');
+        $input->addClass(self::ATTRIBUTE);
         $input->attributes = array(
             'data-element' => $element,
             'data-attribute' => $attribute,

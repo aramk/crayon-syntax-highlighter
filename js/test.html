@@ -1,0 +1,14 @@
+<script src="tinycolor-min.js"></script>
+
+<script>
+
+function lighten(color) {
+	var hsv = color.toHsv();
+	hsv.v = (hsv.v + 0.3) % 1;
+	return tinycolor(hsv);
+}
+
+blue = tinycolor("blue");
+console.log(lighten(blue).toHexString());
+
+</script>

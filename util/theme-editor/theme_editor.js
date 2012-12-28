@@ -15,6 +15,7 @@
         var preview, status, title, info;
         var changed;
         var themeID, themeJSON, themeCSS, themeStr, themeInfo;
+        var reImportant = /\s+!important$/gmi;
 
         base.init = function (callback) {
             // Called only once
@@ -50,11 +51,11 @@
             base.updateTitle();
             base.updateInfo();
             base.setFieldValues(themeInfo);
+            base.populateAttributes();
             base.updateUI();
         };
 
         base.save = function () {
-            themeCSS = CSSJSON.toCSS(themeJSON);
             // Update info from form fields
             themeInfo = base.getFieldValues($.keys(themeInfo));
             // Get the names of the fields and map them to their values
@@ -63,6 +64,11 @@
             for (var id in themeInfo) {
                 info[names[id]] = themeInfo[id];
             }
+            // Update attributes
+            base.persistAttributes();
+            return false;
+            // Save
+            themeCSS = CSSJSON.toCSS(themeJSON);
             var newThemeStr = base.writeCSSInfo(info) + themeCSS;
             $.post(crayonSettings.ajaxurl, {
                 action: 'crayon-theme-editor-save',
@@ -75,13 +81,8 @@
                 if (result !== 0) {
                     status.html("Success!");
                     if (result === 2) {
-                        window.GET['theme-editor'] == 1;
-                        window.location.reload()
-//                        var get = '?';
-//                        for (var i in window.GET) {
-//                            get += i + '=' + window.GET[i] + '&';
-//                        }
-//                        window.location = window.currentURL + get;
+                        window.GET['theme-editor'] = 1;
+                        CrayonUtil.reload();
                     }
                 } else {
                     status.html("Failed!");
@@ -103,7 +104,7 @@
                         id: id
                     }, function (result) {
                         if (result == 1) {
-                            window.location.reload()
+                            CrayonUtil.reload();
                         } else {
                             base.createAlert({
                                 html: "Delete failed! Please check the log for details."
@@ -131,7 +132,7 @@
                         name: val
                     }, function (result) {
                         if (result > 0) {
-                            window.location.reload()
+                            CrayonUtil.reload();
                         } else {
                             base.createAlert({
                                 html: "Duplicate failed! Please check the log for details."
@@ -215,12 +216,20 @@
         };
 
         base.getField = function (id) {
-            return $('#' + settings.cssPrefix + id);
+            return $('#' + settings.cssInputPrefix + id);
         };
 
         base.getFieldValue = function (id) {
-            // TODO add support for checkboxes etc.
-            return base.getField(id).val();
+            return base.getElemValue(base.getField(id));
+        };
+
+        base.getElemValue = function (elem) {
+            if (elem) {
+                // TODO add support for checkboxes etc.
+                return elem.val();
+            } else {
+                return null;
+            }
         };
 
         base.getFieldValues = function (fields) {
@@ -232,14 +241,80 @@
         };
 
         base.setFieldValue = function (id, value) {
-            // TODO add support for checkboxes etc.
-            base.getField(id).val(value);
+            base.setElemValue(base.getField(id), value);
         };
 
         base.setFieldValues = function (obj) {
             for (var i in obj) {
                 base.setFieldValue(i, obj[i]);
             }
+        };
+
+        base.setElemValue = function (elem, val) {
+            if (elem) {
+                // TODO add support for checkboxes etc.
+                return elem.val(val);
+            } else {
+                return false;
+            }
+        };
+
+        base.getAttribute = function (element, attribute) {
+            return base.getField(element + '_' + attribute);
+        };
+
+        base.getAttributes = function () {
+            return $('.' + settings.cssInputPrefix + settings.attribute);
+        };
+
+        base.persistAttributes = function () {
+            var elems = themeJSON.children;
+            var root = settings.cssThemePrefix + base.nameToID(themeInfo.name);
+            console.log(elems, root);
+            base.getAttributes().each(function () {
+                var attr = $(this);
+                var dataElem = attr.attr('data-element');
+                var dataAttr = attr.attr('data-attribute');
+                var elem = elems[root + dataElem];
+                if (elem) {
+                    console.log(elem);
+                    if (dataAttr in elem.attributes) {
+                        var val = base.addImportant(base.getElemValue(attr));
+                        elem.attributes[dataAttr] = val;
+                        console.log(elem.attributes);
+                    }
+                }
+            });
+        };
+
+        base.populateAttributes = function () {
+            var elems = themeJSON.children;
+            var root = settings.cssThemePrefix + base.nameToID(themeInfo.name);
+            console.log(elems, root);
+            base.getAttributes().each(function () {
+                var attr = $(this);
+                var dataElem = attr.attr('data-element');
+                var dataAttr = attr.attr('data-attribute');
+                var elem = elems[root + dataElem];
+                if (elem) {
+                    if (dataAttr in elem.attributes) {
+                        var val = base.removeImportant(elem.attributes[dataAttr]);
+                        base.setElemValue(attr, val);
+                        attr.trigger('change');
+                    }
+                }
+            });
+        };
+
+        base.addImportant = function (attr) {
+            if (!reImportant.test(attr)) {
+                attr = attr + ' !important';
+            }
+            return attr;
+        };
+
+        base.removeImportant = function (attr) {
+            return attr.replace(reImportant, '');
         };
 
         base.writeCSSInfo = function (info) {
@@ -251,6 +326,7 @@
         };
 
         base.initUI = function () {
+            // Bind events
             preview = $('#crayon-editor-preview');
             status = $('#crayon-editor-status');
             title = $('#crayon-theme-editor-name');
@@ -270,6 +346,40 @@
                 }
             });
             $('#crayon-editor-save').click(base.save);
+
+            // Set up jQuery UI
+            base.getAttributes().each(function () {
+                console.log(1);
+                var attr = $(this);
+                var type = attr.attr('data-type');
+                if (type == 'color') {
+                    var args = {
+                        parts: 'full',
+                        showNoneButton: true,
+                        colorFormat: '#HEX'
+                    };
+                    args.select = function (e, color) {
+                        var hex = color.formatted;
+                        attr.css('background-color', hex);
+                        attr.css('color', CrayonUtil.getReadableColor(hex));
+                    };
+                    args.close = function (e, color) {
+                        attr.val(color.formatted);
+                        args.select(e, color);
+                    };
+                    attr.colorpicker(args);
+                    attr.bind('change', function () {
+                        args.select(null, {formatted: attr.val()});
+                    });
+                } else if (type == 'size') {
+                    attr.bind('change', function () {
+                        var val = CrayonUtil.removeChars('^0-9-', attr.val());
+                        if (val != '') {
+                            attr.val(val + 'px');
+                        }
+                    });
+                }
+            });
         };
 
         base.updateUI = function () {
@@ -281,7 +391,7 @@
         base.createInput = function (id, value, type) {
             value = CrayonUtil.setDefault(value, '');
             type = CrayonUtil.setDefault(type, 'text');
-            return '<input id="' + settings.cssPrefix + id + '" class="' + settings.cssPrefix + type + '" type="' + type + '" value="' + value + '" />';
+            return '<input id="' + settings.cssInputPrefix + id + '" class="' + settings.cssInputPrefix + type + '" type="' + type + '" value="' + value + '" />';
         };
 
         base.createForm = function (inputs) {
