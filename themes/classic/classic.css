@@ -13,7 +13,9 @@ URL: http://ak.net84.net/
 	background: #fdfdfd !important;
 }
 .crayon-theme-classic-inline {
-	border: 1px solid #ddd !important;
+    border-width: 1px !important;
+    border-color: #ddd !important;
+    border-style: solid !important;
 	background: #fafafa !important;
 }
 .crayon-theme-classic .crayon-table .crayon-nums {

@@ -2,26 +2,25 @@
 
 require_once (CRAYON_ROOT_PATH . 'crayon_wp.class.php');
 
-class Input {
+class Element {
     public $id;
-    public $name;
-    public $value;
-    public $type;
     public $class = '';
+    public $tag = 'div';
+    public $closed = FALSE;
+    public $contents = '';
     public $attributes = array();
-    public $closed = TRUE;
-    public $tag = 'input';
-    public $contents = NULL;
-    public static $cssInputPrefix = "crayon-theme-input-";
+    const CSS_INPUT_PREFIX = "crayon-theme-input-";
 
-    public function __construct($id, $name = NULL, $value = '', $type = 'text') {
+    public function __construct($id) {
         $this->id = $id;
-        if ($name === NULL) {
-            $name = CrayonUserResource::clean_name($id);
-        }
-        $this->name = $name;
-        $this->value = $value;
-        $this->type = $type;
+    }
+
+    public function addClass($class) {
+        $this->class .= ' ' . self::CSS_INPUT_PREFIX . $class;
+    }
+
+    public function addAttributes($atts) {
+        $this->attributes = array_merge($this->attributes, $atts);
     }
 
     public function attributeString() {
@@ -32,12 +31,28 @@ class Input {
         return $str;
     }
 
-    public function addClass($class) {
-        $this->class .= self::$cssInputPrefix . $class . ' ';
-    }
-
     public function __toString() {
-        return '<' . $this->tag . ' id="' . self::$cssInputPrefix . $this->id . '" class="' . self::$cssInputPrefix . $this->type . ' ' . $this->class . '" type="' . $this->type . '" ' . $this->attributeString() . ($this->closed ? ' />' : ' >' . $this->contents . "</$this->tag>");
+        return '<' . $this->tag . ' id="' . self::CSS_INPUT_PREFIX . $this->id . '" class="' . self::CSS_INPUT_PREFIX . $this->class . '" ' . $this->attributeString() . ($this->closed ? ' />' : ' >' . $this->contents . "</$this->tag>");
+    }
+}
+
+class Input extends Element {
+    public $name;
+    public $type;
+
+    public function __construct($id, $name = NULL, $value = '', $type = 'text') {
+        parent::__construct($id);
+        $this->tag = 'input';
+        $this->closed = TRUE;
+        if ($name === NULL) {
+            $name = CrayonUserResource::clean_name($id);
+        }
+        $this->name = $name;
+        $this->class .= $type;
+        $this->addAttributes(array(
+            'type' => $type,
+            'value' => $value
+        ));
     }
 }
 
@@ -73,6 +88,19 @@ class Select extends Input {
         $this->contents = $this->getOptionsString();
         return parent::__toString();
     }
+}
+
+class Separator extends Element {
+    public $name = '';
+
+    public function __construct($name) {
+        parent::__construct($name);
+        $this->name = $name;
+    }
+}
+
+class Title extends Separator {
+
 }
 
 class CrayonThemeEditorWP {
@@ -128,7 +156,7 @@ class CrayonThemeEditorWP {
             self::$settings = array(
                 // Only things the theme editor needs
                 'cssThemePrefix' => CrayonThemes::CSS_PREFIX,
-                'cssInputPrefix' => Input::$cssInputPrefix,
+                'cssInputPrefix' => Element::CSS_INPUT_PREFIX,
                 'attribute' => self::ATTRIBUTE,
                 'fields' => self::$infoFields,
                 'fieldsInverse' => self::$infoFieldsInverse,
@@ -168,9 +196,20 @@ class CrayonThemeEditorWP {
 
     public static function form($inputs) {
         $str = '<form class="' . self::$settings['prefix'] . '-form"><table>';
+        $sepCount = 0;
         foreach ($inputs as $input) {
-            if (get_class($input) == 'Input') {
+            if ($input instanceof Input) {
                 $str .= self::formField($input->name, $input);
+            } else if ($input instanceof Separator) {
+                $sepClass = '';
+                if ($input instanceof Title) {
+                    $sepClass .= ' title';
+                }
+                if ($sepCount == 0) {
+                    $sepClass .= ' first';
+                }
+                $str .= '<tr class="separator' . $sepClass . '"><td colspan="2"><div class="content">' . $input->name . '</div></td></tr>';
+                $sepCount++;
             } else if (is_array($input) && count($input) > 1) {
                 $name = $input[0];
                 $fields = '<table class="split-field"><tr>';
@@ -258,48 +297,29 @@ class CrayonThemeEditorWP {
                     </div>
                     <div id="tabs-2">
                         <?php
-//                        self::createAttributesForm(array(
-//                            array('', 'background', crayon__("Background")),
-//                            array('', 'border-width', crayon__("Border Width")),
-//                            array('', 'border-color', crayon__("Border Color")),
-//                            array('', 'border-style', crayon__("Border Style"))
-//                        ));
-
                         self::createAttributesForm(array(
+                            new Title(crayon__("Foundation")),
+                            new Separator(crayon__("Regular")),
                             self::createAttribute('', 'background', crayon__("Background")),
                             array(
                                 crayon__("Border"),
                                 self::createAttribute('', 'border-width'),
                                 self::createAttribute('', 'border-color'),
                                 self::createAttribute('', 'border-style')
-                            )
-//                            array('', 'border-width', crayon__("Border Width")),
-//                            array('', 'border-color', crayon__("Border Color")),
-//                            array('', 'border-style', crayon__("Border Style"))
+                            ),
+                            new Separator(crayon__("Inline")),
+                            self::createAttribute('-inline', 'background', crayon__("Background")),
+                            array(
+                                crayon__("Border"),
+                                self::createAttribute('-inline', 'border-width'),
+                                self::createAttribute('-inline', 'border-color'),
+                                self::createAttribute('-inline', 'border-style')
+                            ),
                         ));
-
                         ?>
                     </div>
                     <div id="tabs-3">
-                        <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse
-                            potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque
-                            rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante.
-                            Class aptent taciti sociosqu ad litora torquent per conubia
-                            nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel
-                            enim commodo pellentesque. Praesent eu risus hendrerit ligula
-                            tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec,
-                            luctus a, lacus.</p>
 
-                        <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at,
-                            semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent
-                            viverra justo vitae neque. Praesent blandit adipiscing velit.
-                            Suspendisse potenti. Donec mattis, pede vel pharetra blandit,
-                            magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam
-                            scelerisque. Donec non libero sed nulla mattis commodo. Ut
-                            sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor
-                            vitae, pede. Aenean vehicula velit eu tellus interdum rutrum.
-                            Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a
-                            libero vitae lectus hendrerit hendrerit.</p>
                     </div>
                 </div>
             </td>
@@ -334,11 +354,11 @@ class CrayonThemeEditorWP {
             $input = new Input($element . '_' . $attribute, $name);
         }
         $input->addClass(self::ATTRIBUTE);
-        $input->attributes = array(
+        $input->addAttributes(array(
             'data-element' => $element,
             'data-attribute' => $attribute,
             'data-type' => $type
-        );
+        ));
         return $input;
     }
 

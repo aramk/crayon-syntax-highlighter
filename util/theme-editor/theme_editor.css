@@ -26,10 +26,44 @@
     float: left;
 }
 
+#crayon-editor-controls .crayon-theme-editor-form .separator .content {
+    font-weight: bold;
+    color: #999;
+    padding-top: 8px;
+    border-bottom: 1px solid #ccc;
+    text-shadow: 0 1px 0px #fff;
+    text-align: center;
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .separator.first .content {
+    padding-top: 0;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .separator.title .content {
+    line-height: 24px;
+    height: 22px;
+    padding-top: 0;
+    background: #ccc;
+    border-color: #999;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .separator.title .content {
+    color: #333;
+    width: 100%;
+    text-shadow: 0 1px 2px #eee;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .separator.title td {
+    color: #333;
+    padding: 0;
+}
+
 #crayon-editor-controls .crayon-theme-editor-form .field {
-    line-height: 28px;
     border: 0px;
     padding-right: 5px;
+    vertical-align: middle;
 }
 
 #crayon-editor-controls .crayon-theme-editor-form .split-field td {
@@ -62,9 +96,19 @@
     width: 100%;
 }
 
-#crayon-editor-controls .crayon-theme-editor-form table td {
+#crayon-editor-controls .crayon-theme-editor-form table,
+#crayon-editor-controls .crayon-theme-editor-form tr,
+#crayon-editor-controls .crayon-theme-editor-form td {
     padding: 0;
     margin: 0;
+    border-spacing: 0 !important;
+}
+#crayon-editor-controls .crayon-theme-editor-form table tr:first-child td,
+#crayon-editor-controls .crayon-theme-editor-form table tr:last-child td {
+    padding: 4px;
+}
+#crayon-editor-controls .crayon-theme-editor-form table td {
+    padding: 1px 4px;
 }
 
 .crayon-theme-editor-form table .value input {
@@ -120,6 +164,7 @@
     border-top-style: none;
     background: #f5f5f5 50% top repeat-x;
     color: #333333;
+    padding: 0;
 }
 
 .ui-colorpicker-preview-container .ui-colorpicker-border,
