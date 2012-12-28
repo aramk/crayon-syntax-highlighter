@@ -26,9 +26,21 @@
     float: left;
 }
 
-#crayon-editor-controls .field {
+#crayon-editor-controls .crayon-theme-editor-form .field {
     line-height: 28px;
     border: 0px;
+    padding-right: 5px;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .split-field td {
+    padding-right: 5px;
+}
+#crayon-editor-controls .crayon-theme-editor-form .split-field td.last {
+    padding-right: 0;
+}
+#crayon-editor-controls .split-field input,
+#crayon-editor-controls .split-field select {
+    width: 100%;
 }
 
 #crayon-editor-controls input {

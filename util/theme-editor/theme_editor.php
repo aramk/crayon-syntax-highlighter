@@ -167,11 +167,28 @@ class CrayonThemeEditorWP {
     }
 
     public static function form($inputs) {
-        echo '<form class="', self::$settings['prefix'], '-form"><table>';
+        $str = '<form class="' . self::$settings['prefix'] . '-form"><table>';
         foreach ($inputs as $input) {
-            echo '<tr><td class="field">', $input->name, '</td><td class="value">', $input, '</td></tr>';
+            if (get_class($input) == 'Input') {
+                $str .= self::formField($input->name, $input);
+            } else if (is_array($input) && count($input) > 1) {
+                $name = $input[0];
+                $fields = '<table class="split-field"><tr>';
+                $percent = 100 / count($input);
+                for ($i = 1; $i < count($input); $i++) {
+                    $class = $i == count($input) - 1 ? 'class="last"' : '';
+                    $fields .= '<td ' . $class . ' style="width: ' . $percent . '%">' . $input[$i] . '</td>';
+                }
+                $fields .= '</tr></table>';
+                $str .= self::formField($name, $fields);
+            }
         }
-        echo '</table></form>';
+        $str .= '</table></form>';
+        return $str;
+    }
+
+    public static function formField($name, $field) {
+        return '<tr><td class="field">' . $name . '</td><td class="value">' . $field . '</td></tr>';
     }
 
     public static function content() {
@@ -241,13 +258,26 @@ class CrayonThemeEditorWP {
                     </div>
                     <div id="tabs-2">
                         <?php
+//                        self::createAttributesForm(array(
+//                            array('', 'background', crayon__("Background")),
+//                            array('', 'border-width', crayon__("Border Width")),
+//                            array('', 'border-color', crayon__("Border Color")),
+//                            array('', 'border-style', crayon__("Border Style"))
+//                        ));
+
                         self::createAttributesForm(array(
-                            array('', 'background', crayon__("Background")),
-                            array('', 'border-width', crayon__("Border Width")),
-                            array('', 'border-color', crayon__("Border Color")),
-                            array('', 'border-style', crayon__("Border Style"))
+                            self::createAttribute('', 'background', crayon__("Background")),
+                            array(
+                                crayon__("Border"),
+                                self::createAttribute('', 'border-width'),
+                                self::createAttribute('', 'border-color'),
+                                self::createAttribute('', 'border-style')
+                            )
+//                            array('', 'border-width', crayon__("Border Width")),
+//                            array('', 'border-color', crayon__("Border Color")),
+//                            array('', 'border-style', crayon__("Border Style"))
                         ));
-                        exit;
+
                         ?>
                     </div>
                     <div id="tabs-3">
@@ -281,7 +311,7 @@ class CrayonThemeEditorWP {
         exit();
     }
 
-    public static function createAttribute($element, $attribute, $name) {
+    public static function createAttribute($element, $attribute, $name = NULL) {
         $type = self::getAttributeType($attribute);
         if ($type == 'select') {
             $input = new Select($element . '_' . $attribute, $name);
@@ -313,10 +343,10 @@ class CrayonThemeEditorWP {
     }
 
     public static function createAttributesForm($atts) {
-        for ($i = 0; $i < count($atts); $i++) {
-            $atts[$i] = call_user_func_array('CrayonThemeEditorWP::createAttribute', $atts[$i]);
-        }
-        return self::form($atts);
+//        for ($i = 0; $i < count($atts); $i++) {
+//            $atts[$i] = call_user_func_array('CrayonThemeEditorWP::createAttribute', $atts[$i]);
+//        }
+        echo self::form($atts);
     }
 
     /**
