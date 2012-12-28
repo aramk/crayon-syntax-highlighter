@@ -149,6 +149,7 @@
     padding: 0;
 }
 
+#crayon-editor-controls .ui-tabs-nav li a,
 #crayon-editor-controls .ui-tabs-nav li {
     width: 70px;
 }
