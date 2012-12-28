@@ -230,7 +230,7 @@
         };
 
         base.nameToID = function (name) {
-            return name.toLowerCase().replace(/\s+/, '-');
+            return name.toLowerCase().replace(/\s+/gmi, '-');
         };
 
         base.idToName = function (id) {
