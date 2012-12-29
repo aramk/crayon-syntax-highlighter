@@ -95,7 +95,7 @@
                 replace = false;
             }
 
-            if (!replace && !make_uid(uid)) {
+            if (!replace && !makeUID(uid)) {
                 // Already a Crayon
                 return;
             }
@@ -107,13 +107,13 @@
             var table = c.find(CRAYON_TABLE);
             var code = c.find(CRAYON_CODE);
             var nums = c.find(CRAYON_NUMS);
-            var nums_content = c.find(CRAYON_NUMS_CONTENT);
-            var nums_button = c.find(CRAYON_NUMS_BUTTON);
-            var wrap_button = c.find(CRAYON_WRAP_BUTTON);
-            var expand_button = c.find(CRAYON_EXPAND_BUTTON);
-            var popup_button = c.find(CRAYON_POPUP_BUTTON);
-            var copy_button = c.find(CRAYON_COPY_BUTTON);
-            var plain_button = c.find(CRAYON_PLAIN_BUTTON);
+            var numsContent = c.find(CRAYON_NUMS_CONTENT);
+            var numsButton = c.find(CRAYON_NUMS_BUTTON);
+            var wrapButton = c.find(CRAYON_WRAP_BUTTON);
+            var expandButton = c.find(CRAYON_EXPAND_BUTTON);
+            var popupButton = c.find(CRAYON_POPUP_BUTTON);
+            var copyButton = c.find(CRAYON_COPY_BUTTON);
+            var plainButton = c.find(CRAYON_PLAIN_BUTTON);
 
             crayon[uid] = c;
             crayon[uid].toolbar = toolbar;
@@ -123,16 +123,16 @@
             crayon[uid].table = table;
             crayon[uid].code = code;
             crayon[uid].nums = nums;
-            crayon[uid].nums_content = nums_content;
-            crayon[uid].nums_button = nums_button;
-            crayon[uid].wrap_button = wrap_button;
-            crayon[uid].expand_button = expand_button;
-            crayon[uid].popup_button = popup_button;
-            crayon[uid].copy_button = copy_button;
-            crayon[uid].plain_button = plain_button;
-            crayon[uid].nums_visible = true;
+            crayon[uid].nums_content = numsContent;
+            crayon[uid].numsButton = numsButton;
+            crayon[uid].wrapButton = wrapButton;
+            crayon[uid].expandButton = expandButton;
+            crayon[uid].popup_button = popupButton;
+            crayon[uid].copy_button = copyButton;
+            crayon[uid].plainButton = plainButton;
+            crayon[uid].numsVisible = true;
             crayon[uid].wrapped = false;
-            crayon[uid].plain_visible = false;
+            crayon[uid].plainVisible = false;
 
             crayon[uid].toolbar_delay = 0;
             crayon[uid].time = 1;
@@ -141,36 +141,36 @@
             $(CRAYON_PLAIN).css('z-index', 0);
 
             // XXX Remember CSS dimensions
-            var main_style = main.style();
+            var mainStyle = main.style();
             crayon[uid].main_style = {
-                'height': main_style && main_style.height || '',
-                'max-height': main_style && main_style.maxHeight || '',
-                'min-height': main_style && main_style.minHeight || '',
-                'width': main_style && main_style.width || '',
-                'max-width': main_style && main_style.maxWidth || '',
-                'min-width': main_style && main_style.minWidth || ''
+                'height': mainStyle && mainStyle.height || '',
+                'max-height': mainStyle && mainStyle.maxHeight || '',
+                'min-height': mainStyle && mainStyle.minHeight || '',
+                'width': mainStyle && mainStyle.width || '',
+                'max-width': mainStyle && mainStyle.maxWidth || '',
+                'min-width': mainStyle && mainStyle.minWidth || ''
             };
 
             var load_timer;
             var i = 0;
             crayon[uid].loading = true;
-            crayon[uid].scroll_block_fix = false;
+            crayon[uid].scrollBlockFix = false;
 
             // Register click events
-            nums_button.click(function () {
-                CrayonSyntax.toggle_nums(uid);
+            numsButton.click(function () {
+                CrayonSyntax.toggleNums(uid);
             });
-            wrap_button.click(function () {
-                CrayonSyntax.toggle_wrap(uid);
+            wrapButton.click(function () {
+                CrayonSyntax.toggleWrap(uid);
             });
-            expand_button.click(function () {
-                CrayonSyntax.toggle_expand(uid);
+            expandButton.click(function () {
+                CrayonSyntax.toggleExpand(uid);
             });
-            plain_button.click(function () {
-                CrayonSyntax.toggle_plain(uid);
+            plainButton.click(function () {
+                CrayonSyntax.togglePlain(uid);
             });
-            copy_button.click(function () {
-                CrayonSyntax.copy_plain(uid);
+            copyButton.click(function () {
+                CrayonSyntax.copyPlain(uid);
             });
 
             // Enable retina if supported
@@ -179,20 +179,20 @@
             var load_func = function () {
                 // If nums hidden by default
                 if (nums.filter('[data-settings~="hide"]').length != 0) {
-                    nums_content.ready(function () {
+                    numsContent.ready(function () {
                         CrayonUtil.log('function' + uid);
-                        CrayonSyntax.toggle_nums(uid, true, true);
+                        CrayonSyntax.toggleNums(uid, true, true);
                     });
                 } else {
-                    update_nums_button(uid);
+                    updateNumsButton(uid);
                 }
 
                 if (typeof crayon[uid].expanded == 'undefined') {
                     // Determine if we should enable code expanding toggling
                     if (Math.abs(crayon[uid].main.width() - crayon[uid].table.width()) < 10) {
-                        crayon[uid].expand_button.hide();
+                        crayon[uid].expandButton.hide();
                     } else {
-                        crayon[uid].expand_button.show();
+                        crayon[uid].expandButton.show();
                     }
                 }
 
@@ -205,13 +205,14 @@
                 i++;
             };
             load_timer = setInterval(load_func, 300);
-            fix_scroll_blank(uid);
+            fixScrollBlank(uid);
 
             // Add ref to num for each line
             $(CRAYON_NUM, crayon[uid]).each(function () {
-                var line_id = $(this).attr('data-line');
-                var line = $('#' + line_id);
+                var lineID = $(this).attr('data-line');
+                var line = $('#' + lineID);
                 var height = line.style('height');
+                console.log('height', height);
                 if (height) {
                     line.attr('data-height', height);
                 }
@@ -227,19 +228,19 @@
             // Used to hide info
             if (!touchscreen) {
                 main.click(function () {
-                    crayon_info(uid, '', false);
+                    crayonInfo(uid, '', false);
                 });
                 plain.click(function () {
-                    crayon_info(uid, '', false);
+                    crayonInfo(uid, '', false);
                 });
                 info.click(function () {
-                    crayon_info(uid, '', false);
+                    crayonInfo(uid, '', false);
                 });
             }
 
             // Used for code popup
             if (c.filter('[data-settings~="no-popup"]').length == 0) {
-                crayon[uid].popup_settings = popupWindow(popup_button, {
+                crayon[uid].popup_settings = popupWindow(popupButton, {
                     height: screen.height - 200,
                     width: screen.width - 100,
                     top: 75,
@@ -248,16 +249,20 @@
                     windowURL: '',
                     data: '' // Data overrides URL
                 }, function () {
-                    code_popup(uid);
+                    codePopup(uid);
                 }, function () {
                     //CrayonUtil.log('after');
                 });
             }
 
             plain.css('opacity', 0);
+
+            crayon[uid].toolbar_visible = true;
+            crayon[uid].toolbarMouseover = false;
             // If a toolbar with mouseover was found
             if (toolbar.filter('[data-settings~="mouseover"]').length != 0 && !touchscreen) {
-                crayon[uid].toolbar_mouseover = true;
+                crayon[uid].toolbarMouseover = true;
+                crayon[uid].toolbar_visible = false;
 
                 toolbar.css('margin-top', '-' + toolbar.height() + 'px');
                 toolbar.hide();
@@ -270,10 +275,10 @@
                     // Hide on single click when overlayed
                     if (toolbar.filter('[data-settings~="hide"]').length != 0) {
                         main.click(function () {
-                            toolbar_toggle(uid, undefined, undefined, 0);
+                            toggleToolbar(uid, undefined, undefined, 0);
                         });
                         plain.click(function () {
-                            toolbar_toggle(uid, false, undefined, 0);
+                            toggleToolbar(uid, false, undefined, 0);
                         });
                     }
                 } else {
@@ -285,10 +290,10 @@
                 }
                 // Use .hover() for chrome, but in firefox mouseover/mouseout worked best
                 c.mouseenter(function () {
-                    toolbar_toggle(uid, true);
+                    toggleToolbar(uid, true);
                 })
                     .mouseleave(function () {
-                        toolbar_toggle(uid, false);
+                        toggleToolbar(uid, false);
                     });
             } else if (touchscreen) {
                 toolbar.show();
@@ -298,24 +303,24 @@
             if (plain.length != 0 && !touchscreen) {
                 if (plain.filter('[data-settings~="dblclick"]').length != 0) {
                     main.dblclick(function () {
-                        CrayonSyntax.toggle_plain(uid);
+                        CrayonSyntax.togglePlain(uid);
                     });
                 } else if (plain.filter('[data-settings~="click"]').length != 0) {
                     main.click(function () {
-                        CrayonSyntax.toggle_plain(uid);
+                        CrayonSyntax.togglePlain(uid);
                     });
                 } else if (plain.filter('[data-settings~="mouseover"]').length != 0) {
                     c.mouseenter(function () {
-                        CrayonSyntax.toggle_plain(uid, true);
+                        CrayonSyntax.togglePlain(uid, true);
                     })
                         .mouseleave(function () {
-                            CrayonSyntax.toggle_plain(uid, false);
+                            CrayonSyntax.togglePlain(uid, false);
                         });
-                    nums_button.hide();
+                    numsButton.hide();
                 }
                 if (plain.filter('[data-settings~="show-plain-default"]').length != 0) {
                     // XXX
-                    CrayonSyntax.toggle_plain(uid, true);
+                    CrayonSyntax.togglePlain(uid, true);
                 }
             }
 
@@ -338,10 +343,10 @@
 
             if (expand) {
                 c.mouseenter(function () {
-                    toggle_expand(uid, true);
+                    toggleExpand(uid, true);
                 })
                     .mouseleave(function () {
-                        toggle_expand(uid, false);
+                        toggleExpand(uid, false);
                     });
             }
 
@@ -359,12 +364,12 @@
             crayon[uid].mac = c.hasClass('crayon-os-mac');
 
             // Update clickable buttons
-            update_nums_button(uid);
-            update_plain_button(uid);
-            update_wrap(uid);
+            updateNumsButton(uid);
+            updatePlainButton(uid);
+            updateWrap(uid);
         };
 
-        var make_uid = function (uid) {
+        var makeUID = function (uid) {
             CrayonUtil.log(crayon);
             if (typeof crayon[uid] == 'undefined') {
                 crayon[uid] = $('#' + uid);
@@ -380,9 +385,9 @@
             return currUID++;
         };
 
-        var code_popup = function (uid) {
+        var codePopup = function (uid) {
             if (typeof crayon[uid] == 'undefined') {
-                return make_uid(uid);
+                return makeUID(uid);
             }
             var settings = crayon[uid].popup_settings;
             if (settings.data) {
@@ -409,21 +414,21 @@
             clone.find(CRAYON_MAIN).css('height', '');
 
             var code = '';
-            if (crayon[uid].plain_visible) {
+            if (crayon[uid].plainVisible) {
                 code = clone.find(CRAYON_PLAIN);
             } else {
                 code = clone.find(CRAYON_MAIN);
             }
 
-            settings.data = base.get_all_css() + '<body class="crayon-popup-window" style="padding:0; margin:0;"><div class="' + clone.attr('class') +
-                ' crayon-popup">' + remove_css_inline(get_jquery_str(code)) + '</div></body>';
+            settings.data = base.getAllCSS() + '<body class="crayon-popup-window" style="padding:0; margin:0;"><div class="' + clone.attr('class') +
+                ' crayon-popup">' + removeCssInline(getHtmlString(code)) + '</div></body>';
         };
 
-        var get_jquery_str = function (object) {
+        var getHtmlString = function (object) {
             return $('<div>').append(object.clone()).remove().html();
         };
 
-        var remove_css_inline = function (string) {
+        var removeCssInline = function (string) {
             var reStyle = /style\s*=\s*"([^"]+)"/gmi;
             var match = null;
             while ((match = reStyle.exec(string)) != null) {
@@ -435,7 +440,7 @@
         };
 
         // Get all CSS on the page as a string
-        base.get_all_css = function () {
+        base.getAllCSS = function () {
             var css_str = '';
             var css = $('link[rel="stylesheet"]');
             var filtered = [];
@@ -447,33 +452,33 @@
                 filtered = css.filter('[href*="crayon-syntax-highlighter"]');
             }
             filtered.each(function () {
-                var string = get_jquery_str($(this));
+                var string = getHtmlString($(this));
                 css_str += string;
             });
             return css_str;
         };
 
-        base.copy_plain = function (uid, hover) {
+        base.copyPlain = function (uid, hover) {
             if (typeof crayon[uid] == 'undefined') {
-                return make_uid(uid);
+                return makeUID(uid);
             }
 
             var plain = crayon[uid].plain;
 
-            base.toggle_plain(uid, true, true);
-            toolbar_toggle(uid, true);
+            base.togglePlain(uid, true, true);
+            toggleToolbar(uid, true);
 
             key = crayon[uid].mac ? '\u2318' : 'CTRL';
             var text = crayon[uid].copy_button.attr('data-text');
             text = text.replace(/%s/, key + '+C');
             text = text.replace(/%s/, key + '+V');
-            crayon_info(uid, text);
+            crayonInfo(uid, text);
             return false;
         };
 
-        var crayon_info = function (uid, text, show) {
+        var crayonInfo = function (uid, text, show) {
             if (typeof crayon[uid] == 'undefined') {
-                return make_uid(uid);
+                return makeUID(uid);
             }
 
             var info = crayon[uid].info;
@@ -485,18 +490,18 @@
                 show = true;
             }
 
-            if (crayon_is_slide_hidden(info) && show) {
+            if (isSlideHidden(info) && show) {
                 info.html('<div>' + text + '</div>');
                 info.css('margin-top', -info.height());
                 info.show();
-                crayon_slide(uid, info, true);
+                crayonSlide(uid, info, true);
                 setTimeout(function () {
-                    crayon_slide(uid, info, false);
+                    crayonSlide(uid, info, false);
                 }, 5000);
             }
 
             if (!show) {
-                crayon_slide(uid, info, false);
+                crayonSlide(uid, info, false);
             }
 
         };
@@ -513,7 +518,7 @@
             }
         };
 
-        var crayon_is_slide_hidden = function (object) {
+        var isSlideHidden = function (object) {
             var object_neg_height = '-' + object.height() + 'px';
             if (object.css('margin-top') == object_neg_height || object.css('display') == 'none') {
                 return true;
@@ -522,48 +527,54 @@
             }
         };
 
-        var crayon_slide = function (uid, object, show, anim_time, hide_delay) {
-            var object_neg_height = '-' + object.height() + 'px';
+        var crayonSlide = function (uid, object, show, animTime, hideDelay, callback) {
+            var complete = function () {
+                if (callback) {
+                    callback(uid, object);
+                }
+            }
+            var objectNegHeight = '-' + object.height() + 'px';
 
             if (typeof show == 'undefined') {
-                if (crayon_is_slide_hidden(object)) {
+                if (isSlideHidden(object)) {
                     show = true;
                 } else {
                     show = false;
                 }
             }
             // Instant means no time delay for showing/hiding
-            if (typeof anim_time == 'undefined') {
-                anim_time = 100;
+            if (typeof animTime == 'undefined') {
+                animTime = 100;
             }
-            if (anim_time == false) {
-                anim_time = false;
+            if (animTime == false) {
+                animTime = false;
             }
-            if (typeof hide_delay == 'undefined') {
-                hide_delay = 0;
+            if (typeof hideDelay == 'undefined') {
+                hideDelay = 0;
             }
             object.stop(true);
             if (show == true) {
                 object.show();
                 object.animate({
                     marginTop: 0
-                }, animt(anim_time, uid));
+                }, animt(animTime, uid), complete);
             } else if (show == false) {
                 // Delay if fully visible
-                if (/*instant == false && */object.css('margin-top') == '0px' && hide_delay) {
-                    object.delay(hide_delay);
+                if (/*instant == false && */object.css('margin-top') == '0px' && hideDelay) {
+                    object.delay(hideDelay);
                 }
                 object.animate({
-                    marginTop: object_neg_height
-                }, animt(anim_time, uid), function () {
+                    marginTop: objectNegHeight
+                }, animt(animTime, uid), function () {
                     object.hide();
+                    complete();
                 });
             }
         };
 
-        base.toggle_plain = function (uid, hover, select) {
+        base.togglePlain = function (uid, hover, select) {
             if (typeof crayon[uid] == 'undefined') {
-                return make_uid(uid);
+                return makeUID(uid);
             }
 
             var main = crayon[uid].main;
@@ -573,7 +584,7 @@
                 return;
             }
 
-            reconsile_dimensions(uid);
+            reconsileDimensions(uid);
 
             var visible, hidden;
             if (typeof hover != 'undefined') {
@@ -594,7 +605,7 @@
                 }
             }
 
-            crayon[uid].plain_visible = (hidden == plain);
+            crayon[uid].plainVisible = (hidden == plain);
 
             // Remember scroll positions of visible
             crayon[uid].top = visible.scrollTop();
@@ -603,13 +614,13 @@
             /* Used to detect a change in overflow when the mouse moves out
              * of the Crayon. If it does, then overflow has already been changed,
              * no need to revert it after toggling plain. */
-            crayon[uid].scroll_changed = false;
+            crayon[uid].scrollChanged = false;
 
             // Hide scrollbars during toggle to avoid Chrome weird draw error
             // visible.css('overflow', 'hidden');
             // hidden.css('overflow', 'hidden');
 
-            fix_scroll_blank(uid);
+            fixScrollBlank(uid);
 
             // Show hidden, hide visible
             visible.stop(true);
@@ -642,64 +653,64 @@
             hidden.scrollTop(crayon[uid].top);
             hidden.scrollLeft(crayon[uid].left);
 
-            update_plain_button(uid);
+            updatePlainButton(uid);
 
             // Hide toolbar if possible
-            toolbar_toggle(uid, false);
+            toggleToolbar(uid, false);
             return false;
         };
 
-        base.toggle_nums = function (uid, hide, instant) {
+        base.toggleNums = function (uid, hide, instant) {
             if (typeof crayon[uid] == 'undefined') {
-                make_uid(uid);
+                makeUID(uid);
                 return false;
             }
 
             if (crayon[uid].table.is(':animated')) {
                 return false;
             }
-            var nums_width = Math.round(crayon[uid].nums_content.width() + 1);
-            var neg_width = '-' + nums_width + 'px';
+            var numsWidth = Math.round(crayon[uid].nums_content.width() + 1);
+            var negWidth = '-' + numsWidth + 'px';
 
             // Force hiding
-            var num_hidden;
+            var numHidden;
             if (typeof hide != 'undefined') {
-                num_hidden = false;
+                numHidden = false;
             } else {
                 // Check hiding
-                num_hidden = (crayon[uid].table.css('margin-left') == neg_width);
+                numHidden = (crayon[uid].table.css('margin-left') == negWidth);
             }
 
-            var num_margin;
-            if (num_hidden) {
+            var numMargin;
+            if (numHidden) {
                 // Show
-                num_margin = '0px';
-                crayon[uid].nums_visible = true;
+                numMargin = '0px';
+                crayon[uid].numsVisible = true;
             } else {
                 // Hide
                 crayon[uid].table.css('margin-left', '0px');
-                crayon[uid].nums_visible = false;
-                num_margin = neg_width;
+                crayon[uid].numsVisible = false;
+                numMargin = negWidth;
             }
 
             if (typeof instant != 'undefined') {
-                crayon[uid].table.css('margin-left', num_margin);
-                update_nums_button(uid);
+                crayon[uid].table.css('margin-left', numMargin);
+                updateNumsButton(uid);
                 return false;
             }
 
             // Stop jerking animation from scrollbar appearing for a split second due to
             // change in width. Prevents scrollbar disappearing if already visible.
-            h_scroll_visible = (crayon[uid].table.width() + px_to_int(crayon[uid].table.css('margin-left')) > crayon[uid].main.width());
+            h_scroll_visible = (crayon[uid].table.width() + pxToInt(crayon[uid].table.css('margin-left')) > crayon[uid].main.width());
             v_scroll_visible = (crayon[uid].table.height() > crayon[uid].main.height());
             if (!h_scroll_visible && !v_scroll_visible) {
                 crayon[uid].main.css('overflow', 'hidden');
             }
             crayon[uid].table.animate({
-                marginLeft: num_margin
+                marginLeft: numMargin
             }, animt(200, uid), function () {
                 if (typeof crayon[uid] != 'undefined') {
-                    update_nums_button(uid);
+                    updateNumsButton(uid);
                     if (!h_scroll_visible && !v_scroll_visible) {
                         crayon[uid].main.css('overflow', 'auto');
                     }
@@ -708,46 +719,47 @@
             return false;
         };
 
-        base.toggle_wrap = function (uid) {
+        base.toggleWrap = function (uid) {
             crayon[uid].wrapped = !crayon[uid].wrapped;
-            update_wrap(uid);
+            updateWrap(uid);
         };
 
-        base.toggle_expand = function (uid) {
+        base.toggleExpand = function (uid) {
             var expand = !CrayonUtil.setDefault(crayon[uid].expanded, false);
-            toggle_expand(uid, expand);
+            toggleExpand(uid, expand);
         };
 
-        var update_wrap = function (uid, restore) {
+        var updateWrap = function (uid, restore) {
             restore = CrayonUtil.setDefault(restore, true);
             if (crayon[uid].wrapped) {
                 crayon[uid].addClass(CRAYON_WRAPPED);
             } else {
                 crayon[uid].removeClass(CRAYON_WRAPPED);
             }
-            update_wrap_button(uid);
+            updateWrapButton(uid);
             if (!crayon[uid].expanded && restore) {
-                restore_dimensions(uid);
+                restoreDimensions(uid);
             }
-            crayon[uid].wrap_times = 0;
-            crayon[uid].wrap_timer = setInterval(function () {
-                reconsile_lines(uid);
-                crayon[uid].wrap_times++;
-                if (crayon[uid].wrap_times == 5) {
-                    clearInterval(crayon[uid].wrap_timer);
+            crayon[uid].wrapTimes = 0;
+            clearInterval(crayon[uid].wrapTimer);
+            crayon[uid].wrapTimer = setInterval(function () {
+                reconsileLines(uid);
+                crayon[uid].wrapTimes++;
+                if (crayon[uid].wrapTimes == 5) {
+                    clearInterval(crayon[uid].wrapTimer);
                 }
             }, 200);
         };
 
-        var fix_table_width = function (uid) {
+        var fixTableWidth = function (uid) {
             if (typeof crayon[uid] == 'undefined') {
-                make_uid(uid);
+                makeUID(uid);
                 return false;
             }
         };
 
         // Convert '-10px' to -10
-        var px_to_int = function (pixels) {
+        var pxToInt = function (pixels) {
             if (typeof pixels != 'string') {
                 return 0;
             }
@@ -759,89 +771,95 @@
             }
         };
 
-        var update_nums_button = function (uid) {
-            if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].nums_visible == 'undefined') {
+        var updateNumsButton = function (uid) {
+            if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].numsVisible == 'undefined') {
                 return;
             }
-            if (crayon[uid].nums_visible) {
-                crayon[uid].nums_button.removeClass(UNPRESSED);
-                crayon[uid].nums_button.addClass(PRESSED);
+            if (crayon[uid].numsVisible) {
+                crayon[uid].numsButton.removeClass(UNPRESSED);
+                crayon[uid].numsButton.addClass(PRESSED);
             } else {
                 // TODO doesn't work on iPhone
-                crayon[uid].nums_button.removeClass(PRESSED);
-                crayon[uid].nums_button.addClass(UNPRESSED);
+                crayon[uid].numsButton.removeClass(PRESSED);
+                crayon[uid].numsButton.addClass(UNPRESSED);
             }
         };
 
-        var update_wrap_button = function (uid) {
+        var updateWrapButton = function (uid) {
             if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].wrapped == 'undefined') {
                 return;
             }
             if (crayon[uid].wrapped) {
-                crayon[uid].wrap_button.removeClass(UNPRESSED);
-                crayon[uid].wrap_button.addClass(PRESSED);
+                crayon[uid].wrapButton.removeClass(UNPRESSED);
+                crayon[uid].wrapButton.addClass(PRESSED);
             } else {
                 // TODO doesn't work on iPhone
-                crayon[uid].wrap_button.removeClass(PRESSED);
-                crayon[uid].wrap_button.addClass(UNPRESSED);
+                crayon[uid].wrapButton.removeClass(PRESSED);
+                crayon[uid].wrapButton.addClass(UNPRESSED);
             }
         };
 
-        var update_expand_button = function (uid) {
+        var updateExpandButton = function (uid) {
             if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].expanded == 'undefined') {
                 return;
             }
 
             if (crayon[uid].expanded) {
-                crayon[uid].expand_button.removeClass(UNPRESSED);
-                crayon[uid].expand_button.addClass(PRESSED);
+                crayon[uid].expandButton.removeClass(UNPRESSED);
+                crayon[uid].expandButton.addClass(PRESSED);
             } else {
                 // TODO doesn't work on iPhone
-                crayon[uid].expand_button.removeClass(PRESSED);
-                crayon[uid].expand_button.addClass(UNPRESSED);
+                crayon[uid].expandButton.removeClass(PRESSED);
+                crayon[uid].expandButton.addClass(UNPRESSED);
             }
         };
 
-        var update_plain_button = function (uid) {
-            if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].plain_visible == 'undefined') {
+        var updatePlainButton = function (uid) {
+            if (typeof crayon[uid] == 'undefined' || typeof crayon[uid].plainVisible == 'undefined') {
                 return;
             }
 
-            if (crayon[uid].plain_visible) {
-                crayon[uid].plain_button.removeClass(UNPRESSED);
-                crayon[uid].plain_button.addClass(PRESSED);
+            if (crayon[uid].plainVisible) {
+                crayon[uid].plainButton.removeClass(UNPRESSED);
+                crayon[uid].plainButton.addClass(PRESSED);
             } else {
                 // TODO doesn't work on iPhone
-                crayon[uid].plain_button.removeClass(PRESSED);
-                crayon[uid].plain_button.addClass(UNPRESSED);
+                crayon[uid].plainButton.removeClass(PRESSED);
+                crayon[uid].plainButton.addClass(UNPRESSED);
             }
         };
 
-        var toolbar_toggle = function (uid, show, anim_time, hide_delay) {
+        var toggleToolbar = function (uid, show, animTime, hideDelay) {
             if (typeof crayon[uid] == 'undefined') {
-                return make_uid(uid);
-            } else if (!crayon[uid].toolbar_mouseover) {
+                return makeUID(uid);
+            } else if (!crayon[uid].toolbarMouseover) {
                 return;
             }
             var toolbar = crayon[uid].toolbar;
 
-            if (typeof hide_delay == 'undefined') {
-                hide_delay = crayon[uid].toolbar_delay;
+            if (typeof hideDelay == 'undefined') {
+                hideDelay = crayon[uid].toolbar_delay;
             }
 
-            crayon_slide(uid, toolbar, show, anim_time, hide_delay);
+            crayonSlide(uid, toolbar, show, animTime, hideDelay, function () {
+                crayon[uid].toolbar_visible = show;
+            });
         };
 
         var initSize = function (uid) {
             if (typeof crayon[uid].initialSize == 'undefined') {
                 // Shared for scrollbars and expanding
                 crayon[uid].initialSize = {width: crayon[uid].main.width(), height: crayon[uid].main.height()};
+                // If toolbar is always showing, make room for it
+                if (crayon[uid].toolbarMouseover == false) {
+                    crayon[uid].initialSize.height += crayon[uid].toolbar.height();
+                }
             }
         };
 
-        var toggle_expand = function (uid, expand) {
+        var toggleExpand = function (uid, expand) {
             if (typeof crayon[uid] == 'undefined') {
-                return make_uid(uid);
+                return makeUID(uid);
             }
             if (typeof expand == 'undefined') {
                 return;
@@ -854,6 +872,11 @@
                 if (typeof crayon[uid].expanded == 'undefined') {
                     initSize(uid);
                     crayon[uid].finalSize = {width: crayon[uid].table.width(), height: crayon[uid].table.height()};
+                    // If toolbar is always showing, make room for it
+                    if (crayon[uid].toolbarMouseover == false) {
+                        crayon[uid].finalSize.height += crayon[uid].toolbar.height();
+                    }
+                    console.log(crayon[uid].initialSize, crayon[uid].finalSize);
                     // Ensure we don't shrink
                     crayon[uid].finalSize.width = CrayonUtil.setMin(crayon[uid].finalSize.width, crayon[uid].initialSize.width);
                     crayon[uid].finalSize.height = CrayonUtil.setMin(crayon[uid].finalSize.height, crayon[uid].initialSize.height);
@@ -899,7 +922,7 @@
 
                 crayon[uid].animate(newSize, animt(crayon[uid].expandTime, uid), function () {
                     crayon[uid].expanded = true;
-                    update_expand_button(uid);
+                    updateExpandButton(uid);
                 });
             } else {
                 var initialSize = crayon[uid].initialSize;
@@ -916,33 +939,33 @@
                         newSize.height = initialSize.height;
                     }
                     crayon[uid].animate(newSize, animt(crayon[uid].expandTime, uid), function () {
-                        expand_finish(uid);
+                        expandFinish(uid);
                     });
                 } else {
                     setTimeout(function () {
-                        expand_finish(uid);
+                       expandFinish(uid);
                     }, delay);
                 }
             }
 
-            reconsile_dimensions(uid);
+            reconsileDimensions(uid);
             if (expand) {
-                update_wrap(uid, false);
+                updateWrap(uid, false);
             }
         };
 
-        var expand_finish = function(uid) {
+        var expandFinish = function(uid) {
             crayon[uid].expanded = false;
-            restore_dimensions(uid);
-            update_expand_button(uid);
+            restoreDimensions(uid);
+            updateExpandButton(uid);
             if (crayon[uid].wrapped) {
-                update_wrap(uid);
+                updateWrap(uid);
             }
         };
 
         var toggle_scroll = function (uid, show, expand) {
             if (typeof crayon[uid] == 'undefined') {
-                return make_uid(uid);
+                return makeUID(uid);
             }
             if (typeof show == 'undefined') {
                 return;
@@ -974,22 +997,18 @@
                 crayon[uid].left = visible.scrollLeft();
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
-//                main.height(crayon[uid].initialSize.height);
-//                plain.height(crayon[uid].initialSize.height);
-
+                
                 if (!crayon[uid].expanded) {
-                    restore_dimensions(uid);
+                    restoreDimensions(uid);
                 }
-
-                //restore_dimensions(uid);
             }
             // Register that overflow has changed
-            crayon[uid].scroll_changed = true;
-            fix_scroll_blank(uid);
+            crayon[uid].scrollChanged = true;
+            fixScrollBlank(uid);
         };
 
         /* Fix weird draw error, causes blank area to appear where scrollbar once was. */
-        var fix_scroll_blank = function (uid) {
+        var fixScrollBlank = function (uid) {
             // Scrollbar draw error in Chrome
             crayon[uid].table.style('width', '100%', 'important');
             var redraw = setTimeout(function () {
@@ -998,27 +1017,27 @@
             }, 10);
         };
 
-        var restore_dimensions = function (uid) {
+        var restoreDimensions = function (uid) {
             // Restore dimensions
             var main = crayon[uid].main;
-            var main_style = crayon[uid].main_style;
-            main.css(main_style);
+            var mainStyle = crayon[uid].main_style;
+            main.css(mainStyle);
             // Width styles also apply to crayon
             crayon[uid].css('height', 'auto');
-            crayon[uid].css('width', main_style['width']);
-            crayon[uid].css('max-width', main_style['max-width']);
-            crayon[uid].css('min-width', main_style['min-width']);
+            crayon[uid].css('width', mainStyle['width']);
+            crayon[uid].css('max-width', mainStyle['max-width']);
+            crayon[uid].css('min-width', mainStyle['min-width']);
         };
 
-        var reconsile_dimensions = function (uid) {
+        var reconsileDimensions = function (uid) {
             // Reconsile dimensions
             crayon[uid].plain.height(crayon[uid].main.height());
         };
 
-        var reconsile_lines = function (uid) {
+        var reconsileLines = function (uid) {
             $(CRAYON_NUM, crayon[uid]).each(function () {
-                var line_id = $(this).attr('data-line');
-                var line = $('#' + line_id);
+                var lineID = $(this).attr('data-line');
+                var line = $('#' + lineID);
                 if (crayon[uid].wrapped) {
                     line.css('height', '');
                     $(this).css('height', line.height());
@@ -1026,10 +1045,9 @@
                 } else {
                     var height = line.attr('data-height');
                     height = height ? height : '';
-                    if (typeof height != 'undefined') {
-                        line.css('height', height);
-                        $(this).css('height', height);
-                    }
+                    console.log(height);
+                    line.css('height', height);
+                    $(this).css('height', height);
                     //line.css('height', line.css('line-height'));
                 }
             });
