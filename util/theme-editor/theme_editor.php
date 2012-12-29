@@ -260,7 +260,7 @@ class CrayonThemeEditorWP {
 
         $tInformation = crayon__("Information");
         $tHighlighting = crayon__("Highlighting");
-        $tFoundation = crayon__("Foundation");
+        $tFrame = crayon__("Frame");
         $tLines = crayon__("Lines");
         $tNumbers = crayon__("Line Numbers");
         $tToolbar = crayon__("Toolbar");
@@ -314,12 +314,12 @@ class CrayonThemeEditorWP {
             <td id="crayon-editor-control-wrapper">
                 <div id="crayon-editor-controls">
                     <ul>
-                        <li title="<?php echo $tInformation ?>"><a href="#tabs-1"></a></li>
-                        <li title="<?php echo $tHighlighting ?>"><a href="#tabs-2"></a></li>
-                        <li title="<?php echo $tFoundation ?>"><a href="#tabs-3"></a></li>
-                        <li title="<?php echo $tLines ?>"><a href="#tabs-4"></a></li>
-                        <li title="<?php echo $tNumbers ?>"><a href="#tabs-5"></a></li>
-                        <li title="<?php echo $tToolbar ?>"><a href="#tabs-6"></a></li>
+                        <li title="<?php echo $tInformation ?>"><a class="crayon-tab-information" href="#tabs-1"></a></li>
+                        <li title="<?php echo $tHighlighting ?>"><a class="crayon-tab-highlighting" href="#tabs-2"></a></li>
+                        <li title="<?php echo $tFrame ?>"><a class="crayon-tab-frame" href="#tabs-3"></a></li>
+                        <li title="<?php echo $tLines ?>"><a class="crayon-tab-lines" href="#tabs-4"></a></li>
+                        <li title="<?php echo $tNumbers ?>"><a class="crayon-tab-numbers" href="#tabs-5"></a></li>
+                        <li title="<?php echo $tToolbar ?>"><a class="crayon-tab-toolbar" href="#tabs-6"></a></li>
                     </ul>
                     <div id="tabs-1">
                         <?php
@@ -353,7 +353,7 @@ class CrayonThemeEditorWP {
                             'f' => crayon__("Faded"),
                             'h' => crayon__("HTML")
                         );
-                        $atts = array();
+                        $atts = array(new Title($tHighlighting));
                         foreach ($elems as $class => $name) {
                             $atts[] = array(
                                 $name,
@@ -370,7 +370,7 @@ class CrayonThemeEditorWP {
                         <?php
                         $inline = '-inline';
                         self::createAttributesForm(array(
-                            new Title($tFoundation),
+                            new Title($tFrame),
                             new Separator(crayon__("Regular")),
                             self::createAttribute('', 'background', $tBackground),
                             array(

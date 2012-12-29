@@ -49,13 +49,12 @@
     line-height: 24px;
     height: 22px;
     padding-top: 0;
-    background: #dedede;
+    background: #dedede url(images/title.png) center bottom repeat-x;
     border-color: #999;
 }
 
 #crayon-editor-controls .crayon-theme-editor-form .separator.title .content {
     color: #333;
-    width: 100%;
     text-shadow: 0 1px 2px #eee;
 }
 
@@ -144,8 +143,8 @@
 #crayon-editor-controls .ui-tabs-nav,
 #crayon-editor-controls .ui-tabs-nav li,
 #crayon-editor-controls .ui-tabs-nav li a {
-    height: 32px;
-    line-height: 32px;
+    height: 33px;
+    line-height: 33px;
     padding: 0;
 }
 
@@ -170,13 +169,17 @@
     border-bottom-right-radius: 0;
 }
 
+#crayon-editor-controls .ui-widget-header li:last-child {
+    border-right: none !important;
+}
+
 #crayon-editor-control-wrapper .ui-widget-content {
     border: 0;
     background: none;
 }
 
 #crayon-editor-controls .ui-widget-content {
-    border: 1px solid #dddddd;
+    border: 1px solid #bbb;
     border-top-style: none;
     background: #f5f5f5 50% top repeat-x;
     color: #333333;
@@ -200,6 +203,27 @@
 .ui-colorpicker {
     z-index: 100 !important;
 }
+
+.crayon-tab-information {
+    background: url(images/information.png) no-repeat top center;
+}
+.crayon-tab-highlighting {
+    background: url(images/highlighting.png) no-repeat top center;
+}
+.crayon-tab-frame {
+    background: url(images/frame.png) no-repeat top center;
+}
+.crayon-tab-lines {
+    background: url(images/lines.png) no-repeat top center;
+}
+.crayon-tab-numbers {
+    background: url(images/numbers.png) no-repeat top center;
+}
+.crayon-tab-toolbar {
+    background: url(images/toolbar.png) no-repeat top center;
+}
+
+
 
 /* {*/
 /*height: auto !important;*/
