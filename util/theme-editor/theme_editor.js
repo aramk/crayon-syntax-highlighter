@@ -86,13 +86,13 @@
                 status.show();
                 result = parseInt(result);
                 if (result !== 0) {
-                    status.html("Success!");
+                    status.html(strings.success);
                     if (result === 2) {
                         window.GET['theme-editor'] = 1;
                         CrayonUtil.reload();
                     }
                 } else {
-                    status.html("Failed!");
+                    status.html(strings.fail);
                 }
                 changed = false;
                 setTimeout(function () {
@@ -103,8 +103,8 @@
 
         base.delete = function (id, name) {
             base.createDialog({
-                title: "Delete",
-                html: "Are you sure you want to delete the \"" + name + "\" theme?",
+                title: strings.delete,
+                html: strings.deleteThemeConfirm.replace('%s', name),
                 yes: function () {
                     $.post(crayonSettings.ajaxurl, {
                         action: 'crayon-theme-editor-delete',
@@ -114,7 +114,7 @@
                             CrayonUtil.reload();
                         } else {
                             base.createAlert({
-                                html: "Delete failed! Please check the log for details."
+                                html: strings.deleteFail
                             });
                         }
                     });
@@ -128,8 +128,8 @@
         base.duplicate = function (id, name) {
             base.createPrompt({
                 //html: "Are you sure you want to duplicate the '" + name + "' theme?",
-                title: "Duplicate",
-                text: "New Name",
+                title: strings.duplicate,
+                text: strings.newName,
                 value: base.getNextAvailableName(id),
                 ok: function (val) {
                     // TODO implement delete
@@ -142,7 +142,7 @@
                             CrayonUtil.reload();
                         } else {
                             base.createAlert({
-                                html: "Duplicate failed! Please check the log for details."
+                                html: strings.duplicateFail
                             });
                         }
                     });
@@ -384,8 +384,8 @@
             $('#crayon-editor-back').click(function () {
                 if (changed) {
                     base.createDialog({
-                        html: "Are you sure you want to discard all changes?",
-                        title: "Confirm",
+                        html: strings.discardConfirm,
+                        title: strings.confirm,
                         yes: function () {
                             showMain();
                         }
@@ -499,9 +499,9 @@
         base.updateTitle = function () {
             var name = base.getName();
             if (adminSettings.editing_theme) {
-                title.html('Editing Theme: ' + name);
+                title.html(strings.editingTheme.replace('%s', name));
             } else {
-                title.html('Creating Theme: ' + name);
+                title.html(strings.creatingTheme.replace('%s', name));
             }
         };
 
@@ -511,8 +511,8 @@
 
         base.createPrompt = function (args) {
             args = $.extend({
-                title: "Prompt",
-                text: "Value",
+                title: strings.prompt,
+                text: strings.value,
                 value: '',
                 options: {
                     buttons: {
@@ -537,7 +537,7 @@
 
         base.createAlert = function (args) {
             args = $.extend({
-                title: "Alert",
+                title: strings.alert,
                 options: {
                     buttons: {
                         "OK": function () {
@@ -551,9 +551,9 @@
 
         base.createDialog = function (args) {
             var defaultArgs = {
-                yesLabel: strings.Yes,
-                noLabel: strings.No,
-                title: "Confirm"
+                yesLabel: strings.yes,
+                noLabel: strings.no,
+                title: strings.confirm
             };
             args = $.extend(defaultArgs, args);
             var options = {

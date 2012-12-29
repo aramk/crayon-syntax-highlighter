@@ -182,10 +182,25 @@ class CrayonThemeEditorWP {
             self::$strings = array(
                 // These appear only in the UI and can be translated
                 // TODO add the rest
-                'No' => crayon__("No"),
-                'Yes' => crayon__("Yes"),
+                'no' => crayon__("No"),
+                'yes' => crayon__("Yes"),
                 'userTheme' => crayon__("User-Defined Theme"),
-                'stockTheme' => crayon__("Stock Theme")
+                'stockTheme' => crayon__("Stock Theme"),
+                'success' => crayon__("Success!"),
+                'fail' => crayon__("Failed!"),
+                'delete' => crayon__("Delete"),
+                'deleteThemeConfirm' => crayon__("Are you sure you want to delete the \"%s\" theme?"),
+                'deleteFail' => crayon__("Delete failed! Please check the log for details."),
+                'duplicate' => crayon__("Duplicate"),
+                'newName' => crayon__("New Name"),
+                'duplicateFail' => crayon__("Duplicate failed! Please check the log for details."),
+                'discardConfirm' => crayon__("Are you sure you want to discard all changes?"),
+                'confirm' => crayon__("Confirm"),
+                'editingTheme' => crayon__("Editing Theme: %s"),
+                'creatingTheme' => crayon__("Creating Theme: %s"),
+                'prompt' => crayon__("Prompt"),
+                'value' => crayon__("Value"),
+                'alert' => crayon__("Alert")
             );
         }
     }
@@ -295,8 +310,8 @@ class CrayonThemeEditorWP {
     <div id="<?php echo self::$settings['prefix'] ?>-info"></div>
 
     <p>
-        <a id="crayon-editor-back" class="button-primary"><?php crayon_e('Back To Settings'); ?></a>
-        <a id="crayon-editor-save" class="button-primary"><?php crayon_e('Save'); ?></a>
+        <a id="crayon-editor-back" class="button-primary"><?php crayon_e("Back To Settings"); ?></a>
+        <a id="crayon-editor-save" class="button-primary"><?php crayon_e("Save"); ?></a>
         <span id="crayon-editor-status"></span>
     </p>
 
