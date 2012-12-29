@@ -422,7 +422,7 @@
                 infoHTML = '<div class="type ' + type + '">' + typeName + '</div><div class="content">' + infoHTML + '</div>';
                 theme_info.html(infoHTML);
                 // Disable for stock themes
-                var disabled = !adminSettings.currThemeIsUser && !adminSettings.debug;
+                var disabled = !adminSettings.currThemeIsUser && !settings.debug;
                 theme_editor_edit_button.attr('disabled', disabled);
                 theme_editor_delete_button.attr('disabled', disabled);
                 if (callback) {

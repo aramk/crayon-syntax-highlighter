@@ -88,6 +88,7 @@
 
 #crayon-editor-controls input {
     line-height: 23px;
+    height: 23px;
     border: 1px solid #ccc;
     padding: 0 5px;
     margin: 2px 0;
