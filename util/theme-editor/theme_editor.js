@@ -32,9 +32,10 @@
         base.show = function (callback, crayon) {
             // Called each time editor is shown
             previewCrayon = crayon.find('.crayon-syntax');
-            crayon.attr('id', 'theme-editor-instance');
-            CrayonSyntax.process(crayon, true);
-            preview.html(crayon);
+            //crayon.attr('id', 'theme-editor-instance');
+//            CrayonSyntax.process(crayon, true);
+//            preview.html(crayon);
+            preview.append(crayon)
             base.load();
             if (callback) {
                 callback();
@@ -490,10 +491,11 @@
         };
 
         var showMain = function () {
+            admin.resetPreview();
             admin.preview_update();
             admin.show_theme_info();
             admin.show_main();
-            preview.html('');
+            //preview.html('');
         };
 
         base.updateTitle = function () {

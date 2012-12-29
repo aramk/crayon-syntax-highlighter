@@ -212,7 +212,6 @@
                 var lineID = $(this).attr('data-line');
                 var line = $('#' + lineID);
                 var height = line.style('height');
-                console.log('height', height);
                 if (height) {
                     line.attr('data-height', height);
                 }
@@ -876,7 +875,6 @@
                     if (crayon[uid].toolbarMouseover == false) {
                         crayon[uid].finalSize.height += crayon[uid].toolbar.height();
                     }
-                    console.log(crayon[uid].initialSize, crayon[uid].finalSize);
                     // Ensure we don't shrink
                     crayon[uid].finalSize.width = CrayonUtil.setMin(crayon[uid].finalSize.width, crayon[uid].initialSize.width);
                     crayon[uid].finalSize.height = CrayonUtil.setMin(crayon[uid].finalSize.height, crayon[uid].initialSize.height);
@@ -1045,7 +1043,6 @@
                 } else {
                     var height = line.attr('data-height');
                     height = height ? height : '';
-                    console.log(height);
                     line.css('height', height);
                     $(this).css('height', height);
                     //line.css('height', line.css('line-height'));

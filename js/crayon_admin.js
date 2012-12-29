@@ -6,7 +6,7 @@
         var base = this;
 
         // Preview
-        var preview, preview_info, preview_cbox, preview_delay_timer, preview_get, preview_loaded;
+        var preview, previewWrapper, preview_info, preview_cbox, preview_delay_timer, preview_get, preview_loaded;
         // The DOM object ids that trigger a preview update
         var preview_obj_names = [];
         // The jQuery objects for these objects
@@ -84,6 +84,7 @@
 
             // Preview
             preview = $('#crayon-live-preview');
+            previewWrapper = $('#crayon-live-preview-wrapper');
             preview_info = $('#crayon-preview-info');
             preview_cbox = util.cssElem('#preview');
             if (preview.length != 0) {
@@ -488,9 +489,13 @@
                 }
                 CrayonSyntaxThemeEditor.show(function () {
                     base.show_theme_editor_now(button);
-                }, preview.clone());
+                }, preview);
             });
             return false;
+        };
+
+        base.resetPreview = function() {
+            previewWrapper.append(preview);
         };
 
         base.show_theme_editor_now = function (button) {

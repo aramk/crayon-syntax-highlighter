@@ -945,7 +945,9 @@ class Human {
         ?>
     <div id="crayon-theme-panel">
         <div id="crayon-theme-info"></div>
-        <div id="crayon-live-preview"></div>
+        <div id="crayon-live-preview-wrapper">
+            <div id="crayon-live-preview"></div>
+        </div>
         <div id="crayon-preview-info">
             <?php printf(crayon__('Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked.'), '<a href="#langs">', '</a>'); ?>
         </div>
