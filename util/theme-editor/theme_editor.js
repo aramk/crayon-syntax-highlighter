@@ -116,7 +116,7 @@
                             CrayonUtil.reload();
                         } else {
                             base.createAlert({
-                                html: strings.deleteFail
+                                html: strings.deleteFail + ' ' + strings.checkLog
                             });
                         }
                     });
@@ -143,7 +143,7 @@
                             CrayonUtil.reload();
                         } else {
                             base.createAlert({
-                                html: strings.duplicateFail
+                                html: strings.duplicateFail + ' ' + strings.checkLog
                             });
                         }
                     });
@@ -164,13 +164,10 @@
                         message: val
                     }, function (result) {
                         console.log(result);
-//                        if (result > 0) {
-//                            CrayonUtil.reload();
-//                        } else {
-//                            base.createAlert({
-//                                html: strings.duplicateFail
-//                            });
-//                        }
+                        var msg = result > 0 ? strings.submitSucceed : strings.submitFail + ' ' + strings.checkLog ;
+                        base.createAlert({
+                            html: msg
+                        });
                     });
                 }
             });

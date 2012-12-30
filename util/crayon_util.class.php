@@ -121,21 +121,12 @@ class CrayonUtil {
             @unlink($zipFile);
         }
 
-        var_dump('src', $src);
-        var_dump('dest', $dest);
-        var_dump('base', $base);
-
         $zip = new ZipArchive;
-
-        var_dump('files', $files);
-
-        var_dump('zipFile', $zipFile);
 
         if ($zip->open($zipFile, ZIPARCHIVE::CREATE) === TRUE) {
             foreach ($files as $file) {
                 $relFile = str_replace($base, '', $file);
                 $zip->addFile($file, $relFile);
-                var_dump('added file', $relFile);
             }
             $zip->close();
         } else {

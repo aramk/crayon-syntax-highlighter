@@ -190,10 +190,11 @@ class CrayonThemeEditorWP {
                 'fail' => crayon__("Failed!"),
                 'delete' => crayon__("Delete"),
                 'deleteThemeConfirm' => crayon__("Are you sure you want to delete the \"%s\" theme?"),
-                'deleteFail' => crayon__("Delete failed! Please check the log for details."),
+                'deleteFail' => crayon__("Delete failed!"),
                 'duplicate' => crayon__("Duplicate"),
                 'newName' => crayon__("New Name"),
-                'duplicateFail' => crayon__("Duplicate failed! Please check the log for details."),
+                'duplicateFail' => crayon__("Duplicate failed!"),
+                'checkLog' => crayon__("Please check the log for details."),
                 'discardConfirm' => crayon__("Are you sure you want to discard all changes?"),
                 'confirm' => crayon__("Confirm"),
                 'editingTheme' => crayon__("Editing Theme: %s"),
@@ -204,7 +205,9 @@ class CrayonThemeEditorWP {
                 'submit' => crayon__("Submit Your Theme"),
                 'submitText' => crayon__("Submit your User Theme for inclusion as a Stock Theme in Crayon!"),
                 'message' => crayon__("Message"),
-                'submitMessage' => crayon__("Please include this theme in Crayon!")
+                'submitMessage' => crayon__("Please include this theme in Crayon!"),
+                'submitSucceed' => crayon__("Submit was successful."),
+                'submitFail' => crayon__("Submit failed!"),
             );
         }
     }
@@ -766,8 +769,6 @@ class CrayonThemeEditorWP {
         $dest = $dir . 'tmp';
         @mkdir($dest);
 
-//        var_dump($dir);
-//        var_dump($dest);
         if (is_dir($dir) && CrayonResources::themes()->exists($id)) {
             try {
                 $zipFile = CrayonUtil::createZip($dir, $dest, TRUE);
@@ -779,11 +780,17 @@ class CrayonThemeEditorWP {
                     'message' => $message,
                     'file' => $zipFile
                 ));
+                @unlink($zipFile);
+                echo 1;
             } catch (Exception $e) {
                 CrayonLog::syslog($e->getMessage(), "THEME SUBMIT");
                 var_dump('error', $e);
+                echo -2;
             }
+        } else {
+            echo -1;
         }
+        exit();
     }
 
     public static function getCSSInfo($css) {
