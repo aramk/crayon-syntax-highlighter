@@ -200,7 +200,11 @@ class CrayonThemeEditorWP {
                 'creatingTheme' => crayon__("Creating Theme: %s"),
                 'prompt' => crayon__("Prompt"),
                 'value' => crayon__("Value"),
-                'alert' => crayon__("Alert")
+                'alert' => crayon__("Alert"),
+                'submit' => crayon__("Submit Your Theme"),
+                'submitText' => crayon__("Submit your User Theme for inclusion as a Stock Theme in Crayon!"),
+                'message' => crayon__("Message"),
+                'submitMessage' => crayon__("Please include this theme in Crayon!")
             );
         }
     }

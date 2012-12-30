@@ -134,7 +134,6 @@
                 text: strings.newName,
                 value: base.getNextAvailableName(id),
                 ok: function (val) {
-                    // TODO implement delete
                     $.post(crayonSettings.ajaxurl, {
                         action: 'crayon-theme-editor-duplicate',
                         id: id,
@@ -147,6 +146,31 @@
                                 html: strings.duplicateFail
                             });
                         }
+                    });
+                }
+            });
+        };
+
+        base.submit = function (id, name) {
+            base.createPrompt({
+                title: strings.submit,
+                desc: strings.submitText,
+                text: strings.message,
+                value: strings.submitMessage,
+                ok: function (val) {
+                    $.post(crayonSettings.ajaxurl, {
+                        action: 'crayon-theme-editor-submit',
+                        id: id,
+                        name: val
+                    }, function (result) {
+                        console.log(result);
+//                        if (result > 0) {
+//                            CrayonUtil.reload();
+//                        } else {
+//                            base.createAlert({
+//                                html: strings.duplicateFail
+//                            });
+//                        }
                     });
                 }
             });
@@ -535,6 +559,7 @@
             args = $.extend({
                 title: strings.prompt,
                 text: strings.value,
+                desc: null,
                 value: '',
                 options: {
                     buttons: {
@@ -553,7 +578,12 @@
                     }
                 }
             }, args);
-            args.html = args.text + ': ' + base.createInput('prompt-text');
+            args.html = '<table>';
+            if (args.desc) {
+                args.html += '<tr><td colspan="2">' + args.desc + '</td></tr>';
+            }
+            args.html += '<tr><td>' + args.text + ':</td><td>' + base.createInput('prompt-text') + '</td></tr>';
+            args.html += '</table>';
             base.createDialog(args);
         };
 

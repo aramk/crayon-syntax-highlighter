@@ -21,7 +21,7 @@
         // Log
         var log_button, log_text;
 
-        var main_wrap, theme_editor_wrap, theme_editor_loading, theme_editor_edit_button, theme_editor_create_button, theme_editor_duplicate_button, theme_editor_delete_button;
+        var main_wrap, theme_editor_wrap, theme_editor_loading, theme_editor_edit_button, theme_editor_create_button, theme_editor_duplicate_button, theme_editor_delete_button, theme_editor_submit_button;
         var theme_select, theme_info, theme_ver, theme_author, theme_desc;
 
         var settings = null;
@@ -54,6 +54,7 @@
             theme_editor_create_button = $('#crayon-theme-editor-create-button');
             theme_editor_duplicate_button = $('#crayon-theme-editor-duplicate-button');
             theme_editor_delete_button = $('#crayon-theme-editor-delete-button');
+            theme_editor_submit_button = $('#crayon-theme-editor-submit-button');
             theme_editor_edit_button.click(function () {
                 base.show_theme_editor(theme_editor_edit_button,
                     true);
@@ -70,6 +71,9 @@
                     CrayonSyntaxThemeEditor.delete(adminSettings.currTheme, adminSettings.currThemeName);
                 }
                 return false;
+            });
+            theme_editor_submit_button.click(function () {
+                CrayonSyntaxThemeEditor.submit(adminSettings.currTheme, adminSettings.currThemeName);
             });
 
             // Help
@@ -426,6 +430,7 @@
                 var disabled = !adminSettings.currThemeIsUser && !settings.debug;
                 theme_editor_edit_button.attr('disabled', disabled);
                 theme_editor_delete_button.attr('disabled', disabled);
+                theme_editor_submit_button.attr('disabled', disabled);
                 if (callback) {
                     callback();
                 }

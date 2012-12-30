@@ -277,6 +277,10 @@
     border-top: 1px solid #eee !important;
 }
 
+.ui-dialog-content td input {
+    width: 100%;
+}
+
 /* {*/
 /*height: auto !important;*/
 /*}*/

@@ -933,7 +933,7 @@ class Human {
         if (CRAYON_THEME_EDITOR) {
             // 			echo '<a id="crayon-theme-editor-button" class="button-primary crayon-admin-button" loading="'. crayon__('Loading...') .'" loaded="'. crayon__('Theme Editor') .'" >'. crayon__('Theme Editor') .'</a></br>';
             echo '<div id="crayon-theme-editor-admin-buttons">';
-            $buttons = array('edit' => crayon__('Edit'), 'duplicate' => crayon__('Duplicate'), /*'create' => crayon__('Create'),*/
+            $buttons = array('edit' => crayon__('Edit'), 'duplicate' => crayon__('Duplicate'), 'submit' => crayon__('Submit'),
                 'delete' => crayon__('Delete'));
             foreach ($buttons as $k => $v) {
                 echo '<a id="crayon-theme-editor-', $k, '-button" class="button-secondary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', $v, '" >', $v, '</a>';
