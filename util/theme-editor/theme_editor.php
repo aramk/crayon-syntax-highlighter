@@ -147,7 +147,7 @@ class CrayonThemeEditorWP {
             self::$attributes = array();
             // A map of CSS attribute to input type
             self::$attributeGroups = array(
-                'color' => array('background', 'border-color', 'color', 'border-top-color', 'border-bottom-color'),
+                'color' => array('background', 'background-color', 'border-color', 'color', 'border-top-color', 'border-bottom-color'),
                 'size' => array('border-width'),
                 'border-style' => array('border-style', 'border-bottom-style', 'border-top-style')
             );
@@ -286,8 +286,17 @@ class CrayonThemeEditorWP {
         $tTopBorder = crayon__("Top Border");
         $tBottomBorder = crayon__("Bottom Border");
 
+        $tHover = crayon__("Hover");
+        $tActive = crayon__("Active");
+        $tPressed = crayon__("Pressed");
+        $tHoverPressed = crayon__("Pressed & Hover");
+        $tActivePressed = crayon__("Pressed & Active");
+
         $top = '.crayon-top';
         $bottom = '.crayon-bottom';
+        $hover = ':hover';
+        $active = ':active';
+        $pressed = '.crayon-pressed';
 
         ?>
 
@@ -446,6 +455,14 @@ class CrayonThemeEditorWP {
                             new Separator(crayon__("Marked")),
                             self::createAttribute($markedNum, 'background', $tBackground),
                             self::createAttribute($markedNum, 'color', $tText),
+                            array(
+                                $tBorder,
+                                self::createAttribute($markedNum, 'border-width'),
+                                self::createAttribute($markedNum, 'border-color'),
+                                self::createAttribute($markedNum, 'border-style'),
+                            ),
+                            self::createAttribute($markedNum.$top, 'border-top-style', $tTopBorder),
+                            self::createAttribute($markedNum.$bottom, 'border-bottom-style', $tBottomBorder),
                             new Separator(crayon__("Striped & Marked")),
                             self::createAttribute($stripedMarkedNum, 'background', $tBackground),
                             self::createAttribute($stripedMarkedNum, 'color', $tText),
@@ -455,6 +472,8 @@ class CrayonThemeEditorWP {
                     <div id="tabs-6">
                         <?php
                         $toolbar = ' .crayon-toolbar';
+                        $title = ' .crayon-title';
+                        $button = ' a.crayon-button';
                         self::createAttributesForm(array(
                             new Title($tToolbar),
                             self::createAttribute($toolbar, 'background', $tBackground),
@@ -464,6 +483,21 @@ class CrayonThemeEditorWP {
                                 self::createAttribute($toolbar, 'border-bottom-color'),
                                 self::createAttribute($toolbar, 'border-bottom-style'),
                             ),
+                            array(
+                                crayon__("Title"),
+                                self::createAttribute($title, 'color'),
+                                self::createAttribute($title, 'font-weight'),
+                                self::createAttribute($title, 'font-style'),
+                                self::createAttribute($title, 'text-decoration')
+                            ),
+                            new Separator(crayon__("Buttons")),
+                            self::createAttribute($button, 'background-color', $tBackground),
+                            self::createAttribute($button.$hover, 'background-color', $tHover),
+                            self::createAttribute($button.$active, 'background-color', $tActive),
+                            self::createAttribute($button.$pressed, 'background-color', $tPressed),
+                            self::createAttribute($button.$pressed.$hover, 'background-color', $tHoverPressed),
+                            self::createAttribute($button.$pressed.$active, 'background-color', $tActivePressed),
+
 //                            self::createAttribute($toolbar.' > div', 'float', crayon__("Title Float")),
 //                            self::createAttribute($toolbar.' .crayon-tools', 'float', crayon__("Buttons Float"))
                         ));
@@ -563,12 +597,15 @@ class CrayonThemeEditorWP {
      * Saves the given theme id and css, making any necessary path and id changes to ensure the new theme is valid.
      * Echos 0 on failure, 1 on success and 2 on success and if paths have changed.
      */
-    public static function save($allow_edit_stock_theme = CRAYON_DEBUG) {
+    public static function save($allow_edit_stock_theme = NULL) {
         CrayonSettingsWP::load_settings();
         $oldID = $_POST['id'];
         $name = $_POST['name'];
         $css = stripslashes($_POST['css']);
         $change_settings = CrayonUtil::set_default($_POST['change_settings'], TRUE);
+        $allow_edit = CrayonUtil::set_default($_POST['allow_edit'], TRUE);
+        $allow_edit_stock_theme = CrayonUtil::set_default_null($allow_edit_stock_theme, CRAYON_DEBUG);
+//        $allow_overwrite = CrayonUtil::set_default($_POST['allow_overwrite'], TRUE);
         $delete = CrayonUtil::set_default($_POST['delete'], TRUE);
         $oldTheme = CrayonResources::themes()->get($oldID);
 
@@ -581,6 +618,20 @@ class CrayonThemeEditorWP {
             $newID = CrayonResource::clean_id($name);
             $newPath = CrayonResources::themes()->path($newID, $user);
             $newDir = CrayonResources::themes()->dirpath($newID, $user);
+
+            $exists = CrayonResources::themes()->is_loaded($newID) || (is_file($newPath) && is_file($oldPath));
+            if ($exists && $oldPath != $newPath) {
+                // Never allow overwriting a theme with a different id!
+                echo -3;
+                exit();
+            }
+            
+            if ($oldPath == $newPath && $allow_edit === FALSE) {
+                // Don't allow editing
+                echo -4;
+                exit();
+            }
+
             // Create the new path if needed
             if (!is_file($newPath)) {
                 if (!is_dir($newDir)) {
@@ -593,6 +644,7 @@ class CrayonThemeEditorWP {
                     }
                 }
             }
+
             $refresh = FALSE;
             $replaceID = $oldID;
             // Replace ids in the CSS
@@ -625,7 +677,15 @@ class CrayonThemeEditorWP {
                 // Refresh
                 echo 2;
             } else {
-                echo $refresh ? 2 : intval($success);
+                if ($refresh) {
+                    echo 2;
+                } else {
+                    if ($success) {
+                        echo 1;
+                    } else {
+                        echo -2;
+                    }
+                }
             }
             // Set the new theme in settings
             if ($change_settings) {
@@ -634,7 +694,7 @@ class CrayonThemeEditorWP {
             }
         } else {
             CrayonLog::syslog("$oldID=$oldID\n\n$name=$name", "THEME SAVE");
-            echo 0;
+            echo -1;
         }
         exit();
     }
@@ -645,6 +705,7 @@ class CrayonThemeEditorWP {
         $oldPath = CrayonResources::themes()->path($oldID);
         $_POST['css'] = file_get_contents($oldPath);
         $_POST['delete'] = FALSE;
+        $_POST['allow_edit'] = FALSE;
         self::save(FALSE);
     }
 
@@ -660,10 +721,10 @@ class CrayonThemeEditorWP {
                 echo 1;
             } catch (Exception $e) {
                 CrayonLog::syslog($e->getMessage(), "THEME SAVE");
-                echo 0;
+                echo -2;
             }
         } else {
-            echo 0;
+            echo -1;
         }
         exit();
     }

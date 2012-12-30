@@ -53,7 +53,10 @@ var CSSJSON = new function() {
 	 *            split each comma separated list of selectors.
 	 */
 	base.toJSON = function(cssString, args) {
-		var node = {};
+		var node = {
+            children: {},
+            attributes: {}
+        };
 		var match = null;
 		var count = 0;
 
@@ -90,9 +93,6 @@ var CSSJSON = new function() {
 					obj['type'] = 'rule';
 					node[count++] = obj;
 				} else {
-					if (!node.children) {
-						node.children = {};
-					}
 					if (args.split) {
 						var bits = name.split(',');
 					} else {
@@ -126,9 +126,6 @@ var CSSJSON = new function() {
 						obj['type'] = 'attr';
 						node[count++] = obj;
 					} else {
-						if (!node.attributes) {
-							node.attributes = {};
-						}
 						node.attributes[name] = value;
 					}
 				} else {

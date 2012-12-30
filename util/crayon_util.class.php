@@ -269,8 +269,12 @@ class CrayonUtil {
     }
 
     // Sets a variable to null if not set
-    public static function set_default(&$var, $false = NULL) {
+    public static function set_default($var, $false = NULL) {
         return isset($var) ? $var : $false;
+    }
+
+    public static function set_default_null($var, $default = NULL) {
+        return $var !== NULL ? $var : $default;
     }
 
     // Thanks, http://www.php.net/manual/en/function.str-replace.php#102186

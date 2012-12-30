@@ -17,7 +17,7 @@
         var themeID, themeJSON, themeCSS, themeStr, themeInfo;
         var reImportant = /\s+!important$/gmi;
         var reSize = /^[0-9-]+px$/;
-        var reCopy = /-copy-\d+$/;
+        var reCopy = /-copy(-\d+)?$/;
         var changedAttr = 'data-value';
 
         base.init = function (callback) {
@@ -86,7 +86,7 @@
             }, function (result) {
                 status.show();
                 result = parseInt(result);
-                if (result !== 0) {
+                if (result > 0) {
                     status.html(strings.success);
                     if (result === 2) {
                         window.GET['theme-editor'] = 1;
@@ -111,7 +111,7 @@
                         action: 'crayon-theme-editor-delete',
                         id: id
                     }, function (result) {
-                        if (result == 1) {
+                        if (result > 0) {
                             CrayonUtil.reload();
                         } else {
                             base.createAlert({
@@ -327,9 +327,16 @@
                         delete elem.attributes[dataAttr];
                         return;
                     }
-                    var val = base.addImportant(base.getElemValue(attr));
-                    elem.attributes[dataAttr] = val;
-                    CrayonUtil.log(dataElem + ' ' + dataAttr);
+                    val = base.getElemValue(attr);
+                    if (val == null || val == '') {
+                        // No value given
+                        delete elem.attributes[dataAttr];
+                        return;
+                    } else {
+                        val = base.addImportant(val);
+                        elem.attributes[dataAttr] = val;
+                        CrayonUtil.log(dataElem + ' ' + dataAttr);
+                    }
                 }
             });
         };
