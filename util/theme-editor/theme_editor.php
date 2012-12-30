@@ -307,6 +307,7 @@ class CrayonThemeEditorWP {
         $tStriped = crayon__("Striped");
         $tMarked = crayon__("Marked");
         $tStripedMarked = crayon__("Striped & Marked");
+        $tLanguage = crayon__("Language");
 
         $top = '.crayon-top';
         $bottom = '.crayon-bottom';
@@ -493,6 +494,7 @@ class CrayonThemeEditorWP {
                         $title = ' .crayon-title';
                         $button = ' a.crayon-button';
                         $info = ' .crayon-info';
+                        $language = ' .crayon-language';
                         self::createAttributesForm(array(
                             new Title($tToolbar),
                             new Separator($tFrame),
@@ -531,7 +533,15 @@ class CrayonThemeEditorWP {
                                 self::createAttribute($info, 'border-bottom-width'),
                                 self::createAttribute($info, 'border-bottom-color'),
                                 self::createAttribute($info, 'border-bottom-style'),
-                            )
+                            ),
+                            new Separator($tLanguage),
+                            array(
+                                $tText,
+                                self::createAttribute($language, 'color'),
+                                self::createAttribute($language, 'font-weight'),
+                                self::createAttribute($language, 'font-style'),
+                                self::createAttribute($language, 'text-decoration')
+                            ),
 //                            self::createAttribute($toolbar.' > div', 'float', crayon__("Title Float")),
 //                            self::createAttribute($toolbar.' .crayon-tools', 'float', crayon__("Buttons Float"))
                         ));
