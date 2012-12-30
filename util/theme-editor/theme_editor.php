@@ -292,6 +292,9 @@ class CrayonThemeEditorWP {
         $tHoverPressed = crayon__("Pressed & Hover");
         $tActivePressed = crayon__("Pressed & Active");
 
+        $tTitle = crayon__("Title");
+        $tButtons = crayon__("Buttons");
+
         $top = '.crayon-top';
         $bottom = '.crayon-bottom';
         $hover = ':hover';
@@ -474,30 +477,45 @@ class CrayonThemeEditorWP {
                         $toolbar = ' .crayon-toolbar';
                         $title = ' .crayon-title';
                         $button = ' a.crayon-button';
+                        $info = ' .crayon-info';
                         self::createAttributesForm(array(
                             new Title($tToolbar),
                             self::createAttribute($toolbar, 'background', $tBackground),
                             array(
-                                $tBorder,
+                                $tBottomBorder,
                                 self::createAttribute($toolbar, 'border-bottom-width'),
                                 self::createAttribute($toolbar, 'border-bottom-color'),
                                 self::createAttribute($toolbar, 'border-bottom-style'),
                             ),
                             array(
-                                crayon__("Title"),
+                                $tTitle,
                                 self::createAttribute($title, 'color'),
                                 self::createAttribute($title, 'font-weight'),
                                 self::createAttribute($title, 'font-style'),
                                 self::createAttribute($title, 'text-decoration')
                             ),
-                            new Separator(crayon__("Buttons")),
+                            new Separator($tButtons),
                             self::createAttribute($button, 'background-color', $tBackground),
                             self::createAttribute($button.$hover, 'background-color', $tHover),
                             self::createAttribute($button.$active, 'background-color', $tActive),
                             self::createAttribute($button.$pressed, 'background-color', $tPressed),
                             self::createAttribute($button.$pressed.$hover, 'background-color', $tHoverPressed),
                             self::createAttribute($button.$pressed.$active, 'background-color', $tActivePressed),
-
+                            new Separator($tInformation),
+                            self::createAttribute($info, 'background', $tBackground),
+                            array(
+                                $tText,
+                                self::createAttribute($info, 'color'),
+                                self::createAttribute($info, 'font-weight'),
+                                self::createAttribute($info, 'font-style'),
+                                self::createAttribute($info, 'text-decoration')
+                            ),
+                            array(
+                                $tBottomBorder,
+                                self::createAttribute($info, 'border-bottom-width'),
+                                self::createAttribute($info, 'border-bottom-color'),
+                                self::createAttribute($info, 'border-bottom-style'),
+                            )
 //                            self::createAttribute($toolbar.' > div', 'float', crayon__("Title Float")),
 //                            self::createAttribute($toolbar.' .crayon-tools', 'float', crayon__("Buttons Float"))
                         ));
@@ -587,9 +605,6 @@ class CrayonThemeEditorWP {
     }
 
     public static function createAttributesForm($atts) {
-//        for ($i = 0; $i < count($atts); $i++) {
-//            $atts[$i] = call_user_func_array('CrayonThemeEditorWP::createAttribute', $atts[$i]);
-//        }
         echo self::form($atts);
     }
 
@@ -605,7 +620,6 @@ class CrayonThemeEditorWP {
         $change_settings = CrayonUtil::set_default($_POST['change_settings'], TRUE);
         $allow_edit = CrayonUtil::set_default($_POST['allow_edit'], TRUE);
         $allow_edit_stock_theme = CrayonUtil::set_default_null($allow_edit_stock_theme, CRAYON_DEBUG);
-//        $allow_overwrite = CrayonUtil::set_default($_POST['allow_overwrite'], TRUE);
         $delete = CrayonUtil::set_default($_POST['delete'], TRUE);
         $oldTheme = CrayonResources::themes()->get($oldID);
 
