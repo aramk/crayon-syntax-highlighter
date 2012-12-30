@@ -85,6 +85,206 @@ class CrayonUtil {
         }
     }
 
+    /**
+     * Zips a source file or directory.
+     *
+     * @param $src A directory or file
+     * @param $dest A directory or zip file. If a zip file is provided it must exist beforehand.
+     */
+    public static function createZip($src, $dest, $removeExistingZip = FALSE) {
+        if ($src == $dest) {
+            throw new InvalidArgumentException("Source '$src' and '$dest' cannot be the same");
+        }
+
+        if (is_dir($src)) {
+            $src = CrayonUtil::path_slash($src);
+            $base = $src;
+            // Make sure the destination isn't in the files
+            $files = self::getFiles($src, array('recursive' => TRUE, 'ignore' => array($dest)));
+        } else if (is_file($src)) {
+            $files = array($src);
+            $base = dirname($src);
+        } else {
+            throw new InvalidArgumentException("Source '$src' is not a directory or file");
+        }
+
+        if (is_dir($dest)) {
+            $dest = CrayonUtil::path_slash($dest);
+            $zipFile = $dest . basename($src) . '.zip';
+        } else if (is_file($dest)) {
+            $zipFile = $dest;
+        } else {
+            throw new InvalidArgumentException("Destination '$dest' is not a directory or file");
+        }
+
+        if ($removeExistingZip) {
+            @unlink($zipFile);
+        }
+
+        var_dump('src', $src);
+        var_dump('dest', $dest);
+        var_dump('base', $base);
+
+        $zip = new ZipArchive;
+
+        var_dump('files', $files);
+
+        var_dump('zipFile', $zipFile);
+
+        if ($zip->open($zipFile, ZIPARCHIVE::CREATE) === TRUE) {
+            foreach ($files as $file) {
+                $relFile = str_replace($base, '', $file);
+                $zip->addFile($file, $relFile);
+                var_dump('added file', $relFile);
+            }
+            $zip->close();
+        } else {
+            throw new Exception("Could not create zip file at '$zipFile'");
+        }
+
+        return $zipFile;
+    }
+
+    /**
+     * Sends an email in html and plain encodings with a file attachment.
+     *
+     * @param array $args Arguments associative array
+     *      'to' (string)
+     *      'from' (string)
+     *      'subject' (optional string)
+     *      'message' (HTML string)
+     *      'plain' (optional plain string)
+     *      'file' (optional file path of the attachment)
+     * @see http://webcheatsheet.com/php/send_email_text_html_attachment.php
+     */
+    public static function emailFile($args) {
+        $to = self::set_default($args['to']);
+        $from = self::set_default($args['from']);
+        $subject = self::set_default($args['subject'], '');
+        $message = self::set_default($args['message'], '');
+        $plain = self::set_default($args['plain'], '');
+        $file = self::set_default($args['file']);
+
+        // MIME
+        $random_hash = md5(date('r', time()));
+        $boundaryMixed = 'PHP-mixed-' . $random_hash;
+        $boundaryAlt = 'PHP-alt-' . $random_hash;
+        $charset = 'UTF-8';
+        $bits = '8bit';
+
+        // Headers
+        $headers = "MIME-Version: 1.0";
+        $headers .= "Reply-To: $to\r\n";
+        if ($from !== NULL) {
+            $headers .= "From: $from\r\n";
+        }
+        $headers .= "Content-Type: multipart/mixed; boundary=$boundaryMixed";
+        if ($file !== NULL) {
+            $info = pathinfo($file);
+            $filename = $info['filename'];
+            $extension = $info['extension'];
+            $contents = @file_get_contents($file);
+            if ($contents === FALSE) {
+                throw new Exception("File contents of '$file' could not be read");
+            }
+            $chunks = chunk_split(base64_encode($contents));
+            $attachment = <<<EOT
+--$boundaryMixed
+Content-Type: application/$extension; name=$filename.$extension
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment
+
+$chunks
+EOT;
+        } else {
+            $attachment = '';
+        }
+
+        $body = <<<EOT
+--$boundaryMixed
+Content-Type: multipart/alternative; boundary=$boundaryAlt
+
+--$boundaryAlt
+Content-Type: text/plain; charset="$charset"
+Content-Transfer-Encoding: $bits
+
+$plain
+
+--$boundaryAlt
+Content-Type: text/html; charset="$charset"
+Content-Transfer-Encoding: $bits
+
+$message
+--$boundaryAlt--
+
+$attachment
+
+--$boundaryMixed--
+EOT;
+
+        $result = @mail($to, $subject, $body, $headers);
+        return $result;
+    }
+
+    /**
+     * @param $path A directory
+     * @param array $args Argument array:
+     *      hidden: If true, hidden files beginning with a dot will be included
+     *      ignoreRef: If true, . and .. are ignored
+     *      recursive: If true, this function is recursive
+     *      ignore: An array of paths to ignore
+     * @return array Files in the directory
+     */
+    public static function getFiles($path, $args = array()) {
+        $hidden = self::set_default($args['hidden'], TRUE);
+        $ignoreRef = self::set_default($args['ignoreRef'], TRUE);
+        $recursive = self::set_default($args['recursive'], FALSE);
+        $ignore = self::set_default($args['ignore'], NULL);
+
+        $ignore_map = array();
+        if ($ignore) {
+            foreach ($ignore as $i) {
+                if (is_dir($i)) {
+                    $i = CrayonUtil::path_slash($i);
+                }
+                $ignore_map[$i] = TRUE;
+            }
+        }
+
+        $files = glob($path . '*', GLOB_MARK);
+        if ($hidden) {
+            $files = array_merge($files, glob($path . '.*', GLOB_MARK));
+        }
+        if ($ignoreRef || $ignore) {
+            $result = array();
+            for ($i = 0; $i < count($files); $i++) {
+                $file = $files[$i];
+                if (!isset($ignore_map[$file]) && (!$ignoreRef || (basename($file) != '.' && basename($file) != '..'))) {
+                    $result[] = $file;
+                    if ($recursive && is_dir($file)) {
+                        $result = array_merge($result, self::getFiles($file, $args));
+                    }
+                }
+            }
+        } else {
+            $result = $files;
+        }
+        return $result;
+    }
+
+    /**
+     * Strips a base directory from an array of paths
+     *
+     * @param $paths An array of file/directory paths
+     * @param $base A base directory string
+     */
+    public static function relativeFiles($paths, $base) {
+        for ($i = 0; $i < count($paths); $i++) {
+            $paths[$i] = str_replace($base, '', $paths[$i]);
+        }
+        return $paths;
+    }
+
     public static function deleteDir($path) {
         if (!is_dir($path)) {
             throw new InvalidArgumentException("$path is not a directory");
@@ -92,11 +292,9 @@ class CrayonUtil {
         if (substr($path, strlen($path) - 1, 1) != '/') {
             $path .= '/';
         }
-        $files = array_merge(glob($path . '*', GLOB_MARK), glob($path . '.*', GLOB_MARK));
+        $files = self::getFiles($path);
         foreach ($files as $file) {
-            if (basename($file) == '.' || basename($file) == '..') {
-                continue;
-            } else if (is_dir($file)) {
+            if (is_dir($file)) {
                 self::deleteDir($file);
             } else {
                 unlink($file);
@@ -127,7 +325,7 @@ class CrayonUtil {
     // Supports arrays in the values
     public static function array_flip($array) {
         $result = array();
-        foreach ($array as $k=>$v) {
+        foreach ($array as $k => $v) {
             if (is_array($v)) {
                 foreach ($v as $u) {
                     self::_array_flip($result, $k, $u);
@@ -269,8 +467,8 @@ class CrayonUtil {
     }
 
     // Sets a variable to null if not set
-    public static function set_default($var, $false = NULL) {
-        return isset($var) ? $var : $false;
+    public static function set_default(&$var, $default = NULL) {
+        return isset($var) ? $var : $default;
     }
 
     public static function set_default_null($var, $default = NULL) {
@@ -391,6 +589,10 @@ class CrayonUtil {
             $path .= '/';
         }
         return $path;
+    }
+
+    public static function path_slash_remove($path) {
+        return preg_replace('#\/+$#', '', $path);
     }
 
     // Append a forward slash to a path if needed

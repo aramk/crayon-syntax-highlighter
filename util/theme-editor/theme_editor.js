@@ -161,7 +161,7 @@
                     $.post(crayonSettings.ajaxurl, {
                         action: 'crayon-theme-editor-submit',
                         id: id,
-                        name: val
+                        message: val
                     }, function (result) {
                         console.log(result);
 //                        if (result > 0) {
