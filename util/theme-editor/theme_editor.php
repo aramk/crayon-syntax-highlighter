@@ -761,7 +761,6 @@ class CrayonThemeEditorWP {
 
     public static function submit() {
         global $CRAYON_EMAIL;
-        // TODO move this to WP related place!
         CrayonSettingsWP::load_settings();
         $id = $_POST['id'];
         $message = $_POST['message'];
@@ -772,16 +771,19 @@ class CrayonThemeEditorWP {
         if (is_dir($dir) && CrayonResources::themes()->exists($id)) {
             try {
                 $zipFile = CrayonUtil::createZip($dir, $dest, TRUE);
-                CrayonUtil::emailFile(array(
+                $result = CrayonUtil::emailFile(array(
                     'to' => $CRAYON_EMAIL,
-                    // TODO refactor
                     'from' => get_bloginfo('admin_email'),
                     'subject' => 'Theme Editor Submission',
                     'message' => $message,
                     'file' => $zipFile
                 ));
-                @unlink($zipFile);
-                echo 1;
+                CrayonUtil::deleteDir($dest);
+                if ($result) {
+                    echo 1;
+                } else {
+                    echo -3;
+                }
             } catch (Exception $e) {
                 CrayonLog::syslog($e->getMessage(), "THEME SUBMIT");
                 var_dump('error', $e);

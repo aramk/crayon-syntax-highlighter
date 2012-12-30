@@ -263,19 +263,6 @@ EOT;
         return $result;
     }
 
-    /**
-     * Strips a base directory from an array of paths
-     *
-     * @param $paths An array of file/directory paths
-     * @param $base A base directory string
-     */
-    public static function relativeFiles($paths, $base) {
-        for ($i = 0; $i < count($paths); $i++) {
-            $paths[$i] = str_replace($base, '', $paths[$i]);
-        }
-        return $paths;
-    }
-
     public static function deleteDir($path) {
         if (!is_dir($path)) {
             throw new InvalidArgumentException("$path is not a directory");
