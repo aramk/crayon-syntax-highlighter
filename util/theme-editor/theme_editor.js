@@ -79,7 +79,7 @@
             // Save
             themeCSS = CSSJSON.toCSS(themeJSON);
             var newThemeStr = base.writeCSSInfo(info) + themeCSS;
-            $.post(crayonSettings.ajaxurl, {
+            CrayonUtil.postAJAX({
                 action: 'crayon-theme-editor-save',
                 id: themeID,
                 name: base.getName(),
@@ -108,7 +108,7 @@
                 title: strings.delete,
                 html: strings.deleteThemeConfirm.replace('%s', name),
                 yes: function () {
-                    $.post(crayonSettings.ajaxurl, {
+                    CrayonUtil.postAJAX({
                         action: 'crayon-theme-editor-delete',
                         id: id
                     }, function (result) {
@@ -134,7 +134,7 @@
                 text: strings.newName,
                 value: base.getNextAvailableName(id),
                 ok: function (val) {
-                    $.post(crayonSettings.ajaxurl, {
+                    CrayonUtil.postAJAX({
                         action: 'crayon-theme-editor-duplicate',
                         id: id,
                         name: val
@@ -158,7 +158,7 @@
                 text: strings.message,
                 value: strings.submitMessage,
                 ok: function (val) {
-                    $.post(crayonSettings.ajaxurl, {
+                    CrayonUtil.postAJAX({
                         action: 'crayon-theme-editor-submit',
                         id: id,
                         message: val

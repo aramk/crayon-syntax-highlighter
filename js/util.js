@@ -84,6 +84,16 @@ var jQueryCrayon = jQuery;
             window.GET = getQueryParams(document.location.search);
         };
 
+        base.getAJAX = function (args, callback) {
+            args.version = settings.version;
+            $.get(settings.ajaxurl, args, callback);
+        };
+
+        base.postAJAX = function (args, callback) {
+            args.version = settings.version;
+            $.post(settings.ajaxurl, args, callback);
+        };
+
         base.reload = function () {
             var get = '?';
             for (var i in window.GET) {

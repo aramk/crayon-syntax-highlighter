@@ -80,9 +80,9 @@
             help = $('.crayon-help-close');
             help.click(function () {
                 $('.crayon-help').hide();
-                $.get(settings.ajaxurl, {
+                CrayonUtil.getAJAX({
                     action: 'crayon-ajax',
-                    'hide-help': 1
+                    'hide-help': 1,
                 });
             });
 
@@ -103,7 +103,7 @@
             }
 
             $('#show-posts').click(function () {
-                $.get(settings.ajaxurl, {
+                CrayonUtil.getAJAX({
                     action: 'crayon-show-posts'
                 }, function (data) {
                     $('#crayon-subsection-posts-info').html(data);
@@ -111,7 +111,7 @@
             });
 
             $('#show-langs').click(function () {
-                $.get(settings.ajaxurl, {
+                CrayonUtil.getAJAX({
                     action: 'crayon-show-langs'
                 }, function (data) {
                     $('#lang-info').hide();
@@ -213,7 +213,7 @@
             }
 
             // Load Preview
-            $.get(settings.ajaxurl, getVars, function (data) {
+            CrayonUtil.postAJAX(getVars, function (data) {
                 preview.html(data);
                 // Important! Calls the crayon.js init
                 CrayonSyntax.init();
@@ -482,7 +482,7 @@
             adminSettings.editing_theme = editing;
             theme_editor_loading = true;
             // Load theme editor
-            $.get(settings.ajaxurl, {
+            CrayonUtil.getAJAX({
                 action: 'crayon-theme-editor',
                 currTheme: adminSettings.currTheme,
                 editing: editing

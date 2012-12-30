@@ -99,9 +99,11 @@ class CrayonSettingsWP {
 
     public static function init_js_settings() {
         // This stores JS variables used in AJAX calls and in the JS files
+        global $CRAYON_VERSION;
         self::load_settings(TRUE);
         if (!self::$js_settings) {
             self::$js_settings = array(
+                'version' => $CRAYON_VERSION,
                 'is_admin' => intval(is_admin()),
                 'ajaxurl' => admin_url('admin-ajax.php'),
                 'prefix' => CrayonSettings::PREFIX,
@@ -862,13 +864,13 @@ class CrayonSettingsWP {
         $preview_settings = array();
 
         // Load settings from GET and validate
-        foreach ($_GET as $key => $value) {
+        foreach ($_POST as $key => $value) {
             //	echo $key, ' ', $value , '<br/>';
             if (!in_array($key, $preview_settings)) {
-                $_GET[$key] = CrayonSettings::validate($key, $value);
+                $_POST[$key] = CrayonSettings::validate($key, $value);
             }
         }
-        $crayon->settings($_GET);
+        $crayon->settings($_POST);
         if (!isset($crayon_preview_dont_override_get) || !$crayon_preview_dont_override_get) {
             $settings = array(CrayonSettings::TOP_SET => TRUE, CrayonSettings::TOP_MARGIN => 10,
                 CrayonSettings::BOTTOM_SET => FALSE, CrayonSettings::BOTTOM_MARGIN => 0);
