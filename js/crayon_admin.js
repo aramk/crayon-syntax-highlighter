@@ -501,6 +501,7 @@
 
         base.resetPreview = function() {
             previewWrapper.append(preview);
+            CrayonSyntaxThemeEditor.removeStyle();
         };
 
         base.show_theme_editor_now = function (button) {

@@ -402,6 +402,10 @@
             previewCSS.html('<style>' + css + '</style>');
         };
 
+        base.removeStyle = function() {
+            previewCSS.html('');
+        };
+
         base.writeCSSInfo = function (info) {
             var infoStr = '/*\n';
             for (field in info) {
