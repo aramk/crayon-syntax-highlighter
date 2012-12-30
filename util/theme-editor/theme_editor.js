@@ -53,6 +53,7 @@
             });
             CrayonUtil.log(themeJSON);
             themeInfo = base.readCSSInfo(themeStr);
+            base.removeExistingCSS();
             base.initInfoUI();
             base.updateTitle();
             base.updateInfo();
@@ -216,6 +217,11 @@
             return names;
         };
 
+        base.removeExistingCSS = function() {
+            // Remove the old <style> tag to prevent clashes
+            preview.find('link[rel="stylesheet"][href*="' + adminSettings.currThemeURL + '"]').remove()
+        };
+
         base.initInfoUI = function () {
             CrayonUtil.log(themeInfo);
             // TODO abstract
@@ -328,15 +334,17 @@
                         return;
                     }
                     val = base.getElemValue(attr);
-                    if (val == null || val == '') {
+                    if ((val == null || val == '')) {
                         // No value given
-                        delete elem.attributes[dataAttr];
-                        return;
+                        if (remove_default) {
+                            delete elem.attributes[dataAttr];
+                            return;
+                        }
                     } else {
                         val = base.addImportant(val);
-                        elem.attributes[dataAttr] = val;
-                        CrayonUtil.log(dataElem + ' ' + dataAttr);
                     }
+                    elem.attributes[dataAttr] = val;
+                    CrayonUtil.log(dataElem + ' ' + dataAttr);
                 }
             });
         };
@@ -456,22 +464,27 @@
                         attr.attr(changedAttr, attr.val());
                     }
                     if (loaded) {
-                        // For the preview we want to write defaults to override the loaded CSS
-                        base.persistAttribute(attr, false);
+                        base.persistAttribute(attr);
                         base.updateLiveCSS();
                     }
                 });
             });
         };
 
-        base.updateLiveCSS = function () {
+        base.updateLiveCSS = function (clone) {
+            clone = CrayonUtil.setDefault(clone, false);
             if (previewCrayon) {
-                var id = previewCrayon.attr('id');
-                var json = $.extend(true, {}, themeJSON);
-                $.each(json.children, function (child) {
-                    json.children['#' + id + child] = json.children[child];
-                    delete json.children[child];
-                });
+                var json;
+                if (clone) {
+                    var id = previewCrayon.attr('id');
+                    json = $.extend(true, {}, themeJSON);
+                    $.each(json.children, function (child) {
+                        json.children['#' + id + child] = json.children[child];
+                        delete json.children[child];
+                    });
+                } else {
+                    json = themeJSON;
+                }
                 base.appendStyle(CSSJSON.toCSS(json));
             }
         };
