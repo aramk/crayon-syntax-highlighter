@@ -257,8 +257,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 1.18 =
+= 2.0.0 =
 * ADDED:
+    * Theme Editor allowing users to create and modify Crayon Themes!
 	* Polish translation (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
 	* Vim language
 	* Solarized themes (thanks to <a href="https://github.com/Greduan" target="_blank">Greduan</a>)
@@ -267,7 +268,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
 	* Improved expanding with shirt
 	* Issues with expanding a single line, other minor issues.
+	* Merged JS and PHP debugging toggle
+	* Moved everything towards camelCase from underscores
 	* Minor improvements to Objective-C
+	* Numerous bug fixes and improvements!
 
 = 1.17 =
 * ADDED:
