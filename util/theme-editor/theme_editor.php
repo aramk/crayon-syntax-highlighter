@@ -1,7 +1,5 @@
 <?php
 
-require_once (CRAYON_ROOT_PATH . 'crayon_wp.class.php');
-
 class Element {
     public $id;
     public $class = '';
