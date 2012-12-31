@@ -16,6 +16,7 @@ It can highlight from a URL, a local file or Wordpress post text. Crayon makes i
 custom language elements with regular expressions.
 It also supports some neat features like:
 
+* Integrated <a href="http://ak.net84.net/crayon/crayon-theme-editor/" target="_blank">Theme Editor!</a>
 * <a href="http://ak.net84.net/projects/crayon-tag-editor/" target="_blank">Tag Editor</a> in both Visual & HTML editors
 * Toggled plain code
 * Toggled line numbers
@@ -256,6 +257,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 2. Twilight theme.
 3. Mixed Language Highlighting.
 4. Tag Editor.
+5. Theme Editor.
 
 == Changelog ==
 

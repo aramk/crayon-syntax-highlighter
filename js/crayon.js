@@ -21,11 +21,15 @@
         if (typeof styleName != 'undefined') {
             if (typeof value != 'undefined') {
                 // Set style property
-                var priority = typeof priority != 'undefined' ? priority : '';
+                priority = typeof priority != 'undefined' ? priority : '';
                 if (typeof style.setProperty != 'undefined') {
                     style.setProperty(styleName, value, priority);
                 } else {
-                    style[styleName] = value + ' ' + priority;
+                    // XXX Using priority breaks on IE 7 & 8
+//                    if (priority) {
+//                        value = value + ' !' + priority;
+//                    }
+                    style[styleName] = value;
                 }
             } else {
                 // Get style property

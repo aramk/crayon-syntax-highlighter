@@ -103,9 +103,9 @@
             });
         };
 
-        base.delete = function (id, name) {
+        base.del = function (id, name) {
             base.createDialog({
-                title: strings.delete,
+                title: strings.del,
                 html: strings.deleteThemeConfirm.replace('%s', name),
                 yes: function () {
                     CrayonUtil.postAJAX({

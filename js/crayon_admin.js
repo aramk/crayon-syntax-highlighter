@@ -68,7 +68,7 @@
             });
             theme_editor_delete_button.click(function () {
                 if (!theme_editor_edit_button.attr('disabled')) {
-                    CrayonSyntaxThemeEditor.delete(adminSettings.currTheme, adminSettings.currThemeName);
+                    CrayonSyntaxThemeEditor.del(adminSettings.currTheme, adminSettings.currThemeName);
                 }
                 return false;
             });
@@ -82,7 +82,7 @@
                 $('.crayon-help').hide();
                 CrayonUtil.getAJAX({
                     action: 'crayon-ajax',
-                    'hide-help': 1,
+                    'hide-help': 1
                 });
             });
 
