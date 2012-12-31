@@ -273,3 +273,8 @@
     font-style: italic !important;
     color: #666 !important;
 }
+
+.note {
+    font-style: italic;
+    color: #999;
+}

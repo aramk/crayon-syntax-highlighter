@@ -1021,6 +1021,7 @@ class Human {
     }
 
     public static function tags() {
+        echo '<div class="note" style="width: 350px;">', sprintf(crayon__("Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use the %sTag Editor%s instead and convert legacy tags."), '<a href="#" target="_blank">', '</a>', '<a href="#" target="_blank">', '</a>'), '</div>';
         self::checkbox(array(CrayonSettings::CAPTURE_MINI_TAG, crayon__('Capture Mini Tags like [php][/php] as Crayons.') . self::help_button('http://bit.ly/rRZuzk')));
         self::checkbox(array(CrayonSettings::INLINE_TAG, crayon__('Capture Inline Tags like {php}{/php} inside sentences.') . self::help_button('http://bit.ly/yFafFL')));
         self::checkbox(array(CrayonSettings::INLINE_WRAP, crayon__('Wrap Inline Tags') . self::help_button('http://bit.ly/yFafFL')));
