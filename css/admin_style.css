@@ -192,9 +192,16 @@
 }
 
 #crayon-theme-info {
-    float: left;
+    display: table;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
 }
-#crayon-theme-info * {
+#crayon-theme-info > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+#crayon-theme-info .content * {
     float: left;
 }
 #crayon-theme-info .field {
@@ -203,6 +210,23 @@
 #crayon-theme-info .field,
 #crayon-theme-info .value {
 	margin-left: 5px;
+}
+#crayon-theme-info .description.value {
+    font-style: italic;
+    color: #999;
+}
+#crayon-theme-info .type {
+    text-align: center;
+    min-width: 120px;
+    font-weight: bold;
+    border-right: 1px solid #ccc;
+    padding-right: 5px;
+}
+#crayon-theme-info .type.stock {
+    color: #666;
+}
+#crayon-theme-info .type.user {
+    color: #5b9a00;
 }
 
 #crayon-editor-table td {
@@ -242,4 +266,15 @@
 	margin: 0;
 	display: inline;
 	padding: 0;
+}
+
+#crayon-theme-editor-info a {
+    text-decoration: none !important;
+    font-style: italic !important;
+    color: #666 !important;
+}
+
+.note {
+    font-style: italic;
+    color: #999;
 }

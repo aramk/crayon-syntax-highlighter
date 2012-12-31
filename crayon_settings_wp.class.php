@@ -99,9 +99,11 @@ class CrayonSettingsWP {
 
     public static function init_js_settings() {
         // This stores JS variables used in AJAX calls and in the JS files
+        global $CRAYON_VERSION;
         self::load_settings(TRUE);
         if (!self::$js_settings) {
             self::$js_settings = array(
+                'version' => $CRAYON_VERSION,
                 'is_admin' => intval(is_admin()),
                 'ajaxurl' => admin_url('admin-ajax.php'),
                 'prefix' => CrayonSettings::PREFIX,
@@ -109,7 +111,8 @@ class CrayonSettingsWP {
                 'selected' => CrayonSettings::SETTING_SELECTED,
                 'changed' => CrayonSettings::SETTING_CHANGED,
                 'special' => CrayonSettings::SETTING_SPECIAL,
-                'orig_value' => CrayonSettings::SETTING_ORIG_VALUE
+                'orig_value' => CrayonSettings::SETTING_ORIG_VALUE,
+                'debug' => CRAYON_DEBUG
             );
             wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
         }
@@ -117,14 +120,27 @@ class CrayonSettingsWP {
 
     public static function init_admin_js_settings() {
         if (!self::$admin_js_settings) {
+            // We need to load themes at this stage
+            CrayonSettingsWP::load_settings();
             $themes_ = CrayonResources::themes()->get();
-            $themes = array();
+            $stockThemes = array();
+            $userThemes = array();
             foreach ($themes_ as $theme) {
-                $themes[$theme->id()] = $theme->name();
+                $id = $theme->id();
+                $name = $theme->name();
+                if ($theme->user()) {
+                    $userThemes[$id] = $name;
+                } else {
+                    $stockThemes[$id] = $name;
+                }
             }
             self::$admin_js_settings = array(
-                'themes' => $themes,
-                'themes_url' => plugins_url(CRAYON_THEME_DIR, __FILE__)
+                'themes' => array_merge($stockThemes, $userThemes),
+                'stockThemes' => $stockThemes,
+                'userThemes' => $userThemes,
+                'defaultTheme' => CrayonThemes::DEFAULT_THEME,
+                'themesURL' => CrayonThemes::dir_url(),
+                'userThemesURL' => CrayonThemes::dir_url(true)
             );
             wp_localize_script('crayon_admin_js', 'CrayonAdminSettings', self::$admin_js_settings);
         }
@@ -134,9 +150,6 @@ class CrayonSettingsWP {
         if (!current_user_can('manage_options')) {
             wp_die(crayon__('You do not have sufficient permissions to access this page.'));
         }
-        // Go through and find all Crayons in posts on each reload
-        //self::scan_and_save_posts();
-
         ?>
 
     <script type="text/javascript">
@@ -181,9 +194,7 @@ class CrayonSettingsWP {
         </form>
     </div>
 
-    <div
-            id="crayon-theme-editor-wrap" class="wrap"
-            url="<?php echo plugins_url(CRAYON_THEME_EDITOR_CONTENT_PHP, __FILE__); ?>"></div>
+    <div id="crayon-theme-editor-wrap" class="wrap"></div>
 
     <?php
     }
@@ -202,15 +213,19 @@ class CrayonSettingsWP {
 
         if (!self::$is_fully_loaded && !$just_load_settings) {
             // Load everything else as well
-            // Load all available languages and themes
-            CrayonResources::langs()->load();
-            CrayonResources::themes()->load();
 
             // For local file loading
             // This is used to decouple WP functions from internal Crayon classes
-            CrayonGlobalSettings::site_http(home_url());
+            CrayonGlobalSettings::site_url(home_url());
             CrayonGlobalSettings::site_path(ABSPATH);
             CrayonGlobalSettings::plugin_path(plugins_url('', __FILE__));
+            $upload = wp_upload_dir();
+            CrayonGlobalSettings::upload_path(CrayonUtil::path_slash($upload['basedir']) . CRAYON_DIR);
+            CrayonGlobalSettings::upload_url($upload['baseurl'] . '/' . CRAYON_DIR);
+
+            // Load all available languages and themes
+            CrayonResources::langs()->load();
+            CrayonResources::themes()->load();
 
             // Ensure all missing settings in db are replaced by default values
             $changed = FALSE;
@@ -572,7 +587,7 @@ class CrayonSettingsWP {
     }
 
     // Draws a dropdown by loading the default value (an array) from a setting
-    private static function dropdown($id, $line_break = TRUE, $preview = TRUE, $echo = TRUE, $resources = NULL) {
+    private static function dropdown($id, $line_break = TRUE, $preview = TRUE, $echo = TRUE, $resources = NULL, $selected = NULL) {
         if (!array_key_exists($id, self::$options)) {
             return;
         }
@@ -580,7 +595,14 @@ class CrayonSettingsWP {
 
         $return = '<select id="' . CrayonSettings::PREFIX . $id . '" name="' . self::OPTIONS . '[' . $id . ']" class="' . CrayonSettings::SETTING . '" crayon-preview="' . ($preview ? 1 : 0) . '">';
         foreach ($resources as $k => $v) {
-            $return .= '<option value="' . $k . '" ' . selected(self::$options[$id], $k, FALSE) . '>' . $v . '</option>';
+            if (is_array($v) && count($v)) {
+                $data = $v[0];
+                $text = $v[1];
+            } else {
+                $text = $v;
+            }
+            $is_selected = $selected !== NULL && $selected == $k ? 'selected' : selected(self::$options[$id], $k, FALSE);
+            $return .= '<option ' . (isset($data) ? 'data-value="' . $data . '"' : '') . ' value="' . $k . '" ' . $is_selected . '>' . $text . '</option>';
         }
         $return .= '</select>' . ($line_break ? CRAYON_BR : '');
         if ($echo) {
@@ -609,14 +631,13 @@ class CrayonSettingsWP {
 
     // General Fields =========================================================
     public static function help() {
-        global $CRAYON_WEBSITE, $CRAYON_TWITTER, $CRAYON_GIT, $CRAYON_PLUGIN_WP;
+        global $CRAYON_WEBSITE, $CRAYON_TWITTER, $CRAYON_GIT, $CRAYON_PLUGIN_WP, $CRAYON_DONATE;
         if (CrayonGlobalSettings::val(CrayonSettings::HIDE_HELP)) {
             return;
         }
         echo '
 				<div id="crayon-help" class="updated settings-error crayon-help">
-				<p><strong>Howdy, coder!</strong> Thanks for using Crayon. <strong>Useful Links:</strong> <a href="' . $CRAYON_WEBSITE . '" target="_blank">Documentation</a>, <a href="' . $CRAYON_GIT . '" target="_blank">GitHub</a>, <a href="' . $CRAYON_PLUGIN_WP . '" target="_blank">Plugin Page</a>, <a href="' . $CRAYON_TWITTER . '" target="_blank">Twitter</a>. <a class="crayon-help-close">X</a></p>
-						</div>
+				<p><strong>Howdy, coder!</strong> Thanks for using Crayon. <strong>Useful Links:</strong> <a href="' . $CRAYON_WEBSITE . '" target="_blank">Documentation</a>, <a href="' . $CRAYON_GIT . '" target="_blank">GitHub</a>, <a href="' . $CRAYON_PLUGIN_WP . '" target="_blank">Plugin Page</a>, <a href="' . $CRAYON_TWITTER . '" target="_blank">Twitter</a>. Crayon has always been free, so if you value my work please consider a <a href="' . $CRAYON_DONATE . '">small donation</a> to show your appreciation. Thanks! <a class="crayon-help-close">X</a></p></div>
 						';
     }
 
@@ -843,13 +864,13 @@ class CrayonSettingsWP {
         $preview_settings = array();
 
         // Load settings from GET and validate
-        foreach ($_GET as $key => $value) {
+        foreach ($_POST as $key => $value) {
             //	echo $key, ' ', $value , '<br/>';
             if (!in_array($key, $preview_settings)) {
-                $_GET[$key] = CrayonSettings::validate($key, $value);
+                $_POST[$key] = CrayonSettings::validate($key, $value);
             }
         }
-        $crayon->settings($_GET);
+        $crayon->settings($_POST);
         if (!isset($crayon_preview_dont_override_get) || !$crayon_preview_dont_override_get) {
             $settings = array(CrayonSettings::TOP_SET => TRUE, CrayonSettings::TOP_MARGIN => 10,
                 CrayonSettings::BOTTOM_SET => FALSE, CrayonSettings::BOTTOM_MARGIN => 0);
@@ -859,7 +880,7 @@ class CrayonSettingsWP {
         // Print the theme CSS
         $theme_id = $crayon->setting_val(CrayonSettings::THEME);
         if ($theme_id != NULL) {
-            echo CrayonResources::themes()->get_css($theme_id);
+            echo CrayonResources::themes()->get_css($theme_id, date('U'));
         }
 
         $font_id = $crayon->setting_val(CrayonSettings::FONT);
@@ -900,7 +921,13 @@ class Human {
             $db_theme = '';
         }
         $themes_array = CrayonResources::themes()->get_array();
-        self::dropdown(CrayonSettings::THEME, FALSE, FALSE, TRUE, $themes_array);
+        // Mark user themes
+        foreach ($themes_array as $id => $name) {
+            $mark = CrayonResources::themes()->get($id)->user() ? ' *' : '';
+            $themes_array[$id] = array($name, $name . $mark);
+        }
+        $missing_theme = !CrayonResources::themes()->is_loaded($db_theme) || !CrayonResources::themes()->exists($db_theme);
+        self::dropdown(CrayonSettings::THEME, FALSE, FALSE, TRUE, $themes_array, $missing_theme ? CrayonThemes::DEFAULT_THEME : NULL);
         if ($editor) {
             return;
         }
@@ -908,24 +935,21 @@ class Human {
         if (CRAYON_THEME_EDITOR) {
             // 			echo '<a id="crayon-theme-editor-button" class="button-primary crayon-admin-button" loading="'. crayon__('Loading...') .'" loaded="'. crayon__('Theme Editor') .'" >'. crayon__('Theme Editor') .'</a></br>';
             echo '<div id="crayon-theme-editor-admin-buttons">';
-            $buttons = array('edit' => crayon__('Edit'), 'duplicate' => crayon__('Duplicate'), 'create' => crayon__('Create'), 'delete' => crayon__('Delete'));
+            $buttons = array('edit' => crayon__('Edit'), 'duplicate' => crayon__('Duplicate'), 'submit' => crayon__('Submit'),
+                'delete' => crayon__('Delete'));
             foreach ($buttons as $k => $v) {
-                echo '<a id="crayon-theme-editor-', $k, '-button" class="button-primary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', $v, '" >', $v, '</a>';
+                echo '<a id="crayon-theme-editor-', $k, '-button" class="button-secondary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', $v, '" >', $v, '</a>';
             }
+            echo '<span class="crayon-span-5"></span>', self::help_button('http://bit.ly/crayon-themes'), '<span class="crayon-span-5"></span>', crayon__("Duplicate a Stock Theme into a User Theme to allow editing.");
             echo '</br></div>';
         }
         // Preview Box
         ?>
     <div id="crayon-theme-panel">
-        <div id="crayon-theme-info">
-            <div class="desc"></div>
-            <div class="version field">Version:</div>
-            <div class="value"></div>
-            <div class="author field">Author:</div>
-            <div class="value"></div>
+        <div id="crayon-theme-info"></div>
+        <div id="crayon-live-preview-wrapper">
+            <div id="crayon-live-preview"></div>
         </div>
-
-        <div id="crayon-live-preview"></div>
         <div id="crayon-preview-info">
             <?php printf(crayon__('Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked.'), '<a href="#langs">', '</a>'); ?>
         </div>
@@ -936,7 +960,7 @@ class Human {
         echo '</select><span class="crayon-span-10"></span>';
         self::checkbox(array(CrayonSettings::ENQUEUE_THEMES, crayon__('Enqueue themes in the header (more efficient).') . self::help_button('http://bit.ly/zTUAQV')));
         // Check if theme from db is loaded
-        if (!CrayonResources::themes()->is_loaded($db_theme) || !CrayonResources::themes()->exists($db_theme)) {
+        if ($missing_theme) {
             echo '<span class="crayon-error">', sprintf(crayon__('The selected theme with id %s could not be loaded'), '<strong>' . $db_theme . '</strong>'), '. </span>';
         }
     }
@@ -997,6 +1021,7 @@ class Human {
     }
 
     public static function tags() {
+        echo '<div class="note" style="width: 350px;">', sprintf(crayon__("Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use the %sTag Editor%s instead and convert legacy tags."), '<a href="#" target="_blank">', '</a>', '<a href="#" target="_blank">', '</a>'), '</div>';
         self::checkbox(array(CrayonSettings::CAPTURE_MINI_TAG, crayon__('Capture Mini Tags like [php][/php] as Crayons.') . self::help_button('http://bit.ly/rRZuzk')));
         self::checkbox(array(CrayonSettings::INLINE_TAG, crayon__('Capture Inline Tags like {php}{/php} inside sentences.') . self::help_button('http://bit.ly/yFafFL')));
         self::checkbox(array(CrayonSettings::INLINE_WRAP, crayon__('Wrap Inline Tags') . self::help_button('http://bit.ly/yFafFL')));
@@ -1141,6 +1166,7 @@ class Human {
         global $CRAYON_DONATE;
         if ($file == CrayonWP::basename()) {
             $meta[] = '<a href="options-general.php?page=crayon_settings">' . crayon__('Settings') . '</a>';
+            $meta[] = '<a href="options-general.php?page=crayon_settings&theme-editor=1">' . crayon__('Theme Editor') . '</a>';
             $meta[] = '<a href="' . $CRAYON_DONATE . '" target="_blank">' . crayon__('Donate') . '</a>';
         }
         return $meta;

@@ -81,7 +81,7 @@
 	    	}
 	    	
 	        // Load the editor content 
-            $.get(gs.ajaxurl, {action : 'crayon-tag-editor', is_admin : gs.is_admin}, function(data) {
+            CrayonUtil.getAJAX({action : 'crayon-tag-editor', is_admin : gs.is_admin}, function(data) {
 	        	dialog = $('<div id="'+s.css+'"></div>');
 	            dialog.appendTo('body').hide();
 	        	dialog.html(data);
@@ -122,7 +122,7 @@
 	        		}
 	        		
 	        		// Check for extensions and select language automatically
-	        		var ext = CrayonSyntaxUtil.getExt(url.val());
+	        		var ext = CrayonUtil.getExt(url.val());
 	        		if (ext) {
 	        			var lang = exts[ext];
 	        			// Otherwise use the extention as the lang
@@ -147,13 +147,13 @@
 	        		}
 	        		// Depends on type
 	        		var value = base.settingValue(setting);
-	        		console_log(setting.attr('id') + ' value: ' + value);
+	        		CrayonUtil.log(setting.attr('id') + ' value: ' + value);
 	        		var highlight = null;
 	        		if (setting.is('input[type=checkbox]')) {
 	    				highlight = setting.next('span');
 	    			}
 	    			
-	        		console_log('   >>> ' + setting.attr('id') + ' is ' + orig_value + ' = ' + value);
+	        		CrayonUtil.log('   >>> ' + setting.attr('id') + ' is ' + orig_value + ' = ' + value);
 	        		if (orig_value == value) {
 	        			// No change
 	    				setting.removeClass(gs.changed);
@@ -281,7 +281,7 @@
 			    				highlight.addClass(gs.changed);
 			    			}
 						}
-						console_log('loaded: ' + att + ':' + value);
+						CrayonUtil.log('loaded: ' + att + ':' + value);
 					}
 					
 					editing = true;
@@ -290,14 +290,14 @@
 					// Code
 					var content = currCrayon.html();
 					if (inputHTML == 'encode') {
-						content = crayon_encode_html(content); 
+						content = CrayonUtil.encode_html(content);
 					} else if (inputHTML == 'decode') {
-						content = crayon_decode_html(content);
+						content = CrayonUtil.decode_html(content);
 					}
 					code.val(content);
 					
 				} else {
-					console_log('cannot load currNode of type pre');
+					CrayonUtil.log('cannot load currNode of type pre');
 				}
 			} else {
 				if (selectCallback) {
@@ -469,7 +469,7 @@
 			for (var id in atts) {
 	    		// Remove prefix, if exists
 	    		var value = atts[id];
-	    		console_log('add '+id+':'+value);
+	    		CrayonUtil.log('add '+id+':'+value);
 				shortcode += id + s.attr_sep + value + ' ';
 			}
 			
@@ -493,9 +493,9 @@
 			
 			var content = $(s.code_css).val();
 			if (outputHTML == 'encode') {
-				content = crayon_encode_html(content); 
+				content = CrayonUtil.encode_html(content);
 			} else if (outputHTML == 'decode') {
-				content = crayon_decode_html(content);
+				content = CrayonUtil.decode_html(content);
 			}
 			content = typeof content != 'undefined' ? content : '';
 			shortcode += '>' + content + '</' + tag + '>' + br_after;
@@ -512,14 +512,14 @@
 		};
 		
 		base.submitButton = function() {
-			console_log('submit');
+			CrayonUtil.log('submit');
 			if (base.addCrayon() != false) {
 				base.hideDialog();
 			}
 		};
 		
 		base.hideDialog = function() {
-			console_log('hide');
+			CrayonUtil.log('hide');
 			if (hideCallback) {
 				hideCallback();
 			}
@@ -535,7 +535,7 @@
 		};
 		
 		base.resetSettings = function() {
-			console_log('reset');
+			CrayonUtil.log('reset');
 			$('.'+gs.setting).each(function() {
 				var setting = $(this);
 				base.settingValue(setting, setting.attr(gs.orig_value));

@@ -207,7 +207,7 @@ class CrayonSettings {
 			new CrayonSetting(self::CACHE, array_keys(self::$cache_array), 1),
 			new CrayonSetting(self::EFFICIENT_ENQUEUE, FALSE),
 			new CrayonSetting(self::CAPTURE_PRE, TRUE),
-			new CrayonSetting(self::CAPTURE_MINI_TAG, TRUE),
+			new CrayonSetting(self::CAPTURE_MINI_TAG, FALSE),
 			new CrayonSetting(self::MIXED, TRUE),
 			new CrayonSetting(self::SHOW_MIXED, TRUE),
 			new CrayonSetting(self::PLAIN_TAG, TRUE),
@@ -215,7 +215,7 @@ class CrayonSettings {
 			new CrayonSetting(self::ENQUEUE_FONTS, TRUE),
 			new CrayonSetting(self::MAIN_QUERY, FALSE),
 			new CrayonSetting(self::SAFE_ENQUEUE, TRUE),
-			new CrayonSetting(self::INLINE_TAG, TRUE),
+			new CrayonSetting(self::INLINE_TAG, FALSE),
 			new CrayonSetting(self::INLINE_MARGIN, 5),
 			new CrayonSetting(self::INLINE_WRAP, TRUE),
 			new CrayonSetting(self::BACKQUOTE, TRUE),
@@ -537,6 +537,8 @@ class CrayonGlobalSettings {
 	private static $site_path = '';
 	// The absolute root directory of the plugins (eg. /User/example/plugins)
 	private static $plugin_path = '';
+    private static $upload_path = '';
+    private static $upload_url = '';
 	private function __construct() {}
 
 	private static function init() {
@@ -575,7 +577,7 @@ class CrayonGlobalSettings {
 		self::$global->set($name, $value, $replace);
 	}
 
-	public static function site_http($site_http = NULL) {
+	public static function site_url($site_http = NULL) {
 		if ($site_http === NULL) {
 			return self::$site_http;
 		} else {
@@ -598,6 +600,22 @@ class CrayonGlobalSettings {
 			self::$plugin_path = CrayonUtil::path_slash($plugin_path);
 		}
 	}
+
+    public static function upload_path($upload_path = NULL) {
+        if ($upload_path === NULL) {
+            return self::$upload_path;
+        } else {
+            self::$upload_path = CrayonUtil::path_slash($upload_path);
+        }
+    }
+
+    public static function upload_url($upload_url = NULL) {
+        if ($upload_url === NULL) {
+            return self::$upload_url;
+        } else {
+            self::$upload_url = CrayonUtil::url_slash($upload_url);
+        }
+    }
 }
 
 /**

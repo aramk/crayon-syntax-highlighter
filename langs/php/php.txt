@@ -20,7 +20,7 @@
     ENTITY                      (?default)|\b[a-z_]\w*::
     VARIABLE                    \$[a-z_]\w*\b
     OTHER_ID:IDENTIFIER         \b[a-z_]\w*\b\s*(?=\([^\)]*\))
-    CONSTANT                    (?-i)\b[A-Z_]*\b(?i)
+    CONSTANT                    ((?-i)\b[A-Z_]*\b(?i))|((?default))
     IDENTIFIER                  (?default)
     OPERATOR                    (?default)
     SYMBOL                      (?default)

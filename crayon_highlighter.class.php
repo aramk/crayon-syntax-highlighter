@@ -64,7 +64,7 @@ class CrayonHighlighter {
 		}
 		$url = CrayonUtil::pathf($url);
 		$local = FALSE; // Whether to read locally
-		$site_http = CrayonGlobalSettings::site_http();
+		$site_http = CrayonGlobalSettings::site_url();
 		$site_path = CrayonGlobalSettings::site_path();
 		$scheme = parse_url($url, PHP_URL_SCHEME);
 		

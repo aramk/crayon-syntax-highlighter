@@ -1,239 +1,185 @@
 /*
-Theme Name: Epicgeeks
+Name: Epicgeeks
 Description: Epicgeeks Theme. 
 Version: 1.2
 Author: J. Newing (synmuffin)
-Author URI: http://epicgeeks.net/
+URL: http://epicgeeks.net/
 */
-
 .crayon-theme-epicgeeks {
-    border: 1px #e1e1e1 solid !important;
-    text-shadow: none !important;
-}
-
-.crayon-theme-epicgeeks,
-.crayon-theme-epicgeeks .crayon-code {
+	border: 1px #e1e1e1 solid !important;
+	text-shadow: none !important;
 	background: #ffffe1 !important;
 }
-
-/* Inline Style */
+.crayon-theme-epicgeeks .crayon-code {
+	background: #fdfdfd !important;
+}
 .crayon-theme-epicgeeks-inline {
 	border: 1px solid #e1e1e1 !important;
 	background: #ffffe1 !important;
 }
-
-.crayon-theme-epicgeeks .crayon-nums {
-    background: #ffff9f !important;
-    color: #333333 !important;
-    border-right: 1px dashed #3cc0ff !important;
+.crayon-theme-epicgeeks .crayon-table .crayon-nums {
+	background: #ffff9f !important;
+	color: #333333 !important;
+	border-right: 1px dashed #3cc0ff !important;
 }
-
-.crayon-theme-epicgeeks .crayon-code::selection,
+.crayon-theme-epicgeeks .crayon-code::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
 .crayon-theme-epicgeeks .crayon-code *::selection {
-    background: #ddeeff !important;
-    color: #316ba5 !important;
+	background: #ddeeff !important;
+	color: #316ba5 !important;
 }
-.crayon-theme-epicgeeks::selection,
-.crayon-theme-epicgeeks .crayon-toolbar::selection,
-.crayon-theme-epicgeeks .crayon-toolbar *::selection,
-.crayon-theme-epicgeeks .crayon-info::selection,
-.crayon-theme-epicgeeks .crayon-info *::selection,
-.crayon-theme-epicgeeks .crayon-nums::selection,
+.crayon-theme-epicgeeks::selection {
+	background: transparent !important;
+}
+.crayon-theme-epicgeeks .crayon-toolbar::selection {
+	background: transparent !important;
+}
+.crayon-theme-epicgeeks .crayon-toolbar *::selection {
+	background: transparent !important;
+}
+.crayon-theme-epicgeeks .crayon-info::selection {
+	background: transparent !important;
+}
+.crayon-theme-epicgeeks .crayon-info *::selection {
+	background: transparent !important;
+}
+.crayon-theme-epicgeeks .crayon-nums::selection {
+	background: transparent !important;
+}
 .crayon-theme-epicgeeks .crayon-nums *::selection {
-    background: transparent !important;
-}
-
-.crayon-theme-epicgeeks .crayon-striped-line {
-    background: #ffffd2 !important;
-    border: 1px dashed #f0f0f0;
+	background: transparent !important;
 }
 .crayon-theme-epicgeeks .crayon-striped-line {
-    background: #ffffd2 !important;
-    border: 1px dashed #f0f0f0;
+	background: #ffffd2 !important;
+	border: 1px dashed #f0f0f0;
 }
 .crayon-theme-epicgeeks .crayon-striped-num {
-    background: #ffff7c !important;
-    border: 1px dashed #cccccc !important;
+	background: #ffff7c !important;
+	border: 1px dashed #cccccc !important;
 }
-
 .crayon-theme-epicgeeks .crayon-marked-line {
-    background: #fffee2 !important;
-    border: 1px #e9e579 !important;
+	background: #fffee2 !important;
+	border: 1px #e9e579 !important;
 }
-
 .crayon-theme-epicgeeks .crayon-marked-num {
-    color: #1561ac !important;
-    background: #f2f24b !important;
-    border: 1px #E9E579 !important;
+	color: #1561ac !important;
+	background: #f2f24b !important;
+	border: 1px #E9E579 !important;
 }
-
-.crayon-theme-epicgeeks .crayon-striped-line,
-.crayon-theme-epicgeeks .crayon-striped-num {
-	border-left: none !important;
-    border-right: none !important;
-}
-
 .crayon-theme-epicgeeks .crayon-marked-line.crayon-striped-line {
-    background: #faf8d1 !important;
+	background: #faf8d1 !important;
 }
-
 .crayon-theme-epicgeeks .crayon-marked-num.crayon-striped-num {
-    background: #dddd1c !important;
-    color: #105395 !important;
+	background: #dddd1c !important;
+	color: #105395 !important;
 }
-
-.crayon-theme-epicgeeks .crayon-marked-line.crayon-top,
+.crayon-theme-epicgeeks .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
 .crayon-theme-epicgeeks .crayon-marked-num.crayon-top {
-    border-top-style: solid !important;
+	border-top-style: solid !important;
 }
-
-.crayon-theme-epicgeeks .crayon-marked-line.crayon-bottom,
+.crayon-theme-epicgeeks .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
 .crayon-theme-epicgeeks .crayon-marked-num.crayon-bottom {
-    border-bottom-style: solid !important;
+	border-bottom-style: solid !important;
 }
-
 .crayon-theme-epicgeeks .crayon-info {
-    background: #faf9d7 !important;
-    border-bottom: 1px dashed #b1af5e !important;
-    color: #7e7d34;
+	background: #faf9d7 !important;
+	border-bottom: 1px #b1af5e dashed !important;
+	color: #7e7d34;
 }
-
 .crayon-theme-epicgeeks .crayon-toolbar {
-    background: #f9f9f9 !important;
-    border-bottom: 1px solid #d2d2d2 !important;
+	background: #f9f9f9 !important;
+	border-bottom: 1px #d2d2d2 solid !important;
 }
-
 .crayon-theme-epicgeeks .crayon-toolbar > div {
-    float: left !important;
+	float: left !important;
 }
-
 .crayon-theme-epicgeeks .crayon-toolbar .crayon-tools {
-    float: right !important;
+	float: right !important;
 }
-
 .crayon-theme-epicgeeks .crayon-title {
-    color: #333333 !important;
+	color: #333 !important;
 }
-
 .crayon-theme-epicgeeks .crayon-language {
-    color: #999999 !important;
+	color: #999 !important;
 }
-.crayon-theme-epicgeeks a.crayon-button:link {
-    color: #666666 !important;
+.crayon-theme-epicgeeks a.crayon-button {
+	background-color: transparent;
 }
-
-.crayon-theme-epicgeeks a.crayon-button:hover,
+.crayon-theme-epicgeeks a.crayon-button:hover {
+	background-color: #EFEFEF;
+	color: #666;
+}
+.crayon-theme-epicgeeks a.crayon-button.crayon-pressed:hover {
+	background-color: #EFEFEF;
+	color: #666;
+}
 .crayon-theme-epicgeeks a.crayon-button.crayon-pressed {
-    color: #ffffff !important;
+	background-color: #DDD;
+	color: #FFF;
 }
-
+.crayon-theme-epicgeeks a.crayon-button.crayon-pressed:active {
+	background-color: #DDD;
+	color: #FFF;
+}
 .crayon-theme-epicgeeks a.crayon-button:active {
-    color: #666666 !important;
+	background-color: #DDD;
+	color: #FFF;
 }
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-plain-button:link {
-    background: url('images/code.gif') no-repeat 0px -16px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-plain-button:hover,
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-plain-button.crayon-pressed {
-    background-position: 0px 0px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-plain-button:active {
-    background-position: 0px 0px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-copy-button:link {
-    background: url('images/copy.gif') no-repeat 0px -16px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-copy-button:hover,
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-copy-button.crayon-pressed {
-    background-position: 0px 0px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-copy-button:active {
-    background-position: 0px 0px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-popup-button:link {
-    background: url('images/pop.gif') no-repeat 0px -16px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-popup-button:hover,
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-popup-button.crayon-pressed {
-    background-position: 0px 0px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-popup-button:active {
-    background-position: 0px 0px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-nums-button:link {
-    background: url('images/list.gif') no-repeat 0px -16px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-nums-button:hover,
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-nums-button.crayon-pressed {
-    background-position: 0px 0px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-toolbar a.crayon-button.crayon-nums-button:active {
-    background-position: 0px 0px;
-}
-
-.crayon-syntax.crayon-theme-epicgeeks .crayon-title {
-    float: left;
-}
-
 .crayon-theme-epicgeeks .crayon-pre .c {
-    color: #787878 !important;
+	color: #787878 !important;
 }
 .crayon-theme-epicgeeks .crayon-pre .p {
-    color: #a3a3a3 !important;
+	color: #a3a3a3 !important;
 }
 .crayon-theme-epicgeeks .crayon-pre .s {
-    color: #90c300 !important;
+	color: #90c300 !important;
 }
-.crayon-theme-epicgeeks .crayon-pre .k,
-.crayon-theme-epicgeeks .crayon-pre .st,
-.crayon-theme-epicgeeks .crayon-pre .r,
-.crayon-theme-epicgeeks .crayon-pre .t,
+.crayon-theme-epicgeeks .crayon-pre .k {
+	color: #ff00aa !important;
+}
+.crayon-theme-epicgeeks .crayon-pre .st {
+	color: #ff00aa !important;
+}
+.crayon-theme-epicgeeks .crayon-pre .r {
+	color: #ff00aa !important;
+}
+.crayon-theme-epicgeeks .crayon-pre .t {
+	color: #ff00aa !important;
+}
 .crayon-theme-epicgeeks .crayon-pre .m {
-    color: #ff00aa !important;
+	color: #ff00aa !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .i {
-    color: #878787 !important;
+	color: #878787 !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .v {
-    color: #ca00ff !important;
+	color: #ca00ff !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .e {
 	color: #00d5ff !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .cn {
-    color: #e87b7b !important;
+	color: #e87b7b !important;
 }
-
-.crayon-theme-epicgeeks .crayon-pre .o,
+.crayon-theme-epicgeeks .crayon-pre .o {
+	color: #006fe0 !important;
+}
 .crayon-theme-epicgeeks .crayon-pre .h {
-    color: #006fe0 !important;
+	color: #006fe0 !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .sy {
 	color: #3c3c3c !important;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .n {
 	color: #b7b7b7 !important;
 	font-style: italic;
 }
-
 .crayon-theme-epicgeeks .crayon-pre .f {
 	color: #cfcfcf !important;
 }

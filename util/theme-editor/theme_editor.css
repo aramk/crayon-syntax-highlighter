@@ -1,11 +1,286 @@
 #crayon-theme-editor-button {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
 #crayon-editor-controls {
-	
+
+}
+
+#crayon-editor-preview .crayon-syntax {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 #crayon-editor-control-wrapper {
-	
+    padding-left: 20px;
 }
+
+#crayon-editor-control-wrapper,
+#crayon-editor-controls {
+    width: 422px;
+    overflow: hidden;
+}
+
+#crayon-editor-save {
+    margin: 0 5px;
+}
+
+#crayon-editor-controls label {
+    margin-right: 10px;
+    width: 70px;
+    float: left;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .separator .content {
+    font-weight: bold;
+    color: #999;
+    padding-top: 8px;
+    border-bottom: 1px solid #ccc;
+    text-shadow: 0 1px 0px #fff;
+    text-align: center;
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .separator.first .content {
+    padding-top: 0;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .separator.title .content {
+    line-height: 24px;
+    height: 22px;
+    padding-top: 0;
+    background: #dedede url(images/title.png) center bottom repeat-x;
+    border-color: #999;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .separator.title .content {
+    color: #333;
+    text-shadow: 0 1px 2px #eee;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .separator.title td {
+    color: #333;
+    padding: 0;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .field {
+    border: 0px;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .split-field td {
+    padding-right: 5px;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form .split-field td.last {
+    padding-right: 0;
+}
+
+#crayon-editor-controls .split-field input,
+#crayon-editor-controls .split-field select {
+    width: 100%;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form table td.value.split {
+    padding-left: 0;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form table td.field.split {
+    padding-right: 0;
+}
+
+#crayon-editor-controls input {
+    line-height: 23px;
+    height: 23px;
+    border: 1px solid #ccc;
+    padding: 0 5px;
+    margin: 2px 0;
+}
+
+#crayon-editor-controls input:focus {
+    border: 1px solid #999;
+}
+
+#crayon-editor-controls .ui-tabs-panel {
+    padding: 5px;
+}
+
+.crayon-theme-editor-form table {
+    width: 100%;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form table,
+#crayon-editor-controls .crayon-theme-editor-form tr,
+#crayon-editor-controls .crayon-theme-editor-form td {
+    padding: 0;
+    margin: 0;
+    border-spacing: 0 !important;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form table tr:first-child td,
+#crayon-editor-controls .crayon-theme-editor-form table tr:last-child td {
+    padding: 4px;
+}
+
+#crayon-editor-controls .crayon-theme-editor-form table td {
+    padding: 1px 4px;
+}
+
+.crayon-theme-editor-form table .value input {
+    width: 100%;
+}
+
+#crayon-editor-controls .ui-tabs-nav li {
+    padding: 0;
+    margin: 0;
+    border-top: 0;
+    border-left: 0;
+}
+
+#crayon-editor-controls .ui-tabs-nav * {
+    border-radius: 0px;
+}
+
+#crayon-editor-controls .ui-tabs-nav {
+    padding: 0;
+    margin: 0;
+}
+
+#crayon-editor-controls .ui-tabs-nav,
+#crayon-editor-controls .ui-tabs-nav li,
+#crayon-editor-controls .ui-tabs-nav li a {
+    height: 33px;
+    line-height: 33px;
+    padding: 0;
+}
+
+#crayon-editor-controls .ui-tabs-nav li a,
+#crayon-editor-controls .ui-tabs-nav li {
+    width: 70px;
+}
+
+#crayon-editor-controls .ui-tabs-nav li:first-child {
+    border-top-left-radius: 4px;
+}
+
+#crayon-editor-controls.ui-tabs {
+    padding: 0;
+    margin: 0;
+}
+
+#crayon-editor-controls .ui-widget-header {
+    width: 1000px;
+    overflow: hidden;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#crayon-editor-controls .ui-widget-header li:last-child {
+    border-right: none !important;
+}
+
+#crayon-editor-control-wrapper .ui-widget-content {
+    border: 0;
+    background: none;
+}
+
+#crayon-editor-controls .ui-widget-content {
+    border: 1px solid #bbb;
+    border-top-style: none;
+    background: #f5f5f5 50% top repeat-x;
+    color: #333333;
+    padding: 0;
+}
+
+.ui-colorpicker-preview-container .ui-colorpicker-border,
+.ui-colorpicker-preview-initial,
+.ui-colorpicker-preview-current {
+    height: 20px;
+}
+
+.ui-colorpicker .ui-colorpicker-mode {
+    margin-right: 5px;
+}
+
+.ui-colorpicker-swatches {
+    height: auto;
+}
+
+.ui-colorpicker {
+    z-index: 100 !important;
+}
+
+.crayon-tab-information {
+    background: url(images/information.png) no-repeat top center;
+}
+
+.crayon-tab-highlighting {
+    background: url(images/highlighting.png) no-repeat top center;
+}
+
+.crayon-tab-frame {
+    background: url(images/frame.png) no-repeat top center;
+}
+
+.crayon-tab-lines {
+    background: url(images/lines.png) no-repeat top center;
+}
+
+.crayon-tab-numbers {
+    background: url(images/numbers.png) no-repeat top center;
+}
+
+.crayon-tab-toolbar {
+    background: url(images/toolbar.png) no-repeat top center;
+}
+
+.ui-widget-header {
+    border: 1px solid #b3b3b3;
+    border-bottom: 1px solid #666;
+    background: #929292 url(images/button.png) center bottom repeat-x;
+    color: #474747;
+    font-weight: bold;
+}
+
+#crayon-editor-controls .ui-state-default,
+#crayon-editor-controls .ui-widget-content .ui-state-default,
+#crayon-editor-controls .ui-widget-header .ui-state-default {
+    border: none;
+    background: #929292 url(images/button.png) center bottom repeat-x;
+    font-weight: bold;
+    color: #545454;
+    border-top: 1px solid #ccc !important;
+}
+
+#crayon-editor-controls .ui-state-hover,
+#crayon-editor-controls .ui-widget-content .ui-state-hover,
+#crayon-editor-controls .ui-widget-header .ui-state-hover,
+#crayon-editor-controls .ui-state-focus,
+#crayon-editor-controls .ui-widget-content .ui-state-focus,
+#crayon-editor-controls .ui-widget-header .ui-state-focus {
+    border: none;
+    background: #b3b3b3 url(images/button-pressed.png) center bottom repeat-x;
+    border-top: 1px solid #eee !important;
+    font-weight: bold;
+    color: #00467a;
+}
+
+#crayon-editor-controls .ui-state-active,
+#crayon-editor-controls .ui-widget-content .ui-state-active,
+#crayon-editor-controls .ui-widget-header .ui-state-active {
+    border: none;
+    background: #b3b3b3 url(images/button-pressed.png) center bottom repeat-x;
+    font-weight: bold;
+    color: #4f4f4f;
+    border-top: 1px solid #eee !important;
+}
+
+.ui-dialog-content td input {
+    width: 100%;
+}
+
+/* {*/
+/*height: auto !important;*/
+/*}*/

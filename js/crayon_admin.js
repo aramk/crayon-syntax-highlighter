@@ -6,30 +6,30 @@
         var base = this;
 
         // Preview
-        var preview, preview_info, preview_cbox, preview_delay_timer, preview_get = null;
+        var preview, previewWrapper, preview_info, preview_cbox, preview_delay_timer, preview_get, preview_loaded;
         // The DOM object ids that trigger a preview update
         var preview_obj_names = [];
         // The jQuery objects for these objects
         var preview_objs = [];
         var preview_last_values = [];
         // Alignment
-        var align_drop = float = null;
+        var align_drop, float;
         // Toolbar
-        var overlay = toolbar = null;
+        var overlay, toolbar;
         // Error
-        var msg_cbox = msg = null;
+        var msg_cbox, msg;
         // Log
-        var log_button = log_text = null;
+        var log_button, log_text;
 
-        var main_wrap, theme_editor_wrap, editor_url, theme_editor_edit_button, theme_editor_create_button = null;
-        var theme_select, theme_info, theme_ver, theme_author, theme_desc = null;
+        var main_wrap, theme_editor_wrap, theme_editor_loading, theme_editor_edit_button, theme_editor_create_button, theme_editor_duplicate_button, theme_editor_delete_button, theme_editor_submit_button;
+        var theme_select, theme_info, theme_ver, theme_author, theme_desc;
 
         var settings = null;
         var adminSettings = null;
         var util = null;
 
         base.init = function () {
-            console_log('admin init');
+            CrayonUtil.log('admin init');
             settings = CrayonSyntaxSettings;
             adminSettings = CrayonAdminSettings;
             util = CrayonUtil;
@@ -37,17 +37,6 @@
             // Wraps
             main_wrap = $('#crayon-main-wrap');
             theme_editor_wrap = $('#crayon-theme-editor-wrap');
-            editor_url = theme_editor_wrap.attr('url');
-            theme_editor_edit_button = $('#crayon-theme-editor-edit-button');
-            theme_editor_create_button = $('#crayon-theme-editor-create-button');
-            theme_editor_edit_button.click(function () {
-                CrayonSyntaxAdmin.show_theme_editor(theme_editor_edit_button,
-                    true);
-            });
-            theme_editor_create_button.click(function () {
-                CrayonSyntaxAdmin.show_theme_editor(theme_editor_create_button,
-                    false);
-            });
 
             // Themes
             theme_select = $('#crayon-theme');
@@ -61,15 +50,45 @@
                 base.preview_update();
             });
 
+            theme_editor_edit_button = $('#crayon-theme-editor-edit-button');
+            theme_editor_create_button = $('#crayon-theme-editor-create-button');
+            theme_editor_duplicate_button = $('#crayon-theme-editor-duplicate-button');
+            theme_editor_delete_button = $('#crayon-theme-editor-delete-button');
+            theme_editor_submit_button = $('#crayon-theme-editor-submit-button');
+            theme_editor_edit_button.click(function () {
+                base.show_theme_editor(theme_editor_edit_button,
+                    true);
+            });
+            theme_editor_create_button.click(function () {
+                base.show_theme_editor(theme_editor_create_button,
+                    false);
+            });
+            theme_editor_duplicate_button.click(function () {
+                CrayonSyntaxThemeEditor.duplicate(adminSettings.currTheme, adminSettings.currThemeName);
+            });
+            theme_editor_delete_button.click(function () {
+                if (!theme_editor_edit_button.attr('disabled')) {
+                    CrayonSyntaxThemeEditor.delete(adminSettings.currTheme, adminSettings.currThemeName);
+                }
+                return false;
+            });
+            theme_editor_submit_button.click(function () {
+                CrayonSyntaxThemeEditor.submit(adminSettings.currTheme, adminSettings.currThemeName);
+            });
+
             // Help
             help = $('.crayon-help-close');
             help.click(function () {
                 $('.crayon-help').hide();
-                $.get(settings.ajaxurl, {action : 'crayon-ajax', 'hide-help' : 1});
+                CrayonUtil.getAJAX({
+                    action: 'crayon-ajax',
+                    'hide-help': 1,
+                });
             });
 
             // Preview
             preview = $('#crayon-live-preview');
+            previewWrapper = $('#crayon-live-preview-wrapper');
             preview_info = $('#crayon-preview-info');
             preview_cbox = util.cssElem('#preview');
             if (preview.length != 0) {
@@ -84,30 +103,39 @@
             }
 
             $('#show-posts').click(function () {
-                $.get(settings.ajaxurl, {action : 'crayon-show-posts'}, function (data) {
+                CrayonUtil.getAJAX({
+                    action: 'crayon-show-posts'
+                }, function (data) {
                     $('#crayon-subsection-posts-info').html(data);
                 });
             });
 
             $('#show-langs').click(function () {
-                $.get(settings.ajaxurl, {action : 'crayon-show-langs'}, function (data) {
+                CrayonUtil.getAJAX({
+                    action: 'crayon-show-langs'
+                }, function (data) {
                     $('#lang-info').hide();
                     $('#crayon-subsection-langs-info').html(data);
                 });
             });
 
             // Convert
-            $('#crayon-settings-form input').live('focusin focusout mouseup', function () {
-                $('#crayon-settings-form').data('lastSelected', $(this));
-            });
-            $('#crayon-settings-form').submit(function () {
-                var last = $(this).data('lastSelected').get(0);
-                var target = $('#convert').get(0);
-                if (last == target) {
-                    var r = confirm("Please BACKUP your database first! Converting will update your post content. Do you wish to continue?");
-                    return r;
-                }
-            });
+            $('#crayon-settings-form input').live(
+                'focusin focusout mouseup',
+                function () {
+                    $('#crayon-settings-form')
+                        .data('lastSelected', $(this));
+                });
+            $('#crayon-settings-form')
+                .submit(
+                function () {
+                    var last = $(this).data('lastSelected').get(0);
+                    var target = $('#convert').get(0);
+                    if (last == target) {
+                        var r = confirm("Please BACKUP your database first! Converting will update your post content. Do you wish to continue?");
+                        return r;
+                    }
+                });
 
             // Alignment
             align_drop = util.cssElem('#h-align');
@@ -164,7 +192,6 @@
                         : show_log);
                     log_button.val(text);
                 });
-
         };
 
         /* Whenever a control changes preview */
@@ -172,8 +199,8 @@
             var val = 0;
             var obj;
             var getVars = {
-                action : 'crayon-show-preview',
-                theme : adminSettings.curr_theme
+                action: 'crayon-show-preview',
+                theme: adminSettings.currTheme
             };
             for (var i = 0; i < preview_obj_names.length; i++) {
                 obj = preview_objs[i];
@@ -182,19 +209,30 @@
                 } else {
                     val = obj.val();
                 }
-                getVars[preview_obj_names[i]] = crayon_escape(val);
+                getVars[preview_obj_names[i]] = CrayonUtil.escape(val);
             }
 
             // Load Preview
-            $.get(settings.ajaxurl, getVars, function (data) {
+            CrayonUtil.postAJAX(getVars, function (data) {
                 preview.html(data);
                 // Important! Calls the crayon.js init
                 CrayonSyntax.init();
+                base.preview_ready();
             });
         };
 
+        base.preview_ready = function () {
+            if (!preview_loaded) {
+                preview_loaded = true;
+                if (window.GET['theme-editor']) {
+                    CrayonSyntaxAdmin.show_theme_editor(
+                        theme_editor_edit_button, true);
+                }
+            }
+        };
+
         var preview_toggle = function () {
-            // console_log('preview_toggle');
+            // CrayonUtil.log('preview_toggle');
             if (preview_cbox.is(':checked')) {
                 preview.show();
                 preview_info.show();
@@ -230,13 +268,13 @@
             // Checks if the text input is changed, if so, runs the callback
             // with given event
             preview_txt_change = function (callback, event) {
-                // console_log('checking if changed');
+                // CrayonUtil.log('checking if changed');
                 var obj = event.target;
                 var last = preview_last_values[obj.id];
-                // console_log('last' + preview_last_values[obj.id]);
+                // CrayonUtil.log('last' + preview_last_values[obj.id]);
 
                 if (obj.value != last) {
-                    // console_log('changed');
+                    // CrayonUtil.log('changed');
                     // Update last value to current
                     preview_last_values[obj.id] = obj.value;
                     // Run callback with event
@@ -246,7 +284,7 @@
 
             // Only updates when text is changed
             preview_txt_callback = function (event) {
-                // console_log('txt callback');
+                // CrayonUtil.log('txt callback');
                 preview_txt_change(base.preview_update, event);
             };
 
@@ -255,7 +293,7 @@
                 preview_txt_change(function () {
                     clearInterval(preview_delay_timer);
                     preview_delay_timer = setInterval(function () {
-                        // console_log('delayed update');
+                        // CrayonUtil.log('delayed update');
                         base.preview_update();
                         clearInterval(preview_delay_timer);
                     }, 500);
@@ -313,6 +351,159 @@
             return false;
         };
 
+
+
+        base.refresh_theme_info = function (callback) {
+            adminSettings.currTheme = theme_select.val();
+            adminSettings.currThemeName = theme_select.find('option:selected').attr('data-value');
+            adminSettings.currThemeIsUser = adminSettings.currTheme in adminSettings.userThemes;
+            var url = adminSettings.currThemeIsUser ? adminSettings.userThemesURL : adminSettings.themesURL;
+            adminSettings.currThemeURL = base.get_theme_url(adminSettings.currTheme);
+            // Load the theme file
+
+            $.ajax({
+                url: adminSettings.currThemeURL,
+                success: function (data) {
+                    adminSettings.currThemeCSS = data;
+//                    var fields = {
+//                        'Version': theme_ver,
+//                        'Author': theme_author,
+//                        'URL': null,
+//                        'Description': theme_desc
+//                    };
+//                    for (field in fields) {
+//                        var re = new RegExp('(?:^|[\\r\\n]\\s*)\\b' + field
+//                            + '\\s*:\\s*([^\\r\\n]+)', 'gmi');
+//                        var match = re.exec(data);
+//                        var val = fields[field];
+//                        if (match) {
+//                            if (val != null) {
+//                                val.html(match[1].escape().linkify('_blank'));
+//                            } else if (field == 'Author URI') {
+//                                theme_author.html('<a href="' + match[1]
+//                                    + '" target="_blank">'
+//                                    + theme_author.text() + '</a>');
+//                            }
+//                        } else if (val != null) {
+//                            val.text('N/A');
+//                        }
+//                    }
+                    if (callback) {
+                        callback();
+                    }
+                },
+                cache: false
+            });
+
+            adminSettings.currThemeCSS = '';
+        };
+
+        base.get_theme_url = function ($id) {
+            var url = $id in adminSettings.userThemes ? adminSettings.userThemesURL : adminSettings.themesURL;
+            return url + $id + '/' + $id + '.css';
+        };
+
+        base.show_theme_info = function (callback) {
+            base.refresh_theme_info(function () {
+                var info = CrayonSyntaxThemeEditor.readCSSInfo(adminSettings.currThemeCSS);
+                var infoHTML = '';
+                for (id in info) {
+                    if (id != 'name') {
+                        infoHTML += '<div class="fieldset">';
+                        if (id != 'description') {
+                            infoHTML += '<div class="' + id + ' field">' + CrayonSyntaxThemeEditor.getFieldName(id) + ':</div>';
+                        }
+                        infoHTML += '<div class="' + id + ' value">' + info[id].linkify('_blank') + '</div></div>';
+                    }
+                }
+                var type, typeName;
+                if (adminSettings.currThemeIsUser) {
+                    type = 'user';
+                    typeName = CrayonThemeEditorStrings.userTheme;
+                } else {
+                    type = 'stock';
+                    typeName = CrayonThemeEditorStrings.stockTheme;
+                }
+                infoHTML = '<div class="type ' + type + '">' + typeName + '</div><div class="content">' + infoHTML + '</div>';
+                theme_info.html(infoHTML);
+                // Disable for stock themes
+                var disabled = !adminSettings.currThemeIsUser && !settings.debug;
+                theme_editor_edit_button.attr('disabled', disabled);
+                theme_editor_delete_button.attr('disabled', disabled);
+                theme_editor_submit_button.attr('disabled', disabled);
+                if (callback) {
+                    callback();
+                }
+            });
+
+//            CrayonSyntaxThemeEditor.
+//
+//            $.ajax({
+//                url: adminSettings.currThemeURL,
+//                success: function (data) {
+//                    adminSettings.curr_theme_str = data;
+//                    var fields = {
+//                        'Version': theme_ver,
+//                        'Author': theme_author,
+//                        'URL': null,
+//                        'Description': theme_desc
+//                    };
+//                    for (field in fields) {
+//                        var re = new RegExp('(?:^|[\\r\\n]\\s*)\\b' + field
+//                            + '\\s*:\\s*([^\\r\\n]+)', 'gmi');
+//                        var match = re.exec(data);
+//                        var val = fields[field];
+//                        if (match) {
+//                            if (val != null) {
+//                                val.html(match[1].escape().linkify('_blank'));
+//                            } else if (field == 'Author URI') {
+//                                theme_author.html('<a href="' + match[1]
+//                                    + '" target="_blank">'
+//                                    + theme_author.text() + '</a>');
+//                            }
+//                        } else if (val != null) {
+//                            val.text('N/A');
+//                        }
+//                    }
+//                    if (callback) {
+//                        callback();
+//                    }
+//                },
+//                cache: false
+//            });
+        };
+
+        base.show_theme_editor = function (button, editing) {
+            if (theme_editor_edit_button.attr('disabled')) {
+                return false;
+            }
+            base.refresh_theme_info();
+            button.html(button.attr('loading'));
+            adminSettings.editing_theme = editing;
+            theme_editor_loading = true;
+            // Load theme editor
+            CrayonUtil.getAJAX({
+                action: 'crayon-theme-editor',
+                currTheme: adminSettings.currTheme,
+                editing: editing
+            }, function (data) {
+                theme_editor_wrap.html(data);
+                // Load preview into editor
+                if (theme_editor_loading) {
+                    CrayonSyntaxThemeEditor.init();
+                }
+                CrayonSyntaxThemeEditor.show(function () {
+                    base.show_theme_editor_now(button);
+                }, preview);
+            });
+            return false;
+        };
+
+        base.resetPreview = function() {
+            previewWrapper.append(preview);
+            CrayonSyntaxThemeEditor.removeStyle();
+        };
+
         base.show_theme_editor_now = function (button) {
             main_wrap.hide();
             theme_editor_wrap.show();
@@ -320,58 +511,13 @@
             button.html(button.attr('loaded'));
         };
 
-        base.show_theme_info = function (callback) {
-            adminSettings.curr_theme = $('#crayon-theme').val();
-            adminSettings.curr_theme_url = adminSettings.themes_url + adminSettings.curr_theme + '/' + adminSettings.curr_theme + '.css';
-            $.ajax({
-                url : adminSettings.curr_theme_url,
-                success : function (data) {
-                    adminSettings.curr_theme_str = data;
-                    var fields = {
-                        'Version' : theme_ver,
-                        'Author' : theme_author,
-                        'Author URI' : null,
-                        'Description' : theme_desc
-                    };
-                    for (field in fields) {
-                        var re = new RegExp('(?:^|[\\r\\n]\\s*)\\b' + field + '\\s*:\\s*([^\\r\\n]+)', 'gmi');
-                        var match = re.exec(data);
-                        var val = fields[field];
-                        if (match) {
-                            if (val != null) {
-                                val.html(match[1].escape().linkify('_blank'));
-                            } else if (field == 'Author URI') {
-                                theme_author.html('<a href="' + match[1] + '" target="_blank">' + theme_author.text() + '</a>');
-                            }
-                        } else if (val != null) {
-                            val.text('N/A');
-                        }
-                    }
-                    if (callback) {
-                        callback();
-                    }
-                },
-                cache : false
-            });
-        };
+//        base.delete_theme = function () {
+//            adminSettings.curr_theme
+//        };
 
-        base.show_theme_editor = function (button, editing) {
-            button.html(button.attr('loading'));
-
-            adminSettings.editing = editing;
-
-            // Load theme editor
-            $.get(editor_url + '?curr_theme='
-                + adminSettings.curr_theme + '&editing='
-                + editing, function (data) {
-                theme_editor_wrap.html(data);
-                // Load preview into editor
-                CrayonSyntaxThemeEditor.init(function () {
-                    base.show_theme_editor_now(button);
-                }, preview.clone());
-            });
-            return false;
-        };
+//        base.duplicate_theme = function () {
+//
+//        };
 
     };
 

@@ -6,17 +6,15 @@ define('CRAYON_DEBUG', FALSE);
 
 // TODO remove once done
 define('CRAYON_TAG_EDITOR', TRUE);
-define('CRAYON_THEME_EDITOR', FALSE);
+define('CRAYON_THEME_EDITOR', TRUE);
 
 // Constants
-
-$uid = CRAYON_DEBUG ? uniqid() : ''; // Prevent caching in debug mode
 
 // General definitions
 define('CRAYON_DOMAIN', 'crayon-syntax-highlighter');
 
 // These are overriden by functions since v1.1.1
-$CRAYON_VERSION = '1.1.1' . $uid;
+$CRAYON_VERSION = '1.1.1';
 $CRAYON_DATE = '27th September, 2011';
 $CRAYON_AUTHOR = 'Aram Kocharyan';
 $CRAYON_AUTHOR_SITE = 'http://ak.net84.net/';
@@ -77,6 +75,9 @@ define('CRAYON_JS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.init.pack
 define('CRAYON_CSS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.css');
 define('CRAYON_CSS_JQUERY_UI', CRAYON_JS_DIR . 'jquery-ui/jquery-ui.css');
 define('CRAYON_JS_JQUERY_UI', CRAYON_JS_DIR . 'jquery-ui/jquery-ui.js');
+define('CRAYON_CSS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.css');
+define('CRAYON_JS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.js');
+define('CRAYON_JS_TINYCOLOR', CRAYON_JS_DIR . 'tinycolor-min.js');
 // TODO rename TE
 define('CRAYON_TE_JS', 'crayon_te.js');
 define('CRAYON_TE_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.class.php');
@@ -89,7 +90,6 @@ define('CRAYON_STYLE_GLOBAL', CRAYON_CSS_DIR . 'global_style.css');
 define('CRAYON_LOGO', CRAYON_CSS_DIR . 'images/crayon_logo.png');
 define('CRAYON_DONATE_BUTTON', CRAYON_CSS_DIR . 'images/donate.png');
 define('CRAYON_THEME_EDITOR_PHP', CRAYON_THEME_EDITOR_PATH . 'theme_editor.php');
-define('CRAYON_THEME_EDITOR_CONTENT_PHP', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR  . 'theme_editor_content.php');
 define('CRAYON_THEME_EDITOR_JS', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR . 'theme_editor.js');
 define('CRAYON_THEME_EDITOR_STYLE', CRAYON_UTIL_DIR . CRAYON_THEME_EDITOR_DIR . 'theme_editor.css');
 define('CRAYON_THEME_EDITOR_BUTTON', CRAYON_CSS_DIR . 'images/theme_editor.png');
@@ -162,12 +162,11 @@ function crayon_pb($url) {
 
 // Get/Set plugin information
 function crayon_set_info($info_array) {
-	global $CRAYON_VERSION, $CRAYON_DATE, $CRAYON_AUTHOR, $CRAYON_WEBSITE, $uid;
+	global $CRAYON_VERSION, $CRAYON_DATE, $CRAYON_AUTHOR, $CRAYON_WEBSITE;
 	if (!is_array($info_array)) {
 		return;
 	}
 	crayon_set_info_key('Version', $info_array, $CRAYON_VERSION);
-	$CRAYON_VERSION .= $uid;
 	if (($date = @filemtime(CRAYON_README_FILE)) !== FALSE) {
 		$CRAYON_DATE = date("jS F, Y", $date);
 	}
@@ -217,7 +216,7 @@ function crayon__($text) {
 	if (function_exists('__')) {
 		return __($text, CRAYON_DOMAIN);
 	} else {
-		return $text . CRAYON_DOMAIN;
+		return $text;
 	}
 }
 

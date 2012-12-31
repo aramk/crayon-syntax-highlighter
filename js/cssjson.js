@@ -1,81 +1,113 @@
-/*
-
-CSS-JSON Converter for JavaScript, v.1.0
-By Aram Kocharyan, http://ak.net84.net/
-
-Converts CSS to JSON and back.
-
-*/
-
-// String functions
-var StringExtensions = new function() {
-	// Added natively now
-	this.trim = function() {
-    	return this.replace(/^\s+|\s+$/g, '');
-	};
-	String.prototype.trim = this.trim;
-	
-	this.repeat = function(n) {
-	    return new Array(1 + n).join(this);
-	}
-	String.prototype.repeat = this.repeat;
-}
+/**
+ * CSS-JSON Converter for JavaScript, v.2.0 By Aram Kocharyan,
+ * http://ak.net84.net/ Converts CSS to JSON and back.
+ */
 
 var CSSJSON = new function() {
-	
-	// These aren't used, just shown for convenience
+
+	var base = this;
+
+	base.init = function() {
+		// String functions
+		String.prototype.trim = function() {
+			return this.replace(/^\s+|\s+$/g, '');
+		};
+
+		String.prototype.repeat = function(n) {
+			return new Array(1 + n).join(this);
+		};
+	};
+	base.init();
+
 	var selX = /([^\s\;\{\}][^\;\{\}]*)\{/g;
 	var endX = /\}/g;
 	var lineX = /([^\;\{\}]*)\;/g;
-	var commentX = /\/\*.*?\*\//g;
+	var commentX = /\/\*[\s\S]*?\*\//g;
 	var lineAttrX = /([^\:]+):([^\;]*);/;
-	
-	// This is used, a concatenation of all above. We use alternation to capture.
-	var altX = /(\/\*[\s\S]*?\*\/)|([^\s\;\{\}][^\;\{\}]*(?=\{))|(\})|([^\;\{\}]+\;)/gmi;
-	
+
+	// This is used, a concatenation of all above. We use alternation to
+	// capture.
+	var altX = /(\/\*[\s\S]*?\*\/)|([^\s\;\{\}][^\;\{\}]*(?=\{))|(\})|([^\;\{\}]+\;(?!\s*\*\/))/gmi;
+
 	// Capture groups
 	var capComment = 1;
-	var capSel = 2
+	var capSelector = 2;
 	var capEnd = 3;
 	var capAttr = 4;
-	
-	// The main JSON converter function. Set keepOrder to true to keep order of comments etc.
-	this.toJSON = function(css, keepOrder) {
-		return getCSSRuleNode(css, keepOrder);
-	}
 
 	var isEmpty = function(x) {
 		return typeof x == 'undefined' || x.length == 0 || x == null;
-	}
+	};
 
-	// Input is css string and current pos, returns JSON object
-	var getCSSRuleNode = function(cssString, keepOrder) {
-		var node = {};
+	/**
+	 * Input is css string and current pos, returns JSON object
+	 * 
+	 * @param cssString
+	 *            The CSS string.
+	 * @param args
+	 *            An optional argument object. ordered: Whether order of
+	 *            comments and other nodes should be kept in the output. This
+	 *            will return an object where all the keys are numbers and the
+	 *            values are objects containing "name" and "value" keys for each
+	 *            node. comments: Whether to capture comments. split: Whether to
+	 *            split each comma separated list of selectors.
+	 */
+	base.toJSON = function(cssString, args) {
+		var node = {
+            children: {},
+            attributes: {}
+        };
 		var match = null;
 		var count = 0;
 
-		while ( (match = altX.exec(cssString)) != null ) {
-			console.log(match);
-			if (!isEmpty(match[capComment])) {
+		if (typeof args == 'undefined') {
+			var args = {
+				ordered : false,
+				comments : false,
+                stripComments : false,
+				split : false
+			};
+		}
+        if (args.stripComments) {
+            args.comments = false;
+            cssString = cssString.replace(commentX, '');
+        }
+
+		while ((match = altX.exec(cssString)) != null) {
+			if (!isEmpty(match[capComment]) && args.comments) {
 				// Comment
 				var add = match[capComment].trim();
 				node[count++] = add;
-			} else if (!isEmpty(match[capSel])) {
-			//} else if (typeof match[capSel] != 'undefined') {
+			} else if (!isEmpty(match[capSelector])) {
 				// New node, we recurse
-				var name = match[capSel].trim();
-				var newNode = getCSSRuleNode(cssString, keepOrder);
-				if (keepOrder) {
+				var name = match[capSelector].trim();
+				// This will return when we encounter a closing brace
+				var newNode = base.toJSON(cssString, args);
+				if (args.ordered) {
 					var obj = {};
 					obj['name'] = name;
 					obj['value'] = newNode;
-					// Since we must use key as index to keep order and not name,
-					// this will differentiate between a Rule Node and an Attribute,
-					// since both contain a name and value pair.
+					// Since we must use key as index to keep order and not
+					// name, this will differentiate between a Rule Node and an
+					// Attribute, since both contain a name and value pair.
 					obj['type'] = 'rule';
 					node[count++] = obj;
 				} else {
-					node[name] = newNode;
+					if (args.split) {
+						var bits = name.split(',');
+					} else {
+						var bits = [name];
+					}
+                    for (i in bits) {
+                        var sel = bits[i].trim();
+                        if (sel in node.children) {
+                            for (var att in newNode.attributes) {
+                                node.children[sel].attributes[att] = newNode.attributes[att];
+                            }
+                        } else {
+                            node.children[sel] = newNode;
+                        }
+                    }
 				}
 			} else if (!isEmpty(match[capEnd])) {
 				// Node has finished
@@ -87,14 +119,14 @@ var CSSJSON = new function() {
 					// Attribute
 					var name = attr[1].trim();
 					var value = attr[2].trim();
-					if (keepOrder) {
+					if (args.ordered) {
 						var obj = {};
 						obj['name'] = name;
 						obj['value'] = value;
 						obj['type'] = 'attr';
 						node[count++] = obj;
 					} else {
-						node[name] = value;
+						node.attributes[name] = value;
 					}
 				} else {
 					// Semicolon terminated line
@@ -102,62 +134,57 @@ var CSSJSON = new function() {
 				}
 			}
 		}
-		
+
 		return node;
-	}
-	
-	// The main CSS converter function.
-	this.toCSS = function(json) {
-		return strCSSRuleNode(json);
-	}
-	
-	// Print a JSON node as CSS
-	var strCSSRuleNode = function(node, level) {
+	};
+
+	/**
+	 * @param node
+	 *            A JSON node.
+	 * @param depth
+	 *            The depth of the current node; used for indentation and
+	 *            optional.
+	 * @param breaks
+	 *            Whether to add line breaks in the output.
+	 */
+	base.toCSS = function(node, depth, breaks) {
 		var cssString = '';
-		if (typeof level == 'undefined') {
-			level = 0;
+		if (typeof depth == 'undefined') {
+			depth = 0;
 		}
-		for (i in node) {
-			var subNode = node[i];
-			if (typeof i == 'number' || parseInt(i) == i) {
-				// Ordered
-				if (typeof subNode == 'object') {
-					if (subNode.type == 'rule') {
-						// Selector
-						cssString += strNode(subNode.name, subNode.value, level);
-					} else {
-						// Attribute
-						cssString += strAttr(subNode.name, subNode.value, level);
-					}
+		if (typeof breaks == 'undefined') {
+			breaks = false;
+		}
+		if (node.attributes) {
+			for (i in node.attributes) {
+				cssString += strAttr(i, node.attributes[i], depth);
+			}
+		}
+		if (node.children) {
+			var first = true;
+			for (i in node.children) {
+				if (breaks && !first) {
+					cssString += '\n';
 				} else {
-					// Line/Comment
-					cssString += '\t'.repeat(level) + subNode + '\n';
+					first = false;
 				}
-			} else if (typeof i == 'string') {
-				// Unordered
-				if (typeof subNode == 'object') {
-					// Selector
-					cssString += strNode(i, subNode, level);
-				} else {
-					// Attribute
-					cssString += strAttr(i, subNode, level);
-				}
+				cssString += strNode(i, node.children[i], depth);
 			}
 		}
 		return cssString;
-	}
-	
-	// Helpers
-	
-	var strAttr = function(name, value, level) {
-		return '\t'.repeat(level) + name + ': ' + value + ';\n';
-	}
-	
-	var strNode = function(name, value, level) {
-		var cssString = '\t'.repeat(level) + name + ' {\n';
-		cssString += strCSSRuleNode(value, level+1);
-		cssString += '\t'.repeat(level) + '}\n\n';
-		return cssString;
-	}
+	};
 
-}
+	// Helpers
+
+	var strAttr = function(name, value, depth) {
+		return '\t'.repeat(depth) + name + ': ' + value + ';\n';
+	};
+
+	var strNode = function(name, value, depth) {
+		var cssString = '\t'.repeat(depth) + name + ' {\n';
+		cssString += base.toCSS(value, depth + 1);
+		cssString += '\t'.repeat(depth) + '}\n';
+		return cssString;
+	};
+
+};
