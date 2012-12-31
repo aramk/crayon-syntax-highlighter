@@ -794,7 +794,6 @@ class CrayonThemeEditorWP {
                 }
             } catch (Exception $e) {
                 CrayonLog::syslog($e->getMessage(), "THEME SUBMIT");
-                var_dump('error', $e);
                 echo -2;
             }
         } else {

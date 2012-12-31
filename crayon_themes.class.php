@@ -15,33 +15,18 @@ class CrayonThemes extends CrayonUserResourceCollection {
 	// Methods ================================================================
 
 	function __construct() {
-//        var_dump($this->user_dire
-//        var_dump('__construct');
-
 		$this->directory ( CRAYON_THEME_PATH );
         $this->user_directory(CrayonGlobalSettings::upload_path() . CRAYON_THEME_DIR);
         if (!is_dir($this->user_directory())) {
             mkdir($this->user_directory(), 0777, TRUE);
         }
 		$this->set_default ( self::DEFAULT_THEME, self::DEFAULT_THEME_NAME );
-
-//        var_dump($this->directoryctory());
 	}
-
-//    public function exists($id) {
-//        var_dump($id);
-//        var_dump(parent::exists($id));
-//    }
 
 	// XXX Override
 	public function path($id, $user = NULL) {
-//        var_dump($this->dirpath($id) . "/$id.css");
 		return $this->dirpath($id, $user) . "$id.css";
 	}
-
-//    public function add_resource($resource) {
-//        var_dump($resource);
-//    }
 
     public function dirpath($id, $user = NULL) {
         $path = NULL;
