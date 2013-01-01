@@ -19,7 +19,7 @@
         // Error
         var msg_cbox, msg;
         // Log
-        var log_button, log_text;
+        var log_button, log_text, log_wrapper, change_button;
 
         var main_wrap, theme_editor_wrap, theme_editor_loading, theme_editor_edit_button, theme_editor_create_button, theme_editor_duplicate_button, theme_editor_delete_button, theme_editor_submit_button;
         var theme_select, theme_info, theme_ver, theme_author, theme_desc;
@@ -182,16 +182,20 @@
             var hide_log = log_button.attr('hide_txt');
             clog = $('#crayon-log');
             log_button.val(show_log);
-            log_button
-                .click(function () {
-                    clog.width(log_wrapper.width());
-                    clog.toggle();
-                    // Scrolls content
-                    clog.scrollTop(log_text.height());
-                    var text = (log_button.val() == show_log ? hide_log
-                        : show_log);
-                    log_button.val(text);
-                });
+            log_button.click(function () {
+                clog.width(log_wrapper.width());
+                clog.toggle();
+                // Scrolls content
+                clog.scrollTop(log_text.height());
+                var text = (log_button.val() == show_log ? hide_log
+                    : show_log);
+                log_button.val(text);
+            });
+
+            change_button = $('#crayon-change-code');
+            change_button.click(function () {
+
+            });
         };
 
         /* Whenever a control changes preview */
@@ -209,7 +213,7 @@
                 } else {
                     val = obj.val();
                 }
-                getVars[preview_obj_names[i]] = CrayonUtil.escape(val);
+                getVars[preview_obj_names[i]] = val;//CrayonUtil.escape(val);
             }
 
             // Load Preview
@@ -350,7 +354,6 @@
             main_wrap.show();
             return false;
         };
-
 
 
         base.refresh_theme_info = function (callback) {
@@ -499,7 +502,7 @@
             return false;
         };
 
-        base.resetPreview = function() {
+        base.resetPreview = function () {
             previewWrapper.append(preview);
             CrayonSyntaxThemeEditor.removeStyle();
         };

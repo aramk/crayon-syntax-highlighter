@@ -78,9 +78,11 @@ class CrayonSettingsWP {
     public static function admin_scripts() {
         global $CRAYON_VERSION;
         wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
+        wp_enqueue_script('jquery_ui_js', plugins_url(CRAYON_JS_JQUERY_UI, __FILE__), array('jquery'), $CRAYON_VERSION);
+        wp_enqueue_style('jquery_ui', plugins_url(CRAYON_CSS_JQUERY_UI, __FILE__), array(), $CRAYON_VERSION);
         self::init_js_settings();
         if (is_admin()) {
-            wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_util_js'), $CRAYON_VERSION);
+            wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'jquery_ui_js', 'crayon_util_js'), $CRAYON_VERSION);
             self::init_admin_js_settings();
         }
         self::other_scripts();
@@ -951,7 +953,7 @@ class Human {
             <div id="crayon-live-preview"></div>
         </div>
         <div id="crayon-preview-info">
-            <?php printf(crayon__('Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 are marked.'), '<a href="#langs">', '</a>'); ?>
+            <?php printf(crayon__('Change the %1$sfallback language%2$s to change the sample code or %schange it manually%s. Lines 5-7 are marked.'), '<a href="#langs">', '</a>', '<a class="crayon-change-code" href="#">', '</a>'); ?>
         </div>
     </div>
     <?php

@@ -2,6 +2,7 @@
 int main(void) {
     int x;
     x = 0;
+    // Uses a pointer
     set(&x, 42);
     printf("%d %d", x);
     return 0;
