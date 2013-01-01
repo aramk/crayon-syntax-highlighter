@@ -261,6 +261,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.0.2 =
+* FIXED:
+    * Converting tags failed to work since 2.0.0 - also fixed minor bugs leading to false positives for legacy tags.
+
 = 2.0.1 =
 * ADDED:
     * Ability to change sample code in settings

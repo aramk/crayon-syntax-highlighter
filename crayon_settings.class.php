@@ -210,7 +210,7 @@ class CrayonSettings {
 			new CrayonSetting(self::CAPTURE_MINI_TAG, FALSE),
 			new CrayonSetting(self::MIXED, TRUE),
 			new CrayonSetting(self::SHOW_MIXED, TRUE),
-			new CrayonSetting(self::PLAIN_TAG, TRUE),
+			new CrayonSetting(self::PLAIN_TAG, FALSE),
 			new CrayonSetting(self::ENQUEUE_THEMES, TRUE),
 			new CrayonSetting(self::ENQUEUE_FONTS, TRUE),
 			new CrayonSetting(self::MAIN_QUERY, FALSE),
