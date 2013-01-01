@@ -266,6 +266,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Ability to change sample code in settings
 * FIXED:
 	* Changes in ID definitions caused C++ and C# to fail loading.
+	* Fixed issues with minified CSS not loading in popup window
     * Using wp_mkdir_p instead of mkdir for creating directories and such.
     * Admin resource dependencies
 

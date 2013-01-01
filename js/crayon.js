@@ -424,14 +424,14 @@
             }
 
             settings.data = base.getAllCSS() + '<body class="crayon-popup-window" style="padding:0; margin:0;"><div class="' + clone.attr('class') +
-                ' crayon-popup">' + removeCssInline(getHtmlString(code)) + '</div></body>';
+                ' crayon-popup">' + base.removeCssInline(base.getHtmlString(code)) + '</div></body>';
         };
 
-        var getHtmlString = function (object) {
+        base.getHtmlString = function (object) {
             return $('<div>').append(object.clone()).remove().html();
         };
 
-        var removeCssInline = function (string) {
+        base.removeCssInline = function (string) {
             var reStyle = /style\s*=\s*"([^"]+)"/gmi;
             var match = null;
             while ((match = reStyle.exec(string)) != null) {
@@ -452,10 +452,10 @@
                 filtered = css;
             } else {
                 // Filter all others for Crayon CSS
-                filtered = css.filter('[href*="crayon-syntax-highlighter"]');
+                filtered = css.filter('[href*="crayon-syntax-highlighter"], [href*="min/"]');
             }
             filtered.each(function () {
-                var string = getHtmlString($(this));
+                var string = base.getHtmlString($(this));
                 css_str += string;
             });
             return css_str;
