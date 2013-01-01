@@ -221,6 +221,10 @@
                 });
                 return false;
             });
+            $('#crayon-fallback-lang').change(function () {
+                change_code = null;
+                base.preview_update();
+            });
         };
 
         /* Whenever a control changes preview */

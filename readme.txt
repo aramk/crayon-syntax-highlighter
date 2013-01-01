@@ -262,6 +262,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 2.0.1 =
+* ADDED:
+    * Ability to change sample code in settings
 * FIXED:
     * Using wp_mkdir_p instead of mkdir for creating directories and such.
     * Admin resource dependencies
