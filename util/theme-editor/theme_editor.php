@@ -174,9 +174,6 @@ class CrayonThemeEditorWP {
         if (self::$strings === NULL) {
             self::$strings = array(
                 // These appear only in the UI and can be translated
-                // TODO add the rest
-                'no' => crayon__("No"),
-                'yes' => crayon__("Yes"),
                 'userTheme' => crayon__("User-Defined Theme"),
                 'stockTheme' => crayon__("Stock Theme"),
                 'success' => crayon__("Success!"),
@@ -189,12 +186,8 @@ class CrayonThemeEditorWP {
                 'duplicateFail' => crayon__("Duplicate failed!"),
                 'checkLog' => crayon__("Please check the log for details."),
                 'discardConfirm' => crayon__("Are you sure you want to discard all changes?"),
-                'confirm' => crayon__("Confirm"),
                 'editingTheme' => crayon__("Editing Theme: %s"),
                 'creatingTheme' => crayon__("Creating Theme: %s"),
-                'prompt' => crayon__("Prompt"),
-                'value' => crayon__("Value"),
-                'alert' => crayon__("Alert"),
                 'submit' => crayon__("Submit Your Theme"),
                 'submitText' => crayon__("Submit your User Theme for inclusion as a Stock Theme in Crayon!"),
                 'message' => crayon__("Message"),
@@ -210,9 +203,6 @@ class CrayonThemeEditorWP {
         self::initSettings();
         $path = dirname(dirname(__FILE__));
         wp_enqueue_script('cssjson_js', plugins_url(CRAYON_CSSJSON_JS, $path), $CRAYON_VERSION);
-
-//        wp_enqueue_script('jquery_ui_js', plugins_url(CRAYON_JS_JQUERY_UI, $path), array('jquery'), $CRAYON_VERSION);
-//        wp_enqueue_style('jquery_ui', plugins_url(CRAYON_CSS_JQUERY_UI, $path), array(), $CRAYON_VERSION);
 
         wp_enqueue_script('jquery_colorpicker_js', plugins_url(CRAYON_JS_JQUERY_COLORPICKER, $path), array('jquery'), $CRAYON_VERSION);
         wp_enqueue_script('jquery_tinycolor_js', plugins_url(CRAYON_JS_TINYCOLOR, $path), array(), $CRAYON_VERSION);

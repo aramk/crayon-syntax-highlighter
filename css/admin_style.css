@@ -278,3 +278,8 @@
     font-style: italic;
     color: #999;
 }
+
+#crayon-change-code-text {
+    width: 400px;
+    height: 300px;
+}

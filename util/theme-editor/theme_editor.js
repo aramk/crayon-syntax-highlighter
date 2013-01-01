@@ -10,6 +10,7 @@
         var adminSettings = CrayonAdminSettings;
         var settings = CrayonThemeEditorSettings;
         var strings = CrayonThemeEditorStrings;
+        var adminStrings = CrayonAdminStrings;
         var admin = CrayonSyntaxAdmin;
 
         var preview, previewCrayon, previewCSS, status, title, info;
@@ -104,7 +105,7 @@
         };
 
         base.del = function (id, name) {
-            base.createDialog({
+            admin.createDialog({
                 title: strings.del,
                 html: strings.deleteThemeConfirm.replace('%s', name),
                 yes: function () {
@@ -115,7 +116,7 @@
                         if (result > 0) {
                             CrayonUtil.reload();
                         } else {
-                            base.createAlert({
+                            admin.createAlert({
                                 html: strings.deleteFail + ' ' + strings.checkLog
                             });
                         }
@@ -142,7 +143,7 @@
                         if (result > 0) {
                             CrayonUtil.reload();
                         } else {
-                            base.createAlert({
+                            admin.createAlert({
                                 html: strings.duplicateFail + ' ' + strings.checkLog
                             });
                         }
@@ -163,9 +164,8 @@
                         id: id,
                         message: val
                     }, function (result) {
-                        console.log(result);
                         var msg = result > 0 ? strings.submitSucceed : strings.submitFail + ' ' + strings.checkLog ;
-                        base.createAlert({
+                        admin.createAlert({
                             html: msg
                         });
                     });
@@ -414,6 +414,38 @@
             return infoStr + '*/\n';
         };
 
+        base.createPrompt = function (args) {
+            args = $.extend({
+                title: adminStrings.prompt,
+                text: adminStrings.value,
+                desc: null,
+                value: '',
+                options: {
+                    buttons: {
+                        "OK": function () {
+                            if (args.ok) {
+                                args.ok(base.getFieldValue('prompt-text'));
+                            }
+                            $(this).dialog('close');
+                        },
+                        "Cancel": function () {
+                            $(this).dialog('close');
+                        }
+                    },
+                    open: function () {
+                        base.getField('prompt-text').val(args.value).focus();
+                    }
+                }
+            }, args);
+            args.html = '<table>';
+            if (args.desc) {
+                args.html += '<tr><td colspan="2">' + args.desc + '</td></tr>';
+            }
+            args.html += '<tr><td>' + args.text + ':</td><td>' + base.createInput('prompt-text') + '</td></tr>';
+            args.html += '</table>';
+            admin.createDialog(args);
+        };
+
         base.initUI = function () {
             // Bind events
             preview = $('#crayon-editor-preview');
@@ -424,9 +456,9 @@
             $('#crayon-editor-controls').tabs();
             $('#crayon-editor-back').click(function () {
                 if (changed) {
-                    base.createDialog({
+                    admin.createDialog({
                         html: strings.discardConfirm,
-                        title: strings.confirm,
+                        title: adminStrings.confirm,
                         yes: function () {
                             showMain();
                         }
@@ -555,90 +587,6 @@
         base.updateInfo = function () {
             info.html('<a target="_blank" href="' + adminSettings.currThemeURL + '">' + adminSettings.currThemeURL + '</a>');
         };
-
-        base.createPrompt = function (args) {
-            args = $.extend({
-                title: strings.prompt,
-                text: strings.value,
-                desc: null,
-                value: '',
-                options: {
-                    buttons: {
-                        "OK": function () {
-                            if (args.ok) {
-                                args.ok(base.getFieldValue('prompt-text'));
-                            }
-                            $(this).dialog('close');
-                        },
-                        "Cancel": function () {
-                            $(this).dialog('close');
-                        }
-                    },
-                    open: function () {
-                        base.getField('prompt-text').val(args.value).focus();
-                    }
-                }
-            }, args);
-            args.html = '<table>';
-            if (args.desc) {
-                args.html += '<tr><td colspan="2">' + args.desc + '</td></tr>';
-            }
-            args.html += '<tr><td>' + args.text + ':</td><td>' + base.createInput('prompt-text') + '</td></tr>';
-            args.html += '</table>';
-            base.createDialog(args);
-        };
-
-        base.createAlert = function (args) {
-            args = $.extend({
-                title: strings.alert,
-                options: {
-                    buttons: {
-                        "OK": function () {
-                            $(this).dialog('close');
-                        }
-                    }
-                }
-            }, args);
-            base.createDialog(args);
-        };
-
-        base.createDialog = function (args) {
-            var defaultArgs = {
-                yesLabel: strings.yes,
-                noLabel: strings.no,
-                title: strings.confirm
-            };
-            args = $.extend(defaultArgs, args);
-            var options = {
-                modal: true, title: args.title, zIndex: 10000, autoOpen: true,
-                width: 'auto', resizable: false,
-                buttons: {
-                },
-                selectedButtonIndex: 1, // starts from 1
-                close: function (event, ui) {
-                    $(this).remove();
-                }
-            };
-            options.open = function () {
-                $(this).parent().find('button:nth-child(' + options.selectedButtonIndex + ')').focus();
-            };
-            options.buttons[args.yesLabel] = function () {
-                if (args.yes) {
-                    args.yes();
-                }
-                $(this).dialog('close');
-            };
-            options.buttons[args.noLabel] = function () {
-                if (args.no) {
-                    args.no();
-                }
-                $(this).dialog('close');
-            };
-            options = $.extend(options, args.options);
-            $('<div></div>').appendTo('body').html(args.html).dialog(options);
-            // Can be modified afterwards
-            return args;
-        }
 
     };
 
