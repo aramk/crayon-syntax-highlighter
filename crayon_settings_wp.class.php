@@ -49,6 +49,7 @@ class CrayonSettingsWP {
         self::$admin_page = $admin_page = add_options_page('Crayon Syntax Highlighter ' . crayon__('Settings'), 'Crayon', 'manage_options', 'crayon_settings', 'CrayonSettingsWP::settings');
         add_action("admin_print_scripts-$admin_page", 'CrayonSettingsWP::admin_scripts');
         add_action("admin_print_styles-$admin_page", 'CrayonSettingsWP::admin_styles');
+        add_action("admin_print_scripts-$admin_page", 'CrayonThemeEditorWP::admin_resources');
         // Register settings, second argument is option name stored in db
         register_setting(self::FIELDS, self::OPTIONS, 'CrayonSettingsWP::settings_validate');
         add_action("admin_head-$admin_page", 'CrayonSettingsWP::admin_init');
@@ -78,8 +79,10 @@ class CrayonSettingsWP {
     public static function admin_scripts() {
         global $CRAYON_VERSION;
         wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
+
         wp_enqueue_script('jquery_ui_js', plugins_url(CRAYON_JS_JQUERY_UI, __FILE__), array('jquery'), $CRAYON_VERSION);
         wp_enqueue_style('jquery_ui', plugins_url(CRAYON_CSS_JQUERY_UI, __FILE__), array(), $CRAYON_VERSION);
+
         self::init_js_settings();
         if (is_admin()) {
             wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'jquery_ui_js', 'crayon_util_js'), $CRAYON_VERSION);

@@ -122,10 +122,6 @@ class CrayonThemeEditorWP {
 
     const RE_COMMENT = '#^\s*\/\*[\s\S]*?\*\/#msi';
 
-    public static function init() {
-        self::admin_resources();
-    }
-
     public static function initFields() {
         if (self::$infoFields === NULL) {
             self::$infoFields = array(
@@ -214,6 +210,10 @@ class CrayonThemeEditorWP {
         self::initSettings();
         $path = dirname(dirname(__FILE__));
         wp_enqueue_script('cssjson_js', plugins_url(CRAYON_CSSJSON_JS, $path), $CRAYON_VERSION);
+
+//        wp_enqueue_script('jquery_ui_js', plugins_url(CRAYON_JS_JQUERY_UI, $path), array('jquery'), $CRAYON_VERSION);
+//        wp_enqueue_style('jquery_ui', plugins_url(CRAYON_CSS_JQUERY_UI, $path), array(), $CRAYON_VERSION);
+
         wp_enqueue_script('jquery_colorpicker_js', plugins_url(CRAYON_JS_JQUERY_COLORPICKER, $path), array('jquery'), $CRAYON_VERSION);
         wp_enqueue_script('jquery_tinycolor_js', plugins_url(CRAYON_JS_TINYCOLOR, $path), array(), $CRAYON_VERSION);
         wp_enqueue_script('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_JS, $path), array('jquery', 'jquery_ui_js', 'crayon_util_js', 'crayon_admin_js', 'cssjson_js', 'jquery_colorpicker_js', 'jquery_tinycolor_js'), $CRAYON_VERSION);
@@ -864,10 +864,6 @@ class CrayonThemeEditorWP {
         }
     }
 
-}
-
-if (defined('ABSPATH') && is_admin()) {
-    add_action('init', 'CrayonThemeEditorWP::init');
 }
 
 ?>

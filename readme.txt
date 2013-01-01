@@ -264,6 +264,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.0.1 =
 * FIXED:
     * Using wp_mkdir_p instead of mkdir for creating directories and such.
+    * Admin resource dependencies
 
 = 2.0.0 =
 * ADDED:
