@@ -18,7 +18,7 @@ class CrayonThemes extends CrayonUserResourceCollection {
 		$this->directory ( CRAYON_THEME_PATH );
         $this->user_directory(CrayonGlobalSettings::upload_path() . CRAYON_THEME_DIR);
         if (!is_dir($this->user_directory())) {
-            mkdir($this->user_directory(), 0777, TRUE);
+            wp_mkdir_p($this->user_directory());
         }
 		$this->set_default ( self::DEFAULT_THEME, self::DEFAULT_THEME_NAME );
 	}

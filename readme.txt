@@ -261,6 +261,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.0.1 =
+* FIXED:
+    * Using wp_mkdir_p instead of mkdir for creating directories and such.
+
 = 2.0.0 =
 * ADDED:
     * Theme Editor allowing users to create and modify Crayon Themes!

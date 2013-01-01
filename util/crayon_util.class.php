@@ -265,7 +265,7 @@ EOT;
 
     public static function deleteDir($path) {
         if (!is_dir($path)) {
-            throw new InvalidArgumentException("$path is not a directory");
+            throw new InvalidArgumentException("deleteDir: $path is not a directory");
         }
         if (substr($path, strlen($path) - 1, 1) != '/') {
             $path .= '/';
@@ -281,13 +281,17 @@ EOT;
         rmdir($path);
     }
 
-    public static function copyDir($src, $dst) {
+    public static function copyDir($src, $dst, $copyFunction = NULL) {
         // http://stackoverflow.com/questions/2050859
         if (!is_dir($src)) {
-            throw new InvalidArgumentException("$src is not a directory");
+            throw new InvalidArgumentException("copyDir: $src is not a directory");
         }
         $dir = opendir($src);
-        @mkdir($dst, 0777, TRUE);
+        if ($copyFunction !== NULL) {
+            call_user_function($copyFunction, $dst);
+        } else {
+            @mkdir($dst, 0777, TRUE);
+        }
         while (false !== ($file = readdir($dir))) {
             if (($file != '.') && ($file != '..')) {
                 if (is_dir($src . '/' . $file)) {

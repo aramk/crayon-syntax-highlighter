@@ -673,12 +673,15 @@ class CrayonThemeEditorWP {
             // Create the new path if needed
             if (!is_file($newPath)) {
                 if (!is_dir($newDir)) {
-                    mkdir($newDir, 0777, TRUE);
-                    try {
-                        // Copy image folder
-                        CrayonUtil::copyDir($oldDir . 'images', $newDir . 'images');
-                    } catch (Exception $e) {
-                        CrayonLog::syslog($e->getMessage(), "THEME SAVE");
+                    wp_mkdir_p($newDir);
+                    $imageSrc = $oldDir . 'images';
+                    if (is_dir($imageSrc)) {
+                        try {
+                            // Copy image folder
+                            CrayonUtil::copyDir($imageSrc, $newDir . 'images', 'wp_mkdir_p');
+                        } catch (Exception $e) {
+                            CrayonLog::syslog($e->getMessage(), "THEME SAVE");
+                        }
                     }
                 }
             }
@@ -774,7 +777,7 @@ class CrayonThemeEditorWP {
         $message = $_POST['message'];
         $dir = CrayonResources::themes()->dirpath($id);
         $dest = $dir . 'tmp';
-        @mkdir($dest);
+        wp_mkdir_p($dest);
 
         if (is_dir($dir) && CrayonResources::themes()->exists($id)) {
             try {
