@@ -625,8 +625,8 @@ class CrayonThemeEditorWP {
      */
     public static function save($allow_edit_stock_theme = NULL) {
         CrayonSettingsWP::load_settings();
-        $oldID = $_POST['id'];
-        $name = $_POST['name'];
+        $oldID = stripslashes($_POST['id']);
+        $name = stripslashes($_POST['name']);
         $css = stripslashes($_POST['css']);
         $change_settings = CrayonUtil::set_default($_POST['change_settings'], TRUE);
         $allow_edit = CrayonUtil::set_default($_POST['allow_edit'], TRUE);

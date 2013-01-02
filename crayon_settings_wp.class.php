@@ -886,8 +886,11 @@ class CrayonSettingsWP {
         // Load settings from GET and validate
         foreach ($_POST as $key => $value) {
             //	echo $key, ' ', $value , '<br/>';
+            $value = stripslashes($value);
             if (!in_array($key, $preview_settings)) {
                 $_POST[$key] = CrayonSettings::validate($key, $value);
+            } else {
+                $_POST[$key] = $value;
             }
         }
         $crayon->settings($_POST);
@@ -911,8 +914,6 @@ class CrayonSettingsWP {
         // Load custom code based on language
         $lang = $crayon->setting_val(CrayonSettings::FALLBACK_LANG);
         $path = crayon_pf(CRAYON_UTIL_PATH . '/sample/' . $lang . '.txt', FALSE);
-
-
 
         if (isset($_POST[self::SAMPLE_CODE])) {
             $crayon->code($_POST[self::SAMPLE_CODE]);

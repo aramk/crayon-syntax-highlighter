@@ -281,14 +281,14 @@ EOT;
         rmdir($path);
     }
 
-    public static function copyDir($src, $dst, $copyFunction = NULL) {
+    public static function copyDir($src, $dst, $mkdir = NULL) {
         // http://stackoverflow.com/questions/2050859
         if (!is_dir($src)) {
             throw new InvalidArgumentException("copyDir: $src is not a directory");
         }
         $dir = opendir($src);
-        if ($copyFunction !== NULL) {
-            call_user_function($copyFunction, $dst);
+        if ($mkdir !== NULL) {
+            call_user_func($mkdir, $dst);
         } else {
             @mkdir($dst, 0777, TRUE);
         }
