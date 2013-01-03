@@ -315,25 +315,29 @@ class CrayonSettingsWP {
     /**
      * Adds a post as containing a Crayon
      */
-    public static function add_post($id) {
+    public static function add_post($id, $save = TRUE) {
         self::load_posts();
         if (!in_array($id, self::$crayon_posts)) {
             self::$crayon_posts[] = $id;
         }
-        self::save_posts();
+        if ($save) {
+            self::save_posts();
+        }
     }
 
     /**
      * Removes a post as not containing a Crayon
      */
-    public static function remove_post($id) {
+    public static function remove_post($id, $save = TRUE) {
         self::load_posts();
         $key = array_search($id, self::$crayon_posts);
         if ($key === false) {
             return;
         }
         unset(self::$crayon_posts[$key]);
-        self::save_posts();
+        if ($save) {
+            self::save_posts();
+        }
     }
 
     public static function remove_posts() {
@@ -346,8 +350,8 @@ class CrayonSettingsWP {
     /**
      * This loads the posts marked as containing Crayons
      */
-    public static function load_legacy_posts() {
-        if (self::$crayon_legacy_posts === NULL) {
+    public static function load_legacy_posts($force = FALSE) {
+        if (self::$crayon_legacy_posts === NULL || $force) {
             // Load from db
             if (!(self::$crayon_legacy_posts = get_option(self::LEGACY_POSTS))) {
                 // Posts don't exist! Scan for them. This will fill self::$crayon_legacy_posts
@@ -379,25 +383,29 @@ class CrayonSettingsWP {
     /**
      * Adds a post as containing a Crayon
      */
-    public static function add_legacy_post($id) {
+    public static function add_legacy_post($id, $save = TRUE) {
         self::load_legacy_posts();
         if (!in_array($id, self::$crayon_legacy_posts)) {
             self::$crayon_legacy_posts[] = $id;
         }
-        self::save_legacy_posts();
+        if ($save) {
+            self::save_legacy_posts();
+        }
     }
 
     /**
      * Removes a post as not containing a Crayon
      */
-    public static function remove_legacy_post($id) {
+    public static function remove_legacy_post($id, $save = TRUE) {
         self::load_legacy_posts();
         $key = array_search($id, self::$crayon_legacy_posts);
         if ($key === false) {
             return;
         }
         unset(self::$crayon_legacy_posts[$key]);
-        self::save_legacy_posts();
+        if ($save) {
+            self::save_legacy_posts();
+        }
     }
 
     public static function remove_legacy_posts() {

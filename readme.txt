@@ -261,6 +261,12 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.0.3 =
+* FIXED:
+    * Improved legacy tag conversion functions by removing false positives arising from duplicate regex
+    * Slightly faster conversion of legacy by delaying database writes until the end
+    * &-quot; is also converted now in HTML
+
 = 2.0.2 =
 * FIXED:
     * Converting tags failed to work since 2.0.0 - also fixed minor bugs leading to false positives for legacy tags.
