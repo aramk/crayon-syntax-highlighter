@@ -267,6 +267,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Improved legacy tag conversion functions by removing false positives arising from duplicate regex
     * Slightly faster conversion of legacy by delaying database writes until the end
     * &-quot; is also converted now in HTML
+    * Added missing blank.gif in fancybox
 
 = 2.0.2 =
 * FIXED:
