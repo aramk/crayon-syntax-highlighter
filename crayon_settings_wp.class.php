@@ -242,6 +242,8 @@ class CrayonSettingsWP {
             $upload = wp_upload_dir();
             CrayonGlobalSettings::upload_path(CrayonUtil::path_slash($upload['basedir']) . CRAYON_DIR);
             CrayonGlobalSettings::upload_url($upload['baseurl'] . '/' . CRAYON_DIR);
+            CrayonLog::syslog(CrayonGlobalSettings::upload_path(), "UPLOAD PATH");
+            CrayonGlobalSettings::set_mkdir('wp_mkdir_p');
 
             // Load all available languages and themes
             CrayonResources::langs()->load();

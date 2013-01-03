@@ -539,6 +539,7 @@ class CrayonGlobalSettings {
 	private static $plugin_path = '';
     private static $upload_path = '';
     private static $upload_url = '';
+    private static $mkdir = NULL;
 	private function __construct() {}
 
 	private static function init() {
@@ -615,6 +616,22 @@ class CrayonGlobalSettings {
         } else {
             self::$upload_url = CrayonUtil::url_slash($upload_url);
         }
+    }
+
+    public static function set_mkdir($mkdir = NULL) {
+        if ($mkdir === NULL) {
+            return self::$mkdir;
+        } else {
+            self::$mkdir = $mkdir;
+        }
+    }
+
+    public static function mkdir($dir = NULL) {
+    	if (self::$mkdir) {
+    		call_user_func(self::$mkdir, $dir);
+    	} else {
+    		@mkdir($dir, 0777, TRUE);
+    	}
     }
 }
 
