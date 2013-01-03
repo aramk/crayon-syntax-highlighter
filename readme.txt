@@ -175,6 +175,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to my project, your support keeps the Crayons going!
 
+* Nico Hartung, (http://www.loggn.de/), Germany
 * Joseph DeVenuta, USA
 * Iván Prego García, Spain
 * Johannes Luijten, (http://www.tweaking4all.com/, http://www.weethet.nl/), USA
