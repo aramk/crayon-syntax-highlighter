@@ -19,7 +19,7 @@ false
 char
 long
 void
-long
+word
 byte
 bool
 null

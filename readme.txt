@@ -76,6 +76,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * ActionScript
 * Apache
 * AppleScript
+* Arduino
 * Assembly (x86)
 * AutoIt
 * C
@@ -263,6 +264,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 2.0.3 =
+* ADDED:
+    * Arduino language
 * FIXED:
     * Improved legacy tag conversion functions by removing false positives arising from duplicate regex
     * Slightly faster conversion of legacy by delaying database writes until the end

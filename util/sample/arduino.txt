@@ -1,0 +1,12 @@
+#define LED_PIN 13
+ 
+void setup () {
+    pinMode (LED_PIN, OUTPUT);     // enable pin 13 for digital output
+}
+ 
+void loop () {
+    digitalWrite (LED_PIN, HIGH);  // turn on the LED
+    delay (1000);                  // wait one second (1000 milliseconds)
+    digitalWrite (LED_PIN, LOW);   // turn off the LED
+    delay (1000);                  // wait one second
+}
