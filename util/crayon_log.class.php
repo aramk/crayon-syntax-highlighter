@@ -33,7 +33,7 @@ class CrayonLog {
 //				ob_start();
 //				var_dump($var);
 //				$buffer = trim(strip_tags(ob_get_clean()));
-                $buffer = strval($var);
+                $buffer = trim(strip_tags(strval($var)));
 				
 				// Remove stupid formatting from wampserver
 				$buffer = str_replace('&apos;', '"', $buffer);
