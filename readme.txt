@@ -272,6 +272,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Slightly faster conversion of legacy by delaying database writes until the end
     * &-quot; is also converted now in HTML
     * Added missing blank.gif in fancybox
+    * Log uses strval() instead of ob_start() to avoid conflicts with other plugins using ob_start() without ob_end_flush() or similar
 
 = 2.0.2 =
 * FIXED:
