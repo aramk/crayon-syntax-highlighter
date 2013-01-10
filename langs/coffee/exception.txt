@@ -1,0 +1,5 @@
+RangeError
+ReferenceError
+SyntaxError
+TypeError
+RegExpURIError
