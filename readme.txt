@@ -54,6 +54,7 @@ It also supports some neat features like:
 **Links**
 
 * <a href="https://github.com/aramkocharyan/crayon-syntax-highlighter" target="_blank">Beta Releases</a>
+* <a href="http://ak.net84.net/crayon/crayon-themes/" target="_blank">Themes Demo</a>
 * <a href="http://aksandbox.webege.com/?p=1" target="_blank">Live Demo</a>
 * <a href="http://ak.net84.net/projects/crayon-syntax-highlighter/" target="_blank">Short How-To</a>
 
