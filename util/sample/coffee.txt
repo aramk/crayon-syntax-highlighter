@@ -1,0 +1,14 @@
+# Example Script
+
+class Animal
+  constructor: (@name) ->
+ 
+  move: (meters) ->
+    alert @name + " moved #{meters}m."
+    alert @name.foo
+    alert this.name
+ 
+class Snake extends Animal
+  move: ->
+    alert "Slithering..."
+    super 5

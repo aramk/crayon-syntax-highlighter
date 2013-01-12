@@ -82,6 +82,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * C
 * C#
 * C++
+* CoffeeScript (thanks to <a href="http://firn.jp/crayon-coffeescript" target="_blank">Dai Akatsuka</a>)
 * CSS
 * Delphi/Pascal (thanks to <a href="http://squashbrain.com/" target="_blank">Chris McClenny</a>)
 * Diff (thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>)
@@ -267,6 +268,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.0.3 =
 * ADDED:
     * Arduino language
+    * Added CoffeeScript thanks to http://firn.jp/crayon-coffeescript
 * FIXED:
     * jQuery UI is no longer an external dependency; now using wpdialog().
     * Improved legacy tag conversion functions by removing false positives arising from duplicate regex
