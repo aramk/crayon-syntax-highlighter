@@ -268,6 +268,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Arduino language
 * FIXED:
+    * jQuery UI is no longer an external dependency; now using wpdialog().
     * Improved legacy tag conversion functions by removing false positives arising from duplicate regex
     * Slightly faster conversion of legacy by delaying database writes until the end
     * &-quot; is also converted now in HTML

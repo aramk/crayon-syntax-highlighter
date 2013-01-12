@@ -426,10 +426,10 @@
                             if (args.ok) {
                                 args.ok(base.getFieldValue('prompt-text'));
                             }
-                            $(this).dialog('close');
+                            $(this).crayonDialog('close');
                         },
                         "Cancel": function () {
-                            $(this).dialog('close');
+                            $(this).crayonDialog('close');
                         }
                     },
                     open: function () {

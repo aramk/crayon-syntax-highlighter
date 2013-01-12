@@ -36,6 +36,11 @@
             strings = CrayonAdminStrings;
             util = CrayonUtil;
 
+            // Dialogs
+            var dialogFunction = adminSettings.dialogFunction;
+            dialogFunction = $.fn[dialogFunction] ? dialogFunction : 'dialog';
+            $.fn.crayonDialog = $.fn[dialogFunction];
+
             // Wraps
             main_wrap = $('#crayon-main-wrap');
             theme_editor_wrap = $('#crayon-theme-editor-wrap');
@@ -206,10 +211,10 @@
                             "OK": function () {
                                 change_code = $('#crayon-change-code-text').val();
                                 base.preview_update();
-                                $(this).dialog('close');
+                                $(this).crayonDialog('close');
                             },
                             "Cancel": function () {
-                                $(this).dialog('close');
+                                $(this).crayonDialog('close');
                             }
                         },
                         open: function () {
@@ -518,7 +523,7 @@
                 options: {
                     buttons: {
                         "OK": function () {
-                            $(this).dialog('close');
+                            $(this).crayonDialog('close');
                         }
                     }
                 }
@@ -538,28 +543,33 @@
                 width: 'auto', resizable: false,
                 buttons: {
                 },
+                dialogClass: 'wp-dialog',
                 selectedButtonIndex: 1, // starts from 1
                 close: function (event, ui) {
                     $(this).remove();
                 }
             };
-            options.open = function () {
-                $(this).parent().find('button:nth-child(' + options.selectedButtonIndex + ')').focus();
-            };
             options.buttons[args.yesLabel] = function () {
                 if (args.yes) {
                     args.yes();
                 }
-                $(this).dialog('close');
+                $(this).crayonDialog('close');
             };
             options.buttons[args.noLabel] = function () {
                 if (args.no) {
                     args.no();
                 }
-                $(this).dialog('close');
+                $(this).crayonDialog('close');
             };
             options = $.extend(options, args.options);
-            $('<div></div>').appendTo('body').html(args.html).dialog(options);
+            options.open = function () {
+                $('.ui-button').addClass('button-primary');
+                $(this).parent().find('button:nth-child(' + options.selectedButtonIndex + ')').focus();
+                if (args.options.open) {
+                    args.options.open();
+                }
+            };
+            $('<div></div>').appendTo('body').html(args.html).crayonDialog(options);
             // Can be modified afterwards
             return args;
         };

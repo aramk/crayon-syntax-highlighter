@@ -50,6 +50,7 @@ class CrayonSettingsWP {
     public static function admin_load() {
         self::$admin_page = $admin_page = add_options_page('Crayon Syntax Highlighter ' . crayon__('Settings'), 'Crayon', 'manage_options', 'crayon_settings', 'CrayonSettingsWP::settings');
         add_action("admin_print_scripts-$admin_page", 'CrayonSettingsWP::admin_scripts');
+        add_action("admin_print_scripts-$admin_page", 'CrayonSettingsWP::admin_ui_scripts');
         add_action("admin_print_styles-$admin_page", 'CrayonSettingsWP::admin_styles');
         add_action("admin_print_scripts-$admin_page", 'CrayonThemeEditorWP::admin_resources');
         // Register settings, second argument is option name stored in db
@@ -74,20 +75,15 @@ class CrayonSettingsWP {
         global $CRAYON_VERSION;
         wp_enqueue_style('crayon', plugins_url(CRAYON_STYLE, __FILE__), array(), $CRAYON_VERSION);
         wp_enqueue_style('crayon_global', plugins_url(CRAYON_STYLE_GLOBAL, __FILE__), array(), $CRAYON_VERSION);
-        wp_enqueue_style('crayon_admin', plugins_url(CRAYON_STYLE_ADMIN, __FILE__), array(), $CRAYON_VERSION);
-        wp_enqueue_style('crayon_theme_editor', plugins_url(CRAYON_THEME_EDITOR_STYLE, __FILE__), array(), $CRAYON_VERSION);
+        wp_enqueue_style('crayon_admin', plugins_url(CRAYON_STYLE_ADMIN, __FILE__), array('editor-buttons'), $CRAYON_VERSION);
     }
 
     public static function admin_scripts() {
         global $CRAYON_VERSION;
         wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
-
-        wp_enqueue_script('jquery_ui_js', plugins_url(CRAYON_JS_JQUERY_UI, __FILE__), array('jquery'), $CRAYON_VERSION);
-        wp_enqueue_style('jquery_ui', plugins_url(CRAYON_CSS_JQUERY_UI, __FILE__), array(), $CRAYON_VERSION);
-
         self::init_js_settings();
         if (is_admin()) {
-            wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'jquery_ui_js', 'crayon_util_js'), $CRAYON_VERSION);
+            wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_util_js', 'wpdialogs', 'wpdialogs-popup'), $CRAYON_VERSION);
             self::init_admin_js_settings();
         }
         self::other_scripts();
@@ -148,7 +144,8 @@ class CrayonSettingsWP {
                 'defaultTheme' => CrayonThemes::DEFAULT_THEME,
                 'themesURL' => CrayonThemes::dir_url(),
                 'userThemesURL' => CrayonThemes::dir_url(true),
-                'sampleCode' => self::SAMPLE_CODE
+                'sampleCode' => self::SAMPLE_CODE,
+                'dialogFunction' => 'wpdialog'
             );
             wp_localize_script('crayon_admin_js', 'CrayonAdminSettings', self::$admin_js_settings);
         }
@@ -202,14 +199,14 @@ class CrayonSettingsWP {
                 <input type="submit" name="submit" id="submit" class="button-primary"
                        value="<?php
                            crayon_e('Save Changes');
-                           ?>"> <input type="submit"
+                           ?>" /><span style="width:10px; height: 5px; float:left;"></span><input type="submit"
                                        name="<?php
                                            echo self::OPTIONS;
                                            ?>[reset]" id="reset"
                                        class="button-primary"
                                        value="<?php
                                            crayon_e('Reset Settings');
-                                           ?>">
+                                           ?>" />
             </p>
         </form>
     </div>

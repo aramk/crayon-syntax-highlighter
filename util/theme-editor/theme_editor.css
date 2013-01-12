@@ -158,11 +158,8 @@
 
 #crayon-editor-controls .ui-tabs-nav li a,
 #crayon-editor-controls .ui-tabs-nav li {
+    float: left;
     width: 70px;
-}
-
-#crayon-editor-controls .ui-tabs-nav li:first-child {
-    border-top-left-radius: 4px;
 }
 
 #crayon-editor-controls.ui-tabs {
@@ -277,7 +274,21 @@
     border-top: 1px solid #eee !important;
 }
 
-.ui-dialog-content td input {
+.wp-dialog {
+    min-width: 300px;
+}
+
+.wp-dialog .ui-dialog-content {
+    padding: 10px;
+    min-height: 10px !important;
+}
+
+.wp-dialog .ui-dialog-content td {
+    padding: 5px 0;
+}
+
+.wp-dialog .ui-dialog-content td input,
+.wp-dialog .ui-dialog-content table {
     width: 100%;
 }
 
