@@ -1,0 +1,173 @@
+/*
+Name: IDLE
+Description: Clean, crisp and colorful.
+Version: 1.3
+Author: Aram Kocharyan
+URL: http://ak.net84.net/
+*/
+.crayon-theme-idle {
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #ffffff !important;
+}
+.crayon-theme-idle-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #fafafa !important;
+}
+.crayon-theme-idle .crayon-table .crayon-nums {
+	background: #f0f0f0 !important;
+	color: #b5b5b5 !important;
+	border-right-width: 1px !important;
+	border-right-style: solid !important;
+}
+.crayon-theme-idle *::selection {
+	background: transparent !important;
+}
+.crayon-theme-idle .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-idle .crayon-striped-line {
+	background: #f9f9f9 !important;
+}
+.crayon-theme-idle .crayon-striped-num {
+	background: #e2e2e2 !important;
+	color: #979797 !important;
+}
+.crayon-theme-idle .crayon-marked-line {
+	background: #fffee2 !important;
+	border-width: 1px !important;
+	border-color: #e9e579 !important;
+}
+.crayon-theme-idle .crayon-marked-num {
+	color: #818181 !important;
+	background: #d1d1d1 !important;
+	border-width: 1px !important;
+	border-color: #acacac !important;
+}
+.crayon-theme-idle .crayon-marked-line.crayon-striped-line {
+	background: #faf8d1 !important;
+}
+.crayon-theme-idle .crayon-marked-num.crayon-striped-num {
+	background: #c0c0c0 !important;
+	color: #626262 !important;
+}
+.crayon-theme-idle .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-idle .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-idle .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-idle .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-idle .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-idle .crayon-toolbar {
+	background: #DDD !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #BBB !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-idle .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-idle .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-idle .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-idle .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-idle a.crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-idle a.crayon-button:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-idle a.crayon-button.crayon-pressed:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-idle a.crayon-button.crayon-pressed {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-idle a.crayon-button.crayon-pressed:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-idle a.crayon-button:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-idle .crayon-pre .c {
+	color: #a9a9a9 !important;
+}
+.crayon-theme-idle .crayon-pre .s {
+	color: #00ae5d !important;
+}
+.crayon-theme-idle .crayon-pre .p {
+	color: #b85c00 !important;
+}
+.crayon-theme-idle .crayon-pre .ta {
+	color: #000000 !important;
+}
+.crayon-theme-idle .crayon-pre .k {
+	color: #bf54b6 !important;
+}
+.crayon-theme-idle .crayon-pre .st {
+	color: #ff6b2a !important;
+}
+.crayon-theme-idle .crayon-pre .r {
+	color: #ff6b2a !important;
+}
+.crayon-theme-idle .crayon-pre .t {
+	color: #ff6b2a !important;
+}
+.crayon-theme-idle .crayon-pre .m {
+	color: #ff6b2a !important;
+}
+.crayon-theme-idle .crayon-pre .i {
+	color: #000 !important;
+}
+.crayon-theme-idle .crayon-pre .e {
+	color: #2a6dca !important;
+}
+.crayon-theme-idle .crayon-pre .v {
+	color: #000000 !important;
+}
+.crayon-theme-idle .crayon-pre .cn {
+	color: #000000 !important;
+}
+.crayon-theme-idle .crayon-pre .o {
+	color: #ff6b2a !important;
+}
+.crayon-theme-idle .crayon-pre .sy {
+	color: #0d0000 !important;
+}
+.crayon-theme-idle .crayon-pre .n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-idle .crayon-pre .f {
+	color: #999 !important;
+}
+.crayon-theme-idle .crayon-pre .h {
+	color: #006fe0 !important;
+}

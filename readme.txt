@@ -147,6 +147,7 @@ These are helpful for discovering new features.
 
 A handful of articles from others written about Crayon, thanks guys!
 
+* <a href="http://www.wordpressthemeshq.net/5-best-syntax-highlighter-plugins-for-wordpress/" target="_blank">5 Best Syntax Highlighter Plugins for WordPress</a>
 * <a href="http://amecylia.com/how-to-post-source-code-wordpress/" target="_blank">How To Post Source Code In Wordpress</a>
 * <a href="http://icrunched.co/top-5-syntax-highlighter-wordpress-plugins/" target="_blank">Top 5 Syntax Highlighter WordPress Plugins</a>
 * <a href="http://themesplugins.com/wordpress-Plugin/add-php-java-html-codes-posts-pages/" target="_blank">Crayon Syntax Highlighter � Plugin</a>
@@ -269,6 +270,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Arduino language
     * Added CoffeeScript thanks to http://firn.jp/crayon-coffeescript
+    * Line numbers right border in theme editor
 * FIXED:
     * jQuery UI is no longer an external dependency; now using wpdialog(). Theme Editor updated to use wpdialog.
     * Inline tags. See: https://github.com/aramkocharyan/crayon-syntax-highlighter/issues/57

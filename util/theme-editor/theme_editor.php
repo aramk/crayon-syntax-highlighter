@@ -141,9 +141,9 @@ class CrayonThemeEditorWP {
             self::$attributes = array();
             // A map of CSS attribute to input type
             self::$attributeGroups = array(
-                'color' => array('background', 'background-color', 'border-color', 'color', 'border-top-color', 'border-bottom-color'),
+                'color' => array('background', 'background-color', 'border-color', 'color', 'border-top-color', 'border-bottom-color', 'border-left-color', 'border-right-color'),
                 'size' => array('border-width'),
-                'border-style' => array('border-style', 'border-bottom-style', 'border-top-style')
+                'border-style' => array('border-style', 'border-bottom-style', 'border-top-style', 'border-left-style', 'border-right-style')
             );
             self::$attributeGroupsInverse = CrayonUtil::array_flip(self::$attributeGroups);
             // Mapping of input type to attribute group
@@ -278,6 +278,7 @@ class CrayonThemeEditorWP {
         $tBorder = crayon__("Border");
         $tTopBorder = crayon__("Top Border");
         $tBottomBorder = crayon__("Bottom Border");
+        $tBorderRight = crayon__("Right Border");
 
         $tHover = crayon__("Hover");
         $tActive = crayon__("Active");
@@ -451,6 +452,12 @@ class CrayonThemeEditorWP {
                         $stripedMarkedNum = ' .crayon-marked-num.crayon-striped-num';
                         self::createAttributesForm(array(
                             new Title($tNumbers),
+                            array(
+                                $tBorderRight,
+                                self::createAttribute($nums, 'border-right-width'),
+                                self::createAttribute($nums, 'border-right-color'),
+                                self::createAttribute($nums, 'border-right-style'),
+                            ),
                             new Separator($tNormal),
                             self::createAttribute($nums, 'background', $tBackground),
                             self::createAttribute($nums, 'color', $tText),
@@ -527,9 +534,7 @@ class CrayonThemeEditorWP {
                                 self::createAttribute($language, 'font-weight'),
                                 self::createAttribute($language, 'font-style'),
                                 self::createAttribute($language, 'text-decoration')
-                            ),
-//                            self::createAttribute($toolbar.' > div', 'float', crayon__("Title Float")),
-//                            self::createAttribute($toolbar.' .crayon-tools', 'float', crayon__("Buttons Float"))
+                            )
                         ));
                         ?>
                     </div>
