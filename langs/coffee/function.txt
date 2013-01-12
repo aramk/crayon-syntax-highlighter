@@ -1,0 +1,4 @@
+parseInt
+parseFloat
+isNaN
+isFinite
