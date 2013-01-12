@@ -164,7 +164,7 @@
                         id: id,
                         message: val
                     }, function (result) {
-                        var msg = result > 0 ? strings.submitSucceed : strings.submitFail + ' ' + strings.checkLog ;
+                        var msg = result > 0 ? strings.submitSucceed : strings.submitFail + ' ' + strings.checkLog;
                         admin.createAlert({
                             html: msg
                         });
@@ -238,7 +238,7 @@
             return names;
         };
 
-        base.removeExistingCSS = function() {
+        base.removeExistingCSS = function () {
             // Remove the old <style> tag to prevent clashes
             preview.find('link[rel="stylesheet"][href*="' + adminSettings.currThemeURL + '"]').remove()
         };
@@ -402,7 +402,7 @@
             previewCSS.html('<style>' + css + '</style>');
         };
 
-        base.removeStyle = function() {
+        base.removeStyle = function () {
             previewCSS.html('');
         };
 
@@ -437,7 +437,7 @@
                     }
                 }
             }, args);
-            args.html = '<table>';
+            args.html = '<table class="field-table">';
             if (args.desc) {
                 args.html += '<tr><td colspan="2">' + args.desc + '</td></tr>';
             }
@@ -479,12 +479,13 @@
                         showNoneButton: true,
                         colorFormat: '#HEX'
                     };
+                    args.open = function (e, color) {
+                        $('.ui-colorpicker-dialog .ui-button').addClass('button-primary');
+                    };
                     args.select = function (e, color) {
                         attr.trigger('change');
                     };
                     args.close = function (e, color) {
-//                        attr.val(color.formatted);
-//                        args.select(e, color);
                         attr.trigger('change');
                     };
                     attr.colorpicker(args);
@@ -526,6 +527,7 @@
                     }
                 });
             });
+            $('.ui-colorpicker-dialog').addClass('wp-dialog');
         };
 
         base.updateLiveCSS = function (clone) {

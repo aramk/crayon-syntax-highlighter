@@ -233,7 +233,7 @@
     background: url(images/toolbar.png) no-repeat top center;
 }
 
-.ui-widget-header {
+#crayon-editor-controls .ui-widget-header {
     border: 1px solid #b3b3b3;
     border-bottom: 1px solid #666;
     background: #929292 url(images/button.png) center bottom repeat-x;
@@ -287,9 +287,28 @@
     padding: 5px 0;
 }
 
-.wp-dialog .ui-dialog-content td input,
-.wp-dialog .ui-dialog-content table {
+.wp-dialog .ui-dialog-content .field-table td input,
+.wp-dialog .ui-dialog-content .field-table {
     width: 100%;
+}
+
+.ui-colorpicker-dialog {
+    width: 575px !important;
+    height: 350px !important;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.ui-colorpicker-dialog .ui-colorpicker-bar-container {
+    padding-right: 5px !important;
+}
+.ui-colorpicker-dialog .ui-dialog-buttonpane {
+    margin-top: 0;
+    padding-top: 0;
+}
+.ui-colorpicker-dialog .ui-dialog-content {
+    padding-bottom: 0;
 }
 
 /* {*/
