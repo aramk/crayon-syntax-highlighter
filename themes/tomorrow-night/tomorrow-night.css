@@ -1,0 +1,171 @@
+/*
+Name: Tomorrow Night
+Description: Based on https://github.com/ChrisKempson/Tomorrow-Theme/
+Version: 1.0
+Author: Aram Kocharyan
+URL: http://ak.net84.net/
+*/
+.crayon-theme-tomorrow-night {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #27292c !important;
+}
+.crayon-theme-tomorrow-night-inline {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	border-style: solid !important;
+	background: #27292c !important;
+}
+.crayon-theme-tomorrow-night .crayon-table .crayon-nums {
+	background: #4b4d4f !important;
+	color: #898989 !important;
+	border-right-width: 1px !important;
+}
+.crayon-theme-tomorrow-night *::selection {
+	background: transparent !important;
+}
+.crayon-theme-tomorrow-night .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-tomorrow-night .crayon-striped-line {
+	background: #202326 !important;
+}
+.crayon-theme-tomorrow-night .crayon-striped-num {
+	background: #3a3c3d !important;
+	color: #979797 !important;
+}
+.crayon-theme-tomorrow-night .crayon-marked-line {
+	background: #303030 !important;
+	border-width: 1px !important;
+	border-color: #3a3a47 !important;
+}
+.crayon-theme-tomorrow-night .crayon-marked-num {
+	color: #9e9e9e !important;
+	background: #434343 !important;
+	border-width: 1px !important;
+	border-color: #595959 !important;
+}
+.crayon-theme-tomorrow-night .crayon-marked-line.crayon-striped-line {
+	background: #2b2b2b !important;
+}
+.crayon-theme-tomorrow-night .crayon-marked-num.crayon-striped-num {
+	background: #383838 !important;
+	color: #9e9e9e !important;
+}
+.crayon-theme-tomorrow-night .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-tomorrow-night .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-tomorrow-night .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-tomorrow-night .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-tomorrow-night .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-tomorrow-night .crayon-toolbar {
+	background: #919191 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #2e2e2e !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-tomorrow-night .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-tomorrow-night .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-tomorrow-night .crayon-title {
+	color: #2a2a2a !important;
+}
+.crayon-theme-tomorrow-night .crayon-language {
+	color: #494949 !important;
+}
+.crayon-theme-tomorrow-night a.crayon-button {
+}
+.crayon-theme-tomorrow-night a.crayon-button:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-tomorrow-night a.crayon-button.crayon-pressed:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-tomorrow-night a.crayon-button.crayon-pressed {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-tomorrow-night a.crayon-button.crayon-pressed:active {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-tomorrow-night a.crayon-button:active {
+	background-color: #bcbcbc !important;
+	color: #FFF;
+}
+.crayon-theme-tomorrow-night .crayon-pre .c {
+	color: #a7a8a2 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .s {
+	color: #b2af75 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .p {
+	color: #b85c00 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .ta {
+	color: #e79663 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .k {
+	color: #92afc1 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .st {
+	color: #92afc1 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .r {
+	color: #92afc1 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .t {
+	color: #bba7c5 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .m {
+	color: #bba7c5 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .i {
+	color: #c7c7c7 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .e {
+	color: #e8ce91 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .v {
+	color: #d87c7b !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .cn {
+	color: #e7a37a !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .o {
+	color: #99c9c4 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .sy {
+	color: #c9d2d1 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .f {
+	color: #999 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre .h {
+	color: #006fe0 !important;
+}

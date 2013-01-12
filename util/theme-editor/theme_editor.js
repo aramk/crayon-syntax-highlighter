@@ -14,6 +14,7 @@
         var admin = CrayonSyntaxAdmin;
 
         var preview, previewCrayon, previewCSS, status, title, info;
+        var colorPickerPos;
         var changed, loaded;
         var themeID, themeJSON, themeCSS, themeStr, themeInfo;
         var reImportant = /\s+!important$/gmi;
@@ -472,6 +473,12 @@
                     };
                     args.open = function (e, color) {
                         $('.ui-colorpicker-dialog .ui-button').addClass('button-primary');
+                        if (colorPickerPos) {
+                            console.log('colorPickerPos', colorPickerPos);
+                            var picker = $('.ui-colorpicker-dialog:visible');
+                            picker.css('left', colorPickerPos.left);
+//                            picker.css('top', colorPickerPos.top);
+                        }
                     };
                     args.select = function (e, color) {
                         attr.trigger('change');
@@ -519,6 +526,17 @@
                 });
             });
             $('.ui-colorpicker-dialog').addClass('wp-dialog');
+            $('.ui-colorpicker-dialog').mouseup(function () {
+                base.colorPickerMove($(this));
+            });
+        };
+
+        base.colorPickerMove = function (picker) {
+            console.log('picker', picker);
+            if (picker) {
+                colorPickerPos = {left: picker.css('left'), top: picker.css('top')};
+                console.log('colorPickerPos', colorPickerPos);
+            }
         };
 
         base.updateLiveCSS = function (clone) {

@@ -271,12 +271,14 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Arduino language
     * Added CoffeeScript thanks to http://firn.jp/crayon-coffeescript
     * Line numbers right border in theme editor
+    * New Themes: Familiar, Idle, Tomorrow, Tomorrow Night
 * FIXED:
     * jQuery UI is no longer an external dependency; now using wpdialog(). Theme Editor updated to use wpdialog.
     * Inline tags. See: https://github.com/aramkocharyan/crayon-syntax-highlighter/issues/57
     * Improved legacy tag conversion functions by removing false positives arising from duplicate regex
     * Slightly faster conversion of legacy by delaying database writes until the end
     * &-quot; is also converted now in HTML
+    * Position of color picker top is remembered
     * Minor bug in saving themes causing field name mapping to be ignored.
     * Added missing blank.gif in fancybox
     * Log uses strval() instead of ob_start() to avoid conflicts with other plugins using ob_start() without ob_end_flush() or similar

@@ -295,8 +295,9 @@
 .ui-colorpicker-dialog {
     width: 575px !important;
     height: 350px !important;
-    position: fixed;
-    right: 0;
+    /*position: fixed;*/
+    /*left: auto;*/
+    /*right: 450px;*/
     bottom: 0;
 }
 

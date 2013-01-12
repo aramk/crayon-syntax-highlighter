@@ -184,12 +184,12 @@ URL: http://www.adostudio.it/
 .crayon-theme-ado .crayon-pre .f {
 	color: #999 !important;
 }
-.crayon-syntax {
+.crayon-theme-ado {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
-.crayon-table {
+.crayon-theme-ado .crayon-table {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;

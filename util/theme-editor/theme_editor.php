@@ -629,14 +629,14 @@ class CrayonThemeEditorWP {
      * Saves the given theme id and css, making any necessary path and id changes to ensure the new theme is valid.
      * Echos 0 on failure, 1 on success and 2 on success and if paths have changed.
      */
-    public static function save($allow_edit_stock_theme = NULL) {
+    public static function save() {
         CrayonSettingsWP::load_settings();
         $oldID = stripslashes($_POST['id']);
         $name = stripslashes($_POST['name']);
         $css = stripslashes($_POST['css']);
         $change_settings = CrayonUtil::set_default($_POST['change_settings'], TRUE);
         $allow_edit = CrayonUtil::set_default($_POST['allow_edit'], TRUE);
-        $allow_edit_stock_theme = CrayonUtil::set_default_null($allow_edit_stock_theme, CRAYON_DEBUG);
+        $allow_edit_stock_theme = CrayonUtil::set_default($_POST['allow_edit_stock_theme'], CRAYON_DEBUG);
         $delete = CrayonUtil::set_default($_POST['delete'], TRUE);
         $oldTheme = CrayonResources::themes()->get($oldID);
 
@@ -740,7 +740,8 @@ class CrayonThemeEditorWP {
         $_POST['css'] = file_get_contents($oldPath);
         $_POST['delete'] = FALSE;
         $_POST['allow_edit'] = FALSE;
-        self::save(FALSE);
+        $_POST['allow_edit_stock_theme'] = FALSE;
+        self::save();
     }
 
     public static function delete() {
