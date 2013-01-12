@@ -832,6 +832,7 @@ class CrayonThemeEditorWP {
     }
 
     public static function getFieldName($id) {
+        self::initFields();
         if (isset(self::$infoFields[$id])) {
             return self::$infoFields[$id];
         } else {

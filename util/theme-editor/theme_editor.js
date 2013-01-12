@@ -33,9 +33,6 @@
         base.show = function (callback, crayon) {
             // Called each time editor is shown
             previewCrayon = crayon.find('.crayon-syntax');
-            //crayon.attr('id', 'theme-editor-instance');
-//            CrayonSyntax.process(crayon, true);
-//            preview.html(crayon);
             preview.append(crayon)
             base.load();
             if (callback) {
@@ -76,7 +73,6 @@
             }
             // Update attributes
             base.persistAttributes();
-//            return false;
             // Save
             themeCSS = CSSJSON.toCSS(themeJSON);
             var newThemeStr = base.writeCSSInfo(info) + themeCSS;
@@ -206,11 +202,6 @@
             var match = null;
             var infoRegex = /([^\r\n:]*[^\r\n\s:])\s*:\s*([^\r\n]+)/gmi;
             while ((match = infoRegex.exec(infoStr)) != null) {
-//                var fieldID = settings.fieldsInverse[match[1]];
-//                var fieldID = base.convertToID(match[1]);
-//                if (fieldID) {
-//                    themeInfo[fieldID] = match[2];
-//                }
                 themeInfo[base.nameToID(match[1])] = CrayonUtil.encode_html(match[2]);
             }
             // Force title case on the name
@@ -408,7 +399,7 @@
 
         base.writeCSSInfo = function (info) {
             var infoStr = '/*\n';
-            for (field in info) {
+            for (var field in info) {
                 infoStr += field + ': ' + info[field] + '\n';
             }
             return infoStr + '*/\n';
