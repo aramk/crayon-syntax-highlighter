@@ -252,7 +252,9 @@ class CrayonWP {
 
         // Convert inline {php}{/php} tags to crayon tags, if needed
         if ((CrayonGlobalSettings::val(CrayonSettings::INLINE_TAG) || $skip_setting_check) && $in_flag[CrayonSettings::INLINE_TAG]) {
-            $wp_content = preg_replace('#(?<!\$)\{\s*(' . self::$alias_regex . ')\b([^\}]*)\}(.*?)\{/(?:\1)\}(?!\$)#msi', '[crayon lang="\1" inline="true" \2]\3[/crayon]', $wp_content);
+            if (CrayonGlobalSettings::val(CrayonSettings::INLINE_TAG_CAPTURE)) {
+                $wp_content = preg_replace('#(?<!\$)\{\s*(' . self::$alias_regex . ')\b([^\}]*)\}(.*?)\{/(?:\1)\}(?!\$)#msi', '[crayon lang="\1" inline="true" \2]\3[/crayon]', $wp_content);
+            }
             // Convert <span class="crayon-inline"> tags to inline crayon tags
             $wp_content = preg_replace_callback('#(?<!\$)<\s*span([^>]*)\bclass\s*=\s*(["\'])(.*?)\2([^>]*)>(.*?)<\s*/\s*span\s*>#msi', 'CrayonWP::span_tag', $wp_content);
         }
@@ -517,7 +519,7 @@ class CrayonWP {
             $in_flag = self::in_flag($flags);
 
             if (($in_flag[CrayonSettings::CAPTURE_MINI_TAG] && (CrayonGlobalSettings::val(CrayonSettings::CAPTURE_MINI_TAG)) || $force) ||
-                ($in_flag[CrayonSettings::INLINE_TAG] && (CrayonGlobalSettings::val(CrayonSettings::INLINE_TAG)) || $force)
+                ($in_flag[CrayonSettings::INLINE_TAG] && (CrayonGlobalSettings::val(CrayonSettings::INLINE_TAG) && CrayonGlobalSettings::val(CrayonSettings::INLINE_TAG_CAPTURE)) || $force)
             ) {
                 $aliases = CrayonResources::langs()->ids_and_aliases();
                 self::$alias_regex = '';
@@ -795,7 +797,7 @@ class CrayonWP {
             $the_content = str_ireplace(array($ignore_flag . '[plain', 'plain]' . $ignore_flag), array('[plain', 'plain]'), $the_content);
         }
         if (CrayonGlobalSettings::val(CrayonSettings::CAPTURE_MINI_TAG) ||
-            CrayonGlobalSettings::val(CrayonSettings::INLINE_TAG)
+            (CrayonGlobalSettings::val(CrayonSettings::INLINE_TAG && CrayonGlobalSettings::val(CrayonSettings::INLINE_TAG_CAPTURE)))
         ) {
             self::init_tags_regex();
             // 			$the_content = preg_replace('#'.$ignore_flag_regex.'\s*([\[\{])\s*('. self::$alias_regex .')#', '$1$2', $the_content);

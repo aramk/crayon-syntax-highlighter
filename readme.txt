@@ -271,6 +271,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Added CoffeeScript thanks to http://firn.jp/crayon-coffeescript
 * FIXED:
     * jQuery UI is no longer an external dependency; now using wpdialog().
+    * Inline tags. See: https://github.com/aramkocharyan/crayon-syntax-highlighter/issues/57
     * Improved legacy tag conversion functions by removing false positives arising from duplicate regex
     * Slightly faster conversion of legacy by delaying database writes until the end
     * &-quot; is also converted now in HTML

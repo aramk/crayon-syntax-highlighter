@@ -89,6 +89,7 @@ class CrayonSettings {
 	const MAIN_QUERY = 'main-query';
 	const SAFE_ENQUEUE = 'safe-enqueue';
 	const INLINE_TAG = 'inline-tag';
+    const INLINE_TAG_CAPTURE = 'inline-tag-capture';
 	const INLINE_MARGIN = 'inline-margin';
 	const INLINE_WRAP = 'inline-wrap';
 	const BACKQUOTE = 'backquote';
@@ -215,7 +216,8 @@ class CrayonSettings {
 			new CrayonSetting(self::ENQUEUE_FONTS, TRUE),
 			new CrayonSetting(self::MAIN_QUERY, FALSE),
 			new CrayonSetting(self::SAFE_ENQUEUE, TRUE),
-			new CrayonSetting(self::INLINE_TAG, FALSE),
+			new CrayonSetting(self::INLINE_TAG, TRUE),
+            new CrayonSetting(self::INLINE_TAG_CAPTURE, FALSE),
 			new CrayonSetting(self::INLINE_MARGIN, 5),
 			new CrayonSetting(self::INLINE_WRAP, TRUE),
 			new CrayonSetting(self::BACKQUOTE, TRUE),
