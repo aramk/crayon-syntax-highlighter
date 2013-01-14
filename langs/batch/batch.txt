@@ -1,21 +1,25 @@
 ### MS DOS BATCH SCRIPT ###
-
+### Author: Giuseppe Portelli giuseppe.portelli@gmail.com ###
+ 
 #   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
-
-    NAME                MS-DOS Batch
-    VERSION             1.0
-
-	STRING				(?default)|(?<=\becho\b).*?$
-	
-    LABEL:FADED         (:[a-zA-Z_\-][a-zA-Z0-9_\-\.]+)
-    COMMENT	            ^::.*?$|^rem\s(.*?)$        
+ 
+    NAME                MS DOS
+    VERSION             1.1
+ 
+    STRING              (?default)|(?<=\becho\b).*?$
+        
+    COMMENT             ^::.*?$|^rem\s(.*?)$
     
-    KEYWORD				\b(?alt:keywords.txt)\b
+    LABEL:FADED         :[a-zA-Z_\-][a-zA-Z0-9_\-\.]+
     
-    RESERVED			\b(?alt:builtins.txt)\b|^[a-zA-Z][a-zA-Z0-9_\-\.]*
+    KEYWORD             @?\b(?alt:keywords.txt)\b
     
-    VARIABLE			%?%[0-9]+|%[^%\s]+%
+    RESERVED            @?\b(?alt:builtins.txt)\b
+    COMMAND:RESERVED    ^@?\b[a-zA-Z][a-zA-Z0-9_\-\.]*\b
     
-    PARAMETER:VARIABLE  \s-[a-zA-Z][a-zA-Z0.9]*
+    VARIABLE            %?%[0-9]+|%[^%\s]+%
     
-    OPERATOR			($default)|==|\[|\]|\*
+    PARAMETER:ENTITY    \s-[a-zA-Z][a-zA-Z0-9]*
+    
+    OPERATOR            (?default)
+    SYMBOL              (?default)

@@ -75,6 +75,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Default Language (one size fits all, highlights generic code)
 * ABAP
 * ActionScript
+* AmigaDOS (thanks to <a href="http://www.amigalog.com/" target="_blank">amigalog.com</a>)
 * Apache
 * AppleScript
 * Arduino
@@ -95,7 +96,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Microsoft Registry (thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>)
 * MIVA Script
 * Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
-* MS-DOS Batch (thanks to <a href="http://www.amigalog.com/?p=334" target="_blank">http://www.amigalog.com/?p=334</a>)
+* MS-DOS (thanks to <a href="http://www.amigalog.com/?p=334" target="_blank">http://www.amigalog.com/?p=334</a>)
 * Java
 * JavaScript
 * Objective-C
@@ -272,6 +273,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Arduino language
     * LESS language
     * Sass language
+    * AmigaDOS language
     * Added CoffeeScript thanks to http://firn.jp/crayon-coffeescript
     * Line numbers right border in theme editor
     * New Themes: Familiar, Idle, Tomorrow, Tomorrow Night
@@ -284,6 +286,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Position of color picker top is remembered
     * Minor bug in saving themes causing field name mapping to be ignored.
     * Added missing blank.gif in fancybox
+    * MS DOS language fixes
     * Log uses strval() instead of ob_start() to avoid conflicts with other plugins using ob_start() without ob_end_flush() or similar
 
 = 2.0.2 =
