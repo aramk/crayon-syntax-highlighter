@@ -2,7 +2,7 @@
 
 // Switches
 
-define('CRAYON_DEBUG', TRUE);
+define('CRAYON_DEBUG', FALSE);
 
 // TODO remove once done
 define('CRAYON_TAG_EDITOR', TRUE);

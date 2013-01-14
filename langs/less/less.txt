@@ -1,0 +1,23 @@
+### LESS CSS LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                LESS
+    VERSION             1.0
+
+    COMMENT             (/\*.*?\*/)
+    STRING              (?default)
+
+    NOTATION            \@(?alt:notation.txt)\b
+    VARIABLE            \@[\w-]+\b
+
+    # For the <style> tag
+    ATT_STR:STRING      (((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)'))
+    TAG     			(</?\s*[^<\s>]+\s*>?)|(\s*>)
+    ATTR:ENTITY         [\w-]+(?=\s*=\s*["'])
+
+    SELECTOR:KEYWORD    [^\s\;\{\}][^\;\{\}]*(?=\{)
+    PROPERTY:ENTITY     [\w-]+(?=\s*:)
+    IMP:CONSTANT        !important
+    VALUE:IDENTIFIER    [^\s\{\}\;\:\!\(\)]+
+    SYMBOL              (?default)
