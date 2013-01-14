@@ -1,22 +1,24 @@
-### LESS CSS LANGUAGE ###
+### SASS LANGUAGE ###
 
 #   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
 
-    NAME                LESS
+    NAME                Sass
     VERSION             1.0
 
-    COMMENT             (/\*.*?\*/)
+    COMMENT             (?default)
     STRING              (?default)
-
-    NOTATION            \@(?alt:notation.txt)[^;]*;?
-    VARIABLE            \@[\w-]+\b
+    VARIABLE            \$[\w-]+
+    RULE:RESERVED       \@[\w-]+
 
     # For the <style> tag
     ATT_STR:STRING      (((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)'))
     TAG     			(</?\s*[^<\s>]+\s*>?)|(\s*>)
     ATTR:ENTITY         [\w-]+(?=\s*=\s*["'])
 
-    SELECTOR:KEYWORD    [^\s\;\{\}][^\;\{\}]*(?=\{)
+    ENTITY              \b[\w-]+(?=\()
+
+    TYPE                (?default)
+    SELECTOR:KEYWORD    [^\s\;\{\}\(\)][^\;\{\}\(\)]*(?=\{)
     PROPERTY:ENTITY     [\w-]+(?=\s*:)
     IMP:CONSTANT        !important
     VALUE:IDENTIFIER    [^\s\{\}\;\:\!\(\)]+

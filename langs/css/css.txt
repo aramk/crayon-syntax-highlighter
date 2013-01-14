@@ -7,7 +7,7 @@
 
     COMMENT             (/\*.*?\*/)
     STRING              (?default)
-    NOTATION            \@[\w-]+
+    NOTATION            \@[\w-]+[^;]*;?
 
     # For the <style> tag
     ATT_STR:STRING      (((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)'))

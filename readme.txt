@@ -271,6 +271,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Arduino language
     * LESS language
+    * Sass language
     * Added CoffeeScript thanks to http://firn.jp/crayon-coffeescript
     * Line numbers right border in theme editor
     * New Themes: Familiar, Idle, Tomorrow, Tomorrow Night
