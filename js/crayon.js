@@ -511,7 +511,7 @@
             base.togglePlain(uid, true, true);
             toggleToolbar(uid, true);
 
-            key = crayon[uid].mac ? '\u2318' : 'CTRL';
+            var key = crayon[uid].mac ? '\u2318' : 'CTRL';
             var text = strings.copy;
             text = text.replace(/%s/, key + '+C');
             text = text.replace(/%s/, key + '+V');

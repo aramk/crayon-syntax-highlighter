@@ -1039,7 +1039,7 @@ class Human {
         echo '</span>';
         self::checkbox(array(CrayonSettings::POPUP, crayon__('Enable opening code in a window')));
         self::checkbox(array(CrayonSettings::SCROLL, crayon__('Always display scrollbars')));
-        self::checkbox(array(CrayonSettings::MINIMIZE, crayon__('Minimize code')));
+        self::checkbox(array(CrayonSettings::MINIMIZE, crayon__('Minimize code') . self::help_button('http://bit.ly/W4YNCV')));
         self::checkbox(array(CrayonSettings::EXPAND, crayon__('Expand code beyond page borders on mouseover')));
         self::checkbox(array(CrayonSettings::EXPAND_TOGGLE, crayon__('Enable code expanding toggling when possible')));
         echo '</div>';
