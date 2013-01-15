@@ -1040,17 +1040,19 @@
             $(CRAYON_NUM, crayon[uid]).each(function () {
                 var lineID = $(this).attr('data-line');
                 var line = $('#' + lineID);
+                var height = null;
                 if (crayon[uid].wrapped) {
                     line.css('height', '');
-                    $(this).css('height', line.height());
+                    height = line.height();
+                    height = height ? height : '';
                     // TODO toolbar should overlay title if needed
                 } else {
-                    var height = line.attr('data-height');
+                    height = line.attr('data-height');
                     height = height ? height : '';
                     line.css('height', height);
-                    $(this).css('height', height);
                     //line.css('height', line.css('line-height'));
                 }
+                $(this).css('height', height);
             });
         };
 

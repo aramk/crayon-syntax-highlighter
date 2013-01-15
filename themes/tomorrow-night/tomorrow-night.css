@@ -92,25 +92,25 @@ URL: http://ak.net84.net/
 .crayon-theme-tomorrow-night .crayon-language {
 	color: #494949 !important;
 }
-.crayon-theme-tomorrow-night a.crayon-button {
+.crayon-theme-tomorrow-night .crayon-button {
 }
-.crayon-theme-tomorrow-night a.crayon-button:hover {
+.crayon-theme-tomorrow-night .crayon-button:hover {
 	background-color: #bcbcbc !important;
 	color: #666;
 }
-.crayon-theme-tomorrow-night a.crayon-button.crayon-pressed:hover {
+.crayon-theme-tomorrow-night .crayon-button.crayon-pressed:hover {
 	background-color: #bcbcbc !important;
 	color: #666;
 }
-.crayon-theme-tomorrow-night a.crayon-button.crayon-pressed {
+.crayon-theme-tomorrow-night .crayon-button.crayon-pressed {
 	background-color: #626262 !important;
 	color: #FFF;
 }
-.crayon-theme-tomorrow-night a.crayon-button.crayon-pressed:active {
+.crayon-theme-tomorrow-night .crayon-button.crayon-pressed:active {
 	background-color: #626262 !important;
 	color: #FFF;
 }
-.crayon-theme-tomorrow-night a.crayon-button:active {
+.crayon-theme-tomorrow-night .crayon-button:active {
 	background-color: #bcbcbc !important;
 	color: #FFF;
 }

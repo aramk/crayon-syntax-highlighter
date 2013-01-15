@@ -9,21 +9,24 @@ Maintainer URL: http://eduantech.com/
 Notes: I don't provide striped lines because it would break the original purpose of this colorscheme.
 */
 .crayon-theme-solarized-dark {
-	border: 1px #999 solid !important;
 	text-shadow: none !important;
 	background: #002b36 !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #999 !important;
 }
 .crayon-theme-solarized-dark .crayon-code {
 	background: #002b36 !important;
 }
 .crayon-theme-solarized-dark-inline {
-	border: 1px solid #ddd !important;
 	background: #002b36 !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #ddd !important;
 }
-.crayon-theme-solarized-dark .crayon-nums {
+.crayon-theme-solarized-dark .crayon-table .crayon-nums {
 	background: #073642 !important;
 	color: #586e75 !important;
-	border-right: 1px solid #b3d3f3 !important;
 }
 .crayon-theme-solarized-dark .crayon-code::selection {
 	background: #ddeeff !important;
@@ -56,12 +59,14 @@ Notes: I don't provide striped lines because it would break the original purpose
 }
 .crayon-theme-solarized-dark .crayon-striped-line {
 	background: #002b36 !important;
-	border: 1px #CCC !important;
+	border-width: 1px !important;
+	border-color: #CCC !important;
 }
 .crayon-theme-solarized-dark .crayon-striped-num {
-	border: 1px #CCC !important;
 	color: #586e75 !important;
 	background: #073642 !important;
+	border-width: 1px !important;
+	border-color: #CCC !important;
 }
 .crayon-theme-solarized-dark .crayon-marked-line {
 	background: #073642 !important;
@@ -98,12 +103,16 @@ Notes: I don't provide striped lines because it would break the original purpose
 }
 .crayon-theme-solarized-dark .crayon-info {
 	background: #faf9d7 !important;
-	border-bottom: 1px #b1af5e solid !important;
-	color: #7e7d34;
+	color: #7e7d34 !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
 }
 .crayon-theme-solarized-dark .crayon-toolbar {
 	background: #DDD !important;
-	border-bottom: 1px #BBB solid !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #BBB !important;
 }
 .crayon-theme-solarized-dark .crayon-toolbar > div {
 	float: left !important;
@@ -117,27 +126,27 @@ Notes: I don't provide striped lines because it would break the original purpose
 .crayon-theme-solarized-dark .crayon-language {
 	color: #999 !important;
 }
-.crayon-theme-solarized-dark a.crayon-button {
-	background-color: transparent;
+.crayon-theme-solarized-dark .crayon-button {
+	background-color: transparent !important;
 }
-.crayon-theme-solarized-dark a.crayon-button:hover {
-	background-color: #EEE;
+.crayon-theme-solarized-dark .crayon-button:hover {
+	background-color: #EEE !important;
 	color: #666;
 }
-.crayon-theme-solarized-dark a.crayon-button.crayon-pressed:hover {
-	background-color: #EEE;
+.crayon-theme-solarized-dark .crayon-button.crayon-pressed:hover {
+	background-color: #EEE !important;
 	color: #666;
 }
-.crayon-theme-solarized-dark a.crayon-button.crayon-pressed {
-	background-color: #BCBCBC;
+.crayon-theme-solarized-dark .crayon-button.crayon-pressed {
+	background-color: #BCBCBC !important;
 	color: #FFF;
 }
-.crayon-theme-solarized-dark a.crayon-button.crayon-pressed:active {
-	background-color: #BCBCBC;
+.crayon-theme-solarized-dark .crayon-button.crayon-pressed:active {
+	background-color: #BCBCBC !important;
 	color: #FFF;
 }
-.crayon-theme-solarized-dark a.crayon-button:active {
-	background-color: #BCBCBC;
+.crayon-theme-solarized-dark .crayon-button:active {
+	background-color: #BCBCBC !important;
 	color: #FFF;
 }
 .crayon-theme-solarized-dark .crayon-pre .c {
@@ -181,7 +190,7 @@ Notes: I don't provide striped lines because it would break the original purpose
 }
 .crayon-theme-solarized-dark .crayon-pre .n {
 	color: #666 !important;
-	font-style: italic;
+	font-style: italic !important;
 }
 .crayon-theme-solarized-dark .crayon-pre .f {
 	color: #999 !important;

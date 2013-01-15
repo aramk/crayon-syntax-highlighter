@@ -6,21 +6,27 @@ Author: J. Newing (synmuffin)
 URL: http://epicgeeks.net/
 */
 .crayon-theme-epicgeeks {
-	border: 1px #e1e1e1 solid !important;
 	text-shadow: none !important;
 	background: #ffffe1 !important;
+	border-width: 1px !important;
+	border-color: #e1e1e1 !important;
+	border-style: solid !important;
 }
 .crayon-theme-epicgeeks .crayon-code {
 	background: #fdfdfd !important;
 }
 .crayon-theme-epicgeeks-inline {
-	border: 1px solid #e1e1e1 !important;
+	border-width: 1px !important;
+	border-color: #e1e1e1 !important;
+	border-style: solid !important;
 	background: #ffffe1 !important;
 }
 .crayon-theme-epicgeeks .crayon-table .crayon-nums {
 	background: #ffff9f !important;
 	color: #333333 !important;
-	border-right: 1px dashed #3cc0ff !important;
+	border-right-width: 1px !important;
+	border-right-color: #3cc0ff !important;
+	border-right-style: dashed !important;
 }
 .crayon-theme-epicgeeks .crayon-code::selection {
 	background: #ddeeff !important;
@@ -53,20 +59,26 @@ URL: http://epicgeeks.net/
 }
 .crayon-theme-epicgeeks .crayon-striped-line {
 	background: #ffffd2 !important;
-	border: 1px dashed #f0f0f0;
+	border-width: 1px !important;
+	border-color: #f0f0f0 !important;
+	border-style: dashed !important;
 }
 .crayon-theme-epicgeeks .crayon-striped-num {
 	background: #ffff7c !important;
-	border: 1px dashed #cccccc !important;
+	border-width: 1px !important;
+	border-color: #cccccc !important;
+	border-style: dashed !important;
 }
 .crayon-theme-epicgeeks .crayon-marked-line {
 	background: #fffee2 !important;
-	border: 1px #e9e579 !important;
+	border-width: 1px !important;
+	border-color: #e9e579 !important;
 }
 .crayon-theme-epicgeeks .crayon-marked-num {
 	color: #1561ac !important;
 	background: #f2f24b !important;
-	border: 1px #E9E579 !important;
+	border-width: 1px !important;
+	border-color: #e9e579 !important;
 }
 .crayon-theme-epicgeeks .crayon-marked-line.crayon-striped-line {
 	background: #faf8d1 !important;
@@ -89,12 +101,16 @@ URL: http://epicgeeks.net/
 }
 .crayon-theme-epicgeeks .crayon-info {
 	background: #faf9d7 !important;
-	border-bottom: 1px #b1af5e dashed !important;
-	color: #7e7d34;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: dashed !important;
+	color: #7e7d34 !important;
 }
 .crayon-theme-epicgeeks .crayon-toolbar {
 	background: #f9f9f9 !important;
-	border-bottom: 1px #d2d2d2 solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #d2d2d2 !important;
+	border-bottom-style: solid !important;
 }
 .crayon-theme-epicgeeks .crayon-toolbar > div {
 	float: left !important;
@@ -108,27 +124,27 @@ URL: http://epicgeeks.net/
 .crayon-theme-epicgeeks .crayon-language {
 	color: #999 !important;
 }
-.crayon-theme-epicgeeks a.crayon-button {
-	background-color: transparent;
+.crayon-theme-epicgeeks .crayon-button {
+	background-color: transparent !important;
 }
-.crayon-theme-epicgeeks a.crayon-button:hover {
-	background-color: #EFEFEF;
+.crayon-theme-epicgeeks .crayon-button:hover {
+	background-color: #EFEFEF !important;
 	color: #666;
 }
-.crayon-theme-epicgeeks a.crayon-button.crayon-pressed:hover {
-	background-color: #EFEFEF;
+.crayon-theme-epicgeeks .crayon-button.crayon-pressed:hover {
+	background-color: #EFEFEF !important;
 	color: #666;
 }
-.crayon-theme-epicgeeks a.crayon-button.crayon-pressed {
-	background-color: #DDD;
+.crayon-theme-epicgeeks .crayon-button.crayon-pressed {
+	background-color: #DDD !important;
 	color: #FFF;
 }
-.crayon-theme-epicgeeks a.crayon-button.crayon-pressed:active {
-	background-color: #DDD;
+.crayon-theme-epicgeeks .crayon-button.crayon-pressed:active {
+	background-color: #DDD !important;
 	color: #FFF;
 }
-.crayon-theme-epicgeeks a.crayon-button:active {
-	background-color: #DDD;
+.crayon-theme-epicgeeks .crayon-button:active {
+	background-color: #DDD !important;
 	color: #FFF;
 }
 .crayon-theme-epicgeeks .crayon-pre .c {
@@ -178,7 +194,7 @@ URL: http://epicgeeks.net/
 }
 .crayon-theme-epicgeeks .crayon-pre .n {
 	color: #b7b7b7 !important;
-	font-style: italic;
+	font-style: italic !important;
 }
 .crayon-theme-epicgeeks .crayon-pre .f {
 	color: #cfcfcf !important;

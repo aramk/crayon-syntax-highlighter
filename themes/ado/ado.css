@@ -6,18 +6,27 @@ Author: Andrea Dell'Orco
 URL: http://www.adostudio.it/
 */
 .crayon-theme-ado {
-	border: 1px #999 solid !important;
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
 	text-shadow: none !important;
 	background: #fdfdfd !important;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
 }
 .crayon-theme-ado-inline {
-	border: 1px solid #ddd !important;
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
 	background: #fafafa !important;
 }
-.crayon-theme-ado .crayon-nums {
+.crayon-theme-ado .crayon-table .crayon-nums {
 	background: #333333 !important;
 	color: #DEDEDE !important;
-	border-right: 1px solid #202020 !important;
+	border-right-width: 1px !important;
+	border-right-style: solid !important;
+	border-right-color: #202020 !important;
 }
 .crayon-theme-ado .crayon-code::selection {
 	background: #BBEEDA !important;
@@ -27,44 +36,27 @@ URL: http://www.adostudio.it/
 	background: #BBEEDA !important;
 	color: #269B6C !important;
 }
-.crayon-theme-ado::selection {
-	background: transparent !important;
-}
-.crayon-theme-ado .crayon-toolbar::selection {
-	background: transparent !important;
-}
-.crayon-theme-ado .crayon-toolbar *::selection {
-	background: transparent !important;
-}
-.crayon-theme-ado .crayon-info::selection {
-	background: transparent !important;
-}
-.crayon-theme-ado .crayon-info *::selection {
-	background: transparent !important;
-}
-.crayon-theme-ado .crayon-nums::selection {
-	background: transparent !important;
-}
-.crayon-theme-ado .crayon-nums *::selection {
+.crayon-theme-ado *::selection {
 	background: transparent !important;
 }
 .crayon-theme-ado .crayon-striped-line {
 	background: #f7f7f7 !important;
-	border: 1px #CCC !important;
 }
 .crayon-theme-ado .crayon-striped-num {
 	background: #5B5B5B !important;
-	border: 1px #333 !important;
 	color: #fff !important;
 }
 .crayon-theme-ado .crayon-marked-line {
 	background: #C7F1ED !important;
-	border: 1px #9AE7DF !important;
+	border-width: 1px !important;
+	border-color: #9AE7DF !important;
 }
 .crayon-theme-ado .crayon-marked-num {
 	color: #82DFC4 !important;
 	background: #333333 !important;
-	border-right: 1px solid #202020 !important;
+	border-width: 1px !important;
+	border-style: solid !important;
+	border-color: #202020 !important;
 }
 .crayon-theme-ado .crayon-marked-line.crayon-striped-line {
 	background: #B7EEE9 !important;
@@ -87,12 +79,16 @@ URL: http://www.adostudio.it/
 }
 .crayon-theme-ado .crayon-info {
 	background: #E8E8E8 !important;
-	border-bottom: 1px #888888 solid !important;
-	color: #595959;
+	border-bottom-width: 1px !important;
+	border-bottom-style: solid !important;
+	border-bottom-color: #888888 !important;
+	color: #595959 !important;
 }
 .crayon-theme-ado .crayon-toolbar {
 	background: #DDD !important;
-	border-bottom: 1px #BBB solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-style: solid !important;
+	border-bottom-color: #BBB !important;
 }
 .crayon-theme-ado .crayon-toolbar > div {
 	float: left !important;
@@ -106,27 +102,27 @@ URL: http://www.adostudio.it/
 .crayon-theme-ado .crayon-language {
 	color: #999 !important;
 }
-.crayon-theme-ado a.crayon-button {
-	background-color: transparent;
+.crayon-theme-ado .crayon-button {
+	background-color: transparent !important;
 }
-.crayon-theme-ado a.crayon-button:hover {
-	background-color: #F2F2F2;
+.crayon-theme-ado .crayon-button:hover {
+	background-color: #F2F2F2 !important;
 	color: #666;
 }
-.crayon-theme-ado a.crayon-button.crayon-pressed:hover {
-	background-color: #F2F2F2;
+.crayon-theme-ado .crayon-button.crayon-pressed:hover {
+	background-color: #F2F2F2 !important;
 	color: #666;
 }
-.crayon-theme-ado a.crayon-button.crayon-pressed {
-	background-color: #BBB;
+.crayon-theme-ado .crayon-button.crayon-pressed {
+	background-color: #BBB !important;
 	color: #FFF;
 }
-.crayon-theme-ado a.crayon-button.crayon-pressed:active {
-	background-color: #BBB;
+.crayon-theme-ado .crayon-button.crayon-pressed:active {
+	background-color: #BBB !important;
 	color: #FFF;
 }
-.crayon-theme-ado a.crayon-button:active {
-	background-color: #BBB;
+.crayon-theme-ado .crayon-button:active {
+	background-color: #BBB !important;
 	color: #FFF;
 }
 .crayon-theme-ado .crayon-pre .c {
@@ -179,15 +175,10 @@ URL: http://www.adostudio.it/
 }
 .crayon-theme-ado .crayon-pre .n {
 	color: #666 !important;
-	font-style: italic;
+	font-style: italic !important;
 }
 .crayon-theme-ado .crayon-pre .f {
 	color: #999 !important;
-}
-.crayon-theme-ado {
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
 }
 .crayon-theme-ado .crayon-table {
 	-moz-border-radius: 5px;

@@ -149,15 +149,14 @@ coloring etc.
 	padding: 0 4px !important;
 }
 
-.crayon-syntax .crayon-toolbar a.crayon-button {
+.crayon-syntax .crayon-toolbar .crayon-button {
 	display: inline;
 	float: left !important;
-	min-width: 20px;
-
+	width: 24px;
 	background-repeat: no-repeat;
     /*height: 16px;*/
     line-height: 15px;
-    padding: 0px 2px !important;
+    /*padding: 0px 2px !important;*/
     border: none;
     /*border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -165,44 +164,44 @@ coloring etc.
     text-decoration: none;
 }
 
-.crayon-toolbar a.crayon-button,
-.crayon-toolbar a.crayon-button:hover,
-.crayon-toolbar a.crayon-button.crayon-pressed:hover {
+.crayon-toolbar .crayon-button,
+.crayon-toolbar .crayon-button:hover,
+.crayon-toolbar .crayon-button.crayon-pressed:hover {
 	background-position: 0px center;
 }
-.crayon-toolbar a.crayon-button.crayon-pressed,
-.crayon-toolbar a.crayon-button:active,
-.crayon-toolbar a.crayon-button.crayon-pressed:active {
+.crayon-toolbar .crayon-button.crayon-pressed,
+.crayon-toolbar .crayon-button:active,
+.crayon-toolbar .crayon-button.crayon-pressed:active {
 	background-position: -24px center;
 }
 
 /* Plain Button */
-.crayon-toolbar a.crayon-button.crayon-plain-button {
+.crayon-toolbar .crayon-button.crayon-plain-button {
 	background-image: url('images/toolbar/plain.png');
 }
 
 /* Wrap Button */
-.crayon-toolbar a.crayon-button.crayon-wrap-button {
+.crayon-toolbar .crayon-button.crayon-wrap-button {
 	background-image: url('images/toolbar/wrap.png');
 }
 
 /* Expand Button */
-.crayon-toolbar a.crayon-button.crayon-expand-button {
+.crayon-toolbar .crayon-button.crayon-expand-button {
 	background-image: url('images/toolbar/expand.png');
 }
 
 /* Copy Button */
-.crayon-toolbar a.crayon-button.crayon-copy-button {
+.crayon-toolbar .crayon-button.crayon-copy-button {
 	background-image: url('images/toolbar/copy.png');
 }
 
 /* Popup Button */
-.crayon-toolbar a.crayon-button.crayon-popup-button {
+.crayon-toolbar .crayon-button.crayon-popup-button {
 	background-image: url('images/toolbar/popup.png');
 }
 
 /* Nums Button */
-.crayon-toolbar a.crayon-button.crayon-nums-button {
+.crayon-toolbar .crayon-button.crayon-nums-button {
 	background-image: url('images/toolbar/nums.png');
 }
 

@@ -93,26 +93,26 @@ URL: http://ak.net84.net/
 .crayon-theme-idle .crayon-language {
 	color: #999 !important;
 }
-.crayon-theme-idle a.crayon-button {
+.crayon-theme-idle .crayon-button {
 	background-color: transparent !important;
 }
-.crayon-theme-idle a.crayon-button:hover {
+.crayon-theme-idle .crayon-button:hover {
 	background-color: #EEE !important;
 	color: #666;
 }
-.crayon-theme-idle a.crayon-button.crayon-pressed:hover {
+.crayon-theme-idle .crayon-button.crayon-pressed:hover {
 	background-color: #EEE !important;
 	color: #666;
 }
-.crayon-theme-idle a.crayon-button.crayon-pressed {
+.crayon-theme-idle .crayon-button.crayon-pressed {
 	background-color: #BCBCBC !important;
 	color: #FFF;
 }
-.crayon-theme-idle a.crayon-button.crayon-pressed:active {
+.crayon-theme-idle .crayon-button.crayon-pressed:active {
 	background-color: #BCBCBC !important;
 	color: #FFF;
 }
-.crayon-theme-idle a.crayon-button:active {
+.crayon-theme-idle .crayon-button:active {
 	background-color: #BCBCBC !important;
 	color: #FFF;
 }

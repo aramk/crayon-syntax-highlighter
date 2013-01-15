@@ -6,25 +6,31 @@ Author: Aram Kocharyan
 URL: http://ak.net84.net/
 */
 .crayon-theme-twilight {
-	border: 1px #333 solid !important;
 	text-shadow: none !important;
 	color: #fff;
 	background: #2d2d2d !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #333 !important;
 }
 .crayon-theme-twilight .crayon-code {
 	background: #2d2d2d !important;
 }
 .crayon-theme-twilight-inline {
-	border: 1px solid #333 !important;
 	background: #333 !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #333 !important;
 }
 .crayon-theme-twilight span {
 	color: #999 !important;
 }
-.crayon-theme-twilight .crayon-nums {
-	border-right: 1px solid #333 !important;
+.crayon-theme-twilight .crayon-table .crayon-nums {
 	color: #333 !important;
 	background: #909090 !important;
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-right-color: #333 !important;
 }
 .crayon-theme-twilight .crayon-code::selection {
 	background: #ddeeff !important;
@@ -57,21 +63,25 @@ URL: http://ak.net84.net/
 }
 .crayon-theme-twilight .crayon-striped-line {
 	background: #343434 !important;
-	border: 1px #171717 !important;
+	border-width: 1px !important;
+	border-color: #171717 !important;
 }
 .crayon-theme-twilight .crayon-striped-num {
 	background: #aaa !important;
-	border: 1px #CCC !important;
 	color: #555 !important;
+	border-width: 1px !important;
+	border-color: #CCC !important;
 }
 .crayon-theme-twilight .crayon-marked-line {
 	background: #484844 !important;
-	border: 1px #222 !important;
+	border-width: 1px !important;
+	border-color: #222 !important;
 }
 .crayon-theme-twilight .crayon-marked-num {
 	color: #555 !important;
 	background: #bbb !important;
-	border: 1px #777 !important;
+	border-width: 1px !important;
+	border-color: #777 !important;
 }
 .crayon-theme-twilight .crayon-marked-line.crayon-striped-line {
 	background: #51514d !important;
@@ -94,12 +104,16 @@ URL: http://ak.net84.net/
 }
 .crayon-theme-twilight .crayon-info {
 	background: #faf9d7 !important;
-	border-bottom: 1px #b1af5e solid !important;
-	color: #7e7d34;
+	color: #7e7d34 !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
 }
 .crayon-theme-twilight .crayon-toolbar {
 	background: #b2b2b2 !important;
-	border-bottom: 1px #666 solid !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #666 !important;
 }
 .crayon-theme-twilight .crayon-toolbar > div {
 	float: left !important;
@@ -116,27 +130,27 @@ URL: http://ak.net84.net/
 .crayon-theme-twilight .crayon-toolbar .crayon-mixed-highlight {
 	background-position: -24px center;
 }
-.crayon-theme-twilight a.crayon-button {
-	background-color: transparent;
+.crayon-theme-twilight .crayon-button {
+	background-color: transparent !important;
 }
-.crayon-theme-twilight a.crayon-button:hover {
-	background-color: #ccc;
+.crayon-theme-twilight .crayon-button:hover {
+	background-color: #ccc !important;
 	color: #666;
 }
-.crayon-theme-twilight a.crayon-button.crayon-pressed:hover {
-	background-color: #ccc;
+.crayon-theme-twilight .crayon-button.crayon-pressed:hover {
+	background-color: #ccc !important;
 	color: #666;
 }
-.crayon-theme-twilight a.crayon-button.crayon-pressed {
-	background-color: #999;
+.crayon-theme-twilight .crayon-button.crayon-pressed {
+	background-color: #999 !important;
 	color: #ccc;
 }
-.crayon-theme-twilight a.crayon-button.crayon-pressed:active {
-	background-color: #999;
+.crayon-theme-twilight .crayon-button.crayon-pressed:active {
+	background-color: #999 !important;
 	color: #ccc;
 }
-.crayon-theme-twilight a.crayon-button:active {
-	background-color: #999;
+.crayon-theme-twilight .crayon-button:active {
+	background-color: #999 !important;
 	color: #ccc;
 }
 .crayon-theme-twilight .crayon-pre .c {
@@ -189,7 +203,7 @@ URL: http://ak.net84.net/
 }
 .crayon-theme-twilight .crayon-pre .n {
 	color: #726e73 !important;
-	font-style: italic;
+	font-style: italic !important;
 }
 .crayon-theme-twilight .crayon-pre .f {
 	color: #595959 !important;

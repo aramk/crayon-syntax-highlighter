@@ -6,25 +6,31 @@ Author: Di_Skyer
 URL: http://atlocal.net/
 */
 .crayon-theme-neon {
-	border: 1px #333 solid !important;
 	text-shadow: none !important;
 	color: #fff;
 	background: #2d2d2d !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #333 !important;
 }
 .crayon-theme-neon .crayon-code {
 	background: #2d2d2d !important;
 }
 .crayon-theme-neon-inline {
-	border: 1px solid #333 !important;
 	background: #333 !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #333 !important;
 }
 .crayon-theme-neon span {
 	color: #999 !important;
 }
-.crayon-theme-neon .crayon-nums {
-	border-right: 1px solid #333 !important;
+.crayon-theme-neon .crayon-table .crayon-nums {
 	color: #333 !important;
 	background: #777777 !important;
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-right-color: #333 !important;
 }
 .crayon-theme-neon .crayon-code::selection {
 	background: #ddeeff !important;
@@ -60,21 +66,25 @@ URL: http://atlocal.net/
 }
 .crayon-theme-neon .crayon-striped-line {
 	background: #000 !important;
-	border: 1px #171717 !important;
+	border-width: 1px !important;
+	border-color: #171717 !important;
 }
 .crayon-theme-neon .crayon-striped-num {
 	background: #aaa !important;
-	border: 1px #CCC !important;
 	color: #555 !important;
+	border-width: 1px !important;
+	border-color: #CCC !important;
 }
 .crayon-theme-neon .crayon-marked-line {
 	background: #484844 !important;
-	border: 1px #222 !important;
+	border-width: 1px !important;
+	border-color: #222 !important;
 }
 .crayon-theme-neon .crayon-marked-num {
 	color: #555 !important;
 	background: #bbb !important;
-	border: 1px #777 !important;
+	border-width: 1px !important;
+	border-color: #777 !important;
 }
 .crayon-theme-neon .crayon-marked-line.crayon-striped-line {
 	background: #51514d !important;
@@ -97,12 +107,16 @@ URL: http://atlocal.net/
 }
 .crayon-theme-neon .crayon-info {
 	background: #faf9d7 !important;
-	border-bottom: 1px #b1af5e solid !important;
-	color: #7e7d34;
+	color: #7e7d34 !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
 }
 .crayon-theme-neon .crayon-toolbar {
 	background: #b2b2b2 !important;
-	border-bottom: 1px #666 solid !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #666 !important;
 }
 .crayon-theme-neon .crayon-toolbar > div {
 	float: left !important;
@@ -119,27 +133,27 @@ URL: http://atlocal.net/
 .crayon-theme-neon .crayon-toolbar .crayon-mixed-highlight {
 	background-position: -24px center;
 }
-.crayon-theme-neon a.crayon-button {
-	background-color: transparent;
+.crayon-theme-neon .crayon-button {
+	background-color: transparent !important;
 }
-.crayon-theme-neon a.crayon-button:hover {
-	background-color: #ccc;
+.crayon-theme-neon .crayon-button:hover {
+	background-color: #ccc !important;
 	color: #666;
 }
-.crayon-theme-neon a.crayon-button.crayon-pressed:hover {
-	background-color: #ccc;
+.crayon-theme-neon .crayon-button.crayon-pressed:hover {
+	background-color: #ccc !important;
 	color: #666;
 }
-.crayon-theme-neon a.crayon-button.crayon-pressed {
-	background-color: #999;
+.crayon-theme-neon .crayon-button.crayon-pressed {
+	background-color: #999 !important;
 	color: #ccc;
 }
-.crayon-theme-neon a.crayon-button.crayon-pressed:active {
-	background-color: #999;
+.crayon-theme-neon .crayon-button.crayon-pressed:active {
+	background-color: #999 !important;
 	color: #ccc;
 }
-.crayon-theme-neon a.crayon-button:active {
-	background-color: #999;
+.crayon-theme-neon .crayon-button:active {
+	background-color: #999 !important;
 	color: #ccc;
 }
 .crayon-theme-neon .crayon-pre .c {
@@ -150,23 +164,23 @@ URL: http://atlocal.net/
 }
 .crayon-theme-neon .crayon-pre .k {
 	color: #EEEE33 !important;
-	font-weight: bold;
+	font-weight: bold !important;
 }
 .crayon-theme-neon .crayon-pre .st {
 	color: #EEEE33 !important;
-	font-weight: bold;
+	font-weight: bold !important;
 }
 .crayon-theme-neon .crayon-pre .r {
 	color: #EEEE33 !important;
-	font-weight: bold;
+	font-weight: bold !important;
 }
 .crayon-theme-neon .crayon-pre .t {
 	color: #EEEE33 !important;
-	font-weight: bold;
+	font-weight: bold !important;
 }
 .crayon-theme-neon .crayon-pre .m {
 	color: #EEEE33 !important;
-	font-weight: bold;
+	font-weight: bold !important;
 }
 .crayon-theme-neon .crayon-pre .ta {
 	color: #AAA !important;
@@ -194,7 +208,7 @@ URL: http://atlocal.net/
 }
 .crayon-theme-neon .crayon-pre .n {
 	color: #726e73 !important;
-	font-style: italic;
+	font-style: italic !important;
 }
 .crayon-theme-neon .crayon-pre .f {
 	color: #595959 !important;

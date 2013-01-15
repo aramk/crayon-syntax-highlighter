@@ -8,18 +8,22 @@ URL: http://blog.phiphou.com
 Twitter: @__phiphou__
 */
 .crayon-theme-son-of-obsidian {
-	border: 1px solid #ddd !important;
 	text-shadow: none !important;
 	background: #fafafa !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #ddd !important;
 }
 .crayon-theme-son-of-obsidian .crayon-code {
 	background: #22282a !important;
 	color: #f1f2f3 !important;
 }
-.crayon-theme-son-of-obsidian .crayon-nums {
+.crayon-theme-son-of-obsidian .crayon-table .crayon-nums {
 	background: #22282a !important;
 	color: #808080 !important;
-	border-right: 1px solid #475459 !important;
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-right-color: #475459 !important;
 }
 .crayon-theme-son-of-obsidian .crayon-code::selection {
 	background: #7c9299 !important;
@@ -52,29 +56,34 @@ Twitter: @__phiphou__
 }
 .crayon-theme-son-of-obsidian .crayon-striped-line {
 	background: #22282a !important;
-	border: 1px #ccc !important;
+	border-width: 1px !important;
+	border-color: #ccc !important;
 }
 .crayon-theme-son-of-obsidian .crayon-striped-num {
 	background: #293134 !important;
-	border: 1px #22282a !important;
 	color: #808080 !important;
+	border-width: 1px !important;
+	border-color: #22282a !important;
 }
 .crayon-theme-son-of-obsidian .crayon-marked-line {
 	background: #40292c !important;
-	border: 1px #996b72 !important;
+	border-width: 1px !important;
+	border-color: #996b72 !important;
 }
 .crayon-theme-son-of-obsidian .crayon-marked-num {
 	color: #808080 !important;
 	background: #40292c !important;
-	border: 1px #996b72 !important;
+	border-width: 1px !important;
+	border-color: #996b72 !important;
 }
 .crayon-theme-son-of-obsidian .crayon-marked-line.crayon-striped-line {
 	background: #40292c !important;
 }
 .crayon-theme-son-of-obsidian .crayon-marked-num.crayon-striped-num {
 	background: #663d43 !important;
-	border: 1px #996b72 !important;
 	color: #808080 !important;
+	border-width: 1px !important;
+	border-color: #996b72 !important;
 }
 .crayon-theme-son-of-obsidian .crayon-marked-line.crayon-top {
 	border-top-style: solid !important;
@@ -90,12 +99,16 @@ Twitter: @__phiphou__
 }
 .crayon-theme-son-of-obsidian .crayon-info {
 	background: #faf9d7 !important;
-	border-bottom: 1px #b1af5e solid !important;
-	color: #7e7d34;
+	color: #7e7d34 !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
 }
 .crayon-theme-son-of-obsidian .crayon-toolbar {
 	background: #ddd !important;
-	border-bottom: 1px #bbb solid !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #bbb !important;
 }
 .crayon-theme-son-of-obsidian .crayon-toolbar > div {
 	float: left !important;
@@ -109,27 +122,27 @@ Twitter: @__phiphou__
 .crayon-theme-son-of-obsidian .crayon-language {
 	color: #999 !important;
 }
-.crayon-theme-son-of-obsidian a.crayon-button {
-	background-color: transparent;
+.crayon-theme-son-of-obsidian .crayon-button {
+	background-color: transparent !important;
 }
-.crayon-theme-son-of-obsidian a.crayon-button:hover {
-	background-color: #eee;
+.crayon-theme-son-of-obsidian .crayon-button:hover {
+	background-color: #eee !important;
 	color: #666;
 }
-.crayon-theme-son-of-obsidian a.crayon-button.crayon-pressed:hover {
-	background-color: #eee;
+.crayon-theme-son-of-obsidian .crayon-button.crayon-pressed:hover {
+	background-color: #eee !important;
 	color: #666;
 }
-.crayon-theme-son-of-obsidian a.crayon-button.crayon-pressed {
-	background-color: #bcbcbc;
+.crayon-theme-son-of-obsidian .crayon-button.crayon-pressed {
+	background-color: #bcbcbc !important;
 	color: #fff;
 }
-.crayon-theme-son-of-obsidian a.crayon-button.crayon-pressed:active {
-	background-color: #bcbcbc;
+.crayon-theme-son-of-obsidian .crayon-button.crayon-pressed:active {
+	background-color: #bcbcbc !important;
 	color: #fff;
 }
-.crayon-theme-son-of-obsidian a.crayon-button:active {
-	background-color: #bcbcbc;
+.crayon-theme-son-of-obsidian .crayon-button:active {
+	background-color: #bcbcbc !important;
 	color: #fff;
 }
 .crayon-theme-son-of-obsidian .crayon-pre .c {
@@ -182,7 +195,7 @@ Twitter: @__phiphou__
 }
 .crayon-theme-son-of-obsidian .crayon-pre .n {
 	color: #f1f2f3 !important;
-	font-style: italic;
+	font-style: italic !important;
 }
 .crayon-theme-son-of-obsidian .crayon-pre .f {
 }

@@ -287,6 +287,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Minor bug in saving themes causing field name mapping to be ignored.
     * Added missing blank.gif in fancybox
     * MS DOS language fixes
+    * Theme fixes. 'border' is now split automatically into separate CSS rules.
     * Log uses strval() instead of ob_start() to avoid conflicts with other plugins using ob_start() without ob_end_flush() or similar
 
 = 2.0.2 =

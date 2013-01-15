@@ -50,7 +50,6 @@ class CrayonSettingsWP {
     public static function admin_load() {
         self::$admin_page = $admin_page = add_options_page('Crayon Syntax Highlighter ' . crayon__('Settings'), 'Crayon', 'manage_options', 'crayon_settings', 'CrayonSettingsWP::settings');
         add_action("admin_print_scripts-$admin_page", 'CrayonSettingsWP::admin_scripts');
-        add_action("admin_print_scripts-$admin_page", 'CrayonSettingsWP::admin_ui_scripts');
         add_action("admin_print_styles-$admin_page", 'CrayonSettingsWP::admin_styles');
         add_action("admin_print_scripts-$admin_page", 'CrayonThemeEditorWP::admin_resources');
         // Register settings, second argument is option name stored in db

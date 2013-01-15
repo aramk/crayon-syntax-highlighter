@@ -21,6 +21,7 @@
         var reSize = /^[0-9-]+px$/;
         var reCopy = /-copy(-\d+)?$/;
         var changedAttr = 'data-value';
+        var borderCSS = {'border':true, 'border-left':true, 'border-right':true, 'border-top':true, 'border-bottom':true};
 
         base.init = function (callback) {
             // Called only once
@@ -50,6 +51,7 @@
                 stripComments: true,
                 split: true
             });
+            themeJSON = base.filterCSS(themeJSON);
             CrayonUtil.log(themeJSON);
             themeInfo = base.readCSSInfo(themeStr);
             base.removeExistingCSS();
@@ -390,6 +392,10 @@
             return attr.replace(reImportant, '');
         };
 
+        base.isImportant = function (attr) {
+            return reImportant.exec(attr) != null;
+        };
+
         base.appendStyle = function (css) {
             previewCSS.html('<style>' + css + '</style>');
         };
@@ -405,6 +411,47 @@
             }
             return infoStr + '*/\n';
         };
+
+        base.filterCSS = function(css) {
+            // Split all border CSS attributes into individual attributes
+            for (var child in css.children) {
+                var atts = css.children[child].attributes;
+                for (var att in atts) {
+                    if (att in borderCSS) {
+                        var rules = base.getBorderCSS(atts[att]);
+                        for (var rule in rules) {
+                            atts[att + '-' + rule] = rules[rule];
+                        }
+                        delete atts[att];
+                    }
+                }
+            }
+            return css;
+        },
+
+        base.getBorderCSS = function (css) {
+            var result = {};
+            var important = base.isImportant(css);
+            $.each(strings.borderStyles, function (i, style) {
+                if (css.indexOf(style) >= 0) {
+                    result.style = style;
+                }
+            });
+            var width = /\d+\s*(px|%|em|rem)/gi.exec(css);
+            if (width) {
+                result.width = width[0];
+            }
+            var color = /#\w+/gi.exec(css);
+            if (color) {
+                result.color = color[0];
+            }
+            if (important) {
+                for (var rule in result) {
+                    result[rule] = base.addImportant(result[rule]);
+                }
+            }
+            return result;
+        },
 
         base.createPrompt = function (args) {
             args = $.extend({

@@ -9,6 +9,20 @@ class Element {
     public $attributes = array();
     const CSS_INPUT_PREFIX = "crayon-theme-input-";
 
+    public static $borderStyles = array(
+        'none',
+        'hidden',
+        'dotted',
+        'dashed',
+        'solid',
+        'double',
+        'groove',
+        'ridge',
+        'inset',
+        'outset',
+        'inherit'
+    );
+
     public function __construct($id) {
         $this->id = $id;
     }
@@ -194,6 +208,7 @@ class CrayonThemeEditorWP {
                 'submitMessage' => crayon__("Please include this theme in Crayon!"),
                 'submitSucceed' => crayon__("Submit was successful."),
                 'submitFail' => crayon__("Submit failed!"),
+                'borderStyles' => Element::$borderStyles
             );
         }
     }
@@ -485,7 +500,7 @@ class CrayonThemeEditorWP {
                         <?php
                         $toolbar = ' .crayon-toolbar';
                         $title = ' .crayon-title';
-                        $button = ' a.crayon-button';
+                        $button = ' .crayon-button';
                         $info = ' .crayon-info';
                         $language = ' .crayon-language';
                         self::createAttributesForm(array(
@@ -554,19 +569,7 @@ class CrayonThemeEditorWP {
         if ($type == 'select') {
             $input = new Select($element . '_' . $attribute, $name);
             if ($group == 'border-style') {
-                $input->addOptions(array(
-                    'none',
-                    'hidden',
-                    'dotted',
-                    'dashed',
-                    'solid',
-                    'double',
-                    'groove',
-                    'ridge',
-                    'inset',
-                    'outset',
-                    'inherit'
-                ));
+                $input->addOptions(Element::$borderStyles);
             } else if ($group == 'float') {
                 $input->addOptions(array(
                     'left',
