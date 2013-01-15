@@ -741,7 +741,7 @@ class CrayonSettingsWP {
     public static function toolbar() {
         echo '<div id="crayon-section-toolbar" class="crayon-hide-inline">';
         self::span(crayon__('Display the Toolbar') . ' ');
-        self::dropdown(CrayonSettings::TOOLBAR);
+            self::dropdown(CrayonSettings::TOOLBAR);
         echo '<div id="crayon-subsection-toolbar">';
         self::checkbox(array(CrayonSettings::TOOLBAR_OVERLAY, crayon__('Overlay the toolbar on code rather than push it down when possible')));
         self::checkbox(array(CrayonSettings::TOOLBAR_HIDE, crayon__('Toggle the toolbar on single click when it is overlayed')));
@@ -1031,6 +1031,7 @@ class Human {
         echo '</span>';
         self::checkbox(array(CrayonSettings::POPUP, crayon__('Enable opening code in a window')));
         self::checkbox(array(CrayonSettings::SCROLL, crayon__('Always display scrollbars')));
+        self::checkbox(array(CrayonSettings::MINIMIZE, crayon__('Minimize code')));
         self::checkbox(array(CrayonSettings::EXPAND, crayon__('Expand code beyond page borders on mouseover')));
         self::checkbox(array(CrayonSettings::EXPAND_TOGGLE, crayon__('Enable code expanding toggling when possible')));
         echo '</div>';

@@ -215,7 +215,7 @@ class CrayonFormatter {
 		if ($hl->setting_val(CrayonSettings::DECODE_ATTRIBUTES)) {
 			$title = CrayonUtil::html_entity_decode($title);
 		}
-		$print_title = ($hl->setting_val(CrayonSettings::SHOW_TITLE) && $title ? '<span class="crayon-title">' . $title . '</span>' : '');
+		$print_title = '<span class="crayon-title">' . $title . '</span>';
 		// Determine whether to print language
 		$print_lang = '';
 		// XXX Use for printing the regex
@@ -247,12 +247,18 @@ class CrayonFormatter {
 		if (!$hl->setting_val(CrayonSettings::POPUP)) {
 			$code_settings .= ' no-popup';
 		}
+
+        // Minimize
+        if (!$hl->setting_val(CrayonSettings::MINIMIZE)) {
+            $code_settings .= ' minimize';
+        }
 		
 		// Draw the plain code and toolbar
 		$toolbar_settings = $print_plain_button = $print_copy_button = '';
-		if (empty($error) && $hl->setting_index(CrayonSettings::TOOLBAR) != 2) {
+        $toolbar_index = $hl->setting_index(CrayonSettings::TOOLBAR);
+		if (empty($error) && ($toolbar_index != 2 || $hl->setting_val(CrayonSettings::MINIMIZE))) {
 			// Enable mouseover setting for toolbar
-			if ($hl->setting_index(CrayonSettings::TOOLBAR) == 0 && !$touch) {
+			if ($toolbar_index == 0 && !$touch) {
 				// No touchscreen detected
 				$toolbar_settings .= ' mouseover';
 				if ($hl->setting_val(CrayonSettings::TOOLBAR_OVERLAY)) {
@@ -264,11 +270,11 @@ class CrayonFormatter {
 				if ($hl->setting_val(CrayonSettings::TOOLBAR_DELAY)) {
 					$toolbar_settings .= ' delay';
 				}
-			} else if ($hl->setting_index(CrayonSettings::TOOLBAR) == 1) {
+			} else if ($toolbar_index == 1) {
 				// Always display the toolbar
 				$toolbar_settings .= ' show';
-			} else {
-				$toolbar_settings .= '';
+			} else if ($toolbar_index == 2) {
+				$toolbar_settings .= ' never-show';
 			}
 
 			$buttons = array();

@@ -190,6 +190,12 @@ coloring etc.
 	background-image: url('images/toolbar/expand.png');
 }
 
+/* Click to Expand */
+.crayon-toolbar .crayon-button.crayon-minimize {
+    background-image: url('images/toolbar/arrow_down.png');
+    background-color: transparent !important;
+}
+
 /* Copy Button */
 .crayon-toolbar .crayon-button.crayon-copy-button {
 	background-image: url('images/toolbar/copy.png');
@@ -357,7 +363,6 @@ This has been disabled to allow more flexibility in changing font sizes.
 
 .crayon-syntax .crayon-plain-wrap {
 	height: auto !important;
-	height: width !important;
 	padding: 0 !important;
 	margin: 0 !important;
 }
@@ -386,14 +391,31 @@ This has been disabled to allow more flexibility in changing font sizes.
     background: #FFF;
 }
 
-.crayon-syntax.crayon-wrapped .crayon-plain {
+.crayon-wrapped .crayon-plain {
 	white-space: pre-wrap;
 }
 
 .bbp-body .crayon-syntax {
 	clear: none !important;
 }
-
 /* End Code ======================== */
 
-/* End AK Code Table ============================================= */
+/* Minimize ================= */
+.crayon-minimized .crayon-toolbar {
+    cursor: pointer;
+}
+.crayon-minimized .crayon-plain-wrap,
+.crayon-minimized .crayon-main,
+.crayon-minimized .crayon-toolbar .crayon-tools * {
+    display: none !important;
+}
+.crayon-minimized .crayon-toolbar .crayon-tools .crayon-minimize {
+    display: block !important;
+}
+.crayon-minimized .crayon-toolbar {
+    position: relative !important;
+}
+.crayon-syntax.crayon-minimized .crayon-toolbar {
+    border-bottom: none !important;
+}
+/* End Minimize ============= */

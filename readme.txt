@@ -268,7 +268,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 2.0.3 =
+= 2.1.0 =
 * ADDED:
     * Arduino language
     * LESS language
@@ -277,6 +277,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Added CoffeeScript thanks to http://firn.jp/crayon-coffeescript
     * Line numbers right border in theme editor
     * New Themes: Familiar, Idle, Tomorrow, Tomorrow Night, Github
+    * Ability to minimize code
 * FIXED:
     * jQuery UI is no longer an external dependency; now using wpdialog(). Theme Editor updated to use wpdialog.
     * Inline tags. See: https://github.com/aramkocharyan/crayon-syntax-highlighter/issues/57

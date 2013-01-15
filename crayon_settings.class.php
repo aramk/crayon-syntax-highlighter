@@ -106,6 +106,7 @@ class CrayonSettings {
 	const WRAP = 'wrap';
 	const EXPAND = 'expand';
 	const EXPAND_TOGGLE = 'expand-toggle';
+    const MINIMIZE = 'minimize';
 	
 	private static $cache_array;
 	
@@ -233,7 +234,8 @@ class CrayonSettings {
 			new CrayonSetting(self::WRAP_TOGGLE, TRUE),
 			new CrayonSetting(self::WRAP, FALSE),
 			new CrayonSetting(self::EXPAND, FALSE),
-			new CrayonSetting(self::EXPAND_TOGGLE, TRUE)
+			new CrayonSetting(self::EXPAND_TOGGLE, TRUE),
+            new CrayonSetting(self::MINIMIZE, FALSE)
 		);
 		
 		$this->set($settings);

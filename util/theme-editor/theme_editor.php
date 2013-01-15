@@ -650,6 +650,7 @@ class CrayonThemeEditorWP {
             $oldPath = CrayonResources::themes()->path($oldID);
             $oldDir = CrayonResources::themes()->dirpath($oldID);
             $newID = CrayonResource::clean_id($name);
+            $name = CrayonResource::clean_name($newID);
             $newPath = CrayonResources::themes()->path($newID, $user);
             $newDir = CrayonResources::themes()->dirpath($newID, $user);
 
