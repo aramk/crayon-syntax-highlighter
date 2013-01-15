@@ -24,6 +24,7 @@ It also supports some neat features like:
 * Open code in a new window (popup)
 * Line wrapping
 * Code expanding
+* Minimizing
 * bbPress 2 support
 * <a href="http://bit.ly/ReRr0i" target="_blank">Converting legacy code in blog posts/comments to &lt;pre&gt;</a>
 * Remote request caching

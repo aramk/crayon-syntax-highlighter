@@ -21,6 +21,7 @@ class CrayonSettingsWP {
     private static $cache = NULL;
     // Array of settings to pass to js
     private static $js_settings = NULL;
+    private static $js_strings = NULL;
     private static $admin_js_settings = NULL;
     private static $admin_js_strings = NULL;
     private static $admin_page = '';
@@ -117,6 +118,13 @@ class CrayonSettingsWP {
                 'debug' => CRAYON_DEBUG
             );
             wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
+        }
+        if (!self::$js_strings) {
+            self::$js_strings = array(
+                'copy' => crayon__('Press %s to Copy, %s to Paste'),
+                'minimize' => crayon__('Click To Expand Code')
+            );
+            wp_localize_script('crayon_util_js', 'CrayonSyntaxStrings', self::$js_strings);
         }
     }
 

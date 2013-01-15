@@ -296,10 +296,7 @@ class CrayonFormatter {
 			}
 
 			if (!$touch && $hl->setting_val(CrayonSettings::PLAIN) && $hl->setting_val(CrayonSettings::COPY)) {
-				$buttons['copy'] = array(
-					'data-text' => crayon__('Press %s to Copy, %s to Paste'),
-					'title' => crayon__('Expand Code')
-					);	
+				$buttons['copy'] = crayon__('Expand Code');
 			}
 
 			if ($hl->setting_val(CrayonSettings::POPUP)) {

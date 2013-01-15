@@ -75,13 +75,16 @@
     CrayonSyntax = new function () {
         var base = this;
         var crayon = new Object();
+        var settings;
+        var strings;
         var currUID = 0;
 
         base.init = function () {
             if (typeof crayon == 'undefined') {
                 crayon = new Object();
             }
-
+            settings = CrayonSyntaxSettings;
+            strings = CrayonSyntaxStrings;
             $(CRAYON_SYNTAX).each(function () {
                 base.process(this);
             });
@@ -444,7 +447,7 @@
             // TODO translate
             crayon[uid].origTitle = crayon[uid].title.html();
             if (!crayon[uid].origTitle) {
-                crayon[uid].title.html('Click To Expand Code');
+                crayon[uid].title.html(strings.minimize);
             };
             var cls = 'crayon-minimized';
             var show = function () {
@@ -509,7 +512,7 @@
             toggleToolbar(uid, true);
 
             key = crayon[uid].mac ? '\u2318' : 'CTRL';
-            var text = crayon[uid].copy_button.attr('data-text');
+            var text = strings.copy;
             text = text.replace(/%s/, key + '+C');
             text = text.replace(/%s/, key + '+V');
             crayonInfo(uid, text);
