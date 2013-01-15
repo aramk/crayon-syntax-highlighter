@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 require_once ('global.php');
 require_once (CRAYON_HIGHLIGHTER_PHP);
 if (CRAYON_TAG_EDITOR) {
-    require_once (CRAYON_TE_PHP);
+    require_once (CRAYON_TAG_EDITOR_PHP);
 }
 if (CRAYON_THEME_EDITOR) {
     require_once (CRAYON_THEME_EDITOR_PHP);
@@ -910,16 +910,19 @@ class CrayonWP {
     }
 
     public static function init_ajax() {
-        add_action('wp_ajax_crayon-ajax', 'CrayonWP::ajax');
         add_action('wp_ajax_crayon-tag-editor', 'CrayonTagEditorWP::content');
-        add_action('wp_ajax_crayon-theme-editor', 'CrayonThemeEditorWP::content');
-        add_action('wp_ajax_crayon-theme-editor-save', 'CrayonThemeEditorWP::save');
-        add_action('wp_ajax_crayon-theme-editor-delete', 'CrayonThemeEditorWP::delete');
-        add_action('wp_ajax_crayon-theme-editor-duplicate', 'CrayonThemeEditorWP::duplicate');
-        add_action('wp_ajax_crayon-theme-editor-submit', 'CrayonThemeEditorWP::submit');
-        add_action('wp_ajax_crayon-show-posts', 'CrayonSettingsWP::show_posts');
-        add_action('wp_ajax_crayon-show-langs', 'CrayonSettingsWP::show_langs');
-        add_action('wp_ajax_crayon-show-preview', 'CrayonSettingsWP::show_preview');
+        add_action('wp_ajax_nopriv_crayon-tag-editor', 'CrayonTagEditorWP::content');
+        if (is_admin()) {
+            add_action('wp_ajax_crayon-ajax', 'CrayonWP::ajax');
+            add_action('wp_ajax_crayon-theme-editor', 'CrayonThemeEditorWP::content');
+            add_action('wp_ajax_crayon-theme-editor-save', 'CrayonThemeEditorWP::save');
+            add_action('wp_ajax_crayon-theme-editor-delete', 'CrayonThemeEditorWP::delete');
+            add_action('wp_ajax_crayon-theme-editor-duplicate', 'CrayonThemeEditorWP::duplicate');
+            add_action('wp_ajax_crayon-theme-editor-submit', 'CrayonThemeEditorWP::submit');
+            add_action('wp_ajax_crayon-show-posts', 'CrayonSettingsWP::show_posts');
+            add_action('wp_ajax_crayon-show-langs', 'CrayonSettingsWP::show_langs');
+            add_action('wp_ajax_crayon-show-preview', 'CrayonSettingsWP::show_preview');
+        }
     }
 
     public static function ajax() {
@@ -1236,8 +1239,8 @@ if (defined('ABSPATH')) {
             add_action('comment_post', 'CrayonWP::save_comment', 10, 2);
             add_action('edit_comment', 'CrayonWP::save_comment', 10, 2);
         }
-        add_filter('init', 'CrayonWP::init_ajax');
     }
+    add_filter('init', 'CrayonWP::init_ajax');
 }
 
 ?>

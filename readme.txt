@@ -281,6 +281,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * FIXED:
     * jQuery UI is no longer an external dependency; now using wpdialog(). Theme Editor updated to use wpdialog.
     * Inline tags. See: https://github.com/aramkocharyan/crayon-syntax-highlighter/issues/57
+    * Tag Editor didn't work on front end
     * Improved legacy tag conversion functions by removing false positives arising from duplicate regex
     * Slightly faster conversion of legacy by delaying database writes until the end
     * &-quot; is also converted now in HTML

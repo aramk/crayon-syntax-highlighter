@@ -77,8 +77,8 @@ define('CRAYON_CSS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jque
 define('CRAYON_JS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.js');
 define('CRAYON_JS_TINYCOLOR', CRAYON_JS_DIR . 'tinycolor-min.js');
 // TODO rename TE
-define('CRAYON_TE_JS', 'crayon_te.js');
-define('CRAYON_TE_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.class.php');
+define('CRAYON_TAG_EDITOR_JS', 'crayon_tag_editor.js');
+define('CRAYON_TAG_EDITOR_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.class.php');
 // TODO Fix these
 define('CRAYON_TINYMCE_JS', 'crayon_tinymce.js');
 define('CRAYON_QUICKTAGS_JS', 'crayon_qt.js');
