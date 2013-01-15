@@ -16,14 +16,19 @@ class CrayonThemes extends CrayonUserResourceCollection {
 
     function __construct() {
         $this->directory(CRAYON_THEME_PATH);
-        $this->user_directory(CrayonGlobalSettings::upload_path() . CRAYON_THEME_DIR);
         CrayonLog::debug("Setting theme directories");
+        $upload = CrayonGlobalSettings::upload_path();
+        if ($upload) {
+            $this->user_directory($upload . CRAYON_THEME_DIR);
+            if (!is_dir($this->user_directory())) {
+                CrayonGlobalSettings::mkdir($this->user_directory());
+                CrayonLog::debug($this->user_directory(), "THEME DIR");
+            }
+        } else {
+            CrayonLog::syslog("Upload directory is empty: " . $upload);
+        }
         CrayonLog::debug($this->directory());
         CrayonLog::debug($this->user_directory());
-        if (!is_dir($this->user_directory())) {
-            CrayonGlobalSettings::mkdir($this->user_directory());
-            CrayonLog::debug($this->user_directory(), "THEME DIR");
-        }
 		$this->set_default(self::DEFAULT_THEME, self::DEFAULT_THEME_NAME);
 	}
 

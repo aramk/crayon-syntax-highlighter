@@ -1,0 +1,88 @@
+/*
+Name: Github
+Description: Github like color.
+Version: 1.0
+Author: Dai Akatsuka
+URL: http://firn.jp/
+*/
+.crayon-theme-github {
+	margin-bottom: 25px;
+	padding: 5px;
+	background-color: #f8f8ff;
+	font-size: 100%;
+	line-height: 130%;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #dedede !important;
+}
+.crayon-theme-github .crayon-table .crayon-nums {
+	display: none;
+}
+.crayon-theme-github .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-github .crayon-toolbar {
+	background: #DDD !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #BBB !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-github .crayon-pre .c {
+	color: #999 !important;
+}
+.crayon-theme-github .crayon-pre .s {
+	color: #008000 !important;
+}
+.crayon-theme-github .crayon-pre .p {
+	color: #b85c00 !important;
+}
+.crayon-theme-github .crayon-pre .ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-github .crayon-pre .k {
+	color: #800080 !important;
+}
+.crayon-theme-github .crayon-pre .st {
+	color: #800080 !important;
+}
+.crayon-theme-github .crayon-pre .r {
+	color: #800080 !important;
+}
+.crayon-theme-github .crayon-pre .t {
+	color: #800080 !important;
+}
+.crayon-theme-github .crayon-pre .m {
+	color: #800080 !important;
+}
+.crayon-theme-github .crayon-pre .i {
+	color: #000 !important;
+}
+.crayon-theme-github .crayon-pre .e {
+	color: #004ed0 !important;
+}
+.crayon-theme-github .crayon-pre .v {
+	color: #002D7A !important;
+}
+.crayon-theme-github .crayon-pre .cn {
+	color: #ce0000 !important;
+}
+.crayon-theme-github .crayon-pre .o {
+	color: #006fe0 !important;
+}
+.crayon-theme-github .crayon-pre .sy {
+	color: #333 !important;
+}
+.crayon-theme-github .crayon-pre .n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-github .crayon-pre .f {
+	color: #999 !important;
+}
+.crayon-theme-github .crayon-pre .h {
+	color: #006fe0 !important;
+}

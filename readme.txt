@@ -276,7 +276,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * AmigaDOS language
     * Added CoffeeScript thanks to http://firn.jp/crayon-coffeescript
     * Line numbers right border in theme editor
-    * New Themes: Familiar, Idle, Tomorrow, Tomorrow Night
+    * New Themes: Familiar, Idle, Tomorrow, Tomorrow Night, Github
 * FIXED:
     * jQuery UI is no longer an external dependency; now using wpdialog(). Theme Editor updated to use wpdialog.
     * Inline tags. See: https://github.com/aramkocharyan/crayon-syntax-highlighter/issues/57
@@ -287,6 +287,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Minor bug in saving themes causing field name mapping to be ignored.
     * Added missing blank.gif in fancybox
     * MS DOS language fixes
+    * Taken measures to prevent incorrect upload directory creating a folder in root.
     * Theme fixes. 'border' is now split automatically into separate CSS rules.
     * Log uses strval() instead of ob_start() to avoid conflicts with other plugins using ob_start() without ob_end_flush() or similar
 
