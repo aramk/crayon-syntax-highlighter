@@ -1068,7 +1068,7 @@ class Human {
         self::checkbox(array(CrayonSettings::BACKQUOTE, crayon__('Capture `backquotes` as &lt;code&gt;') . self::help_button('http://bit.ly/yFafFL')));
         self::checkbox(array(CrayonSettings::CAPTURE_PRE, crayon__('Capture &lt;pre&gt; tags as Crayons') . self::help_button('http://bit.ly/rRZuzk')));
 
-        echo '<div class="note" style="width: 350px;">', sprintf(crayon__("Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use the %sTag Editor%s instead and convert legacy tags."), '<a href="#" target="_blank">', '</a>', '<a href="#" target="_blank">', '</a>'), '</div>';
+        echo '<div class="note" style="width: 350px;">', sprintf(crayon__("Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use the %sTag Editor%s instead and convert legacy tags."), '<a href="http://ak.net84.net/projects/mini-tags-in-crayon/" target="_blank">', '</a>', '<a href="http://ak.net84.net/projects/crayon-tag-editor/" target="_blank">', '</a>'), '</div>';
         self::checkbox(array(CrayonSettings::CAPTURE_MINI_TAG, crayon__('Capture Mini Tags like [php][/php] as Crayons.') . self::help_button('http://bit.ly/rRZuzk')));
         self::checkbox(array(CrayonSettings::INLINE_TAG_CAPTURE, crayon__('Capture Inline Tags like {php}{/php} inside sentences.') . self::help_button('http://bit.ly/yFafFL')));
         self::checkbox(array(CrayonSettings::PLAIN_TAG, crayon__('Enable [plain][/plain] tag.') . self::help_button('http://bit.ly/rRZuzk')));
@@ -1166,7 +1166,7 @@ class Human {
 				Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
 				Lithuanian (<a href="http://www.host1free.com" target="_blank">Vincent G</a>),
 				Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
-				Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
+				Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>), Slovak (<a href="http://webhostinggeeks.com/blog/">http://webhostinggeeks.com/</a>),
 				Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>),
 				Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
 				Turkish (<a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)';

@@ -786,10 +786,13 @@
             crayon[uid].wrapTimes = 0;
             clearInterval(crayon[uid].wrapTimer);
             crayon[uid].wrapTimer = setInterval(function () {
-                reconsileLines(uid);
-                crayon[uid].wrapTimes++;
-                if (crayon[uid].wrapTimes == 5) {
-                    clearInterval(crayon[uid].wrapTimer);
+                if (crayon[uid].is(':visible')) {
+                    // XXX if hidden the height can't be determined
+                    reconsileLines(uid);
+                    crayon[uid].wrapTimes++;
+                    if (crayon[uid].wrapTimes == 5) {
+                        clearInterval(crayon[uid].wrapTimer);
+                    }
                 }
             }, 200);
         };
