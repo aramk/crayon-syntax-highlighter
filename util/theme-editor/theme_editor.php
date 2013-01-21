@@ -1,6 +1,6 @@
 <?php
 
-class Element {
+class CrayonHTMLElement {
     public $id;
     public $class = '';
     public $tag = 'div';
@@ -48,7 +48,7 @@ class Element {
     }
 }
 
-class Input extends Element {
+class CrayonHTMLInput extends CrayonHTMLElement {
     public $name;
     public $type;
 
@@ -68,7 +68,7 @@ class Input extends Element {
     }
 }
 
-class Select extends Input {
+class CrayonHTMLSelect extends CrayonHTMLInput {
     public $options;
     public $selected = NULL;
 
@@ -107,7 +107,7 @@ class Select extends Input {
     }
 }
 
-class Separator extends Element {
+class CrayonHTMLSeparator extends CrayonHTMLElement {
     public $name = '';
 
     public function __construct($name) {
@@ -116,7 +116,7 @@ class Separator extends Element {
     }
 }
 
-class Title extends Separator {
+class CrayonHTMLTitle extends CrayonHTMLSeparator {
 
 }
 
@@ -175,7 +175,7 @@ class CrayonThemeEditorWP {
             self::$settings = array(
                 // Only things the theme editor needs
                 'cssThemePrefix' => CrayonThemes::CSS_PREFIX,
-                'cssInputPrefix' => Element::CSS_INPUT_PREFIX,
+                'cssInputPrefix' => CrayonHTMLElement::CSS_INPUT_PREFIX,
                 'attribute' => self::ATTRIBUTE,
                 'fields' => self::$infoFields,
                 'fieldsInverse' => self::$infoFieldsInverse,
@@ -208,7 +208,7 @@ class CrayonThemeEditorWP {
                 'submitMessage' => crayon__("Please include this theme in Crayon!"),
                 'submitSucceed' => crayon__("Submit was successful."),
                 'submitFail' => crayon__("Submit failed!"),
-                'borderStyles' => Element::$borderStyles
+                'borderStyles' => CrayonHTMLElement::$borderStyles
             );
         }
     }
@@ -233,11 +233,11 @@ class CrayonThemeEditorWP {
         $str = '<form class="' . self::$settings['prefix'] . '-form"><table>';
         $sepCount = 0;
         foreach ($inputs as $input) {
-            if ($input instanceof Input) {
+            if ($input instanceof CrayonHTMLInput) {
                 $str .= self::formField($input->name, $input);
-            } else if ($input instanceof Separator) {
+            } else if ($input instanceof CrayonHTMLSeparator) {
                 $sepClass = '';
-                if ($input instanceof Title) {
+                if ($input instanceof CrayonHTMLTitle) {
                     $sepClass .= ' title';
                 }
                 if ($sepCount == 0) {
@@ -367,7 +367,7 @@ class CrayonThemeEditorWP {
                     <div id="tabs-1">
                         <?php
                         self::createAttributesForm(array(
-                            new Title($tInformation)
+                            new CrayonHTMLTitle($tInformation)
                         ));
                         ?>
                         <div id="tabs-1-contents"></div>
@@ -396,7 +396,7 @@ class CrayonThemeEditorWP {
                             'f' => crayon__("Faded"),
                             'h' => crayon__("HTML")
                         );
-                        $atts = array(new Title($tHighlighting));
+                        $atts = array(new CrayonHTMLTitle($tHighlighting));
                         foreach ($elems as $class => $name) {
                             $atts[] = array(
                                 $name,
@@ -413,8 +413,8 @@ class CrayonThemeEditorWP {
                         <?php
                         $inline = '-inline';
                         self::createAttributesForm(array(
-                            new Title($tFrame),
-                            new Separator($tNormal),
+                            new CrayonHTMLTitle($tFrame),
+                            new CrayonHTMLSeparator($tNormal),
 //                            self::createAttribute('', 'background', $tBackground),
                             array(
                                 $tBorder,
@@ -422,7 +422,7 @@ class CrayonThemeEditorWP {
                                 self::createAttribute('', 'border-color'),
                                 self::createAttribute('', 'border-style')
                             ),
-                            new Separator($tInline),
+                            new CrayonHTMLSeparator($tInline),
                             self::createAttribute($inline, 'background', $tBackground),
                             array(
                                 $tBorder,
@@ -439,12 +439,12 @@ class CrayonThemeEditorWP {
                         $markedLine = ' .crayon-marked-line';
                         $stripedMarkedLine = ' .crayon-marked-line.crayon-striped-line';
                         self::createAttributesForm(array(
-                            new Title($tLines),
-                            new Separator($tNormal),
+                            new CrayonHTMLTitle($tLines),
+                            new CrayonHTMLSeparator($tNormal),
                             self::createAttribute('', 'background', $tBackground),
-                            new Separator($tStriped),
+                            new CrayonHTMLSeparator($tStriped),
                             self::createAttribute($stripedLine, 'background', $tBackground),
-                            new Separator($tMarked),
+                            new CrayonHTMLSeparator($tMarked),
                             self::createAttribute($markedLine, 'background', $tBackground),
                             array(
                                 $tBorder,
@@ -454,7 +454,7 @@ class CrayonThemeEditorWP {
                             ),
                             self::createAttribute($markedLine . $top, 'border-top-style', $tTopBorder),
                             self::createAttribute($markedLine . $bottom, 'border-bottom-style', $tBottomBorder),
-                            new Separator($tStripedMarked),
+                            new CrayonHTMLSeparator($tStripedMarked),
                             self::createAttribute($stripedMarkedLine, 'background', $tBackground),
                         ));
                         ?>
@@ -466,20 +466,20 @@ class CrayonThemeEditorWP {
                         $markedNum = ' .crayon-marked-num';
                         $stripedMarkedNum = ' .crayon-marked-num.crayon-striped-num';
                         self::createAttributesForm(array(
-                            new Title($tNumbers),
+                            new CrayonHTMLTitle($tNumbers),
                             array(
                                 $tBorderRight,
                                 self::createAttribute($nums, 'border-right-width'),
                                 self::createAttribute($nums, 'border-right-color'),
                                 self::createAttribute($nums, 'border-right-style'),
                             ),
-                            new Separator($tNormal),
+                            new CrayonHTMLSeparator($tNormal),
                             self::createAttribute($nums, 'background', $tBackground),
                             self::createAttribute($nums, 'color', $tText),
-                            new Separator($tStriped),
+                            new CrayonHTMLSeparator($tStriped),
                             self::createAttribute($stripedNum, 'background', $tBackground),
                             self::createAttribute($stripedNum, 'color', $tText),
-                            new Separator($tMarked),
+                            new CrayonHTMLSeparator($tMarked),
                             self::createAttribute($markedNum, 'background', $tBackground),
                             self::createAttribute($markedNum, 'color', $tText),
                             array(
@@ -490,7 +490,7 @@ class CrayonThemeEditorWP {
                             ),
                             self::createAttribute($markedNum.$top, 'border-top-style', $tTopBorder),
                             self::createAttribute($markedNum.$bottom, 'border-bottom-style', $tBottomBorder),
-                            new Separator($tStripedMarked),
+                            new CrayonHTMLSeparator($tStripedMarked),
                             self::createAttribute($stripedMarkedNum, 'background', $tBackground),
                             self::createAttribute($stripedMarkedNum, 'color', $tText),
                         ));
@@ -504,8 +504,8 @@ class CrayonThemeEditorWP {
                         $info = ' .crayon-info';
                         $language = ' .crayon-language';
                         self::createAttributesForm(array(
-                            new Title($tToolbar),
-                            new Separator($tFrame),
+                            new CrayonHTMLTitle($tToolbar),
+                            new CrayonHTMLSeparator($tFrame),
                             self::createAttribute($toolbar, 'background', $tBackground),
                             array(
                                 $tBottomBorder,
@@ -520,14 +520,14 @@ class CrayonThemeEditorWP {
                                 self::createAttribute($title, 'font-style'),
                                 self::createAttribute($title, 'text-decoration')
                             ),
-                            new Separator($tButtons),
+                            new CrayonHTMLSeparator($tButtons),
                             self::createAttribute($button, 'background-color', $tBackground),
                             self::createAttribute($button.$hover, 'background-color', $tHover),
                             self::createAttribute($button.$active, 'background-color', $tActive),
                             self::createAttribute($button.$pressed, 'background-color', $tPressed),
                             self::createAttribute($button.$pressed.$hover, 'background-color', $tHoverPressed),
                             self::createAttribute($button.$pressed.$active, 'background-color', $tActivePressed),
-                            new Separator($tInformation . ' ' . crayon__("(Used for Copy/Paste)")),
+                            new CrayonHTMLSeparator($tInformation . ' ' . crayon__("(Used for Copy/Paste)")),
                             self::createAttribute($info, 'background', $tBackground),
                             array(
                                 $tText,
@@ -542,7 +542,7 @@ class CrayonThemeEditorWP {
                                 self::createAttribute($info, 'border-bottom-color'),
                                 self::createAttribute($info, 'border-bottom-style'),
                             ),
-                            new Separator($tLanguage),
+                            new CrayonHTMLSeparator($tLanguage),
                             array(
                                 $tText,
                                 self::createAttribute($language, 'color'),
@@ -567,9 +567,9 @@ class CrayonThemeEditorWP {
         $group = self::getAttributeGroup($attribute);
         $type = self::getAttributeType($group);
         if ($type == 'select') {
-            $input = new Select($element . '_' . $attribute, $name);
+            $input = new CrayonHTMLSelect($element . '_' . $attribute, $name);
             if ($group == 'border-style') {
-                $input->addOptions(Element::$borderStyles);
+                $input->addOptions(CrayonHTMLElement::$borderStyles);
             } else if ($group == 'float') {
                 $input->addOptions(array(
                     'left',
@@ -613,7 +613,7 @@ class CrayonThemeEditorWP {
                 ));
             }
         } else {
-            $input = new Input($element . '_' . $attribute, $name);
+            $input = new CrayonHTMLInput($element . '_' . $attribute, $name);
         }
         $input->addClass(self::ATTRIBUTE);
         $input->addAttributes(array(
