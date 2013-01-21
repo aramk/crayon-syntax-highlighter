@@ -20,18 +20,6 @@ class CrayonFonts extends CrayonUsedResourceCollection {
 	public function path($id) {
 		return CRAYON_FONT_PATH . "$id.css";
 	}
-
-//	// XXX Override
-//	public function load_process() {
-//		if (!$this->is_state_loading()) {
-//			return;
-//		}
-//		$this->load_resources();
-//		$default = $this->resource_instance(self::DEFAULT_FONT, self::DEFAULT_FONT_NAME);
-//		// If some idiot puts a font with the default font name, this will replace it
-//
-//		$this->add(self::DEFAULT_FONT, $default);
-//	}
 	
 	// XXX Override
 	public function get_url($id) {

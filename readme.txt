@@ -294,6 +294,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * MS DOS language fixes
     * Taken measures to prevent incorrect upload directory creating a folder in root.
     * Theme fixes. 'border' is now split automatically into separate CSS rules.
+    * Monospaced font for Tag Editor
     * Log uses strval() instead of ob_start() to avoid conflicts with other plugins using ob_start() without ob_end_flush() or similar
 
 = 2.0.2 =
