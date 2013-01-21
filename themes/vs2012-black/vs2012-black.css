@@ -1,0 +1,171 @@
+/*
+Name: VS2012 Black
+Description: Visual Studio 2012 Black Theme
+Version: 0.1
+Author: Nikolay Zahariev
+Url: http://nikolayzahariev.com/
+*/
+.crayon-theme-vs2012-black {
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #363232 !important;
+}
+.crayon-theme-vs2012-black-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #1b5b89 !important;
+}
+.crayon-theme-vs2012-black .crayon-table .crayon-nums {
+	background: #363232 !important;
+	color: #1ba2c6 !important;
+}
+.crayon-theme-vs2012-black *::selection {
+	background: transparent !important;
+}
+.crayon-theme-vs2012-black .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-vs2012-black .crayon-striped-line {
+	background: #363232 !important;
+}
+.crayon-theme-vs2012-black .crayon-striped-num {
+	background: #363232 !important;
+	color: #1ba2c6 !important;
+}
+.crayon-theme-vs2012-black .crayon-marked-line {
+	background: #1b5b89 !important;
+	border-width: 1px !important;
+	border-color: #433636 !important;
+}
+.crayon-theme-vs2012-black .crayon-marked-num {
+	color: #1ba2c6 !important;
+	background: #363232 !important;
+	border-width: 1px !important;
+	border-color: #363232 !important;
+}
+.crayon-theme-vs2012-black .crayon-marked-line.crayon-striped-line {
+	background: #363232 !important;
+}
+.crayon-theme-vs2012-black .crayon-marked-num.crayon-striped-num {
+	background: #363232 !important;
+	color: #1ba2c6 !important;
+}
+.crayon-theme-vs2012-black .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-vs2012-black .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-vs2012-black .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-vs2012-black .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-vs2012-black .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-vs2012-black .crayon-toolbar {
+	background: #DDD !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #BBB !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-vs2012-black .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-vs2012-black .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-vs2012-black .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-vs2012-black .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-vs2012-black a.crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-vs2012-black a.crayon-button:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-vs2012-black a.crayon-button.crayon-pressed:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-vs2012-black a.crayon-button.crayon-pressed {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-vs2012-black a.crayon-button.crayon-pressed:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-vs2012-black a.crayon-button:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-vs2012-black .crayon-pre .c {
+	color: #458b45 !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .s {
+	color: #b78686 !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .p {
+	color: #7f7c79 !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .k {
+	color: #94ccfd !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .st {
+	color: #94ccfd !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .r {
+	color: #94ccfd !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .t {
+	color: #94ccfd !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .m {
+	color: #94ccfd !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .i {
+	color: #6bdacc !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .e {
+	color: #ffffff !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .v {
+	color: #e3e8ea !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .cn {
+	color: #ffffff !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .o {
+	color: #ffffff !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .sy {
+	color: #ffffff !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .f {
+	color: #ffffff !important;
+}
+.crayon-theme-vs2012-black .crayon-pre .h {
+	color: #006fe0 !important;
+}

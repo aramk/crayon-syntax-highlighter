@@ -278,7 +278,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * AmigaDOS language
     * Added CoffeeScript thanks to http://firn.jp/crayon-coffeescript
     * Line numbers right border in theme editor
-    * New Themes: Familiar, Idle, Tomorrow, Tomorrow Night, Github
+    * New Themes: Familiar, Idle, Tomorrow, Tomorrow Night, Github, VS2012, VS2012 Black
     * Ability to minimize code
     * Translation to Slovak
 * FIXED:
