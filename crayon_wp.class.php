@@ -213,10 +213,11 @@ class CrayonWP {
     /* Uses the main query */
     public static function wp() {
         CrayonLog::debug('wp (global)');
-
         global $wp_the_query;
-        $posts = $wp_the_query->posts;
-        self::the_posts($posts);
+        if (isset($wp_the_query->posts)) {
+            $posts = $wp_the_query->posts;
+            self::the_posts($posts);
+        }
     }
 
     // TODO put args into an array
@@ -937,7 +938,11 @@ class CrayonWP {
 
     public static function get_posts() {
         $query = new WP_Query(array('post_type' => 'any', 'suppress_filters' => TRUE, 'posts_per_page' => '-1'));
-        return $query->posts;
+        if (isset($query->posts)) {
+            return $query->posts;
+        } else {
+            return array();
+        }
     }
 
     /**

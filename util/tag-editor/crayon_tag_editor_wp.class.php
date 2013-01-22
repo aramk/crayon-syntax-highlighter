@@ -23,8 +23,6 @@ class CrayonTagEditorWP {
                 // XXX This will always need to enqueue, but only runs on front end
                 add_action('wp', 'CrayonTagEditorWP::enqueue_resources');
                 add_filter('tiny_mce_before_init', 'CrayonTagEditorWP::init_tinymce');
-                // Must come after
-                //add_action("wp", 'CrayonSettingsWP::init_js_settings');
                 self::addbuttons();
             }
         }
