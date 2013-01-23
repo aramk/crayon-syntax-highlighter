@@ -1,0 +1,12 @@
+;Coding starts here
+(defun c:lg ( / x_object x_length)
+(vl-load-com)
+(setq x_object (entsel))
+(setq x_object (vlax-Ename->Vla-Object (car x_object)))
+(setq x_length (vlax-curve-getdistatparam x_object 
+               (vlax-curve-getendparam x_object )))
+(alert (strcat "Length = " (rtos x_length)))
+(princ)
+);defun
+(princ)
+;Coding ends here

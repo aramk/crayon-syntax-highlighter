@@ -1,0 +1,11 @@
+function
+integer
+cerror
+array
+error
+float
+hash
+list
+atom
+null
+nil

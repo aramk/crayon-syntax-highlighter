@@ -93,6 +93,7 @@ See the <a href="http://ak.net84.net/projects/crayon-language-file-specification
 * Go
 * Haskell
 * HTML (XML/XHTML)
+* Lisp
 * Lua
 * Microsoft Registry (thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>)
 * MIVA Script
@@ -275,6 +276,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Arduino language
     * LESS language
     * Sass language
+    * Lisp language
     * AmigaDOS language
     * Added CoffeeScript thanks to http://firn.jp/crayon-coffeescript
     * Line numbers right border in theme editor

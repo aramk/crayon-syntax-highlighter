@@ -1,0 +1,19 @@
+### LISP LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Lisp
+    VERSION             1.0
+
+    COMMENT             (;.*?$)|(;\|.*?\|;)
+    STRING              (?<!\\)".*?(?<!\\)"
+    
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            \b(?alt:reserved.txt)\b
+    TYPE                \b(?alt:type.txt)\b
+    KEYWORD             (?<=\()\s*[a-z-]*[a-z]\b
+    
+    IDENTIFIER          [a-z-]*[a-z]
+    CONSTANT            (?default)
+    OPERATOR            (?default)|\(|\)
+    SYMBOL              (?default)

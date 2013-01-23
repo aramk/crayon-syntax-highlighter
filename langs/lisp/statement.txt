@@ -1,0 +1,14 @@
+continue
+dotimes
+return
+dolist
+catch
+throw
+break
+when
+not
+and
+or
+if
+go
+do

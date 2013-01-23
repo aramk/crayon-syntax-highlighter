@@ -1193,9 +1193,6 @@ class Human {
 				<td>' . $translators . '</td>
 		  </tr>
 		  <tr>
-				<td colspan="2">', crayon__("The result of innumerable hours of hard work over many months. It's an ongoing project, keep me motivated!"), '</td>
-		  </tr>
-		  <tr>
 				<td colspan="2">' . $links . '</td>
 		  </tr>
 				</table>';
