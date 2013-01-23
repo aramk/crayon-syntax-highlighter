@@ -412,10 +412,11 @@ class CrayonWP {
         // Search for shortcode in posts
         foreach ($posts as $post) {
             $wp_id = $post->ID;
+            $is_page = $post->post_type == 'page';
             if (!in_array($wp_id, $crayon_posts)) {
                 // If we get query for a page, then that page might have a template and load more posts containing Crayons
                 // By this state, we would be unable to enqueue anything (header already written).
-                if (CrayonGlobalSettings::val(CrayonSettings::SAFE_ENQUEUE) && is_page($wp_id)) {
+                if (CrayonGlobalSettings::val(CrayonSettings::SAFE_ENQUEUE) && $is_page) {
                     CrayonGlobalSettings::set(CrayonSettings::ENQUEUE_THEMES, false);
                     CrayonGlobalSettings::set(CrayonSettings::ENQUEUE_FONTS, false);
                 }
