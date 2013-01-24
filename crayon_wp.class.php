@@ -403,7 +403,6 @@ class CrayonWP {
         CrayonLog::debug('the_posts');
 
         // Whether to enqueue syles/scripts
-        $enqueue = FALSE;
         CrayonSettingsWP::load_settings(TRUE); // We will eventually need more than the settings
 
         self::init_tags_regex();
@@ -447,7 +446,6 @@ class CrayonWP {
             $post->post_content = $captures['content'];
             self::$post_captures[$id_str] = $captures['content'];
             if ($captures['has_captured'] === TRUE) {
-                $enqueue = TRUE;
                 self::$post_queue[$id_str] = array();
                 foreach ($captures['capture'] as $capture_id => $capture_content) {
                     self::$post_queue[$id_str][$capture_id] = $capture_content;
@@ -467,7 +465,6 @@ class CrayonWP {
                     $captures = self::capture_crayons($comment->comment_ID, $comment->comment_content, array(CrayonSettings::DECODE => TRUE));
                     self::$comment_captures[$id_str] = $captures['content'];
                     if ($captures['has_captured'] === TRUE) {
-                        $enqueue = TRUE;
                         self::$comment_queue[$id_str] = array();
                         foreach ($captures['capture'] as $capture_id => $capture_content) {
                             self::$comment_queue[$id_str][$capture_id] = $capture_content;
@@ -475,11 +472,6 @@ class CrayonWP {
                     }
                 }
             }
-        }
-
-        if (!is_admin() && $enqueue && !self::$enqueued) {
-            // Crayons have been found and we enqueue efficiently
-            self::enqueue_resources();
         }
 
         return $posts;
@@ -496,16 +488,16 @@ class CrayonWP {
     }
 
     private static function enqueue_resources() {
-        CrayonLog::debug('enqueue');
-        global $CRAYON_VERSION;
-        wp_enqueue_style('crayon_style', plugins_url(CRAYON_STYLE, __FILE__), array(), $CRAYON_VERSION);
-        wp_enqueue_style('crayon_global_style', plugins_url(CRAYON_STYLE_GLOBAL, __FILE__), array(), $CRAYON_VERSION);
-        wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
-        CrayonSettingsWP::other_scripts();
-// 		wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS, __FILE__), array('jquery', 'crayon_util_js'), $CRAYON_VERSION);
-// 		wp_enqueue_script('crayon_jquery_popup', plugins_url(CRAYON_JQUERY_POPUP, __FILE__), array('jquery'), $CRAYON_VERSION);
-        CrayonSettingsWP::init_js_settings();
-        self::$enqueued = TRUE;
+        if (!self::$enqueued) {
+            CrayonLog::debug('enqueue');
+            global $CRAYON_VERSION;
+            wp_enqueue_style('crayon_style', plugins_url(CRAYON_STYLE, __FILE__), array(), $CRAYON_VERSION);
+            wp_enqueue_style('crayon_global_style', plugins_url(CRAYON_STYLE_GLOBAL, __FILE__), array(), $CRAYON_VERSION);
+            wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
+            CrayonSettingsWP::other_scripts();
+            CrayonSettingsWP::init_js_settings();
+            self::$enqueued = TRUE;
+        }
     }
 
     private static function init_tags_regex($force = FALSE, $flags = NULL, &$tags_regex = NULL) {
@@ -623,6 +615,8 @@ class CrayonWP {
 
         // Find if this post has Crayons
         if (array_key_exists($post_id, self::$post_queue)) {
+            self::enqueue_resources();
+
             // XXX We want the plain post content, no formatting
             $the_content_original = $the_content;
 
