@@ -298,6 +298,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Theme fixes. 'border' is now split automatically into separate CSS rules.
     * Monospaced font for Tag Editor
     * "Attempt to load Crayon's CSS and JavaScript only when needed" setting improvements
+    * Logging improvements
     * Unchecked property: Notice: Undefined property: WP_Query::$post
     * Theme Editor PHP classes renamed to avoid conflicts
     * Log uses strval() instead of ob_start() to avoid conflicts with other plugins using ob_start() without ob_end_flush() or similar

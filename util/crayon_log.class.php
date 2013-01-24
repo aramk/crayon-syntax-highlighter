@@ -30,14 +30,7 @@ class CrayonLog {
 					}
 				}
 				// Capture variable dump
-//				ob_start();
-//				var_dump($var);
-//				$buffer = trim(strip_tags(ob_get_clean()));
-                $buffer = trim(strip_tags(strval($var)));
-				
-				// Remove stupid formatting from wampserver
-				$buffer = str_replace('&apos;', '"', $buffer);
-				$buffer = preg_replace('#^string\([^\)]*\)#mi', 'str', $buffer);
+                $buffer = trim(strip_tags(var_export($var, true)));
 				$title = (!empty($title) ? " [$title]" : '');
 
 				// Remove absolute path to plugin directory from buffer
@@ -55,8 +48,7 @@ class CrayonLog {
 				clearstatcache();
 				fwrite(self::$file, $write, CRAYON_LOG_MAX_SIZE);
 			} catch (Exception $e) {
-				// Ignore fatal errors
-
+				// Ignore fatal errors during logging
 			}
 		}
 	}

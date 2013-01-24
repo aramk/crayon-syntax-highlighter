@@ -133,112 +133,112 @@ require_once (CRAYON_LOG_PHP);
 
 // Check for forwardslash/backslash in folder path to structure paths
 function crayon_s($url = '') {
-	$url = strval($url);
-	if (!empty($url) && !preg_match('#(\\\\|/)$#', $url)) {
-		return $url . '/';
-	} else if ( empty($url) ) {
-		return '/';
-	} else {
-		return $url;
-	}
+    $url = strval($url);
+    if (!empty($url) && !preg_match('#(\\\\|/)$#', $url)) {
+        return $url . '/';
+    } else if (empty($url)) {
+        return '/';
+    } else {
+        return $url;
+    }
 }
 
 // Returns path using forward slashes, slash added at the end
 function crayon_pf($url, $slash = TRUE) {
-	$url = trim(strval($url));
-	if ($slash) {
-		$url = crayon_s($url);
-	}
-	return str_replace('\\', '/', $url);
+    $url = trim(strval($url));
+    if ($slash) {
+        $url = crayon_s($url);
+    }
+    return str_replace('\\', '/', $url);
 }
-	
+
 // Returns path using back slashes
 function crayon_pb($url) {
-	return str_replace('/', '\\', crayon_s(trim(strval($url))));
+    return str_replace('/', '\\', crayon_s(trim(strval($url))));
 }
 
 // Get/Set plugin information
 function crayon_set_info($info_array) {
-	global $CRAYON_VERSION, $CRAYON_DATE, $CRAYON_AUTHOR, $CRAYON_WEBSITE;
-	if (!is_array($info_array)) {
-		return;
-	}
-	crayon_set_info_key('Version', $info_array, $CRAYON_VERSION);
-	if (($date = @filemtime(CRAYON_README_FILE)) !== FALSE) {
-		$CRAYON_DATE = date("jS F, Y", $date);
-	}
-	crayon_set_info_key('AuthorName', $info_array, $CRAYON_A);
-	crayon_set_info_key('PluginURI', $info_array, $CRAYON_WEBSITE);
+    global $CRAYON_VERSION, $CRAYON_DATE, $CRAYON_AUTHOR, $CRAYON_WEBSITE;
+    if (!is_array($info_array)) {
+        return;
+    }
+    crayon_set_info_key('Version', $info_array, $CRAYON_VERSION);
+    if (($date = @filemtime(CRAYON_README_FILE)) !== FALSE) {
+        $CRAYON_DATE = date("jS F, Y", $date);
+    }
+    crayon_set_info_key('AuthorName', $info_array, $CRAYON_A);
+    crayon_set_info_key('PluginURI', $info_array, $CRAYON_WEBSITE);
 }
 
 function crayon_set_info_key($key, $array, &$info) {
-	if (array_key_exists($key, $array)) {
-		$info = $array[$key];
-	} else {
-		return FALSE;
-	}
+    if (array_key_exists($key, $array)) {
+        $info = $array[$key];
+    } else {
+        return FALSE;
+    }
 }
 
 function crayon_vargs(&$var, $default) {
-	$var = isset($var) ? $var: $default;
+    $var = isset($var) ? $var : $default;
 }
 
 // Checks if the input is a valid PHP file and matches the $valid filename
 function crayon_is_php_file($filepath, $valid) {
-	$path = pathinfo(crayon_pf($filepath));
-	return is_file($filepath) && $path['extension'] === 'php' && $path['filename'] === $valid;
+    $path = pathinfo(crayon_pf($filepath));
+    return is_file($filepath) && $path['extension'] === 'php' && $path['filename'] === $valid;
 }
 
 // Stops the script if crayon_is_php_file() returns false or a remote path is given
 function crayon_die_if_not_php($filepath, $valid) {
-	if (!crayon_is_php_file($filepath, $valid) || crayon_is_path_url($filepath)) {
-		die("[ERROR] '$filepath' is not a valid PHP file for '$valid'");
-	}
+    if (!crayon_is_php_file($filepath, $valid) || crayon_is_path_url($filepath)) {
+        die("[ERROR] '$filepath' is not a valid PHP file for '$valid'");
+    }
 }
 
 function crayon_is_path_url($path) {
-	$parts = parse_url($path);
-	return isset($parts['scheme']) && strlen($parts['scheme']) > 1;
+    $parts = parse_url($path);
+    return isset($parts['scheme']) && strlen($parts['scheme']) > 1;
 }
 
 // LANGUAGE TRANSLATION FUNCTIONS
 
 function crayon_load_plugin_textdomain() {
-	if (function_exists('load_plugin_textdomain')) {
-		load_plugin_textdomain(CRAYON_DOMAIN, false, CRAYON_DIR.CRAYON_TRANS_DIR);
-	}
+    if (function_exists('load_plugin_textdomain')) {
+        load_plugin_textdomain(CRAYON_DOMAIN, false, CRAYON_DIR . CRAYON_TRANS_DIR);
+    }
 }
 
 function crayon__($text) {
-	if (function_exists('__')) {
-		return __($text, CRAYON_DOMAIN);
-	} else {
-		return $text;
-	}
+    if (function_exists('__')) {
+        return __($text, CRAYON_DOMAIN);
+    } else {
+        return $text;
+    }
 }
 
 function crayon_e($text) {
-	if (function_exists('_e')) {
-		_e($text, CRAYON_DOMAIN);
-	} else {
-		echo $text;
-	}
+    if (function_exists('_e')) {
+        _e($text, CRAYON_DOMAIN);
+    } else {
+        echo $text;
+    }
 }
 
 function crayon_n($singular, $plural, $count) {
-	if (function_exists('_n')) {
-		return _n($singular, $plural, $count, CRAYON_DOMAIN);
-	} else {
-		return $count > 1 ? $plural : $singular;
-	}
+    if (function_exists('_n')) {
+        return _n($singular, $plural, $count, CRAYON_DOMAIN);
+    } else {
+        return $count > 1 ? $plural : $singular;
+    }
 }
 
 function crayon_x($text, $context) {
-	if (function_exists('_x')) {
-		return _x($text, $context, CRAYON_DOMAIN);
-	} else {
-		return $text;
-	}
+    if (function_exists('_x')) {
+        return _x($text, $context, CRAYON_DOMAIN);
+    } else {
+        return $text;
+    }
 }
 
 ?>

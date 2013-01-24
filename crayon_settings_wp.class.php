@@ -244,6 +244,7 @@ class CrayonSettingsWP {
             CrayonGlobalSettings::site_path(ABSPATH);
             CrayonGlobalSettings::plugin_path(plugins_url('', __FILE__));
             $upload = wp_upload_dir();
+            CrayonLog::debug($upload, "WP UPLOAD FUNCTION");
             CrayonGlobalSettings::upload_path(CrayonUtil::path_slash($upload['basedir']) . CRAYON_DIR);
             CrayonGlobalSettings::upload_url($upload['baseurl'] . '/' . CRAYON_DIR);
             CrayonLog::debug(CrayonGlobalSettings::upload_path(), "UPLOAD PATH");
