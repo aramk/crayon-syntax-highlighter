@@ -1,6 +1,6 @@
 /**
- * CSS-JSON Converter for JavaScript, v.2.0 By Aram Kocharyan,
- * http://aramk.com/ Converts CSS to JSON and back.
+ * CSS-JSON Converter for JavaScript, v.2.0 By Aram Kocharyan, http://aramk.com/
+ * Converts CSS to JSON and back.
  */
 
 var CSSJSON = new function() {
