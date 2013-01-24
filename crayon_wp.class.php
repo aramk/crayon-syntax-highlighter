@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Crayon Syntax Highlighter
-Plugin URI: http://ak.net84.net/projects/crayon-syntax-highlighter
+Plugin URI: http://aramk.com/projects/crayon-syntax-highlighter
 Description: Supports multiple languages, themes, highlighting from a URL, local file or post text.
 Version: _2.1.0_beta
 Author: Aram Kocharyan
-Author URI: http://ak.net84.net/
+Author URI: http://aramk.com/
 Text Domain: crayon-syntax-highlighter
 Domain Path: /trans/
 License: GPL2

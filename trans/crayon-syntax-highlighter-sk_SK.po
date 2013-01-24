@@ -494,8 +494,8 @@ msgstr "Pastelka Syntax Highlighter"
 # @ crayon-syntax-highlighter
 #. translators: plugin header field 'AuthorURI'
 #: crayon_wp.class.php:0
-msgid "http://ak.net84.net/"
-msgstr "http://Ak.net84.net/"
+msgid "http://aramk.com/"
+msgstr "http://aramk.com/"
 
 # @ crayon-syntax-highlighter
 #. translators: plugin header field 'Author'
@@ -506,8 +506,8 @@ msgstr "Aram Kocharyan"
 # @ crayon-syntax-highlighter
 #. translators: plugin header field 'PluginURI'
 #: crayon_wp.class.php:0
-msgid "http://ak.net84.net/projects/crayon-syntax-highlighter"
-msgstr "http://Ak.net84.net/projects/Crayon-syntax-Highlighter"
+msgid "http://aramk.com/projects/crayon-syntax-highlighter"
+msgstr "http://aramk.com/projects/Crayon-syntax-Highlighter"
 
 # @ crayon-syntax-highlighter
 #. translators: plugin header field 'Description'

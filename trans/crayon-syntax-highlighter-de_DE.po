@@ -506,7 +506,7 @@ msgstr ""
 #. translators: plugin header field 'AuthorURI'
 #: crayon_wp.class.php:0
 #@ crayon-syntax-highlighter
-msgid "http://ak.net84.net/"
+msgid "http://aramk.com/"
 msgstr ""
 
 #. translators: plugin header field 'Author'
@@ -518,7 +518,7 @@ msgstr ""
 #. translators: plugin header field 'PluginURI'
 #: crayon_wp.class.php:0
 #@ crayon-syntax-highlighter
-msgid "http://ak.net84.net/projects/crayon-syntax-highlighter"
+msgid "http://aramk.com/projects/crayon-syntax-highlighter"
 msgstr ""
 
 #. translators: plugin header field 'Description'

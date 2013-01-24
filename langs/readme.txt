@@ -1,6 +1,6 @@
 ====================================================================================================
     A QUICK HOW-TO ABOUT CRAYON LANGUAGE FILES v.1.0
-    For updated info, visit http://ak.net84.net/ or check out twitter.com/crayonsyntax
+    For updated info, visit http://aramk.com/ or check out twitter.com/crayonsyntax
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------

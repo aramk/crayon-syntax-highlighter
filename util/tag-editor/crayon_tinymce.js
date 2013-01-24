@@ -154,7 +154,7 @@
                     return {
                         longname: 'Crayon Syntax Highlighter',
                         author: 'Aram Kocharyan',
-                        authorurl: 'http://ak.net84.net/',
+                        authorurl: 'http://aramk.com/',
                         infourl: 'http://bit.ly/crayonsyntax/',
                         version: "1.0"
                     };
