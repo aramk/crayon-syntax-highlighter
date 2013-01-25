@@ -3,7 +3,7 @@ require_once ('global.php');
 require_once (CRAYON_RESOURCE_PHP);
 
 /* Manages fonts once they are loaded. */
-class CrayonFonts extends CrayonUsedResourceCollection {
+class CrayonFonts extends CrayonUserResourceCollection {
 	// Properties and Constants ===============================================
 
 	const DEFAULT_FONT = 'monaco';
@@ -13,17 +13,24 @@ class CrayonFonts extends CrayonUsedResourceCollection {
 
 	function __construct() {
 		$this->set_default(self::DEFAULT_FONT, self::DEFAULT_FONT_NAME);
-		$this->directory(CRAYON_FONT_PATH);
+        $this->directory(CRAYON_FONT_PATH);
+        $this->relative_directory(CRAYON_FONT_DIR);
+        $this->extension('css');
+
+        CrayonLog::debug("Setting font directories");
+        $upload = CrayonGlobalSettings::upload_path();
+        if ($upload) {
+            $this->user_directory($upload . CRAYON_FONT_DIR);
+            if (!is_dir($this->user_directory())) {
+                CrayonGlobalSettings::mkdir($this->user_directory());
+                CrayonLog::debug($this->user_directory(), "THEME DIR");
+            }
+        } else {
+            CrayonLog::syslog("Upload directory is empty: " . $upload);
+        }
+        CrayonLog::debug($this->directory());
+        CrayonLog::debug($this->user_directory());
 	}
 
-	// XXX Override
-	public function path($id) {
-		return CRAYON_FONT_PATH . "$id.css";
-	}
-	
-	// XXX Override
-	public function get_url($id) {
-		return CrayonGlobalSettings::plugin_path() . CrayonUtil::pathf(CRAYON_FONT_DIR) . $id . '.css';
-	}
 }
 ?>

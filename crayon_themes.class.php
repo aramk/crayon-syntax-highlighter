@@ -15,7 +15,11 @@ class CrayonThemes extends CrayonUserResourceCollection {
     // Methods ================================================================
 
     function __construct() {
+        $this->set_default(self::DEFAULT_THEME, self::DEFAULT_THEME_NAME);
         $this->directory(CRAYON_THEME_PATH);
+        $this->relative_directory(CRAYON_THEME_DIR);
+        $this->extension('css');
+
         CrayonLog::debug("Setting theme directories");
         $upload = CrayonGlobalSettings::upload_path();
         if ($upload) {
@@ -29,54 +33,11 @@ class CrayonThemes extends CrayonUserResourceCollection {
         }
         CrayonLog::debug($this->directory());
         CrayonLog::debug($this->user_directory());
-		$this->set_default(self::DEFAULT_THEME, self::DEFAULT_THEME_NAME);
 	}
 
     // XXX Override
-    public function path($id, $user = NULL) {
-        return $this->dirpath($id, $user) . "$id.css";
-    }
-
-    public function dirpath($id, $user = NULL) {
-        $path = NULL;
-        if ($user === NULL) {
-            if ($this->is_state_loading()) {
-                // We seem to be loading resources - use current directory
-                $user = $this->current_directory() == $this->user_directory();
-            } else {
-                $theme = $this->get($id);
-                if ($theme) {
-                    $user = $theme->user();
-                } else {
-                    $user = FALSE;
-                }
-            }
-        }
-        $path = $user ? $this->user_directory() : $this->directory();
-        return CrayonUtil::path_slash($path . $id);
-    }
-
-    // XXX Override
-    public function get_url($id, $user = NULL) {
-        if ($user === NULL) {
-            if ($this->is_state_loading()) {
-                // We seem to be loading resources - use current directory
-                $user = $this->current_directory() == $this->user_directory();
-            } else {
-                $theme = $this->get($id);
-                if ($theme) {
-                    $user = $theme->user();
-                } else {
-                    $user = FALSE;
-                }
-            }
-        }
-        return self::dir_url($user) . $id . '/' . $id . '.css';
-    }
-
-    public static function dir_url($user = FALSE) {
-        $path = $user ? CrayonGlobalSettings::upload_url() : CrayonGlobalSettings::plugin_path();
-        return $path . CrayonUtil::pathf(CRAYON_THEME_DIR);
+    public function filename($id, $user = NULL) {
+        return CrayonUtil::path_slash($id) . parent::filename($id, $user);
     }
 
 }

@@ -238,6 +238,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.1.1 =
 * ADDED:
     * Arduino IDE theme thanks to LukaszWiecek (http://wordpress.org/support/topic/arduino-code-support)
+    * User Fonts can be added to wp-content/crayon-syntax-highlighter/uploads/fonts/somefont.css
 * FIXED:
     * Arduino language updates thanks to LukaszWiecek (http://wordpress.org/support/topic/arduino-code-support)
 
