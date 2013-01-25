@@ -8,7 +8,7 @@
     VERSION             1.1
 
     COMMENT             (#.*?$)
-    STRING              (?:(?<!\\)""".*?(?<!\\)""")|(?:(?<!\\)'''.*?(?<!\\)''')|((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)')
+    STRING              (?:(?<!\\)""".*?(?<!\\)""")|(?:(?<!\\)'''.*?(?<!\\)''')|(?default)
     
     FUNCTION:KEYWORD    \b(?alt:function.txt)\b
     MODULE:KEYWORD      \b(?alt:module.txt)\b
