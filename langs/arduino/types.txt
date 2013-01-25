@@ -1,0 +1,13 @@
+void
+boolean
+char
+unsigned
+byte
+int
+word
+long
+float
+double
+string
+String
+array

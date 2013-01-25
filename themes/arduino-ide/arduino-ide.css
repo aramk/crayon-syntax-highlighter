@@ -1,0 +1,171 @@
+/*
+Name: Arduino IDE
+Description: Version: 1.0
+Author: Łukasz Więcek
+Url: http://majsterkowo.pl
+*/
+.crayon-theme-arduino-ide {
+	border-width: 1px !important;
+	text-shadow: none !important;
+	background: #fdfdfd !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+}
+.crayon-theme-arduino-ide-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	background: #f9f9f9 !important;
+	border-style: solid !important;
+}
+.crayon-theme-arduino-ide .crayon-table .crayon-nums {
+	background: #fdfdfd !important;
+	color: #d4d4d4 !important;
+}
+.crayon-theme-arduino-ide *::selection {
+	background: transparent !important;
+}
+.crayon-theme-arduino-ide .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-arduino-ide .crayon-striped-line {
+	background: #fafafa !important;
+}
+.crayon-theme-arduino-ide .crayon-striped-num {
+	background: #fafafa !important;
+	color: #d4d4d4 !important;
+}
+.crayon-theme-arduino-ide .crayon-marked-line {
+	border-width: 1px !important;
+	border-color: #f9f9f9 !important;
+	background: #f0f0f0 !important;
+}
+.crayon-theme-arduino-ide .crayon-marked-num {
+	color: #d4d4d4 !important;
+	background: #f0f0f0 !important;
+	border-width: 1px !important;
+	border-color: #f9f9f9 !important;
+}
+.crayon-theme-arduino-ide .crayon-marked-line.crayon-striped-line {
+	background: #ececec !important;
+}
+.crayon-theme-arduino-ide .crayon-marked-num.crayon-striped-num {
+	background: #ececec !important;
+	color: #d4d4d4 !important;
+}
+.crayon-theme-arduino-ide .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-arduino-ide .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-arduino-ide .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-arduino-ide .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-arduino-ide .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-arduino-ide .crayon-toolbar {
+	background: #eeeeee !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #dddddd !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-arduino-ide .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-arduino-ide .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-arduino-ide .crayon-title {
+	color: #999999 !important;
+}
+.crayon-theme-arduino-ide .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-arduino-ide a.crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-arduino-ide a.crayon-button:hover {
+	background-color: #dddddd !important;
+	color: #666;
+}
+.crayon-theme-arduino-ide a.crayon-button.crayon-pressed:hover {
+	background-color: #eeeeee !important;
+	color: #666;
+}
+.crayon-theme-arduino-ide a.crayon-button.crayon-pressed {
+	background-color: #dddddd !important;
+	color: #FFF;
+}
+.crayon-theme-arduino-ide a.crayon-button.crayon-pressed:active {
+	background-color: #dddddd !important;
+	color: #FFF;
+}
+.crayon-theme-arduino-ide a.crayon-button:active {
+	background-color: #dddddd !important;
+	color: #FFF;
+}
+.crayon-theme-arduino-ide .crayon-pre .c {
+	color: #888888 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .s {
+	color: #006699 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .p {
+	color: #222222 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .ta {
+	color: #e91e1e !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .k {
+	color: #006699 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .st {
+	color: #cc6600 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .r {
+	color: #cc6600 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .t {
+	color: #CC6600 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .m {
+	color: #cc6600 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .i {
+	color: #222222 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .e {
+	color: #cc6600 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .v {
+	color: #222222 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .cn {
+	color: #222222 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .o {
+	color: #222222 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .sy {
+	color: #333 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .f {
+	color: #999 !important;
+}
+.crayon-theme-arduino-ide .crayon-pre .h {
+	color: #006fe0 !important;
+}

@@ -271,6 +271,12 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.1.1 =
+* ADDED:
+    * Arduino IDE theme thanks to LukaszWiecek (http://wordpress.org/support/topic/arduino-code-support)
+* FIXED:
+    * Arduino language updates thanks to LukaszWiecek (http://wordpress.org/support/topic/arduino-code-support)
+
 = 2.1.0 =
 * ADDED:
     * Arduino language

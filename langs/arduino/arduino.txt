@@ -8,13 +8,15 @@
     COMMENT             (?default)
     PREPROCESSOR		(?default)
     STRING              (?default)
+
+    KEYWORD             \b(?alt:keywords.txt)\b
     
-    STATEMENT           (?default)|\b(?alt:statement.txt)\b
+    STATEMENT           \b(?alt:statement.txt)\b
     RESERVED            (?default)|\b(?alt:reserved.txt)\b|\b(?alt:reserved2.txt)\b
-    TYPE                (?default)
+    TYPE                \b(?alt:types.txt)\b
     MODIFIER            (?default)|\b(?alt:modifier.txt)\b
     
-    ENTITY              (?default)
+    ENTITY              \b(?alt:enity.txt)\b
     VARIABLE            (?default)
     CONSTANT            ((?-i)\b[A-Z_]*\b(?i))|((?default))
     IDENTIFIER          (?default)
