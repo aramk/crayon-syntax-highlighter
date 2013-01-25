@@ -219,43 +219,7 @@ Thanks to all those who donate to my project, your support keeps the Crayons goi
 
 == Frequently Asked Questions ==
 
-= How do I use the Tag Editor? =
-
-The <a href="http://aramk.com/projects/crayon-tag-editor/" target="_blank">Tag Editor</a> provides a dialog box to add Crayons easily.
-
-= How do I use it manually? =
-
-<code>[crayon lang="php"] your code [/crayon]</code>
-<code>[crayon url="http://example.com/code.txt" /]</code>
-<code>[crayon url="/relative-path-added-to-local-path-defined-in-settings/code.java" /]</code>
-
-You can use &lt;pre&gt;:
-
-<code>&lt;pre lang="php"&gt; your code &lt;/pre&gt;</code>
-
-You can use an HTML5 compliant &lt;pre&gt; (recommended):
-
-<code>&lt;pre class="lang:php mark:1-4,3" title="some title"&gt; your code &lt;/pre&gt;</code>
-
-You can also use Mini Tags:
-
-<code>[php theme="twilight"]your code[/php]</code>
-
-<code>[php url="https://raw.github.com/somefile.php" /]</code>
-
-Please see the <a href="http://aramk.com/projects/crayon-syntax-highlighter/" target="_blank">documentation</a> for more details.
-
-= Why are the controls not working? =
-
-Make sure jQuery is included in your theme ONCE and before all its dependents (see Installation).
-
-= Why am I only seeing [crayon-3ffr7fa34a321/]? =
-
-Your theme is being naughty. Find where it prints the content/excerpt on that page in the PHP and make sure to add this line before printing:
-
-$output = apply_filters('the_content', $output);
-
-This ensures that the content can be filtered by plugins, such as Crayon. Otherwise, Crayon detects and creates the code but can't replace those funny looking tags in the content.
+Please see the <a href="http://aramk.com/projects/crayon-syntax-highlighter/" target="_blank">documentation</a> for all the details.
 
 = Support =
 
