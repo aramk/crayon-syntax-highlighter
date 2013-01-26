@@ -24,17 +24,12 @@
 		var s, gs, util;
 		
 		// CSS
-		var dialog, code, clear, submit;
+		var dialog, code, clear, submit, cancel;
 		
 		base.init = function() {
 			s = CrayonTagEditorSettings;
 			gs = CrayonSyntaxSettings;
 			util = CrayonUtil;
-			
-			$(s.cancel_css).live('click', function () {
-				$.crayonFancybox.close();
-				return false;
-			});
 		};
 		
 		base.bind = function(button) {
@@ -44,7 +39,6 @@
 			}
 			
 			base.loadDialog();
-			util.initFancybox();
 			$(button).crayonFancybox({
         		href : s.content_css,
         		margin : [40,10,40,10],
@@ -79,7 +73,9 @@
 	    	} else {
 	    		return;
 	    	}
-	    	
+
+            util.initFancybox();
+
 	        // Load the editor content 
             CrayonUtil.getAJAX({action : 'crayon-tag-editor', is_admin : gs.is_admin}, function(data) {
 	        	dialog = $('<div id="'+s.css+'"></div>');
@@ -89,6 +85,7 @@
 	        	base.setOrigValues();
 	        	
 	        	submit = dialog.find(s.submit_css);
+                cancel = dialog.find(s.cancel_css);
 	        	
 	        	code = $(s.code_css);
 	        	clear = $('#crayon-te-clear');
@@ -204,15 +201,22 @@
 	    	outputHTML = args.output;
 	    	editor_name = args.editor_str;
 			var currNode = args.node;
+			var currNode = args.node;
 			is_inline = false;
 			
 	    	// Unbind submit
 	    	submit.unbind();
-	    	submit.click(function() {
+	    	submit.click(function(e) {
 	    		base.submitButton();
-	    		return false;
+                e.preventDefault();
 	    	});
 	    	base.setSubmitText(s.submit_add);
+
+            cancel.unbind();
+            cancel.click(function (e) {
+                base.hide();
+                e.preventDefault();
+            });
 			
 			if (base.isCrayon(currNode)) {
 				currCrayon = $(currNode); 

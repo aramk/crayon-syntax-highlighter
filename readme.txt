@@ -242,6 +242,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * FIXED:
     * Issues with resource management, preventing loading of user CSS themes and performing theme editor functions
     * C#, C++ id issues preventing them loading
+    * Tag Editor duplicate loading issue prevented close dialog on HTML view
     * Arduino language updates thanks to LukaszWiecek (http://wordpress.org/support/topic/arduino-code-support)
 
 = 2.1.0 =
