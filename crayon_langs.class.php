@@ -321,6 +321,12 @@ class CrayonLang extends CrayonVersionResource {
 		$this->modes = CrayonParser::modes();
 	}
 
+	// Override
+	function clean_id($id) {
+        $id = CrayonUtil::space_to_hyphen( strtolower(trim($id)) );
+        return preg_replace('/[^\w-+#]/msi', '', $id);
+	}
+
 	function ext($ext = NULL) {
 		if ($ext === NULL) {
 			return $this->ext;

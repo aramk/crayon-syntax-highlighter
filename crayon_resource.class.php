@@ -275,7 +275,7 @@ class CrayonUsedResourceCollection extends CrayonResourceCollection {
 	public function resource_instance($id, $name = NULL) {
 		return new CrayonUsedResource($id, $name);
 	}
-	
+
 	public function get_used_css() {
 		$used = $this->get_used();
 		$css = array();
@@ -336,7 +336,7 @@ class CrayonUserResourceCollection extends CrayonUsedResourceCollection {
         return $this->curr_dir;
     }
 
-    public function dir_is_user($id, $user) {
+    public function dir_is_user($id, $user = NULL) {
         if ($user === NULL) {
             if ($this->is_state_loading()) {
                 // We seem to be loading resources - use current directory
@@ -356,6 +356,11 @@ class CrayonUserResourceCollection extends CrayonUsedResourceCollection {
     public function dirpath($user = NULL) {
         $path = $user ? $this->user_directory() : $this->directory();
         return CrayonUtil::path_slash($path);
+    }
+
+    public function dirpath_for_id($id, $user = NULL) {
+        $user = $this->dir_is_user($id, $user);
+        return $this->dirpath($user) . $id;
     }
 
     public function dirurl($user = NULL) {
@@ -386,7 +391,7 @@ class CrayonResource {
 	private $name = '';
 
 	function __construct($id, $name = NULL) {
-		$id = self::clean_id($id);
+		$id = $this->clean_id($id);
 		CrayonUtil::str($this->id, $id);
 		( empty($name) ) ? $this->name( $this->clean_name($this->id) ) : $this->name($name);
 	}
@@ -407,14 +412,12 @@ class CrayonResource {
 		}
 	}
 	
-	// Override
-	static function clean_id($id) {
+	function clean_id($id) {
         $id = CrayonUtil::space_to_hyphen( strtolower(trim($id)) );
         return preg_replace('#[^\w-]#msi', '', $id);
 	}
 	
-	// Override
-	static function clean_name($id) {
+	function clean_name($id) {
 		$id = CrayonUtil::hyphen_to_space( strtolower(trim($id)) );
 		return CrayonUtil::ucwords($id);
 	}

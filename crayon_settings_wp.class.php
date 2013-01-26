@@ -149,8 +149,8 @@ class CrayonSettingsWP {
                 'stockThemes' => $stockThemes,
                 'userThemes' => $userThemes,
                 'defaultTheme' => CrayonThemes::DEFAULT_THEME,
-                'themesURL' => CrayonResources::themes()->dirurl(''),
-                'userThemesURL' => CrayonResources::themes()->dirurl('', true),
+                'themesURL' => CrayonResources::themes()->dirurl(false),
+                'userThemesURL' => CrayonResources::themes()->dirurl(true),
                 'sampleCode' => self::SAMPLE_CODE,
                 'dialogFunction' => 'wpdialog'
             );

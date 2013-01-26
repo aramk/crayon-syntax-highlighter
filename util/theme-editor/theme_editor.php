@@ -648,11 +648,13 @@ class CrayonThemeEditorWP {
             // If in DEBUG mode, then allow editing stock themes.
             $user = $oldTheme !== NULL && $allow_edit_stock_theme ? $oldTheme->user() : TRUE;
             $oldPath = CrayonResources::themes()->path($oldID);
-            $oldDir = CrayonResources::themes()->dirpath($oldID);
-            $newID = CrayonResource::clean_id($name);
-            $name = CrayonResource::clean_name($newID);
+            $oldDir = CrayonResources::themes()->dirpath_for_id($oldID);
+            // Create an instance to use functions, since late static binding is only available in 5.3 (PHP kinda sucks)
+            $theme = CrayonResources::themes()->resource_instance('');
+            $newID = $theme->clean_id($name);
+            $name = $theme->clean_name($newID);
             $newPath = CrayonResources::themes()->path($newID, $user);
-            $newDir = CrayonResources::themes()->dirpath($newID, $user);
+            $newDir = CrayonResources::themes()->dirpath_for_id($newID, $user);
 
             $exists = CrayonResources::themes()->is_loaded($newID) || (is_file($newPath) && is_file($oldPath));
             if ($exists && $oldPath != $newPath) {
@@ -668,17 +670,15 @@ class CrayonThemeEditorWP {
             }
 
             // Create the new path if needed
-            if (!is_file($newPath)) {
-                if (!is_dir($newDir)) {
-                    wp_mkdir_p($newDir);
-                    $imageSrc = $oldDir . 'images';
-                    if (is_dir($imageSrc)) {
-                        try {
-                            // Copy image folder
-                            CrayonUtil::copyDir($imageSrc, $newDir . 'images', 'wp_mkdir_p');
-                        } catch (Exception $e) {
-                            CrayonLog::syslog($e->getMessage(), "THEME SAVE");
-                        }
+            if (!is_dir($newDir)) {
+                wp_mkdir_p($newDir);
+                $imageSrc = $oldDir . 'images';
+                if (is_dir($imageSrc)) {
+                    try {
+                        // Copy image folder
+                        CrayonUtil::copyDir($imageSrc, $newDir . 'images', 'wp_mkdir_p');
+                    } catch (Exception $e) {
+                        CrayonLog::syslog($e->getMessage(), "THEME SAVE");
                     }
                 }
             }
@@ -689,8 +689,6 @@ class CrayonThemeEditorWP {
             if (!is_file($oldPath) || strpos($css, CrayonThemes::CSS_PREFIX . $oldID) === FALSE) {
                 // The old path/id is no longer valid - something has gone wrong - we should refresh afterwards
                 $refresh = TRUE;
-                // Forces the ids to be updated
-                $replaceID = '[\w-]+';
             }
             // XXX This is case sensitive to avoid modifying text, but it means that CSS must be in lowercase
             $css = preg_replace('#(?<=' . CrayonThemes::CSS_PREFIX . ')' . $replaceID . '\b#ms', $newID, $css);
@@ -751,7 +749,7 @@ class CrayonThemeEditorWP {
     public static function delete() {
         CrayonSettingsWP::load_settings();
         $id = $_POST['id'];
-        $dir = CrayonResources::themes()->dirpath($id);
+        $dir = CrayonResources::themes()->dirpath_for_id($id);
         if (is_dir($dir) && CrayonResources::themes()->exists($id)) {
             try {
                 CrayonUtil::deleteDir($dir);
@@ -773,7 +771,7 @@ class CrayonThemeEditorWP {
         CrayonSettingsWP::load_settings();
         $id = $_POST['id'];
         $message = $_POST['message'];
-        $dir = CrayonResources::themes()->dirpath($id);
+        $dir = CrayonResources::themes()->dirpath_for_id($id);
         $dest = $dir . 'tmp';
         wp_mkdir_p($dest);
 
