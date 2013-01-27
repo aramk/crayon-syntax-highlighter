@@ -81,8 +81,9 @@ class CrayonTagEditorWP {
     public static function addbuttons() {
         // Add only in Rich Editor mode
         //if ( get_user_option('rich_editing') == 'true') {
+        //add_filter('bbp_after_get_the_content_parse_args', 'CrayonTagEditorWP::add_plugin');
         add_filter('mce_external_plugins', 'CrayonTagEditorWP::add_plugin');
-        add_filter('mce_buttons', 'CrayonTagEditorWP::register_buttons');
+        add_filter('mce_buttons', 'CrayonTagEditorWP::register_buttons', 2);
     }
 
     public static function enqueue_resources() {
@@ -98,12 +99,14 @@ class CrayonTagEditorWP {
     }
 
     public static function register_buttons($buttons) {
+//        var_dump('buttons');exit;
         array_push($buttons, 'separator', 'crayon_tinymce');
         return $buttons;
     }
 
     // Load the TinyMCE plugin : editor_plugin.js (wp2.5)
     public static function add_plugin($plugin_array) {
+        //var_dump($plugin_array);exit;
         $plugin_array['crayon_tinymce'] = plugins_url(CRAYON_TINYMCE_JS, __FILE__);
         return $plugin_array;
     }
