@@ -83,7 +83,7 @@ class CrayonTagEditorWP {
         //if ( get_user_option('rich_editing') == 'true') {
         //add_filter('bbp_after_get_the_content_parse_args', 'CrayonTagEditorWP::add_plugin');
         add_filter('mce_external_plugins', 'CrayonTagEditorWP::add_plugin');
-        add_filter('mce_buttons', 'CrayonTagEditorWP::register_buttons', 2);
+        add_filter('mce_buttons', 'CrayonTagEditorWP::register_buttons');
     }
 
     public static function enqueue_resources() {
@@ -99,14 +99,14 @@ class CrayonTagEditorWP {
     }
 
     public static function register_buttons($buttons) {
-//        var_dump('buttons');exit;
+//        var_dump('buttons', $buttons);exit;
         array_push($buttons, 'separator', 'crayon_tinymce');
         return $buttons;
     }
 
     // Load the TinyMCE plugin : editor_plugin.js (wp2.5)
     public static function add_plugin($plugin_array) {
-        //var_dump($plugin_array);exit;
+//        var_dump($plugin_array);exit;
         $plugin_array['crayon_tinymce'] = plugins_url(CRAYON_TINYMCE_JS, __FILE__);
         return $plugin_array;
     }
@@ -236,7 +236,7 @@ class CrayonTagEditorWP {
                 <td colspan="2"><?php
                     $admin = isset($_GET['is_admin']) ? intval($_GET['is_admin']) : is_admin();
                     if (!$admin && !CrayonGlobalSettings::val(CrayonSettings::TAG_EDITOR_SETTINGS)) {
-                        exit;
+                        exit();
                     }
                     ?>
                     <hr/>
