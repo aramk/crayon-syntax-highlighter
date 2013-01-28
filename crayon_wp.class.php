@@ -189,13 +189,10 @@ class CrayonWP {
 
     /* For manually highlighting code, useful for other PHP contexts */
     public static function highlight($code) {
-        $crayon_str = '';
-
         $captures = CrayonWP::capture_crayons(0, $code);
         $the_captures = $captures['capture'];
         $the_content = $captures['content'];
-        foreach ($the_captures as $capture) {
-            $id = $capture['id'];
+        foreach ($the_captures as $id=>$capture) {
             $atts = $capture['atts'];
             $no_enqueue = array(
                 CrayonSettings::ENQUEUE_THEMES => FALSE,
