@@ -235,13 +235,16 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.1.2 =
+* FIXED:
+    * bbPress Tag Editor button wasn't showing
+
 = 2.1.1 =
 * ADDED:
     * Arduino IDE theme thanks to LukaszWiecek (http://wordpress.org/support/topic/arduino-code-support)
     * User Fonts can be added to wp-content/crayon-syntax-highlighter/uploads/fonts/somefont.css
 * FIXED:
     * Issues with resource management, preventing loading of user CSS themes and performing theme editor functions
-    * bbPress Tag Editor button wasn't showing
     * C#, C++ id issues preventing them loading
     * Tag Editor duplicate loading issue prevented close dialog on HTML view
     * Arduino language updates thanks to LukaszWiecek (http://wordpress.org/support/topic/arduino-code-support)
