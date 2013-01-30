@@ -1,0 +1,11 @@
+stop
+warning
+require
+library
+attach
+detach
+source
+setMethod
+setGeneric
+setGroupGeneric
+setClass

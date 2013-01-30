@@ -107,6 +107,7 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 * PostgreSQL (thanks to <a href="http://bitorchestra.com/" target="_blank">Bitorchestra</a>)
 * PowerShell
 * Python
+* R
 * Ruby
 * Scheme (thanks to <a href="https://github.com/harry75369" target="_blank">Harry75369</a>)
 * Shell (Unix)
@@ -236,6 +237,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 2.1.2 =
+* ADDED:
+    * R language
 * FIXED:
     * bbPress Tag Editor button wasn't showing
 
