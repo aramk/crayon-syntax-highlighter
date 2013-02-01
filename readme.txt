@@ -183,6 +183,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to my project, your support keeps the Crayons going!
 
+* Scot Ranney, (http://scotsscripts.com/), USA
 * Nico Hartung, (http://www.loggn.de/), Germany
 * Joseph DeVenuta, USA
 * Iván Prego García, Spain
