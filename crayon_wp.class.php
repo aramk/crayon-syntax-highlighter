@@ -1187,9 +1187,11 @@ class CrayonWP {
 
     // Add TinyMCE to comments
     public static function tinymce_comment_enable($args) {
-        ob_start();
-        wp_editor('', 'comment', array('tinymce'));
-        $args['comment_field'] = ob_get_clean();
+        if (function_exists('wp_editor')) {
+            ob_start();
+            wp_editor('', 'comment', array('tinymce'));
+            $args['comment_field'] = ob_get_clean();
+        }
         return $args;
     }
 
