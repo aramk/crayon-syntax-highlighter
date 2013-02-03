@@ -192,7 +192,7 @@ class CrayonWP {
         $captures = CrayonWP::capture_crayons(0, $code);
         $the_captures = $captures['capture'];
         $the_content = $captures['content'];
-        foreach ($the_captures as $id=>$capture) {
+        foreach ($the_captures as $id => $capture) {
             $atts = $capture['atts'];
             $no_enqueue = array(
                 CrayonSettings::ENQUEUE_THEMES => FALSE,
@@ -1185,6 +1185,14 @@ class CrayonWP {
         return str_replace($original, CrayonUtil::html_element('pre', $code, $newAtts), $wp_content);
     }
 
+    // Add TinyMCE to comments
+    public static function tinymce_comment_enable($args) {
+        ob_start();
+        wp_editor('', 'comment', array('tinymce'));
+        $args['comment_field'] = ob_get_clean();
+        return $args;
+    }
+
 }
 
 // Only if WP is loaded
@@ -1226,6 +1234,10 @@ if (defined('ABSPATH')) {
         add_filter('the_excerpt', 'CrayonWP::post_excerpt', 100);
 
         add_action('template_redirect', 'CrayonWP::wp_head', 0);
+
+        if (CrayonGlobalSettings::val(CrayonSettings::TAG_EDITOR_FRONT)) {
+            add_filter('comment_form_defaults', 'CrayonWP::tinymce_comment_enable');
+        }
     } else {
         // Update between versions
         CrayonWP::update();

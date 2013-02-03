@@ -183,6 +183,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to my project, your support keeps the Crayons going!
 
+* Raam Dev, (http://raamdev.com/), USA
 * Scot Ranney, (http://scotsscripts.com/), USA
 * Nico Hartung, (http://www.loggn.de/), Germany
 * Joseph DeVenuta, USA
@@ -240,6 +241,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.1.2 =
 * ADDED:
     * R language
+    * TinyMCE is automatically added to the comment box when the Tag Editor is enabled on the frontend
 * FIXED:
     * bbPress Tag Editor button wasn't showing
 
