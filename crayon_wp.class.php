@@ -1144,7 +1144,7 @@ class CrayonWP {
             if ($post_captures['has_captured'] === TRUE) {
                 $post_obj = array();
                 $post_obj['ID'] = $postID;
-                $post_obj['post_content'] = $post_captures['content'];
+                $post_obj['post_content'] = addslashes($post_captures['content']);
                 wp_update_post($post_obj);
                 CrayonLog::syslog("Converted Crayons in post ID $postID to pre tags", 'CONVERT');
             }
