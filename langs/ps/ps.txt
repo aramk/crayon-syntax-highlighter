@@ -8,7 +8,7 @@
     COMMENT             (#.*?$)|(<#.*#>)
     STRING              (?default)
         
-    FUNCTIONS:RESERVED  \b(?alt:reserved.txt)\b
+    FUNCTIONS:RESERVED  (\b(?alt:reserved.txt)\b)|((?-i)[A-Z]\w+-[A-Z]\w+(?i))
     STATEMENT           \b(?alt:statement.txt)\b
     TYPE				\b(?alt:type.txt)\b
     
