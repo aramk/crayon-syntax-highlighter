@@ -883,6 +883,7 @@ class CrayonWP {
 
     public static function crayon_theme_css() {
         global $CRAYON_VERSION;
+        CrayonSettingsWP::load_settings();
         $css = CrayonResources::themes()->get_used_css();
         foreach ($css as $theme => $url) {
             wp_enqueue_style('crayon-theme-' . $theme, $url, array(), $CRAYON_VERSION);
@@ -891,6 +892,7 @@ class CrayonWP {
 
     public static function crayon_font_css() {
         global $CRAYON_VERSION;
+        CrayonSettingsWP::load_settings();
         $css = CrayonResources::fonts()->get_used_css();
         foreach ($css as $font_id => $url) {
             wp_enqueue_style('crayon-font-' . $font_id, $url, array(), $CRAYON_VERSION);

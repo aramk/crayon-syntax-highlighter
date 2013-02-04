@@ -169,6 +169,7 @@ class CrayonThemeEditorWP {
     }
 
     public static function initSettings() {
+        CrayonSettingsWP::load_settings();
         self::initFields();
         self::initStrings();
         if (self::$settings === NULL) {

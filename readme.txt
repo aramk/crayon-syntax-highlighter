@@ -246,6 +246,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * bbPress Tag Editor button wasn't showing
     * Slashes are now added to post content before legacy tag conversion, since wp_update_post removes them
     * PowerShell improvements
+    * Empty directory path on some pages
 
 = 2.1.1 =
 * ADDED:
