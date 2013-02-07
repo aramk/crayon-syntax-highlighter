@@ -242,6 +242,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * R language
     * TinyMCE is automatically added to the comment box when the Tag Editor is enabled on the frontend
+    * SQL Management Studio 2012 Theme
 * FIXED:
     * bbPress Tag Editor button wasn't showing
     * Slashes are now added to post content before legacy tag conversion, since wp_update_post removes them
