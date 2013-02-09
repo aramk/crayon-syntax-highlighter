@@ -460,8 +460,8 @@ class CrayonFormatter {
 
 		if ($print_nums !== FALSE) {
 		$output .= '
-				<td class="crayon-nums '.$num_vis.'" data-settings="'.$num_settings.'" style="'.$font_style.'">
-					<div class="crayon-nums-content">'.$print_nums.'</div>
+				<td class="crayon-nums '.$num_vis.'" data-settings="'.$num_settings.'">
+					<div class="crayon-nums-content" style="'.$font_style.'">'.$print_nums.'</div>
 				</td>';
 		}
 		// XXX

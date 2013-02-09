@@ -250,6 +250,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Empty directory path on some pages
     * Expanding uses absolute positioning, so it will stay on top of other elements
     * When expanded the toolbar controls move left for easier toggling
+    * CSS conflicts with wordpress themes causing line-height and font-size overrides to be ignored
 
 = 2.1.1 =
 * ADDED:
