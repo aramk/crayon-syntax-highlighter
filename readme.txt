@@ -248,6 +248,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Slashes are now added to post content before legacy tag conversion, since wp_update_post removes them
     * PowerShell improvements
     * Empty directory path on some pages
+    * Expanding uses absolute positioning, so it will stay on top of other elements
+    * When expanded the toolbar controls move left for easier toggling
 
 = 2.1.1 =
 * ADDED:

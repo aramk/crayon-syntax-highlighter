@@ -361,6 +361,27 @@ This has been disabled to allow more flexibility in changing font sizes.
     right: 0;
 }
 
+.crayon-syntax.crayon-expanded {
+    position: absolute !important;
+    margin: 0 !important;
+}
+
+.crayon-placeholder {
+    width: 100% !important;
+}
+
+.crayon-toolbar-visible .crayon-toolbar {
+    position: relative !important;
+    margin-top: 0 !important;
+    display: block !important;
+}
+
+.crayon-syntax.crayon-expanded .crayon-toolbar .crayon-tools {
+    position: relative;
+    right: auto;
+    float: left !important;
+}
+
 .crayon-syntax .crayon-plain-wrap {
 	height: auto !important;
 	padding: 0 !important;
