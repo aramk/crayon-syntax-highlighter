@@ -238,7 +238,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 2.1.2 =
+= 2.1.3 =
 * FIXED:
     * Toolbar font-size and line height improvements
 
