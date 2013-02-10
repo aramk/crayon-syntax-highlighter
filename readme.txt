@@ -239,6 +239,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 2.1.2 =
+* FIXED:
+    * Toolbar font-size and line height improvements
+
+= 2.1.2 =
 * ADDED:
     * R language
     * TinyMCE is automatically added to the comment box when the Tag Editor is enabled on the frontend

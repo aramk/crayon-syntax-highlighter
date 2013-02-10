@@ -231,7 +231,8 @@ coloring etc.
 	padding-right: 2px !important; 
 }*/
 
-.crayon-syntax .crayon-title {
+.crayon-syntax .crayon-title,
+.crayon-syntax .crayon-language {
     float: left;
 }
 /* End Toolbar ===================== */
@@ -343,6 +344,7 @@ This has been disabled to allow more flexibility in changing font sizes.
 	font-size: inherit !important;
 	line-height: inherit !important;
 	font-weight: inherit !important;
+    height: inherit !important;
 }
 
 .crayon-syntax .crayon-pre .crayon-line span {
@@ -351,10 +353,10 @@ This has been disabled to allow more flexibility in changing font sizes.
 	zoom: 1;
 }
 
-.crayon-syntax .crayon-toolbar .crayon-tools,
-.crayon-syntax .crayon-toolbar .crayon-tools * {
-	height: inherit !important;
-}
+/*.crayon-syntax .crayon-toolbar .crayon-tools,*/
+/*.crayon-syntax .crayon-toolbar .crayon-tools * {*/
+	/*height: inherit !important;*/
+/*}*/
 
 .crayon-syntax .crayon-toolbar .crayon-tools {
     position: absolute;

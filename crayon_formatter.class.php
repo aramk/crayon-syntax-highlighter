@@ -115,6 +115,7 @@ class CrayonFormatter {
 			$info_height = $font_size * 1.25 . 'px !important;';
 			
 			$font_style .= "font-size: $font_size line-height: $font_height";
+            $toolbar_style .= "font-size: $font_size";
 			$line_style .= "height: $font_height";
 			
 			if ($hl->is_inline()) {
@@ -331,7 +332,7 @@ class CrayonFormatter {
 			$buttons = $print_plus.$buttons_str.$print_lang;
 			$toolbar = '
 			<div class="crayon-toolbar" data-settings="'.$toolbar_settings.'" style="'.$toolbar_style.'">'.$print_title.'
-			<div class="crayon-tools">'.$buttons.'</div></div>
+			<div class="crayon-tools" style="'.$toolbar_style.'">'.$buttons.'</div></div>
 			<div class="crayon-info" style="'.$info_style.'"></div>';
 
 		} else {
