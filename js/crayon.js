@@ -933,9 +933,9 @@
                     initPosition(uid);
                     crayons[uid].finalSize = {width: crayons[uid].table.width(), height: crayons[uid].table.height()};
                     // If toolbar is always showing, make room for it
-                    if (crayons[uid].toolbarMouseover == false) {
+//                    if (crayons[uid].toolbarMouseover == false) {
                         crayons[uid].finalSize.height += crayons[uid].toolbar.height();
-                    }
+//                    }
                     // Ensure we don't shrink
                     crayons[uid].finalSize.width = CrayonUtil.setMin(crayons[uid].finalSize.width, crayons[uid].initialSize.width);
                     crayons[uid].finalSize.height = CrayonUtil.setMin(crayons[uid].finalSize.height, crayons[uid].initialSize.height);
@@ -947,7 +947,7 @@
                     crayons[uid].expanded = false;
 
                     var placeHolderSize = crayons[uid].finalSize;
-                    placeHolderSize.height += crayons[uid].toolbar.height();
+//                    placeHolderSize.height += crayons[uid].toolbar.height();
                     crayons[uid].placeholder = $('<div></div>');
                     crayons[uid].placeholder.addClass(CRAYON_PLACEHOLDER);
                     crayons[uid].placeholder.css(placeHolderSize);
