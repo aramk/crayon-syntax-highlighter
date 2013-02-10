@@ -109,14 +109,17 @@ class CrayonFormatter {
 		// Determine font size
 		// TODO improve logic
 		if ($hl->setting_val(CrayonSettings::FONT_SIZE_ENABLE)) {
-			$font_size = $hl->setting_val(CrayonSettings::FONT_SIZE) . 'px !important;';
-			$font_height = $font_size * 1.25 . 'px !important;';
+            $_font_size = $hl->setting_val(CrayonSettings::FONT_SIZE);
+			$font_size = $_font_size . 'px !important;';
+            $_line_height = $hl->setting_val(CrayonSettings::LINE_HEIGHT);
+            // Don't allow line height to be less than font size
+            $line_height = ($_line_height > $_font_size ? $_line_height : $_font_size) . 'px !important;';
 			$toolbar_height = $font_size * 1.5 . 'px !important;';
-			$info_height = $font_size * 1.25 . 'px !important;';
+			$info_height = $font_size * 1.4 . 'px !important;';
 			
-			$font_style .= "font-size: $font_size line-height: $font_height";
+			$font_style .= "font-size: $font_size line-height: $line_height";
             $toolbar_style .= "font-size: $font_size";
-			$line_style .= "height: $font_height";
+			$line_style .= "height: $line_height";
 			
 			if ($hl->is_inline()) {
 				$font_style .= "font-size: $font_size";
@@ -128,7 +131,7 @@ class CrayonFormatter {
 		} else if (!$hl->is_inline()) {
 			if (($font_size = CrayonGlobalSettings::get(CrayonSettings::FONT_SIZE)) !== FALSE) {
 				$font_size = $font_size->def() . 'px !important;';
-				$font_height = ($font_size + 4) . 'px !important;';
+                $line_height = ($font_size * 1.4) . 'px !important;';
 			}
 		}
 		

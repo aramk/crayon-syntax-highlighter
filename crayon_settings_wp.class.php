@@ -1019,6 +1019,8 @@ class Human {
         echo '<span class="crayon-span-10"></span>';
         self::checkbox(array(CrayonSettings::FONT_SIZE_ENABLE, crayon__('Custom Font Size') . ' '), FALSE);
         self::textbox(array('id' => CrayonSettings::FONT_SIZE, 'size' => 2));
+        echo '<span class="crayon-span-margin">', crayon__('Pixels'), ',&nbsp;&nbsp;',crayon__('Line Height'),' </span>';
+        self::textbox(array('id' => CrayonSettings::LINE_HEIGHT, 'size' => 2));
         echo '<span class="crayon-span-margin">', crayon__('Pixels'), '</span></br>';
         if ((!CrayonResources::fonts()->is_loaded($db_font) || !CrayonResources::fonts()->exists($db_font))) {
             // Default font doesn't actually exist as a file, it means do not override default theme font
