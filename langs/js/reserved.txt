@@ -100,6 +100,7 @@ scroll
 typeof
 window
 opener
+delete
 escape
 length
 Option

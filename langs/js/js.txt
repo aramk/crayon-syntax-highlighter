@@ -16,7 +16,7 @@
     
     # For the <script> tag
     ATT_STR:STRING      (((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)'))
-    TAG     			(</?\s*[^<\s>]+\s*>?)|(\s*>)
+    TAG     			</?\s*script\s*>?
     ATTR:ENTITY         [\w-]+(?=\s*=\s*["'])
     
     ENTITY              (?default)

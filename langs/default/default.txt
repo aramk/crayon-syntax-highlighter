@@ -16,11 +16,11 @@
     MODIFIER            \b(?alt:modifier.txt)\b
 
 						# func() | func { | (Type) Var
-    ENTITY              (\b[a-z_]\w*\b(?=\s*\([^\)]*\)))|((?<!\.)(\b[a-z_]\w*\b)(?=[^},.:;"'\)]*{))|(\b[a-z_]\w+\b\s+(?=\b[a-z_]\w+\b))
+    ENTITY              (\b[a-z_]\w*\b(?=\s*\([^\)]*\)))|((?<!\.)(\b[a-z_]\w*\b)(?=[^}=|,.:;"'\)]*{))|(\b[a-z_]\w+\b\s+(?=\b[a-z_]\w+\b))
     # C variants only: String *
     POINTER_TYPE:ENTITY (\b[a-z_]\w*\s*\*)
     
-    VARIABLE            ((\b(?<=\.)\s*[A-Za-z_]\w*)|([A-Za-z_]\w*(?=\s*=)))
+    VARIABLE            (([A-Za-z_]\w*(?=\s*[=\[\.])))
     IDENTIFIER          \b[A-Za-z_]\w*\b
     CONSTANT            (?<!\w)[0-9][\.\w]*
     OPERATOR            (?alt:operator.txt)

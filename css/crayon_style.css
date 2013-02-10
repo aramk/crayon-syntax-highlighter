@@ -17,19 +17,22 @@ coloring etc.
     position: relative !important;
     direction: ltr;
     text-align: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .crayon-syntax div {
-	/* Need !important? */
-	background: none;
-	border: none;
-	padding: 0px;
+    /* Need !important? */
+    background: none;
+    border: none;
+    padding: 0px;
     margin: 0px;
     text-align: left;
 }
 
 .crayon-syntax.crayon-loading {
-	visibility: hidden;
+    visibility: hidden;
 }
 
 .crayon-syntax,
@@ -44,8 +47,8 @@ coloring etc.
 
 .crayon-syntax .crayon-main,
 .crayon-syntax .crayon-plain {
-	/* TODO a bug in IE8 causes max-height and overflow:auto to set max-height = height
-	   http://edskes.net/ie8overflowandexpandingboxbugs.htm */
+    /* TODO a bug in IE8 causes max-height and overflow:auto to set max-height = height
+       http://edskes.net/ie8overflowandexpandingboxbugs.htm */
     overflow: auto;
 }
 
@@ -58,27 +61,27 @@ coloring etc.
 }
 
 .crayon-syntax-inline {
-	margin: 0 2px;
-	padding: 0 2px;
+    margin: 0 2px;
+    padding: 0 2px;
 }
 
 .crayon-syntax .crayon-table {
     border: none !important;
-	background: none !important;
-	padding: 0px !important;
-	margin-top: 0px !important;
-	margin-right: 0px !important;
-	margin-bottom: 0px !important;
-	width: auto !important;
-	border-spacing: 0 !important;
-	border-collapse: collapse !important;
+    background: none !important;
+    padding: 0px !important;
+    margin-top: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 0px !important;
+    width: auto !important;
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
 }
 
 .crayon-syntax .crayon-table td,
 .crayon-syntax .crayon-table tr {
-	padding: 0 !important;
-	border: none !important;
-	background: none;
+    padding: 0 !important;
+    border: none !important;
+    background: none;
     vertical-align: top !important;
     margin: 0 !important;
 }
@@ -88,25 +91,28 @@ coloring etc.
 }
 
 .crayon-plain-tag {
-	margin-bottom: 12px;
+    margin-bottom: 12px;
 }
+
 /* End General ===================== */
 
 /* Popup ========================= */
 .crayon-popup {
-	
+
 }
 
 .crayon-popup .crayon-plain {
-	display: block !important;
-	width: 100% !important;
-	height: 100% !important;
-	opacity: 100 !important;
-	position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 100 !important;
+    position: relative !important;
 }
+
 .crayon-popup-window {
-	background: #fff;
+    background: #fff;
 }
+
 /* End Popup ========================= */
 
 /* Line Numbers ==================== */
@@ -115,6 +121,7 @@ coloring etc.
     padding: 0 5px;
     margin: 0px;
 }
+
 /* End Line Numbers ================ */
 
 /* Toolbar & Info ================== */
@@ -123,19 +130,21 @@ coloring etc.
     overflow: hidden;
     z-index: 4;
 }
+
 .crayon-syntax .crayon-info {
-	position: absolute;
-	overflow: hidden;
-	display: none;
-	z-index: 3;
-	padding: 0px;
-	/* Must be able to expand! */
-	min-height: 18px;
-	line-height: 18px;
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    z-index: 3;
+    padding: 0px;
+    /* Must be able to expand! */
+    min-height: 18px;
+    line-height: 18px;
 }
+
 .crayon-syntax .crayon-info div {
-	padding: 2px !important;
-	text-align: center;
+    padding: 2px !important;
+    text-align: center;
 }
 
 .crayon-syntax .crayon-toolbar,
@@ -146,14 +155,14 @@ coloring etc.
 }
 
 .crayon-syntax .crayon-toolbar span {
-	padding: 0 4px !important;
+    padding: 0 4px !important;
 }
 
 .crayon-syntax .crayon-toolbar .crayon-button {
-	display: inline;
-	float: left !important;
-	width: 24px;
-	background-repeat: no-repeat;
+    display: inline;
+    float: left !important;
+    width: 24px;
+    background-repeat: no-repeat;
     /*height: 16px;*/
     line-height: 15px;
     /*padding: 0px 2px !important;*/
@@ -167,27 +176,28 @@ coloring etc.
 .crayon-toolbar .crayon-button,
 .crayon-toolbar .crayon-button:hover,
 .crayon-toolbar .crayon-button.crayon-pressed:hover {
-	background-position: 0px center;
+    background-position: 0px center;
 }
+
 .crayon-toolbar .crayon-button.crayon-pressed,
 .crayon-toolbar .crayon-button:active,
 .crayon-toolbar .crayon-button.crayon-pressed:active {
-	background-position: -24px center;
+    background-position: -24px center;
 }
 
 /* Plain Button */
 .crayon-toolbar .crayon-button.crayon-plain-button {
-	background-image: url('images/toolbar/plain.png');
+    background-image: url('images/toolbar/plain.png');
 }
 
 /* Wrap Button */
 .crayon-toolbar .crayon-button.crayon-wrap-button {
-	background-image: url('images/toolbar/wrap.png');
+    background-image: url('images/toolbar/wrap.png');
 }
 
 /* Expand Button */
 .crayon-toolbar .crayon-button.crayon-expand-button {
-	background-image: url('images/toolbar/expand.png');
+    background-image: url('images/toolbar/expand.png');
 }
 
 /* Click to Expand */
@@ -198,32 +208,32 @@ coloring etc.
 
 /* Copy Button */
 .crayon-toolbar .crayon-button.crayon-copy-button {
-	background-image: url('images/toolbar/copy.png');
+    background-image: url('images/toolbar/copy.png');
 }
 
 /* Popup Button */
 .crayon-toolbar .crayon-button.crayon-popup-button {
-	background-image: url('images/toolbar/popup.png');
+    background-image: url('images/toolbar/popup.png');
 }
 
 /* Nums Button */
 .crayon-toolbar .crayon-button.crayon-nums-button {
-	background-image: url('images/toolbar/nums.png');
+    background-image: url('images/toolbar/nums.png');
 }
 
 /* Plus Sign */
 .crayon-syntax .crayon-toolbar .crayon-mixed-highlight {
-	background-image: url('images/toolbar/plus.png');
-/*	background-position: center;*/
-	background-position: 0px center;
-	background-repeat: no-repeat;
-	float: left;
-	min-width: 15px;
+    background-image: url('images/toolbar/plus.png');
+    /*	background-position: center;*/
+    background-position: 0px center;
+    background-repeat: no-repeat;
+    float: left;
+    min-width: 15px;
 }
 
 /* Language */
 .crayon-syntax .crayon-toolbar .crayon-language {
-	padding-right: 8px !important; 
+    padding-right: 8px !important;
 }
 
 /* Tools */
@@ -235,51 +245,58 @@ coloring etc.
 .crayon-syntax .crayon-language {
     float: left;
 }
+
 /* End Toolbar ===================== */
 
 /* Scrollbar ======================= */
 .crayon-main::-webkit-scrollbar,
 .crayon-plain::-webkit-scrollbar {
-	height: 6px;
-	overflow: visible;
-	width: 6px;
-	background: #EEE;
+    height: 6px;
+    overflow: visible;
+    width: 6px;
+    background: #EEE;
 }
+
 .crayon-main::-webkit-scrollbar-thumb,
 .crayon-plain::-webkit-scrollbar-thumb {
-	background-color: #CCC;
-	background-clip: padding-box;
-	border: 1px solid #AAA;
-	box-shadow: inset 0 0 2px #999;
-	min-height: 8px;
-	padding:0;
-	border-width: 1px;
+    background-color: #CCC;
+    background-clip: padding-box;
+    border: 1px solid #AAA;
+    box-shadow: inset 0 0 2px #999;
+    min-height: 8px;
+    padding: 0;
+    border-width: 1px;
 }
+
 .crayon-main::-webkit-scrollbar-button,
 .crayon-plain::-webkit-scrollbar-button {
-	height: 0;
-	width: 0;
-	padding: 0px;
+    height: 0;
+    width: 0;
+    padding: 0px;
 }
+
 .crayon-main::-webkit-scrollbar-track,
 .crayon-plain::-webkit-scrollbar-track {
-	background-clip: padding-box;
-	border: solid transparent;
-	border-width: 0 0 0 4px;
-	border: 1px solid #BBB;
-	border-right: none;
-	border-bottom: none;
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 0 0 0 4px;
+    border: 1px solid #BBB;
+    border-right: none;
+    border-bottom: none;
 }
+
 .crayon-main::-webkit-scrollbar-corner,
 .crayon-plain::-webkit-scrollbar-corner {
-	background: #EEE;
+    background: #EEE;
 }
+
 .crayon-main::-webkit-scrollbar-thumb:hover,
 .crayon-plain::-webkit-scrollbar-thumb:hover {
-	background: #AAA;
-	border: 1px solid #777;
-	box-shadow: inset 0 0 2px #777;
+    background: #AAA;
+    border: 1px solid #777;
+    box-shadow: inset 0 0 2px #777;
 }
+
 /* End Scrollbar =================== */
 
 /* Code ============================ */
@@ -294,31 +311,33 @@ coloring etc.
 }
 
 .crayon-syntax .crayon-line {
-    padding: 0 5px;    
+    padding: 0 5px;
 }
 
 .crayon-syntax.crayon-wrapped .crayon-line {
-	/* width: 500px !important; */
-	white-space: pre-wrap !important;
-	/*    word-wrap:break-word !important;*/
+    /* width: 500px !important; */
+    white-space: pre-wrap !important;
+    /*    word-wrap:break-word !important;*/
 }
 
 .crayon-syntax-inline .crayon-pre,
 .crayon-syntax-inline pre {
-	white-space: normal;
+    white-space: normal;
 }
 
 .crayon-syntax-inline-nowrap .crayon-pre,
 .crayon-syntax-inline-nowrap pre {
-	white-space: pre;
+    white-space: pre;
 }
 
 /* Default Font */
 .crayon-syntax /*,
-.crayon-syntax **/ {
+.crayon-syntax **/
+{
     font-family: Monaco, 'MonacoRegular', 'Courier New', monospace;
     font-weight: 500;
 }
+
 /*
 
 This has been disabled to allow more flexibility in changing font sizes.
@@ -332,30 +351,30 @@ This has been disabled to allow more flexibility in changing font sizes.
 }
 */
 .crayon-syntax.crayon-wrapped .crayon-line {
-/*	min-height: 15px;*/
-	height: auto;
+    /*	min-height: 15px;*/
+    height: auto;
 }
 
 .crayon-syntax .crayon-num,
 .crayon-syntax .crayon-pre .crayon-line,
 .crayon-syntax .crayon-toolbar *,
 .crayon-syntax .crayon-pre * {
-	font-family: inherit;
-	font-size: inherit !important;
-	line-height: inherit !important;
-	font-weight: inherit !important;
+    font-family: inherit;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    font-weight: inherit !important;
     height: inherit !important;
 }
 
 .crayon-syntax .crayon-pre .crayon-line span {
-	display: inline-block;
-	*display: inline;
-	zoom: 1;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
 }
 
 /*.crayon-syntax .crayon-toolbar .crayon-tools,*/
 /*.crayon-syntax .crayon-toolbar .crayon-tools * {*/
-	/*height: inherit !important;*/
+/*height: inherit !important;*/
 /*}*/
 
 .crayon-syntax .crayon-toolbar .crayon-tools {
@@ -385,60 +404,66 @@ This has been disabled to allow more flexibility in changing font sizes.
 }
 
 .crayon-syntax .crayon-plain-wrap {
-	height: auto !important;
-	padding: 0 !important;
-	margin: 0 !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .crayon-syntax .crayon-plain {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	opacity: 0;
-	padding: 0 5px;
-	margin: 0px;
-	border: none;
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-shadow: none;
-	border-radius: 0px;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	/*white-space: pre-wrap;*/
-	white-space: pre;
-	word-wrap: normal;
-	overflow: auto;
-	resize: none;
-	color: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    padding: 0 5px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-shadow: none;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    /*white-space: pre-wrap;*/
+    white-space: pre;
+    word-wrap: normal;
+    overflow: auto;
+    resize: none;
+    color: #000;
     background: #FFF;
 }
 
 .crayon-wrapped .crayon-plain {
-	white-space: pre-wrap;
+    white-space: pre-wrap;
 }
 
 .bbp-body .crayon-syntax {
-	clear: none !important;
+    clear: none !important;
 }
+
 /* End Code ======================== */
 
 /* Minimize ================= */
 .crayon-minimized .crayon-toolbar {
     cursor: pointer;
 }
+
 .crayon-minimized .crayon-plain-wrap,
 .crayon-minimized .crayon-main,
 .crayon-minimized .crayon-toolbar .crayon-tools * {
     display: none !important;
 }
+
 .crayon-minimized .crayon-toolbar .crayon-tools .crayon-minimize {
     display: block !important;
 }
+
 .crayon-minimized .crayon-toolbar {
     position: relative !important;
 }
+
 .crayon-syntax.crayon-minimized .crayon-toolbar {
     border-bottom: none !important;
 }
+
 /* End Minimize ============= */
