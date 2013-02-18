@@ -182,8 +182,10 @@ A handful of articles from others written about Crayon, thanks guys!
 
 **Donations**
 
-Thanks to all those who donate to my project, your support keeps the Crayons going!
+Thanks to all those who donate to the project:
 
+* Alexander Harvey, (http://alexharvey.eu/), UK
+* Minhazul Haque Shawon, Cyprus
 * Raam Dev, (http://raamdev.com/), USA
 * Scot Ranney, (http://scotsscripts.com/), USA
 * Nico Hartung, (http://www.loggn.de/), Germany
