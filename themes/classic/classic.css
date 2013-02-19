@@ -92,7 +92,7 @@ URL: http://aramk.com/
 	color: #999 !important;
 }
 .crayon-theme-classic .crayon-button {
-	background-color: transparent;
+	background-color: #DDD;
 }
 .crayon-theme-classic .crayon-button:hover {
 	background-color: #EEE;

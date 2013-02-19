@@ -158,7 +158,7 @@
 
             // XXX Remember CSS dimensions
             var mainStyle = main.style();
-            crayons[uid].main_style = {
+            crayons[uid].mainStyle = {
                 'height': mainStyle && mainStyle.height || '',
                 'max-height': mainStyle && mainStyle.maxHeight || '',
                 'min-height': mainStyle && mainStyle.minHeight || '',
@@ -166,6 +166,7 @@
                 'max-width': mainStyle && mainStyle.maxWidth || '',
                 'min-width': mainStyle && mainStyle.minWidth || ''
             };
+            crayons[uid].mainHeightAuto = crayons[uid].mainStyle.height == '' && crayons[uid].mainStyle['max-height'] == '';
 
             var load_timer;
             var i = 0;
@@ -272,19 +273,20 @@
 
             plain.css('opacity', 0);
 
-            crayons[uid].toolbar_visible = true;
+            crayons[uid].toolbarVisible = true;
+            crayons[uid].hasOneLine = table.outerHeight() < toolbar.outerHeight() * 2;
             crayons[uid].toolbarMouseover = false;
             // If a toolbar with mouseover was found
             if (toolbar.filter('[data-settings~="mouseover"]').length != 0 && !touchscreen) {
                 crayons[uid].toolbarMouseover = true;
-                crayons[uid].toolbar_visible = false;
+                crayons[uid].toolbarVisible = false;
 
                 toolbar.css('margin-top', '-' + toolbar.outerHeight() + 'px');
                 toolbar.hide();
                 // Overlay the toolbar if needed, only if doing so will not hide the
                 // whole code!
                 if (toolbar.filter('[data-settings~="overlay"]').length != 0
-                    && main.outerHeight() > toolbar.outerHeight() * 2) {
+                    && !crayon[uid].hasOneLine) {
                     toolbar.css('position', 'absolute');
                     toolbar.css('z-index', 2);
                     // Hide on single click when overlayed
@@ -893,7 +895,7 @@
             }
 
             crayonSlide(uid, toolbar, show, animTime, hideDelay, function () {
-                crayons[uid].toolbar_visible = show;
+                crayons[uid].toolbarVisible = show;
             });
         };
 
@@ -914,13 +916,15 @@
         var initSize = function (uid) {
             if (typeof crayons[uid].initialSize == 'undefined') {
                 // Shared for scrollbars and expanding
+                crayons[uid].toolbarHeight = crayons[uid].toolbar.outerHeight();
                 crayons[uid].innerSize = {width: crayons[uid].width(), height: crayons[uid].height()};
                 crayons[uid].outerSize = {width: crayons[uid].outerWidth(), height: crayons[uid].outerHeight()};
                 crayons[uid].borderSize = minusSize(crayons[uid].outerSize, crayons[uid].innerSize);
                 crayons[uid].initialSize = {width: crayons[uid].main.outerWidth(), height: crayons[uid].main.outerHeight()};
+                crayons[uid].initialSize.height += crayons[uid].toolbarHeight;
                 crayons[uid].initialOuterSize = addSize(crayons[uid].initialSize, crayons[uid].borderSize);
                 crayons[uid].finalSize = {width: crayons[uid].table.outerWidth(), height: crayons[uid].table.outerHeight()};
-                crayons[uid].finalSize.height += crayons[uid].toolbar.outerHeight();
+                crayons[uid].finalSize.height += crayons[uid].toolbarHeight;
                 // Ensure we don't shrink
                 crayons[uid].finalSize.width = CrayonUtil.setMin(crayons[uid].finalSize.width, crayons[uid].initialSize.width);
                 crayons[uid].finalSize.height = CrayonUtil.setMin(crayons[uid].finalSize.height, crayons[uid].initialSize.height);
@@ -974,6 +978,10 @@
                 var newSize = {
                     width: crayons[uid].finalOuterSize.width
                 };
+                if (!crayons[uid].mainHeightAuto && !crayons[uid].hasOneLine) {
+                    newSize.height = crayons[uid].finalOuterSize.height;
+                    crayons[uid].outerHeight(crayons[uid].outerHeight());
+                }
 
                 main.css(expandHeight);
                 main.css(expandWidth);
@@ -999,7 +1007,7 @@
                     var newSize = {
                         width: initialSize.width
                     };
-                    if (crayons[uid].style('height') != 'auto') {
+                    if (!crayons[uid].mainHeightAuto && !crayons[uid].hasOneLine) {
                         newSize.height = initialSize.height;
                     }
                     crayons[uid].animate(newSize, animt(crayons[uid].expandTime, uid), function () {
@@ -1088,7 +1096,7 @@
         var restoreDimensions = function (uid) {
             // Restore dimensions
             var main = crayons[uid].main;
-            var mainStyle = crayons[uid].main_style;
+            var mainStyle = crayons[uid].mainStyle;
             main.css(mainStyle);
             // Width styles also apply to crayon
             crayons[uid].css('height', 'auto');
