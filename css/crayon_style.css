@@ -22,6 +22,10 @@ coloring etc.
     -webkit-box-sizing: border-box;
 }
 
+.crayon-syntax.crayon-theme-classic {
+    border-width: 50px !important;
+}
+
 .crayon-syntax div {
     /* Need !important? */
     background: none;
@@ -387,8 +391,13 @@ This has been disabled to allow more flexibility in changing font sizes.
     margin: 0 !important;
 }
 
+.crayon-syntax.crayon-expanded .crayon-main {
+    overflow: hidden !important;
+}
+
 .crayon-placeholder {
     width: 100% !important;
+    /*background: red;*/
 }
 
 .crayon-toolbar-visible .crayon-toolbar {

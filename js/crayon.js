@@ -205,7 +205,7 @@
 
                 if (typeof crayons[uid].expanded == 'undefined') {
                     // Determine if we should enable code expanding toggling
-                    if (Math.abs(crayons[uid].main.width() - crayons[uid].table.width()) < 10) {
+                    if (Math.abs(crayons[uid].main.outerWidth() - crayons[uid].table.outerWidth()) < 10) {
                         crayons[uid].expandButton.hide();
                     } else {
                         crayons[uid].expandButton.show();
@@ -213,7 +213,7 @@
                 }
 
                 // TODO If width has changed or timeout, stop timer
-                if (/*last_num_width != nums.width() ||*/ i == 5) {
+                if (/*last_num_width != nums.outerWidth() ||*/ i == 5) {
                     clearInterval(load_timer);
                     //crayon[uid].removeClass(CRAYON_LOADING);
                     crayons[uid].loading = false;
@@ -279,12 +279,12 @@
                 crayons[uid].toolbarMouseover = true;
                 crayons[uid].toolbar_visible = false;
 
-                toolbar.css('margin-top', '-' + toolbar.height() + 'px');
+                toolbar.css('margin-top', '-' + toolbar.outerHeight() + 'px');
                 toolbar.hide();
                 // Overlay the toolbar if needed, only if doing so will not hide the
                 // whole code!
                 if (toolbar.filter('[data-settings~="overlay"]').length != 0
-                    && main.height() > toolbar.height() * 2) {
+                    && main.outerHeight() > toolbar.outerHeight() * 2) {
                     toolbar.css('position', 'absolute');
                     toolbar.css('z-index', 2);
                     // Hide on single click when overlayed
@@ -351,14 +351,12 @@
                 // Disable on touchscreen devices and when set to mouseover
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
-                if (!expand) {
-                    c.mouseenter(function () {
-                        toggle_scroll(uid, true, expand);
-                    })
-                        .mouseleave(function () {
-                            toggle_scroll(uid, false, expand);
-                        });
-                }
+                c.mouseenter(function () {
+                    toggle_scroll(uid, true, expand);
+                })
+                .mouseleave(function () {
+                    toggle_scroll(uid, false, expand);
+                });
             }
 
             if (expand) {
@@ -538,7 +536,7 @@
 
             if (isSlideHidden(info) && show) {
                 info.html('<div>' + text + '</div>');
-                info.css('margin-top', -info.height());
+                info.css('margin-top', -info.outerHeight());
                 info.show();
                 crayonSlide(uid, info, true);
                 setTimeout(function () {
@@ -565,7 +563,7 @@
         };
 
         var isSlideHidden = function (object) {
-            var object_neg_height = '-' + object.height() + 'px';
+            var object_neg_height = '-' + object.outerHeight() + 'px';
             if (object.css('margin-top') == object_neg_height || object.css('display') == 'none') {
                 return true;
             } else {
@@ -579,7 +577,7 @@
                     callback(uid, object);
                 }
             }
-            var objectNegHeight = '-' + object.height() + 'px';
+            var objectNegHeight = '-' + object.outerHeight() + 'px';
 
             if (typeof show == 'undefined') {
                 if (isSlideHidden(object)) {
@@ -715,7 +713,7 @@
             if (crayons[uid].table.is(':animated')) {
                 return false;
             }
-            var numsWidth = Math.round(crayons[uid].nums_content.width() + 1);
+            var numsWidth = Math.round(crayons[uid].nums_content.outerWidth() + 1);
             var negWidth = '-' + numsWidth + 'px';
 
             // Force hiding
@@ -747,8 +745,8 @@
 
             // Stop jerking animation from scrollbar appearing for a split second due to
             // change in width. Prevents scrollbar disappearing if already visible.
-            h_scroll_visible = (crayons[uid].table.width() + pxToInt(crayons[uid].table.css('margin-left')) > crayons[uid].main.width());
-            v_scroll_visible = (crayons[uid].table.height() > crayons[uid].main.height());
+            var h_scroll_visible = (crayons[uid].table.outerWidth() + pxToInt(crayons[uid].table.css('margin-left')) > crayons[uid].main.outerWidth());
+            var v_scroll_visible = (crayons[uid].table.outerHeight() > crayons[uid].main.outerHeight());
             if (!h_scroll_visible && !v_scroll_visible) {
                 crayons[uid].main.css('overflow', 'hidden');
             }
@@ -902,17 +900,11 @@
         var initSize = function (uid) {
             if (typeof crayons[uid].initialSize == 'undefined') {
                 // Shared for scrollbars and expanding
-                crayons[uid].initialSize = {width: crayons[uid].main.width(), height: crayons[uid].main.height()};
+                crayons[uid].initialSize = {width: crayons[uid].main.outerWidth(), height: crayons[uid].main.outerHeight()};
                 // If toolbar is always showing, make room for it
                 if (crayons[uid].toolbarMouseover == false) {
-                    crayons[uid].initialSize.height += crayons[uid].toolbar.height();
+                    crayons[uid].initialSize.height += crayons[uid].toolbar.outerHeight();
                 }
-            }
-        };
-
-        var initPosition = function (uid) {
-            if (typeof crayons[uid].initialPosition == 'undefined') {
-                crayons[uid].initialPosition = crayons[uid].position();
             }
         };
 
@@ -930,11 +922,10 @@
             if (expand) {
                 if (typeof crayons[uid].expanded == 'undefined') {
                     initSize(uid);
-                    initPosition(uid);
-                    crayons[uid].finalSize = {width: crayons[uid].table.width(), height: crayons[uid].table.height()};
+                    crayons[uid].finalSize = {width: crayons[uid].table.outerWidth(), height: crayons[uid].table.outerHeight()};
                     // If toolbar is always showing, make room for it
 //                    if (crayons[uid].toolbarMouseover == false) {
-                        crayons[uid].finalSize.height += crayons[uid].toolbar.height();
+                        crayons[uid].finalSize.height += crayons[uid].toolbar.outerHeight();
 //                    }
                     // Ensure we don't shrink
                     crayons[uid].finalSize.width = CrayonUtil.setMin(crayons[uid].finalSize.width, crayons[uid].initialSize.width);
@@ -947,17 +938,15 @@
                     crayons[uid].expanded = false;
 
                     var placeHolderSize = crayons[uid].finalSize;
-//                    placeHolderSize.height += crayons[uid].toolbar.height();
                     crayons[uid].placeholder = $('<div></div>');
                     crayons[uid].placeholder.addClass(CRAYON_PLACEHOLDER);
-                    crayons[uid].placeholder.css(placeHolderSize);
-//                    crayon[uid].placeholder.hide();
+                        crayons[uid].placeholder.css(placeHolderSize);
                     crayons[uid].before(crayons[uid].placeholder);
+                    crayons[uid].placeholder.css('margin', crayons[uid].css('margin'));
                     $(window).bind('resize', placeholderResize);
                 }
 
                 var initialSize = crayons[uid].initialSize;
-                var initialPosition = crayons[uid].initialPosition;
                 var diffSize = crayons[uid].diffSize;
                 var finalSize = crayons[uid].finalSize;
 
@@ -972,7 +961,7 @@
                     'max-width': 'none'
                 };
 
-                crayons[uid].width(crayons[uid].width());
+                crayons[uid].outerWidth(crayons[uid].outerWidth());
                 crayons[uid].css({
                     'min-width': 'none',
                     'max-width': 'none'
@@ -980,10 +969,12 @@
                 var newSize = {
                     width: finalSize.width
                 };
-                if (finalSize.height > crayons[uid].toolbar.height() * 2) {
-                    newSize.height = finalSize.height;
-                    crayons[uid].height(crayons[uid].height());
-                }
+//                if (finalSize.height > crayons[uid].toolbar.outerHeight() * 2) {
+//                    newSize.height = finalSize.height;//
+//                    crayons[uid].outerHeight(crayons[uid].outerHeight());
+//                }
+
+                //crayons[uid].css('overflow', 'hidden');
 
                 main.css(expandHeight);
                 main.css(expandWidth);
@@ -996,16 +987,6 @@
 
                 crayons[uid].placeholder.show();
                 $('body').prepend(crayons[uid]);
-                //crayon[uid].css(initialPosition);
-//                $(window).bind('resize', placeholderResize);
-//                var i = 0;
-//                var timer = setInterval(function () {
-//                    placeholderResize();
-//                    i++;
-//                    if (i >= 5) {
-//                        clearInterval(timer);
-//                    }
-//                }, 50);
                 crayons[uid].addClass(CRAYON_EXPANDED);
                 placeholderResize();
             } else {
@@ -1031,6 +1012,8 @@
                     }, delay);
                 }
 
+                //crayons[uid].css('overflow', 'auto');
+
                 crayons[uid].placeholder.hide();
                 crayons[uid].placeholder.before(crayons[uid]);
                 crayons[uid].css({left: 'auto', top: 'auto'});
@@ -1048,7 +1031,7 @@
         var placeholderResize = function () {
             for (uid in crayons) {
                 if (crayons[uid].hasClass(CRAYON_EXPANDED)) {
-                    crayons[uid].css(crayons[uid].placeholder.position());
+                    crayons[uid].css(crayons[uid].placeholder.offset());
                 }
             }
         };
@@ -1066,7 +1049,7 @@
             if (typeof crayons[uid] == 'undefined') {
                 return makeUID(uid);
             }
-            if (typeof show == 'undefined') {
+            if (typeof show == 'undefined' || expand || crayons[uid].expanded) {
                 return;
             }
 
@@ -1076,8 +1059,6 @@
             initSize(uid);
 
             if (show) {
-//                main.height(main.height());
-//                plain.height(plain.height());
                 // Show scrollbars
                 main.css('overflow', 'auto');
                 plain.css('overflow', 'auto');
@@ -1096,7 +1077,7 @@
                 crayons[uid].left = visible.scrollLeft();
                 main.css('overflow', 'hidden');
                 plain.css('overflow', 'hidden');
-                
+
                 if (!crayons[uid].expanded) {
                     restoreDimensions(uid);
                 }
@@ -1130,7 +1111,7 @@
 
         var reconsileDimensions = function (uid) {
             // Reconsile dimensions
-            crayons[uid].plain.height(crayons[uid].main.height());
+            crayons[uid].plain.outerHeight(crayons[uid].main.outerHeight());
         };
 
         var reconsileLines = function (uid) {
@@ -1140,7 +1121,7 @@
                 var height = null;
                 if (crayons[uid].wrapped) {
                     line.css('height', '');
-                    height = line.height();
+                    height = line.outerHeight();
                     height = height ? height : '';
                     // TODO toolbar should overlay title if needed
                 } else {
