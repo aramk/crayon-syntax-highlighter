@@ -916,30 +916,17 @@
                 // Shared for scrollbars and expanding
                 crayons[uid].innerSize = {width: crayons[uid].width(), height: crayons[uid].height()};
                 crayons[uid].outerSize = {width: crayons[uid].outerWidth(), height: crayons[uid].outerHeight()};
-
                 crayons[uid].borderSize = minusSize(crayons[uid].outerSize, crayons[uid].innerSize);
-
                 crayons[uid].initialSize = {width: crayons[uid].main.outerWidth(), height: crayons[uid].main.outerHeight()};
-
                 crayons[uid].initialOuterSize = addSize(crayons[uid].initialSize, crayons[uid].borderSize);
-
                 crayons[uid].finalSize = {width: crayons[uid].table.outerWidth(), height: crayons[uid].table.outerHeight()};
-                // If toolbar is always showing, make room for it
-//                    if (crayons[uid].toolbarMouseover == false) {
                 crayons[uid].finalSize.height += crayons[uid].toolbar.outerHeight();
-//                    }
-
                 // Ensure we don't shrink
                 crayons[uid].finalSize.width = CrayonUtil.setMin(crayons[uid].finalSize.width, crayons[uid].initialSize.width);
                 crayons[uid].finalSize.height = CrayonUtil.setMin(crayons[uid].finalSize.height, crayons[uid].initialSize.height);
                 crayons[uid].diffSize = minusSize(crayons[uid].finalSize, crayons[uid].initialSize);
-
                 crayons[uid].finalOuterSize = addSize(crayons[uid].finalSize, crayons[uid].borderSize);
-
-                // If toolbar is always showing, make room for it
-                if (crayons[uid].toolbarMouseover == false) {
-                    crayons[uid].initialSize.height += crayons[uid].toolbar.outerHeight();
-                }
+                crayons[uid].initialSize.height += crayons[uid].toolbar.outerHeight();
             }
         };
 
@@ -957,14 +944,12 @@
             if (expand) {
                 if (typeof crayons[uid].expanded == 'undefined') {
                     initSize(uid);
-
                     crayons[uid].expandTime = CrayonUtil.setRange(crayons[uid].diffSize.width / 3, 300, 800);
                     crayons[uid].expanded = false;
-
                     var placeHolderSize = crayons[uid].finalOuterSize;
                     crayons[uid].placeholder = $('<div></div>');
                     crayons[uid].placeholder.addClass(CRAYON_PLACEHOLDER);
-                        crayons[uid].placeholder.css(placeHolderSize);
+                    crayons[uid].placeholder.css(placeHolderSize);
                     crayons[uid].before(crayons[uid].placeholder);
                     crayons[uid].placeholder.css('margin', crayons[uid].css('margin'));
                     $(window).bind('resize', placeholderResize);
@@ -1025,11 +1010,9 @@
                        expandFinish(uid);
                     }, delay);
                 }
-
                 crayons[uid].placeholder.hide();
                 crayons[uid].placeholder.before(crayons[uid]);
                 crayons[uid].css({left: 'auto', top: 'auto'});
-
                 crayons[uid].removeClass(CRAYON_EXPANDED);
             }
 

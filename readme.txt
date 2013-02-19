@@ -245,6 +245,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Line height can now be customised along with font size
 * FIXED:
+    * Expanding code issues to do with position and dimensions
     * Toolbar font-size and line height improvements
     * Border is now drawn inside so right border won't clip from theme CSS
     * Highlighting improvements for variables and entities

@@ -22,10 +22,6 @@ coloring etc.
     -webkit-box-sizing: border-box;
 }
 
-.crayon-syntax.crayon-theme-classic {
-    border-width: 50px !important;
-}
-
 .crayon-syntax div {
     /* Need !important? */
     background: none;
