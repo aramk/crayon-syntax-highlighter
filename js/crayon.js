@@ -216,7 +216,7 @@
                 // TODO If width has changed or timeout, stop timer
                 if (/*last_num_width != nums.outerWidth() ||*/ i == 5) {
                     clearInterval(load_timer);
-                    //crayon[uid].removeClass(CRAYON_LOADING);
+                    //crayons[uid].removeClass(CRAYON_LOADING);
                     crayons[uid].loading = false;
                 }
                 i++;
@@ -286,7 +286,7 @@
                 // Overlay the toolbar if needed, only if doing so will not hide the
                 // whole code!
                 if (toolbar.filter('[data-settings~="overlay"]').length != 0
-                    && !crayon[uid].hasOneLine) {
+                    && !crayons[uid].hasOneLine) {
                     toolbar.css('position', 'absolute');
                     toolbar.css('z-index', 2);
                     // Hide on single click when overlayed
@@ -348,7 +348,7 @@
 
             // Scrollbar show events
             var expand = c.filter('[data-settings~="expand"]').length != 0;
-//            crayon[uid].mouse_expand = expand;
+//            crayons[uid].mouse_expand = expand;
             if (!touchscreen && c.filter('[data-settings~="scroll-mouseover"]').length != 0) {
                 // Disable on touchscreen devices and when set to mouseover
                 main.css('overflow', 'hidden');
