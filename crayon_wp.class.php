@@ -191,6 +191,12 @@ class CrayonWP {
     public static function highlight($code) {
         $captures = CrayonWP::capture_crayons(0, $code);
         $the_captures = $captures['capture'];
+        if (count($the_captures) == 0) {
+            // Nothing captured, so wrap in a pre and try again
+            $code = '<pre>' . $code . '</pre>';
+            $captures = CrayonWP::capture_crayons(0, $code);
+            $the_captures = $captures['capture'];
+        }
         $the_content = $captures['content'];
         foreach ($the_captures as $id => $capture) {
             $atts = $capture['atts'];
@@ -205,6 +211,19 @@ class CrayonWP {
         }
 
         return $the_content;
+    }
+
+    public static function ajax_highlight() {
+        $code = isset($_POST['code']) ? $_POST['code'] : null;
+        if (!$code) {
+            $code = isset($_GET['code']) ? $_GET['code'] : null;
+        }
+        if ($code) {
+            echo self::highlight($code);
+        } else {
+            echo "No code specified.";
+        }
+        exit();
     }
 
     /* Uses the main query */
@@ -907,6 +926,8 @@ class CrayonWP {
     public static function init_ajax() {
         add_action('wp_ajax_crayon-tag-editor', 'CrayonTagEditorWP::content');
         add_action('wp_ajax_nopriv_crayon-tag-editor', 'CrayonTagEditorWP::content');
+        add_action('wp_ajax_crayon-highlight', 'CrayonWP::ajax_highlight');
+        add_action('wp_ajax_nopriv_crayon-highlight', 'CrayonWP::ajax_highlight');
         if (is_admin()) {
             add_action('wp_ajax_crayon-ajax', 'CrayonWP::ajax');
             add_action('wp_ajax_crayon-theme-editor', 'CrayonThemeEditorWP::content');
