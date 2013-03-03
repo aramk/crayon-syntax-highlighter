@@ -251,6 +251,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Expanding code issues to do with position and dimensions
     * Toolbar font-size and line height improvements
     * Border is now drawn inside so right border won't clip from theme CSS
+    * Comments were not detected to contain Crayons unless edited in wp-admin
     * Highlighting improvements for variables and entities
 
 = 2.1.2 =

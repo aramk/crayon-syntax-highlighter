@@ -1269,10 +1269,10 @@ if (defined('ABSPATH')) {
         // For marking a post as containing a Crayon
         add_action('update_post', 'CrayonWP::save_post', 10, 2);
         add_action('save_post', 'CrayonWP::save_post', 10, 2);
-        if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
-            add_action('comment_post', 'CrayonWP::save_comment', 10, 2);
-            add_action('edit_comment', 'CrayonWP::save_comment', 10, 2);
-        }
+    }
+    if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
+        add_action('comment_post', 'CrayonWP::save_comment', 10, 2);
+        add_action('edit_comment', 'CrayonWP::save_comment', 10, 2);
     }
     add_filter('init', 'CrayonWP::init_ajax');
 }
