@@ -476,13 +476,14 @@
                     }
                 }
             }, args);
-            args.html = '<table class="field-table">';
+            args.html = '<table class="field-table crayon-prompt-' + base.nameToID(args.title) + '">';
             if (args.desc) {
                 args.html += '<tr><td colspan="2">' + args.desc + '</td></tr>';
             }
             args.html += '<tr><td>' + args.text + ':</td><td>' + base.createInput('prompt-text') + '</td></tr>';
             args.html += '</table>';
-            admin.createDialog(args);
+            var options = {width: '400px'};
+            admin.createDialog(args, options);
         };
 
         base.initUI = function () {

@@ -204,7 +204,7 @@ class CrayonThemeEditorWP {
                 'editingTheme' => crayon__("Editing Theme: %s"),
                 'creatingTheme' => crayon__("Creating Theme: %s"),
                 'submit' => crayon__("Submit Your Theme"),
-                'submitText' => crayon__("Submit your User Theme for inclusion as a Stock Theme in Crayon!"),
+                'submitText' => crayon__("Submit your User Theme for inclusion as a Stock Theme in Crayon! This will email me your theme - make sure it's considerably different from the stock themes :)"),
                 'message' => crayon__("Message"),
                 'submitMessage' => crayon__("Please include this theme in Crayon!"),
                 'submitSucceed' => crayon__("Submit was successful."),

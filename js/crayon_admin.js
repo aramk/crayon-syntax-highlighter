@@ -531,14 +531,14 @@
             base.createDialog(args);
         };
 
-        base.createDialog = function (args) {
+        base.createDialog = function (args, options) {
             var defaultArgs = {
                 yesLabel: strings.yes,
                 noLabel: strings.no,
                 title: strings.confirm
             };
             args = $.extend(defaultArgs, args);
-            var options = {
+            var options = $.extend({
                 modal: true, title: args.title, zIndex: 10000, autoOpen: true,
                 width: 'auto', resizable: false,
                 buttons: {
@@ -548,7 +548,7 @@
                 close: function (event, ui) {
                     $(this).remove();
                 }
-            };
+            }, options);
             options.buttons[args.yesLabel] = function () {
                 if (args.yes) {
                     args.yes();
