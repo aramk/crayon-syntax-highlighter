@@ -247,6 +247,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Line height can now be customised along with font size
     * AJAX method for highlighting Crayon using ajaxurl. See http://aramk.com/crayon/adding-crayon-to-posts-in-wordpress-programmatically/.
+    * Terminal theme
 * FIXED:
     * Expanding code issues to do with position and dimensions
     * Toolbar font-size and line height improvements
