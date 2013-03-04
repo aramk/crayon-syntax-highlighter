@@ -1,0 +1,174 @@
+/*
+Name: Terminal
+Description: Looks like a terminal.
+Version: 1.0
+Author: Aram Kocharyan
+URL: http://aramk.com/
+*/
+.crayon-theme-terminal {
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #1b3400 !important;
+}
+.crayon-theme-terminal-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #fafafa !important;
+}
+.crayon-theme-terminal .crayon-table .crayon-nums {
+	background: #286900 !important;
+	color: #97cf32 !important;
+	border-right-color: #55a800 !important;
+	border-right-width: 2 !important;
+	border-right-style: solid !important;
+}
+.crayon-theme-terminal *::selection {
+	background: transparent !important;
+}
+.crayon-theme-terminal .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-terminal .crayon-striped-line {
+	background: #1a4100 !important;
+}
+.crayon-theme-terminal .crayon-striped-num {
+	background: #478100 !important;
+	color: #97cf32 !important;
+}
+.crayon-theme-terminal .crayon-marked-line {
+	background: #2e5a00 !important;
+	border-width: 1px !important;
+	border-color: #667f00 !important;
+}
+.crayon-theme-terminal .crayon-marked-num {
+	color: #97cf32 !important;
+	background: #2f5f00 !important;
+	border-width: 1px !important;
+	border-color: #5999d9 !important;
+}
+.crayon-theme-terminal .crayon-marked-line.crayon-striped-line {
+	background: #4a6500 !important;
+}
+.crayon-theme-terminal .crayon-marked-num.crayon-striped-num {
+	background: #567d00 !important;
+	color: #97cf32 !important;
+}
+.crayon-theme-terminal .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-terminal .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-terminal .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-terminal .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-terminal .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-terminal .crayon-toolbar {
+	background: #375e00 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #779700 !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-terminal .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-terminal .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-terminal .crayon-title {
+	color: #87ca00 !important;
+}
+.crayon-theme-terminal .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-terminal .crayon-button {
+	background-color: #669900 !important;
+}
+.crayon-theme-terminal .crayon-button:hover {
+	background-color: #76b800 !important;
+	color: #666;
+}
+.crayon-theme-terminal .crayon-button.crayon-pressed:hover {
+	background-color: #76b800 !important;
+	color: #666;
+}
+.crayon-theme-terminal .crayon-button.crayon-pressed {
+	background-color: #4e7a00 !important;
+	color: #FFF;
+}
+.crayon-theme-terminal .crayon-button.crayon-pressed:active {
+	background-color: #4e7a00 !important;
+	color: #FFF;
+}
+.crayon-theme-terminal .crayon-button:active {
+	background-color: #4e7a00 !important;
+	color: #FFF;
+}
+.crayon-theme-terminal .crayon-pre .c {
+	color: #ff9b00 !important;
+}
+.crayon-theme-terminal .crayon-pre .s {
+	color: #3ec700 !important;
+}
+.crayon-theme-terminal .crayon-pre .p {
+	color: #caaf00 !important;
+}
+.crayon-theme-terminal .crayon-pre .ta {
+	color: #ffdd00 !important;
+}
+.crayon-theme-terminal .crayon-pre .k {
+	color: #95e100 !important;
+}
+.crayon-theme-terminal .crayon-pre .st {
+	color: #95e100 !important;
+}
+.crayon-theme-terminal .crayon-pre .r {
+	color: #95e100 !important;
+}
+.crayon-theme-terminal .crayon-pre .t {
+	color: #95e100 !important;
+}
+.crayon-theme-terminal .crayon-pre .m {
+	color: #95e100 !important;
+}
+.crayon-theme-terminal .crayon-pre .i {
+	color: #ffffff !important;
+}
+.crayon-theme-terminal .crayon-pre .e {
+	color: #e7ff5e !important;
+}
+.crayon-theme-terminal .crayon-pre .v {
+	color: #ffffff !important;
+}
+.crayon-theme-terminal .crayon-pre .cn {
+	color: #e7ffb9 !important;
+}
+.crayon-theme-terminal .crayon-pre .o {
+	color: #95e100 !important;
+}
+.crayon-theme-terminal .crayon-pre .sy {
+	color: #c9c9c9 !important;
+}
+.crayon-theme-terminal .crayon-pre .n {
+	color: #d4ff8e !important;
+	font-style: italic !important;
+}
+.crayon-theme-terminal .crayon-pre .f {
+	color: #639f00 !important;
+}
+.crayon-theme-terminal .crayon-pre .h {
+	color: #ffffff !important;
+}
