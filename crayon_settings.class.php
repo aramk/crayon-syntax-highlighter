@@ -91,6 +91,7 @@ class CrayonSettings {
 	const SAFE_ENQUEUE = 'safe-enqueue';
 	const INLINE_TAG = 'inline-tag';
     const INLINE_TAG_CAPTURE = 'inline-tag-capture';
+    const INLINE_CODE_TAG_CAPTURE = 'inline-code-tag-capture';
 	const INLINE_MARGIN = 'inline-margin';
 	const INLINE_WRAP = 'inline-wrap';
 	const BACKQUOTE = 'backquote';
@@ -221,6 +222,7 @@ class CrayonSettings {
 			new CrayonSetting(self::SAFE_ENQUEUE, TRUE),
 			new CrayonSetting(self::INLINE_TAG, TRUE),
             new CrayonSetting(self::INLINE_TAG_CAPTURE, FALSE),
+            new CrayonSetting(self::INLINE_CODE_TAG_CAPTURE, FALSE),
 			new CrayonSetting(self::INLINE_MARGIN, 5),
 			new CrayonSetting(self::INLINE_WRAP, TRUE),
 			new CrayonSetting(self::BACKQUOTE, TRUE),
@@ -582,6 +584,10 @@ class CrayonGlobalSettings {
 		self::init();
 		return self::$global->val_str($name);
 	}
+
+    public static function has_changed($input, $setting, $value) {
+        return $input == $setting && $value != CrayonGlobalSettings::val($setting);
+    }
 
 	public static function set($name, $value = NULL, $replace = FALSE) {
 		self::init();

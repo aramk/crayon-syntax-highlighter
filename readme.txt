@@ -247,10 +247,12 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Line height can now be customised along with font size
     * AJAX method for highlighting Crayon using ajaxurl. See http://aramk.com/crayon/adding-crayon-to-posts-in-wordpress-programmatically/.
+    * Ability to capture code tags as inline Crayons
     * Terminal theme
 * FIXED:
     * Expanding code issues to do with position and dimensions
     * Toolbar font-size and line height improvements
+    * Now settings which affect capturing trigger a refresh of crayon posts when modified
     * Added message about emailing in submit window of theme editor
     * Border is now drawn inside so right border won't clip from theme CSS
     * Comments were not detected to contain Crayons unless edited in wp-admin
