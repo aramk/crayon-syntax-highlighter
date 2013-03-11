@@ -246,6 +246,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.1.4 =
 * ADDED:
     * Eclipse theme
+* FIXED:
+    * Blog content was being treated as a single code block due to a change in the internal CrayonWP::highlight() method
 
 = 2.1.3 =
 * ADDED:

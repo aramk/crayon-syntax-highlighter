@@ -188,10 +188,10 @@ class CrayonWP {
     }
 
     /* For manually highlighting code, useful for other PHP contexts */
-    public static function highlight($code) {
+    public static function highlight($code, $add_tags = FALSE) {
         $captures = CrayonWP::capture_crayons(0, $code);
         $the_captures = $captures['capture'];
-        if (count($the_captures) == 0) {
+        if (count($the_captures) == 0 && $add_tags) {
             // Nothing captured, so wrap in a pre and try again
             $code = '<pre>' . $code . '</pre>';
             $captures = CrayonWP::capture_crayons(0, $code);
