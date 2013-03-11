@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: crayon-syntax-highlighter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-24 16:29+0200\n"
+"POT-Creation-Date: 2013-03-11 07:31+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: HakanEr <hakanerwptr@gmail.com>\n"
 "Language-Team: hakaner <hakanerwptr@gmail.com>\n"
@@ -17,202 +17,202 @@ msgstr ""
 "crayon__;crayon_e;crayon_n\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_formatter.class.php:283
+#: ../crayon_formatter.class.php:287
 msgid "Toggle Line Numbers"
 msgstr "Satır Numaralarına Geç"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_formatter.class.php:287
+#: ../crayon_formatter.class.php:291
 msgid "Toggle Plain Code"
 msgstr "Düz Koda Geç"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_formatter.class.php:291
+#: ../crayon_formatter.class.php:295
 msgid "Toggle Line Wrap"
 msgstr "Satır Sarımına Geç"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_formatter.class.php:295 ../crayon_formatter.class.php:299
+#: ../crayon_formatter.class.php:299 ../crayon_formatter.class.php:303
 msgid "Expand Code"
 msgstr "Kodu Genişlet"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_formatter.class.php:303
+#: ../crayon_formatter.class.php:307
 msgid "Open Code In New Window"
 msgstr "Kodu Yeni Pencerede Aç"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_formatter.class.php:330
+#: ../crayon_formatter.class.php:334
 msgid "Contains Mixed Languages"
 msgstr "Karışık Diller içerir"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:147
+#: ../crayon_settings.class.php:149
 msgid "Hourly"
 msgstr "Saatlik"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:147
+#: ../crayon_settings.class.php:149
 msgid "Daily"
 msgstr "Günlük"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:148
+#: ../crayon_settings.class.php:150
 msgid "Weekly"
 msgstr "Haftalık"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:148
+#: ../crayon_settings.class.php:150
 msgid "Monthly"
 msgstr "Aylık"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:149
+#: ../crayon_settings.class.php:151
 msgid "Immediately"
 msgstr "Hemen"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:159 ../crayon_settings.class.php:163
+#: ../crayon_settings.class.php:162 ../crayon_settings.class.php:166
 msgid "Max"
 msgstr "Max"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:159 ../crayon_settings.class.php:163
+#: ../crayon_settings.class.php:162 ../crayon_settings.class.php:166
 msgid "Min"
 msgstr "Min"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:159 ../crayon_settings.class.php:163
+#: ../crayon_settings.class.php:162 ../crayon_settings.class.php:166
 msgid "Static"
 msgstr "Sabit"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:161 ../crayon_settings.class.php:165
-#: ../crayon_settings_wp.class.php:737 ../crayon_settings_wp.class.php:746
-#: ../crayon_settings_wp.class.php:1020
+#: ../crayon_settings.class.php:164 ../crayon_settings.class.php:168
+#: ../crayon_settings_wp.class.php:758 ../crayon_settings_wp.class.php:767
+#: ../crayon_settings_wp.class.php:1043 ../crayon_settings_wp.class.php:1045
 msgid "Pixels"
 msgstr "Piksel"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:161 ../crayon_settings.class.php:165
+#: ../crayon_settings.class.php:164 ../crayon_settings.class.php:168
 msgid "Percent"
 msgstr "Yüzde"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:174
+#: ../crayon_settings.class.php:177
 msgid "None"
 msgstr "Yok"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:174
+#: ../crayon_settings.class.php:177
 msgid "Left"
 msgstr "Sol"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:174
+#: ../crayon_settings.class.php:177
 msgid "Center"
 msgstr "Merkez"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:174
+#: ../crayon_settings.class.php:177
 msgid "Right"
 msgstr "Sağ"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:176 ../crayon_settings.class.php:200
+#: ../crayon_settings.class.php:179 ../crayon_settings.class.php:203
 msgid "On MouseOver"
 msgstr "Fare Üstündeyken"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:176 ../crayon_settings.class.php:182
+#: ../crayon_settings.class.php:179 ../crayon_settings.class.php:185
 msgid "Always"
 msgstr "Herzaman"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:176 ../crayon_settings.class.php:182
+#: ../crayon_settings.class.php:179 ../crayon_settings.class.php:185
 msgid "Never"
 msgstr "Asla"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:182
+#: ../crayon_settings.class.php:185
 msgid "When Found"
 msgstr "Bulunduğunda"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:200
+#: ../crayon_settings.class.php:203
 msgid "On Double Click"
 msgstr "Çift Tık ile aç"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:200
+#: ../crayon_settings.class.php:203
 msgid "On Single Click"
 msgstr "Tek Tık ile aç"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:200
+#: ../crayon_settings.class.php:203
 msgid "Disable Mouse Events"
 msgstr "Fare Etkinliği Devre Dışı"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings.class.php:207
+#: ../crayon_settings.class.php:210
 msgid "An error has occurred. Please try again later."
 msgstr "Bir hata meydana geldi. Daha sonra tekrar deneyin."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:52 ../crayon_settings_wp.class.php:193
-#: ../crayon_settings_wp.class.php:1210
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:242
+#: ../crayon_settings_wp.class.php:53 ../crayon_settings_wp.class.php:193
+#: ../crayon_settings_wp.class.php:1236
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:246
 msgid "Settings"
 msgstr "Ayarlar"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:124
+#: ../crayon_settings_wp.class.php:125
 #, php-format
 msgid "Press %s to Copy, %s to Paste"
 msgstr "%s ile Kopyala, %s ile Yapıştır"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:125
+#: ../crayon_settings_wp.class.php:126
 msgid "Click To Expand Code"
 msgstr "Kodu Genişletmek İçin Tıkla"
 
-#: ../crayon_settings_wp.class.php:161
+#: ../crayon_settings_wp.class.php:162
 msgid "Prompt"
 msgstr "Komut İstemi"
 
-#: ../crayon_settings_wp.class.php:162
+#: ../crayon_settings_wp.class.php:163
 msgid "Value"
 msgstr "Değer"
 
-#: ../crayon_settings_wp.class.php:163
+#: ../crayon_settings_wp.class.php:164
 msgid "Alert"
 msgstr "İkaz"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:164 ../crayon_settings_wp.class.php:883
+#: ../crayon_settings_wp.class.php:165 ../crayon_settings_wp.class.php:904
 msgid "No"
 msgstr "Hayır"
 
-#: ../crayon_settings_wp.class.php:165 ../crayon_settings_wp.class.php:883
+#: ../crayon_settings_wp.class.php:166 ../crayon_settings_wp.class.php:904
 msgid "Yes"
 msgstr "Evet"
 
-#: ../crayon_settings_wp.class.php:166
+#: ../crayon_settings_wp.class.php:167
 msgid "Confirm"
 msgstr "Onayla"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:167
+#: ../crayon_settings_wp.class.php:168
 msgid "Change Code"
 msgstr "Kodu Değiştir"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:175
+#: ../crayon_settings_wp.class.php:176
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Bu sayfaya erişmek için yeterli izinlere sahip değilsiniz."
 
@@ -222,304 +222,304 @@ msgid "Save Changes"
 msgstr "Kaydet"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:215
+#: ../crayon_settings_wp.class.php:216
 msgid "Reset Settings"
 msgstr "Ayarları Sıfırla"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:473
+#: ../crayon_settings_wp.class.php:474
 msgid "General"
 msgstr "Genel"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:474
+#: ../crayon_settings_wp.class.php:475
 msgid "Theme"
 msgstr "Tema"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:475
+#: ../crayon_settings_wp.class.php:476
 msgid "Font"
 msgstr "Font"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:476
+#: ../crayon_settings_wp.class.php:477
 msgid "Metrics"
 msgstr "Ölçüler"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:477
-#: ../util/theme-editor/theme_editor.php:289
+#: ../crayon_settings_wp.class.php:478
+#: ../util/theme-editor/theme_editor.php:290
 msgid "Toolbar"
 msgstr "Araç Çubuğu"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:478
-#: ../util/theme-editor/theme_editor.php:287
+#: ../crayon_settings_wp.class.php:479
+#: ../util/theme-editor/theme_editor.php:288
 msgid "Lines"
 msgstr "Satırlar"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:479
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:202
+#: ../crayon_settings_wp.class.php:480
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:206
 msgid "Code"
 msgstr "Kod"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:480
+#: ../crayon_settings_wp.class.php:481
 msgid "Tags"
 msgstr "Etiketler"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:481
+#: ../crayon_settings_wp.class.php:482
 msgid "Languages"
 msgstr "Diller"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:482
+#: ../crayon_settings_wp.class.php:483
 msgid "Files"
 msgstr "Dosyalar"
 
-#: ../crayon_settings_wp.class.php:483
+#: ../crayon_settings_wp.class.php:484
 msgid "Posts"
 msgstr "Yazılar"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:484
+#: ../crayon_settings_wp.class.php:485
 msgid "Tag Editor"
 msgstr "Etiket Düzenleyici"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:485
+#: ../crayon_settings_wp.class.php:486
 msgid "Misc"
 msgstr "Çeşitli"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:488
+#: ../crayon_settings_wp.class.php:489
 msgid "Debug"
 msgstr "Hata Ayıklama"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:489
+#: ../crayon_settings_wp.class.php:490
 msgid "Errors"
 msgstr "Hatalar"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:490
+#: ../crayon_settings_wp.class.php:491
 msgid "Log"
 msgstr "Günlük"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:493
+#: ../crayon_settings_wp.class.php:494
 msgid "About"
 msgstr "Hakkında"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:714
+#: ../crayon_settings_wp.class.php:735
 msgid "Height"
 msgstr "Yükseklik"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:720
+#: ../crayon_settings_wp.class.php:741
 msgid "Width"
 msgstr "Genişlik"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:726
+#: ../crayon_settings_wp.class.php:747
 msgid "Top Margin"
 msgstr "Üst Boşluk"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:727
+#: ../crayon_settings_wp.class.php:748
 msgid "Bottom Margin"
 msgstr "Alt Boşluk"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:728 ../crayon_settings_wp.class.php:733
+#: ../crayon_settings_wp.class.php:749 ../crayon_settings_wp.class.php:754
 msgid "Left Margin"
 msgstr "Sol Boşluk"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:729 ../crayon_settings_wp.class.php:733
+#: ../crayon_settings_wp.class.php:750 ../crayon_settings_wp.class.php:754
 msgid "Right Margin"
 msgstr "Sağ Boşluk"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:739
+#: ../crayon_settings_wp.class.php:760
 msgid "Horizontal Alignment"
 msgstr "Yatay Hizalama"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:742
+#: ../crayon_settings_wp.class.php:763
 msgid "Allow floating elements to surround Crayon"
 msgstr "Geçişli elementleri Crayon çevrelemeye izin ver"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:744
+#: ../crayon_settings_wp.class.php:765
 msgid "Inline Margin"
 msgstr "Satıriçi Boşluk"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:752
+#: ../crayon_settings_wp.class.php:773
 msgid "Display the Toolbar"
 msgstr "Araç çubuğunu göster"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:755
+#: ../crayon_settings_wp.class.php:776
 msgid "Overlay the toolbar on code rather than push it down when possible"
 msgstr "Araç çubuğunu mümkünse kodları aşağı itmek yerine üstte göster"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:756
+#: ../crayon_settings_wp.class.php:777
 msgid "Toggle the toolbar on single click when it is overlayed"
 msgstr "Araç çubuğu üste çıktığında tek tıkla gizle"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:757
+#: ../crayon_settings_wp.class.php:778
 msgid "Delay hiding the toolbar on MouseOut"
 msgstr "Fare dışa çıktığında araç çubuğunu gizlemek için bekle"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:759
+#: ../crayon_settings_wp.class.php:780
 msgid "Display the title when provided"
 msgstr "Varsa başlığı görüntüle"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:760
+#: ../crayon_settings_wp.class.php:781
 msgid "Display the language"
 msgstr "Dilleri göster"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:767
+#: ../crayon_settings_wp.class.php:788
 msgid "Display striped code lines"
 msgstr "Şeritli kod satırını göster"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:768
+#: ../crayon_settings_wp.class.php:789
 msgid "Enable line marking for important lines"
 msgstr "Önemli satırlar için satır işaretleme etkin"
 
-#: ../crayon_settings_wp.class.php:769
+#: ../crayon_settings_wp.class.php:790
 msgid "Enable line ranges for showing only parts of code"
 msgstr "Kodun sadece bir parçasını gösteren satır aralıklarını etkinleştir"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:770
+#: ../crayon_settings_wp.class.php:791
 msgid "Display line numbers by default"
 msgstr "Varsayılan olarak satır numaralarını göster"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:771
+#: ../crayon_settings_wp.class.php:792
 msgid "Enable line number toggling"
 msgstr "Satır numaraları geçişi etkin"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:772
+#: ../crayon_settings_wp.class.php:793
 msgid "Wrap lines by default"
 msgstr "Varsayılan olarak satırları sar"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:773
+#: ../crayon_settings_wp.class.php:794
 msgid "Enable line wrap toggling"
 msgstr "Satır sarıma geçişi etkin"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:774
+#: ../crayon_settings_wp.class.php:795
 msgid "Start line numbers from"
 msgstr "Satır numarasını buradan başlat"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:785
+#: ../crayon_settings_wp.class.php:806
 msgid "When no language is provided, use the fallback"
 msgstr "Belirlenmiş bir dil olmadığında son çareyi kullan"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:791
+#: ../crayon_settings_wp.class.php:812
 #, php-format
 msgid "%d language has been detected."
 msgstr "%d dil tespit edildi."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:792
+#: ../crayon_settings_wp.class.php:813
 msgid "Parsing was successful"
 msgstr "Ayrıştırma başarılı"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:792
+#: ../crayon_settings_wp.class.php:813
 msgid "Parsing was unsuccessful"
 msgstr "Ayrıştırma başarılı değil"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:798
+#: ../crayon_settings_wp.class.php:819
 #, php-format
 msgid "The selected language with id %s could not be loaded"
 msgstr "ID %s ile seçilen dil yüklenemedi"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:801
+#: ../crayon_settings_wp.class.php:822
 msgid "Show Languages"
 msgstr "Dilleri Göster"
 
-#: ../crayon_settings_wp.class.php:837
+#: ../crayon_settings_wp.class.php:858
 msgid "Show Crayon Posts"
 msgstr "Crayon Yazıları Göster"
 
-#: ../crayon_settings_wp.class.php:838
+#: ../crayon_settings_wp.class.php:859
 msgid "Refresh"
 msgstr "Yenile"
 
-#: ../crayon_settings_wp.class.php:863
+#: ../crayon_settings_wp.class.php:884
 msgid "ID"
 msgstr "ID"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:863
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:179
-#: ../util/theme-editor/theme_editor.php:304
+#: ../crayon_settings_wp.class.php:884
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:183
+#: ../util/theme-editor/theme_editor.php:305
 msgid "Title"
 msgstr "Başlık"
 
-#: ../crayon_settings_wp.class.php:863
+#: ../crayon_settings_wp.class.php:884
 msgid "Posted"
 msgstr "Yayınlandı"
 
-#: ../crayon_settings_wp.class.php:863
+#: ../crayon_settings_wp.class.php:884
 msgid "Modifed"
 msgstr "Değiştirildi"
 
-#: ../crayon_settings_wp.class.php:863
+#: ../crayon_settings_wp.class.php:884
 msgid "Contains Legacy Tags?"
 msgstr "Eski Etiketleri İçersin?"
 
-#: ../crayon_settings_wp.class.php:978
+#: ../crayon_settings_wp.class.php:999
 msgid "Edit"
 msgstr "Düzenle"
 
-#: ../crayon_settings_wp.class.php:978
-#: ../util/theme-editor/theme_editor.php:198
+#: ../crayon_settings_wp.class.php:999
+#: ../util/theme-editor/theme_editor.php:199
 msgid "Duplicate"
 msgstr "Çoğalt"
 
-#: ../crayon_settings_wp.class.php:978
+#: ../crayon_settings_wp.class.php:999
 msgid "Submit"
 msgstr "Gönder"
 
-#: ../crayon_settings_wp.class.php:979
-#: ../util/theme-editor/theme_editor.php:195
+#: ../crayon_settings_wp.class.php:1000
+#: ../util/theme-editor/theme_editor.php:196
 msgid "Delete"
 msgstr "Sil"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:981
+#: ../crayon_settings_wp.class.php:1002
 msgid "Loading..."
 msgstr "Yükleniyor..."
 
-#: ../crayon_settings_wp.class.php:983
+#: ../crayon_settings_wp.class.php:1004
 msgid "Duplicate a Stock Theme into a User Theme to allow editing."
 msgstr ""
 "Düzenleyebilmek için, bir Kullanıcı Teması içine bir Hazır Tema çoğaltın."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:994
+#: ../crayon_settings_wp.class.php:1015
 #, php-format
 msgid ""
 "Change the %1$sfallback language%2$s to change the sample code or %3$schange "
@@ -529,138 +529,152 @@ msgstr ""
 "el ile%4$s değiştirin. 5-7 satırlar işaretli."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1001
+#: ../crayon_settings_wp.class.php:1022
 msgid "Enable Live Preview"
 msgstr "Ön izleme etkin"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1003
+#: ../crayon_settings_wp.class.php:1024
 msgid "Enqueue themes in the header (more efficient)."
 msgstr "Temaları header içinde kuyrukla (daha etkin)."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1006
+#: ../crayon_settings_wp.class.php:1027
 #, php-format
 msgid "The selected theme with id %s could not be loaded"
 msgstr "ID %s ile seçilen tema yüklenemedi"
 
+#: ../crayon_settings_wp.class.php:1039
+msgid "Add More"
+msgstr "Başka Ekle"
+
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1018
+#: ../crayon_settings_wp.class.php:1041
 msgid "Custom Font Size"
 msgstr "Kişisel Font Boyutu"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1023
+#: ../crayon_settings_wp.class.php:1043
+msgid "Line Height"
+msgstr "Satır Yüksekliği"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1048
 #, php-format
 msgid "The selected font with id %s could not be loaded"
 msgstr "ID %s ile seçilen font yüklenemedi"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1029
+#: ../crayon_settings_wp.class.php:1054
 msgid "Enqueue fonts in the header (more efficient)."
 msgstr "Fontları header içinde kuyrukla (daha etkin)."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1034
+#: ../crayon_settings_wp.class.php:1059
 msgid "Enable plain code view and display"
 msgstr "Düz kod görünümü ve görüntüleme etkin"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1037
+#: ../crayon_settings_wp.class.php:1062
 msgid "Enable plain code toggling"
 msgstr "Düz kod geçişi etkin"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1038
+#: ../crayon_settings_wp.class.php:1063
 msgid "Show the plain code by default"
 msgstr "Düz kodu varsayılan olarak göster"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1039
+#: ../crayon_settings_wp.class.php:1064
 msgid "Enable code copy/paste"
 msgstr "Kod kopyala/yapıştır etkin"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1041
+#: ../crayon_settings_wp.class.php:1066
 msgid "Enable opening code in a window"
 msgstr "Kodları bir pencerede açma etkin"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1042
+#: ../crayon_settings_wp.class.php:1067
 msgid "Always display scrollbars"
 msgstr "Kaydırma çubuğu her zaman göster"
 
-#: ../crayon_settings_wp.class.php:1043
+#: ../crayon_settings_wp.class.php:1068
 msgid "Minimize code"
 msgstr "Kodu küçült"
 
-#: ../crayon_settings_wp.class.php:1044
+#: ../crayon_settings_wp.class.php:1069
 msgid "Expand code beyond page borders on mouseover"
 msgstr "Fare üzerindeyken sayfa sınırları dışında kodu genişlet"
 
-#: ../crayon_settings_wp.class.php:1045
+#: ../crayon_settings_wp.class.php:1070
 msgid "Enable code expanding toggling when possible"
 msgstr "Mümkün olduğunda kod genişletme geçişlerini etkinleştir"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1048
+#: ../crayon_settings_wp.class.php:1073
 msgid "Decode HTML entities in code"
 msgstr "HTML varlıkları kod içinde çöz"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1050
+#: ../crayon_settings_wp.class.php:1075
 msgid "Decode HTML entities in attributes"
 msgstr "HTML varlıkları nitelikler içinde çöz"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1052
+#: ../crayon_settings_wp.class.php:1077
 msgid "Remove whitespace surrounding the shortcode content"
 msgstr "Kısakod içeriğini çevreleyen beyaz alanları kaldır"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1054
+#: ../crayon_settings_wp.class.php:1079
 msgid "Allow Mixed Language Highlighting with delimiters and tags."
 msgstr "Sınırlayıcılar ve etiketler ile Karışık Dil Vurgulamaya izin ver."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1056
+#: ../crayon_settings_wp.class.php:1081
 msgid "Show Mixed Language Icon (+)"
 msgstr "Karışık Dil Simgesini Göster (+)"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1058
+#: ../crayon_settings_wp.class.php:1083
 msgid "Tab size in spaces"
 msgstr "Boşluk sekme boyutu"
 
-#: ../crayon_settings_wp.class.php:1060
+#: ../crayon_settings_wp.class.php:1085
 msgid "Blank lines before code:"
 msgstr "Kod öncesi boş satırlar:"
 
-#: ../crayon_settings_wp.class.php:1062
+#: ../crayon_settings_wp.class.php:1087
 msgid "Blank lines after code:"
 msgstr "Kod sonrası boş satırlar:"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1067
+#: ../crayon_settings_wp.class.php:1092
 msgid "Capture Inline Tags"
 msgstr "Satır içi Etiketleri Yakala"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1068
+#: ../crayon_settings_wp.class.php:1093
 msgid "Wrap Inline Tags"
 msgstr "Satıriçi Etiketleri Sar"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1069
+#: ../crayon_settings_wp.class.php:1094
+msgid "Capture &lt;code&gt; as Inline Tags"
+msgstr "Satır içi Etiketi olarak &lt;code&gt; Yakala"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1095
 msgid "Capture `backquotes` as &lt;code&gt;"
 msgstr "&lt;code&gt; olarak `backquotes` yakalayın"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1070
+#: ../crayon_settings_wp.class.php:1096
 msgid "Capture &lt;pre&gt; tags as Crayons"
 msgstr "&lt;pre&gt; etiketleri Crayons olarak yakala"
 
-#: ../crayon_settings_wp.class.php:1072
+#: ../crayon_settings_wp.class.php:1098
 #, php-format
 msgid ""
 "Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
@@ -671,22 +685,22 @@ msgstr ""
 "kullanın ve eski etiketleri dönüştürün."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1073
+#: ../crayon_settings_wp.class.php:1099
 msgid "Capture Mini Tags like [php][/php] as Crayons."
 msgstr "Crayons olarak [php][/php] gibi küçük etiketleri yakala."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1074
+#: ../crayon_settings_wp.class.php:1100
 msgid "Capture Inline Tags like {php}{/php} inside sentences."
 msgstr "Cümle içinde {php}{/php} gibi satıriçi etiketleri yakalayın."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1075
+#: ../crayon_settings_wp.class.php:1101
 msgid "Enable [plain][/plain] tag."
 msgstr "[plain][/plain] etiketi etkin."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1080
+#: ../crayon_settings_wp.class.php:1106
 msgid ""
 "When loading local files and a relative path is given for the URL, use the "
 "absolute path"
@@ -695,24 +709,24 @@ msgstr ""
 "yolu kullan"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1083
+#: ../crayon_settings_wp.class.php:1109
 msgid "Followed by your relative URL."
 msgstr "Bağlantılı URL tarafından izlendi."
 
-#: ../crayon_settings_wp.class.php:1090
+#: ../crayon_settings_wp.class.php:1116
 msgid "Convert Legacy Tags"
 msgstr "Eski Etiketleri Dönüştür"
 
-#: ../crayon_settings_wp.class.php:1093
+#: ../crayon_settings_wp.class.php:1119
 msgid "No Legacy Tags Found"
 msgstr "Eski Etiketler Bulunamadı"
 
-#: ../crayon_settings_wp.class.php:1097
+#: ../crayon_settings_wp.class.php:1123
 msgid "Encode"
 msgstr "Kodla"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1099
+#: ../crayon_settings_wp.class.php:1125
 #, php-format
 msgid ""
 "Use %s to separate setting names from values in the &lt;pre&gt; class "
@@ -721,7 +735,7 @@ msgstr ""
 "%s kullanarak &lt;pre&gt; sınıf niteliği içinde ayar adlarını değerlerden "
 "ayır"
 
-#: ../crayon_settings_wp.class.php:1102
+#: ../crayon_settings_wp.class.php:1128
 msgid ""
 "Display the Tag Editor in any TinyMCE instances on the frontend (e.g. "
 "bbPress)"
@@ -729,150 +743,150 @@ msgstr ""
 "Önyüzdeki herhangi bir TinyMCE örneğinde Etiket Düzenleyicisini göster (örn. "
 "bbPress)"
 
-#: ../crayon_settings_wp.class.php:1103
+#: ../crayon_settings_wp.class.php:1129
 msgid "Display Tag Editor settings on the frontend"
 msgstr "Önyüzde Etiket Düzenleyici ayarlarını göster"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1107
+#: ../crayon_settings_wp.class.php:1133
 msgid "Clear the cache used to store remote code requests"
 msgstr "Uzak kod isteklerini depolamak için ön belleği temizle"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1109
+#: ../crayon_settings_wp.class.php:1135
 msgid "Clear Now"
 msgstr "Şimdi Temizle"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1110
+#: ../crayon_settings_wp.class.php:1136
 msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
 msgstr "Sadece ihtiyaç olduğunda Crayon CSS ve JavaScript yüklemeyi dene"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1111
+#: ../crayon_settings_wp.class.php:1137
 msgid "Disable enqueuing for page templates that may contain The Loop."
 msgstr "Döngü içeren sayfa şablonları için kuyruklama devre dışı."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1112
+#: ../crayon_settings_wp.class.php:1138
 msgid "Allow Crayons inside comments"
 msgstr "Yorum içinde Crayons izini verin"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1113
+#: ../crayon_settings_wp.class.php:1139
 msgid "Remove Crayons from excerpts"
 msgstr "Crayon'ı alıntılardan çıkar"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1114
+#: ../crayon_settings_wp.class.php:1140
 msgid "Load Crayons only from the main Wordpress query"
 msgstr "Sadece ana Wordpress sorgusundan Crayons yükle"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1115
+#: ../crayon_settings_wp.class.php:1141
 msgid "Disable mouse gestures for touchscreen devices (eg. MouseOver)"
 msgstr ""
 "Dokunmatik cihazlar için fare hareketlerini devre dışı bırak (örn. Fare "
 "Üzerinde)"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1116
+#: ../crayon_settings_wp.class.php:1142
 msgid "Disable animations"
 msgstr "Animasyonlar devre dışı"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1117
+#: ../crayon_settings_wp.class.php:1143
 msgid "Disable runtime stats"
 msgstr "İşlem istatistikleri devre dışı"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1123
+#: ../crayon_settings_wp.class.php:1149
 msgid "Log errors for individual Crayons"
 msgstr "Özgün Crayons hataları günlükle"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1124
+#: ../crayon_settings_wp.class.php:1150
 msgid "Log system-wide errors"
 msgstr "Sistem-geneli hataları günlükle"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1125
+#: ../crayon_settings_wp.class.php:1151
 msgid "Display custom message for errors"
 msgstr "Hatalar için kişisel mesaj göster"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1137
+#: ../crayon_settings_wp.class.php:1163
 msgid "Show Log"
 msgstr "Günlüğü Göster"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1137
+#: ../crayon_settings_wp.class.php:1163
 msgid "Hide Log"
 msgstr "Günlüğü Gizle"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1139
+#: ../crayon_settings_wp.class.php:1165
 msgid "Clear Log"
 msgstr "Günlüğü Temizle"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1140
+#: ../crayon_settings_wp.class.php:1166
 msgid "Email Admin"
 msgstr "Yönetici E-Posta"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1142
+#: ../crayon_settings_wp.class.php:1168
 msgid "Email Developer"
 msgstr "Geliştirici E-Posta"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1144
+#: ../crayon_settings_wp.class.php:1170
 msgid "The log is currently empty."
 msgstr "Günlük şu anda boş."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1146
+#: ../crayon_settings_wp.class.php:1172
 msgid "The log file exists and is writable."
 msgstr "Günlük dosyası var ve yazılabilir."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1146
+#: ../crayon_settings_wp.class.php:1172
 msgid "The log file exists and is not writable."
 msgstr "Günlük dosyası var ve yazılabilir değil."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1148
+#: ../crayon_settings_wp.class.php:1174
 msgid "The log file does not exist and is not writable."
 msgstr "Günlük dosyası yok ve yazılabilir değil."
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1158
+#: ../crayon_settings_wp.class.php:1184
 msgid "Version"
 msgstr "Sürüm"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1160
+#: ../crayon_settings_wp.class.php:1186
 msgid "Developer"
 msgstr "Geliştirici"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1161
+#: ../crayon_settings_wp.class.php:1187
 msgid "Translators"
 msgstr "Çevirmenler"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1204
+#: ../crayon_settings_wp.class.php:1230
 msgid "?"
 msgstr "?"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1211
-#: ../util/theme-editor/theme_editor.php:326
+#: ../crayon_settings_wp.class.php:1237
+#: ../util/theme-editor/theme_editor.php:327
 msgid "Theme Editor"
 msgstr "Tema Düzenleyici"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1212
+#: ../crayon_settings_wp.class.php:1238
 msgid "Donate"
 msgstr "Bağış"
 
@@ -893,81 +907,81 @@ msgstr "Ekle"
 
 # @ crayon-syntax-highlighter
 #: ../util/tag-editor/crayon_tag_editor_wp.class.php:65
-#: ../util/theme-editor/theme_editor.php:342
+#: ../util/theme-editor/theme_editor.php:343
 msgid "Save"
 msgstr "Kaydet"
 
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:170
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:174
 msgid "OK"
 msgstr "Tamam"
 
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:172
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:176
 msgid "Cancel"
 msgstr "İptal"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:181
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:185
 msgid "A short description"
 msgstr "Kısa açıklama"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:183
-#: ../util/theme-editor/theme_editor.php:308
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:187
+#: ../util/theme-editor/theme_editor.php:309
 msgid "Inline"
 msgstr "Satıriçi"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:185
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:189
 msgid "Don't Highlight"
 msgstr "Vurgulama"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:190
-#: ../util/theme-editor/theme_editor.php:312
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:194
+#: ../util/theme-editor/theme_editor.php:313
 msgid "Language"
 msgstr "Dil"
 
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:193
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:197
 msgid "Line Range"
 msgstr "Satır Aralığı"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:194
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:198
 msgid "(e.g. 3-5 or 3)"
 msgstr "(örn. 1,2,3-5)"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:195
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:199
 msgid "Marked Lines"
 msgstr "İşaretli Satırlar"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:196
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:200
 msgid "(e.g. 1,2,3-5)"
 msgstr "(örn. 1,2,3-5)"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:205
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:209
 msgid "Clear"
 msgstr "Temizle"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:209
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:213
 msgid "Paste your code here, or type it in manually."
 msgstr "Kodu buraya yapıştır, ya da onu el ile yaz."
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:213
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:217
 msgid "URL"
 msgstr "URL"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:215
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:219
 msgid "Relative local path or absolute URL"
 msgstr "İlgili yerel yol veya tam URL"
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:218
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:222
 msgid ""
 "If the URL fails to load, the code above will be shown instead. If no code "
 "exists, an error is shown."
@@ -976,7 +990,7 @@ msgstr ""
 "herhangi bir kod yoksa, bir hata görünür."
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:220
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:224
 #, php-format
 msgid ""
 "If a relative local path is given it will be appended to %s - which is "
@@ -986,17 +1000,17 @@ msgstr ""
 "Ayarlar &gt; Dosyalar%s içinde belirtildiği gibi."
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:247
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:251
 msgid "Change the following settings to override their global values."
 msgstr "Genel değerleri geçersiz kılmak için aşağıdaki ayarları değiştirin."
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:249
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:253
 msgid "Only changes (shown yellow) are applied."
 msgstr "Sadece değişiklikler (sarı ile gösterilir) uygulanır."
 
 # @ crayon-syntax-highlighter
-#: ../util/tag-editor/crayon_tag_editor_wp.class.php:251
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:255
 #, php-format
 msgid ""
 "Future changes to the global settings under %sCrayon &gt; Settings%s won't "
@@ -1005,247 +1019,256 @@ msgstr ""
 "%sCrayon &gt; Ayarlar%s altındaki genel ayarların gelecek değişiklikleri, "
 "geçersiz ayarları etkilemez."
 
-#: ../util/theme-editor/theme_editor.php:191
+#: ../util/theme-editor/theme_editor.php:192
 msgid "User-Defined Theme"
 msgstr "Kullanıcı-Tanımlı Tema"
 
 # @ crayon-syntax-highlighter
-#: ../util/theme-editor/theme_editor.php:192
+#: ../util/theme-editor/theme_editor.php:193
 msgid "Stock Theme"
 msgstr "Hazır Tema"
 
-#: ../util/theme-editor/theme_editor.php:193
+#: ../util/theme-editor/theme_editor.php:194
 msgid "Success!"
 msgstr "Başarılı!"
 
-#: ../util/theme-editor/theme_editor.php:194
+#: ../util/theme-editor/theme_editor.php:195
 msgid "Failed!"
 msgstr "Başarısız!"
 
-#: ../util/theme-editor/theme_editor.php:196
+#: ../util/theme-editor/theme_editor.php:197
 #, php-format
 msgid "Are you sure you want to delete the \"%s\" theme?"
 msgstr "\"%s\" temasını silmek istediğinizden emin misiniz?"
 
-#: ../util/theme-editor/theme_editor.php:197
+#: ../util/theme-editor/theme_editor.php:198
 msgid "Delete failed!"
 msgstr "Silme başarısız!"
 
-#: ../util/theme-editor/theme_editor.php:199
+#: ../util/theme-editor/theme_editor.php:200
 msgid "New Name"
 msgstr "Yeni İsim"
 
-#: ../util/theme-editor/theme_editor.php:200
+#: ../util/theme-editor/theme_editor.php:201
 msgid "Duplicate failed!"
 msgstr "Çoğaltma başarısız!"
 
-#: ../util/theme-editor/theme_editor.php:201
+#: ../util/theme-editor/theme_editor.php:202
 msgid "Please check the log for details."
 msgstr "Lütfen ayrıntılar için günlüğü kontrol edin."
 
-#: ../util/theme-editor/theme_editor.php:202
+#: ../util/theme-editor/theme_editor.php:203
 msgid "Are you sure you want to discard all changes?"
 msgstr "Tüm değişiklikleri iptal etmek istediğinizden emin misiniz?"
 
-#: ../util/theme-editor/theme_editor.php:203
+#: ../util/theme-editor/theme_editor.php:204
 #, php-format
 msgid "Editing Theme: %s"
 msgstr "Tema Düzenleme: %s"
 
-#: ../util/theme-editor/theme_editor.php:204
+#: ../util/theme-editor/theme_editor.php:205
 #, php-format
 msgid "Creating Theme: %s"
 msgstr "Tema Oluşturma: %s"
 
-#: ../util/theme-editor/theme_editor.php:205
+#: ../util/theme-editor/theme_editor.php:206
 msgid "Submit Your Theme"
 msgstr "Temanızı Gönderin"
 
-#: ../util/theme-editor/theme_editor.php:206
-msgid "Submit your User Theme for inclusion as a Stock Theme in Crayon!"
-msgstr ""
-"Crayon içine bir Hazır Tema olarak eklenmesi için Kullanıcı Temanızı "
-"gönderin!"
-
 #: ../util/theme-editor/theme_editor.php:207
+msgid ""
+"Submit your User Theme for inclusion as a Stock Theme in Crayon! This will "
+"email me your theme - make sure it's considerably different from the stock "
+"themes :)"
+msgstr ""
+"Crayon içine bir Hazır Tema olarak dahil edilmesi için Kişisel Temanızı "
+"gönderin! Bu, temanızı bana eposta ile gönderecek - hazır temalardan oldukça "
+"farklı olduğundan emin olun :)"
+
+#: ../util/theme-editor/theme_editor.php:208
 msgid "Message"
 msgstr "Mesaj"
 
-#: ../util/theme-editor/theme_editor.php:208
+#: ../util/theme-editor/theme_editor.php:209
 msgid "Please include this theme in Crayon!"
 msgstr "Lütfen bu temayı Crayon içine dahil edin!"
 
 # @ crayon-syntax-highlighter
-#: ../util/theme-editor/theme_editor.php:209
+#: ../util/theme-editor/theme_editor.php:210
 msgid "Submit was successful."
 msgstr "Gönderme başarılı."
 
-#: ../util/theme-editor/theme_editor.php:210
+#: ../util/theme-editor/theme_editor.php:211
 msgid "Submit failed!"
 msgstr "Gönderme başarısız!"
 
-#: ../util/theme-editor/theme_editor.php:284
+#: ../util/theme-editor/theme_editor.php:285
 msgid "Information"
 msgstr "Bilgi"
 
 # @ crayon-syntax-highlighter
-#: ../util/theme-editor/theme_editor.php:285
+#: ../util/theme-editor/theme_editor.php:286
 msgid "Highlighting"
 msgstr "Vurgulama"
 
-#: ../util/theme-editor/theme_editor.php:286
+#: ../util/theme-editor/theme_editor.php:287
 msgid "Frame"
 msgstr "Çerçeve"
 
 # @ crayon-syntax-highlighter
-#: ../util/theme-editor/theme_editor.php:288
+#: ../util/theme-editor/theme_editor.php:289
 msgid "Line Numbers"
 msgstr "Satır Numaralarına Geç"
 
-#: ../util/theme-editor/theme_editor.php:291
+#: ../util/theme-editor/theme_editor.php:292
 msgid "Background"
 msgstr "Arkaplan"
 
-#: ../util/theme-editor/theme_editor.php:292
+#: ../util/theme-editor/theme_editor.php:293
 msgid "Text"
 msgstr "Metin"
 
-#: ../util/theme-editor/theme_editor.php:293
+#: ../util/theme-editor/theme_editor.php:294
 msgid "Border"
 msgstr "Kenarlık"
 
-#: ../util/theme-editor/theme_editor.php:294
+#: ../util/theme-editor/theme_editor.php:295
 msgid "Top Border"
 msgstr "Üst Kenar"
 
 # @ crayon-syntax-highlighter
-#: ../util/theme-editor/theme_editor.php:295
+#: ../util/theme-editor/theme_editor.php:296
 msgid "Bottom Border"
 msgstr "Alt Kenarlık"
 
-#: ../util/theme-editor/theme_editor.php:296
+#: ../util/theme-editor/theme_editor.php:297
 msgid "Right Border"
 msgstr "Sağ Kenarlık"
 
-#: ../util/theme-editor/theme_editor.php:298
+#: ../util/theme-editor/theme_editor.php:299
 msgid "Hover"
 msgstr "Vurgu"
 
-#: ../util/theme-editor/theme_editor.php:299
+#: ../util/theme-editor/theme_editor.php:300
 msgid "Active"
 msgstr "Aktif"
 
-#: ../util/theme-editor/theme_editor.php:300
+#: ../util/theme-editor/theme_editor.php:301
 msgid "Pressed"
 msgstr "Sıkıştırıldı"
 
-#: ../util/theme-editor/theme_editor.php:301
+#: ../util/theme-editor/theme_editor.php:302
 msgid "Pressed & Hover"
 msgstr "Sıkıştırma & Vurgu"
 
-#: ../util/theme-editor/theme_editor.php:302
+#: ../util/theme-editor/theme_editor.php:303
 msgid "Pressed & Active"
 msgstr "Sıkıştırma & Aktif"
 
-#: ../util/theme-editor/theme_editor.php:305
+#: ../util/theme-editor/theme_editor.php:306
 msgid "Buttons"
 msgstr "Butonlar"
 
-#: ../util/theme-editor/theme_editor.php:307
+#: ../util/theme-editor/theme_editor.php:308
 msgid "Normal"
 msgstr "Normal"
 
-#: ../util/theme-editor/theme_editor.php:309
+#: ../util/theme-editor/theme_editor.php:310
 msgid "Striped"
 msgstr "Şeritli"
 
 # @ crayon-syntax-highlighter
-#: ../util/theme-editor/theme_editor.php:310
+#: ../util/theme-editor/theme_editor.php:311
 msgid "Marked"
 msgstr "İşaretlendi"
 
-#: ../util/theme-editor/theme_editor.php:311
+#: ../util/theme-editor/theme_editor.php:312
 msgid "Striped & Marked"
 msgstr "Şeritli & İşaretli"
 
 # @ crayon-syntax-highlighter
-#: ../util/theme-editor/theme_editor.php:341
+#: ../util/theme-editor/theme_editor.php:342
 msgid "Back To Settings"
 msgstr "Ayarlara Geri Dön"
 
-#: ../util/theme-editor/theme_editor.php:380
+#: ../util/theme-editor/theme_editor.php:381
 msgid "Comment"
 msgstr "Yorum"
 
-#: ../util/theme-editor/theme_editor.php:381
+#: ../util/theme-editor/theme_editor.php:382
 msgid "String"
 msgstr "Dize"
 
-#: ../util/theme-editor/theme_editor.php:382
+#: ../util/theme-editor/theme_editor.php:383
 msgid "Preprocessor"
 msgstr "Ön işlemci"
 
 # @ crayon-syntax-highlighter
-#: ../util/theme-editor/theme_editor.php:383
+#: ../util/theme-editor/theme_editor.php:384
 msgid "Tag"
 msgstr "Etiket"
 
-#: ../util/theme-editor/theme_editor.php:384
+#: ../util/theme-editor/theme_editor.php:385
 msgid "Keyword"
 msgstr "Anahtar kelime"
 
-#: ../util/theme-editor/theme_editor.php:385
+#: ../util/theme-editor/theme_editor.php:386
 msgid "Statement"
 msgstr "Açıklama"
 
-#: ../util/theme-editor/theme_editor.php:386
+#: ../util/theme-editor/theme_editor.php:387
 msgid "Reserved"
 msgstr "Rezerve"
 
-#: ../util/theme-editor/theme_editor.php:387
+#: ../util/theme-editor/theme_editor.php:388
 msgid "Type"
 msgstr "Tür"
 
-#: ../util/theme-editor/theme_editor.php:388
+#: ../util/theme-editor/theme_editor.php:389
 msgid "Modifier"
 msgstr "Değiştirici"
 
-#: ../util/theme-editor/theme_editor.php:389
+#: ../util/theme-editor/theme_editor.php:390
 msgid "Identifier"
 msgstr "Tanımlayıcı"
 
-#: ../util/theme-editor/theme_editor.php:390
+#: ../util/theme-editor/theme_editor.php:391
 msgid "Entity"
 msgstr "Öğe"
 
-#: ../util/theme-editor/theme_editor.php:391
+#: ../util/theme-editor/theme_editor.php:392
 msgid "Variable"
 msgstr "Değişken"
 
-#: ../util/theme-editor/theme_editor.php:392
+#: ../util/theme-editor/theme_editor.php:393
 msgid "Constant"
 msgstr "Sabit"
 
-#: ../util/theme-editor/theme_editor.php:393
+#: ../util/theme-editor/theme_editor.php:394
 msgid "Operator"
 msgstr "Operatör"
 
-#: ../util/theme-editor/theme_editor.php:394
+#: ../util/theme-editor/theme_editor.php:395
 msgid "Symbol"
 msgstr "Sembol"
 
-#: ../util/theme-editor/theme_editor.php:395
+#: ../util/theme-editor/theme_editor.php:396
 msgid "Notation"
 msgstr "Notasyon"
 
-#: ../util/theme-editor/theme_editor.php:396
+#: ../util/theme-editor/theme_editor.php:397
 msgid "Faded"
 msgstr "Soluk"
 
-#: ../util/theme-editor/theme_editor.php:397
+#: ../util/theme-editor/theme_editor.php:398
 msgid "HTML"
 msgstr "HTML"
 
-#: ../util/theme-editor/theme_editor.php:530
+#: ../util/theme-editor/theme_editor.php:531
 msgid "(Used for Copy/Paste)"
 msgstr "(Kopyala/Yapıştır için kullanılır)"
+
+#~ msgid "Submit your User Theme for inclusion as a Stock Theme in Crayon!"
+#~ msgstr ""
+#~ "Crayon içine bir Hazır Tema olarak eklenmesi için Kullanıcı Temanızı "
+#~ "gönderin!"
