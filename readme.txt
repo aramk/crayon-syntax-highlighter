@@ -243,6 +243,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.1.4 =
+* ADDED:
+    * Eclipse theme
+
 = 2.1.3 =
 * ADDED:
     * Line height can now be customised along with font size
