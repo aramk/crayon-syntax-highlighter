@@ -550,7 +550,8 @@ class CrayonThemeEditorWP {
                                 self::createAttribute($language, 'font-weight'),
                                 self::createAttribute($language, 'font-style'),
                                 self::createAttribute($language, 'text-decoration')
-                            )
+                            ),
+                            self::createAttribute($language, 'background-color', $tBackground)
                         ));
                         ?>
                     </div>
