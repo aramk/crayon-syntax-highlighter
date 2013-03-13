@@ -419,11 +419,6 @@ class CrayonSettings {
             // If setting not found, remove value
             return '';
         }
-        // Validations
-        $pos_names = array(CrayonSettings::TAB_SIZE, CrayonSettings::HEIGHT, CrayonSettings::WIDTH, CrayonSettings::WHITESPACE_AFTER, CrayonSettings::WHITESPACE_BEFORE);
-        if (in_array($name, $pos_names) && $value < 0) {
-            $value = abs($value);
-        }
 
         switch ($name) {
             case CrayonSettings::LOCAL_PATH:
