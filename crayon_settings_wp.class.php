@@ -590,7 +590,6 @@ class CrayonSettingsWP {
             CrayonSettings::PLAIN_TAG => TRUE
         );
 
-
         // Validate inputs
         foreach ($inputs as $input => $value) {
             // Convert all array setting values to ints
