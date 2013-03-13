@@ -85,7 +85,7 @@ class CrayonSettingsWP {
 
 
         CrayonWP::enqueue_resources();
-        var_dump('admin');
+//        var_dump('admin');
         //wp_enqueue_script('crayon_js_min', plugins_url(CRAYON_JS_MIN, __FILE__), array('jquery'), $CRAYON_VERSION);
         self::init_js_settings();
 

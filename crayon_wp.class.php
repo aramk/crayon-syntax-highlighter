@@ -515,7 +515,7 @@ class CrayonWP {
             wp_enqueue_style('crayon_style', plugins_url(CRAYON_STYLE, __FILE__), array(), $CRAYON_VERSION);
             wp_enqueue_style('crayon_global_style', plugins_url(CRAYON_STYLE_GLOBAL, __FILE__), array(), $CRAYON_VERSION);
 
-            var_dump('crayon_wp');
+//            var_dump('crayon_wp');
             wp_enqueue_script('crayon_js_min', plugins_url(CRAYON_JS_MIN, __FILE__), array('jquery'), $CRAYON_VERSION);
 
 //            wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
