@@ -95,6 +95,7 @@ class CrayonSettingsWP {
         self::load_settings(TRUE);
         $deps = array('jquery', 'crayon_util_js');
         if (CrayonGlobalSettings::val(CrayonSettings::POPUP) || is_admin()) {
+            // TODO include anyway and minify
             wp_enqueue_script('crayon_jquery_popup', plugins_url(CRAYON_JQUERY_POPUP, __FILE__), array('jquery'), $CRAYON_VERSION);
             $deps[] = 'crayon_jquery_popup';
         }
