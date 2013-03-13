@@ -40,6 +40,8 @@ define('CRAYON_FONT_DIR', crayon_s('fonts'));
 define('CRAYON_UTIL_DIR', crayon_s('util'));
 define('CRAYON_CSS_DIR', crayon_s('css'));
 define('CRAYON_JS_DIR', crayon_s('js'));
+define('CRAYON_JS_SRC_DIR', CRAYON_JS_DIR . crayon_s('src'));
+define('CRAYON_JS_MIN_DIR', CRAYON_JS_DIR . crayon_s('min'));
 define('CRAYON_TRANS_DIR', crayon_s('trans'));
 define('CRAYON_THEME_EDITOR_DIR', crayon_s('theme-editor'));
 define('CRAYON_TAG_EDITOR_DIR', crayon_s('tag-editor'));
@@ -65,12 +67,18 @@ define('CRAYON_LANG_EXT', CRAYON_LANG_PATH . 'extensions.txt');
 define('CRAYON_LANG_ALIAS', CRAYON_LANG_PATH . 'aliases.txt');
 define('CRAYON_LANG_DELIM', CRAYON_LANG_PATH . 'delimiters.txt');
 define('CRAYON_HELP_FILE', CRAYON_UTIL_PATH . 'help.htm');
-//define('CRAYON_JQUERY', CRAYON_JS_DIR . 'jquery-1.7.min.js');
-define('CRAYON_JQUERY_POPUP', CRAYON_JS_DIR . 'jquery.popup.js');
-define('CRAYON_JS', CRAYON_JS_DIR . 'crayon.js');
-define('CRAYON_JS_ADMIN', CRAYON_JS_DIR . 'crayon_admin.js');
-define('CRAYON_JS_UTIL', CRAYON_JS_DIR . 'util.js');
-define('CRAYON_CSSJSON_JS', CRAYON_JS_DIR . 'cssjson.js');
+
+// Minified
+define('CRAYON_JS_MIN', CRAYON_JS_MIN_DIR . 'crayon.min.js');
+define('CRAYON_JS_TE_MIN', CRAYON_JS_MIN_DIR . 'crayon.te.min.js');
+
+// Source
+define('CRAYON_JQUERY_POPUP', CRAYON_JS_SRC_DIR . 'jquery.popup.js');
+define('CRAYON_JS', CRAYON_JS_SRC_DIR . 'crayon.js');
+define('CRAYON_JS_ADMIN', CRAYON_JS_SRC_DIR . 'crayon_admin.js');
+define('CRAYON_JS_UTIL', CRAYON_JS_SRC_DIR . 'util.js');
+define('CRAYON_CSSJSON_JS', CRAYON_JS_SRC_DIR . 'cssjson.js');
+
 define('CRAYON_JS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.init.pack.js');
 define('CRAYON_CSS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.css');
 define('CRAYON_CSS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.css');

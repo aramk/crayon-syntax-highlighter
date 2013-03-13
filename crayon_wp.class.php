@@ -507,18 +507,27 @@ class CrayonWP {
         return self::$next_id++;
     }
 
-    private static function enqueue_resources() {
+    public static function enqueue_resources() {
         if (!self::$enqueued) {
+
             CrayonLog::debug('enqueue');
             global $CRAYON_VERSION;
             wp_enqueue_style('crayon_style', plugins_url(CRAYON_STYLE, __FILE__), array(), $CRAYON_VERSION);
             wp_enqueue_style('crayon_global_style', plugins_url(CRAYON_STYLE_GLOBAL, __FILE__), array(), $CRAYON_VERSION);
-            wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
-            CrayonSettingsWP::other_scripts();
+
+            var_dump('crayon_wp');
+            wp_enqueue_script('crayon_js_min', plugins_url(CRAYON_JS_MIN, __FILE__), array('jquery'), $CRAYON_VERSION);
+
+//            wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
+//            CrayonSettingsWP::other_scripts();
             CrayonSettingsWP::init_js_settings();
             self::$enqueued = TRUE;
         }
     }
+
+//    public static function prevent_resources() {
+//        self::$enqueued = TRUE;
+//    }
 
     private static function init_tags_regex($force = FALSE, $flags = NULL, &$tags_regex = NULL) {
         self::init_tag_bits();

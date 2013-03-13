@@ -26,5 +26,6 @@ function compile {
     java -jar $CLOSURE_PATH $srcs
 }
 
-# compile $INPUT_PATH/crayon $INPUT_PATH/util $INPUT_PATH/jquery.popup $OUTPUT_PATH/crayon.min
-compile $INPUT_PATH/crayon $INPUT_PATH/util $INPUT_PATH/jquery.popup fancybox/jquery.fancybox.init.pack $TE_PATH/crayon_qt $TE_PATH/crayon_tag_editor $OUTPUT_PATH/crayon.te.min
+common=$"$INPUT_PATH/util $INPUT_PATH/jquery.popup $INPUT_PATH/crayon $INPUT_PATH/cssjson"
+compile $common $OUTPUT_PATH/crayon.min
+compile $common fancybox/jquery.fancybox.init.pack $TE_PATH/crayon_qt $TE_PATH/crayon_tag_editor $OUTPUT_PATH/crayon.te.min
