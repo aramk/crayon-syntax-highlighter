@@ -247,6 +247,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Eclipse theme
     * Background colour for language added to Theme Editor
+    * More extendable handling and santisation of settings
 * FIXED:
     * Blog content was being treated as a single code block due to a change in the internal CrayonWP::highlight() method
     * Crayon post management is now refreshed when plugin is activated
