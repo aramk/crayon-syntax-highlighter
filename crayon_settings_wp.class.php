@@ -85,35 +85,33 @@ class CrayonSettingsWP {
 
     public static function admin_scripts() {
         global $CRAYON_VERSION;
-//        wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
 
+        if (CRAYON_MINIFY) {
+            CrayonWP::enqueue_resources();
+        } else {
+            wp_enqueue_script('crayon_util_js', plugins_url(CRAYON_JS_UTIL, __FILE__), array('jquery'), $CRAYON_VERSION);
+            self::other_scripts();
+        }
 
-        CrayonWP::enqueue_resources();
-//        var_dump('admin');
-        //wp_enqueue_script('crayon_js_min', plugins_url(CRAYON_JS_MIN, __FILE__), array('jquery'), $CRAYON_VERSION);
         self::init_js_settings();
 
         if (is_admin()) {
             wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_js_min', 'wpdialogs', 'wpdialogs-popup'), $CRAYON_VERSION);
             self::init_admin_js_settings();
         }
-
-
-
-//        self::other_scripts();
     }
 
-//    public static function other_scripts() {
-//        global $CRAYON_VERSION;
-//        self::load_settings(TRUE);
-//        $deps = array('jquery', 'crayon_util_js');
-//        if (CrayonGlobalSettings::val(CrayonSettings::POPUP) || is_admin()) {
-//            // TODO include anyway and minify
-//            wp_enqueue_script('crayon_jquery_popup', plugins_url(CRAYON_JQUERY_POPUP, __FILE__), array('jquery'), $CRAYON_VERSION);
-//            $deps[] = 'crayon_jquery_popup';
-//        }
-//        wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS, __FILE__), $deps, $CRAYON_VERSION);
-//    }
+    public static function other_scripts() {
+        global $CRAYON_VERSION;
+        self::load_settings(TRUE);
+        $deps = array('jquery', 'crayon_util_js');
+        if (CrayonGlobalSettings::val(CrayonSettings::POPUP) || is_admin()) {
+            // TODO include anyway and minify
+            wp_enqueue_script('crayon_jquery_popup', plugins_url(CRAYON_JQUERY_POPUP, __FILE__), array('jquery'), $CRAYON_VERSION);
+            $deps[] = 'crayon_jquery_popup';
+        }
+        wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS, __FILE__), $deps, $CRAYON_VERSION);
+    }
 
     public static function init_js_settings() {
         // This stores JS variables used in AJAX calls and in the JS files
@@ -133,14 +131,19 @@ class CrayonSettingsWP {
                 'debug' => CRAYON_DEBUG
             );
         }
-        wp_localize_script('crayon_js_min', 'CrayonSyntaxSettings', self::$js_settings);
         if (!self::$js_strings) {
             self::$js_strings = array(
                 'copy' => crayon__('Press %s to Copy, %s to Paste'),
                 'minimize' => crayon__('Click To Expand Code')
             );
         }
-        wp_localize_script('crayon_js_min', 'CrayonSyntaxStrings', self::$js_strings);
+        if (CRAYON_MINIFY) {
+            wp_localize_script('crayon_js_min', 'CrayonSyntaxSettings', self::$js_settings);
+            wp_localize_script('crayon_js_min', 'CrayonSyntaxStrings', self::$js_strings);
+        } else {
+            wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
+            wp_localize_script('crayon_util_js', 'CrayonSyntaxStrings', self::$js_strings);
+        }
     }
 
     public static function init_admin_js_settings() {
