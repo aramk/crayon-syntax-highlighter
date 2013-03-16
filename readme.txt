@@ -243,7 +243,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 2.1.5 =
+= 2.2.0 =
 * FIXED:
     * Comments now pass through filters before being checked for Crayons.
     * JavaScript and CSS resources are minified into single files on the front-end to reduce HTTP requests.
