@@ -553,7 +553,7 @@
         };
 
         var retina = function (uid) {
-            if (window.devicePixelRatio > 1 || true) {
+            if (window.devicePixelRatio > 1) {
                 var buttons = $('.crayon-button-icon', crayons[uid].toolbar);
                 buttons.each(function () {
                     var lowres = $(this).css('background-image');

@@ -246,7 +246,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.1.5 =
 * FIXED:
     * Comments now pass through filters before being checked for Crayons.
-    * JavaScript resources are minified into a single script on the front-end.
+    * JavaScript and CSS resources are minified into single files on the front-end to reduce HTTP requests.
     * Toolbar buttons use a sprite sheet, not individual images.
 
 = 2.1.4 =

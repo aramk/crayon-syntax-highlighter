@@ -74,9 +74,13 @@ class CrayonSettingsWP {
 
     public static function admin_styles() {
         global $CRAYON_VERSION;
-        wp_enqueue_style('crayon', plugins_url(CRAYON_STYLE, __FILE__), array(), $CRAYON_VERSION);
-        wp_enqueue_style('crayon_global', plugins_url(CRAYON_STYLE_GLOBAL, __FILE__), array(), $CRAYON_VERSION);
-        wp_enqueue_style('crayon_admin', plugins_url(CRAYON_STYLE_ADMIN, __FILE__), array('editor-buttons'), $CRAYON_VERSION);
+        if (CRAYON_MINIFY) {
+            wp_enqueue_style('crayon', plugins_url(CRAYON_STYLE_MIN, __FILE__), array('editor-buttons'), $CRAYON_VERSION);
+        } else {
+            wp_enqueue_style('crayon', plugins_url(CRAYON_STYLE, __FILE__), array(), $CRAYON_VERSION);
+            wp_enqueue_style('crayon_global', plugins_url(CRAYON_STYLE_GLOBAL, __FILE__), array(), $CRAYON_VERSION);
+            wp_enqueue_style('crayon_admin', plugins_url(CRAYON_STYLE_ADMIN, __FILE__), array('editor-buttons'), $CRAYON_VERSION);
+        }
     }
 
     public static function admin_scripts() {

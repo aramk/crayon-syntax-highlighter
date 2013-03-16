@@ -8,6 +8,8 @@ define('CRAYON_DEBUG', FALSE);
 define('CRAYON_TAG_EDITOR', TRUE);
 define('CRAYON_THEME_EDITOR', TRUE);
 
+define('CRAYON_MINIFY', TRUE);
+
 // Constants
 
 // General definitions
@@ -39,6 +41,8 @@ define('CRAYON_THEME_DIR', crayon_s('themes'));
 define('CRAYON_FONT_DIR', crayon_s('fonts'));
 define('CRAYON_UTIL_DIR', crayon_s('util'));
 define('CRAYON_CSS_DIR', crayon_s('css'));
+define('CRAYON_CSS_SRC_DIR', CRAYON_CSS_DIR . crayon_s('src'));
+define('CRAYON_CSS_MIN_DIR', CRAYON_CSS_DIR . crayon_s('min'));
 define('CRAYON_JS_DIR', crayon_s('js'));
 define('CRAYON_JS_SRC_DIR', CRAYON_JS_DIR . crayon_s('src'));
 define('CRAYON_JS_MIN_DIR', CRAYON_JS_DIR . crayon_s('min'));
@@ -90,9 +94,10 @@ define('CRAYON_TAG_EDITOR_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.c
 // TODO Fix these
 define('CRAYON_TINYMCE_JS', 'crayon_tinymce.js');
 define('CRAYON_QUICKTAGS_JS', 'crayon_qt.js');
-define('CRAYON_STYLE', CRAYON_CSS_DIR . 'crayon_style.css');
-define('CRAYON_STYLE_ADMIN', CRAYON_CSS_DIR . 'admin_style.css');
-define('CRAYON_STYLE_GLOBAL', CRAYON_CSS_DIR . 'global_style.css');
+define('CRAYON_STYLE', CRAYON_CSS_SRC_DIR . 'crayon_style.css');
+define('CRAYON_STYLE_ADMIN', CRAYON_CSS_SRC_DIR . 'admin_style.css');
+define('CRAYON_STYLE_GLOBAL', CRAYON_CSS_SRC_DIR . 'global_style.css');
+define('CRAYON_STYLE_MIN', CRAYON_CSS_MIN_DIR . 'crayon.min.css');
 define('CRAYON_LOGO', CRAYON_CSS_DIR . 'images/crayon_logo.png');
 define('CRAYON_DONATE_BUTTON', CRAYON_CSS_DIR . 'images/donate.png');
 define('CRAYON_THEME_EDITOR_PHP', CRAYON_THEME_EDITOR_PATH . 'theme_editor.php');
