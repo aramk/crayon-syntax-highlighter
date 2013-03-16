@@ -243,6 +243,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.1.5 =
+* FIXED:
+    * Comments now pass through filters before being checked for Crayons.
+
 = 2.1.4 =
 * ADDED:
     * Eclipse theme

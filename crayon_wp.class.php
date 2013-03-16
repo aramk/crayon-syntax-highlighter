@@ -3,7 +3,7 @@
 Plugin Name: Crayon Syntax Highlighter
 Plugin URI: http://aramk.com/projects/crayon-syntax-highlighter
 Description: Supports multiple languages, themes, highlighting from a URL, local file or post text.
-Version: 2.1.4
+Version: _2.1.5_beta
 Author: Aram Kocharyan
 Author URI: http://aramk.com/
 Text Domain: crayon-syntax-highlighter
@@ -482,7 +482,8 @@ class CrayonWP {
                         continue;
                     }
                     // Capture comment Crayons, decode their contents if decode not specified
-                    $captures = self::capture_crayons($comment->comment_ID, $comment->comment_content, array(CrayonSettings::DECODE => TRUE));
+                    $content = apply_filters('get_comment_text', $comment->comment_content, $comment);
+                    $captures = self::capture_crayons($comment->comment_ID, $content, array(CrayonSettings::DECODE => TRUE));
                     self::$comment_captures[$id_str] = $captures['content'];
                     if ($captures['has_captured'] === TRUE) {
                         self::$comment_queue[$id_str] = array();
@@ -1041,7 +1042,8 @@ class CrayonWP {
             'skip_setting_check' => TRUE,
             'just_check' => TRUE
         );
-        $captures = self::capture_crayons($comment->comment_ID, $comment->comment_content, array(), $args);
+        $content = apply_filters('get_comment_text', $comment->comment_content, $comment);
+        $captures = self::capture_crayons($comment->comment_ID, $content, array(), $args);
         return $captures['has_captured'];
     }
 
