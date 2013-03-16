@@ -147,12 +147,12 @@ coloring etc.
     text-align: center;
 }
 
-.crayon-syntax .crayon-toolbar,
-.crayon-syntax .crayon-toolbar * {
-    height: 18px;
-    line-height: 18px;
-    padding: 0px;
-}
+/*.crayon-syntax .crayon-toolbar,*/
+/*.crayon-syntax .crayon-toolbar * {*/
+    /*height: 18px;*/
+    /*line-height: 18px;*/
+    /*padding: 0px;*/
+/*}*/
 
 .crayon-syntax .crayon-toolbar span {
     padding: 0 4px !important;
@@ -161,6 +161,7 @@ coloring etc.
 .crayon-syntax .crayon-toolbar .crayon-button {
     display: inline;
     float: left !important;
+    position: relative;
     width: 24px;
     background-repeat: no-repeat;
     /*height: 16px;*/
@@ -182,53 +183,103 @@ coloring etc.
 .crayon-toolbar .crayon-button.crayon-pressed,
 .crayon-toolbar .crayon-button:active,
 .crayon-toolbar .crayon-button.crayon-pressed:active {
-    background-position: -24px center;
+    background-position: -24px 0;
 }
 
-/* Plain Button */
-.crayon-toolbar .crayon-button.crayon-plain-button {
-    background-image: url('images/toolbar/plain.png');
+.crayon-toolbar .crayon-button.crayon-popup-button .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-popup-button:hover .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-popup-button.crayon-pressed:hover .crayon-button-icon {
+    background-position: 0 0;
 }
 
-/* Wrap Button */
-.crayon-toolbar .crayon-button.crayon-wrap-button {
-    background-image: url('images/toolbar/wrap.png');
+.crayon-toolbar .crayon-button.crayon-copy-button .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-copy-button:hover .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-copy-button.crayon-pressed:hover .crayon-button-icon {
+    background-position: 0 -16px;
 }
 
-/* Expand Button */
-.crayon-toolbar .crayon-button.crayon-expand-button {
-    background-image: url('images/toolbar/expand.png');
+.crayon-toolbar .crayon-button.crayon-nums-button .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-nums-button:hover .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-nums-button.crayon-pressed:hover .crayon-button-icon {
+    background-position: 0 -32px;
 }
 
-/* Click to Expand */
-.crayon-toolbar .crayon-button.crayon-minimize {
-    background-image: url('images/toolbar/arrow_down.png');
+.crayon-toolbar .crayon-button.crayon-plain-button .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-plain-button:hover .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-plain-button.crayon-pressed:hover .crayon-button-icon {
+    background-position: 0 -48px;
+}
+
+.crayon-toolbar .crayon-button.crayon-mixed-button .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-mixed-button:hover .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-mixed-button.crayon-pressed:hover .crayon-button-icon {
+    background-position: 0 -64px;
+}
+
+.crayon-toolbar .crayon-button.crayon-minimize .crayon-button-icon {
+    background-position: 0 -80px;
     background-color: transparent !important;
 }
 
-/* Copy Button */
-.crayon-toolbar .crayon-button.crayon-copy-button {
-    background-image: url('images/toolbar/copy.png');
+.crayon-toolbar .crayon-button.crayon-expand-button .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-expand-button:hover .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-expand-button.crayon-pressed:hover .crayon-button-icon {
+    background-position: 0 -96px;
 }
 
-/* Popup Button */
-.crayon-toolbar .crayon-button.crayon-popup-button {
-    background-image: url('images/toolbar/popup.png');
+.crayon-toolbar .crayon-button.crayon-wrap-button .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-wrap-button:hover .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-wrap-button.crayon-pressed:hover .crayon-button-icon {
+    background-position: 0 -112px;
 }
 
-/* Nums Button */
-.crayon-toolbar .crayon-button.crayon-nums-button {
-    background-image: url('images/toolbar/nums.png');
+/* -- */
+
+.crayon-toolbar .crayon-button.crayon-popup-button.crayon-pressed .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-popup-button:active .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-popup-button.crayon-pressed:active .crayon-button-icon {
+    background-position: -24px 0;
 }
 
-/* Plus Sign */
-.crayon-syntax .crayon-toolbar .crayon-mixed-highlight {
-    background-image: url('images/toolbar/plus.png');
-    /*	background-position: center;*/
-    background-position: 0px center;
-    background-repeat: no-repeat;
-    float: left;
-    min-width: 15px;
+.crayon-toolbar .crayon-button.crayon-copy-button.crayon-pressed .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-copy-button:active .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-copy-button.crayon-pressed:active .crayon-button-icon {
+    background-position: -24px -16px;
+}
+
+.crayon-toolbar .crayon-button.crayon-nums-button.crayon-pressed .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-nums-button:active .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-nums-button.crayon-pressed:active .crayon-button-icon {
+    background-position: -24px -32px;
+}
+
+.crayon-toolbar .crayon-button.crayon-plain-button.crayon-pressed .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-plain-button:active .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-plain-button.crayon-pressed:active .crayon-button-icon {
+    background-position: -24px -48px;
+}
+
+.crayon-toolbar .crayon-button.crayon-mixed-button.crayon-pressed .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-mixed-button:active .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-mixed-button.crayon-pressed:active .crayon-button-icon {
+    background-position: -24px -64px;
+}
+
+.crayon-toolbar .crayon-button.crayon-minimize .crayon-button-icon {
+    background-position: -24px -80px;
+    background-color: transparent !important;
+}
+
+.crayon-toolbar .crayon-button.crayon-expand-button.crayon-pressed .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-expand-button:active .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-expand-button.crayon-pressed:active .crayon-button-icon {
+    background-position: -24px -96px;
+}
+
+.crayon-toolbar .crayon-button.crayon-wrap-button.crayon-pressed .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-wrap-button:active .crayon-button-icon,
+.crayon-toolbar .crayon-button.crayon-wrap-button.crayon-pressed:active .crayon-button-icon {
+    background-position: -24px -112px;
 }
 
 /* Language */
@@ -366,6 +417,16 @@ This has been disabled to allow more flexibility in changing font sizes.
     height: inherit !important;
 }
 
+.crayon-syntax .crayon-toolbar .crayon-button .crayon-button-icon {
+    background-image: url('images/toolbar/buttons.png');
+    height: 16px !important;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -8px;
+}
+
 .crayon-syntax .crayon-pre .crayon-line span {
     display: inline-block;
     *display: inline;
@@ -393,7 +454,6 @@ This has been disabled to allow more flexibility in changing font sizes.
 
 .crayon-placeholder {
     width: 100% !important;
-    /*background: red;*/
 }
 
 .crayon-toolbar-visible .crayon-toolbar {

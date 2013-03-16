@@ -316,7 +316,7 @@ class CrayonFormatter {
 				foreach ($value as $k=>$v) {
 					$buttons_str .= ' ' . $k . '="' . $v . '"';
 				}
-				$buttons_str .= '></div>';
+				$buttons_str .= '><div class="crayon-button-icon"></div></div>';
 			}
 
 			// $print_plain_button = $hl->setting_val(CrayonSettings::PLAIN) && $hl->setting_val(CrayonSettings::PLAIN_TOGGLE) ? '<div class="crayon-plain-button crayon-button" title="'.crayon__('Toggle Plain Code').'"></div>' : '';
