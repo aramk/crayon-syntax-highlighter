@@ -600,7 +600,7 @@ class CrayonSettingsWP {
             // These should trigger a refresh of which posts contain crayons, since they affect capturing
             CrayonSettings::INLINE_TAG => TRUE,
             CrayonSettings::INLINE_TAG_CAPTURE => TRUE,
-            CrayonSettings::INLINE_CODE_TAG_CAPTURE => TRUE,
+            CrayonSettings::CODE_TAG_CAPTURE => TRUE,
             CrayonSettings::BACKQUOTE => TRUE,
             CrayonSettings::CAPTURE_PRE => TRUE,
             CrayonSettings::CAPTURE_MINI_TAG => TRUE,
@@ -1107,7 +1107,10 @@ class Human {
     public static function tags() {
         self::checkbox(array(CrayonSettings::INLINE_TAG, crayon__('Capture Inline Tags') . self::help_button('http://bit.ly/yFafFL')));
         self::checkbox(array(CrayonSettings::INLINE_WRAP, crayon__('Wrap Inline Tags') . self::help_button('http://bit.ly/yFafFL')));
-        self::checkbox(array(CrayonSettings::INLINE_CODE_TAG_CAPTURE, crayon__('Capture &lt;code&gt; as Inline Tags') . self::help_button('http://bit.ly/yFafFL')));
+        self::checkbox(array(CrayonSettings::CODE_TAG_CAPTURE, crayon__('Capture &lt;code&gt; as')), FALSE);
+        echo ' ';
+        self::dropdown(CrayonSettings::CODE_TAG_CAPTURE_TYPE, FALSE);
+        echo self::help_button('http://bit.ly/yFafFL') . '<br/>';
         self::checkbox(array(CrayonSettings::BACKQUOTE, crayon__('Capture `backquotes` as &lt;code&gt;') . self::help_button('http://bit.ly/yFafFL')));
         self::checkbox(array(CrayonSettings::CAPTURE_PRE, crayon__('Capture &lt;pre&gt; tags as Crayons') . self::help_button('http://bit.ly/rRZuzk')));
 

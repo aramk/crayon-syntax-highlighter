@@ -247,6 +247,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.2.0 =
 * ADDED:
     * Added Secrets of Rock theme
+    * &lt;code&gt; tags can now be captured as either inline or block Crayons.
 * FIXED:
     * Comments now pass through filters before being checked for Crayons.
     * JavaScript and CSS resources are minified into single files on the front-end to reduce HTTP requests.
