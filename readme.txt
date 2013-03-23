@@ -244,6 +244,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 2.2.0 =
+* ADDED:
+    * Added Secrets of Rock theme
 * FIXED:
     * Comments now pass through filters before being checked for Crayons.
     * JavaScript and CSS resources are minified into single files on the front-end to reduce HTTP requests.
