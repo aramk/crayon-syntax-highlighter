@@ -74,6 +74,7 @@ class CrayonWP {
     private static $legacy_flags = NULL;
 
     // Used to detect the shortcode
+    private static $allowed_atts = array('url' => NULL, 'lang' => NULL, 'title' => NULL, 'mark' => NULL, 'range' => NULL, 'inline' => NULL);
     const REGEX_CLOSED = '(?:\[\s*crayon(?:-(\w+))?\b([^\]]*)/\s*\])'; // [crayon atts="" /]
     const REGEX_TAG = '(?:\[\s*crayon(?:-(\w+))?\b([^\]]*)\](.*?)\[\s*/\s*crayon\s*\])'; // [crayon atts=""] ... [/crayon]
     const REGEX_INLINE_CLASS = '\bcrayon-inline\b';
@@ -127,8 +128,7 @@ class CrayonWP {
         CrayonLog::debug('shortcode');
 
         // Load attributes from shortcode
-        $allowed_atts = array('url' => NULL, 'lang' => NULL, 'title' => NULL, 'mark' => NULL, 'range' => NULL, 'inline' => NULL);
-        $filtered_atts = shortcode_atts($allowed_atts, $atts);
+        $filtered_atts = shortcode_atts(self::$allowed_atts, $atts);
 
         // Clean attributes
         $keys = array_keys($filtered_atts);
@@ -143,7 +143,7 @@ class CrayonWP {
         // Contains all other attributes not found in allowed, used to override global settings
         $extra_attr = array();
         if (!empty($atts)) {
-            $extra_attr = array_diff_key($atts, $allowed_atts);
+            $extra_attr = array_diff_key($atts, self::$allowed_atts);
             $extra_attr = CrayonSettings::smart_settings($extra_attr);
         }
         $url = $lang = $title = $mark = $range = $inline = '';
@@ -1229,6 +1229,17 @@ class CrayonWP {
         return $args;
     }
 
+    public static function allowed_tags() {
+        global $allowedtags;
+        $tags = array('pre', 'span', 'code');
+        foreach ($tags as $tag) {
+            $current_atts = isset($allowedtags[$tag]) ? $allowedtags[$tag] : array();
+            // TODO data-url isn't recognised by WP
+            $new_atts = array('class' => TRUE, 'title' => TRUE, 'data-url' => TRUE);
+            $allowedtags[$tag] = array_merge($current_atts, $new_atts);
+        }
+    }
+
 }
 
 // Only if WP is loaded
@@ -1253,6 +1264,9 @@ if (defined('ABSPATH')) {
         add_filter('bbp_get_topic_content', 'CrayonWP::highlight', 100);
         add_filter('bbp_get_forum_content', 'CrayonWP::highlight', 100);
         add_filter('bbp_get_topic_excerpt', 'CrayonWP::highlight', 100);
+
+        // Allow tags
+        add_action('init', 'CrayonWP::allowed_tags', 11);
 
         if (CrayonGlobalSettings::val(CrayonSettings::COMMENTS)) {
             /* XXX This is called first to match Crayons, then higher priority replaces after other filters.

@@ -252,6 +252,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Comments now pass through filters before being checked for Crayons.
     * JavaScript and CSS resources are minified into single files on the front-end to reduce HTTP requests.
     * Toolbar buttons use a sprite sheet, not individual images.
+    * bbPress now allows posting Crayons for non-users
 
 = 2.1.4 =
 * ADDED:
