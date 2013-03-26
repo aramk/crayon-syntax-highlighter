@@ -1,0 +1,171 @@
+/*
+Name: Mirc Dark
+Description: Based on Tomorrow-Theme by ChrisKempson
+Version: 1.0
+Author: AmFearLiath
+URL: http://amfearliath.tk
+*/
+.crayon-theme-mirc-dark {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #272727 !important;
+}
+.crayon-theme-mirc-dark-inline {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	border-style: solid !important;
+	background: #000103 !important;
+}
+.crayon-theme-mirc-dark .crayon-table .crayon-nums {
+	background: #000000 !important;
+	color: #898989 !important;
+	border-right-width: 1px !important;
+}
+.crayon-theme-mirc-dark *::selection {
+	background: transparent !important;
+}
+.crayon-theme-mirc-dark .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-mirc-dark .crayon-striped-line {
+	background: #000000 !important;
+}
+.crayon-theme-mirc-dark .crayon-striped-num {
+	background: #1d1d1d !important;
+	color: #979797 !important;
+}
+.crayon-theme-mirc-dark .crayon-marked-line {
+	background: #3b3b3b !important;
+	border-width: 1px !important;
+	border-color: #3a3a47 !important;
+}
+.crayon-theme-mirc-dark .crayon-marked-num {
+	color: #9e9e9e !important;
+	background: #010000 !important;
+	border-width: 1px !important;
+	border-color: #595959 !important;
+}
+.crayon-theme-mirc-dark .crayon-marked-line.crayon-striped-line {
+	background: #000000 !important;
+}
+.crayon-theme-mirc-dark .crayon-marked-num.crayon-striped-num {
+	background: #3b3b3b !important;
+	color: #9e9e9e !important;
+}
+.crayon-theme-mirc-dark .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-mirc-dark .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-mirc-dark .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-mirc-dark .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-mirc-dark .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-mirc-dark .crayon-toolbar {
+	background: #8d8c8c !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #2e2e2e !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-mirc-dark .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-mirc-dark .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-mirc-dark .crayon-title {
+	color: #2a2a2a !important;
+}
+.crayon-theme-mirc-dark .crayon-language {
+	color: #494949 !important;
+}
+.crayon-theme-mirc-dark .crayon-button {
+}
+.crayon-theme-mirc-dark .crayon-button:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-mirc-dark .crayon-button.crayon-pressed:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-mirc-dark .crayon-button.crayon-pressed {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-mirc-dark .crayon-button.crayon-pressed:active {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-mirc-dark .crayon-button:active {
+	background-color: #bcbcbc !important;
+	color: #FFF;
+}
+.crayon-theme-mirc-dark .crayon-pre .c {
+	color: #ff8c00 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .s {
+	color: #b2af75 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .p {
+	color: #b85c00 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .ta {
+	color: #e79663 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .k {
+	color: #dc2f2f !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .st {
+	color: #0185d7 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .r {
+	color: #92afc1 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .t {
+	color: #bba7c5 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .m {
+	color: #bba7c5 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .i {
+	color: #c7c7c7 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .e {
+	color: #c29734 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .v {
+	color: #abfc04 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .cn {
+	color: #eb5b04 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .o {
+	color: #ffd700 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .sy {
+	color: #c9d2d1 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .n {
+	color: #fffff0 !important;
+	font-style: italic !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .f {
+	color: #999 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre .h {
+	color: #006fe0 !important;
+}

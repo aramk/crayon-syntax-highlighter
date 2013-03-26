@@ -244,6 +244,12 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.2.1 =
+* ADDED:
+    * Mirc Dark theme
+* FIXED:
+    * Terminal theme fix
+
 = 2.2.0 =
 * ADDED:
     * ASP language
