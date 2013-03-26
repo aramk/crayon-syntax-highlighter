@@ -1,0 +1,22 @@
+### ASP LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                ASP
+    VERSION             1.0.0
+
+    COMMENT             (?default)|('.*?$)
+    STRING              (?default)
+    
+    TAG                 <%=?|%>|^%
+    STATEMENT           (?default)|\b(?alt:statement.txt)\b
+    RESERVED            (?default)|\b(?alt:reserved.txt)\b
+    TYPE                (?default)|\b(?alt:type.txt)\b
+    MODIFIER            (?default)
+        
+    ENTITY              (?default)
+    VARIABLE            (?default)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

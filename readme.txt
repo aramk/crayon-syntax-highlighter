@@ -246,6 +246,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 2.2.0 =
 * ADDED:
+    * ASP language
     * Added Secrets of Rock theme
     * &lt;code&gt; tags can now be captured as either inline or block Crayons.
 * FIXED:

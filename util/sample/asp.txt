@@ -1,0 +1,7 @@
+Set FS=Server.CreateObject("Scripting.FileSystemObject")
+Set RS=FS.OpenTextFile(Server.MapPath("counter.txt"), 1, False)
+fcount=RS.ReadLine
+RS.Close
+fcount=fcount+1
+Set RS=Nothing
+Set FS=Nothing
