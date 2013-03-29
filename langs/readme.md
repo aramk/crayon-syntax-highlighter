@@ -6,26 +6,24 @@ By Aram Kocharyan, <http://aramk.com/>
 
 These are known, recognised and highlighted by Crayon. You can defined others, but if you want to highlight them, you must add your custom CSS class into a Theme file. The CSS classes are in square brackets, but have a "crayon-" prefix added to them to avoid conflicts.
 
-* `COMMENT` [c]
-* `STRING` [s]
-* `PREPROCESSOR` [p]
-* `TAG` [ta]
-* `KEYWORD` [k]
-    * `STATEMENT` [st]
-    * `RESERVED` [r]
-    * `TYPE` [t]
-    * `MODIFIER` [m]
-
-* `IDENTIFIER` [i]
-    * `ENTITY` [e]
-    * `VARIABLE` [v]
-* `CONSTANT` [cn]
-* `OPERATOR` [o]
-* `SYMBOL` [sy]
-* `NOTATION` [n]
-* `FADED` [f]
-* `HTML_CHAR` [h]
-    
+* `COMMENT [c]`
+* `STRING [s]`
+* `PREPROCESSOR [p]`
+* `TAG [ta]`
+* `KEYWORD [k]`
+    * `STATEMENT [st]`
+    * `RESERVED [r]`
+    * `TYPE [t]`
+    * `MODIFIER [m]`
+* `IDENTIFIER [i]`
+    * `ENTITY [e]`
+    * `VARIABLE [v]`
+* `CONSTANT [cn]`
+* `OPERATOR [o]`
+* `SYMBOL [sy]`
+* `NOTATION [n]`
+* `FADED [f]`
+* `HTML_CHAR [h]`
 
 ## Rules
 
