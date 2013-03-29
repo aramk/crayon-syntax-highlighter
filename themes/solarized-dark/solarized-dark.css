@@ -149,58 +149,58 @@ Notes: I don't provide striped lines because it would break the original purpose
 	background-color: #BCBCBC !important;
 	color: #FFF;
 }
-.crayon-theme-solarized-dark .crayon-pre .c {
+.crayon-theme-solarized-dark .crayon-pre .crayon-c {
 	color: #586e75 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .s {
+.crayon-theme-solarized-dark .crayon-pre .crayon-s {
 	color: #2aa198 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .k {
+.crayon-theme-solarized-dark .crayon-pre .crayon-k {
 	color: #cb4b16 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .st {
+.crayon-theme-solarized-dark .crayon-pre .crayon-st {
 	color: #859900 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .r {
+.crayon-theme-solarized-dark .crayon-pre .crayon-r {
 	color: #cb4b16 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .t {
+.crayon-theme-solarized-dark .crayon-pre .crayon-t {
 	color: #b58900 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .m {
+.crayon-theme-solarized-dark .crayon-pre .crayon-m {
 	color: #b58900 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .i {
+.crayon-theme-solarized-dark .crayon-pre .crayon-i {
 	color: #839496 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .e {
+.crayon-theme-solarized-dark .crayon-pre .crayon-e {
 	color: #839496 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .v {
+.crayon-theme-solarized-dark .crayon-pre .crayon-v {
 	color: #268bd2 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .cn {
+.crayon-theme-solarized-dark .crayon-pre .crayon-cn {
 	color: #2aa198 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .o {
+.crayon-theme-solarized-dark .crayon-pre .crayon-o {
 	color: #859900 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .sy {
+.crayon-theme-solarized-dark .crayon-pre .crayon-sy {
 	color: #dc322f !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .n {
+.crayon-theme-solarized-dark .crayon-pre .crayon-n {
 	color: #666 !important;
 	font-style: italic !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .f {
+.crayon-theme-solarized-dark .crayon-pre .crayon-f {
 	color: #999 !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .h {
+.crayon-theme-solarized-dark .crayon-pre .crayon-h {
 	color: #dc322f !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .p {
+.crayon-theme-solarized-dark .crayon-pre .crayon-p {
 	color: #dc322f !important;
 }
-.crayon-theme-solarized-dark .crayon-pre .ta {
+.crayon-theme-solarized-dark .crayon-pre .crayon-ta {
 	color: #268bd2 !important;
 }

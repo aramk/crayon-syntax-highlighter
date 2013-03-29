@@ -353,6 +353,7 @@ coloring etc.
 /* Code ============================ */
 .crayon-syntax .crayon-pre,
 .crayon-syntax pre {
+    color: #000;
     white-space: pre;
     margin: 0;
     padding: 0;

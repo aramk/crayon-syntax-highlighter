@@ -56,62 +56,62 @@ URL: http://firn.jp/
   border-color: #5999d9 !important;
 }
 
-.crayon-theme-github .crayon-pre .c {
+.crayon-theme-github .crayon-pre .crayon-c {
 	color: #999 !important;
   font-style: italic !important;
 }
-.crayon-theme-github .crayon-pre .s {
+.crayon-theme-github .crayon-pre .crayon-s {
   color: #d14 !important;
 }
-.crayon-theme-github .crayon-pre .p {
+.crayon-theme-github .crayon-pre .crayon-p {
 	color: #b85c00 !important;
 }
-.crayon-theme-github .crayon-pre .ta {
+.crayon-theme-github .crayon-pre .crayon-ta {
     color: #FF0000 !important;
 }
-.crayon-theme-github .crayon-pre .k {
+.crayon-theme-github .crayon-pre .crayon-k {
   color: teal !important;
 }
-.crayon-theme-github .crayon-pre .st {
+.crayon-theme-github .crayon-pre .crayon-st {
   color: #000 !important;
   font-weight: bold !important;
 }
-.crayon-theme-github .crayon-pre .r {
+.crayon-theme-github .crayon-pre .crayon-r {
   color: #000 !important;
   font-weight: bold !important;
 }
-.crayon-theme-github .crayon-pre .t {
+.crayon-theme-github .crayon-pre .crayon-t {
 	color: #800080 !important;
   font-weight: bold !important;
 }
-.crayon-theme-github .crayon-pre .m {
+.crayon-theme-github .crayon-pre .crayon-m {
 	color: #800080 !important;
 }
-.crayon-theme-github .crayon-pre .i {
+.crayon-theme-github .crayon-pre .crayon-i {
 	color: #000 !important;
 }
-.crayon-theme-github .crayon-pre .e {
+.crayon-theme-github .crayon-pre .crayon-e {
   color: teal !important;
 }
-.crayon-theme-github .crayon-pre .v {
+.crayon-theme-github .crayon-pre .crayon-v {
 	color: #002D7A !important;
 }
-.crayon-theme-github .crayon-pre .cn {
+.crayon-theme-github .crayon-pre .crayon-cn {
 	color: #099 !important;
 }
-.crayon-theme-github .crayon-pre .o {
+.crayon-theme-github .crayon-pre .crayon-o {
 	color: #006fe0 !important;
 }
-.crayon-theme-github .crayon-pre .sy {
+.crayon-theme-github .crayon-pre .crayon-sy {
     color: #333 !important;
 }
-.crayon-theme-github .crayon-pre .n {
+.crayon-theme-github .crayon-pre .crayon-n {
     color: #666 !important;
     font-style: italic;
 }
-.crayon-theme-github .crayon-pre .f {
+.crayon-theme-github .crayon-pre .crayon-f {
 	color: #999 !important;
 }
-.crayon-theme-github .crayon-pre .h {
+.crayon-theme-github .crayon-pre .crayon-h {
     color: #006fe0 !important;
 }

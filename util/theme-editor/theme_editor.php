@@ -385,7 +385,7 @@ class CrayonThemeEditorWP {
                     </div>
                     <div id="tabs-2">
                         <?php
-                        $highlight = ' .crayon-pre .';
+                        $highlight = ' .crayon-pre .crayon-';
                         $elems = array(
                             'c' => crayon__("Comment"),
                             's' => crayon__("String"),

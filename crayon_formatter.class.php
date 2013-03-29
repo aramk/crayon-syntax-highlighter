@@ -594,6 +594,7 @@ class CrayonFormatter {
 
 	public static function split_lines($code, $class) {
 		$code = self::clean_code($code, TRUE, TRUE, TRUE, FALSE);
+        $class = preg_replace('#(\w+)#m', 'crayon-$1', $class);
 		$code = preg_replace('#^([^\r\n]+)(?=\r\n|\r|\n|$)#m', '<span class="'.$class.'">$1</span>', $code);
 		return $code;
 	}

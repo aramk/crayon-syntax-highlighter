@@ -248,6 +248,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Mirc Dark theme
 * FIXED:
+    * All language css classes are prefixed with "crayon-" to prevent conflicts
     * Terminal theme fix
     * Improved language readme
 
