@@ -1,6 +1,3 @@
-# This file contains aliases in the following structure. They are case insensitive
-# Format: id alias1 alias2
-
 c# cs csharp
 c++ cpp
 xhtml xml html

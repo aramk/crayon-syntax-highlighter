@@ -1,7 +1,3 @@
-# This file contains regex to capture delimiters that allow code with mixed languages to have multiple highlighting. E.g. <script></script> tags are highlighted as JavaScript and <?php...?> as PHP. The "glue" is the remaining code in between these highlighted sections, and this can be highlighted as a given language using the "lang" attribute. For an XHTML document with PHP, this would be set to lang="XHTML".
-
-# Format: id REGEX1 REGEX2 ...
-
 php <\?(?:php)?.*?\?\>
 js <script\b[^\>]*>.*?</script>
 css <style\b[^\>]*>.*?</style>

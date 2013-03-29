@@ -249,6 +249,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Mirc Dark theme
 * FIXED:
     * Terminal theme fix
+    * Improved language readme
 
 = 2.2.0 =
 * ADDED:
