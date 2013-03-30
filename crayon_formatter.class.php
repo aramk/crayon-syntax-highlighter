@@ -26,7 +26,7 @@ class CrayonFormatter {
 	/* Formats the code using the parsed language elements. */
 	public static function format_code($code, $language, $hl = NULL) {
 		// Ensure the language is defined
-		if ($language != NULL && $hl->is_highlighted) {
+		if ($language != NULL && $hl->is_highlighted()) {
 			$code = self::clean_code($code, FALSE, FALSE, FALSE, TRUE);
 			/* Perform the replace on the code using the regex, pass the captured matches for
 			 formatting before they are replaced */
@@ -44,7 +44,6 @@ class CrayonFormatter {
 				$error = 'An error occured when formatting: ' . $e->message();
 				$hl ? $hl->log($error) : CrayonLog::syslog($error);
 			}
-			
 			return $code;
 		} else {
 			return self::clean_code($code, TRUE, TRUE, TRUE, TRUE);
@@ -169,7 +168,7 @@ class CrayonFormatter {
 			$code_line = $code_lines[0][$i - 1];
 			
 			// If line is blank, add a space so the div has the correct height
-			if (empty($code_line)) {
+			if ($code_line == '') {
 				$code_line = '&nbsp;';
 			}
 			

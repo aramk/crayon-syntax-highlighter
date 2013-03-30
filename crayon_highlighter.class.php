@@ -28,7 +28,7 @@ class CrayonHighlighter {
 	private $is_mixed = FALSE;
 	// Inline code on a single floating line
 	private $is_inline = FALSE;
-	public $is_highlighted = TRUE;
+	private $is_highlighted = TRUE;
 	
 	// Objects
 	// Stores the CrayonLang being used
@@ -184,7 +184,7 @@ class CrayonHighlighter {
 					$this->formatted_code = CrayonFormatter::format_code($code, $this->language, $this);
 				} else {
 					// Format the code with Mixed Highlighting
-					$this->formatted_code = CrayonFormatter::format_mixed_code($code, $this->language, $this);					
+					$this->formatted_code = CrayonFormatter::format_mixed_code($code, $this->language, $this);
 				}
 			} catch (Exception $e) {
 				$this->error($e->message());

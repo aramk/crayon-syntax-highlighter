@@ -251,6 +251,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * All language css classes are prefixed with "crayon-" to prevent conflicts
     * Terminal theme fix
     * Improved language readme
+    * Lines containing a single zero appeared blank when highlighting was disabled
 
 = 2.2.0 =
 * ADDED:
