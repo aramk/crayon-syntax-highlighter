@@ -6,7 +6,7 @@
     VERSION             1.9.13
 
     COMMENT             ((--|#).*?$)|(\(\*.*?\*\))
-    STRING              (?default)
+    STRING              (".*?")
     
     STATEMENT           \b(?alt:statement.txt)\b
     RESERVED            \b(?alt:reserved.txt)\b
