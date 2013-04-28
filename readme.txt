@@ -254,6 +254,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Terminal theme fix
     * Improved language readme
     * Lines containing a single zero appeared blank when highlighting was disabled
+    * AppleScript regex (thanks to darricktheprogrammer)
 
 = 2.2.0 =
 * ADDED:
