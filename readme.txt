@@ -185,6 +185,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Saulius Stonys, Lithuania
 * Konstantin Sabel, Germany
 * Luigi Massa, (http://bwlab.it/), Italy
 * Anthony Steiner, (http://steinerd.com/), US
