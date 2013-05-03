@@ -249,6 +249,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.2.1 =
 * ADDED:
     * Mirc Dark theme
+    * Feeldesign theme
 * FIXED:
     * All language css classes are prefixed with "crayon-" to prevent conflicts
     * Terminal theme fix
