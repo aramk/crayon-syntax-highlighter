@@ -1,0 +1,191 @@
+/*
+Name: Inlellij Idea
+Description: Classic extended. 
+Version: 1.1
+Author: kelegorm
+*/
+.crayon-theme-inlellij-idea {
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #fdfdfd !important;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.crayon-theme-inlellij-idea-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	background: #fafafa !important;
+	border-style: solid !important;
+}
+.crayon-theme-inlellij-idea .crayon-table .crayon-nums {
+	background: #ffffff !important;
+	color: #b2b2b2 !important;
+	border-right-width: 1px !important;
+	border-right-style: solid !important;
+	border-right-color: #202020 !important;
+}
+.crayon-theme-inlellij-idea .crayon-code::selection {
+	background: #BBEEDA !important;
+	color: #269B6C !important;
+}
+.crayon-theme-inlellij-idea .crayon-code *::selection {
+	background: #BBEEDA !important;
+	color: #269B6C !important;
+}
+.crayon-theme-inlellij-idea *::selection {
+	background: transparent !important;
+}
+.crayon-theme-inlellij-idea .crayon-striped-line {
+	background: #ffffff !important;
+}
+.crayon-theme-inlellij-idea .crayon-striped-num {
+	background: #ffffff !important;
+	color: #b2b2b2 !important;
+}
+.crayon-theme-inlellij-idea .crayon-marked-line {
+	background: #4169e1 !important;
+	border-width: 1px !important;
+	border-color: #9AE7DF !important;
+}
+.crayon-theme-inlellij-idea .crayon-marked-num {
+	color: #cd5c5c !important;
+	background: #dcdcdc !important;
+	border-width: 0px !important;
+	border-color: #202020 !important;
+}
+.crayon-theme-inlellij-idea .crayon-marked-line.crayon-striped-line {
+	background: #B7EEE9 !important;
+}
+.crayon-theme-inlellij-idea .crayon-marked-num.crayon-striped-num {
+	background: #dcdcdc !important;
+	color: #cd5c5c !important;
+}
+.crayon-theme-inlellij-idea .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-inlellij-idea .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-inlellij-idea .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-inlellij-idea .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-inlellij-idea .crayon-info {
+	background: #E8E8E8 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-style: solid !important;
+	border-bottom-color: #888888 !important;
+	color: #595959 !important;
+}
+.crayon-theme-inlellij-idea .crayon-toolbar {
+	background: #DDD !important;
+	border-bottom-width: 1px !important;
+	border-bottom-style: solid !important;
+	border-bottom-color: #BBB !important;
+}
+.crayon-theme-inlellij-idea .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-inlellij-idea .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-inlellij-idea .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-inlellij-idea .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-inlellij-idea .crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-inlellij-idea .crayon-button:hover {
+	background-color: #F2F2F2 !important;
+	color: #666;
+}
+.crayon-theme-inlellij-idea .crayon-button.crayon-pressed:hover {
+	background-color: #F2F2F2 !important;
+	color: #666;
+}
+.crayon-theme-inlellij-idea .crayon-button.crayon-pressed {
+	background-color: #BBB !important;
+	color: #FFF;
+}
+.crayon-theme-inlellij-idea .crayon-button.crayon-pressed:active {
+	background-color: #BBB !important;
+	color: #FFF;
+}
+.crayon-theme-inlellij-idea .crayon-button:active {
+	background-color: #BBB !important;
+	color: #FFF;
+}
+.crayon-theme-inlellij-idea .crayon-pre .c {
+	color: #a9a9a9 !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .p {
+	color: #b85c00 !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .s {
+	color: #008000 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .k {
+	color: #00008b !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .st {
+	color: #00008b !important;
+	font-weight: bold !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .r {
+	color: #00008b !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .t {
+	color: #000000 !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .m {
+	color: #00008b !important;
+	font-weight: bold !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .i {
+	color: #9932cc !important;
+	font-weight: bold !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .v {
+	color: #9932cc !important;
+	font-weight: bold !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .e {
+	color: #8f8615 !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .cn {
+	color: #9932cc !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .o {
+	color: #000000 !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .h {
+	color: #006fe0 !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .sy {
+	color: #333 !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-inlellij-idea .crayon-pre .f {
+	color: #999 !important;
+}
+.crayon-theme-inlellij-idea .crayon-table {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	overflow: hidden!important;
+}
