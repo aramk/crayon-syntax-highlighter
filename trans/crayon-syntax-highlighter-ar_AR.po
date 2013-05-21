@@ -1,0 +1,947 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: crayon-syntax-highlighter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-04 14:02+1000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"crayon__;crayon_n;crayon_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:269
+msgid "Toggle Plain Code"
+msgstr "الذهاب إلى كامل الكود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:270
+msgid "Toggle Line Wrap"
+msgstr "أظهر/ أخف الأسطر"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:272
+#, php-format
+msgid "Press %s to Copy, %s to Paste"
+msgstr "قم ب %s للنسخ, %s  للصق"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:272
+msgid "Copy Plain Code"
+msgstr "إنسخ كامل الكود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:274
+msgid "Open Code In New Window"
+msgstr "إفتح الكود في نافذة جديدة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:276
+msgid "Toggle Line Numbers"
+msgstr "أظهر/أخف أرقام الأسطر"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:279
+msgid "Contains Mixed Languages"
+msgstr "يحتوى على لغات مدمجة فيما بينها"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:143
+msgid "Hourly"
+msgstr "ساعيا"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:143
+msgid "Daily"
+msgstr "يوميا"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:144
+msgid "Weekly"
+msgstr "أسبوعيا"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:144
+msgid "Monthly"
+msgstr "شهريا"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:145
+msgid "Immediately"
+msgstr "حاﻻ"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:155 ../crayon_settings.class.php:159
+msgid "Max"
+msgstr "أكبر"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:155 ../crayon_settings.class.php:159
+msgid "Min"
+msgstr "أقل"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:155 ../crayon_settings.class.php:159
+msgid "Static"
+msgstr "ثابتة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:157 ../crayon_settings.class.php:161
+#: ../crayon_settings_wp.class.php:676 ../crayon_settings_wp.class.php:685
+#: ../crayon_settings_wp.class.php:931
+msgid "Pixels"
+msgstr "بيكسل"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:157 ../crayon_settings.class.php:161
+msgid "Percent"
+msgstr "بالمئة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:170
+msgid "None"
+msgstr "بدون"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:170
+msgid "Left"
+msgstr "يسار"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:170
+msgid "Center"
+msgstr "توسيط"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:170
+msgid "Right"
+msgstr "يمين"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:172 ../crayon_settings.class.php:196
+msgid "On MouseOver"
+msgstr "عند تمرير الفأرة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:172 ../crayon_settings.class.php:178
+msgid "Always"
+msgstr "دائما"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:172 ../crayon_settings.class.php:178
+msgid "Never"
+msgstr "أبدا"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:178
+msgid "When Found"
+msgstr "إذا استكشفت"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:196
+msgid "On Double Click"
+msgstr "عند النقر المزدوج"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:196
+msgid "On Single Click"
+msgstr "عند النقر مرة واحدة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:196
+msgid "Disable Mouse Events"
+msgstr "تعطيل أفعال الفأرة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:203
+msgid "An error has occurred. Please try again later."
+msgstr "لقد حدث خطأ . الرجاء اعادة المحاولة ﻻحقا."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:49 ../crayon_settings_wp.class.php:151
+#: ../crayon_settings_wp.class.php:1109
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:241
+msgid "Settings"
+msgstr "إعدادات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:130
+msgid "You do not have sufficient permissions to access this page."
+msgstr "ليس لديك تصاريح كافية لدخول هذه الصفحة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:166
+msgid "Save Changes"
+msgstr "حفظ التغييرات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:173
+msgid "Reset Settings"
+msgstr "إعادة تعيين الاعدادات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:418
+msgid "General"
+msgstr "عام"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:419
+msgid "Theme"
+msgstr "الشكل"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:420
+msgid "Font"
+msgstr "الخط"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:421
+msgid "Metrics"
+msgstr "الأبعاد"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:422
+msgid "Toolbar"
+msgstr "شريط الأدوات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:423
+msgid "Lines"
+msgstr "سطر"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:424
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:204
+msgid "Code"
+msgstr "كود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:425
+msgid "Tags"
+msgstr "أوسمة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:426
+msgid "Languages"
+msgstr "لغات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:427
+msgid "Files"
+msgstr "ملفات"
+
+#: ../crayon_settings_wp.class.php:428
+msgid "Posts"
+msgstr "تدوينات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:429
+msgid "Tag Editor"
+msgstr "محرر الأوسمة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:430
+msgid "Misc"
+msgstr "متفرقات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:433
+msgid "Debug"
+msgstr "تصحيح"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:434
+msgid "Errors"
+msgstr "أخطاء"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:435
+msgid "Log"
+msgstr "سجل"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:438
+msgid "About"
+msgstr "حول"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:638
+msgid "Crayon Help"
+msgstr "مساعدة ملون الكود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:653
+msgid "Height"
+msgstr "الارتفاع"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:659
+msgid "Width"
+msgstr "الطول"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:665
+msgid "Top Margin"
+msgstr "الهامش العلوي"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:666
+msgid "Bottom Margin"
+msgstr "الهامش السفلي"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:667 ../crayon_settings_wp.class.php:672
+msgid "Left Margin"
+msgstr "هامش اليسار"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:668 ../crayon_settings_wp.class.php:672
+msgid "Right Margin"
+msgstr "هامش اليمين"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:678
+msgid "Horizontal Alignment"
+msgstr "المحاذاة الأفقية"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:681
+msgid "Allow floating elements to surround Crayon"
+msgstr "السماح لعناصر العائمة لتطويق ملون الكود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:683
+msgid "Inline Margin"
+msgstr "الهامش بين الاسطر"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:691
+msgid "Display the Toolbar"
+msgstr "إظهار شريط الأدوات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:694
+msgid "Overlay the toolbar on code rather than push it down when possible"
+msgstr "ركب شريط الأدوات فوق الكود بدلا من دفعه نحو الأسفل إن كان ذلك ممكنا"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:695
+msgid "Toggle the toolbar on single click when it is overlayed"
+msgstr "أظهر شريط الأدوات عند النقر مرة واحدةحينما يكون مركبا"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:696
+msgid "Delay hiding the toolbar on MouseOut"
+msgstr "أخر اخفاء شريط الأدوات عندما تكون الفأرة فوقه"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:698
+msgid "Display the title when provided"
+msgstr "أظهر العنوان اذا وجد"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:699
+msgid "Display the language"
+msgstr "أظهر اللغة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:706
+msgid "Display striped code lines"
+msgstr "أظهر تلوين الأسطر"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:707
+msgid "Enable line marking for important lines"
+msgstr "تفعيل تحديد الأسطر المهمة"
+
+#: ../crayon_settings_wp.class.php:708
+msgid "Enable line ranges for showing only parts of code"
+msgstr "تفعيل نطاق الأسطر لإظهار جزء من الكود فقط"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:709
+msgid "Display line numbers by default"
+msgstr "عرض أرقام الأسطر افتراضيا"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:710
+msgid "Enable line number toggling"
+msgstr "تفعيل عرض أرقام الأسطر"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:711
+msgid "Wrap lines by default"
+msgstr "عرض أرقام الأسطر الافتراضية"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:712
+msgid "Enable line wrap toggling"
+msgstr "تفعيل عرض أرقام الأسطر"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:713
+msgid "Start line numbers from"
+msgstr "إبدأ ترقيم الأسطر بـــ "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:724
+msgid "When no language is provided, use the fallback"
+msgstr "إذا لم تهتر اللغة ،، استخدم الافتراضية"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:730
+#, php-format
+msgid "%d language has been detected."
+msgstr "تم ايجاد %d لغة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:731
+msgid "Parsing was successful"
+msgstr "تم التحويل بنجاح"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:731
+msgid "Parsing was unsuccessful"
+msgstr "خطأ في التحويل "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:737
+#, php-format
+msgid "The selected language with id %s could not be loaded"
+msgstr " (%s) ﻻ نستطيع تحديد اللغة المختارة بـالرقم  "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:740
+msgid "Show Languages"
+msgstr "مشاهدة اللغات"
+
+#: ../crayon_settings_wp.class.php:776
+msgid "Show Crayon Posts"
+msgstr "مشاهدة تدوينات المستعملة للاضافة"
+
+#: ../crayon_settings_wp.class.php:777
+msgid "Refresh"
+msgstr "تحديث"
+
+#: ../crayon_settings_wp.class.php:793
+msgid "ID"
+msgstr "الرقم"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:793
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:182
+msgid "Title"
+msgstr "عنوان"
+
+#: ../crayon_settings_wp.class.php:793
+msgid "Posted"
+msgstr "كتب في"
+
+#: ../crayon_settings_wp.class.php:793
+msgid "Modifed"
+msgstr "حرر في"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:793
+msgid "Contains Legacy Tags?"
+msgstr "يحتوي على الأوسمة؟"
+
+#: ../crayon_settings_wp.class.php:806
+msgid "Yes"
+msgstr "نعم"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:806
+msgid "No"
+msgstr "لا"
+
+#: ../crayon_settings_wp.class.php:890
+msgid "Edit"
+msgstr "حرر"
+
+#: ../crayon_settings_wp.class.php:890
+msgid "Duplicate"
+msgstr "انسخ"
+
+#: ../crayon_settings_wp.class.php:890
+msgid "Create"
+msgstr "أنشأ"
+
+#: ../crayon_settings_wp.class.php:890
+msgid "Delete"
+msgstr "احذف"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:892
+msgid "Loading..."
+msgstr " جاري التحميل ..."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:907
+#, php-format
+msgid ""
+"Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 "
+"are marked."
+msgstr ""
+"غير الـ  %1$s  اللغة الاحتياطية %2$s لتغيير كود المثال.تم تعليم الأسطر 5-7 "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:912
+msgid "Enable Live Preview"
+msgstr "المشاهدة المباشرة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:914
+msgid "Enqueue themes in the header (more efficient)."
+msgstr "تحميل اعدادات الاضافة  في التروسية -أكثر فعالية  "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:917
+#, php-format
+msgid "The selected theme with id %s could not be loaded"
+msgstr " %s ﻻ نستطيع تحميل الشكل المحدد بالرقم  "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:929
+msgid "Custom Font Size"
+msgstr "تخصيص حجم الخط"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:934
+#, php-format
+msgid "The selected font with id %s could not be loaded"
+msgstr " (%s) ﻻ يمكن تحديد الخط المحدد بالــ"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:940
+msgid "Enqueue fonts in the header (more efficient)."
+msgstr "إدراج الخطوط بالتروسية ( أكثر فعالية ) "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:945
+msgid "Enable plain code view and display"
+msgstr "تفعيل اظهار ومشاهدة كامل الكود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:948
+msgid "Enable plain code toggling"
+msgstr "تفعيل تغيير كامل الكود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:949
+msgid "Show the plain code by default"
+msgstr "اظهار كامل الكود افتراضيا"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:950
+msgid "Enable code copy/paste"
+msgstr "السماح بنسخ الكود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:952
+msgid "Enable opening code in a window"
+msgstr "السماح بفتح الكود في نافذة جديدة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:953
+msgid "Always display scrollbars"
+msgstr "اظهار شريط التمرير دائما "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:956
+msgid "Decode HTML entities in code"
+msgstr "تشفير أكواد الهتمل تلقائيا"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:958
+msgid "Decode HTML entities in attributes"
+msgstr "تشفير أكواد الهتمل تلقائيا "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:960
+msgid "Remove whitespace surrounding the shortcode content"
+msgstr "حذف الفراغات في حول الكود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:962
+msgid "Allow Mixed Language Highlighting with delimiters and tags."
+msgstr "السماح بتلوين الكود المتعدد اللغات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:964
+msgid "Show Mixed Language Icon (+)"
+msgstr "إظهار أيقونة اللغات المدمجة والمتعددة  (+) "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:966
+msgid "Tab size in spaces"
+msgstr "حجم الفراغات"
+
+#: ../crayon_settings_wp.class.php:968
+msgid "Blank lines before code:"
+msgstr "أسطر فارغة قبل الكود"
+
+#: ../crayon_settings_wp.class.php:970
+msgid "Blank lines after code:"
+msgstr "أسطر فارغة بعد الكود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:975
+msgid "Capture Mini Tags like [php][/php] as Crayons."
+msgstr " [php][/php]تمكين التعرف على  الاوسمة مثل  "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:976
+msgid "Capture Inline Tags like {php}{/php} inside sentences."
+msgstr "تمكين التعرف على أكواد مثل {php}{/php} داخل التدوينات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:977
+msgid "Wrap Inline Tags"
+msgstr "تمكين التعرف على أوسمة الروج الى السطر"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:978
+msgid "Capture `backquotes` as &lt;code&gt;"
+msgstr "تمكين التعرف على الاقتباسات "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:979
+msgid "Capture &lt;pre&gt; tags as Crayons"
+msgstr "تمكين التعرف على أوسمة &lt;pre&gt; في الاضافة "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:980
+msgid "Enable [plain][/plain] tag."
+msgstr "تفعيل أوسمة [plain][/plain]"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:985
+msgid ""
+"When loading local files and a relative path is given for the URL, use the "
+"absolute path"
+msgstr "عند رفع ملفات من الجهاز ، عليك اعطاء الروابط الصحيحة "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:988
+msgid "Followed by your relative URL."
+msgstr "متبوعا برابطك "
+
+#: ../crayon_settings_wp.class.php:995
+msgid "Convert Legacy Tags"
+msgstr "تحويل الأوسمة "
+
+#: ../crayon_settings_wp.class.php:998
+msgid "No Legacy Tags Found"
+msgstr "لم يتم ايجاد اوسمة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1003
+#, php-format
+msgid ""
+"Use %s to separate setting names from values in the &lt;pre&gt; class "
+"attribute"
+msgstr "استعمل  %s لتفصل بين اسماء الاعدادات  والقيم ف &lt;pre&gt; "
+
+#: ../crayon_settings_wp.class.php:1006
+msgid ""
+"Display the Tag Editor in any TinyMCE instances on the frontend (e.g. "
+"bbPress)"
+msgstr "عرض أوسمة المحرر في أي واجهة محرر TinyMCE آخر "
+
+#: ../crayon_settings_wp.class.php:1007
+msgid "Display Tag Editor settings on the frontend"
+msgstr "عرض أوسمة المحرر في الواجهة "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1011
+msgid "Clear the cache used to store remote code requests"
+msgstr "تفريغ الكاش المستعمل للحفظ التلقائي للكود"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1013
+msgid "Clear Now"
+msgstr "تفريغ الأن"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1014
+msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
+msgstr "ﻻ تحاول أن تغير في  ملفات الـ  CSS و JavaScript في حالة الضرورة فقط "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1015
+msgid "Disable enqueuing for page templates that may contain The Loop."
+msgstr "تعطيل حقن الكود في القوالب التي تجتوي على Loop"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1016
+msgid "Allow Crayons inside comments"
+msgstr "تمكين الاضافة في التعليقات"
+
+#: ../crayon_settings_wp.class.php:1017
+msgid "Remove Crayons from excerpts"
+msgstr "حذف تنسيقات اضافة كود التلوين في ال excerpts"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1018
+msgid "Load Crayons only from the main Wordpress query"
+msgstr "تمكين  الاضافة من استعلامات ووردبريس الرئيسية فقط "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1019
+msgid "Disable mouse gestures for touchscreen devices (eg. MouseOver)"
+msgstr "تعطيل اعدادات الفأرة للأجهزة اللوحية "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1020
+msgid "Disable animations"
+msgstr "تعطيل التتنسيقات المتحركة "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1021
+msgid "Disable runtime stats"
+msgstr "تعطيل احصاءات العمل "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1027
+msgid "Log errors for individual Crayons"
+msgstr "سجلات الأخطاء الفردية للاضافة "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1028
+msgid "Log system-wide errors"
+msgstr "سجلات أخطاء النظام"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1029
+msgid "Display custom message for errors"
+msgstr "عرض رسالة مخصصة للأخطاء"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1041
+msgid "Show Log"
+msgstr "عرض السجلات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1041
+msgid "Hide Log"
+msgstr "اخفاء السجلات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1043
+msgid "Clear Log"
+msgstr "تفريغ السجلات"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1044
+msgid "Email Admin"
+msgstr "ايميل الادارة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1046
+msgid "Email Developer"
+msgstr "ايميل المطور"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1048
+msgid "The log is currently empty."
+msgstr "السجلات فارغة "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1050
+msgid "The log file exists and is writable."
+msgstr "السجلات متاحة وتستطيع الكتابة عليها "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1050
+msgid "The log file exists and is not writable."
+msgstr "السجلات موجودة لكن ﻻ تسنطيع الكتابة عليها "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1052
+msgid "The log file does not exist and is not writable."
+msgstr "السجلات غير موجودة ، وﻻ تستطيع كتابتها"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1062
+msgid "Version"
+msgstr "النسخة"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1064
+msgid "Developer"
+msgstr "المطور"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1065
+msgid "Translators"
+msgstr "المترجم"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1093
+msgid ""
+"The result of innumerable hours of hard work over many months. It's an "
+"ongoing project, keep me motivated!"
+msgstr ""
+"هذا ناتج عن الكثير من ساعات العمل  الشاق خلال أشهر عديدة . وهو مشروع مستمر , "
+"شجعوني "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1103
+msgid "?"
+msgstr "؟"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1110
+msgid "Donate"
+msgstr "تبرع "
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:64
+msgid "Add Crayon Code"
+msgstr "أظف كود تلوين جديد"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:65
+msgid "Edit Crayon Code"
+msgstr "عدل كود تلوين "
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:66
+msgid "Add"
+msgstr "أظف"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:67
+msgid "Save"
+msgstr "احفظ"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:173
+msgid "OK"
+msgstr "تأكيد"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:175
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:184
+msgid "A short description"
+msgstr "وصف قصير "
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:186
+msgid "Inline"
+msgstr "تضمين"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:188
+msgid "Don't Highlight"
+msgstr "تعطيل تلوين الكود"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:193
+msgid "Language"
+msgstr "اللغات"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:196
+msgid "Line Range"
+msgstr "نطاق الأسطر"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:197
+msgid "(e.g. 3-5 or 3)"
+msgstr "(أمثلة : 3، 3-5 ) "
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:198
+msgid "Marked Lines"
+msgstr "الأسطر المعلمة "
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:199
+msgid "(e.g. 1,2,3-5)"
+msgstr "( أمثلة 3،2،1-5 )"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:206
+msgid "Clear"
+msgstr "مسح"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:210
+msgid "Paste your code here, or type it in manually."
+msgstr "الصق الكود هنا ، أو اكتبه يدويا "
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:214
+msgid "URL"
+msgstr "الرابط"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:216
+msgid "Relative local path or absolute URL"
+msgstr "رابط داخلي أو رابط خارجي "
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:219
+msgid ""
+"If the URL fails to load, the code above will be shown instead. If no code "
+"exists, an error is shown."
+msgstr ""
+"عند فشل تحميل الرابط ، سيظهر الكود مكانه ، في حال عدم وجود الكود ، ستظهر "
+"رسالة خطأ "
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:221
+#, php-format
+msgid ""
+"If a relative local path is given it will be appended to %s - which is "
+"defined in %sCrayon &gt; Settings &gt; Files%s."
+msgstr ""
+"في حالة اعطاء الرابط الداخلي ، سيتم اضافته الى %s الموجود على المسار  "
+"%sكريون &gt; اعدادات &gt; ملفات %s."
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:246
+msgid "Change the following settings to override their global values."
+msgstr "غير الاعدادات التالية لتحل محل الاعدادات العامة لهذه التدوينة"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:248
+msgid "Only changes (shown yellow) are applied."
+msgstr "التغييرات باللون الاصفر هي فقط من فعلت "
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:250
+#, php-format
+msgid ""
+"Future changes to the global settings under %sCrayon &gt; Settings%s won't "
+"affect overridden settings."
+msgstr ""
+"التغييرات المستقبلية للاعدادات العامة  %sللأضافة &gt; %s  لن تأثر على "
+"الاعدادات المغيرة يدويا"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor_content.php:23
+msgid "Theme Editor"
+msgstr "محرر الاشكال"
+
+#: ../util/theme-editor/theme_editor_content.php:29
+#, php-format
+msgid "Editing \"%s\" Theme"
+msgstr " \"%s\" تحرير الشكل "
+
+#: ../util/theme-editor/theme_editor_content.php:31
+#, php-format
+msgid "Creating Theme From \"%s\""
+msgstr " \"%s\" أنشأ شكلا مبني على "
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor_content.php:37
+msgid "Back To Settings"
+msgstr "العودة للإعدادات"
