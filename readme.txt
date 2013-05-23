@@ -250,6 +250,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.2.2 =
 * FIXED:
     * Escaping quotes in strings
+    * R language type literals
 
 = 2.2.1 =
 * ADDED:

@@ -11,7 +11,7 @@
     STATEMENT           (?default)|\b(?alt:statement.txt)\b
     RESERVED            (?default)|\b(?alt:reserved.txt)\b
     TYPE                (?default)
-    TYPE_LITERAL:TYPE   (?i)NA|T|F|Inf|NaN(?-i)
+    TYPE_LITERAL:TYPE   (?i)\b(NA|T|F|Inf|NaN)\b(?-i)
     
     ENTITY              (?default)
     VARIABLE            (?default)
