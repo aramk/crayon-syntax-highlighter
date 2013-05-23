@@ -247,6 +247,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.2.2 =
+* FIXED:
+    * Escaping quotes in strings
+
 = 2.2.1 =
 * ADDED:
     * Mirc Dark theme
