@@ -120,6 +120,7 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 
 **International Languages**
 
+* Arabic (thanks to <a href="http://djennadhamza.eb2a.com/" target="_blank">Djennad Hamza</a>)
 * Chinese (Simplified, thanks to <a href="http://smerpup.com/" target="_blank">Dezhi Liu</a> & <a href="http://neverno.me/" target="_blank">Jash Yin</a>)
 * Dutch (thanks to <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>)
 * French (thanks to <a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>)
@@ -251,6 +252,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Mirc Dark theme
     * Feeldesign theme
     * IntelliJ theme
+    * Arabic translation
 * FIXED:
     * All language css classes are prefixed with "crayon-" to prevent conflicts
     * Terminal theme fix

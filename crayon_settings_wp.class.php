@@ -1204,7 +1204,9 @@ class Human {
         $date = $CRAYON_DATE;
         $developer = '<strong>' . crayon__('Developer') . ':</strong> ' . '<a href="' . $CRAYON_AUTHOR_SITE . '" target="_blank">' . $CRAYON_AUTHOR . '</a>';
         $translators = '<strong>' . crayon__('Translators') . ':</strong> ' .
-            'Chinese (<a href="http://smerpup.com/" target="_blank">Dezhi Liu</a>, <a href="http://neverno.me/" target="_blank">Jash Yin</a>),
+                '
+                Arabic (<a href="http://djennadhamza.eb2a.com/" target="_blank">Djennad Hamza</a>),
+                Chinese (<a href="http://smerpup.com/" target="_blank">Dezhi Liu</a>, <a href="http://neverno.me/" target="_blank">Jash Yin</a>),
 				Dutch (<a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>),
 				French (<a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>),
 				German (<a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&#223;</a>),
