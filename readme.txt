@@ -252,6 +252,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Escaping quotes in strings
     * R language type literals
     * Arabic translation
+    * Forced LTR for Crayon CSS, preventing the line numbers from appearing on the right
 
 = 2.2.1 =
 * ADDED:

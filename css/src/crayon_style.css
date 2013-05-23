@@ -18,6 +18,7 @@ coloring etc.
     direction: ltr;
     text-align: left;
     box-sizing: border-box;
+    direction: ltr !important;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
