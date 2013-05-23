@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: crayon-syntax-highlighter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-23 23:09+1000\n"
+"POT-Creation-Date: 2013-05-24 08:40+1000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -176,7 +176,7 @@ msgstr ""
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:53 ../crayon_settings_wp.class.php:210
-#: ../crayon_settings_wp.class.php:1255
+#: ../crayon_settings_wp.class.php:1257
 #: ../util/tag-editor/crayon_tag_editor_wp.class.php:254
 msgid "Settings"
 msgstr "إعدادات"
@@ -876,18 +876,18 @@ msgid "Translators"
 msgstr "المترجم"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1249
+#: ../crayon_settings_wp.class.php:1251
 msgid "?"
 msgstr "؟"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1256
+#: ../crayon_settings_wp.class.php:1258
 #: ../util/theme-editor/theme_editor.php:336
 msgid "Theme Editor"
 msgstr "محرر الاشكال"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1257
+#: ../crayon_settings_wp.class.php:1259
 msgid "Donate"
 msgstr "تبرع "
 
@@ -1077,8 +1077,9 @@ msgid ""
 "email me your theme - make sure it's considerably different from the stock "
 "themes :)"
 msgstr ""
-"ارسل هذا الثيم في الاضافة, وهذا سيرسل الى ايميل بهذا الثيم"
-"تأكد من أن يكون الثيم فريد ولايشبه شكلا سابقا"
+"ارسل هذا الثيم في الاضافة, وهذا سيرسل الى ايميل بهذا الثيمتأكد من أن يكون "
+"الثيم فريد ولايشبه شكلا سابقا"
+
 #: ../util/theme-editor/theme_editor.php:208
 msgid "Message"
 msgstr "رسالة"

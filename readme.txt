@@ -251,6 +251,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * FIXED:
     * Escaping quotes in strings
     * R language type literals
+    * Arabic translation
 
 = 2.2.1 =
 * ADDED:
