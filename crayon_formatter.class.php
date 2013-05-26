@@ -139,7 +139,7 @@ class CrayonFormatter {
 			$wrap = !$hl->setting_val(CrayonSettings::INLINE_WRAP) ? 'crayon-syntax-inline-nowrap' : '';
 			$output .= '
 			<span id="'.$uid.'" class="crayon-syntax crayon-syntax-inline '.$wrap.' crayon-theme-'.$theme_id_dashed.' crayon-theme-'.$theme_id_dashed.'-inline crayon-font-'.$font_id_dashed.'" style="'.$font_style.'">' .
-				'<span class="crayon-pre" style="'.$font_style.'">' . $code . '</span>' . 
+				'<span class="crayon-pre crayon-code" style="'.$font_style.'">' . $code . '</span>' . 
 			'</span>';
 			return $output;
 		}
