@@ -160,8 +160,3 @@ Using Mini Tags like `[php]some code[/php]` is supported but also depreciated in
 ## Licence
 
 Crayon is released under the GPLv2 licence. See `readme.txt`.
-
-## Documentation & Download
-
-* http://aramk.com/projects/crayon-syntax-highlighter/
-* http://wordpress.org/extend/plugins/crayon-syntax-highlighter/
