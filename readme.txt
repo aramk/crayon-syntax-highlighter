@@ -248,6 +248,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 2.2.2 =
+* ADDED:
+    * Monokai theme
 * FIXED:
     * Escaping quotes in strings
     * R language type literals

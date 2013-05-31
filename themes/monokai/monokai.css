@@ -1,0 +1,169 @@
+/*
+Name: Monokai
+Description: The monokai Aptana Studio 3 theme.
+Version: 1.0
+Author: Bryan Horna
+URL: http://www.bryanjhv.com
+*/
+.crayon-theme-monokai {
+	border-width: 1px !important;
+	border-color: #ffae00 !important;
+	text-shadow: none !important;
+	background: #333333 !important;
+	border-style: solid !important;
+}
+.crayon-theme-monokai-inline {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	background: #272822 !important;
+}
+.crayon-theme-monokai .crayon-table .crayon-nums {
+	background: #222222 !important;
+	color: #898989 !important;
+	border-right-width: 1px !important;
+	border-right-color: #555555 !important;
+	border-right-style: solid !important;
+}
+.crayon-theme-monokai *::selection {
+	background: transparent !important;
+}
+.crayon-theme-monokai .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-monokai .crayon-striped-line {
+	background: #363636 !important;
+}
+.crayon-theme-monokai .crayon-striped-num {
+	background: #282828 !important;
+	color: #979797 !important;
+}
+.crayon-theme-monokai .crayon-marked-line {
+	background: #444444 !important;
+	border-width: 1px !important;
+	border-color: #595959 !important;
+}
+.crayon-theme-monokai .crayon-marked-num {
+	color: #9e9e9e !important;
+	background: #363636 !important;
+	border-width: 1px !important;
+	border-color: #595959 !important;
+}
+.crayon-theme-monokai .crayon-marked-line.crayon-striped-line {
+	background: #494949 !important;
+}
+.crayon-theme-monokai .crayon-marked-num.crayon-striped-num {
+	background: #222222 !important;
+	color: #666666 !important;
+}
+.crayon-theme-monokai .crayon-marked-line.crayon-top {
+}
+.crayon-theme-monokai .crayon-marked-num.crayon-top {
+}
+.crayon-theme-monokai .crayon-marked-line.crayon-bottom {
+}
+.crayon-theme-monokai .crayon-marked-num.crayon-bottom {
+}
+.crayon-theme-monokai .crayon-info {
+	background: #333333 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	color: #eeeeee !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-monokai .crayon-toolbar {
+	background: #999999 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #2e2e2e !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-monokai .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-monokai .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-monokai .crayon-title {
+	color: #626262 !important;
+}
+.crayon-theme-monokai .crayon-language {
+	color: #626262 !important;
+}
+.crayon-theme-monokai .crayon-button {
+}
+.crayon-theme-monokai .crayon-button:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-monokai .crayon-button.crayon-pressed:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-monokai .crayon-button.crayon-pressed {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-monokai .crayon-button.crayon-pressed:active {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-monokai .crayon-button:active {
+	background-color: #bcbcbc !important;
+	color: #FFF;
+}
+.crayon-theme-monokai .crayon-pre .crayon-c {
+	color: #75715e !important;
+	font-style: italic !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-s {
+	color: #e6db74 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-p {
+	color: #b85c00 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-ta {
+	color: #d35a5a !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-k {
+	color: #75d1f2 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-st {
+	color: #f92672 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-r {
+	color: #f8f8f2 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-t {
+	color: #66d9ef !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-m {
+	color: #f92672 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-i {
+	color: #f8f8f2 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-e {
+	color: #66d9ef !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-v {
+	color: #f8f8f2 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-cn {
+	color: #e7a37a !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-o {
+	color: #f92672 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-sy {
+	color: #f8f8f2 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-f {
+	color: #999999 !important;
+}
+.crayon-theme-monokai .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
