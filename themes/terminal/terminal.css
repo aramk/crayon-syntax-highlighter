@@ -1,7 +1,7 @@
 /*
 Name: Terminal
 Description: Looks like a terminal.
-Version: 1.0
+Version: 1.1
 Author: Aram Kocharyan
 URL: http://aramk.com/
 */
@@ -117,6 +117,9 @@ URL: http://aramk.com/
 .crayon-theme-terminal .crayon-button:active {
 	background-color: #4e7a00 !important;
 	color: #FFF;
+}
+.crayon-theme-terminal .crayon-pre {
+	color: #ffffff !important;
 }
 .crayon-theme-terminal .crayon-pre .crayon-c {
 	color: #ff9b00 !important;

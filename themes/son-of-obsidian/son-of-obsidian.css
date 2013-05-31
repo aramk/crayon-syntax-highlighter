@@ -1,7 +1,7 @@
 /*
 Name: Son Of Obsidian
 Description: Inspired from http://studiostyl.es/schemes/son-of-obsidian
-Version: 1.0
+Version: 1.1
 Original Author: http://studiostyl.es/users/135
 Author: Phiphou
 URL: http://blog.phiphou.com
@@ -198,4 +198,8 @@ Twitter: @__phiphou__
 	font-style: italic !important;
 }
 .crayon-theme-son-of-obsidian .crayon-pre .crayon-f {
+	color: #898989 !important;
+}
+.crayon-theme-son-of-obsidian .crayon-pre {
+	color: #ffffff !important;
 }

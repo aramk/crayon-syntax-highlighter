@@ -1,7 +1,7 @@
 /*
 Name: Twilight
 Description: Dark and elegant. 
-Version: 1.3
+Version: 1.4
 Author: Aram Kocharyan
 URL: http://aramk.com/
 */
@@ -207,4 +207,7 @@ URL: http://aramk.com/
 }
 .crayon-theme-twilight .crayon-pre .crayon-f {
 	color: #595959 !important;
+}
+.crayon-theme-twilight .crayon-pre {
+	color: #ffffff !important;
 }

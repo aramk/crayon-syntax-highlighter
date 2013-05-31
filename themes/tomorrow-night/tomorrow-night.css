@@ -1,7 +1,7 @@
 /*
 Name: Tomorrow Night
 Description: Based on https://github.com/ChrisKempson/Tomorrow-Theme/
-Version: 1.0
+Version: 1.1
 Author: Aram Kocharyan
 URL: http://aramk.com/
 */
@@ -168,4 +168,7 @@ URL: http://aramk.com/
 }
 .crayon-theme-tomorrow-night .crayon-pre .crayon-h {
 	color: #006fe0 !important;
+}
+.crayon-theme-tomorrow-night .crayon-pre {
+	color: #ffffff !important;
 }

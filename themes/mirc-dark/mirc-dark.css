@@ -1,7 +1,7 @@
 /*
 Name: Mirc Dark
 Description: Based on Tomorrow-Theme by ChrisKempson
-Version: 1.0
+Version: 1.1
 Author: AmFearLiath
 URL: http://amfearliath.tk
 */
@@ -168,4 +168,7 @@ URL: http://amfearliath.tk
 }
 .crayon-theme-mirc-dark .crayon-pre .crayon-h {
 	color: #006fe0 !important;
+}
+.crayon-theme-mirc-dark .crayon-pre {
+	color: #ffffff !important;
 }

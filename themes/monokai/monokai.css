@@ -1,7 +1,7 @@
 /*
 Name: Monokai
 Description: The monokai Aptana Studio 3 theme.
-Version: 1.0
+Version: 1.1
 Author: Bryan Horna
 URL: http://www.bryanjhv.com
 */
@@ -166,4 +166,7 @@ URL: http://www.bryanjhv.com
 }
 .crayon-theme-monokai .crayon-pre .crayon-h {
 	color: #006fe0 !important;
+}
+.crayon-theme-monokai .crayon-pre {
+	color: #ffffff !important;
 }

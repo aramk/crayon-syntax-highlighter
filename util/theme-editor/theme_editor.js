@@ -21,7 +21,7 @@
         var reSize = /^[0-9-]+px$/;
         var reCopy = /-copy(-\d+)?$/;
         var changedAttr = 'data-value';
-        var borderCSS = {'border':true, 'border-left':true, 'border-right':true, 'border-top':true, 'border-bottom':true};
+        var borderCSS = {'border': true, 'border-left': true, 'border-right': true, 'border-top': true, 'border-bottom': true};
 
         base.init = function (callback) {
             // Called only once
@@ -342,25 +342,31 @@
         base.persistAttribute = function (attr, remove_default) {
             remove_default = CrayonUtil.setDefault(remove_default, true);
             base.visitAttribute(attr, function (attr, elem, dataElem, dataAttr, root, elems) {
-                if (elem) {
-                    if (remove_default && attr.prop('tagName') == 'SELECT' && attr.val() == attr.attr('data-default')) {
+                if (remove_default && attr.prop('tagName') == 'SELECT' && attr.val() == attr.attr('data-default')) {
+                    if (elem) {
                         // If default is selected in a dropdown, then remove
+                        delete elem.attributes[dataAttr];
+                    }
+                    return;
+                }
+                var val = base.getElemValue(attr);
+                if ((val == null || val == '')) {
+                    // No value given
+                    if (remove_default && elem) {
                         delete elem.attributes[dataAttr];
                         return;
                     }
-                    val = base.getElemValue(attr);
-                    if ((val == null || val == '')) {
-                        // No value given
-                        if (remove_default) {
-                            delete elem.attributes[dataAttr];
-                            return;
-                        }
-                    } else {
-                        val = base.addImportant(val);
+                } else {
+                    val = base.addImportant(val);
+                    if (!elem) {
+                        elem = elems[root + dataElem] = {
+                            attributes: {},
+                            children: {}
+                        };
                     }
                     elem.attributes[dataAttr] = val;
-                    CrayonUtil.log(dataElem + ' ' + dataAttr);
                 }
+                CrayonUtil.log(dataElem + ' ' + dataAttr);
             });
         };
 
@@ -412,7 +418,7 @@
             return infoStr + '*/\n';
         };
 
-        base.filterCSS = function(css) {
+        base.filterCSS = function (css) {
             // Split all border CSS attributes into individual attributes
             for (var child in css.children) {
                 var atts = css.children[child].attributes;
@@ -429,62 +435,62 @@
             return css;
         },
 
-        base.getBorderCSS = function (css) {
-            var result = {};
-            var important = base.isImportant(css);
-            $.each(strings.borderStyles, function (i, style) {
-                if (css.indexOf(style) >= 0) {
-                    result.style = style;
+            base.getBorderCSS = function (css) {
+                var result = {};
+                var important = base.isImportant(css);
+                $.each(strings.borderStyles, function (i, style) {
+                    if (css.indexOf(style) >= 0) {
+                        result.style = style;
+                    }
+                });
+                var width = /\d+\s*(px|%|em|rem)/gi.exec(css);
+                if (width) {
+                    result.width = width[0];
                 }
-            });
-            var width = /\d+\s*(px|%|em|rem)/gi.exec(css);
-            if (width) {
-                result.width = width[0];
-            }
-            var color = /#\w+/gi.exec(css);
-            if (color) {
-                result.color = color[0];
-            }
-            if (important) {
-                for (var rule in result) {
-                    result[rule] = base.addImportant(result[rule]);
+                var color = /#\w+/gi.exec(css);
+                if (color) {
+                    result.color = color[0];
                 }
-            }
-            return result;
-        },
-
-        base.createPrompt = function (args) {
-            args = $.extend({
-                title: adminStrings.prompt,
-                text: adminStrings.value,
-                desc: null,
-                value: '',
-                options: {
-                    buttons: {
-                        "OK": function () {
-                            if (args.ok) {
-                                args.ok(base.getFieldValue('prompt-text'));
-                            }
-                            $(this).crayonDialog('close');
-                        },
-                        "Cancel": function () {
-                            $(this).crayonDialog('close');
-                        }
-                    },
-                    open: function () {
-                        base.getField('prompt-text').val(args.value).focus();
+                if (important) {
+                    for (var rule in result) {
+                        result[rule] = base.addImportant(result[rule]);
                     }
                 }
-            }, args);
-            args.html = '<table class="field-table crayon-prompt-' + base.nameToID(args.title) + '">';
-            if (args.desc) {
-                args.html += '<tr><td colspan="2">' + args.desc + '</td></tr>';
-            }
-            args.html += '<tr><td>' + args.text + ':</td><td>' + base.createInput('prompt-text') + '</td></tr>';
-            args.html += '</table>';
-            var options = {width: '400px'};
-            admin.createDialog(args, options);
-        };
+                return result;
+            },
+
+            base.createPrompt = function (args) {
+                args = $.extend({
+                    title: adminStrings.prompt,
+                    text: adminStrings.value,
+                    desc: null,
+                    value: '',
+                    options: {
+                        buttons: {
+                            "OK": function () {
+                                if (args.ok) {
+                                    args.ok(base.getFieldValue('prompt-text'));
+                                }
+                                $(this).crayonDialog('close');
+                            },
+                            "Cancel": function () {
+                                $(this).crayonDialog('close');
+                            }
+                        },
+                        open: function () {
+                            base.getField('prompt-text').val(args.value).focus();
+                        }
+                    }
+                }, args);
+                args.html = '<table class="field-table crayon-prompt-' + base.nameToID(args.title) + '">';
+                if (args.desc) {
+                    args.html += '<tr><td colspan="2">' + args.desc + '</td></tr>';
+                }
+                args.html += '<tr><td>' + args.text + ':</td><td>' + base.createInput('prompt-text') + '</td></tr>';
+                args.html += '</table>';
+                var options = {width: '400px'};
+                admin.createDialog(args, options);
+            };
 
         base.initUI = function () {
             // Bind events

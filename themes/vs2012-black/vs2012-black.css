@@ -1,9 +1,9 @@
 /*
-Name: VS2012 Black
+Name: Vs2012 Black
 Description: Visual Studio 2012 Black Theme
-Version: 0.1
+Version: 1.1
 Author: Nikolay Zahariev
-Url: http://nikolayzahariev.com/
+URL: http://nikolayzahariev.com/
 */
 .crayon-theme-vs2012-black {
 	border-width: 1px !important;
@@ -168,4 +168,7 @@ Url: http://nikolayzahariev.com/
 }
 .crayon-theme-vs2012-black .crayon-pre .crayon-h {
 	color: #006fe0 !important;
+}
+.crayon-theme-vs2012-black .crayon-pre {
+	color: #ffffff !important;
 }

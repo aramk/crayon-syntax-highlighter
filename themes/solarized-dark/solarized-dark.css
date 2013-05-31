@@ -1,7 +1,7 @@
 /*
 Name: Solarized Dark
 Description: Clean, crisp and colorful. 
-Version: 1.0.0 Beta 2
+Version: 1.1
 Author: Ethan Schoonover
 URL: http://ethanschoonover.com/
 Maintainer: Eduan Lavaque
@@ -203,4 +203,7 @@ Notes: I don't provide striped lines because it would break the original purpose
 }
 .crayon-theme-solarized-dark .crayon-pre .crayon-ta {
 	color: #268bd2 !important;
+}
+.crayon-theme-solarized-dark .crayon-pre {
+	color: #2aa198 !important;
 }

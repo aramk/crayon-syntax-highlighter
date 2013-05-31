@@ -15,7 +15,7 @@ define('CRAYON_MINIFY', TRUE);
 // General definitions
 define('CRAYON_DOMAIN', 'crayon-syntax-highlighter');
 
-// These are overriden by functions since v1.1.1
+// These are overridden by functions since v1.1.1
 $CRAYON_VERSION = '1.1.1';
 $CRAYON_DATE = '27th September, 2011';
 $CRAYON_AUTHOR = 'Aram Kocharyan';

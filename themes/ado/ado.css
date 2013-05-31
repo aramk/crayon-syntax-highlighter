@@ -1,7 +1,7 @@
 /*
 Name: Ado
 Description: Classic extended. 
-Version: 1.0
+Version: 1.1
 Author: Andrea Dell'Orco
 URL: http://www.adostudio.it/
 */
@@ -126,9 +126,6 @@ URL: http://www.adostudio.it/
 	color: #FFF;
 }
 .crayon-theme-ado .crayon-pre .crayon-p {
-	color: #ff8000 !important;
-}
-.crayon-theme-ado .crayon-pre .crayon-p {
 	color: #b85c00 !important;
 }
 .crayon-theme-ado .crayon-pre .crayon-s {
@@ -185,4 +182,10 @@ URL: http://www.adostudio.it/
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	overflow: hidden!important;
+}
+.crayon-theme-ado .crayon-pre .crayon-c {
+	color: #000000 !important;
+}
+.crayon-theme-ado .crayon-pre {
+	color: #000000 !important;
 }

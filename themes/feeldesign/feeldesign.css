@@ -1,7 +1,7 @@
 /*
 Name: Feeldesign
 Description: FeeldesignStudio
-Version: 1.0
+Version: 1.1
 Author: FeeldesignStudio
 URL: http://www.feeldesignstudio.com
 */
@@ -165,4 +165,7 @@ URL: http://www.feeldesignstudio.com
 }
 .crayon-theme-feeldesign .crayon-pre .crayon-h {
 	color: #006fe0 !important;
+}
+.crayon-theme-feeldesign .crayon-pre {
+	color: #ffffff !important;
 }

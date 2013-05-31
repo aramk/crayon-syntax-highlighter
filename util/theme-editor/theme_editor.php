@@ -385,7 +385,7 @@ class CrayonThemeEditorWP {
                     </div>
                     <div id="tabs-2">
                         <?php
-                        $highlight = ' .crayon-pre .crayon-';
+                        $highlight = ' .crayon-pre';
                         $elems = array(
                             'c' => crayon__("Comment"),
                             's' => crayon__("String"),
@@ -404,16 +404,18 @@ class CrayonThemeEditorWP {
                             'sy' => crayon__("Symbol"),
                             'n' => crayon__("Notation"),
                             'f' => crayon__("Faded"),
-                            'h' => crayon__("HTML")
+                            'h' => crayon__("HTML"),
+                            '' => crayon__("Unhighlighted")
                         );
                         $atts = array(new CrayonHTMLTitle($tHighlighting));
                         foreach ($elems as $class => $name) {
+                            $fullClass = $class != '' ? $highlight . ' .crayon-' . $class : $highlight;
                             $atts[] = array(
                                 $name,
-                                self::createAttribute($highlight . $class, 'color'),
-                                self::createAttribute($highlight . $class, 'font-weight'),
-                                self::createAttribute($highlight . $class, 'font-style'),
-                                self::createAttribute($highlight . $class, 'text-decoration')
+                                self::createAttribute($fullClass, 'color'),
+                                self::createAttribute($fullClass, 'font-weight'),
+                                self::createAttribute($fullClass, 'font-style'),
+                                self::createAttribute($fullClass, 'text-decoration')
                             );
                         }
                         self::createAttributesForm($atts);

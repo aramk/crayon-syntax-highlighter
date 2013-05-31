@@ -1,7 +1,7 @@
 /*
 Name: Neon
 Description: Dark, elegant and electric.
-Version: 1.0
+Version: 1.1
 Author: Di_Skyer
 URL: http://atlocal.net/
 */
@@ -212,4 +212,10 @@ URL: http://atlocal.net/
 }
 .crayon-theme-neon .crayon-pre .crayon-f {
 	color: #595959 !important;
+}
+.crayon-theme-neon .crayon-pre .crayon-p {
+	color: #a4a4a4 !important;
+}
+.crayon-theme-neon .crayon-pre {
+	color: #ffffff !important;
 }

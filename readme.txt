@@ -255,6 +255,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * R language type literals
     * Arabic translation
     * Forced LTR for Crayon CSS, preventing the line numbers from appearing on the right
+    * Added unhighlighted colour to theme editor and existing dark themes
+    * New theme inputs not present in the loaded theme are added during save
 
 = 2.2.1 =
 * ADDED:
