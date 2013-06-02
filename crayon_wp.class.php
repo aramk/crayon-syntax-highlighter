@@ -502,7 +502,7 @@ class CrayonWP {
     }
 
     private static function add_crayon_id($content) {
-        $uid = $content[0] . '-' . uniqid();
+        $uid = $content[0] . '-' . str_replace('.','',uniqid('',true));
         CrayonLog::debug('add_crayon_id ' . $uid);
         return $uid;
     }

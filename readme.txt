@@ -257,6 +257,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Forced LTR for Crayon CSS, preventing the line numbers from appearing on the right
     * Added unhighlighted colour to theme editor and existing dark themes
     * New theme inputs not present in the loaded theme are added during save
+    * Fixed a bug related to IIS 7.5 and uniqid(): https://github.com/aramkocharyan/crayon-syntax-highlighter/issues/97
 
 = 2.2.1 =
 * ADDED:
