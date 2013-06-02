@@ -249,6 +249,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 2.2.2 =
 * ADDED:
+    * Ada langauge from https://github.com/antiphasis/crayon-lang-ada
     * Monokai theme
 * FIXED:
     * Escaping quotes in strings
