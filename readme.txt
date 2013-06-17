@@ -186,6 +186,8 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Ivan Churakov, Russia
+* Carla Macías González, Mexico
 * Saulius Stonys, Lithuania
 * Konstantin Sabel, Germany
 * Luigi Massa, (http://bwlab.it/), Italy
@@ -251,6 +253,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Ada langauge from https://github.com/antiphasis/crayon-lang-ada
     * Monokai theme
+    * CG Cookie theme
 * FIXED:
     * Escaping quotes in strings
     * R language type literals
