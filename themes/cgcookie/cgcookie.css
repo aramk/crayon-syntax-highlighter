@@ -1,0 +1,168 @@
+/*
+Name: Cg Cookie
+Description: CG Cookie Code Theme
+Version: 1.0
+Author: Jonathan Williamson
+URL: http://cgcookie.com
+*/
+.crayon-theme-cg-cookie {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	text-shadow: none !important;
+	background: #1b1d22 !important;
+}
+.crayon-theme-cg-cookie-inline {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	background: #22252a !important;
+}
+.crayon-theme-cg-cookie .crayon-table .crayon-nums {
+	background: #1b1d22 !important;
+	color: #898989 !important;
+	border-right-width: 1px !important;
+	border-right-color: #8c8d8f !important;
+	border-right-style: dashed !important;
+}
+.crayon-theme-cg-cookie *::selection {
+	background: transparent !important;
+}
+.crayon-theme-cg-cookie .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-cg-cookie .crayon-striped-line {
+	background: #24272e !important;
+}
+.crayon-theme-cg-cookie .crayon-striped-num {
+	background: #24272e !important;
+	color: #979797 !important;
+}
+.crayon-theme-cg-cookie .crayon-marked-line {
+	background: #1b1d22 !important;
+	border-width: 1px !important;
+	border-color: #595959 !important;
+}
+.crayon-theme-cg-cookie .crayon-marked-num {
+	color: #9e9e9e !important;
+	background: #363636 !important;
+	border-width: 1px !important;
+	border-color: #595959 !important;
+}
+.crayon-theme-cg-cookie .crayon-marked-line.crayon-striped-line {
+	background: #343941 !important;
+}
+.crayon-theme-cg-cookie .crayon-marked-num.crayon-striped-num {
+	background: #222222 !important;
+	color: #666666 !important;
+}
+.crayon-theme-cg-cookie .crayon-marked-line.crayon-top {
+}
+.crayon-theme-cg-cookie .crayon-marked-num.crayon-top {
+}
+.crayon-theme-cg-cookie .crayon-marked-line.crayon-bottom {
+}
+.crayon-theme-cg-cookie .crayon-marked-num.crayon-bottom {
+}
+.crayon-theme-cg-cookie .crayon-info {
+	background: #333333 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	color: #eeeeee !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-cg-cookie .crayon-toolbar {
+	background: #999999 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #2e2e2e !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-cg-cookie .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-cg-cookie .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-cg-cookie .crayon-title {
+	color: #626262 !important;
+}
+.crayon-theme-cg-cookie .crayon-language {
+	color: #626262 !important;
+}
+.crayon-theme-cg-cookie .crayon-button {
+}
+.crayon-theme-cg-cookie .crayon-button:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-cg-cookie .crayon-button.crayon-pressed:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-cg-cookie .crayon-button.crayon-pressed {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-cg-cookie .crayon-button.crayon-pressed:active {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-cg-cookie .crayon-button:active {
+	background-color: #bcbcbc !important;
+	color: #FFF;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-c {
+	color: #666666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-s {
+	color: #84c31c !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-p {
+	color: #b85c00 !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-ta {
+	color: #d35a5a !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-k {
+	color: #f4bb15 !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-st {
+	color: #20b0da !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-r {
+	color: #f4bb15 !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-t {
+	color: #f4bb15 !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-m {
+	color: #d3a6ea !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-i {
+	color: #d2d2d3 !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-e {
+	color: #d2d2d3 !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-v {
+	color: #d2d2d3 !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-cn {
+	color: #e7a37a !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-o {
+	color: #f4bb15 !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-sy {
+	color: #e5891a !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-f {
+	color: #999999 !important;
+}
+.crayon-theme-cg-cookie .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
