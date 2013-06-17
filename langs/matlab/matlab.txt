@@ -1,0 +1,19 @@
+### MATLAB LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                MATLAB
+    VERSION             1.0.0
+
+    COMMENT             (%.*?$)
+    STRING              (?default)
+
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            \b\w+(?=\()
+    RESERVED_2:RESERVED  \b(?alt:reserved.txt)\b
+    
+    ENTITY              (?default)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)

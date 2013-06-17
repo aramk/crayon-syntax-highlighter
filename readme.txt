@@ -249,11 +249,12 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 2.2.2 =
+= 2.3.0 =
 * ADDED:
     * Ada langauge from https://github.com/antiphasis/crayon-lang-ada
     * Monokai theme
     * CG Cookie theme
+    * MATLAB language
 * FIXED:
     * Escaping quotes in strings
     * R language type literals
