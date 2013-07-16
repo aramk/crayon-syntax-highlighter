@@ -259,6 +259,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Monokai theme
     * CG Cookie theme
     * MATLAB language
+    * Scala language
 * FIXED:
     * Escaping quotes in strings
     * R language type literals

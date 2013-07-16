@@ -1,0 +1,23 @@
+### JAVA LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Scala
+    VERSION             2.10.0
+
+    COMMENT             (?default)
+    STRING              (?default)
+    
+    NOTATION            \@[\w-]+
+    STATEMENT           (?default)
+    RESERVED            (?default)|\b(?alt:reserved.txt)\b
+    TYPE                (?default)
+    MODIFIER            (?default)|\b(?alt:modifier.txt)\b
+    
+    ENTITY              (?default)|\b[a-z_]\w+\s*\|\s*[a-z_]\w+\b\s+(?=\b[a-z_]\w+\b)
+    VARIABLE            (?default)
+    GENERIC:ENTITY      <\w+>
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)
