@@ -62,6 +62,7 @@ class CrayonSettings {
     const TRIM_WHITESPACE = 'trim-whitespace';
     const WHITESPACE_BEFORE = 'whitespace-before';
     const WHITESPACE_AFTER = 'whitespace-after';
+    const TRIM_CODE_TAG = 'trim-code-tag';
     const TAB_SIZE = 'tab-size';
     const FALLBACK_LANG = 'fallback-lang';
     const LOCAL_PATH = 'local-path';
@@ -193,6 +194,7 @@ class CrayonSettings {
             new CrayonSetting(self::TRIM_WHITESPACE, TRUE),
             new CrayonSetting(self::WHITESPACE_BEFORE, 0),
             new CrayonSetting(self::WHITESPACE_AFTER, 0),
+            new CrayonSetting(self::TRIM_CODE_TAG, TRUE),
             new CrayonSetting(self::TAB_SIZE, 4),
             new CrayonSetting(self::FALLBACK_LANG, CrayonLangs::DEFAULT_LANG),
             new CrayonSetting(self::LOCAL_PATH, ''),

@@ -249,6 +249,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.3.1 =
+* ADDED:
+    * New setting to remove &lt;code&gt; blocks surrounding the code, often not intended to be in the code itself
+
 = 2.3.0 =
 * ADDED:
     * Ada langauge from https://github.com/antiphasis/crayon-lang-ada

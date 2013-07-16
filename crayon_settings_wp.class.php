@@ -1092,6 +1092,7 @@ class Human {
         echo '<div class="crayon-hide-inline-only">';
         self::checkbox(array(CrayonSettings::TRIM_WHITESPACE, crayon__('Remove whitespace surrounding the shortcode content')));
         echo '</div>';
+        self::checkbox(array(CrayonSettings::TRIM_CODE_TAG, crayon__('Remove &lt;code&gt; tags surrounding the shortcode content')));
         self::checkbox(array(CrayonSettings::MIXED, crayon__('Allow Mixed Language Highlighting with delimiters and tags.') . self::help_button('http://bit.ly/ukwts2')));
         echo '<div class="crayon-hide-inline-only">';
         self::checkbox(array(CrayonSettings::SHOW_MIXED, crayon__('Show Mixed Language Icon (+)')));
