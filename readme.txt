@@ -252,6 +252,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.3.1 =
 * ADDED:
     * New setting to remove &lt;code&gt; blocks surrounding the code, often not intended to be in the code itself
+    * Scala language thanks to https://github.com/vkostyukov
 
 = 2.3.0 =
 * ADDED:
