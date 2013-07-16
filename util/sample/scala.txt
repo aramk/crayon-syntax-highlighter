@@ -1,0 +1,15 @@
+// A sample class
+object Newton extends App {
+
+  def EPS = 1e-5
+
+  def sqrt(x: Double): Double = {
+    def loop(y: Double): Double = 
+      if (math.abs(y * y - x) > EPS) loop(((x / y) + y) / 2.0)
+      else y
+
+    loop(1.0)
+  }
+
+  println(sqrt(2.0)) // 1.41
+}
