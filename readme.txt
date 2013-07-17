@@ -186,7 +186,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
-* Kho Minh Vi, UK
+* Kho Minh Vi, (http://khominhvi.com/), UK
 * Ivan Churakov, Russia
 * Carla Macías González, Mexico
 * Saulius Stonys, Lithuania
