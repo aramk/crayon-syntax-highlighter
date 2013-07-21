@@ -57,7 +57,7 @@ It also supports some neat features like:
 * <a href="https://github.com/aramkocharyan/crayon-syntax-highlighter" target="_blank">Beta Releases</a>
 * <a href="http://aramk.com/crayon/crayon-themes/" target="_blank">Themes Demo</a>
 * <a href="http://aksandbox.webege.com/?p=1" target="_blank">Live Demo</a>
-* <a href="http://aramk.com/projects/crayon-syntax-highlighter/" target="_blank">Short How-To</a>
+* <a href="https://github.com/aramkocharyan/crayon-syntax-highlighter" target="_blank">Short How-To</a>
 
 **Contributions**
 
@@ -234,7 +234,7 @@ Thanks to all those who donate to the project:
 
 == Frequently Asked Questions ==
 
-Please see the <a href="http://aramk.com/projects/crayon-syntax-highlighter/" target="_blank">documentation</a> for all the details.
+Please see the <a href="https://github.com/aramkocharyan/crayon-syntax-highlighter" target="_blank">documentation</a> for all the details.
 
 = Support =
 
@@ -254,6 +254,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * New setting to remove &lt;code&gt; blocks surrounding the code, often not intended to be in the code itself
     * Scala language thanks to https://github.com/vkostyukov
+* FIXED:
+	* Most important documentation paths now point to github docs.
 
 = 2.3.0 =
 * ADDED:
@@ -793,7 +795,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 1.7.3 =
 * Added Mini Tags and Plain Tags into Crayon. http://aramk.com/projects/mini-tags-in-crayon/
 * Fixed a bug causing RSS feeds to contain malformed HTML of Crayons, now it shows plain code with correct indentations. Thanks to Артём.
-* Updated help in Settings and http://aramk.com/projects/crayon-syntax-highlighter/
+* Updated help in Settings and https://github.com/aramkocharyan/crayon-syntax-highlighter
 
 = 1.7.2 =
 * Fixed a bug that prevented foreign languages from being initialised and used. Thanks to @west_323 for finding it.  
