@@ -99,6 +99,7 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 * MIVA Script
 * Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
 * MS-DOS (thanks to <a href="http://www.amigalog.com/?p=334" target="_blank">http://www.amigalog.com/?p=334</a>)
+* MySQL (thanks to <a href="http://assemblysys.com/" target="_blank">AssemblySys.com</a>)
 * Java
 * JavaScript
 * Objective-C
@@ -249,6 +250,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 5. Theme Editor.
 
 == Changelog ==
+
+= 2.3.2 =
+* ADDED:
+    * MySQL language
 
 = 2.3.1 =
 * ADDED:

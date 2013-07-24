@@ -1,0 +1,39 @@
+# logical
+AND
+OR
+NOT
+# comparison
+<=>
+=
+>=
+>
+<=
+<
+!=
+<>
+# arithmetic
+DIV
+/
+-
+%
++
+*
+MOD
+# logical
+AND
+NOT
+||
+XOR
+&&
+!
+OR
+# assignment
+=
+:=
+#bit
+&
+~
+|
+^
+<<
+>>
