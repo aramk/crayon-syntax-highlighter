@@ -254,6 +254,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.4.0 =
 * ADDED:
     * MySQL language
+* FIXED:
+    * Replaced Fancybox with Colorbox to comply with GPLv2
 
 = 2.3.1 =
 * ADDED:
