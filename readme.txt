@@ -251,7 +251,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 2.3.2 =
+= 2.4.0 =
 * ADDED:
     * MySQL language
 

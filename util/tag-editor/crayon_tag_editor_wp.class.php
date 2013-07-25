@@ -81,9 +81,9 @@ class CrayonTagEditorWP {
             CrayonSettingsWP::init_js_settings();
             wp_localize_script('crayon_js_min', 'CrayonTagEditorSettings', self::$settings);
         } else {
-            wp_enqueue_style('crayon_fancybox', plugins_url(CRAYON_CSS_FANCYBOX, $path), array(), $CRAYON_VERSION);
-            wp_enqueue_script('crayon_fancybox', plugins_url(CRAYON_JS_FANCYBOX, $path), array('jquery'), $CRAYON_VERSION);
-            wp_enqueue_script('crayon_te_js', plugins_url(CRAYON_TAG_EDITOR_JS, __FILE__), array('crayon_fancybox', 'crayon_util_js'), $CRAYON_VERSION);
+//            wp_enqueue_style('crayon_fancybox', plugins_url(CRAYON_CSS_FANCYBOX, $path), array(), $CRAYON_VERSION);
+//            wp_enqueue_script('crayon_fancybox', plugins_url(CRAYON_JS_FANCYBOX, $path), array('jquery'), $CRAYON_VERSION);
+            wp_enqueue_script('crayon_te_js', plugins_url(CRAYON_TAG_EDITOR_JS, __FILE__), array('crayon_util_js'), $CRAYON_VERSION);
             wp_enqueue_script('crayon_qt_js', plugins_url(CRAYON_QUICKTAGS_JS, __FILE__), array('quicktags', 'crayon_te_js'), $CRAYON_VERSION, TRUE);
             wp_localize_script('crayon_te_js', 'CrayonTagEditorSettings', self::$settings);
             CrayonSettingsWP::other_scripts();

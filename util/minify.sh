@@ -6,8 +6,8 @@ MINIFIER='/Users/Aram/Development/Tools/yuicompressor-2.4.7.jar'
 INPUT_PATH='src'
 OUTPUT_PATH='min'
 TE_PATH='../util/tag-editor'
+COLORBOX_PATH='../util/tag-editor/colorbox'
 JS_PATH='../js'
-FANCY_PATH=$JS_PATH/fancybox
 
 function minify {
     inputs=${@:0:$#}
