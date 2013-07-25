@@ -46,6 +46,7 @@
         height: '90%',
         closeButton: false,
         fixed: true,
+        className: 'crayon-colorbox',
         onOpen: function () {
           $(this.outer).prepend($(s.bar_content));
         },

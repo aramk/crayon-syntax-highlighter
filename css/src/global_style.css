@@ -43,6 +43,13 @@
     white-space: nowrap;
 }
 
+#crayon-te-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 #crayon-te-bar-content {
     border: 1px solid #666;
     border-bottom: none;
@@ -151,6 +158,7 @@
 }
 
 #crayon-te-table {
+    margin-top: 26px;
     padding: 10px;
     border-collapse: separate !important;
     border-spacing: 2px !important;
