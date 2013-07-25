@@ -255,6 +255,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.4.1 =
 * ADDED:
     * Merged two versions of MySQL from different authors into a single language folder
+* FIXED:
+    * Removed dependency on jQuery.browser.msie in popup script
 
 = 2.4.0 =
 * ADDED:

@@ -57,7 +57,7 @@ jqueryPopup.defaultSettings = {
 			
 			var win = null;
 			if (settings.centerBrowser) {
-				if (jQuery.browser.msie) {//hacked together for IE browsers
+				if (typeof window.screenY == 'undefined') {// not defined for old IE versions
 					centeredY = (window.screenTop - 120) + ((((document.documentElement.clientHeight + 120)/2) - (settings.height/2)));
 					centeredX = window.screenLeft + ((((document.body.offsetWidth + 20)/2) - (settings.width/2)));
 				} else {
