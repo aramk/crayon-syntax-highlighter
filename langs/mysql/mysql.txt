@@ -1,18 +1,26 @@
-### MySQL LANGUAGE ###
-
-#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
-
-    NAME                MySQL
-    VERSION             5.7
-
-    COMMENT             (/\*.*?\*/)|(--.*?$)|(#.*?$)
-    STRING              ((?<!\\)'.*?(?<!\\)')|((?<!\\)".*?(?<!\\)")
-    
-    STATEMENT           \b(?alt:statement.txt)\b
-    RESERVED            \b(?alt:reserved.txt)\b
-    TYPE                \b(?alt:type.txt)\b
-    
-    BUILT_IN:ENTITY		\b(?alt:built.in.func.txt)\b
-    IDENTIFIER          ((?<!\\)".*?(?<!\\)")
-    OPERATOR            \b(?alt:operator.txt)\b
-
+### MySQL LANGUAGE ###
+
+#   ELEMENT_NAME        [optional-css-class] REGULAR_EXPRESSION
+#   BUILD BY            Michaël Niessen (http://assemblysys.com/) & Ansas Meyer (http://ansas-meyer.de/)
+
+    NAME                MySQL
+    VERSION             1.0.0
+
+#   MySQL comments (3 modes available)
+    COMMENT             (/\*.*?\*/)|(-- .*?$)|(\#.*?$)
+
+#   MySQL string identifier (2 modes available)
+    STRING              ((?<!\\)'.*?(?<!\\)'|(?<!\\)".*?(?<!\\)")
+
+    STATEMENT           \b(?alt:statement.txt)\b
+
+    RESERVED            \b(?alt:reserved.txt)\b
+
+    TYPE                \b(?alt:type.txt)\b
+
+#   MySQL build-it functions
+    BUILT_IN:ENTITY		\b(?alt:built.in.func.txt)\b
+
+    IDENTIFIER          ((?<!\\)".*?(?<!\\)")
+
+    OPERATOR            \b(?alt:operator.txt)\b

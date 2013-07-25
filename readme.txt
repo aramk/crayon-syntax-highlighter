@@ -99,7 +99,7 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 * MIVA Script
 * Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
 * MS-DOS (thanks to <a href="http://www.amigalog.com/?p=334" target="_blank">http://www.amigalog.com/?p=334</a>)
-* MySQL (thanks to <a href="http://assemblysys.com/" target="_blank">AssemblySys.com</a>)
+* MySQL (thanks to <a href="http://assemblysys.com/" target="_blank">AssemblySys.com</a> and <a href="http://ansas-meyer.de/" target="_blank">ansas-meyer.de</a>)
 * Java
 * JavaScript
 * Objective-C
