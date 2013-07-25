@@ -252,6 +252,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.4.1 =
+* ADDED:
+    * Merged two versions of MySQL from different authors into a single language folder
+
 = 2.4.0 =
 * ADDED:
     * MySQL language
