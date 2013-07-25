@@ -46,13 +46,6 @@ var jQueryCrayon = jQuery;
             return base.setMax(base.setMin(v, min), max);
         };
 
-//        base.initFancybox = function () {
-//            if (fancyboxInit) {
-//                // Initialise a custom version of Fancybox to avoid conflicting
-//                fancyboxInit(window, document, $, 'crayonFancybox');
-//            }
-//        };
-
         base.getExt = function (str) {
             if (str.indexOf('.') == -1) {
                 return undefined;

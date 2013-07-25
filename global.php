@@ -83,8 +83,6 @@ define('CRAYON_JS_ADMIN', CRAYON_JS_SRC_DIR . 'crayon_admin.js');
 define('CRAYON_JS_UTIL', CRAYON_JS_SRC_DIR . 'util.js');
 define('CRAYON_CSSJSON_JS', CRAYON_JS_SRC_DIR . 'cssjson.js');
 
-//define('CRAYON_JS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.init.pack.js');
-//define('CRAYON_CSS_FANCYBOX', CRAYON_JS_DIR . 'fancybox/jquery.fancybox.css');
 define('CRAYON_CSS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.css');
 define('CRAYON_JS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.js');
 define('CRAYON_JS_TINYCOLOR', CRAYON_JS_DIR . 'tinycolor-min.js');

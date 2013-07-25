@@ -6,7 +6,6 @@
 
 		base.init = function() {
 			base.sel = '*[id*="crayon_quicktag"],*[class*="crayon_quicktag"]';
-			CrayonTagEditor.bind(base.sel);
 			QTags.addButton( 'crayon_quicktag', 'crayon', function() {
 				CrayonTagEditor.showDialog({
                     insert: function(shortcode) {
@@ -22,10 +21,11 @@
 			var find_qt_crayon = setInterval(function() {
 				qt_crayon = $(base.sel).first();
 				if (typeof qt_crayon != 'undefined') {
+                    CrayonTagEditor.bind(base.sel);
 					clearInterval(find_qt_crayon);
 				}
 			}, 100);
-		}
+		};
 		
 		base.getSelectedText = function() {
 			if (QTags.instances.length == 0) {
