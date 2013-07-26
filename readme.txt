@@ -116,7 +116,7 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 * TeX
 * Vim
 * Visual Basic
-* Visual Basic .NET (thanks to <a href="https://github.com/OomJan/crayon-lang-vbnet">OomJan</a>)
+* Visual Basic .NET (thanks to <a href="https://github.com/OomJan/crayon-lang-vbnet">Kevin Gardthausen</a>)
 * YAML
 * Others will be added when requested
 
