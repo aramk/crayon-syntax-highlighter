@@ -156,6 +156,7 @@ These are helpful for discovering new features.
 
 A handful of articles from others written about Crayon, thanks guys!
 
+* <a href="http://www.webworkgarage.com/2013/07/using-crayon-syntax-highlighter-wordpress-plugin-to-post-code-snippets-on-your-blog/" target="_blank">Using Crayon Syntax Highlighter WordPress plugin to post code snippets on your blog</a>
 * <a href="http://www.jjpro.net/2013/01/13/how-to-post-source-code-on-wordpress-2/" target="_blank">How to post source code on WordPress</a>
 * <a href="http://www.emanueleferonato.com/2013/02/01/syntax-highlighter-switched-to-crayon/" target="_blank">Syntax highlighter switched to Crayon</a>
 * <a href="http://www.wordpressthemeshq.net/5-best-syntax-highlighter-plugins-for-wordpress/" target="_blank">5 Best Syntax Highlighter Plugins for WordPress</a>
@@ -259,6 +260,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * VB.net language
 * FIXED:
     * Removed dependency on jQuery.browser.msie in popup script
+    * Fixed colorbox CSS conflicts
 
 = 2.4.0 =
 * ADDED:
