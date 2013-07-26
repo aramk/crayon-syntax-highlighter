@@ -4,3 +4,6 @@ url=git://github.com/aramkocharyan/colorpicker.git
 [submodule "langs/ada"]
 	path = langs/ada
 	url = https://github.com/antiphasis/crayon-lang-ada.git
+[submodule "langs/vbnet"]
+	path = langs/vbnet
+	url = https://github.com/OomJan/crayon-lang-vbnet.git
