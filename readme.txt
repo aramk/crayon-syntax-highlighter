@@ -261,6 +261,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * FIXED:
     * Removed dependency on jQuery.browser.msie in popup script
     * Fixed colorbox CSS conflicts
+    * German translation improvements
 
 = 2.4.0 =
 * ADDED:
