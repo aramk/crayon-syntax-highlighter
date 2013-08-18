@@ -2,7 +2,7 @@
     Colorbox Core Style:
     The following CSS is consistent between example themes and should not be altered.
 */
-#colorbox, #cboxOverlay, #cboxWrapper {
+#colorbox.crayon-colorbox, #cboxOverlay.crayon-colorbox, .crayon-colorbox #cboxWrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -10,30 +10,30 @@
   overflow: hidden;
 }
 
-#cboxOverlay {
+#cboxOverlay.crayon-colorbox {
   position: fixed;
   width: 100%;
   height: 100%;
 }
 
-#cboxMiddleLeft, #cboxBottomLeft {
+.crayon-colorbox #cboxMiddleLeft, .crayon-colorbox #cboxBottomLeft {
   clear: left;
 }
 
-#cboxContent {
+.crayon-colorbox #cboxContent {
   position: relative;
 }
 
-#cboxLoadedContent {
+.crayon-colorbox #cboxLoadedContent {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-#cboxTitle {
-  margin: 0;
+.crayon-colorbox #cboxTitle {
+  display: none;
 }
 
-#cboxLoadingOverlay, #cboxLoadingGraphic {
+.crayon-colorbox #cboxLoadingOverlay, .crayon-colorbox #cboxLoadingGraphic {
   position: absolute;
   top: 0;
   left: 0;
@@ -41,11 +41,11 @@
   height: 100%;
 }
 
-#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {
+.crayon-colorbox #cboxPrevious, .crayon-colorbox #cboxNext, .crayon-colorbox #cboxClose, .crayon-colorbox #cboxSlideshow {
   cursor: pointer;
 }
 
-.cboxPhoto {
+.crayon-colorbox .cboxPhoto {
   float: left;
   margin: auto;
   border: 0;
@@ -54,14 +54,14 @@
   -ms-interpolation-mode: bicubic;
 }
 
-.cboxIframe {
+.crayon-colorbox .cboxIframe {
   width: 100%;
   height: 100%;
   display: block;
   border: 0;
 }
 
-#colorbox, #cboxContent, #cboxLoadedContent {
+#colorbox.crayon-colorbox, .crayon-colorbox #cboxContent, .crayon-colorbox #cboxLoadedContent {
   box-sizing: content-box;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;

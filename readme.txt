@@ -189,6 +189,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Wabbit Wanch Design, (http://www.wabbitwanch.com/), Canada
 * Inopox Ltd, (http://inopox.com/), Cyprus
 * Kho Minh Vi, (http://khominhvi.com/), UK
 * Ivan Churakov, Russia
@@ -260,7 +261,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * VB.net language
 * FIXED:
     * Removed dependency on jQuery.browser.msie in popup script
-    * Fixed colorbox CSS conflicts
+    * Fixed Colorbox CSS conflicts
+    * CSS improvements for Colorbox to prevent unusable controls
     * German translation improvements
 
 = 2.4.0 =
