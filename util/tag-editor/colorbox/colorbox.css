@@ -30,7 +30,8 @@
 }
 
 .crayon-colorbox #cboxTitle {
-  display: none;
+  /* Fixes overlay issue preventing tag editor controls from being selected */
+  display: none !important;
 }
 
 .crayon-colorbox #cboxLoadingOverlay, .crayon-colorbox #cboxLoadingGraphic {
