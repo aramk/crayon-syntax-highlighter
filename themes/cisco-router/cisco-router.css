@@ -1,0 +1,178 @@
+/*
+Name: Cisco Router
+Description: Looks like a terminal.
+Version: 1.1
+Author: Aram Kocharyan
+URL: http://aramk.com/
+*/
+.crayon-theme-cisco-router {
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #000000 !important;
+}
+.crayon-theme-cisco-router-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #000000 !important;
+}
+.crayon-theme-cisco-router .crayon-table .crayon-nums {
+	background: #000100 !important;
+	color: #3ec700 !important;
+	border-right-color: #55a800 !important;
+	border-right-width: 2 !important;
+	border-right-style: solid !important;
+}
+.crayon-theme-cisco-router *::selection {
+	background: transparent !important;
+}
+.crayon-theme-cisco-router .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-cisco-router .crayon-striped-line {
+	background: #000000 !important;
+}
+.crayon-theme-cisco-router .crayon-striped-num {
+	background: #000000 !important;
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-marked-line {
+	background: #000000 !important;
+	border-width: 1px !important;
+	border-color: #000000 !important;
+}
+.crayon-theme-cisco-router .crayon-marked-num {
+	color: #3ec700 !important;
+	background: #000000 !important;
+	border-width: 1px !important;
+	border-color: #286900 !important;
+}
+.crayon-theme-cisco-router .crayon-marked-line.crayon-striped-line {
+	background: #000000 !important;
+}
+.crayon-theme-cisco-router .crayon-marked-num.crayon-striped-num {
+	background: #000000 !important;
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-cisco-router .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-cisco-router .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-cisco-router .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-cisco-router .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-cisco-router .crayon-toolbar {
+	background: #375e00 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #779700 !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-cisco-router .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-cisco-router .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-cisco-router .crayon-title {
+	color: #87ca00 !important;
+}
+.crayon-theme-cisco-router .crayon-language {
+	color: #266400 !important;
+	background-color: #669900 !important;
+}
+.crayon-theme-cisco-router .crayon-button {
+	background-color: #669900 !important;
+}
+.crayon-theme-cisco-router .crayon-button:hover {
+	background-color: #76b800 !important;
+	color: #666;
+}
+.crayon-theme-cisco-router .crayon-button.crayon-pressed:hover {
+	background-color: #76b800 !important;
+	color: #666;
+}
+.crayon-theme-cisco-router .crayon-button.crayon-pressed {
+	background-color: #4e7a00 !important;
+	color: #FFF;
+}
+.crayon-theme-cisco-router .crayon-button.crayon-pressed:active {
+	background-color: #4e7a00 !important;
+	color: #FFF;
+}
+.crayon-theme-cisco-router .crayon-button:active {
+	background-color: #4e7a00 !important;
+	color: #FFF;
+}
+.crayon-theme-cisco-router .crayon-pre {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-c {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-s {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-p {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-ta {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-k {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-st {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-r {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-t {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-m {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-i {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-e {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-v {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-cn {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-o {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-sy {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-n {
+	color: #3ec700 !important;
+	font-style: italic !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-f {
+	color: #3ec700 !important;
+}
+.crayon-theme-cisco-router .crayon-pre .crayon-h {
+	color: #3ec700 !important;
+}
