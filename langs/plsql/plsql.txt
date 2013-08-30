@@ -1,0 +1,20 @@
+# Oracle SQL and PL/SQL Syntax Highlighting Rules
+# Christopher Harrison (xoph.co)
+
+NAME            Oracle PL/SQL
+VERSION         0.1
+
+COMMENT         (/\*.*?\*/)|(--.*?$)
+STRING          ((?<!\\)'.*?(?<!\\)')
+
+RESERVED        \b(?alt:reserved.txt)\b
+
+STATEMENT       \b(?alt:statement.txt)\b
+KEYWORD         \b(?alt:function.txt)\b
+TYPE            \b(?alt:type.txt)\b  
+
+# Catalog fails parse because it's too long!
+# CATALOG:ENTITY  \b(?alt:catalog.txt)\b
+
+IDENTIFIER      ((?<!\\)".*?(?<!\\)")
+OPERATOR        \b(?alt:operator.txt)\b

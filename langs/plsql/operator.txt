@@ -1,0 +1,35 @@
+intersect all
+union all
+intersect
+between
+exists
+escape
+union
+prior
+minus
+some
+like
+not
+any
+and
+all
+(+)
+||
+or
+is
+in
+^=
+>=
+<>
+<=
+:=
+**
+!=
+@
+>
+=
+<
+/
+-
++
+*
