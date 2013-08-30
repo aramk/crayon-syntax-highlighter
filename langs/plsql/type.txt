@@ -1,0 +1,58 @@
+timestamp_ltz_unconstrained
+timestamp_tz_unconstrained
+yminterval_unconstrained
+dsinterval_unconstrained
+timestamp_unconstrained
+with local time zone
+double precision
+with time zone
+binary_integer
+interval year
+binary_double
+interval day
+binary_float
+pls_integer
+ref cursor
+to second
+timestamp
+positiven
+nvarchar2
+character
+varchar2
+to month
+smallint
+signtype
+positive
+naturaln
+long raw
+%rowtype
+xmltype
+varchar
+uritype
+numeric
+natural
+integer
+decimal
+boolean
+varray
+urowid
+string
+record
+number
+table
+rowid
+nclob
+nchar
+float
+bfile
+%type
+real
+long
+date
+clob
+char
+blob
+ref
+raw
+int
+dec
