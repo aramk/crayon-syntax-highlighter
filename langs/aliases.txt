@@ -14,3 +14,4 @@ ps powershell
 asm x86
 perl pl
 delphi pascal
+plsql pls ora
