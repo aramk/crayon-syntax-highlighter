@@ -105,6 +105,7 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 * Objective-C
 * Perl
 * PHP
+* PL/SQL
 * PostgreSQL (thanks to <a href="http://bitorchestra.com/" target="_blank">Bitorchestra</a>)
 * PowerShell
 * Python
@@ -259,6 +260,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.4.2 =
 * ADDED:
     * Added Cisco Router theme
+    * PL/SQL language thanks to https://github.com/Xophmeister
+* FIXED:
+	* ObjC improvements thanks to https://github.com/springsup
 
 = 2.4.1 =
 * ADDED:

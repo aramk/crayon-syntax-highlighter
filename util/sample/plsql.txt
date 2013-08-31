@@ -1,0 +1,11 @@
+DECLARE
+  number1 NUMBER(2);
+  number2 number1%TYPE    := 17;             -- value default
+  text1   VARCHAR2(12) := 'Hello world';
+  text2   DATE         := SYSDATE;        -- current date and time
+BEGIN
+  SELECT street_number
+    INTO number1
+    FROM address
+   WHERE name = 'INU';
+END;
