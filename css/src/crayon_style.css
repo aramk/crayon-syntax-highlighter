@@ -429,11 +429,11 @@ This has been disabled to allow more flexibility in changing font sizes.
     margin-top: -8px;
 }
 
-.crayon-syntax .crayon-pre .crayon-line span {
+/*.crayon-syntax .crayon-pre .crayon-line span {
     display: inline-block;
     *display: inline;
     zoom: 1;
-}
+}*/
 
 /*.crayon-syntax .crayon-toolbar .crayon-tools,*/
 /*.crayon-syntax .crayon-toolbar .crayon-tools * {*/
