@@ -261,6 +261,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Added Cisco Router theme
     * PL/SQL language thanks to https://github.com/Xophmeister
+    * Turnwall theme
 * FIXED:
 	* ObjC improvements thanks to https://github.com/springsup
 
