@@ -190,6 +190,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Vanessa Garcia Espin, Spain
 * Samad Malik, (http://samadmalik.com/), USA
 * Wabbit Wanch Design, (http://www.wabbitwanch.com/), Canada
 * Inopox Ltd, (http://inopox.com/), Cyprus
