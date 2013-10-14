@@ -260,9 +260,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 2.4.2 =
 * ADDED:
-    * Added Cisco Router theme
+    * Cisco Router theme
     * PL/SQL language thanks to https://github.com/Xophmeister
     * Turnwall theme
+    * Iris Vfx theme
 * FIXED:
 	* Spans are no longer display:inline-block, which can cause spaces to disappear.
 	* ObjC improvements thanks to https://github.com/springsup
