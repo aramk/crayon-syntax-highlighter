@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=AW99E
 License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
-Tested up to: 3.5.1
+Tested up to: 3.7.0
 Stable tag: trunk
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
@@ -265,6 +265,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * PL/SQL language thanks to https://github.com/Xophmeister
     * Turnwall theme
     * Iris Vfx theme
+    * bncplusplus theme
 * FIXED:
 	* Spans are no longer display:inline-block, which can cause spaces to disappear.
 	* ObjC improvements thanks to https://github.com/springsup

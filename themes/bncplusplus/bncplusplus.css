@@ -1,0 +1,193 @@
+/*
+Name: Bncplusplus
+Description: Based on Tomorrow night
+Version: 1.1
+Author: Shipu Ahamed
+URL: http://shipuahamed.blogspot.com/  http://bncplusplus.tk
+*/
+.crayon-theme-bncplusplus {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #0d0d0d !important;
+}
+.crayon-theme-bncplusplus-inline {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	border-style: double !important;
+	background: #000000 !important;
+}
+.crayon-theme-bncplusplus .crayon-table .crayon-nums {
+	background: #4b4d4f !important;
+	color: #898989 !important;
+	border-right-width: 1px !important;
+}
+.crayon-theme-bncplusplus *::selection {
+	background: transparent !important;
+}
+.crayon-theme-bncplusplus .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-bncplusplus .crayon-striped-line {
+	background: #000000 !important;
+}
+.crayon-theme-bncplusplus .crayon-striped-num {
+	background: #3a3c3d !important;
+	color: #979797 !important;
+}
+.crayon-theme-bncplusplus .crayon-marked-line {
+	background: #363333 !important;
+	border-width: 1px !important;
+	border-color: #1c1c1c !important;
+}
+.crayon-theme-bncplusplus .crayon-marked-num {
+	color: #9e9e9e !important;
+	background: #434343 !important;
+	border-width: 1px !important;
+	border-color: #595959 !important;
+}
+.crayon-theme-bncplusplus .crayon-marked-line.crayon-striped-line {
+	background: #2b2b2b !important;
+}
+.crayon-theme-bncplusplus .crayon-marked-num.crayon-striped-num {
+	background: #383838 !important;
+	color: #9e9e9e !important;
+}
+.crayon-theme-bncplusplus .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-bncplusplus .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-bncplusplus .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-bncplusplus .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-bncplusplus .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-bncplusplus .crayon-toolbar {
+	background: #919191 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #2e2e2e !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-bncplusplus .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-bncplusplus .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-bncplusplus .crayon-title {
+	color: #2a2a2a !important;
+}
+.crayon-theme-bncplusplus .crayon-language {
+	color: #494949 !important;
+}
+.crayon-theme-bncplusplus .crayon-button {
+}
+.crayon-theme-bncplusplus .crayon-button:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-bncplusplus .crayon-button.crayon-pressed:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-bncplusplus .crayon-button.crayon-pressed {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-bncplusplus .crayon-button.crayon-pressed:active {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-bncplusplus .crayon-button:active {
+	background-color: #bcbcbc !important;
+	color: #FFF;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-c {
+	color: #438c43 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-s {
+	color: 76bcbc !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-p {
+	color: #90ee90 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-ta {
+	color: #e79663 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-k {
+	color: #92afc1 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-st {
+	color: #92afc1 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-r {
+	color: #92afc1 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-t {
+	color: #c37ee6 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-m {
+	color: #bba7c5 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-i {
+	color: #cdcdcd !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-e {
+	color: #daa520 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-v {
+	color: #dddddd !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-cn {
+	color: #dddddd !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-o {
+	color: #d14242 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-sy {
+	color: #f7adf7 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-f {
+	color: #999 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-bncplusplus .crayon-pre {
+	color: #ffffff !important;
+	font-weight: bold !important;
+}
