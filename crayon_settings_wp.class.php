@@ -1215,7 +1215,9 @@ class Human {
 				Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
 				Lithuanian (<a href="http://www.host1free.com" target="_blank">Vincent G</a>),
 				Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
-				Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>), Slovak (<a href="http://webhostinggeeks.com/blog/">http://webhostinggeeks.com/</a>),
+				Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
+                Slovak (<a href="http://webhostinggeeks.com/blog/">http://webhostinggeeks.com/</a>),
+                Slovenian (<a href="#">Jan Su&#353;nik</a>),
 				Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>),
 				Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
 				Turkish (<a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)';

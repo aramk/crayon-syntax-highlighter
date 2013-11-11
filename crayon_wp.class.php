@@ -3,13 +3,13 @@
 Plugin Name: Crayon Syntax Highlighter
 Plugin URI: https://github.com/aramkocharyan/crayon-syntax-highlighter
 Description: Supports multiple languages, themes, highlighting from a URL, local file or post text.
-Version: 2.4.2
+Version: 2.4.3
 Author: Aram Kocharyan
 Author URI: http://aramk.com/
 Text Domain: crayon-syntax-highlighter
 Domain Path: /trans/
 License: GPL2
-Copyright 2012	Aram Kocharyan	(email : akarmenia@gmail.com)
+Copyright 2013	Aram Kocharyan	(email : akarmenia@gmail.com)
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as
 published by the Free Software Foundation.

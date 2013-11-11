@@ -134,6 +134,7 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 * Polish (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
 * Portuguese (thanks to <a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>)
 * Slovak (thanks to Branco, <a href="http://webhostinggeeks.com/blog/">http://webhostinggeeks.com/</a>)
+* Slovenian (thanks to Jan Su&#353;nik)
 * Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
 * Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
 * Turkish (thanks to <a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)
@@ -258,6 +259,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 5. Theme Editor.
 
 == Changelog ==
+
+= 2.4.3 =
+* ADDED:
+	* Slovenian language
 
 = 2.4.2 =
 * ADDED:

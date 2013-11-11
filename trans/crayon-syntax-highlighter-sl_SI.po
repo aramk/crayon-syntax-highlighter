@@ -1,0 +1,1405 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Crayon Syntax Highlighter v2.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-10 17:11+1000\n"
+"PO-Revision-Date: 2013-11-10 14:08+0100\n"
+"Last-Translator: Jan Sušnik <jodlajodla@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:164 crayon_settings.class.php:168
+msgid "Max"
+msgstr "Največ"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:164 crayon_settings.class.php:168
+msgid "Min"
+msgstr "Najmanj"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:164 crayon_settings.class.php:168
+msgid "Static"
+msgstr "Statično"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:166 crayon_settings.class.php:170
+#: crayon_settings_wp.class.php:774 crayon_settings_wp.class.php:783
+#: crayon_settings_wp.class.php:1059 crayon_settings_wp.class.php:1061
+msgid "Pixels"
+msgstr "slikovnih točk"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:166 crayon_settings.class.php:170
+msgid "Percent"
+msgstr "Odstotek"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "None"
+msgstr "Nič"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "Left"
+msgstr "Levo"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "Center"
+msgstr "Sredina"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "Right"
+msgstr "Desno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:181 crayon_settings.class.php:206
+msgid "On MouseOver"
+msgstr "Ob lebdenju miške"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:181 crayon_settings.class.php:187
+msgid "Always"
+msgstr "Vedno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:181 crayon_settings.class.php:187
+msgid "Never"
+msgstr "Nikoli"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:187
+msgid "When Found"
+msgstr "Po najdbi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:206
+msgid "On Double Click"
+msgstr "Ob dvokliku"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:206
+msgid "On Single Click"
+msgstr "Ob kliku"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:213
+msgid "An error has occurred. Please try again later."
+msgstr "Zgodila se je napaka. Prosim poskusite kasneje."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:53 crayon_settings_wp.class.php:210
+#: crayon_settings_wp.class.php:1258
+#: util/tag-editor/crayon_tag_editor_wp.class.php:252
+msgid "Settings"
+msgstr "Nastavitve"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:193
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Nimate ustreznih pravic za dostop do te strani."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:225
+msgid "Save Changes"
+msgstr "Shrani spremembe"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:233
+msgid "Reset Settings"
+msgstr "Ponastavi nastavitve"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:751
+msgid "Height"
+msgstr "Višina"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:757
+msgid "Width"
+msgstr "Širina"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:763
+msgid "Top Margin"
+msgstr "Zgornji odmik"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:764
+msgid "Bottom Margin"
+msgstr "Spodnji odmik"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:765 crayon_settings_wp.class.php:770
+msgid "Left Margin"
+msgstr "Levi odmik"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:766 crayon_settings_wp.class.php:770
+msgid "Right Margin"
+msgstr "Desni odmik"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:776
+msgid "Horizontal Alignment"
+msgstr "Vodoravna postavitev"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:779
+msgid "Allow floating elements to surround Crayon"
+msgstr "Dovoli lebdenje elementov v prostoru Crayon"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:789
+msgid "Display the Toolbar"
+msgstr "Prikaži orodno vrstico"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:792
+msgid "Overlay the toolbar on code rather than push it down when possible"
+msgstr ""
+"Prekrij kodo z orodno vrstico namesto spreminjanja višine, ko je to mogoče"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:793
+msgid "Toggle the toolbar on single click when it is overlayed"
+msgstr "Ob prekrivanju prikaži/skrij orodno vrstico s klikom"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:794
+msgid "Delay hiding the toolbar on MouseOut"
+msgstr "Zamakni skrivanje orodne vrstice, ko miška odide iz območja"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:796
+msgid "Display the title when provided"
+msgstr "Prikaži naslov, kadar je ta podan"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:797
+msgid "Display the language"
+msgstr "Prikaži jezik"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:804
+msgid "Display striped code lines"
+msgstr "Prikaži črte v vrsticah kode"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:805
+msgid "Enable line marking for important lines"
+msgstr "Omogoči posebno označevanje kode za pomembne vrstice"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:807
+msgid "Display line numbers by default"
+msgstr "Privzeto prikaži številke vrstic"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:808
+msgid "Enable line number toggling"
+msgstr "Omogoči preklapljanje številke vrstice"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:811
+msgid "Start line numbers from"
+msgstr "Prikaži številke vrstic od"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:822
+msgid "When no language is provided, use the fallback"
+msgstr "Ko ni izbranega jezika uporabi alternativnega"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:829
+msgid "Parsing was successful"
+msgstr "Razčlenjevanje je bilo uspešno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:829
+msgid "Parsing was unsuccessful"
+msgstr "Razčlenjevanje je bilo neuspešno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:835
+#, php-format
+msgid "The selected language with id %s could not be loaded"
+msgstr "Izbran jezik z id %s ne more biti naložen"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:838
+msgid "Show Languages"
+msgstr "Prikaži jezike"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1038
+msgid "Enable Live Preview"
+msgstr "Omogoči neposreden prikaz"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1043
+#, php-format
+msgid "The selected theme with id %s could not be loaded"
+msgstr "Izbrana tema z id %s ne more biti naložena"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1057
+msgid "Custom Font Size"
+msgstr "Poljubna velikost pisave"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1064
+#, php-format
+msgid "The selected font with id %s could not be loaded"
+msgstr "Izbrana pisava z id %s ne more biti naložena"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1075
+msgid "Enable plain code view and display"
+msgstr "Omogoči prikaz in pogled gole kode"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1080
+msgid "Enable code copy/paste"
+msgstr "Omogoči kopiranje/prilepitev kode"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1082
+msgid "Enable opening code in a window"
+msgstr "Omogoči odpiranje kode v oknu"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1100
+msgid "Tab size in spaces"
+msgstr "Velikost tabulatorja v presledkih"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1093
+msgid "Remove whitespace surrounding the shortcode content"
+msgstr "Odstrani prazen prostor okrog vsebine kratke kode"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1126
+msgid ""
+"When loading local files and a relative path is given for the URL, use the "
+"absolute path"
+msgstr ""
+"Ob nalaganju lokalnih datotek in relativnih poti, ki podane kot URL, uporabi "
+"absolutno pot"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1153
+msgid "Clear the cache used to store remote code requests"
+msgstr "Pobriši pomnilnik, ki se uporablja za shranjevanje oddaljene kode"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1155
+msgid "Clear Now"
+msgstr "Pobriši sedaj"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1161
+msgid "Disable mouse gestures for touchscreen devices (eg. MouseOver)"
+msgstr ""
+"Onemogoči kretnje miške za naprave z zaslonom na dotik (kot je naprimer "
+"prehod miške čez neko območje)"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1162
+msgid "Disable animations"
+msgstr "Onemogoči animacije"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1163
+msgid "Disable runtime stats"
+msgstr "Onemogoči statistiko izvajanja"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1169
+msgid "Log errors for individual Crayons"
+msgstr "Shrani napake kot individualne Crayone"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1170
+msgid "Log system-wide errors"
+msgstr "Shrani napake celotnega sistema"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1171
+msgid "Display custom message for errors"
+msgstr "Prikaži poljubno sporočilo za napake"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1183
+msgid "Show Log"
+msgstr "Prikaži dnevnik"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1185
+msgid "Clear Log"
+msgstr "Pobriši dnevnik"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1186
+msgid "Email Admin"
+msgstr "Pošlji sporočilo skrbniku"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1188
+msgid "Email Developer"
+msgstr "Pošlji sporočilo razvijalcu"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1204
+msgid "Version"
+msgstr "Različica"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1206
+msgid "Developer"
+msgstr "Razvijalec"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:151
+msgid "Hourly"
+msgstr "Urno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:151
+msgid "Daily"
+msgstr "Dnevno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:152
+msgid "Weekly"
+msgstr "Tedensko"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:152
+msgid "Monthly"
+msgstr "Mesečno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:153
+msgid "Immediately"
+msgstr "Takoj"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1156
+msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
+msgstr "Naloži Crayonov CSS in Javascript le takrat, ko je to potrebno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1129
+msgid "Followed by your relative URL."
+msgstr "Sledi tvojemu relativnemu URL."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1190
+msgid "The log is currently empty."
+msgstr "Dnevnik je trenutno prazen."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1192
+msgid "The log file exists and is writable."
+msgstr "Datoteka dnevnika obstaja in je zapisljiva."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1192
+msgid "The log file exists and is not writable."
+msgstr "Datoteka dnevnika obstaja, vendar ni zapisljiva."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1194
+msgid "The log file does not exist and is not writable."
+msgstr "Datoteka dnevnika ne obstaja in ni zapisljiva."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:828
+#, php-format
+msgid "%d language has been detected."
+msgid_plural "%d languages have been detected."
+msgstr[0] "%d je bil zaznan."
+msgstr[1] "%d je bilo zaznanih."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1116
+msgid "Capture &lt;pre&gt; tags as Crayons"
+msgstr "Prikaži &lt;pre&gt; značke kot Crayone"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1098
+msgid "Show Mixed Language Icon (+)"
+msgstr "Prikaži ikono več različnih jezikov (+)"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1096
+msgid "Allow Mixed Language Highlighting with delimiters and tags."
+msgstr "Omogoči različno označevanje večih jezikov z ločili in značkami."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1119
+msgid "Capture Mini Tags like [php][/php] as Crayons."
+msgstr "Prikaži manjše značke kot so [php][/php] kot Crayone."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1121
+msgid "Enable [plain][/plain] tag."
+msgstr "Omogoči značko [plain][/plain]."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:206
+msgid "Disable Mouse Events"
+msgstr "Onemogoči miškine dogodke"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1078
+msgid "Enable plain code toggling"
+msgstr "Omogoči preklapljanje gole kode"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1079
+msgid "Show the plain code by default"
+msgstr "Privzeto prikaži golo kodo"
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'Name'
+#: crayon_wp.class.php:0
+msgid "Crayon Syntax Highlighter"
+msgstr "Crayon Syntax Highlighter"
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'AuthorURI'
+#: crayon_wp.class.php:0
+msgid "http://aramk.com/"
+msgstr "http://aramk.com/"
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'Author'
+#: crayon_wp.class.php:0
+msgid "Aram Kocharyan"
+msgstr "Aram Kocharyan"
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'Description'
+#: crayon_wp.class.php:0
+msgid ""
+"Supports multiple languages, themes, highlighting from a URL, local file or "
+"post text."
+msgstr ""
+"Podpira več jezikov, tem, označevanje iz URL, lokalne datoteke ali besedila "
+"prispevka."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1260
+msgid "Donate"
+msgstr "Doniraj"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:491
+msgid "General"
+msgstr "Splošno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:492
+msgid "Theme"
+msgstr "Oblika"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:493
+msgid "Font"
+msgstr "Pisava"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:494
+msgid "Metrics"
+msgstr "Mere"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:495 util/theme-editor/theme_editor.php:299
+msgid "Toolbar"
+msgstr "Orodna vrstica"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:496 util/theme-editor/theme_editor.php:297
+msgid "Lines"
+msgstr "Vrstice"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:497
+#: util/tag-editor/crayon_tag_editor_wp.class.php:212
+msgid "Code"
+msgstr "Koda"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:499
+msgid "Languages"
+msgstr "Jeziki"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:500
+msgid "Files"
+msgstr "Datoteke"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:503
+msgid "Misc"
+msgstr "Različno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:506
+msgid "Debug"
+msgstr "Razhroščevanje"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:507
+msgid "Errors"
+msgstr "Napake"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:508
+msgid "Log"
+msgstr "Dnevnik"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:511
+msgid "About"
+msgstr "O"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1040
+msgid "Enqueue themes in the header (more efficient)."
+msgstr "Dodaj teme v glavo (bolj učinkovito)."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1070
+msgid "Enqueue fonts in the header (more efficient)."
+msgstr "Dodaj pisave v glavo (bolj učinkovito)."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1018
+msgid "Loading..."
+msgstr "Nalagam..."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1259 util/theme-editor/theme_editor.php:336
+msgid "Theme Editor"
+msgstr "Urejanje tem"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1083
+msgid "Always display scrollbars"
+msgstr "Vedno prikaži drsnike"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1157
+msgid "Disable enqueuing for page templates that may contain The Loop."
+msgstr "Onemogoči dodajanje oblik v predloge strani, ki vsebujejo zanke."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1160
+msgid "Load Crayons only from the main Wordpress query"
+msgstr "Naloži Crayone le iz glavnih WordPress poizvedb"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:351
+msgid "Back To Settings"
+msgstr "Nazaj na nastavitve"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1207
+msgid "Translators"
+msgstr "Prevajalci"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:290
+msgid "Toggle Plain Code"
+msgstr "Preklopi na golo kodo"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:306
+msgid "Open Code In New Window"
+msgstr "Odpri kodo v novem oknu"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:286
+msgid "Toggle Line Numbers"
+msgstr "Prikaži številke vrstic"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:333
+msgid "Contains Mixed Languages"
+msgstr "Vsebuje različne jezike"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1183
+msgid "Hide Log"
+msgstr "Skrij dnevnik"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:136
+#, php-format
+msgid "Press %s to Copy, %s to Paste"
+msgstr "Pritisni %s za kopiranje in %s za prilepitev"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:498
+msgid "Tags"
+msgstr "Značke"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:781
+msgid "Inline Margin"
+msgstr "Odmik v vrstici"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1120
+msgid "Capture Inline Tags like {php}{/php} inside sentences."
+msgstr "Prikaži vrstične značke kot {php} {/php} znotraj stavkov."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1115
+msgid "Capture `backquotes` as &lt;code&gt;"
+msgstr "Prikaži `apostrofe` kot as &lt;code&gt;"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1158
+msgid "Allow Crayons inside comments"
+msgstr "Omogoči Crayone znotraj komentarjev"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1110
+msgid "Wrap Inline Tags"
+msgstr "Ovij značke znotraj vrstice"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:502
+msgid "Tag Editor"
+msgstr "Urejevalnik značk"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1252
+msgid "?"
+msgstr "?"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1089
+msgid "Decode HTML entities in code"
+msgstr "Dekodiraj HTML značke v kodi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1091
+msgid "Decode HTML entities in attributes"
+msgstr "Dekodiraj HTML značke v atributih"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1145
+#, php-format
+msgid ""
+"Use %s to separate setting names from values in the &lt;pre&gt; class "
+"attribute"
+msgstr ""
+"Uporabi %s za ločevanje imen nastavitev od vrednosti v &lt;pre&gt; razredu "
+"atributa"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:62
+msgid "Add Crayon Code"
+msgstr "Dodaj Crayon kodo"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:63
+msgid "Edit Crayon Code"
+msgstr "Uredi Crayon kodo"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:64
+msgid "Add"
+msgstr "Dodaj"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:65
+#: util/theme-editor/theme_editor.php:352
+msgid "Save"
+msgstr "Shrani"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:900
+#: util/tag-editor/crayon_tag_editor_wp.class.php:189
+#: util/theme-editor/theme_editor.php:314
+msgid "Title"
+msgstr "Naslov"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:191
+msgid "A short description"
+msgstr "Kratek opis"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:193
+#: util/theme-editor/theme_editor.php:318
+msgid "Inline"
+msgstr "V vrstici"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:200
+#: util/theme-editor/theme_editor.php:322
+msgid "Language"
+msgstr "Jezik"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:205
+msgid "Marked Lines"
+msgstr "Označene vrstice"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:206
+msgid "(e.g. 1,2,3-5)"
+msgstr "(kot 1,2,3-5)"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:215
+msgid "Clear"
+msgstr "Počisti"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:219
+msgid "Paste your code here, or type it in manually."
+msgstr "Tukaj prilepite vašo kodo ali pa jo napišite ročno."
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:223
+msgid "URL"
+msgstr "URL"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:225
+msgid "Relative local path or absolute URL"
+msgstr "Relativna lokalna pot ali absolutni URL"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:228
+msgid ""
+"If the URL fails to load, the code above will be shown instead. If no code "
+"exists, an error is shown."
+msgstr ""
+"Če nalaganje preko URL spodleti, bo prikazana spodnja koda. Če ta ne "
+"obstaja, bo prikazana napaka."
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:230
+#, php-format
+msgid ""
+"If a relative local path is given it will be appended to %s - which is "
+"defined in %sCrayon &gt; Settings &gt; Files%s."
+msgstr ""
+"Če je podana relativna lokalna pot, bo dodana v %s - ta je definirana v "
+"%sCrayon &gt; Nastavitve &gt; Datoteke%s."
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:257
+msgid "Change the following settings to override their global values."
+msgstr "Spremeni naslednje nastavitve za prepis globalnih vrednosti."
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:259
+msgid "Only changes (shown yellow) are applied."
+msgstr "Uveljavljene so samo spremembe (prikazano z rumeno)."
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:261
+#, php-format
+msgid ""
+"Future changes to the global settings under %sCrayon &gt; Settings%s won't "
+"affect overridden settings."
+msgstr ""
+"Spremembe v prihodnosti v globalnih nastavitvah v %sCrayon &gt; Nastavitve%s "
+"ne bodo vplivale na prepisane nastavitve."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1159
+msgid "Remove Crayons from excerpts"
+msgstr "Odstrani Crayone iz povzetkov"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:294
+msgid "Toggle Line Wrap"
+msgstr "Preklopi ovijanje vrstic"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:501
+msgid "Posts"
+msgstr "Prispevki"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:806
+msgid "Enable line ranges for showing only parts of code"
+msgstr "Omogoči razpone vrstic za prikaz le nekaterih delov kode"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:809
+msgid "Wrap lines by default"
+msgstr "Privzeto ovij vrstice"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:810
+msgid "Enable line wrap toggling"
+msgstr "Omogoči preklapljanje ovijanja vrstic"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:874
+msgid "Show Crayon Posts"
+msgstr "Prikaži Crayon prispevke"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1015
+msgid "Edit"
+msgstr "Uredi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1102
+msgid "Blank lines before code:"
+msgstr "Praznih vrstic pred kodo:"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1104
+msgid "Blank lines after code:"
+msgstr "Praznih vrstic po kodi:"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1136
+msgid "Convert Legacy Tags"
+msgstr "Pretvori opuščene značke"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1139
+msgid "No Legacy Tags Found"
+msgstr "Ni najdenih opuščenih značk"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1149
+msgid "Display Tag Editor settings on the frontend"
+msgstr "Prikaži nastavitve urejevalnika značk v ospredju"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:195
+msgid "Don't Highlight"
+msgstr "Ne poudarjaj"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:203
+msgid "Line Range"
+msgstr "Razpon vrstic"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:204
+msgid "(e.g. 3-5 or 3)"
+msgstr "(kot 3-5 ali 3)"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:298 crayon_formatter.class.php:302
+msgid "Expand Code"
+msgstr "Razširi kodo"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:229
+msgid "Inline Tag"
+msgstr "Značka v vrstici"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:229
+msgid "Block Tag"
+msgstr "Značka v bloku"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:137
+msgid "Click To Expand Code"
+msgstr "Kliknite za razširitev kode"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:179
+msgid "Prompt"
+msgstr "Poziv"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:180
+msgid "Value"
+msgstr "Vrednost"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:181
+msgid "Alert"
+msgstr "Opozorilo"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:182 crayon_settings_wp.class.php:920
+msgid "No"
+msgstr "Ne"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:183 crayon_settings_wp.class.php:920
+msgid "Yes"
+msgstr "Da"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:184
+msgid "Confirm"
+msgstr "Potrdi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:185
+msgid "Change Code"
+msgstr "Uredi kodo"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:875
+msgid "Refresh"
+msgstr "Osveži"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:900
+msgid "ID"
+msgstr "ID"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:900
+msgid "Posted"
+msgstr "Objavljeno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:900
+msgid "Modifed"
+msgstr "Urejeno"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:900
+msgid "Contains Legacy Tags?"
+msgstr "Vsebuje opuščene značke?"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1015 util/theme-editor/theme_editor.php:199
+msgid "Duplicate"
+msgstr "Podvoji"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1015
+msgid "Submit"
+msgstr "Objavi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1016 util/theme-editor/theme_editor.php:196
+msgid "Delete"
+msgstr "Izbriši"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1020
+msgid "Duplicate a Stock Theme into a User Theme to allow editing."
+msgstr "Za omogočanje urejanja podvoji privzeto temo v uporabniško temo."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1031
+#, php-format
+msgid ""
+"Change the %1$sfallback language%2$s to change the sample code or %3$schange "
+"it manually%4$s. Lines 5-7 are marked."
+msgstr ""
+"Uredi  %1$salternativni jezik%2$s za urejanje poljubne kode ali jo %3$suredi "
+"ročno%4$s. Vrstice od 5 do 7 so označene."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1055
+msgid "Add More"
+msgstr "Dodaj več"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1059
+msgid "Line Height"
+msgstr "Velikost višine"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1084
+msgid "Minimize code"
+msgstr "Minimiziraj kodo"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1085
+msgid "Expand code beyond page borders on mouseover"
+msgstr "Ob lebdenju z miško razširi kodo po celotni strani"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1086
+msgid "Enable code expanding toggling when possible"
+msgstr "Omogoči preklop razširanja kode, ko je to mogoče"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1095
+msgid "Remove &lt;code&gt; tags surrounding the shortcode content"
+msgstr "Odstrani &lt;code&gt; značke okrog vsebine kratkih kod"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1109
+msgid "Capture Inline Tags"
+msgstr "Prikaži značke v vrstici"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1111
+msgid "Capture &lt;code&gt; as"
+msgstr "Prikaži &lt;code&gt; kot"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1118
+#, php-format
+msgid ""
+"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"the %sTag Editor%s instead and convert legacy tags."
+msgstr ""
+"Uporaba tega označevanja za majhne značke in značke v vrstici je sedaj "
+"%szastarela%s! Uporabi %sUrejevalnik značk%s za pretovrbo opuščenih značk."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1143
+msgid "Encode"
+msgstr "Kodiranje"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1148
+msgid ""
+"Display the Tag Editor in any TinyMCE instances on the frontend (e.g. "
+"bbPress)"
+msgstr ""
+"Prikaži urejevalnik značk v kateremkoli primerku TinyMCE v ospredju (kot je "
+"bbPress)"
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'PluginURI'
+#: crayon_wp.class.php:0
+msgid "https://github.com/aramkocharyan/crayon-syntax-highlighter"
+msgstr "https://github.com/aramkocharyan/crayon-syntax-highlighter"
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'Version'
+#: crayon_wp.class.php:0
+msgid "2.4.0"
+msgstr "2.4.0"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:180
+msgid "OK"
+msgstr "V redu"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:182
+msgid "Cancel"
+msgstr "Prekliči"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:192
+msgid "User-Defined Theme"
+msgstr "Uporabniško nastavljena tema"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:193
+msgid "Stock Theme"
+msgstr "Privzeta tema"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:194
+msgid "Success!"
+msgstr "Uspeh!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:195
+msgid "Failed!"
+msgstr "Napaka!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:197
+#, php-format
+msgid "Are you sure you want to delete the \"%s\" theme?"
+msgstr "Ali ste prepričani, da želite izbrisati \"%s\" temo?"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:198
+msgid "Delete failed!"
+msgstr "Izbris neuspešen!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:200
+msgid "New Name"
+msgstr "Novo ime"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:201
+msgid "Duplicate failed!"
+msgstr "Podvajanje neuspešno!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:202
+msgid "Please check the log for details."
+msgstr "Za podrobnosti prosim preverite dnevnik."
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:203
+msgid "Are you sure you want to discard all changes?"
+msgstr "Ali ste prepričani, da želite preklicati vse spremembe?"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:204
+#, php-format
+msgid "Editing Theme: %s"
+msgstr "Urejanje teme: %s"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:205
+#, php-format
+msgid "Creating Theme: %s"
+msgstr "Ustvarjanje teme: %s"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:206
+msgid "Submit Your Theme"
+msgstr "Objavite vašo temo"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:207
+msgid ""
+"Submit your User Theme for inclusion as a Stock Theme in Crayon! This will "
+"email me your theme - make sure it's considerably different from the stock "
+"themes :)"
+msgstr ""
+"Objavite vašo uporabniško temo za vključitev kot privzeto temo v Crayonu! To "
+"mi bo poslalo vašo temo preko e-pošte - prepričajte še, da bo precej "
+"drugačna od privzetih tem :)"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:208
+msgid "Message"
+msgstr "Sporočilo"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:209
+msgid "Please include this theme in Crayon!"
+msgstr "Prosim vključite to temo v Crayon!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:210
+msgid "Submit was successful."
+msgstr "Objava je bila uspešna."
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:211
+msgid "Submit failed!"
+msgstr "Objava je bila neuspešna!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:294
+msgid "Information"
+msgstr "Informacija"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:295
+msgid "Highlighting"
+msgstr "Označevanje"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:296
+msgid "Frame"
+msgstr "Okvir"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:298
+msgid "Line Numbers"
+msgstr "Številke vrstic"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:301
+msgid "Background"
+msgstr "Ozadje"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:302
+msgid "Text"
+msgstr "Besedilo"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:303
+msgid "Border"
+msgstr "Obroba"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:304
+msgid "Top Border"
+msgstr "Zgornja obroba"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:305
+msgid "Bottom Border"
+msgstr "Spodnja obroba"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:306
+msgid "Right Border"
+msgstr "Desna obroba"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:308
+msgid "Hover"
+msgstr "Lebdenje"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:309
+msgid "Active"
+msgstr "Aktivno"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:310
+msgid "Pressed"
+msgstr "Pritisnjeno"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:311
+msgid "Pressed & Hover"
+msgstr "Pritisnjeno & lebdenje"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:312
+msgid "Pressed & Active"
+msgstr "Pritisnjeno & aktivno"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:315
+msgid "Buttons"
+msgstr "Gumbi"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:317
+msgid "Normal"
+msgstr "Navadno"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:319
+msgid "Striped"
+msgstr "Črtasto"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:320
+msgid "Marked"
+msgstr "Označeno"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:321
+msgid "Striped & Marked"
+msgstr "Črtasto & označeno"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:390
+msgid "Comment"
+msgstr "Komentar"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:391
+msgid "String"
+msgstr "Stavek"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:392
+msgid "Preprocessor"
+msgstr "Preprocesor"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:393
+msgid "Tag"
+msgstr "Značka"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:394
+msgid "Keyword"
+msgstr "Ključna beseda"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:395
+msgid "Statement"
+msgstr "Trditev"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:396
+msgid "Reserved"
+msgstr "Zasedeno"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:397
+msgid "Type"
+msgstr "Tip"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:398
+msgid "Modifier"
+msgstr "Modifikator"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:399
+msgid "Identifier"
+msgstr "Identifikator"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:400
+msgid "Entity"
+msgstr "Entiteta"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:401
+msgid "Variable"
+msgstr "Spremenljivka"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:402
+msgid "Constant"
+msgstr "Konstanta"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:403
+msgid "Operator"
+msgstr "Operator"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:404
+msgid "Symbol"
+msgstr "Simbol"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:405
+msgid "Notation"
+msgstr "Notacija"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:406
+msgid "Faded"
+msgstr "Prehodno"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:407
+msgid "HTML"
+msgstr "HTML"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:408
+msgid "Unhighlighted"
+msgstr "Neosvetljeno"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:542
+msgid "(Used for Copy/Paste)"
+msgstr "(Uporabljeno za kopiraj/prilepi)"
