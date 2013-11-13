@@ -1,0 +1,213 @@
+/*
+Name: Coda Special Board
+Description: Dark and elegant. 
+Version: 1.4
+Author: Simone Ottaviano
+URL: http://www.refuseall.it
+*/
+.crayon-theme-coda-special-board {
+	text-shadow: none !important;
+	color: #fff;
+	background: #2d2d2d !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #333 !important;
+}
+.crayon-theme-coda-special-board .crayon-code {
+	background: #2d2d2d !important;
+}
+.crayon-theme-coda-special-board-inline {
+	background: #333 !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #333 !important;
+}
+.crayon-theme-coda-special-board span {
+	color: #999 !important;
+}
+.crayon-theme-coda-special-board .crayon-table .crayon-nums {
+	color: #333 !important;
+	background: #e0e0e0 !important;
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-right-color: #333 !important;
+}
+.crayon-theme-coda-special-board .crayon-code::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-coda-special-board .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-coda-special-board::selection {
+	background: transparent !important;
+}
+.crayon-theme-coda-special-board .crayon-toolbar::selection {
+	background: transparent !important;
+}
+.crayon-theme-coda-special-board .crayon-toolbar *::selection {
+	background: transparent !important;
+}
+.crayon-theme-coda-special-board .crayon-info::selection {
+	background: transparent !important;
+}
+.crayon-theme-coda-special-board .crayon-info *::selection {
+	background: transparent !important;
+}
+.crayon-theme-coda-special-board .crayon-nums::selection {
+	background: transparent !important;
+}
+.crayon-theme-coda-special-board .crayon-nums *::selection {
+	background: transparent !important;
+}
+.crayon-theme-coda-special-board .crayon-striped-line {
+	background: #343434 !important;
+	border-width: 1px !important;
+	border-color: #171717 !important;
+}
+.crayon-theme-coda-special-board .crayon-striped-num {
+	background: #aaa !important;
+	color: #555 !important;
+	border-width: 1px !important;
+	border-color: #CCC !important;
+}
+.crayon-theme-coda-special-board .crayon-marked-line {
+	background: #484844 !important;
+	border-width: 1px !important;
+	border-color: #222 !important;
+}
+.crayon-theme-coda-special-board .crayon-marked-num {
+	color: #555 !important;
+	background: #bbb !important;
+	border-width: 1px !important;
+	border-color: #777 !important;
+}
+.crayon-theme-coda-special-board .crayon-marked-line.crayon-striped-line {
+	background: #51514d !important;
+}
+.crayon-theme-coda-special-board .crayon-marked-num.crayon-striped-num {
+	background: #ccc !important;
+	color: #888 !important;
+}
+.crayon-theme-coda-special-board .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-coda-special-board .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-coda-special-board .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-coda-special-board .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-coda-special-board .crayon-info {
+	background: #faf9d7 !important;
+	color: #7e7d34 !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+}
+.crayon-theme-coda-special-board .crayon-toolbar {
+	background: #b2b2b2 !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #666 !important;
+}
+.crayon-theme-coda-special-board .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-coda-special-board .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-coda-special-board .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-coda-special-board .crayon-language {
+	color: #666 !important;
+}
+.crayon-theme-coda-special-board .crayon-toolbar .crayon-mixed-highlight {
+	background-position: -24px center;
+}
+.crayon-theme-coda-special-board .crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-coda-special-board .crayon-button:hover {
+	background-color: #ccc !important;
+	color: #666;
+}
+.crayon-theme-coda-special-board .crayon-button.crayon-pressed:hover {
+	background-color: #ccc !important;
+	color: #666;
+}
+.crayon-theme-coda-special-board .crayon-button.crayon-pressed {
+	background-color: #999 !important;
+	color: #ccc;
+}
+.crayon-theme-coda-special-board .crayon-button.crayon-pressed:active {
+	background-color: #999 !important;
+	color: #ccc;
+}
+.crayon-theme-coda-special-board .crayon-button:active {
+	background-color: #999 !important;
+	color: #ccc;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-c {
+	color: #797979 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-p {
+	color: #a19ba2 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-s {
+	color: #b2cb79 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-k {
+	color: #fecf84 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-st {
+	color: #fecf84 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-r {
+	color: #fecf84 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-t {
+	color: #fecf84 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-m {
+	color: #d58a45 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-ta {
+	color: #AAA !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-i {
+	color: #d58a45 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-v {
+	color: #dadafe !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-e {
+	color: #b1758c !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-cn {
+	color: #80aac6 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-o {
+	color: #c2be23 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-h {
+	color: #82adc9 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-sy {
+	color: #ffffff !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-n {
+	color: #726e73 !important;
+	font-style: italic !important;
+}
+.crayon-theme-coda-special-board .crayon-pre .crayon-f {
+	color: #595959 !important;
+}
+.crayon-theme-coda-special-board .crayon-pre {
+	color: #ffffff !important;
+}
