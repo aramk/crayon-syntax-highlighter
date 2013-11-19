@@ -111,7 +111,7 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 * Python
 * R
 * Ruby
-* Rust
+* Rust (thanks to <a href="https://github.com/Stibbons" target="_blank">Stibbons</a>)
 * Scheme (thanks to <a href="https://github.com/harry75369" target="_blank">Harry75369</a>)
 * Shell (Unix)
 * Transact-SQL
@@ -265,6 +265,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
 	* Slovenian language
 	* Coda Special Board theme
+    * Rust language
 
 = 2.4.2 =
 * ADDED:
