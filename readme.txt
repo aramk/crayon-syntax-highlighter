@@ -159,6 +159,7 @@ These are helpful for discovering new features.
 
 A handful of articles from others written about Crayon, thanks guys!
 
+* <a href="http://thedigitalhippies.com/digital/crayon-syntax-highlighter-plugin-theme-color-previews-demo/" target="_blank">Crayon Syntax Highlighter Plugin Theme Color Previews</a>
 * <a href="http://www.webworkgarage.com/2013/07/using-crayon-syntax-highlighter-wordpress-plugin-to-post-code-snippets-on-your-blog/" target="_blank">Using Crayon Syntax Highlighter WordPress plugin to post code snippets on your blog</a>
 * <a href="http://www.jjpro.net/2013/01/13/how-to-post-source-code-on-wordpress-2/" target="_blank">How to post source code on WordPress</a>
 * <a href="http://www.emanueleferonato.com/2013/02/01/syntax-highlighter-switched-to-crayon/" target="_blank">Syntax highlighter switched to Crayon</a>
