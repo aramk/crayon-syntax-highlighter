@@ -6,3 +6,5 @@ i32
 i64
 true
 false
+std
+extra

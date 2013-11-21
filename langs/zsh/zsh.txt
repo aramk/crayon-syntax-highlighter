@@ -1,22 +1,21 @@
-### Rust LANGUAGE ###
+### ZSH LANGUAGE ###
 
 #   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
 
-    NAME                Rust
+    NAME                ZSH
     VERSION             1.0.0
 
     COMMENT             (?default)
     PREPROCESSOR        (?default)
-    STRING              (?default)
+    STRING              ((?<!\\)"[^\r\n]*?(?<!\\)")|((?<!\\)'[^\r\n]*?(?<!\\)')
 
     STATEMENT           (?default)|\b(?alt:statement.txt)\b
     RESERVED            (?default)|\b(?alt:reserved.txt)\b
     TYPE                (?default)|\b(?alt:type.txt)\b
     MODIFIER            (?default)|\b(?alt:modifier.txt)\b
 
-    ENTITY              (?default)
-    # TODO: the use of priorities would be suitable here, last check for &*** vars might match entity
-    VARIABLE            (?default)|(?default:identifier)(?=::)|\b(?<=\-\>)\s*[A-Za-z_]\w*|&(?default:identifier)\s*(?!\()
+    ENTITY              (?default)|(\.[a-z_]\w*\b)
+    VARIABLE            (?default)|(\$[a-z0-9_\{\}\[\}]]\w*\b)
     IDENTIFIER          (?default)
     CONSTANT            (?default)
     OPERATOR            (?default)
