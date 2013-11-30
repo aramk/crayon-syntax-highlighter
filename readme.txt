@@ -267,6 +267,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 	* Slovenian language
 	* Coda Special Board theme
     * Rust language
+    * Utilities for converting files containing lines into arrays or regex
+* FIXED:
+    * Prevented Google translate from affecting the code.
 
 = 2.4.2 =
 * ADDED:

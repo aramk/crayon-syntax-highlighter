@@ -454,7 +454,7 @@ class CrayonFormatter {
 		
 		// Produce output
 		$output .= '
-		<div id="'.$uid.'" class="crayon-syntax crayon-theme-'.$theme_id_dashed.' crayon-font-'.$font_id_dashed.' crayon-os-'.$crayon_os.' print-yes" data-settings="'.$code_settings.'" style="'.$code_style.' '.$font_style.'">
+		<div id="'.$uid.'" class="crayon-syntax crayon-theme-'.$theme_id_dashed.' crayon-font-'.$font_id_dashed.' crayon-os-'.$crayon_os.' print-yes notranslate" data-settings="'.$code_settings.'" style="'.$code_style.' '.$font_style.'">
 		'.$toolbar.'
 			<div class="crayon-plain-wrap">'.$print_plain.'</div>'.'
 			<div class="crayon-main" style="'.$main_style.'">
