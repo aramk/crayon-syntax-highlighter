@@ -1,0 +1,13 @@
+type
+   THelloWorld = class
+      procedure Put;  // you can also implement out of line
+      begin
+         PrintLn('Hello, World!');
+      end
+   end;
+
+var HelloWorld := new THelloWorld; // strong typing, inferred
+
+HelloWorld.Put;
+
+// no need to release objects thanks to automatic memory management

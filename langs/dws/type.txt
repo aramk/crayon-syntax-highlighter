@@ -1,0 +1,8 @@
+Integer
+Float
+Char
+String
+Boolean
+Array
+Record
+Variant

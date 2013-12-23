@@ -1,0 +1,19 @@
+### DWS LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                DelphiWebScript/DWS
+    VERSION             1.0.0
+
+    PREPROCESSOR        \{\$[a-zA-Z][\s\S]*?} 
+    COMMENT             {(?!\$)[\s\S]*?}|\(\*[\s\S]*?\*\)|//[\s\S]*?$
+    STRING              (?default)|#[0-9]+\b
+    
+    RESERVED            (?default)|\b(?alt:keywords.txt)\b
+    TYPE                (?default)|\b(?alt:type.txt)\b
+    
+    VARIABLE            (?default)
+    IDENTIFIER          (?default)
+    CONSTANT            \$[a-zA-Z0-9]+\b|\b[\d\.]+\b|(?default)
+    OPERATOR            \b(?alt:operator.txt)\b
+    SYMBOL              (?default)

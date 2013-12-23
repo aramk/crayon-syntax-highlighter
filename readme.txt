@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=AW99E
 License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
-Tested up to: 3.8.0
+Tested up to: 3.9.0
 Stable tag: trunk
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
@@ -88,6 +88,7 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 * CoffeeScript (thanks to <a href="http://firn.jp/crayon-coffeescript" target="_blank">Dai Akatsuka</a>)
 * CSS
 * Delphi/Pascal (thanks to <a href="http://squashbrain.com/" target="_blank">Chris McClenny</a>)
+* Delphi Web Script (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>)
 * Diff (thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>)
 * Erlang (thanks to <a href="http://netroid.de/" target="_blank">Daniel</a>)
 * Go
@@ -262,10 +263,14 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.4.4 =
+* ADDED:
+    * Delphi Web Script language (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>)
+
 = 2.4.3 =
 * ADDED:
-	* Slovenian language
-	* Coda Special Board theme
+    * Slovenian language
+    * Coda Special Board theme
     * Rust language
     * Utilities for converting files containing lines into arrays or regex
 * FIXED:
@@ -279,8 +284,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Iris Vfx theme
     * bncplusplus theme
 * FIXED:
-	* Spans are no longer display:inline-block, which can cause spaces to disappear.
-	* ObjC improvements thanks to https://github.com/springsup
+    * Spans are no longer display:inline-block, which can cause spaces to disappear.
+    * ObjC improvements thanks to https://github.com/springsup
 
 = 2.4.1 =
 * ADDED:
@@ -303,7 +308,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * New setting to remove &lt;code&gt; blocks surrounding the code, often not intended to be in the code itself
     * Scala language thanks to https://github.com/vkostyukov
 * FIXED:
-	* Most important documentation paths now point to github docs.
+    * Most important documentation paths now point to github docs.
 
 = 2.3.0 =
 * ADDED:
@@ -430,86 +435,86 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * FIXED:
     * Converting tags failed to work since 2.0.0 - also fixed minor bugs leading to false positives for legacy tags.
     * Copy function was calling invalid function, preventing duplication from taking place.
-	* Slashes are removed from server side input which was appearing from the change code dialog
+    * Slashes are removed from server side input which was appearing from the change code dialog
 
 = 2.0.1 =
 * ADDED:
     * Ability to change sample code in settings
 * FIXED:
-	* Changes in ID definitions caused C++ and C# to fail loading.
-	* Fixed issues with minified CSS not loading in popup window
+    * Changes in ID definitions caused C++ and C# to fail loading.
+    * Fixed issues with minified CSS not loading in popup window
     * Using wp_mkdir_p instead of mkdir for creating directories and such.
     * Admin resource dependencies
 
 = 2.0.0 =
 * ADDED:
     * Theme Editor allowing users to create and modify Crayon Themes!
-	* Polish translation (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
-	* Vim language
-	* Solarized themes (thanks to <a href="https://github.com/Greduan" target="_blank">Greduan</a>)
-	* Converting legacy tags now has an "encode" option. If selected, any legacy tag where the "decode" attribute is missing (neither true or false) has its code encoded and decode="true" specified.
+    * Polish translation (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
+    * Vim language
+    * Solarized themes (thanks to <a href="https://github.com/Greduan" target="_blank">Greduan</a>)
+    * Converting legacy tags now has an "encode" option. If selected, any legacy tag where the "decode" attribute is missing (neither true or false) has its code encoded and decode="true" specified.
 * FIXED:
-	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
-	* Improved expanding with shirt
-	* Issues with expanding a single line, other minor issues.
-	* Merged JS and PHP debugging toggle
-	* Moved everything towards camelCase from underscores
-	* Minor improvements to Objective-C
-	* Numerous bug fixes and improvements!
+    * Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
+    * Improved expanding with shirt
+    * Issues with expanding a single line, other minor issues.
+    * Merged JS and PHP debugging toggle
+    * Moved everything towards camelCase from underscores
+    * Minor improvements to Objective-C
+    * Numerous bug fixes and improvements!
 
 = 1.17 =
 * ADDED:
-	* Selected text in the TinyMCE editor is now added into the code box of the Tag Editor
-	* Retina buttons for the toolbar
-	* Support for Wordpress 3.5
+    * Selected text in the TinyMCE editor is now added into the code box of the Tag Editor
+    * Retina buttons for the toolbar
+    * Support for Wordpress 3.5
 * FIXED:
-	* Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
-	* Disabling popup now removes the JS resource
-	* Refactored Tag Editor functions
-	* Display Tag Editor settings on the frontend wasn't working
-	* Removed contextual help and added more useful links, including online help
-	* Checkboxes have labels instead of spans thanks to https://github.com/toszcze
-	* Undefined php variable fix thanks to https://github.com/toszcze
-	* Dimension fixes in js on hover
-	* On iOS the fonts appeared larger for code than for line numbers.
-	* Expanding code shrunk instead if the toolbar was visible
-	* Updated Turkish
+    * Removed fancybox_init.js and integrated into util.js, other minor improvements in loading Tag Editor
+    * Disabling popup now removes the JS resource
+    * Refactored Tag Editor functions
+    * Display Tag Editor settings on the frontend wasn't working
+    * Removed contextual help and added more useful links, including online help
+    * Checkboxes have labels instead of spans thanks to https://github.com/toszcze
+    * Undefined php variable fix thanks to https://github.com/toszcze
+    * Dimension fixes in js on hover
+    * On iOS the fonts appeared larger for code than for line numbers.
+    * Expanding code shrunk instead if the toolbar was visible
+    * Updated Turkish
 
 = 1.16 =
 * ADDED:
-	* Expanding code beyond the page border on mouseover - enable the setting under Settings > Crayon > Code.
-	* Expanding the code is delayed in the same way using the toolbar delay setting.
-	* French translation
-	* Portuguese translation
+    * Expanding code beyond the page border on mouseover - enable the setting under Settings > Crayon > Code.
+    * Expanding the code is delayed in the same way using the toolbar delay setting.
+    * French translation
+    * Portuguese translation
 * FIXED:
-	* Carriage returns and new line characters were being treated differently and not being detected correctly. I'm using a new regex which detects both and also captures the line content: (?:^|(?<=\r\n|\n))[^\r\n]*
-	* JS variable bugs when minifying with W3 Total Cache
-	* CSS did not load in newly opened code window if minified
-	* Saved comments did not capture Crayons until they were updated or the post list was refreshed in settings
-	* Posts in settings are sorted now descending based on modified date
-	* bbPress posts showed Crayons on the bottom of posts irrespective of their position in the post content.
-	* Toggle plain code button appeared when plain code was disabled
-	* Updated Turkish translation
+    * Carriage returns and new line characters were being treated differently and not being detected correctly. I'm using a new regex which detects both and also captures the line content: (?:^|(?<=\r\n|\n))[^\r\n]*
+    * JS variable bugs when minifying with W3 Total Cache
+    * CSS did not load in newly opened code window if minified
+    * Saved comments did not capture Crayons until they were updated or the post list was refreshed in settings
+    * Posts in settings are sorted now descending based on modified date
+    * bbPress posts showed Crayons on the bottom of posts irrespective of their position in the post content.
+    * Toggle plain code button appeared when plain code was disabled
+    * Updated Turkish translation
 
 = 1.15 =
 * ADDED:
-	* The settings page no longer searches through all posts looking for legacy tags until you hit a new "refresh" button. Refreshing will look through all posts for crayon tags, and also mark any that are legacy tags. The same process occurs on an individual basis when saving a post.
-	* The settings page shows which posts contains legacy tags, and the buttons do not hide when showing the table.
-	* Added theme information to the settings page
-	* Improved version updating
-	* Code in a new window loses size constraints
-	* MS-DOS batch language (thanks to <a href="http://www.amigalog.com/?p=334" target="_blank">http://www.amigalog.com/?p=334</a>)
-	* Minor improvements
+    * The settings page no longer searches through all posts looking for legacy tags until you hit a new "refresh" button. Refreshing will look through all posts for crayon tags, and also mark any that are legacy tags. The same process occurs on an individual basis when saving a post.
+    * The settings page shows which posts contains legacy tags, and the buttons do not hide when showing the table.
+    * Added theme information to the settings page
+    * Improved version updating
+    * Code in a new window loses size constraints
+    * MS-DOS batch language (thanks to <a href="http://www.amigalog.com/?p=334" target="_blank">http://www.amigalog.com/?p=334</a>)
+    * Minor improvements
 * FIXED:
-	* Fancybox issues have been fixed: http://aramk.com/crayon/initialising-fancybox-with-custom-objects/
-	* max/min-height/width didn't work on Tag Editor
-	* Width discrepancy before and after mouseover from 1px border
-	* Before and after whitespace didn't display correctly
-	* Code opened in a new window didn't display if the current wp theme css was included
-	* IE 8 compatibility issues
-	* Dropdown of languages in settings and Tag Editor are now sorted by name, not id
-	* By default "Display the Tag Editor in any TinyMCE instances on the frontend" is disabled to reduce resources
-	* Chinese translation updated
+    * Fancybox issues have been fixed: http://aramk.com/crayon/initialising-fancybox-with-custom-objects/
+    * max/min-height/width didn't work on Tag Editor
+    * Width discrepancy before and after mouseover from 1px border
+    * Before and after whitespace didn't display correctly
+    * Code opened in a new window didn't display if the current wp theme css was included
+    * IE 8 compatibility issues
+    * Dropdown of languages in settings and Tag Editor are now sorted by name, not id
+    * By default "Display the Tag Editor in any TinyMCE instances on the frontend" is disabled to reduce resources
+    * Chinese translation updated
 
 = 1.14 =
 * All AJAX functions are now using the wp_ajax action and admin-ajax.php method defined here: http://codex.wordpress.org/AJAX_in_Plugins. This means Crayon no longer passes around the wp_load path and doesn't use it as a $_GET variable to load AJAX requests. The security vulnerability in 1.13 is no longer present and that code has been removed.
