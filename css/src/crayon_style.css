@@ -21,6 +21,7 @@ coloring etc.
     direction: ltr !important;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -webkit-text-size-adjust: none;
 }
 
 .crayon-syntax div {
