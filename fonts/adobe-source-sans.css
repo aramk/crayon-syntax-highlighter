@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'AdobeSourceSansSemibold';
+    src: url('adobe-source-sans/SourceSansPro-Semibold.eot');
+    src: url('adobe-source-sans/SourceSansPro-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('adobe-source-sans/SourceSansPro-Semibold.otf.woff') format('woff'),
+         url('adobe-source-sans/SourceSansPro-Semibold.ttf.woff') format('truetype'),
+         url('adobe-source-sans/SourceSansPro-Semibold.svg#AdobeSourceSansSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.crayon-font-adobe-source-sans * {
+    font-family: AdobeSourceSans, 'AdobeSourceSansSemibold', 'Courier New', monospace !important;
+}
