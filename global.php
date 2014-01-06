@@ -4,7 +4,6 @@
 
 define('CRAYON_DEBUG', FALSE);
 
-// TODO remove once done
 define('CRAYON_TAG_EDITOR', TRUE);
 define('CRAYON_THEME_EDITOR', TRUE);
 
@@ -86,10 +85,8 @@ define('CRAYON_CSSJSON_JS', CRAYON_JS_SRC_DIR . 'cssjson.js');
 define('CRAYON_CSS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.css');
 define('CRAYON_JS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.js');
 define('CRAYON_JS_TINYCOLOR', CRAYON_JS_DIR . 'tinycolor-min.js');
-// TODO rename TE
 define('CRAYON_TAG_EDITOR_JS', 'crayon_tag_editor.js');
 define('CRAYON_TAG_EDITOR_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.class.php');
-// TODO Fix these
 define('CRAYON_TINYMCE_JS', 'crayon_tinymce.js');
 define('CRAYON_QUICKTAGS_JS', 'crayon_qt.js');
 define('CRAYON_STYLE', CRAYON_CSS_SRC_DIR . 'crayon_style.css');

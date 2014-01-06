@@ -96,7 +96,7 @@ class CrayonSettingsWP {
         self::init_js_settings();
 
         if (is_admin()) {
-            wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_js_min', 'wpdialogs', 'wpdialogs-popup'), $CRAYON_VERSION);
+            wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_js_min', 'wpdialogs'), $CRAYON_VERSION);
             self::init_admin_js_settings();
         }
     }

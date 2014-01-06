@@ -194,6 +194,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Chris Moore, (http://moorecreativeideas.com/), USA
 * Sohail Ahmed, (http://sohail.io.com/), USA
 * Vanessa Garcia Espin, Spain
 * Samad Malik, (http://samadmalik.com/), USA
@@ -265,7 +266,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 2.4.4 =
 * ADDED:
-    * Delphi Web Script language (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>)
+    * Delphi Web Script language (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>).
+    * Added Pspad theme.
+* FIXED:
+    * Compatibility with Wordpress 3.9 - admin script failed to load since "wpdialgs-popup" script is no longer available.
 
 = 2.4.3 =
 * ADDED:
