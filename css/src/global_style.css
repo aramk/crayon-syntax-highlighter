@@ -152,9 +152,8 @@
 }
 
 /* .mce_crayon_tinymce_highlight span.mce_crayon_tinymce, */
-.wp_themeSkin .mceButtonEnabled:hover span.mce_crayon_tinymce,
-.wp_themeSkin .mceButtonActive span.mce_crayon_tinymce {
-    background-position: -20px 0;
+.mce_crayon_tinymce {
+    background: url(../images/crayon_tinymce.png) 0px 0px !important;
 }
 
 #crayon-te-table {
@@ -274,6 +273,3 @@
     margin-bottom: 5px;
 }
 
-.wp_themeSkin span.mce_crayon_tinymce {
-    background: url(../images/crayon_tinymce.png);
-}

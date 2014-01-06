@@ -269,7 +269,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Delphi Web Script language (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>).
     * Added Pspad theme.
 * FIXED:
-    * Compatibility with Wordpress 3.9 - admin script failed to load since "wpdialgs-popup" script is no longer available.
+    * Compatibility with Wordpress 3.9:
+        * Tag editor updated to comply with TinyMCE version 4.
+        * Admin script failed to load since "wpdialgs-popup" script is no longer available.
 
 = 2.4.3 =
 * ADDED:
