@@ -263,9 +263,11 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 2.4.4 =
+= 2.5.0 =
 * ADDED:
     * Delphi Web Script language (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>)
+* FIXED:
+    * Fixed a bug causing posts with only backquotes and no Crayon tags to be ignored.
 
 = 2.4.3 =
 * ADDED:

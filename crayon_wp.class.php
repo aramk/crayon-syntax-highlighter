@@ -3,7 +3,7 @@
 Plugin Name: Crayon Syntax Highlighter
 Plugin URI: https://github.com/aramkocharyan/crayon-syntax-highlighter
 Description: Supports multiple languages, themes, highlighting from a URL, local file or post text.
-Version: _2.4.4_beta
+Version: _2.5.0_beta
 Author: Aram Kocharyan
 Author URI: http://aramk.com/
 Text Domain: crayon-syntax-highlighter
@@ -288,6 +288,8 @@ class CrayonWP {
             $wp_content = preg_replace_callback('#(?<!\$)\[\s*plain\s*\](.*?)\[\s*/\s*plain\s*\]#msi', 'CrayonFormatter::plain_code', $wp_content);
         }
 
+
+
         // Add IDs to the Crayons
         CrayonLog::debug('capture adding id ' . $wp_id . ' , now has len ' . strlen($wp_content));
         $wp_content = preg_replace_callback(self::REGEX_ID, 'CrayonWP::add_crayon_id', $wp_content);
@@ -298,6 +300,10 @@ class CrayonWP {
         preg_match_all(self::regex(), $wp_content, $matches);
         $capture['has_captured'] = count($matches[0]) != 0;
         if ($just_check) {
+            // Backticks are matched after other tags, so they need to be captured here.
+            $result = self::replace_backquotes($wp_content);
+            $wp_content = $result['content'];
+            $capture['has_captured'] = $capture['has_captured'] || $result['changed'];
             $capture['content'] = $wp_content;
             return $capture;
         }
@@ -411,14 +417,24 @@ class CrayonWP {
             $wp_content = self::crayon_remove_ignore($wp_content);
         }
 
-        // Convert `` backquote tags into <code></code>, if needed
-        // XXX Some code may contain `` so must do it after all Crayons are captured
-        if (CrayonGlobalSettings::val(CrayonSettings::BACKQUOTE)) {
-            $wp_content = preg_replace('#(?<!\\\\)`([^`]*)`#msi', '<code>$1</code>', $wp_content);
-        }
+        $result = self::replace_backquotes($wp_content);
+        $wp_content = $result['content'];
 
         $capture['content'] = $wp_content;
         return $capture;
+    }
+
+    public static function replace_backquotes($wp_content) {
+        // Convert `` backquote tags into <code></code>, if needed
+        // XXX Some code may contain `` so must do it after all Crayons are captured
+        $result = array();
+        $prev_count = strlen($wp_content);
+        if (CrayonGlobalSettings::val(CrayonSettings::BACKQUOTE)) {
+            $wp_content = preg_replace('#(?<!\\\\)`([^`]*)`#msi', '<code>$1</code>', $wp_content);
+        }
+        $result['changed'] = $prev_count !== strlen($wp_content);
+        $result['content'] = $wp_content;
+        return $result;
     }
 
     /* Search for Crayons in posts and queue them for creation */
