@@ -119,8 +119,9 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 * TeX
 * Vim
 * Visual Basic
-* Visual Basic .NET (thanks to <a href="https://github.com/OomJan/crayon-lang-vbnet">Kevin Gardthausen</a>)
+* Visual Basic .NET (thanks to <a href="https://github.com/OomJan/crayon-lang-vbnet" target="_blank">Kevin Gardthausen</a>)
 * YAML
+* ZSH (thanks to <a href="https://github.com/Stibbons" target="_blank">Stibbons</a>)
 * Others will be added when requested
 
 **International Languages**
@@ -266,6 +267,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.5.0 =
 * ADDED:
     * Delphi Web Script language (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>)
+    * ZSH language
 * FIXED:
     * Fixed a bug causing posts with only backquotes and no Crayon tags to be ignored.
 

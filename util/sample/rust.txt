@@ -1,0 +1,8 @@
+/* The branches in this function exhibit Rust's optional implicit return
+   values, which can be utilized where a more "functional" style is preferred.
+   Unlike C++ and related languages, Rust's `if` construct is an expression
+   rather than a statement, and thus has a return value of its own. */
+fn recursive_factorial(n: int) -> int {
+    if n <= 1 { 1 }
+    else { n * recursive_factorial(n-1) }
+}
