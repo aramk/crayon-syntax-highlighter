@@ -271,6 +271,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * ZSH language
 * FIXED:
     * Fixed a bug causing posts with only backquotes and no Crayon tags to be ignored.
+    * wrap="off" is now set to wrap="soft" to adhere to W3C standards.
 
 = 2.4.3 =
 * ADDED:
