@@ -94,6 +94,7 @@ See the <a href="http://aramk.com/projects/crayon-language-file-specification/" 
 * Go
 * Haskell
 * HTML (XML/XHTML)
+* INI
 * Lisp
 * Lua
 * Microsoft Registry (thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>)
@@ -269,6 +270,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Delphi Web Script language (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>)
     * ZSH language
+    * INI language
 * FIXED:
     * Fixed a bug causing posts with only backquotes and no Crayon tags to be ignored.
     * wrap="off" is now set to wrap="soft" to adhere to W3C standards.
