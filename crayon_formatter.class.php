@@ -318,16 +318,6 @@ class CrayonFormatter {
 				$buttons_str .= '><div class="crayon-button-icon"></div></div>';
 			}
 
-			// $print_plain_button = $hl->setting_val(CrayonSettings::PLAIN) && $hl->setting_val(CrayonSettings::PLAIN_TOGGLE) ? '<div class="crayon-plain-button crayon-button" title="'.crayon__('Toggle Plain Code').'"></div>' : '';
-			// $print_wrap_button = $hl->setting_val(CrayonSettings::WRAP_TOGGLE) ? '<div class="crayon-wrap-button crayon-button" title="'.crayon__('Toggle Line Wrap').'"></a>' : '';
-			// $print_expand_button = $hl->setting_val(CrayonSettings::EXPAND_TOGGLE) ? '<a class="crayon-expand-button crayon-button" title="'.crayon__('Expand Code').'"></a>' : '';
-			// $print_copy_button = !$touch && $hl->setting_val(CrayonSettings::PLAIN) && $hl->setting_val(CrayonSettings::COPY) ?
-			// 	'<div class="crayon-copy-button crayon-button" data-text="'.crayon__('Press %s to Copy, %s to Paste').'" title="'.crayon__('Copy Plain Code').'"></div>' : '';
-			// $print_popup_button = $hl->setting_val(CrayonSettings::POPUP) ?
-			// 	'<a class="crayon-popup-button crayon-button" title="'.crayon__('Open Code In New Window').'" onclick="return false;"></a>' : '';
-			
-			// $print_nums_button = $hl->setting_val(CrayonSettings::NUMS_TOGGLE) ? '<a class="crayon-nums-button crayon-button" title="'.crayon__('Toggle Line Numbers').'"></a>' : '';
-
 			/*	The table is rendered invisible by CSS and enabled with JS when asked to. If JS
 			 is not enabled or fails, the toolbar won't work so there is no point to display it. */
 			$print_plus = $hl->is_mixed() && $hl->setting_val(CrayonSettings::SHOW_MIXED) ? '<span class="crayon-mixed-highlight" title="'.crayon__('Contains Mixed Languages').'"></span>' : '';
