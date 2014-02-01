@@ -404,6 +404,11 @@ This has been disabled to allow more flexibility in changing font sizes.
 	line-height: 15px !important;
 }
 */
+
+.crayon-table .crayon-nums-content {
+    white-space: nowrap; /* Prevent wrapping line numbers in some themes */
+}
+
 .crayon-syntax.crayon-wrapped .crayon-line {
     /*	min-height: 15px;*/
     height: auto;

@@ -276,6 +276,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * wrap="off" is now set to wrap="soft" to adhere to W3C standards.
     * The copy button tooltip.
     * Retina button order in the sprite sheet.
+    * Wrapping of code lines in some wordpress themes.
 
 = 2.4.3 =
 * ADDED:
