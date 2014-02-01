@@ -277,6 +277,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * The copy button tooltip.
     * Retina button order in the sprite sheet.
     * Wrapping of code lines in some wordpress themes.
+    * Wrapped line height was being overridden by CSS.
 
 = 2.4.3 =
 * ADDED:
