@@ -196,6 +196,8 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+
+* Stephen Sant, (http://thesantfamily.net/), UK
 * David Rodriguez, (http://davidarodriguez.com/), USA
 * Sohail Ahmed, (http://sohail.io.com/), USA
 * Vanessa Garcia Espin, Spain
@@ -278,6 +280,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Retina button order in the sprite sheet.
     * Wrapping of code lines in some wordpress themes.
     * Wrapped line height was being overridden by CSS.
+    * Settings page docs links.
 
 = 2.4.3 =
 * ADDED:
