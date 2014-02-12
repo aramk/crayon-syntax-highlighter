@@ -1017,7 +1017,7 @@ class Human {
             foreach ($buttons as $k => $v) {
                 echo '<a id="crayon-theme-editor-', $k, '-button" class="button-secondary crayon-admin-button" loading="', crayon__('Loading...'), '" loaded="', $v, '" >', $v, '</a>';
             }
-            echo '<span class="crayon-span-5"></span>', self::help_button('http://bit.ly/crayon-themes'), '<span class="crayon-span-5"></span>', crayon__("Duplicate a Stock Theme into a User Theme to allow editing.");
+            echo '<span class="crayon-span-5"></span>', self::help_button('http://aramk.com/blog/2012/12/27/crayon-theme-editor/'), '<span class="crayon-span-5"></span>', crayon__("Duplicate a Stock Theme into a User Theme to allow editing.");
             echo '</br></div>';
         }
         // Preview Box
@@ -1052,7 +1052,8 @@ class Human {
         $fonts_array = CrayonResources::fonts()->get_array();
         self::dropdown(CrayonSettings::FONT, FALSE, TRUE, TRUE, $fonts_array);
         echo '<span class="crayon-span-5"></span>';
-        echo '<a href="http://bit.ly/Yr2Xv6" target="_blank">', crayon__('Add More'), '</a>';
+        // TODO(aramk) Add this blog article back.
+        // echo '<a href="http://bit.ly/Yr2Xv6" target="_blank">', crayon__('Add More'), '</a>';
         echo '<span class="crayon-span-10"></span>';
         self::checkbox(array(CrayonSettings::FONT_SIZE_ENABLE, crayon__('Custom Font Size') . ' '), FALSE);
         self::textbox(array('id' => CrayonSettings::FONT_SIZE, 'size' => 2));

@@ -26,7 +26,7 @@ It also supports some neat features like:
 * Code expanding
 * Minimizing
 * bbPress 2 support
-* <a href="http://bit.ly/ReRr0i" target="_blank">Converting legacy code in blog posts/comments to &lt;pre&gt;</a>
+* <a href="http://aramk.com/blog/2012/09/26/converting-legacy-tags-to-pre/" target="_blank">Converting legacy code in blog posts/comments to &lt;pre&gt;</a>
 * Remote request caching
 * <a href="http://aramk.com/projects/mixed-language-highlighting-in-crayon/" target="_blank">Mixed Language Highlighting</a> in a single Crayon
 * <a href="http://aramk.com/projects/mini-tags-in-crayon/" target="_blank">Mini Tags</a> like [php][/php]

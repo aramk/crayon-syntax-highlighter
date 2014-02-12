@@ -155,7 +155,7 @@
                         longname: 'Crayon Syntax Highlighter',
                         author: 'Aram Kocharyan',
                         authorurl: 'http://aramk.com/',
-                        infourl: 'http://bit.ly/crayonsyntax/',
+                        infourl: 'https://github.com/aramk/crayon-syntax-highlighter',
                         version: "1.0"
                     };
                 }
