@@ -1,6 +1,6 @@
 [submodule "js/jquery-colorpicker"]
 	path = js/jquery-colorpicker
-url=git://github.com/aramkocharyan/colorpicker.git
+url=git://github.com/aramk/colorpicker.git
 [submodule "langs/ada"]
 	path = langs/ada
 	url = https://github.com/antiphasis/crayon-lang-ada.git
