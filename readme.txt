@@ -195,7 +195,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
-
+* Inappix Development, (http://www.inappix.com/), Switzerland
 * Stephen Sant, (http://thesantfamily.net/), UK
 * David Rodriguez, (http://davidarodriguez.com/), USA
 * Sohail Ahmed, (http://sohail.io.com/), USA
@@ -266,6 +266,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 5. Theme Editor.
 
 == Changelog ==
+
+= 2.5.1 =
+* ADDED:
+    * Dark terminal theme (thanks to <a href="http://blog.naydenov.net/" target="_blank">http://blog.naydenov.net/</a>)
 
 = 2.5.0 =
 * ADDED:
