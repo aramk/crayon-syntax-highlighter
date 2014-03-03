@@ -195,6 +195,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* William Eisert, USA
 * Inappix Development, (http://www.inappix.com/), Switzerland
 * Stephen Sant, (http://thesantfamily.net/), UK
 * David Rodriguez, (http://davidarodriguez.com/), USA
