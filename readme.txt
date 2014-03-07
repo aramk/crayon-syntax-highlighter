@@ -195,6 +195,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Alicia Ramirez, (http://aliciaramirez.com/), Canada
 * William Eisert, USA
 * Inappix Development, (http://www.inappix.com/), Switzerland
 * Stephen Sant, (http://thesantfamily.net/), UK
@@ -271,6 +272,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.5.1 =
 * ADDED:
     * Dark terminal theme (thanks to <a href="http://blog.naydenov.net/" target="_blank">http://blog.naydenov.net/</a>)
+    * Support for user-defined languages in the wp-content/uploads/crayon-syntax-highlighter/langs folder which will remain after upgrades.
 
 = 2.5.0 =
 * ADDED:

@@ -9,7 +9,7 @@ class CrayonLangsResourceType {
 }
 
 /* Manages languages once they are loaded. The parser directly loads them, saves them here. */
-class CrayonLangs extends CrayonResourceCollection {
+class CrayonLangs extends CrayonUserResourceCollection {
 	// Properties and Constants ===============================================
 	// CSS classes for known elements
 	private static $known_elements = array('COMMENT' => 'c', 'PREPROCESSOR' => 'p', 'STRING' => 's', 'KEYWORD' => 'k',
@@ -28,12 +28,27 @@ class CrayonLangs extends CrayonResourceCollection {
 	public function __construct() {
 		$this->set_default(self::DEFAULT_LANG, self::DEFAULT_LANG_NAME);
 		$this->directory(CRAYON_LANG_PATH);
+        $this->relative_directory(CRAYON_LANG_DIR);
+        $this->extension('txt');
+
+        CrayonLog::debug("Setting lang directories");
+        $upload = CrayonGlobalSettings::upload_path();
+        if ($upload) {
+            $this->user_directory($upload . CRAYON_LANG_DIR);
+            if (!is_dir($this->user_directory())) {
+                CrayonGlobalSettings::mkdir($this->user_directory());
+                CrayonLog::debug($this->user_directory(), "LANG USER DIR");
+            }
+        } else {
+            CrayonLog::syslog("Upload directory is empty: " . $upload);
+        }
+        CrayonLog::debug($this->directory());
+        CrayonLog::debug($this->user_directory());
 	}
 
-	// XXX Override
-	public function path($id) {
-		return CRAYON_LANG_PATH . $id . "/$id.txt";
-	}
+    public function filename($id, $user = NULL) {
+        return $id."/$id.".$this->extension();
+    }
 
 	// XXX Override
 	public function load_process() {
@@ -43,9 +58,14 @@ class CrayonLangs extends CrayonResourceCollection {
 		$this->load_delimiters(); // TODO check for setting?
 	}
 
+    public function load_resources($dir = NULL) {
+        parent::load_resources($dir);
+
+    }
+
 	// XXX Override
-	public function resource_instance($id, $name = NULL) {
-		return new CrayonLang($id, $name);
+	public function create_user_resource_instance($id, $name = NULL) {
+        return new CrayonLang($id, $name);
 	}
 
 	// XXX Override
@@ -271,13 +291,6 @@ class CrayonLangs extends CrayonResourceCollection {
 		return $sorted_lags;
 	}
 
-	public function is_loaded($id) {
-		if (is_string($id)) {
-			return array_key_exists($id, $this->get());
-		}
-		return FALSE;
-	}
-
 	public function is_parsed($id = NULL) {
 		if ($id === NULL) {
 			// Determine if all langs are successfully parsed
@@ -372,7 +385,7 @@ class CrayonLang extends CrayonVersionResource {
 			for ($i = 0; $i < count($delim); $i++) {
 				$delim[$i] = CrayonUtil::esc_atomic($delim[$i]);
 			}
-				
+
 			$this->delimiters = '(?:'.implode(')|(?:', $delim).')';
 		}
 	}

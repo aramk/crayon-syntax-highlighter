@@ -843,6 +843,7 @@ class CrayonSettingsWP {
     }
 
     public static function show_langs() {
+        CrayonSettingsWP::load_settings();
         require_once (CRAYON_PARSER_PHP);
         if (($langs = CrayonParser::parse_all()) != FALSE) {
             $langs = CrayonLangs::sort_by_name($langs);
@@ -888,6 +889,7 @@ class CrayonSettingsWP {
     }
 
     public static function show_posts() {
+        CrayonSettingsWP::load_settings();
         $postIDs = self::load_posts();
         $legacy_posts = self::load_legacy_posts();
         // Avoids O(n^2) by using a hash map, tradeoff in using strval

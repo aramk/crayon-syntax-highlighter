@@ -26,7 +26,7 @@ class CrayonThemes extends CrayonUserResourceCollection {
             $this->user_directory($upload . CRAYON_THEME_DIR);
             if (!is_dir($this->user_directory())) {
                 CrayonGlobalSettings::mkdir($this->user_directory());
-                CrayonLog::debug($this->user_directory(), "THEME DIR");
+                CrayonLog::debug($this->user_directory(), "THEME USER DIR");
             }
         } else {
             CrayonLog::syslog("Upload directory is empty: " . $upload);

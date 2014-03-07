@@ -297,9 +297,13 @@ class CrayonUserResourceCollection extends CrayonUsedResourceCollection {
 
     // XXX Override
     public function resource_instance($id, $name = NULL) {
-        $resource = new CrayonUserResource($id, $name);
+        $resource = $this->create_user_resource_instance($id, $name);
         $resource->user($this->curr_dir == $this->user_directory());
         return $resource;
+    }
+
+    public function create_user_resource_instance($id, $name = NULL) {
+        return new CrayonUserResource($id, $name);
     }
 
     public function user_directory($dir = NULL) {
@@ -450,7 +454,7 @@ class CrayonUserResource extends CrayonUsedResource {
     }
 }
 
-class CrayonVersionResource extends CrayonResource {
+class CrayonVersionResource extends CrayonUserResource {
     // Adds version
 	private $version = '';
 

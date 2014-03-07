@@ -173,7 +173,7 @@ class CrayonParser {
 					}
 				}
 			}
-			
+
 			// If the (?default:element) function is used, replace the regex with the default, if exists
 			$def = self::regex_match('#\(\?default(?:\:(\w+))?\)#', $regex);
 			if ( count($def) == 2 ) {
