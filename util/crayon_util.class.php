@@ -412,7 +412,7 @@ EOT;
     }
 
     public static function html_entity_decode($str) {
-        return html_entity_decode($str, ENT_COMPAT, 'UTF-8');
+        return html_entity_decode($str, ENT_QUOTES, 'UTF-8');
     }
 
     // Converts <, >, & into entities
