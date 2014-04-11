@@ -1216,6 +1216,7 @@ class Human {
 				German (<a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&#223;</a>),
 				Italian (<a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>),
 				Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
+				Korean (<a href="https://github.com/dokenzy" target="_blank">dokenzy</a>),
 				Lithuanian (<a href="http://www.host1free.com" target="_blank">Vincent G</a>),
 				Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
 				Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),

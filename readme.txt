@@ -133,6 +133,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * German (thanks to <a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&szlig;</a>)
 * Italian (thanks to <a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>)
 * Japanese (thanks to <a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>)
+* Korean (thanks to <a href="https://github.com/dokenzy" target="_blank">dokenzy</a>)
 * Lithuanian (thanks to <a href="http://www.host1free.com" target="_blank">Vincent G</a>)
 * Polish (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
 * Portuguese (thanks to <a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>)
@@ -273,6 +274,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Dark terminal theme (thanks to <a href="http://blog.naydenov.net/" target="_blank">http://blog.naydenov.net/</a>)
     * Support for user-defined languages in the wp-content/uploads/crayon-syntax-highlighter/langs folder which will remain after upgrades.
+    * Korean translation.
 
 = 2.5.0 =
 * ADDED:
