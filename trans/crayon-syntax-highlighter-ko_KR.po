@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Crayon Syntax Highlighter v2.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-10 17:11+1000\n"
-"PO-Revision-Date: 2014-04-11 16:37+0900\n"
+"PO-Revision-Date: 2014-04-11 16:48+0900\n"
 "Last-Translator: dokenzy <dokenzy@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -212,7 +212,7 @@ msgstr "기본적으로 줄번호를 보이기"
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:808
 msgid "Enable line number toggling"
-msgstr "줄번호를 On/Off 할 수 있게 하기"
+msgstr "줄번호를 토 할 수 있게 하기"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:811
@@ -626,7 +626,7 @@ msgstr "번역한 사람"
 # @ crayon-syntax-highlighter
 #: crayon_formatter.class.php:290
 msgid "Toggle Plain Code"
-msgstr "Toggle Plain Code"
+msgstr "일반 코드 토글"
 
 # @ crayon-syntax-highlighter
 #: crayon_formatter.class.php:306
@@ -636,7 +636,7 @@ msgstr "새 창에서 보기"
 # @ crayon-syntax-highlighter
 #: crayon_formatter.class.php:286
 msgid "Toggle Line Numbers"
-msgstr "줄번호 ON/OFF"
+msgstr "줄번호를 토글 할 수 있게 하기"
 
 # @ crayon-syntax-highlighter
 #: crayon_formatter.class.php:333
@@ -836,7 +836,7 @@ msgstr "Remove Crayons from excerpts"
 # @ crayon-syntax-highlighter
 #: crayon_formatter.class.php:294
 msgid "Toggle Line Wrap"
-msgstr "줄바꿈 On/Off"
+msgstr "줄바꿈 토글"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:501
@@ -861,7 +861,7 @@ msgstr "줄바꿈 토글 허용"
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:874
 msgid "Show Crayon Posts"
-msgstr "Show Crayon Posts"
+msgstr "Crayon이 있는 글 보기"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:1015
@@ -911,7 +911,7 @@ msgstr "(예. 3-5 또는 3)"
 # @ crayon-syntax-highlighter
 #: crayon_formatter.class.php:298 crayon_formatter.class.php:302
 msgid "Expand Code"
-msgstr "Expand Code"
+msgstr "코드 넓게 보기"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings.class.php:229
@@ -976,12 +976,12 @@ msgstr "ID"
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:900
 msgid "Posted"
-msgstr "Posted"
+msgstr "작성시간"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:900
 msgid "Modifed"
-msgstr "Modifed"
+msgstr "고친 시간"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:900
@@ -1026,7 +1026,7 @@ msgstr "Add More"
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:1059
 msgid "Line Height"
-msgstr "Line Height"
+msgstr "줄 간격"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:1084
