@@ -1,574 +1,769 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: crayon-syntax-highligher\n"
+"Project-Id-Version: Crayon Syntax Highlighter v2.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-06 15:16+1000\n"
-"PO-Revision-Date: 2014-04-11 04:20+0900\n"
-"Last-Translator: \n"
-"Language-Team: dokenzy <dokenzy@gmail.com>\n"
+"POT-Creation-Date: 2014-04-11 22:35+0900\n"
+"PO-Revision-Date: 2014-04-12 01:05+0900\n"
+"Last-Translator: dokenzy <dokenzy@gmail.com>\n"
+"Language-Team: \n"
+"Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
 "crayon__;crayon_n;crayon_e\n"
-"X-Poedit-Basepath: ..\n"
+"X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"Language: ko_KR\n"
-"X-Generator: Poedit 1.6.4\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-0: ..\n"
 
 # @ crayon-syntax-highlighter
-#: crayon_formatter.class.php:266
+#: ../crayon_formatter.class.php:286
+msgid "Toggle Line Numbers"
+msgstr "줄 번호 토글"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:290
 msgid "Toggle Plain Code"
-msgstr "강조표시 ON/OFF"
+msgstr "일반 코드 토글"
 
 # @ crayon-syntax-highlighter
-#: crayon_formatter.class.php:268
+#: ../crayon_formatter.class.php:294
+msgid "Toggle Line Wrap"
+msgstr "줄 바꿈 토글"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:298
+msgid "Expand Code"
+msgstr "코드를 펼쳐서 보기"
+
+#: ../crayon_formatter.class.php:302
+msgid "Copy"
+msgstr "복사"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:306
+msgid "Open Code In New Window"
+msgstr "새 창에서 보기"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:323
+msgid "Contains Mixed Languages"
+msgstr "Contains Mixed Languages"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:151
+msgid "Hourly"
+msgstr "매시간"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:151
+msgid "Daily"
+msgstr "매일"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:152
+msgid "Weekly"
+msgstr "매주"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:152
+msgid "Monthly"
+msgstr "매월"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:153
+msgid "Immediately"
+msgstr "즉시"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:164 ../crayon_settings.class.php:168
+msgid "Max"
+msgstr "최대"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:164 ../crayon_settings.class.php:168
+msgid "Min"
+msgstr "최소"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:164 ../crayon_settings.class.php:168
+msgid "Static"
+msgstr "고정"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:166 ../crayon_settings.class.php:170
+#: ../crayon_settings_wp.class.php:774 ../crayon_settings_wp.class.php:783
+#: ../crayon_settings_wp.class.php:1062 ../crayon_settings_wp.class.php:1064
+msgid "Pixels"
+msgstr "픽셀"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:166 ../crayon_settings.class.php:170
+msgid "Percent"
+msgstr "퍼센트"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:179
+msgid "None"
+msgstr "없음"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:179
+msgid "Left"
+msgstr "왼쪽"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:179
+msgid "Center"
+msgstr "가운데"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:179
+msgid "Right"
+msgstr "오른쪽"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:181 ../crayon_settings.class.php:206
+msgid "On MouseOver"
+msgstr "마우스오버하면"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:181 ../crayon_settings.class.php:187
+msgid "Always"
+msgstr "항상표시"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:181 ../crayon_settings.class.php:187
+msgid "Never"
+msgstr "표시하지 않음"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:187
+msgid "When Found"
+msgstr "언어가 있으면"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:206
+msgid "On Double Click"
+msgstr "더블클릭하면"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:206
+msgid "On Single Click"
+msgstr "마우스클릭하면"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:206
+msgid "Disable Mouse Events"
+msgstr "마우스 이벤트 막기"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:213
+msgid "An error has occurred. Please try again later."
+msgstr "오류가 발생했습니다. 나중에 다시 해보세요."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:229
+msgid "Inline Tag"
+msgstr "인라인 태그"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:229
+msgid "Block Tag"
+msgstr "블록 태그"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:53 ../crayon_settings_wp.class.php:210
+#: ../crayon_settings_wp.class.php:1263
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:252
+msgid "Settings"
+msgstr "설정"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:136
 #, php-format
 msgid "Press %s to Copy, %s to Paste"
 msgstr "%s로 복사, %s로 붙여넣기"
 
 # @ crayon-syntax-highlighter
-#: crayon_formatter.class.php:268
-msgid "Copy Plain Code"
-msgstr "코드 복사"
+#: ../crayon_settings_wp.class.php:137
+msgid "Click To Expand Code"
+msgstr "Click To Expand Code"
 
 # @ crayon-syntax-highlighter
-#: crayon_formatter.class.php:270
-msgid "Open Code In New Window"
-msgstr "새 창에서 코드 열기"
+#: ../crayon_settings_wp.class.php:179
+msgid "Prompt"
+msgstr "Prompt"
 
 # @ crayon-syntax-highlighter
-#: crayon_formatter.class.php:273
-msgid "Toggle Line Numbers"
-msgstr "줄번호 ON/OFF"
+#: ../crayon_settings_wp.class.php:180
+msgid "Value"
+msgstr "값"
 
 # @ crayon-syntax-highlighter
-#: crayon_formatter.class.php:279
-msgid "Contains Mixed Languages"
-msgstr "언어가 섞였습니다."
+#: ../crayon_settings_wp.class.php:181
+msgid "Alert"
+msgstr "주의"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings.class.php:138
-msgid "Hourly"
-msgstr "매시간"
+#: ../crayon_settings_wp.class.php:182 ../crayon_settings_wp.class.php:922
+msgid "No"
+msgstr "아니요"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings.class.php:138
-msgid "Daily"
-msgstr "매일"
+#: ../crayon_settings_wp.class.php:183 ../crayon_settings_wp.class.php:922
+msgid "Yes"
+msgstr "예"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings.class.php:139
-msgid "Weekly"
-msgstr "매주"
+#: ../crayon_settings_wp.class.php:184
+msgid "Confirm"
+msgstr "Confirm"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings.class.php:139
-msgid "Monthly"
-msgstr "매월"
+#: ../crayon_settings_wp.class.php:185
+msgid "Change Code"
+msgstr "Change Code"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings.class.php:140
-msgid "Immediately"
-msgstr "즉시"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:150 crayon_settings.class.php:154
-msgid "Max"
-msgstr "최대"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:150 crayon_settings.class.php:154
-msgid "Min"
-msgstr "최소"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:150 crayon_settings.class.php:154
-msgid "Static"
-msgstr "고정"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:152 crayon_settings.class.php:156
-#: crayon_settings_wp.class.php:541 crayon_settings_wp.class.php:550
-#: crayon_settings_wp.class.php:649
-msgid "Pixels"
-msgstr "픽셀"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:152 crayon_settings.class.php:156
-msgid "Percent"
-msgstr "퍼센트"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:165
-msgid "None"
-msgstr "없음"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:165
-msgid "Left"
-msgstr "왼쪽"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:165
-msgid "Center"
-msgstr "가운데"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:165
-msgid "Right"
-msgstr "오른쪽"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:167 crayon_settings.class.php:189
-msgid "On MouseOver"
-msgstr "마우스 오버시"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:167 crayon_settings.class.php:173
-msgid "Always"
-msgstr "항상표시"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:167 crayon_settings.class.php:173
-msgid "Never"
-msgstr "표시하지 않음"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:173
-msgid "When Found"
-msgstr "언어가 있으면"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:189
-msgid "On Double Click"
-msgstr "더블클릭하면"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:189
-msgid "On Single Click"
-msgstr "마우스클릭하면"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:189
-msgid "Disable Mouse Events"
-msgstr "마우스 이벤트 막기"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings.class.php:196
-msgid "An error has occurred. Please try again later."
-msgstr "오류가 발생했습니다. 나중에 다시 해보세요."
-
-# @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:44 crayon_settings_wp.class.php:118
-#: crayon_settings_wp.class.php:802
-msgid "Settings"
-msgstr "설정"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:99
+#: ../crayon_settings_wp.class.php:193
 msgid "You do not have sufficient permissions to access this page."
 msgstr "이 페이지에 접근할 수 있는 권한이 없습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:130
+#: ../crayon_settings_wp.class.php:225
 msgid "Save Changes"
 msgstr "저장"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:136
+#: ../crayon_settings_wp.class.php:233
 msgid "Reset Settings"
 msgstr "재설정"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:301
+#: ../crayon_settings_wp.class.php:491
 msgid "General"
-msgstr "일반적인"
+msgstr "일반"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:302
+#: ../crayon_settings_wp.class.php:492
 msgid "Theme"
 msgstr "테마"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:303
+#: ../crayon_settings_wp.class.php:493
 msgid "Font"
-msgstr "폰트"
+msgstr "글꼴"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:304
+#: ../crayon_settings_wp.class.php:494
 msgid "Metrics"
 msgstr "크기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:305
+#: ../crayon_settings_wp.class.php:495
+#: ../util/theme-editor/theme_editor.php:299
 msgid "Toolbar"
 msgstr "툴바"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:306
+#: ../crayon_settings_wp.class.php:496
+#: ../util/theme-editor/theme_editor.php:297
 msgid "Lines"
 msgstr "줄"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:307
+#: ../crayon_settings_wp.class.php:497
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:212
 msgid "Code"
 msgstr "코드"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:308
+#: ../crayon_settings_wp.class.php:498
 msgid "Tags"
 msgstr "태그"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:309
+#: ../crayon_settings_wp.class.php:499
 msgid "Languages"
 msgstr "언어"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:310
+#: ../crayon_settings_wp.class.php:500
 msgid "Files"
 msgstr "파일"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:311
+#: ../crayon_settings_wp.class.php:501
+msgid "Posts"
+msgstr "글"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:502
 msgid "Tag Editor"
 msgstr "태그 편집기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:312
+#: ../crayon_settings_wp.class.php:503
 msgid "Misc"
 msgstr "기타"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:315
+#: ../crayon_settings_wp.class.php:506
 msgid "Debug"
 msgstr "디버그"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:316
+#: ../crayon_settings_wp.class.php:507
 msgid "Errors"
 msgstr "오류"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:317
+#: ../crayon_settings_wp.class.php:508
 msgid "Log"
 msgstr "로그"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:320
+#: ../crayon_settings_wp.class.php:511
 msgid "About"
 msgstr "Crayon에 대해"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:503
-msgid "Crayon Help"
-msgstr "Crayon 도움말"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:518
+#: ../crayon_settings_wp.class.php:751
 msgid "Height"
 msgstr "높이"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:524
+#: ../crayon_settings_wp.class.php:757
 msgid "Width"
 msgstr "너비"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:530
+#: ../crayon_settings_wp.class.php:763
 msgid "Top Margin"
 msgstr "윗쪽 여백"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:531
+#: ../crayon_settings_wp.class.php:764
 msgid "Bottom Margin"
 msgstr "아랫쪽 여백"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:532 crayon_settings_wp.class.php:537
+#: ../crayon_settings_wp.class.php:765 ../crayon_settings_wp.class.php:770
 msgid "Left Margin"
 msgstr "왼쪽 여백"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:533 crayon_settings_wp.class.php:537
+#: ../crayon_settings_wp.class.php:766 ../crayon_settings_wp.class.php:770
 msgid "Right Margin"
 msgstr "오른쪽 여백"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:543
+#: ../crayon_settings_wp.class.php:776
 msgid "Horizontal Alignment"
 msgstr "수평 정렬"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:546
+#: ../crayon_settings_wp.class.php:779
 msgid "Allow floating elements to surround Crayon"
 msgstr "Crayon 주변에 요소를 플로팅하는 것 허용"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:548
+#: ../crayon_settings_wp.class.php:781
 msgid "Inline Margin"
 msgstr "인라인 여백"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:556
+#: ../crayon_settings_wp.class.php:789
 msgid "Display the Toolbar"
 msgstr "툴바 보이기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:559
+#: ../crayon_settings_wp.class.php:792
 msgid "Overlay the toolbar on code rather than push it down when possible"
 msgstr "Overlay the toolbar on code rather than push it down when possible"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:560
+#: ../crayon_settings_wp.class.php:793
 msgid "Toggle the toolbar on single click when it is overlayed"
-msgstr "오버레이됐을 때 클릭해서 툴바 토글하기"
+msgstr "오버레이됐을 때 클릭해서 툴바 토글"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:561
+#: ../crayon_settings_wp.class.php:794
 msgid "Delay hiding the toolbar on MouseOut"
 msgstr "마우스아웃될 때 툴바 천천히 숨기기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:563
+#: ../crayon_settings_wp.class.php:796
 msgid "Display the title when provided"
 msgstr "제목이 있으면 보이기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:564
+#: ../crayon_settings_wp.class.php:797
 msgid "Display the language"
 msgstr "언어 보이기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:571
+#: ../crayon_settings_wp.class.php:804
 msgid "Display striped code lines"
-msgstr "줄무늬 보이기"
+msgstr "줄 무늬 보이기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:572
+#: ../crayon_settings_wp.class.php:805
 msgid "Enable line marking for important lines"
-msgstr "중요한 줄 표시할 수 있게하기"
+msgstr "줄 강조 표시"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:573
+#: ../crayon_settings_wp.class.php:806
+msgid "Enable line ranges for showing only parts of code"
+msgstr "줄 범위에 해당하는 코드만 보여주기"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:807
 msgid "Display line numbers by default"
-msgstr "줄번호가 기본적으로 보이게 하기"
+msgstr "기본적으로 줄번호를 보이기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:574
+#: ../crayon_settings_wp.class.php:808
 msgid "Enable line number toggling"
-msgstr "줄번호 토글할 수 있게하기"
+msgstr "줄 번호를 토글 할 수 있게 하기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:575
+#: ../crayon_settings_wp.class.php:809
+msgid "Wrap lines by default"
+msgstr "기본적으로 줄바꿈하기"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:810
+msgid "Enable line wrap toggling"
+msgstr "줄 바꿈 토글 허용"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:811
 msgid "Start line numbers from"
 msgstr "시작하는 줄번호 지정"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:585
+#: ../crayon_settings_wp.class.php:822
 msgid "When no language is provided, use the fallback"
-msgstr "언어가 없으면 다른 언어로 대체"
+msgstr "언어가 정해지지 않으면 이 언어로 설정"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:591
+#: ../crayon_settings_wp.class.php:828
 #, php-format
 msgid "%d language has been detected."
-msgstr "%d 언어를 찾았습니다."
+msgstr "%d개의 언어가 발견되었습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:592
+#: ../crayon_settings_wp.class.php:829
 msgid "Parsing was successful"
-msgstr "파싱이 성공했습니다."
+msgstr "파싱을 성공했습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:592
+#: ../crayon_settings_wp.class.php:829
 msgid "Parsing was unsuccessful"
-msgstr "파싱에 실패했습니다."
+msgstr "파싱을 실패했습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:598
+#: ../crayon_settings_wp.class.php:835
 #, php-format
 msgid "The selected language with id %s could not be loaded"
-msgstr "선택된 언어 ID %s를 가져올 수 없습니다."
+msgstr "선택한 폰트 ID %s를 가져올 수 없습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:602
+#: ../crayon_settings_wp.class.php:838
 msgid "Show Languages"
 msgstr "언어 보이기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:621
+#: ../crayon_settings_wp.class.php:875
+msgid "Show Crayon Posts"
+msgstr "Crayon이 있는 글 보기"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:876
+msgid "Refresh"
+msgstr "새로고침"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:902
+msgid "ID"
+msgstr "ID"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:902
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:189
+#: ../util/theme-editor/theme_editor.php:314
+msgid "Title"
+msgstr "제목"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:902
+msgid "Posted"
+msgstr "작성시간"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:902
+msgid "Modifed"
+msgstr "고친 시간"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:902
+msgid "Contains Legacy Tags?"
+msgstr "Contains Legacy Tags?"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1017
+msgid "Edit"
+msgstr "편집"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1017
+#: ../util/theme-editor/theme_editor.php:199
+msgid "Duplicate"
+msgstr "복제"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1017
+msgid "Submit"
+msgstr "전송"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1018
+#: ../util/theme-editor/theme_editor.php:196
+msgid "Delete"
+msgstr "삭제"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1020
 msgid "Loading..."
 msgstr "로딩..."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:621 crayon_settings_wp.class.php:804
-msgid "Theme Editor"
-msgstr "테마 편집기"
+#: ../crayon_settings_wp.class.php:1022
+msgid "Duplicate a Stock Theme into a User Theme to allow editing."
+msgstr "갖고 있는 테마를 편집 권한이 있는 테마로 복제하기."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:626
+#: ../crayon_settings_wp.class.php:1033
 #, php-format
 msgid ""
-"Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 "
-"are marked."
+"Change the %1$sfallback language%2$s to change the sample code or %3$schange "
+"it manually%4$s. Lines 5-7 are marked."
 msgstr ""
-"Change the %1$sfallback language%2$s to change the sample code. Lines 5-7 "
-"are marked."
+"Change the %1$sfallback language%2$s to change the sample code or %3$schange "
+"it manually%4$s. Lines 5-7 are marked."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:630
+#: ../crayon_settings_wp.class.php:1040
 msgid "Enable Live Preview"
 msgstr "바로보기 켜기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:632
+#: ../crayon_settings_wp.class.php:1042
 msgid "Enqueue themes in the header (more efficient)."
 msgstr "Enqueue themes in the header (more efficient)."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:632 crayon_settings_wp.class.php:658
-#: crayon_settings_wp.class.php:683 crayon_settings_wp.class.php:690
-#: crayon_settings_wp.class.php:691 crayon_settings_wp.class.php:692
-#: crayon_settings_wp.class.php:693 crayon_settings_wp.class.php:694
-#: crayon_settings_wp.class.php:695 crayon_settings_wp.class.php:709
-#: crayon_settings_wp.class.php:716 crayon_settings_wp.class.php:717
-msgid "?"
-msgstr "?"
-
-# @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:635
+#: ../crayon_settings_wp.class.php:1045
 #, php-format
 msgid "The selected theme with id %s could not be loaded"
 msgstr "선택한 id%s 테마를 가져올 수 없습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:647
+#: ../crayon_settings_wp.class.php:1060
 msgid "Custom Font Size"
 msgstr "폰트 크기 지정"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:652
+#: ../crayon_settings_wp.class.php:1062
+msgid "Line Height"
+msgstr "줄 간격"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1067
 #, php-format
 msgid "The selected font with id %s could not be loaded"
 msgstr "선택한 폰트 ID %s를 가져올 수 없습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:658
+#: ../crayon_settings_wp.class.php:1073
 msgid "Enqueue fonts in the header (more efficient)."
 msgstr "Enqueue fonts in the header (more efficient)."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:663
+#: ../crayon_settings_wp.class.php:1078
 msgid "Enable plain code view and display"
-msgstr "Enable plain code view and display"
+msgstr "일반 코드로 보여주기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:666
+#: ../crayon_settings_wp.class.php:1081
 msgid "Enable plain code toggling"
 msgstr "일반 코드 토글 허용"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:667
+#: ../crayon_settings_wp.class.php:1082
 msgid "Show the plain code by default"
-msgstr "기본적으로 일반 코드 보이기"
+msgstr "기본적으로 일반 코드로 보이기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:668
+#: ../crayon_settings_wp.class.php:1083
 msgid "Enable code copy/paste"
 msgstr "코드 복사/붙여넣기 허용"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:670
+#: ../crayon_settings_wp.class.php:1085
 msgid "Enable opening code in a window"
 msgstr "새 창에서 코드열기 허용"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:671
+#: ../crayon_settings_wp.class.php:1086
 msgid "Always display scrollbars"
 msgstr "스크롤바를 항상 표시"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:672
-msgid "Tab size in spaces"
-msgstr "탭 크기"
+#: ../crayon_settings_wp.class.php:1087
+msgid "Minimize code"
+msgstr "코드 숨기기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:677
+#: ../crayon_settings_wp.class.php:1088
+msgid "Expand code beyond page borders on mouseover"
+msgstr "마우스오버시 페이지 경계를 넘어 코드 확장하기"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1089
+msgid "Enable code expanding toggling when possible"
+msgstr "코드를 확장할 수 있으면 토글 허용"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1092
 msgid "Decode HTML entities in code"
 msgstr "Decode HTML entities in code"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:679
+#: ../crayon_settings_wp.class.php:1094
 msgid "Decode HTML entities in attributes"
 msgstr "Decode HTML entities in attributes"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:681
+#: ../crayon_settings_wp.class.php:1096
 msgid "Remove whitespace surrounding the shortcode content"
-msgstr "Remove whitespace surrounding the shortcode content"
+msgstr "인라인 코드 주위의 공백 제거"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:683
+#: ../crayon_settings_wp.class.php:1098
+msgid "Remove &lt;code&gt; tags surrounding the shortcode content"
+msgstr "인라인 코드 주위의 &lt;code&gt; 태그 제거"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1099
 msgid "Allow Mixed Language Highlighting with delimiters and tags."
 msgstr "구분기호와 태그로 여러 언어 강조"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:685
+#: ../crayon_settings_wp.class.php:1101
 msgid "Show Mixed Language Icon (+)"
 msgstr "여러 언어 아이콘 보이기 (+)"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:690
-msgid "Capture Mini Tags like [php][/php] as Crayons."
-msgstr "Capture Mini Tags like [php][/php] as Crayons."
+#: ../crayon_settings_wp.class.php:1103
+msgid "Tab size in spaces"
+msgstr "탭 크기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:691
-msgid "Capture Inline Tags like {php}{/php} inside sentences."
-msgstr "Capture Inline Tags like {php}{/php} inside sentences."
+#: ../crayon_settings_wp.class.php:1105
+msgid "Blank lines before code:"
+msgstr "코드 앞에 빈 줄 넣기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:692
+#: ../crayon_settings_wp.class.php:1107
+msgid "Blank lines after code:"
+msgstr "코드 뒤에 빈 줄 넣기"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1112
+msgid "Capture Inline Tags"
+msgstr "Capture Inline Tags"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1113
 msgid "Wrap Inline Tags"
-msgstr "인라인 태그 감싸기(Wrap)"
+msgstr "인라인 태그 줄바꿈"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:693
+#: ../crayon_settings_wp.class.php:1114
+msgid "Capture &lt;code&gt; as"
+msgstr "Capture &lt;code&gt; as"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1118
 msgid "Capture `backquotes` as &lt;code&gt;"
 msgstr "Capture `backquotes` as &lt;code&gt;"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:694
+#: ../crayon_settings_wp.class.php:1119
 msgid "Capture &lt;pre&gt; tags as Crayons"
 msgstr "Capture &lt;pre&gt; tags as Crayons"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:695
+#: ../crayon_settings_wp.class.php:1121
+#, php-format
+msgid ""
+"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"the %sTag Editor%s instead and convert legacy tags."
+msgstr ""
+"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"the %sTag Editor%s instead and convert legacy tags."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1122
+msgid "Capture Mini Tags like [php][/php] as Crayons."
+msgstr "Capture Mini Tags like [php][/php] as Crayons."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1123
+msgid "Capture Inline Tags like {php}{/php} inside sentences."
+msgstr "Capture Inline Tags like {php}{/php} inside sentences."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1124
 msgid "Enable [plain][/plain] tag."
 msgstr "Enable [plain][/plain] tag."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:700
+#: ../crayon_settings_wp.class.php:1129
 msgid ""
 "When loading local files and a relative path is given for the URL, use the "
 "absolute path"
-msgstr ""
-"When loading local files and a relative path is given for the URL, use the "
-"absolute path"
+msgstr "로컬 파일을 로딩하거나 URL을 상대주소로 입력했을 때 절대 경로 사용"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:703
+#: ../crayon_settings_wp.class.php:1132
 msgid "Followed by your relative URL."
 msgstr "상대 URL 따르기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:707
+#: ../crayon_settings_wp.class.php:1139
+msgid "Convert Legacy Tags"
+msgstr "레거시 태그로 변환"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1142
+msgid "No Legacy Tags Found"
+msgstr "No Legacy Tags Found"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1146
+msgid "Encode"
+msgstr "Encode"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1148
 #, php-format
 msgid ""
 "Use %s to separate setting names from values in the &lt;pre&gt; class "
@@ -578,220 +773,255 @@ msgstr ""
 "attribute"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:713
+#: ../crayon_settings_wp.class.php:1151
+msgid ""
+"Display the Tag Editor in any TinyMCE instances on the frontend (e.g. "
+"bbPress)"
+msgstr ""
+"Display the Tag Editor in any TinyMCE instances on the frontend (e.g. "
+"bbPress)"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1152
+msgid "Display Tag Editor settings on the frontend"
+msgstr "Display Tag Editor settings on the frontend"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1156
 msgid "Clear the cache used to store remote code requests"
 msgstr "외부에서 요청한 코드를 저장하기 위해 사용한 캐시 지우기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:715
+#: ../crayon_settings_wp.class.php:1158
 msgid "Clear Now"
 msgstr "지금 지우기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:716
+#: ../crayon_settings_wp.class.php:1159
 msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
-msgstr "필요할 때만 Crayon의 CSS와 자바스크립트를 읽도록 시도"
+msgstr "필요할 때만 Crayon의 CSS와 자바스크립트를 읽도록 함"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:717
+#: ../crayon_settings_wp.class.php:1160
 msgid "Disable enqueuing for page templates that may contain The Loop."
 msgstr "Disable enqueuing for page templates that may contain The Loop."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:718
+#: ../crayon_settings_wp.class.php:1161
 msgid "Allow Crayons inside comments"
 msgstr "Allow Crayons inside comments"
 
-#: crayon_settings_wp.class.php:719
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1162
 msgid "Remove Crayons from excerpts"
 msgstr "Remove Crayons from excerpts"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:720
+#: ../crayon_settings_wp.class.php:1163
 msgid "Load Crayons only from the main Wordpress query"
-msgstr "Load Crayons only from the main Wordpress query"
+msgstr "주 워드프레스 요청에 대해서만 Crayons 불러오기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:721
+#: ../crayon_settings_wp.class.php:1164
 msgid "Disable mouse gestures for touchscreen devices (eg. MouseOver)"
 msgstr "터치스크린 장치에서 마우스 제스처 비활성화(예: 마우스오버)"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:722
+#: ../crayon_settings_wp.class.php:1165
 msgid "Disable animations"
 msgstr "애니메이션효과 비활성화"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:723
+#: ../crayon_settings_wp.class.php:1166
 msgid "Disable runtime stats"
 msgstr "런타임 통계 비활성화"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:729
+#: ../crayon_settings_wp.class.php:1172
 msgid "Log errors for individual Crayons"
 msgstr "각 Crayon 오류마다 로그 남기기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:730
+#: ../crayon_settings_wp.class.php:1173
 msgid "Log system-wide errors"
 msgstr "시스템 전체 오류 로그남기기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:731
+#: ../crayon_settings_wp.class.php:1174
 msgid "Display custom message for errors"
 msgstr "사용자 지정 오류 표시"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:743
+#: ../crayon_settings_wp.class.php:1186
 msgid "Show Log"
 msgstr "로그 보이기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:743
+#: ../crayon_settings_wp.class.php:1186
 msgid "Hide Log"
 msgstr "로그 숨기기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:745
+#: ../crayon_settings_wp.class.php:1188
 msgid "Clear Log"
 msgstr "로그 지우기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:746
+#: ../crayon_settings_wp.class.php:1189
 msgid "Email Admin"
 msgstr "관리자에게 이메일 보내기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:748
+#: ../crayon_settings_wp.class.php:1191
 msgid "Email Developer"
 msgstr "개발자에게 이메일 보내기"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:750
+#: ../crayon_settings_wp.class.php:1193
 msgid "The log is currently empty."
 msgstr "로그가 현재 비어있습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:752
+#: ../crayon_settings_wp.class.php:1195
 msgid "The log file exists and is writable."
-msgstr "로그 파일이 있고 기록할 수 있습니다."
+msgstr "로그 파일이 있고 쓸 수 있습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:752
+#: ../crayon_settings_wp.class.php:1195
 msgid "The log file exists and is not writable."
-msgstr "로그 파일은 있지만 기록할 수는 없습니다."
+msgstr "로그 파일은 있지만 쓸 수는 없습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:754
+#: ../crayon_settings_wp.class.php:1197
 msgid "The log file does not exist and is not writable."
-msgstr "로그 파일도 없고 기록할 수도 없습니다."
+msgstr "로그 파일도 없고 쓸 수도 없습니다."
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:764
+#: ../crayon_settings_wp.class.php:1207
 msgid "Version"
 msgstr "버전"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:766
+#: ../crayon_settings_wp.class.php:1209
 msgid "Developer"
 msgstr "개발자"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:767
+#: ../crayon_settings_wp.class.php:1210
 msgid "Translators"
 msgstr "번역한 사람"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:790
-msgid ""
-"The result of innumerable hours of hard work over many months. It's an "
-"ongoing project, keep me motivated!"
-msgstr ""
-"The result of innumerable hours of hard work over many months. It's an "
-"ongoing project, keep me motivated!"
+#: ../crayon_settings_wp.class.php:1257
+msgid "?"
+msgstr "?"
 
 # @ crayon-syntax-highlighter
-#: crayon_settings_wp.class.php:806
+#: ../crayon_settings_wp.class.php:1264
+#: ../util/theme-editor/theme_editor.php:336
+msgid "Theme Editor"
+msgstr "테마 편집기"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1265
 msgid "Donate"
 msgstr "기부"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_tag_editor_wp.class.php:57
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:62
 msgid "Add Crayon Code"
 msgstr "크래용 코드 추가"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_tag_editor_wp.class.php:58
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:63
 msgid "Edit Crayon Code"
 msgstr "코드 편집"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_tag_editor_wp.class.php:59
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:64
 msgid "Add"
 msgstr "추가"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_tag_editor_wp.class.php:60
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:65
+#: ../util/theme-editor/theme_editor.php:352
 msgid "Save"
 msgstr "저장"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:65
-msgid "Title"
-msgstr "제목"
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:180
+msgid "OK"
+msgstr "확인"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:67
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:182
+msgid "Cancel"
+msgstr "취소"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:191
 msgid "A short description"
 msgstr "간단한 설명"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:70
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:193
+#: ../util/theme-editor/theme_editor.php:318
 msgid "Inline"
 msgstr "인라인"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:75
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:195
+msgid "Don't Highlight"
+msgstr "문법 강조 안하기"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:200
+#: ../util/theme-editor/theme_editor.php:322
 msgid "Language"
 msgstr "언어"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:78
-msgid "Marked Lines"
-msgstr "표시한 줄"
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:203
+msgid "Line Range"
+msgstr "줄 범위"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:79
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:204
+msgid "(e.g. 3-5 or 3)"
+msgstr "(예. 3-5 또는 3)"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:205
+msgid "Marked Lines"
+msgstr "줄 강조"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:206
 msgid "(e.g. 1,2,3-5)"
 msgstr "(예. 1,2,3-5)"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:82
-msgid "Disable Highlighting"
-msgstr "문법강조 안하기"
-
-# @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:87
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:215
 msgid "Clear"
 msgstr "지우기"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:88
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:219
 msgid "Paste your code here, or type it in manually."
 msgstr "여기에 코드를 붙여넣거나 직접 입력하세요."
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:91
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:223
 msgid "URL"
 msgstr "URL"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:93
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:225
 msgid "Relative local path or absolute URL"
 msgstr "상대 로컬 경로나 절대 URL"
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:96
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:228
 msgid ""
 "If the URL fails to load, the code above will be shown instead. If no code "
 "exists, an error is shown."
@@ -800,7 +1030,7 @@ msgstr ""
 "exists, an error is shown."
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:98
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:230
 #, php-format
 msgid ""
 "If a relative local path is given it will be appended to %s - which is "
@@ -810,17 +1040,17 @@ msgstr ""
 "defined in %sCrayon &gt; Settings &gt; Files%s."
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:117
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:257
 msgid "Change the following settings to override their global values."
 msgstr "Change the following settings to override their global values."
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:119
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:259
 msgid "Only changes (shown yellow) are applied."
 msgstr "Only changes (shown yellow) are applied."
 
 # @ crayon-syntax-highlighter
-#: util/tag-editor/crayon_te_content.php:121
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:261
 #, php-format
 msgid ""
 "Future changes to the global settings under %sCrayon &gt; Settings%s won't "
@@ -830,6 +1060,305 @@ msgstr ""
 "affect overridden settings."
 
 # @ crayon-syntax-highlighter
-#: util/theme-editor/editor.php:16
+#: ../util/theme-editor/theme_editor.php:192
+msgid "User-Defined Theme"
+msgstr "사용자 정의 테마"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:193
+msgid "Stock Theme"
+msgstr "Stock Theme"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:194
+msgid "Success!"
+msgstr "성공!"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:195
+msgid "Failed!"
+msgstr "실패!"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:197
+#, php-format
+msgid "Are you sure you want to delete the \"%s\" theme?"
+msgstr "\"%s\" 테마를 정말로 지울까요?"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:198
+msgid "Delete failed!"
+msgstr "삭제 실패!"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:200
+msgid "New Name"
+msgstr "새 이름"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:201
+msgid "Duplicate failed!"
+msgstr "복제 실패!"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:202
+msgid "Please check the log for details."
+msgstr "자세한 건 로그를 확인하세요."
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:203
+msgid "Are you sure you want to discard all changes?"
+msgstr "바꾼 것을 전부 취소할까요?"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:204
+#, php-format
+msgid "Editing Theme: %s"
+msgstr "테마 수정: %s"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:205
+#, php-format
+msgid "Creating Theme: %s"
+msgstr "새 테마 만들기: %s"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:206
+msgid "Submit Your Theme"
+msgstr "테마 전송하기"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:207
+msgid ""
+"Submit your User Theme for inclusion as a Stock Theme in Crayon! This will "
+"email me your theme - make sure it's considerably different from the stock "
+"themes :)"
+msgstr ""
+"Submit your User Theme for inclusion as a Stock Theme in Crayon! This will "
+"email me your theme - make sure it's considerably different from the stock "
+"themes :)"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:208
+msgid "Message"
+msgstr "메시지"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:209
+msgid "Please include this theme in Crayon!"
+msgstr "Crayon에 이 테마를 추가해 주세요!"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:210
+msgid "Submit was successful."
+msgstr "전송 성공."
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:211
+msgid "Submit failed!"
+msgstr "전송 실패!"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:294
+msgid "Information"
+msgstr "정보"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:295
+msgid "Highlighting"
+msgstr "하이라이팅"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:296
+msgid "Frame"
+msgstr "프레임"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:298
+msgid "Line Numbers"
+msgstr "줄 번호"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:301
+msgid "Background"
+msgstr "배경"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:302
+msgid "Text"
+msgstr "텍스트"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:303
+msgid "Border"
+msgstr "Border"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:304
+msgid "Top Border"
+msgstr "Top Border"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:305
+msgid "Bottom Border"
+msgstr "Bottom Border"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:306
+msgid "Right Border"
+msgstr "Right Border"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:308
+msgid "Hover"
+msgstr "Hover"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:309
+msgid "Active"
+msgstr "Active"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:310
+msgid "Pressed"
+msgstr "Pressed"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:311
+msgid "Pressed & Hover"
+msgstr "Pressed & Hover"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:312
+msgid "Pressed & Active"
+msgstr "Pressed & Active"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:315
+msgid "Buttons"
+msgstr "버튼"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:317
+msgid "Normal"
+msgstr "Normal"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:319
+msgid "Striped"
+msgstr "Striped"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:320
+msgid "Marked"
+msgstr "강조"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:321
+msgid "Striped & Marked"
+msgstr "Striped & Marked"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:351
 msgid "Back To Settings"
-msgstr "설정으로 돌아가기"
+msgstr "Back To Settings"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:390
+msgid "Comment"
+msgstr "코멘트"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:391
+msgid "String"
+msgstr "String"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:392
+msgid "Preprocessor"
+msgstr "전처리기"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:393
+msgid "Tag"
+msgstr "태그"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:394
+msgid "Keyword"
+msgstr "키워드"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:395
+msgid "Statement"
+msgstr "Statement"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:396
+msgid "Reserved"
+msgstr "Reserved"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:397
+msgid "Type"
+msgstr "타입"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:398
+msgid "Modifier"
+msgstr "Modifier"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:399
+msgid "Identifier"
+msgstr "Identifier"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:400
+msgid "Entity"
+msgstr "엔티티"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:401
+msgid "Variable"
+msgstr "변수"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:402
+msgid "Constant"
+msgstr "상수"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:403
+msgid "Operator"
+msgstr "연산자"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:404
+msgid "Symbol"
+msgstr "심볼"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:405
+msgid "Notation"
+msgstr "Notation"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:406
+msgid "Faded"
+msgstr "Faded"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:407
+msgid "HTML"
+msgstr "HTML"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:408
+msgid "Unhighlighted"
+msgstr "Unhighlighted"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:542
+msgid "(Used for Copy/Paste)"
+msgstr "(Uporabljeno za kopiraj/prilepi)"
