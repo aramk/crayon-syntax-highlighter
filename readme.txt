@@ -201,6 +201,7 @@ Thanks to all those who donate to the project:
 * Inappix Development, (http://www.inappix.com/), Switzerland
 * Stephen Sant, (http://thesantfamily.net/), UK
 * David Rodriguez, (http://davidarodriguez.com/), USA
+* Chris Moore, (http://moorecreativeideas.com/), USA
 * Sohail Ahmed, (http://sohail.io.com/), USA
 * Vanessa Garcia Espin, Spain
 * Samad Malik, (http://samadmalik.com/), USA
@@ -272,11 +273,16 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 2.5.1 =
 * ADDED:
+    * Delphi Web Script language (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>).
+    * Added Pspad theme.
     * Dark terminal theme (thanks to <a href="http://blog.naydenov.net/" target="_blank">http://blog.naydenov.net/</a>)
     * Support for user-defined languages in the wp-content/uploads/crayon-syntax-highlighter/langs folder which will remain after upgrades.
     * Korean translation.
 * FIXED:
     * Dutch translation.
+    * Compatibility with Wordpress 3.9:
+    * Tag editor updated to comply with TinyMCE version 4.
+    * Admin script failed to load since "wpdialgs-popup" script is no longer available.
 
 = 2.5.0 =
 * ADDED:

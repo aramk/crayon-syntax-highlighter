@@ -47,35 +47,75 @@
             s = CrayonTagEditorSettings;
             te = CrayonTagEditor;
 
-            tinymce.PluginManager.requireLangPack(name);
+            // TODO(aramk) find the TinyMCE version 4 compliant command for this.
+            //tinymce.PluginManager.requireLangPack(name);
 
-            tinymce.create('tinymce.plugins.Crayon', {
-                init: function (ed, url) {
+            tinymce.PluginManager.add(name, function(ed, url) {
+                ed.on('init', function () {
+                    ed.dom.loadCSS(url + '/crayon_te.css');
+                    CrayonTagEditor.bind(s.tinymce_button);
+                    $(s.tinymce_button).addClass('mce_crayon_tinymce');
 
-                    ed.onInit.add(function (ed) {
-                        ed.dom.loadCSS(url + '/crayon_te.css');
+                    // Remove all selected pre tags
+                    var content = $(ed.getContent());
+                    var wrapper = $('<div>');
+                    content.each(function () {
+                        $(this).removeClass(s.css_selected);
+                        wrapper.append($(this).clone());
                     });
+                    ed.setContent(wrapper.html());
+                });
 
-                    // Prevent <p> on enter, turn into \n
-                    ed.onKeyDown.add(function (ed, e) {
-                        var selection = ed.selection;
-                        if (e.keyCode == 13) {
-                            var node = selection.getNode();
-                            if (node.nodeName == 'PRE') {
-                                selection.setContent('\n', {format: 'raw'});
-                                return tinymce.dom.Event.cancel(e);
-                            } else if (te.isCrayon(node)) {
-                                // Only triggers for inline <span>, ignore enter in inline
-                                return tinymce.dom.Event.cancel(e);
-                            }
+                // Prevent <p> on enter, turn into \n
+                ed.on('keyDown', function (e) {
+                    var selection = ed.selection;
+                    if (e.keyCode == 13) {
+                        var node = selection.getNode();
+                        if (node.nodeName == 'PRE') {
+                            selection.setContent('\n', {format: 'raw'});
+                            return tinymce.dom.Event.cancel(e);
+                        } else if (te.isCrayon(node)) {
+                            // Only triggers for inline <span>, ignore enter in inline
+                            return tinymce.dom.Event.cancel(e);
                         }
-                    });
+                    }
+                });
 
-                    ed.onInit.add(function (ed) {
-                        CrayonTagEditor.bind(s.tinymce_button);
-                    });
+                // Remove onclick and call ourselves
+                var switch_html = $(s.switch_html);
+                switch_html.prop('onclick', null);
+                switch_html.click(function () {
+                    // Remove selected pre class when switching to HTML editor
+                    base.selectPreCSS(false);
+                    switchEditors.go('content', 'html');
+                });
 
-                    ed.addCommand('showCrayon', function () {
+                // Highlight selected
+                ed.on('nodeChange', function (event) {
+                    var n = event.element;
+                    if (n != currPre) {
+                        // We only care if we select another same object
+                        if (currPre) {
+                            // If we have a previous pre, remove it
+                            base.selectPreCSS(false);
+                            currPre = null;
+                        }
+                        if (te.isCrayon(n)) {
+                            // Add new pre
+                            currPre = n;
+                            base.selectPreCSS(true);
+                            base.setHighlight(true);
+                        } else {
+                            // No pre selected
+                            base.setHighlight(false);
+                        }
+                    }
+                });
+
+                ed.addButton(name, {
+                    // TODO add translation
+                    title: s.dialog_title_add,
+                    onclick: function () {
                         te.showDialog({
                             insert: function (shortcode) {
                                 ed.execCommand('mceInsertContent', 0, shortcode);
@@ -96,72 +136,10 @@
                             input: 'decode',
                             output: 'encode'
                         });
-                    });
-
-                    // Remove onclick and call ourselves
-                    var switch_html = $(s.switch_html);
-                    switch_html.prop('onclick', null);
-                    switch_html.click(function () {
-                        // Remove selected pre class when switching to HTML editor
-                        base.selectPreCSS(false);
-                        switchEditors.go('content', 'html');
-                    });
-
-                    // Highlight selected
-                    ed.onNodeChange.add(function (ed, cm, n, co) {
-                        if (n != currPre) {
-                            // We only care if we select another same object
-                            if (currPre) {
-                                // If we have a previous pre, remove it
-                                base.selectPreCSS(false);
-                                currPre = null;
-                            }
-                            if (te.isCrayon(n)) {
-                                // Add new pre
-                                currPre = n;
-                                base.selectPreCSS(true);
-                                base.setHighlight(true);
-                            } else {
-                                // No pre selected
-                                base.setHighlight(false);
-                            }
-//                            var tooltip = currPre ? s.dialog_title_edit : s.dialog_title_add;
-//                            $(s.tinymce_button).attr('title', tooltip);
-                        }
-                    });
-
-                    ed.onBeforeSetContent.add(function (ed, o) {
-                        // Remove all selected pre tags
-                        var content = $(o.content);
-                        var wrapper = $('<div>');
-                        content.each(function () {
-                            $(this).removeClass(s.css_selected);
-                            wrapper.append($(this).clone());
-                        });
-                        o.content = wrapper.html();
-                    });
-
-                    ed.addButton(name, {
-                        // TODO add translation
-                        title: s.dialog_title,
-                        cmd: 'showCrayon'
-                    });
-                },
-                createControl: function (n, cm) {
-                    return null;
-                },
-                getInfo: function () {
-                    return {
-                        longname: 'Crayon Syntax Highlighter',
-                        author: 'Aram Kocharyan',
-                        authorurl: 'http://aramk.com/',
-                        infourl: 'https://github.com/aramk/crayon-syntax-highlighter',
-                        version: "1.0"
-                    };
-                }
+                    }
+                });
             });
 
-            tinymce.PluginManager.add(name, tinymce.plugins.Crayon);
         };
 
     };
