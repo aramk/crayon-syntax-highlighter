@@ -6,6 +6,7 @@ checked
 params
 typeof
 sizeof
+await
 event
 this
 base
