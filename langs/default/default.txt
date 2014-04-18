@@ -20,7 +20,7 @@
     # C variants only: String *
     POINTER_TYPE:ENTITY (\b[a-z_]\w*\s*\*)
     
-    VARIABLE            (([A-Za-z_]\w*(?=\s*[=\[\.])))
+    VARIABLE            [A-Za-z_]\w*(?=\s*(?alt:operator.txt)|(?alt:symbol.txt)|$)
     IDENTIFIER          \b[A-Za-z_]\w*\b
     CONSTANT            (?<!\w)[0-9][\.\w]*
     OPERATOR            (?alt:operator.txt)
