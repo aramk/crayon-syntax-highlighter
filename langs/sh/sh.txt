@@ -5,7 +5,7 @@
     NAME                Shell
     VERSION             1.8.1
 
-    COMMENT             (#.*?$)
+    COMMENT             (?<!\${)(#.*?$)
     STRING              ((?<!\\)"[^\r\n]*?(?<!\\)")|((?<!\\)'[^\r\n]*?(?<!\\)')
     
     STATEMENT           (?default)|\b(?alt:statement.txt)\b
