@@ -41,6 +41,7 @@ clear
 ctags
 cxref
 delta
+egrep
 fuser
 iconv
 ipcrm
@@ -127,6 +128,7 @@ tee
 tty
 uux
 val
+vim
 who
 ar
 at
