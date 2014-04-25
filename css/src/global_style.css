@@ -151,9 +151,21 @@
     background: #ddebf2 !important;
 }
 
-/* .mce_crayon_tinymce_highlight span.mce_crayon_tinymce, */
+/* TinyMCE v4 */
 .mce_crayon_tinymce {
-    background: url(../images/crayon_tinymce.png) 0px 0px !important;
+    background: url(../images/crayon_tinymce.png) 0 0 !important;
+}
+
+/* TinyMCE v3 - deprecated */
+a.mce_crayon_tinymce {
+  background-position: 2px 0 !important;
+}
+.wp_themeSkin .mceButtonEnabled:hover span.mce_crayon_tinymce,
+.wp_themeSkin .mceButtonActive span.mce_crayon_tinymce {
+  background-position: -20px 0;
+}
+.wp_themeSkin span.mce_crayon_tinymce {
+  background: none !important;
 }
 
 #crayon-te-table {

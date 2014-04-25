@@ -49,7 +49,7 @@ class CrayonTagEditorWP {
                 'hl_css' => '#crayon-highlight',
                 'switch_html' => '#content-html',
                 'switch_tmce' => '#content-tmce',
-                'tinymce_button' => '.mce-i-crayon_tinymce',
+                'tinymce_button' => 'a.mce_crayon_tinymce,.mce-i-crayon_tinymce',
                 'submit_css' => '#crayon-te-ok',
                 'cancel_css' => '#crayon-te-cancel',
                 'content_css' => '#crayon-te-content',
