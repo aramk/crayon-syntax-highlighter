@@ -21,3 +21,5 @@ if
 in
 do
 is
+get
+set
