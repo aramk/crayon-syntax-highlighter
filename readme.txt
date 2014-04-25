@@ -274,6 +274,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.6.1 =
 * ADDED:
     * Sublime-text theme.
+* FIXED:
+    * C# improvements thanks to <a href="https://github.com/Meligy" target="_blank">Meligy</a>
 
 = 2.6.0 =
 * ADDED:
