@@ -65,6 +65,7 @@ uname
 unget
 write
 xargs
+bash
 comm
 date
 diff
