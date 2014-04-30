@@ -11,5 +11,3 @@ event
 this
 base
 new
-async
-await
