@@ -271,6 +271,12 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.6.1 =
+* ADDED:
+    * Sublime-text theme.
+* FIXED:
+    * C# improvements thanks to <a href="https://github.com/Meligy" target="_blank">Meligy</a>
+
 = 2.6.0 =
 * ADDED:
     * Delphi Web Script language (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>).

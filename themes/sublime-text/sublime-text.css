@@ -1,0 +1,174 @@
+/*
+Name: Sublime Text
+Description: Clean, crisp and colorful.
+Version: 1.1
+Author: khosite
+URL: http://khosite.com/
+*/
+.crayon-theme-sublime-text {
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #272822 !important;
+}
+.crayon-theme-sublime-text-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #fafafa !important;
+}
+.crayon-theme-sublime-text .crayon-table .crayon-nums {
+	background: #272822 !important;
+	color: #868686 !important;
+}
+.crayon-theme-sublime-text *::selection {
+	background: transparent !important;
+}
+.crayon-theme-sublime-text .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-sublime-text .crayon-striped-line {
+	background: #272822 !important;
+}
+.crayon-theme-sublime-text .crayon-striped-num {
+	background: #32322a !important;
+	color: #868686 !important;
+}
+.crayon-theme-sublime-text .crayon-marked-line {
+	background: #272822 !important;
+	border-width: 1px !important;
+	border-color: #272822 !important;
+}
+.crayon-theme-sublime-text .crayon-marked-num {
+	color: #868686 !important;
+	background: #272822 !important;
+	border-width: 1px !important;
+	border-color: #272822 !important;
+}
+.crayon-theme-sublime-text .crayon-marked-line.crayon-striped-line {
+	background: #272822 !important;
+}
+.crayon-theme-sublime-text .crayon-marked-num.crayon-striped-num {
+	background: #272822 !important;
+	color: #868686 !important;
+}
+.crayon-theme-sublime-text .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-sublime-text .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-sublime-text .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-sublime-text .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-sublime-text .crayon-info {
+	background: #272822 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #e6db5d !important;
+	border-bottom-style: solid !important;
+	color: #e6db5d !important;
+}
+.crayon-theme-sublime-text .crayon-toolbar {
+	background: #DDD !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #BBB !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-sublime-text .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-sublime-text .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-sublime-text .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-sublime-text .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-sublime-text .crayon-button {
+	background-color: #DDD !important;
+}
+.crayon-theme-sublime-text .crayon-button:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-sublime-text .crayon-button.crayon-pressed:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-sublime-text .crayon-button.crayon-pressed {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-sublime-text .crayon-button.crayon-pressed:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-sublime-text .crayon-button:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-c {
+	color: #75715e !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-s {
+	color: #e6db5d !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-p {
+	color: #b85c00 !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-ta {
+	color: #f8f8f2 !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-k {
+	color: #66d9ef !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-st {
+	color: #66d9ef !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-r {
+	color: #66d9ef !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-t {
+	color: #a6e22d !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-m {
+	color: #66d9ef !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-i {
+	color: #f8f8f2 !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-e {
+	color: #f92650 !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-v {
+	color: #f8f8f2 !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-cn {
+	color: #ae81ff !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-o {
+	color: #f8f8f2 !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-sy {
+	color: #f8f8f2 !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-f {
+	color: #999 !important;
+}
+.crayon-theme-sublime-text .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
+.crayon-theme-sublime-text .crayon-pre {
+	color: #f8f8f2 !important;
+}

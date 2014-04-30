@@ -24,3 +24,5 @@ void
 long
 enum
 int
+dynamic
+var
