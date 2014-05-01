@@ -28,7 +28,7 @@ class CrayonUtil {
             $escape_regex = strpos($opts, 'r') !== FALSE;
             $clean_commments = strpos($opts, 'c') !== FALSE;
             $return_string = strpos($opts, 's') !== FALSE;
-//			$escape_hash = strpos($opts, 'h') !== FALSE;
+//          $escape_hash = strpos($opts, 'h') !== FALSE;
         } else {
             $lowercase = $whitespace = $escape_regex = $clean_commments = $return_string = /*$escape_hash =*/
                 FALSE;
@@ -56,10 +56,10 @@ class CrayonUtil {
         if ($escape_regex) {
             for ($i = 0; $i < count($lines); $i++) {
                 $lines[$i] = self::esc_regex($lines[$i]);
-//				if ($escape_hash || true) {
+//              if ($escape_hash || true) {
                 // If we have used \#, then we don't want it to become \\#
                 $lines[$i] = preg_replace('|\\\\\\\\#|', '\#', $lines[$i]);
-//				}
+//              }
             }
         }
 
@@ -525,7 +525,8 @@ EOT;
 
     // Returns the current HTTP URL
     public static function current_url() {
-        return "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $p = self::isSecure() ? "https://" : "http://";
+        return $p . $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI];
     }
 
     // Removes crayon plugin path from absolute path
@@ -564,11 +565,23 @@ EOT;
         return str_replace('/', '\\', trim(strval($url)));
     }
 
+    // returns 'true' or 'false' depending on whether this PHP file was served over HTTPS
+    public static function isSecure() {
+        return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443;
+    }
+    
+    public static function startsWith($haystack, $needle) {
+        return substr($haystack, 0, strlen($needle)) === $needle;
+    }
+
     // Append either forward slash or backslash based on environment to paths
     public static function path_slash($path) {
         $path = self::pathf($path);
         if (!empty($path) && !preg_match('#\/$#', $path)) {
             $path .= '/';
+        }
+        if (self::startsWith($path, 'http://') && self::isSecure()) {
+            $path = str_replace('http://', 'https://', $path);
         }
         return $path;
     }
@@ -582,6 +595,9 @@ EOT;
         $url = self::pathf($url);
         if (!empty($url) && !preg_match('#\/$#', $url)) {
             $url .= '/';
+        }
+        if (self::startsWith($url, 'http://') && self::isSecure()) {
+            $url = str_replace('http://', 'https://', $url);
         }
         return $url;
     }
