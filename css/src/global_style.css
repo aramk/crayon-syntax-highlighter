@@ -151,9 +151,15 @@
     background: #ddebf2 !important;
 }
 
+.crayon-tag-editor-button-wrapper {
+    display: inline-block;
+}
+
 /* TinyMCE v4 */
 .mce_crayon_tinymce {
     background: url(../images/crayon_tinymce.png) 0 0 !important;
+    padding: 0 !important;
+    margin: 2px 3px !important;
 }
 
 /* TinyMCE v3 - deprecated */

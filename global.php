@@ -86,6 +86,8 @@ define('CRAYON_CSS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jque
 define('CRAYON_JS_JQUERY_COLORPICKER', CRAYON_JS_DIR . 'jquery-colorpicker/jquery.colorpicker.js');
 define('CRAYON_JS_TINYCOLOR', CRAYON_JS_DIR . 'tinycolor-min.js');
 define('CRAYON_TAG_EDITOR_JS', 'crayon_tag_editor.js');
+define('CRAYON_COLORBOX_JS', 'colorbox/jquery.colorbox-min.js');
+define('CRAYON_COLORBOX_CSS', 'colorbox/colorbox.css');
 define('CRAYON_TAG_EDITOR_PHP', CRAYON_TAG_EDITOR_PATH . 'crayon_tag_editor_wp.class.php');
 define('CRAYON_TINYMCE_JS', 'crayon_tinymce.js');
 define('CRAYON_QUICKTAGS_JS', 'crayon_qt.js');

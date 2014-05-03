@@ -276,6 +276,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Sublime-text theme.
 * FIXED:
     * C# improvements thanks to <a href="https://github.com/Meligy" target="_blank">Meligy</a>
+    * Admin uses HTTPS for requests when available (thanks to <a href="https://github.com/taoeffect" target="_blank">taoeffect</a>)
+    * Tag Editor button failing to function Firefox.
 
 = 2.6.0 =
 * ADDED:

@@ -50,6 +50,7 @@ class CrayonTagEditorWP {
                 'switch_html' => '#content-html',
                 'switch_tmce' => '#content-tmce',
                 'tinymce_button' => 'a.mce_crayon_tinymce,.mce-i-crayon_tinymce',
+                'tinymce_button_unique' => 'mce_crayon_tinymce',
                 'submit_css' => '#crayon-te-ok',
                 'cancel_css' => '#crayon-te-cancel',
                 'content_css' => '#crayon-te-content',
@@ -73,15 +74,16 @@ class CrayonTagEditorWP {
     public static function enqueue_resources() {
         global $CRAYON_VERSION;
         self::init_settings();
-        $path = dirname(dirname(__FILE__));
 
         if (CRAYON_MINIFY) {
-            wp_deregister_script('crayon_js_min');
-            wp_enqueue_script('crayon_js_min', plugins_url(CRAYON_JS_TE_MIN, dirname(dirname(__FILE__))), array('jquery', 'quicktags'), $CRAYON_VERSION);
+            wp_deregister_script('crayon_js');
+            wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS_TE_MIN, dirname(dirname(__FILE__))), array('jquery', 'quicktags'), $CRAYON_VERSION);
             CrayonSettingsWP::init_js_settings();
-            wp_localize_script('crayon_js_min', 'CrayonTagEditorSettings', self::$settings);
+            wp_localize_script('crayon_js', 'CrayonTagEditorSettings', self::$settings);
         } else {
-            wp_enqueue_script('crayon_te_js', plugins_url(CRAYON_TAG_EDITOR_JS, __FILE__), array('crayon_util_js', 'thickbox'), $CRAYON_VERSION);
+            wp_enqueue_script('crayon_colorbox_js', plugins_url(CRAYON_COLORBOX_JS, __FILE__), array('jquery'), $CRAYON_VERSION);
+            wp_enqueue_style('crayon_colorbox_css', plugins_url(CRAYON_COLORBOX_CSS, __FILE__), array(), $CRAYON_VERSION);
+            wp_enqueue_script('crayon_te_js', plugins_url(CRAYON_TAG_EDITOR_JS, __FILE__), array('crayon_util_js', 'crayon_colorbox_js'), $CRAYON_VERSION);
             wp_enqueue_script('crayon_qt_js', plugins_url(CRAYON_QUICKTAGS_JS, __FILE__), array('quicktags', 'crayon_te_js'), $CRAYON_VERSION, TRUE);
             wp_localize_script('crayon_te_js', 'CrayonTagEditorSettings', self::$settings);
             CrayonSettingsWP::other_scripts();

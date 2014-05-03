@@ -96,7 +96,7 @@ class CrayonSettingsWP {
         self::init_js_settings();
 
         if (is_admin()) {
-            wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_js_min', 'wpdialogs'), $CRAYON_VERSION);
+            wp_enqueue_script('crayon_admin_js', plugins_url(CRAYON_JS_ADMIN, __FILE__), array('jquery', 'crayon_js', 'wpdialogs'), $CRAYON_VERSION);
             self::init_admin_js_settings();
         }
     }
@@ -138,8 +138,8 @@ class CrayonSettingsWP {
             );
         }
         if (CRAYON_MINIFY) {
-            wp_localize_script('crayon_js_min', 'CrayonSyntaxSettings', self::$js_settings);
-            wp_localize_script('crayon_js_min', 'CrayonSyntaxStrings', self::$js_strings);
+            wp_localize_script('crayon_js', 'CrayonSyntaxSettings', self::$js_settings);
+            wp_localize_script('crayon_js', 'CrayonSyntaxStrings', self::$js_strings);
         } else {
             wp_localize_script('crayon_util_js', 'CrayonSyntaxSettings', self::$js_settings);
             wp_localize_script('crayon_util_js', 'CrayonSyntaxStrings', self::$js_strings);
