@@ -37,34 +37,14 @@
                 isInit = true;
                 base.init();
             }
-
-//            var $wrappers = $();
-//            $(button).wrap(function () {
-//                var $wrapper = $('<a></a>').attr('href', s.content_css);
-//                console.error($wrapper);
-//                $wrappers.add($wrapper);
-//                return $wrapper;
-//            });
-
-//            console.error('s.content_css', s.content_css);
-
-//            console.error('$wrappers', $wrappers);
             var $buttons = $(buttonCls);
-            console.error('button', $buttons);
-//            console.error('button', $button[0].outerHTML);
-//            console.error('button', );
-//            $wrappers.hide();
-
             $buttons.each(function (i, button) {
                 var $button = $(button);
                 var $wrapper = $('<a class="crayon-tag-editor-button-wrapper"></a>').attr('href', s.content_css);
-//                console.error('$button', $button);
-//                console.error('$wrapper', $wrapper);
                 $button.after($wrapper);
                 $wrapper.append($button);
 
                 $wrapper.colorbox({
-//                $wrappers.colorbox({
                     inline: true,
                     width: 690,
                     height: '90%',
@@ -73,7 +53,6 @@
                     transition: 'none',
                     className: 'crayon-colorbox',
                     onOpen: function () {
-                        console.error('open');
                         $(this.outer).prepend($(s.bar_content));
                     },
                     onComplete: function () {
@@ -86,29 +65,6 @@
             });
 
             base.loadDialog();
-//            setTimeout(function () {
-//                $(button).colorbox({
-////                $wrappers.colorbox({
-//                    inline: true,
-//                    href: s.content_css,
-//                    width: 690,
-//                    height: '90%',
-//                    closeButton: false,
-//                    fixed: true,
-//                    transition: 'none',
-//                    className: 'crayon-colorbox',
-//                    onOpen: function () {
-//                        console.error('open');
-//                        $(this.outer).prepend($(s.bar_content));
-//                    },
-//                    onComplete: function () {
-//                        $(s.code_css).focus();
-//                    },
-//                    onCleanup: function () {
-//                        $(s.bar).prepend($(s.bar_content));
-//                    }
-//                });
-//            }, 3000);
         };
 
         base.hide = function () {
