@@ -91,7 +91,7 @@ class CrayonHighlighter {
 		// If reading the url locally produced an error or failed, attempt remote request
 		if ($local == FALSE) {
 			if (empty($scheme)) {
-				$url = 'http://' . $url;
+				$url = (CrayonUtil::isSecure() ? 'https://' : 'http://') . $url;
 			}
 			$http_code = 0;
 			// If available, use the built in wp remote http get function, we don't need SSL

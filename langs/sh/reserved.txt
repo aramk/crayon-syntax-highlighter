@@ -41,6 +41,7 @@ clear
 ctags
 cxref
 delta
+egrep
 fuser
 iconv
 ipcrm
@@ -64,6 +65,7 @@ uname
 unget
 write
 xargs
+bash
 comm
 date
 diff
@@ -127,6 +129,7 @@ tee
 tty
 uux
 val
+vim
 who
 ar
 at
