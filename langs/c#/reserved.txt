@@ -6,9 +6,8 @@ checked
 params
 typeof
 sizeof
+await
 event
 this
 base
 new
-async
-await

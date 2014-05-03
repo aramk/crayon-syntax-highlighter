@@ -5,8 +5,8 @@
     NAME                Shell
     VERSION             1.8.1
 
-    COMMENT             (?default)
-    PREPROCESSOR		(?default)
+    PREPROCESSOR        (\A^#!.*?$)
+    COMMENT             (?<!\${)(#.*?$)
     STRING              ((?<!\\)"[^\r\n]*?(?<!\\)")|((?<!\\)'[^\r\n]*?(?<!\\)')
     
     STATEMENT           (?default)|\b(?alt:statement.txt)\b
