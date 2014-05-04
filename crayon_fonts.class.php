@@ -26,7 +26,7 @@ class CrayonFonts extends CrayonUserResourceCollection {
                 CrayonLog::debug($this->user_directory(), "FONT USER DIR");
             }
         } else {
-            CrayonLog::syslog("Upload directory is empty: " . $upload);
+            CrayonLog::syslog("Upload directory is empty: " . $upload . " cannot load fonts.");
         }
         CrayonLog::debug($this->directory());
         CrayonLog::debug($this->user_directory());

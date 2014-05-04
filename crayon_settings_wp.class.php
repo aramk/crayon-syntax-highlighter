@@ -1,13 +1,14 @@
 <?php
-require_once ('global.php');
-require_once (CRAYON_LANGS_PHP);
-require_once (CRAYON_THEMES_PHP);
-require_once (CRAYON_FONTS_PHP);
-require_once (CRAYON_SETTINGS_PHP);
+require_once('global.php');
+require_once(CRAYON_LANGS_PHP);
+require_once(CRAYON_THEMES_PHP);
+require_once(CRAYON_FONTS_PHP);
+require_once(CRAYON_SETTINGS_PHP);
 
 /*  Manages global settings within WP and integrates them with CrayonSettings.
  CrayonHighlighter and any non-WP classes will only use CrayonSettings to separate
 the implementation of global settings and ensure any system can use them. */
+
 class CrayonSettingsWP {
     // Properties and Constants ===============================================
 
@@ -194,49 +195,48 @@ class CrayonSettingsWP {
         }
         ?>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            CrayonSyntaxAdmin.init();
-        });
-    </script>
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                CrayonSyntaxAdmin.init();
+            });
+        </script>
 
-    <div id="crayon-main-wrap" class="wrap">
+        <div id="crayon-main-wrap" class="wrap">
 
-        <div id="icon-options-general" class="icon32">
-            <br>
-        </div>
-        <h2>
-            Crayon Syntax Highlighter
-            <?php crayon_e('Settings'); ?>
-        </h2>
-        <?php self::help(); ?>
-        <form id="crayon-settings-form" action="options.php" method="post">
-            <?php
-            settings_fields(self::FIELDS);
-            ?>
+            <div id="icon-options-general" class="icon32">
+                <br>
+            </div>
+            <h2>
+                Crayon Syntax Highlighter
+                <?php crayon_e('Settings'); ?>
+            </h2>
+            <?php self::help(); ?>
+            <form id="crayon-settings-form" action="options.php" method="post">
+                <?php
+                settings_fields(self::FIELDS);
+                ?>
 
-            <?php
-            do_settings_sections(self::SETTINGS);
-            ?>
+                <?php
+                do_settings_sections(self::SETTINGS);
+                ?>
 
-            <p class="submit">
-                <input type="submit" name="submit" id="submit" class="button-primary"
-                       value="<?php
+                <p class="submit">
+                    <input type="submit" name="submit" id="submit" class="button-primary"
+                           value="<?php
                            crayon_e('Save Changes');
-                           ?>"/><span style="width:10px; height: 5px; float:left;"></span><input type="submit"
-                                                                                                 name="<?php
-                                                                                                     echo self::OPTIONS;
-                                                                                                     ?>[reset]"
-                                                                                                 id="reset"
-                                                                                                 class="button-primary"
-                                                                                                 value="<?php
-                                                                                                     crayon_e('Reset Settings');
-                                                                                                     ?>"/>
-            </p>
-        </form>
-    </div>
+                           ?>"/><span style="width:10px; height: 5px; float:left;"></span>
+                    <input type="submit"
+                           name="<?php echo self::OPTIONS; ?>[reset]"
+                           id="reset"
+                           class="button-primary"
+                           value="<?php
+                           crayon_e('Reset Settings');
+                           ?>"/>
+                </p>
+            </form>
+        </div>
 
-    <div id="crayon-theme-editor-wrap" class="wrap"></div>
+        <div id="crayon-theme-editor-wrap" class="wrap"></div>
 
     <?php
     }
@@ -262,6 +262,7 @@ class CrayonSettingsWP {
             CrayonGlobalSettings::site_path(ABSPATH);
             CrayonGlobalSettings::plugin_path(plugins_url('', __FILE__));
             $upload = wp_upload_dir();
+
             CrayonLog::debug($upload, "WP UPLOAD FUNCTION");
             CrayonGlobalSettings::upload_path(CrayonUtil::path_slash($upload['basedir']) . CRAYON_DIR);
             CrayonGlobalSettings::upload_url($upload['baseurl'] . '/' . CRAYON_DIR);
@@ -844,7 +845,7 @@ class CrayonSettingsWP {
 
     public static function show_langs() {
         CrayonSettingsWP::load_settings();
-        require_once (CRAYON_PARSER_PHP);
+        require_once(CRAYON_PARSER_PHP);
         if (($langs = CrayonParser::parse_all()) != FALSE) {
             $langs = CrayonLangs::sort_by_name($langs);
             echo '<table class="crayon-table" cellspacing="0" cellpadding="0"><tr class="crayon-table-header">',
@@ -1024,18 +1025,18 @@ class Human {
         }
         // Preview Box
         ?>
-    <div id="crayon-theme-panel">
-        <div id="crayon-theme-info"></div>
-        <div id="crayon-live-preview-wrapper">
-            <div id="crayon-live-preview-inner">
-                <div id="crayon-live-preview"></div>
-                <div id="crayon-preview-info">
-                    <?php printf(crayon__('Change the %1$sfallback language%2$s to change the sample code or %3$schange it manually%4$s. Lines 5-7 are marked.'), '<a href="#langs">', '</a>', '<a id="crayon-change-code" href="#">', '</a>'); ?>
+        <div id="crayon-theme-panel">
+            <div id="crayon-theme-info"></div>
+            <div id="crayon-live-preview-wrapper">
+                <div id="crayon-live-preview-inner">
+                    <div id="crayon-live-preview"></div>
+                    <div id="crayon-preview-info">
+                        <?php printf(crayon__('Change the %1$sfallback language%2$s to change the sample code or %3$schange it manually%4$s. Lines 5-7 are marked.'), '<a href="#langs">', '</a>', '<a id="crayon-change-code" href="#">', '</a>'); ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <?php
+        <?php
         // Preview checkbox
         self::checkbox(array(CrayonSettings::PREVIEW, crayon__('Enable Live Preview')), FALSE, FALSE);
         echo '</select><span class="crayon-span-10"></span>';
@@ -1208,23 +1209,23 @@ class Human {
         $date = $CRAYON_DATE;
         $developer = '<strong>' . crayon__('Developer') . ':</strong> ' . '<a href="' . $CRAYON_AUTHOR_SITE . '" target="_blank">' . $CRAYON_AUTHOR . '</a>';
         $translators = '<strong>' . crayon__('Translators') . ':</strong> ' .
-                '
-                Arabic (<a href="http://djennadhamza.eb2a.com/" target="_blank">Djennad Hamza</a>),
-                Chinese (<a href="http://smerpup.com/" target="_blank">Dezhi Liu</a>, <a href="http://neverno.me/" target="_blank">Jash Yin</a>),
-				Dutch (<a href="http://www.dreamdesignsolutions.nl/" target="_blank">Robin Roelofsen</a>, <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>),
-				French (<a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>),
-				German (<a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&#223;</a>),
-				Italian (<a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>),
-				Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
-				Korean (<a href="https://github.com/dokenzy" target="_blank">dokenzy</a>),
-				Lithuanian (<a href="http://www.host1free.com" target="_blank">Vincent G</a>),
-				Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
-				Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
-                Slovak (<a href="http://webhostinggeeks.com/blog/" target="_blank">http://webhostinggeeks.com/</a>),
-                Slovenian (<a href="http://jodlajodla.si/" target="_blank">Jan Su&#353;nik</a>),
-				Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>),
-				Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
-				Turkish (<a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)';
+            '
+            Arabic (<a href="http://djennadhamza.eb2a.com/" target="_blank">Djennad Hamza</a>),
+            Chinese (<a href="http://smerpup.com/" target="_blank">Dezhi Liu</a>, <a href="http://neverno.me/" target="_blank">Jash Yin</a>),
+            Dutch (<a href="http://www.dreamdesignsolutions.nl/" target="_blank">Robin Roelofsen</a>, <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>),
+            French (<a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>),
+            German (<a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&#223;</a>),
+            Italian (<a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>),
+            Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
+            Korean (<a href="https://github.com/dokenzy" target="_blank">dokenzy</a>),
+            Lithuanian (<a href="http://www.host1free.com" target="_blank">Vincent G</a>),
+            Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
+            Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
+            Slovak (<a href="http://webhostinggeeks.com/blog/" target="_blank">http://webhostinggeeks.com/</a>),
+            Slovenian (<a href="http://jodlajodla.si/" target="_blank">Jan Su&#353;nik</a>),
+            Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>),
+            Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
+            Turkish (<a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)';
 
         $links = '
 	 			<a id="docs-icon" class="small-icon" title="Documentation" href="' . $CRAYON_WEBSITE . '" target="_blank"></a>

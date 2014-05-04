@@ -29,7 +29,7 @@ class CrayonThemes extends CrayonUserResourceCollection {
                 CrayonLog::debug($this->user_directory(), "THEME USER DIR");
             }
         } else {
-            CrayonLog::syslog("Upload directory is empty: " . $upload);
+            CrayonLog::syslog("Upload directory is empty: " . $upload . " cannot load themes.");
         }
         CrayonLog::debug($this->directory());
         CrayonLog::debug($this->user_directory());

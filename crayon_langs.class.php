@@ -40,7 +40,7 @@ class CrayonLangs extends CrayonUserResourceCollection {
                 CrayonLog::debug($this->user_directory(), "LANG USER DIR");
             }
         } else {
-            CrayonLog::syslog("Upload directory is empty: " . $upload);
+            CrayonLog::syslog("Upload directory is empty: " . $upload . " cannot load languages.");
         }
         CrayonLog::debug($this->directory());
         CrayonLog::debug($this->user_directory());

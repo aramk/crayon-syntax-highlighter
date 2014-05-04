@@ -547,6 +547,7 @@ class CrayonWP {
     }
 
     private static function init_tags_regex($force = FALSE, $flags = NULL, &$tags_regex = NULL) {
+        CrayonSettingsWP::load_settings();
         self::init_tag_bits();
 
         // Default output
