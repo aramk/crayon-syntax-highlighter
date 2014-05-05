@@ -6,7 +6,8 @@
     VERSION             1.8.2
 
     COMMENT             ((?<!`)#.*?$)|((?<!`)<#.*?(?<!`)#>)
-    STRING              ((?<!`)".*?(?<!`)")|((?<!`)'.*?(?<!`)')|((?<!`)(@\".*?^\s*(?<!`)\"@))
+    HERESTRING:STRING   ((?<!`)(@\".*?^\s*(?<!`)\"@))|((?<!`)(@\'.*?^\s*(?<!`)\'@))
+    STRING              ((?<!`)".*?(?<!`)")|((?<!`)'.*?(?<!`)')
         
     FUNCTIONS:RESERVED  (\b(?alt:reserved.txt)\b)|((?-i)[A-Z]\w+-[A-Z]\w+(?i))
     STATEMENT           \b(?alt:statement.txt)\b
