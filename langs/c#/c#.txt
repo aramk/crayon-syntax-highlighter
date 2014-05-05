@@ -5,10 +5,9 @@
     NAME                C#
     VERSION             1.8.1
 
-    #                   single-line    | multi-line
-    COMMENT             ((?<!`)(#.*?$))|((?<!`)(<#*.*?(?<!`)#>))
-    #                   default   | unescaped here-string
-    STRING              (?default)|((?<!`)(@\".*?^\s*(?<!`)\"@))
+    COMMENT             (?default)
+    PREPROCESSOR		(?default)
+    STRING              (?default)
     
     STATEMENT           \b(?alt:statement.txt)\b
     RESERVED            \b(?alt:reserved.txt)\b
