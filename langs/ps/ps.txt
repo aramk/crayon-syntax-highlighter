@@ -5,8 +5,8 @@
     NAME                PowerShell
     VERSION             1.8.2
 
-    COMMENT             (#.*?$)|(<#.*#>)
-    STRING              (?default)
+    COMMENT             ((?<!`)#.*?$)|((?<!`)<#.*?(?<!`)#>)
+    STRING              ((?<!`)".*?(?<!`)")|((?<!`)'.*?(?<!`)')|((?<!`)(@\".*?^\s*(?<!`)\"@))
         
     FUNCTIONS:RESERVED  (\b(?alt:reserved.txt)\b)|((?-i)[A-Z]\w+-[A-Z]\w+(?i))
     STATEMENT           \b(?alt:statement.txt)\b
