@@ -6,16 +6,19 @@
     VERSION             1.8.2
 
     COMMENT             ((?<!`)#.*?$)|((?<!`)<#.*?(?<!`)#>)
-    STRING              ((?<!`)".*?(?<!`)")|((?<!`)'.*?(?<!`)')|((?<!`)(@\".*?^\s*(?<!`)\"@))
+    HERESTRING:STRING   ((?<!`)(@\".*?^\s*(?<!`)\"@))|((?<!`)(@\'.*?^\s*(?<!`)\'@))
+    STRING              ((?<!`)".*?(?<!`)")|((?<!`)'.*?(?<!`)')
         
     FUNCTIONS:RESERVED  (\b(?alt:reserved.txt)\b)|((?-i)[A-Z]\w+-[A-Z]\w+(?i))
     STATEMENT           \b(?alt:statement.txt)\b
-    TYPE				\b(?alt:type.txt)\b
+    TYPE                \b(?alt:type.txt)\b
     
     ENTITY              (?default)
     VARIABLE            \$[A-Za-z_]\w*\b
-    OPTION:VARIABLE		-\w+\b
+    OPTION:VARIABLE     (?default)
     IDENTIFIER          (?default)
-    CONSTANT            (?default)
+    CONSTANT            -\w+\b
     OPERATOR            (?default)
     SYMBOL              (?default)
+
+#// -\w+\b
