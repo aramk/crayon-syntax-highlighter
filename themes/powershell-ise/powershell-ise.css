@@ -1,0 +1,174 @@
+/*
+Name: PowerShell ISE
+Description: PowerShell ISE Light Editor Theme Replica
+Version: 0.2
+Author: Devin Lanei
+Url: http://itfiend.com/
+*/
+.crayon-theme-powershell-ise {
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #ffffff !important;
+}
+.crayon-theme-powershell-ise-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #ffffff !important;
+}
+.crayon-theme-powershell-ise .crayon-table .crayon-nums {
+	background: #cccccc !important;
+	color: #8ac1f8 !important;
+}
+.crayon-theme-powershell-ise *::selection {
+	background: transparent !important;
+}
+.crayon-theme-powershell-ise .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-powershell-ise .crayon-striped-line {
+	background: #ffffff !important;
+}
+.crayon-theme-powershell-ise .crayon-striped-num {
+	background: #ffffff !important;
+	color: #8ac1f8 !important;
+}
+.crayon-theme-powershell-ise .crayon-marked-line {
+	background: #d7dfe3 !important;
+	border-width: 1px !important;
+	border-color: #ffffff !important;
+}
+.crayon-theme-powershell-ise .crayon-marked-num {
+	color: #8ac1f8 !important;
+	background: #ffffff !important;
+	border-width: 1px !important;
+	border-color: #ffffff !important;
+}
+.crayon-theme-powershell-ise .crayon-marked-line.crayon-striped-line {
+	background: #ffffff !important;
+}
+.crayon-theme-powershell-ise .crayon-marked-num.crayon-striped-num {
+	background: #ffffff !important;
+	color: #8ac1f8 !important;
+}
+.crayon-theme-powershell-ise .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-powershell-ise .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-powershell-ise .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-powershell-ise .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-powershell-ise .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-powershell-ise .crayon-toolbar {
+	background: #DDD !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #BBB !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-powershell-ise .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-powershell-ise .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-powershell-ise .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-powershell-ise .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-powershell-ise a.crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-powershell-ise a.crayon-button:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-powershell-ise a.crayon-button.crayon-pressed:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-powershell-ise a.crayon-button.crayon-pressed {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-powershell-ise a.crayon-button.crayon-pressed:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-powershell-ise a.crayon-button:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-c {
+	color: #006400 !important;//comments
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-s {
+	color: #8b0000 !important;//strings
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-p {
+	color: #b85c00 !important;
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-k {
+	color: #3215eb !important;
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-st {
+	color: #00008b !important;//foreach
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-r {
+	color: #0000ff !important;//command
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-t {
+	color: #000080 !important;//switch in (), commands in []
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-m {
+	color: #3215eb !important;
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-i {
+	color: #8a2be2 !important;//switch values, ().statements, [System.Math]:
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-e {
+	color: #000000 !important;//adds/round/Pow, occasionally backtick switch text, affects backticked properties
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-v {
+	color: #ff4500 !important;//variables
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-cn {
+	color: #000080 !important;//Crayon Constant, assigned to Switches
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-o {
+	color: #a9a9a9 !important;
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-f {
+	color: #ffffff !important;
+}
+.crayon-theme-powershell-ise .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
+.crayon-theme-powershell-ise .crayon-pre {
+	color: #800080 !important;
+}
