@@ -1,7 +1,7 @@
 /*
-Name: VS2012
-Description: PowerShell ISE
-Version: 0.1
+Name: PowerShell ISE
+Description: PowerShell ISE Light Editor Theme Replica
+Version: 0.2
 Author: Devin Lanei
 Url: http://itfiend.com/
 */
@@ -19,7 +19,7 @@ Url: http://itfiend.com/
 	background: #ffffff !important;
 }
 .crayon-theme-powershell-ise .crayon-table .crayon-nums {
-	background: #ffffff !important;
+	background: #cccccc !important;
 	color: #8ac1f8 !important;
 }
 .crayon-theme-powershell-ise *::selection {
@@ -145,7 +145,7 @@ Url: http://itfiend.com/
 	color: #8a2be2 !important;//switch values, ().statements, [System.Math]:
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-e {
-	color: #000000 !important;//adds/round/Pow, occasionally backtick switch text
+	color: #000000 !important;//adds/round/Pow, occasionally backtick switch text, affects backticked properties
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-v {
 	color: #ff4500 !important;//variables
@@ -154,7 +154,7 @@ Url: http://itfiend.com/
 	color: #000080 !important;//Crayon Constant, assigned to Switches
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-o {
-	color: #006fe0 !important;
+	color: #a9a9a9 !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-sy {
 	color: #333 !important;
@@ -168,4 +168,7 @@ Url: http://itfiend.com/
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-h {
 	color: #006fe0 !important;
+}
+.crayon-theme-powershell-ise .crayon-pre {
+	color: #800080 !important;
 }
