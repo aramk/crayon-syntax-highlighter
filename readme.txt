@@ -271,6 +271,11 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.6.2 =
+* FIXED:
+    * Reduced loading times by lazily loading Tag Editor content, which was parsing all languages to populate the dropdown.
+    * Added more debug statements to log issues with loading resources and parsing languages.
+
 = 2.6.1 =
 * ADDED:
     * Sublime-text theme.

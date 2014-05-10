@@ -26,10 +26,31 @@
         // CSS
         var dialog, code, clear, submit, cancel;
 
+        var colorboxSettings = {
+            inline: true,
+            width: 690,
+            height: '90%',
+            closeButton: false,
+            fixed: true,
+            transition: 'none',
+            className: 'crayon-colorbox',
+            onOpen: function () {
+                $(this.outer).prepend($(s.bar_content));
+            },
+            onComplete: function () {
+                $(s.code_css).focus();
+            },
+            onCleanup: function () {
+                $(s.bar).prepend($(s.bar_content));
+            }
+        };
+
         base.init = function () {
             s = CrayonTagEditorSettings;
             gs = CrayonSyntaxSettings;
             util = CrayonUtil;
+            // This allows us to call $.colorbox and reload without needing a button click.
+            colorboxSettings.href = s.content_css;
         };
 
         base.bind = function (buttonCls) {
@@ -43,28 +64,8 @@
                 var $wrapper = $('<a class="crayon-tag-editor-button-wrapper"></a>').attr('href', s.content_css);
                 $button.after($wrapper);
                 $wrapper.append($button);
-
-                $wrapper.colorbox({
-                    inline: true,
-                    width: 690,
-                    height: '90%',
-                    closeButton: false,
-                    fixed: true,
-                    transition: 'none',
-                    className: 'crayon-colorbox',
-                    onOpen: function () {
-                        $(this.outer).prepend($(s.bar_content));
-                    },
-                    onComplete: function () {
-                        $(s.code_css).focus();
-                    },
-                    onCleanup: function () {
-                        $(s.bar).prepend($(s.bar_content));
-                    }
-                });
+                $wrapper.colorbox(colorboxSettings);
             });
-
-            base.loadDialog();
         };
 
         base.hide = function () {
@@ -73,11 +74,12 @@
         };
 
         // XXX Loads dialog contents
-        base.loadDialog = function () {
+        base.loadDialog = function (callback) {
             // Loaded once url is given
             if (!loaded) {
                 loaded = true;
             } else {
+                callback && callback();
                 return;
             }
             // Load the editor content
@@ -175,11 +177,24 @@
                     $(this).change(setting_change);
                     $(this).keyup(setting_change);
                 });
+                callback && callback();
             });
         };
 
         // XXX Displays the dialog.
         base.showDialog = function (args) {
+            var wasLoaded = loaded;
+            base.loadDialog(function () {
+                if (!wasLoaded) {
+                    // Forcefully load the colorbox. Otherwise it populates the content after opening the window and
+                    // never renders.
+                    $.colorbox(colorboxSettings);
+                }
+                base._showDialog.apply(base, arguments);
+            });
+        };
+
+        base._showDialog = function (args) {
             args = $.extend({
                 insert: null,
                 edit: null,
