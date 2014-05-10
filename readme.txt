@@ -274,11 +274,12 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.6.1 =
 * ADDED:
     * Sublime-text theme.
+    * PowerShell ISE Theme thanks to <a href="https://github.com/ITFiend" target="_blank">ITFiend</a>.
 * FIXED:
     * C# improvements thanks to <a href="https://github.com/Meligy" target="_blank">Meligy</a>
     * Admin uses HTTPS for requests when available (thanks to <a href="https://github.com/taoeffect" target="_blank">taoeffect</a>)
     * Tag Editor button failing to function Firefox.
-    * Shell language improvements thanks to <a href="https://github.com/mixProtocol" target="_blank">mixProtocol</a>.
+    * Shell language improvements thanks to <a href="https://github.com/mixProtocol" target="_blank">mixProtocol</a> and <a href="https://github.com/ITFiend" target="_blank">ITFiend</a>.
 
 = 2.6.0 =
 * ADDED:

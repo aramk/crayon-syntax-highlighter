@@ -15,7 +15,6 @@
     
     ENTITY              (?default)
     VARIABLE            \$[A-Za-z_]\w*\b
-    OPTION:VARIABLE     (?default)
     IDENTIFIER          (?default)
     CONSTANT            -\w+\b
     OPERATOR            (?default)
