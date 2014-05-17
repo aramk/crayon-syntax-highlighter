@@ -1225,7 +1225,8 @@ class Human {
             Slovenian (<a href="http://jodlajodla.si/" target="_blank">Jan Su&#353;nik</a>),
             Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>),
             Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
-            Turkish (<a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)';
+            Turkish (<a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>),
+            Ukrainian (Michael Yunat, <a href="http://getvoip.com/blog" target="_blank">http://getvoip.com</a>)';
 
         $links = '
 	 			<a id="docs-icon" class="small-icon" title="Documentation" href="' . $CRAYON_WEBSITE . '" target="_blank"></a>

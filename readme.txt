@@ -142,6 +142,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
 * Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
 * Turkish (thanks to <a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)
+* Ukrainian (thanks to <a href="http://getvoip.com/blog" target="_blank">http://getvoip.com</a>)
 * Help from translators at improving/adding to this list greatly appreciated!
 
 **Articles**
@@ -272,6 +273,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 2.6.2 =
+* ADDED:
+    * Ukrainian translation.
+
 * FIXED:
     * Reduced loading times by lazily loading Tag Editor content, which was parsing all languages to populate the dropdown.
     * Added more debug statements to log issues with loading resources and parsing languages.

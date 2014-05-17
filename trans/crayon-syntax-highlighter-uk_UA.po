@@ -1,0 +1,1128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: crayon-syntax-highlighter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-23 23:09+1000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"crayon__;crayon_n;crayon_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+# @ crayon-syntax-highlighte
+#: ../crayon_formatter.class.php:286
+msgid "Toggle Line Numbers"
+msgstr "Переключити номери рядків"
+
+#: ../crayon_formatter.class.php:290
+msgid "Toggle Plain Code"
+msgstr "Переключити на звичайний код"
+
+#: ../crayon_formatter.class.php:294
+msgid "Toggle Line Wrap"
+msgstr "Переключити лінію обгортки"
+
+#: ../crayon_formatter.class.php:298 ../crayon_formatter.class.php:302
+#, fuzzy
+msgid "Expand Code"
+msgstr "Розгорнути код"
+
+#: ../crayon_formatter.class.php:306
+msgid "Open Code In New Window"
+msgstr "Відкрити код відкриється в новому вікні"
+
+#: ../crayon_formatter.class.php:333
+msgid "Contains Mixed Languages"
+msgstr "Містить змішані мови"
+
+#: ../crayon_settings.class.php:150
+msgid "Hourly"
+msgstr "Щогодини"
+
+#: ../crayon_settings.class.php:150
+msgid "Daily"
+msgstr "Щодня"
+
+#: ../crayon_settings.class.php:151
+msgid "Weekly"
+msgstr "Щотижня"
+
+#: ../crayon_settings.class.php:151
+msgid "Monthly"
+msgstr "Щомісяця"
+
+#: ../crayon_settings.class.php:152
+msgid "Immediately"
+msgstr "Негайно"
+
+#: ../crayon_settings.class.php:163 ../crayon_settings.class.php:167
+msgid "Max"
+msgstr "Макс"
+
+#: ../crayon_settings.class.php:163 ../crayon_settings.class.php:167
+msgid "Min"
+msgstr "Мін"
+
+#: ../crayon_settings.class.php:163 ../crayon_settings.class.php:167
+msgid "Static"
+msgstr "Статичний"
+
+#: ../crayon_settings.class.php:165 ../crayon_settings.class.php:169
+#: ../crayon_settings_wp.class.php:774 ../crayon_settings_wp.class.php:783
+#: ../crayon_settings_wp.class.php:1059 ../crayon_settings_wp.class.php:1061
+msgid "Pixels"
+msgstr "Пікселі"
+
+#: ../crayon_settings.class.php:165 ../crayon_settings.class.php:169
+msgid "Percent"
+msgstr "Відсоток"
+
+#: ../crayon_settings.class.php:178
+msgid "None"
+msgstr "Жоден"
+
+#: ../crayon_settings.class.php:178
+msgid "Left"
+msgstr "Зліва"
+
+#: ../crayon_settings.class.php:178
+msgid "Center"
+msgstr "Центр"
+
+#: ../crayon_settings.class.php:178
+msgid "Right"
+msgstr "Зправо"
+
+#: ../crayon_settings.class.php:180 ../crayon_settings.class.php:204
+msgid "On MouseOver"
+msgstr "При наведенні курсору миші"
+
+#: ../crayon_settings.class.php:180 ../crayon_settings.class.php:186
+msgid "Always"
+msgstr "Завжди"
+
+#: ../crayon_settings.class.php:180 ../crayon_settings.class.php:186
+msgid "Never"
+msgstr "Ніколи"
+
+#: ../crayon_settings.class.php:186
+msgid "When Found"
+msgstr "коли знайдені"
+
+#: ../crayon_settings.class.php:204
+msgid "On Double Click"
+msgstr "При подвійному кліці"
+
+#: ../crayon_settings.class.php:204
+msgid "On Single Click"
+msgstr "На один клік"
+
+#: ../crayon_settings.class.php:204
+msgid "Disable Mouse Events"
+msgstr "Відключення події миші"
+
+#: ../crayon_settings.class.php:211
+msgid "An error has occurred. Please try again later."
+msgstr "Сталася помилка. Будь ласка, спробуйте пізніше."
+
+#: ../crayon_settings.class.php:227
+#, fuzzy
+msgid "Inline Tag"
+msgstr "Інлайн тегів"
+
+#: ../crayon_settings.class.php:227
+msgid "Block Tag"
+msgstr "Блок тегів"
+
+#: ../crayon_settings_wp.class.php:53 ../crayon_settings_wp.class.php:210
+#: ../crayon_settings_wp.class.php:1255
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:254
+msgid "Settings"
+msgstr "Налаштування"
+
+#: ../crayon_settings_wp.class.php:136
+#, php-format
+msgid "Press %s to Copy, %s to Paste"
+msgstr "Натиснути %s щоб копіювати, %s щоб вставити"
+
+#: ../crayon_settings_wp.class.php:137
+msgid "Click To Expand Code"
+msgstr "Натисніть, щоб збільшити код"
+
+#: ../crayon_settings_wp.class.php:179
+msgid "Prompt"
+msgstr "Підказка"
+
+#: ../crayon_settings_wp.class.php:180
+msgid "Value"
+msgstr "Значення"
+
+#: ../crayon_settings_wp.class.php:181
+msgid "Alert"
+msgstr "Тривога"
+
+#: ../crayon_settings_wp.class.php:182 ../crayon_settings_wp.class.php:920
+msgid "No"
+msgstr "Ні"
+
+#: ../crayon_settings_wp.class.php:183 ../crayon_settings_wp.class.php:920
+msgid "Yes"
+msgstr "Так"
+
+#: ../crayon_settings_wp.class.php:184
+msgid "Confirm"
+msgstr "Підтверджувати"
+
+#: ../crayon_settings_wp.class.php:185
+#, fuzzy
+msgid "Change Code"
+msgstr "Змінити код"
+
+#: ../crayon_settings_wp.class.php:193
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Ви не маєте достатньо прав для доступу до цієї сторінки."
+
+#: ../crayon_settings_wp.class.php:225
+msgid "Save Changes"
+msgstr "Зберегти зміни"
+
+#: ../crayon_settings_wp.class.php:233
+msgid "Reset Settings"
+msgstr "Скидання налаштувань"
+
+#: ../crayon_settings_wp.class.php:491
+msgid "General"
+msgstr "Загальний"
+
+#: ../crayon_settings_wp.class.php:492
+msgid "Theme"
+msgstr "Тема"
+
+#: ../crayon_settings_wp.class.php:493
+msgid "Font"
+msgstr "Шрифт"
+
+#: ../crayon_settings_wp.class.php:494
+msgid "Metrics"
+msgstr "Метрика"
+
+#: ../crayon_settings_wp.class.php:495
+#: ../util/theme-editor/theme_editor.php:299
+msgid "Toolbar"
+msgstr "Панель інструментів"
+
+#: ../crayon_settings_wp.class.php:496
+#: ../util/theme-editor/theme_editor.php:297
+msgid "Lines"
+msgstr "Лінії"
+
+#: ../crayon_settings_wp.class.php:497
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:214
+msgid "Code"
+msgstr "Код"
+
+#: ../crayon_settings_wp.class.php:498
+msgid "Tags"
+msgstr "Мітки"
+
+#: ../crayon_settings_wp.class.php:499
+msgid "Languages"
+msgstr "Мови"
+
+#: ../crayon_settings_wp.class.php:500
+msgid "Files"
+msgstr "Файли"
+
+#: ../crayon_settings_wp.class.php:501
+msgid "Posts"
+msgstr "Повідомленя"
+
+#: ../crayon_settings_wp.class.php:502
+msgid "Tag Editor"
+msgstr "Редактор тегів"
+
+#: ../crayon_settings_wp.class.php:503
+msgid "Misc"
+msgstr "Різне"
+
+#: ../crayon_settings_wp.class.php:506
+msgid "Debug"
+msgstr "Налагоджувати"
+
+#: ../crayon_settings_wp.class.php:507
+msgid "Errors"
+msgstr "Помилки"
+
+#: ../crayon_settings_wp.class.php:508
+msgid "Log"
+msgstr "Вхід"
+
+#: ../crayon_settings_wp.class.php:511
+msgid "About"
+msgstr "Про"
+
+#: ../crayon_settings_wp.class.php:751
+msgid "Height"
+msgstr "Висота"
+
+#: ../crayon_settings_wp.class.php:757
+msgid "Width"
+msgstr "Ширина"
+
+#: ../crayon_settings_wp.class.php:763
+msgid "Top Margin"
+msgstr "Верхнє поле"
+
+#: ../crayon_settings_wp.class.php:764
+msgid "Bottom Margin"
+msgstr "Нижнє поле"
+
+#: ../crayon_settings_wp.class.php:765 ../crayon_settings_wp.class.php:770
+msgid "Left Margin"
+msgstr "Ліве поле"
+
+#: ../crayon_settings_wp.class.php:766 ../crayon_settings_wp.class.php:770
+msgid "Right Margin"
+msgstr "Праве поле"
+
+#: ../crayon_settings_wp.class.php:776
+msgid "Horizontal Alignment"
+msgstr "Горизонтальне вирівнювання"
+
+#: ../crayon_settings_wp.class.php:779
+msgid "Allow floating elements to surround Crayon"
+msgstr "Дозволити плаваючі елементи, щоб оточити Crayon"
+
+#: ../crayon_settings_wp.class.php:781
+msgid "Inline Margin"
+msgstr "Inline Margin"
+
+#: ../crayon_settings_wp.class.php:789
+msgid "Display the Toolbar"
+msgstr "Відобразити панель інструментів"
+
+#: ../crayon_settings_wp.class.php:792
+msgid "Overlay the toolbar on code rather than push it down when possible"
+msgstr ""
+"Накладки панелі інструментів на коді, а не штовхати його вниз, коли це "
+"можливо"
+
+#: ../crayon_settings_wp.class.php:793
+msgid "Toggle the toolbar on single click when it is overlayed"
+msgstr "Переключіть панель інструментів в один клік, коли вона накладається"
+
+#: ../crayon_settings_wp.class.php:794
+msgid "Delay hiding the toolbar on MouseOut"
+msgstr "Затримка для приховання панелі інструментів при наведені миші"
+
+#: ../crayon_settings_wp.class.php:796
+msgid "Display the title when provided"
+msgstr "Відображення заголовка, коли це передбачено"
+
+#: ../crayon_settings_wp.class.php:797
+msgid "Display the language"
+msgstr "Мова дисплея"
+
+#: ../crayon_settings_wp.class.php:804
+msgid "Display striped code lines"
+msgstr "Відображення отриманого коду"
+
+#: ../crayon_settings_wp.class.php:805
+msgid "Enable line marking for important lines"
+msgstr "Включити лінію розмітки для важливих ліній"
+
+#: ../crayon_settings_wp.class.php:806
+msgid "Enable line ranges for showing only parts of code"
+msgstr "Включити діапазони лінії для показу тільки частини коду"
+
+#: ../crayon_settings_wp.class.php:807
+msgid "Display line numbers by default"
+msgstr "Відображати номери рядків за замовчуванням"
+
+#: ../crayon_settings_wp.class.php:808
+msgid "Enable line number toggling"
+msgstr "Включити перемикач номерів рядків"
+
+#: ../crayon_settings_wp.class.php:809
+msgid "Wrap lines by default"
+msgstr "Перенесення рядків за замовчуванням"
+
+#: ../crayon_settings_wp.class.php:810
+msgid "Enable line wrap toggling"
+msgstr "Включити лінії обтікання"
+
+#: ../crayon_settings_wp.class.php:811
+msgid "Start line numbers from"
+msgstr "Почніть номери рядків з"
+
+#: ../crayon_settings_wp.class.php:822
+msgid "When no language is provided, use the fallback"
+msgstr "Коли жодна мова не надається, використовуйте запасний варіант"
+
+#: ../crayon_settings_wp.class.php:828
+#, php-format
+msgid "%d language has been detected."
+msgstr "%d мова була видалена."
+
+#: ../crayon_settings_wp.class.php:829
+msgid "Parsing was successful"
+msgstr "Розбір був успішним"
+
+#: ../crayon_settings_wp.class.php:829
+msgid "Parsing was unsuccessful"
+msgstr "Розбір був невдалим"
+
+#: ../crayon_settings_wp.class.php:835
+#, php-format
+msgid "The selected language with id %s could not be loaded"
+msgstr "Вибрана мова з ідентифікатором %s не може бути завантажена"
+
+#: ../crayon_settings_wp.class.php:838
+msgid "Show Languages"
+msgstr "Показати Мови"
+
+#: ../crayon_settings_wp.class.php:874
+msgid "Show Crayon Posts"
+msgstr "Показати Crayon Повідомленя"
+
+#: ../crayon_settings_wp.class.php:875
+msgid "Refresh"
+msgstr "Оновити"
+
+#: ../crayon_settings_wp.class.php:900
+msgid "ID"
+msgstr "ID"
+
+#: ../crayon_settings_wp.class.php:900
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:191
+#: ../util/theme-editor/theme_editor.php:314
+msgid "Title"
+msgstr "Назва"
+
+#: ../crayon_settings_wp.class.php:900
+msgid "Posted"
+msgstr "Додано"
+
+#: ../crayon_settings_wp.class.php:900
+msgid "Modifed"
+msgstr "Модифіковано"
+
+#: ../crayon_settings_wp.class.php:900
+msgid "Contains Legacy Tags?"
+msgstr "Містить застарілі теги?"
+
+#: ../crayon_settings_wp.class.php:1015
+msgid "Edit"
+msgstr "Редагувати"
+
+#: ../crayon_settings_wp.class.php:1015
+#: ../util/theme-editor/theme_editor.php:199
+msgid "Duplicate"
+msgstr "Дублювати"
+
+#: ../crayon_settings_wp.class.php:1015
+msgid "Submit"
+msgstr "Підтвердити"
+
+#: ../crayon_settings_wp.class.php:1016
+#: ../util/theme-editor/theme_editor.php:196
+msgid "Delete"
+msgstr "Видаляти"
+
+#: ../crayon_settings_wp.class.php:1018
+msgid "Loading..."
+msgstr "Завантаження ..."
+
+#: ../crayon_settings_wp.class.php:1020
+msgid "Duplicate a Stock Theme into a User Theme to allow editing."
+msgstr "Дублювання теми в тему користувача, це дозволить редагувати її."
+
+#: ../crayon_settings_wp.class.php:1031
+#, php-format
+msgid ""
+"Change the %1$s fallback language%2$s to change the sample code or "
+"%3$schange it manually%4$s. Lines 5-7 are marked."
+msgstr ""
+"Змінити %1$s резервну мову %2$s, щоб змінити зразок коду або %3$s змінити "
+"це&quot; &quot;вручну %4$s. Лінії 5-7 помічені"
+
+#: ../crayon_settings_wp.class.php:1038
+msgid "Enable Live Preview"
+msgstr "Включити швидкий перегляд"
+
+#: ../crayon_settings_wp.class.php:1040
+msgid "Enqueue themes in the header (more efficient)."
+msgstr "Ставити теми в заголовку (більше ефективно)."
+
+#: ../crayon_settings_wp.class.php:1043
+#, php-format
+msgid "The selected theme with id %s could not be loaded"
+msgstr "Обрана тема з ідентифікатором %s не може бути завантажена"
+
+#: ../crayon_settings_wp.class.php:1055
+msgid "Add More"
+msgstr "Додати детальніше"
+
+#: ../crayon_settings_wp.class.php:1057
+msgid "Custom Font Size"
+msgstr "Нестандартний розмір шрифту"
+
+#: ../crayon_settings_wp.class.php:1059
+#, fuzzy
+msgid "Line Height"
+msgstr "Висота лінії"
+
+#: ../crayon_settings_wp.class.php:1064
+#, php-format
+msgid "The selected font with id %s could not be loaded"
+msgstr "Обраний шрифт з ідентифікатором %s не може бути завантажений"
+
+#: ../crayon_settings_wp.class.php:1070
+msgid "Enqueue fonts in the header (more efficient)."
+msgstr "Ставити шрифти в заголовку (більше ефективною)."
+
+#: ../crayon_settings_wp.class.php:1075
+msgid "Enable plain code view and display"
+msgstr "Включити звичайний вид дисплея і коду"
+
+#: ../crayon_settings_wp.class.php:1078
+msgid "Enable plain code toggling"
+msgstr "Переключити на простий код"
+
+#: ../crayon_settings_wp.class.php:1079
+msgid "Show the plain code by default"
+msgstr "Показати простий код за замовчуванням"
+
+#: ../crayon_settings_wp.class.php:1080
+msgid "Enable code copy/paste"
+msgstr "Включити код копіювання / вставки"
+
+#: ../crayon_settings_wp.class.php:1082
+msgid "Enable opening code in a window"
+msgstr "Включити відкриття коду у вікні"
+
+#: ../crayon_settings_wp.class.php:1083
+msgid "Always display scrollbars"
+msgstr "Завжди відображати смуги прокрутки"
+
+#: ../crayon_settings_wp.class.php:1084
+msgid "Minimize code"
+msgstr "Згорнути код"
+
+#: ../crayon_settings_wp.class.php:1085
+msgid "Expand code beyond page borders on mouseover"
+msgstr "Розгорнути код за межі рамки сторінки при наведенні курсору миші"
+
+#: ../crayon_settings_wp.class.php:1086
+msgid "Enable code expanding toggling when possible"
+msgstr "Включити коду розширення перемиканням, коли це можливо"
+
+#: ../crayon_settings_wp.class.php:1089
+msgid "Decode HTML entities in code"
+msgstr "Розшифруйте HTML сутності в коді"
+
+#: ../crayon_settings_wp.class.php:1091
+msgid "Decode HTML entities in attributes"
+msgstr "Розшифруйте HTML сутності в атрибутах"
+
+#: ../crayon_settings_wp.class.php:1093
+msgid "Remove whitespace surrounding the shortcode content"
+msgstr "Видалити прогалини навколо змісту шорткода"
+
+#: ../crayon_settings_wp.class.php:1095
+msgid "Allow Mixed Language Highlighting with delimiters and tags."
+msgstr "Дозволити підсвічувати змішані мови з роздільниками і тегами."
+
+#: ../crayon_settings_wp.class.php:1097
+msgid "Show Mixed Language Icon (+)"
+msgstr "Показати Змішана мовну іконку (+)"
+
+#: ../crayon_settings_wp.class.php:1099
+msgid "Tab size in spaces"
+msgstr "Розмір табуляції ті пробілів"
+
+#: ../crayon_settings_wp.class.php:1101
+msgid "Blank lines before code:"
+msgstr "Порожніх рядків до коду:"
+
+#: ../crayon_settings_wp.class.php:1103
+msgid "Blank lines after code:"
+msgstr "Порожніх рядків після коду:"
+
+#: ../crayon_settings_wp.class.php:1108
+#, fuzzy
+msgid "Capture Inline Tags"
+msgstr "Захоплення вбудованих тегів"
+
+#: ../crayon_settings_wp.class.php:1109
+msgid "Wrap Inline Tags"
+msgstr "Обгортка Інлайн тегів"
+
+#: ../crayon_settings_wp.class.php:1110
+#, fuzzy
+msgid "Capture &lt;code&gt; as"
+msgstr "Захоплення <code> як"
+
+#: ../crayon_settings_wp.class.php:1114
+msgid "Capture `backquotes` as &lt;code&gt;"
+msgstr "Захоплення `зворотніх лапок` як <code>"
+
+#: ../crayon_settings_wp.class.php:1115
+msgid "Capture &lt;pre&gt; tags as Crayons"
+msgstr "Захоплення <pre> тегів в Crayons"
+
+#: ../crayon_settings_wp.class.php:1117
+#, php-format
+msgid ""
+"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"the %sTag Editor%s instead and convert legacy tags."
+msgstr ""
+"Використовуйте цю розмітку для виявлення вбудованих та застарілих тегів %s "
+"%s! Замість цього використовуйте&quot; &quot;%s редактор тегів %s замість і "
+"конвертуйте застарілі признаки."
+
+#: ../crayon_settings_wp.class.php:1118
+msgid "Capture Mini Tags like [php][/php] as Crayons."
+msgstr "Захоплення міні тегу [php][/php] як Crayons."
+
+#: ../crayon_settings_wp.class.php:1119
+msgid "Capture Inline Tags like {php}{/php} inside sentences."
+msgstr "Захоплення вбудованих тегів {php}{/php} всередині пропозицій."
+
+#: ../crayon_settings_wp.class.php:1120
+msgid "Enable [plain][/plain] tag."
+msgstr "Включити [plain][/plain] тег."
+
+#: ../crayon_settings_wp.class.php:1125
+msgid ""
+"When loading local files and a relative path is given for the URL, use the "
+"absolute path"
+msgstr ""
+"При завантаженні локальних файлів і відносний шляхів використовуйте URL  "
+"з&quot; &quot;абсолютними шляхами"
+
+#: ../crayon_settings_wp.class.php:1128
+msgid "Followed by your relative URL."
+msgstr "Слідом за вашою відносною URL."
+
+#: ../crayon_settings_wp.class.php:1135
+msgid "Convert Legacy Tags"
+msgstr "Перетворення застарілих тегів"
+
+#: ../crayon_settings_wp.class.php:1138
+msgid "No Legacy Tags Found"
+msgstr "Застарілі теги не знайдені"
+
+#: ../crayon_settings_wp.class.php:1142
+msgid "Encode"
+msgstr "Кодувати"
+
+#: ../crayon_settings_wp.class.php:1144
+#, php-format
+msgid ""
+"Use %s to separate setting names from values in the &lt;pre&gt; class "
+"attribute"
+msgstr ""
+"Використовуйте %s для розділення імен параметрів від значень в <pre> "
+"атрибутів &quot; &quot;класу"
+
+#: ../crayon_settings_wp.class.php:1147
+msgid ""
+"Display the Tag Editor in any TinyMCE instances on the frontend (e.g. "
+"bbPress)"
+msgstr ""
+"Відображення редактору тегів в будь-яких випадках TinyMCE на зовнішньому "
+"інтерфейсі (наприклад,&quot; &quot;bbPress)"
+
+#: ../crayon_settings_wp.class.php:1148
+msgid "Display Tag Editor settings on the frontend"
+msgstr "Налаштування інтерфейсу редактора тегів"
+
+#: ../crayon_settings_wp.class.php:1152
+msgid "Clear the cache used to store remote code requests"
+msgstr ""
+"Очистити кеш який використовується для зберігання віддалених запитів коду"
+
+#: ../crayon_settings_wp.class.php:1154
+msgid "Clear Now"
+msgstr "Очистити зараз"
+
+#: ../crayon_settings_wp.class.php:1155
+msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
+msgstr "Спроба завантажити CSS і JavaScript Crayon лише тоді, коли потрібно"
+
+#: ../crayon_settings_wp.class.php:1156
+msgid "Disable enqueuing for page templates that may contain The Loop."
+msgstr ""
+"Відключення поставок у чергу  для шаблонів сторінок, які можуть містити "
+"петлю."
+
+#: ../crayon_settings_wp.class.php:1157
+msgid "Allow Crayons inside comments"
+msgstr "Дозволити Crayons всередині коментарів"
+
+#: ../crayon_settings_wp.class.php:1158
+msgid "Remove Crayons from excerpts"
+msgstr "Видалити Crayons з уривків"
+
+#: ../crayon_settings_wp.class.php:1159
+msgid "Load Crayons only from the main Wordpress query"
+msgstr "Завантажте Crayons тільки з головного Wordpress запиту"
+
+#: ../crayon_settings_wp.class.php:1160
+msgid "Disable mouse gestures for touchscreen devices (eg. MouseOver)"
+msgstr ""
+"Відключити жести миші для пристроїв з сенсорними екранами (наприклад "
+"MouseOver)"
+
+#: ../crayon_settings_wp.class.php:1161
+msgid "Disable animations"
+msgstr "Відключити анімацію"
+
+#: ../crayon_settings_wp.class.php:1162
+msgid "Disable runtime stats"
+msgstr "Відключити статистику виконання"
+
+#: ../crayon_settings_wp.class.php:1168
+msgid "Log errors for individual Crayons"
+msgstr "Вести лог помилок для окремих Crayons"
+
+#: ../crayon_settings_wp.class.php:1169
+msgid "Log system-wide errors"
+msgstr "Вести лог загальносистемних помилок"
+
+#: ../crayon_settings_wp.class.php:1170
+msgid "Display custom message for errors"
+msgstr "Показати користувачу повідомлення про наявність помилок"
+
+#: ../crayon_settings_wp.class.php:1182
+msgid "Show Log"
+msgstr "Показати Лог"
+
+#: ../crayon_settings_wp.class.php:1182
+msgid "Hide Log"
+msgstr "Приховати лог"
+
+#: ../crayon_settings_wp.class.php:1184
+msgid "Clear Log"
+msgstr "Очистити журнал"
+
+#: ../crayon_settings_wp.class.php:1185
+msgid "Email Admin"
+msgstr "E-mail Адміна"
+
+#: ../crayon_settings_wp.class.php:1187
+msgid "Email Developer"
+msgstr "Написати розробнику"
+
+#: ../crayon_settings_wp.class.php:1189
+msgid "The log is currently empty."
+msgstr "Журнал у даний час порожній."
+
+#: ../crayon_settings_wp.class.php:1191
+msgid "The log file exists and is writable."
+msgstr "Файл журналу існує та доступний для запису."
+
+#: ../crayon_settings_wp.class.php:1191
+msgid "The log file exists and is not writable."
+msgstr "Файл журналу існує і не доступний для запису."
+
+#: ../crayon_settings_wp.class.php:1193
+msgid "The log file does not exist and is not writable."
+msgstr "Файл журналу не існує, і не доступний для запису."
+
+#: ../crayon_settings_wp.class.php:1203
+msgid "Version"
+msgstr "Версія"
+
+#: ../crayon_settings_wp.class.php:1205
+msgid "Developer"
+msgstr "Розробник"
+
+#: ../crayon_settings_wp.class.php:1206
+msgid "Translators"
+msgstr "Перекладачі"
+
+#: ../crayon_settings_wp.class.php:1249
+msgid "?"
+msgstr "?"
+
+#: ../crayon_settings_wp.class.php:1256
+#: ../util/theme-editor/theme_editor.php:336
+msgid "Theme Editor"
+msgstr "Тема редактора"
+
+#: ../crayon_settings_wp.class.php:1257
+msgid "Donate"
+msgstr "Жертвувати"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:62
+msgid "Add Crayon Code"
+msgstr "Додати Crayon код"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:63
+msgid "Edit Crayon Code"
+msgstr "Редагувати Crayon код"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:64
+msgid "Add"
+msgstr "Додати"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:65
+#: ../util/theme-editor/theme_editor.php:352
+msgid "Save"
+msgstr "Зберегти"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:182
+msgid "OK"
+msgstr "Добре"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:184
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:193
+msgid "A short description"
+msgstr "Короткий опис"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:195
+#: ../util/theme-editor/theme_editor.php:318
+msgid "Inline"
+msgstr "Інлайн"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:197
+msgid "Don't Highlight"
+msgstr "Не виділено"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:202
+#: ../util/theme-editor/theme_editor.php:322
+msgid "Language"
+msgstr "Мова"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:205
+msgid "Line Range"
+msgstr "Діапазон рядків"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:206
+msgid "(e.g. 3-5 or 3)"
+msgstr "(Наприклад, 3-5 або 3)"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:207
+msgid "Marked Lines"
+msgstr "Зазначені лінії"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:208
+msgid "(e.g. 1,2,3-5)"
+msgstr "(Наприклад 1,2,3-5)"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:217
+msgid "Clear"
+msgstr "Чисто"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:221
+msgid "Paste your code here, or type it in manually."
+msgstr "Вставте тут код, або введіть його вручну."
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:225
+msgid "URL"
+msgstr "URL"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:227
+msgid "Relative local path or absolute URL"
+msgstr "Відносний локальний шлях або абсолютний URL"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:230
+msgid ""
+"If the URL fails to load, the code above will be shown instead. If no code "
+"exists, an error is shown."
+msgstr ""
+"Якщо URL не вдається завантажити, наведений вище код буде показано замість "
+"цього. Якщо код&quot; &quot;не існує, помилка показана"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:232
+#, php-format
+msgid ""
+"If a relative local path is given it will be appended to %s - which is "
+"defined in %sCrayon &gt; Settings &gt; Files%s."
+msgstr ""
+"Який відносний локальний шлях буде додано до %s - можно визначені у %sCrayon "
+"&gt; Установки &gt; Файли%s"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:259
+msgid "Change the following settings to override their global values."
+msgstr "Змініть наступні настройки, щоб перевизначити свої глобальні значення."
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:261
+msgid "Only changes (shown yellow) are applied."
+msgstr "Застосовуються тільки зміни (показані жовтим)."
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:263
+#, php-format
+msgid ""
+"Future changes to the global settings under %sCrayon &gt; Settings%s won't "
+"affect overridden settings."
+msgstr ""
+"Майбутні зміни в глобальних налаштуваннях під %s Crayon> Налаштування %s "
+"не&quot; &quot;впливає на перевизначені налаштування"
+
+#: ../util/theme-editor/theme_editor.php:192
+msgid "User-Defined Theme"
+msgstr "Користувальницькі теми"
+
+#: ../util/theme-editor/theme_editor.php:193
+#, fuzzy
+msgid "Stock Theme"
+msgstr "Фото Стиль"
+
+#: ../util/theme-editor/theme_editor.php:194
+msgid "Success!"
+msgstr "Успіх!"
+
+#: ../util/theme-editor/theme_editor.php:195
+msgid "Failed!"
+msgstr "Не вдалося!"
+
+#: ../util/theme-editor/theme_editor.php:197
+#, php-format
+msgid "Are you sure you want to delete the \"%s\" theme?"
+msgstr "Ви впевнені, що хочете видалити \"%s\" тему?"
+
+#: ../util/theme-editor/theme_editor.php:198
+#, fuzzy
+msgid "Delete failed!"
+msgstr "Видалити не вдалося!"
+
+#: ../util/theme-editor/theme_editor.php:200
+msgid "New Name"
+msgstr "Нове ім&#39;я"
+
+#: ../util/theme-editor/theme_editor.php:201
+#, fuzzy
+msgid "Duplicate failed!"
+msgstr "Скопіювати не вдалося!"
+
+#: ../util/theme-editor/theme_editor.php:202
+msgid "Please check the log for details."
+msgstr "Будь ласка, перевірте журнал для деталей."
+
+#: ../util/theme-editor/theme_editor.php:203
+msgid "Are you sure you want to discard all changes?"
+msgstr "Ви впевнені, що хочете скасувати всі зміни?"
+
+#: ../util/theme-editor/theme_editor.php:204
+#, fuzzy, php-format
+msgid "Editing Theme: %s"
+msgstr "Редагування теми: %s"
+
+#: ../util/theme-editor/theme_editor.php:205
+#, fuzzy, php-format
+msgid "Creating Theme: %s"
+msgstr "Створення теми: %s"
+
+#: ../util/theme-editor/theme_editor.php:206
+msgid "Submit Your Theme"
+msgstr "Підвердіть вашу тему"
+
+#: ../util/theme-editor/theme_editor.php:207
+msgid ""
+"Submit your User Theme for inclusion as a Stock Theme in Crayon! This will "
+"email me your theme - make sure it's considerably different from the stock "
+"themes :)"
+msgstr ""
+"Додайте користувача теми для включення в якості теми в Crayon! Надішліть "
+"мені вашу тему - щоб переконайтися, що віна значно відрізняється від тих що "
+"представлені :)"
+
+#: ../util/theme-editor/theme_editor.php:208
+msgid "Message"
+msgstr "Повідомлення"
+
+#: ../util/theme-editor/theme_editor.php:209
+msgid "Please include this theme in Crayon!"
+msgstr "Будь ласка, включіть цю тему в Crayon!"
+
+#: ../util/theme-editor/theme_editor.php:210
+#, fuzzy
+msgid "Submit was successful."
+msgstr "Підтверження успішно."
+
+#: ../util/theme-editor/theme_editor.php:211
+msgid "Submit failed!"
+msgstr "Надіслати не вдалося!"
+
+#: ../util/theme-editor/theme_editor.php:294
+msgid "Information"
+msgstr "Інформація"
+
+#: ../util/theme-editor/theme_editor.php:295
+#, fuzzy
+msgid "Highlighting"
+msgstr "Підкреслюючи"
+
+#: ../util/theme-editor/theme_editor.php:296
+msgid "Frame"
+msgstr "Рамка"
+
+#: ../util/theme-editor/theme_editor.php:298
+#, fuzzy
+msgid "Line Numbers"
+msgstr "Номери рядків"
+
+#: ../util/theme-editor/theme_editor.php:301
+msgid "Background"
+msgstr "Фон"
+
+#: ../util/theme-editor/theme_editor.php:302
+msgid "Text"
+msgstr "Текст"
+
+#: ../util/theme-editor/theme_editor.php:303
+msgid "Border"
+msgstr "Межа"
+
+#: ../util/theme-editor/theme_editor.php:304
+msgid "Top Border"
+msgstr "Верхня межа"
+
+#: ../util/theme-editor/theme_editor.php:305
+#, fuzzy
+msgid "Bottom Border"
+msgstr "Нижня межа"
+
+#: ../util/theme-editor/theme_editor.php:306
+msgid "Right Border"
+msgstr "Права межа"
+
+#: ../util/theme-editor/theme_editor.php:308
+msgid "Hover"
+msgstr "Зависати"
+
+#: ../util/theme-editor/theme_editor.php:309
+msgid "Active"
+msgstr "Активний"
+
+#: ../util/theme-editor/theme_editor.php:310
+msgid "Pressed"
+msgstr "Натиснутий"
+
+#: ../util/theme-editor/theme_editor.php:311
+msgid "Pressed & Hover"
+msgstr "Натиснутий & Зависший"
+
+#: ../util/theme-editor/theme_editor.php:312
+msgid "Pressed & Active"
+msgstr "Натиснутий & Активний"
+
+#: ../util/theme-editor/theme_editor.php:315
+msgid "Buttons"
+msgstr "Кнопки"
+
+#: ../util/theme-editor/theme_editor.php:317
+msgid "Normal"
+msgstr "Нормальний"
+
+#: ../util/theme-editor/theme_editor.php:319
+msgid "Striped"
+msgstr "Смугастий"
+
+#: ../util/theme-editor/theme_editor.php:320
+#, fuzzy
+msgid "Marked"
+msgstr "З позначкою"
+
+#: ../util/theme-editor/theme_editor.php:321
+msgid "Striped & Marked"
+msgstr "Смугастий & Помічений"
+
+#: ../util/theme-editor/theme_editor.php:351
+msgid "Back To Settings"
+msgstr "Повернутися до налаштувань"
+
+#: ../util/theme-editor/theme_editor.php:390
+msgid "Comment"
+msgstr "Коментар"
+
+#: ../util/theme-editor/theme_editor.php:391
+msgid "String"
+msgstr "Рядок"
+
+#: ../util/theme-editor/theme_editor.php:392
+msgid "Preprocessor"
+msgstr "Препроцесор"
+
+#: ../util/theme-editor/theme_editor.php:393
+#, fuzzy
+msgid "Tag"
+msgstr "Тег"
+
+#: ../util/theme-editor/theme_editor.php:394
+msgid "Keyword"
+msgstr "Ключове слово"
+
+#: ../util/theme-editor/theme_editor.php:395
+msgid "Statement"
+msgstr "Заява"
+
+#: ../util/theme-editor/theme_editor.php:396
+msgid "Reserved"
+msgstr "Зарезервований"
+
+#: ../util/theme-editor/theme_editor.php:397
+msgid "Type"
+msgstr "Тип"
+
+#: ../util/theme-editor/theme_editor.php:398
+#, fuzzy
+msgid "Modifier"
+msgstr "Модифікатор"
+
+#: ../util/theme-editor/theme_editor.php:399
+msgid "Identifier"
+msgstr "Ідентифікатор"
+
+#: ../util/theme-editor/theme_editor.php:400
+msgid "Entity"
+msgstr "Організація"
+
+#: ../util/theme-editor/theme_editor.php:401
+msgid "Variable"
+msgstr "Мінлива"
+
+#: ../util/theme-editor/theme_editor.php:402
+msgid "Constant"
+msgstr "Постійна"
+
+#: ../util/theme-editor/theme_editor.php:403
+msgid "Operator"
+msgstr "Оператор"
+
+#: ../util/theme-editor/theme_editor.php:404
+msgid "Symbol"
+msgstr "Символ"
+
+#: ../util/theme-editor/theme_editor.php:405
+msgid "Notation"
+msgstr "Позначення"
+
+#: ../util/theme-editor/theme_editor.php:406
+msgid "Faded"
+msgstr "Зів&#39;ялі"
+
+#: ../util/theme-editor/theme_editor.php:407
+msgid "HTML"
+msgstr "HTML"
+
+#: ../util/theme-editor/theme_editor.php:540
+msgid "(Used for Copy/Paste)"
+msgstr "(Використовується для Copy / Paste)"

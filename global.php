@@ -18,13 +18,13 @@ define('CRAYON_DOMAIN', 'crayon-syntax-highlighter');
 $CRAYON_VERSION = '1.1.1';
 $CRAYON_DATE = '27th September, 2011';
 $CRAYON_AUTHOR = 'Aram Kocharyan';
-$CRAYON_AUTHOR_SITE = 'http://aramk.com/';
+$CRAYON_AUTHOR_SITE = 'http://aramk.com';
 $CRAYON_DONATE = 'http://bit.ly/crayondonate';
-$CRAYON_WEBSITE = 'https://github.com/aramkocharyan/crayon-syntax-highlighter';
+$CRAYON_WEBSITE = 'https://github.com/aramk/crayon-syntax-highlighter';
 $CRAYON_EMAIL = 'crayon.syntax@gmail.com';
 $CRAYON_TWITTER = 'http://twitter.com/crayonsyntax';
-$CRAYON_GIT = 'http://github.com/aramkocharyan/crayon-syntax-highlighter/';
-$CRAYON_PLUGIN_WP = 'http://wordpress.org/extend/plugins/crayon-syntax-highlighter/';
+$CRAYON_GIT = 'http://github.com/aramk/crayon-syntax-highlighter';
+$CRAYON_PLUGIN_WP = 'http://wordpress.org/extend/plugins/crayon-syntax-highlighter';
 
 // XXX Used to name the class
 
