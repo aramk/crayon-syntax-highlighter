@@ -417,7 +417,7 @@ class CrayonFormatter {
 		}
 		
 		// Determine horizontal alignment
-		$align_style = ' float: none;';
+		$align_style = '';
 		switch ($hl->setting_index(CrayonSettings::H_ALIGN)) {
 			case 1 :
 				$align_style = ' float: left;';
@@ -435,8 +435,8 @@ class CrayonFormatter {
 		if ($hl->setting_val(CrayonSettings::FLOAT_ENABLE)) {
 			$clear_style = ' clear: none;';
 		} else {
-			$clear_style = ' clear: both;';
-		}
+            $clear_style = '';
+        }
 		$code_style .= $clear_style;
 		
 		// Determine if operating system is mac
