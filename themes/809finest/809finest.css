@@ -1,0 +1,171 @@
+/*
+Name: 809finest
+Description: Version: 1.0
+Author: Daniel De Jesús
+URL: http://809finest.com
+*/
+.crayon-theme-809finest {
+	border-width: 1px !important;
+	text-shadow: none !important;
+	border-color: #162E53 !important;
+	border-style: solid !important;
+	background: #162E53 !important;
+}
+.crayon-theme-809finest-inline {
+	border-width: 1px !important;
+	border-color: #162E53 !important;
+	border-style: solid !important;
+	background: #112442 !important;
+}
+.crayon-theme-809finest .crayon-table .crayon-nums {
+	color: #ffffff !important;
+	background: #BB0A1C !important;
+}
+.crayon-theme-809finest *::selection {
+	background: transparent !important;
+}
+.crayon-theme-809finest .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-809finest .crayon-striped-line {
+	background: #162E53 !important;
+}
+.crayon-theme-809finest .crayon-striped-num {
+	background: #BB0A1C !important;
+	color: #ffffff !important;
+}
+.crayon-theme-809finest .crayon-marked-line {
+	border-width: 1px !important;
+	border-color: #162E53 !important;
+	background: #162E53 !important;
+}
+.crayon-theme-809finest .crayon-marked-num {
+	color: #ffffff !important;
+	border-width: 1px !important;
+	border-color: #BB0A1C !important;
+	background: #BB0A1C !important;
+}
+.crayon-theme-809finest .crayon-marked-line.crayon-striped-line {
+	background: #162E53 !important;
+}
+.crayon-theme-809finest .crayon-marked-num.crayon-striped-num {
+	color: #ffffff !important;
+	background: #BB0A1C !important;
+}
+.crayon-theme-809finest .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-809finest .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-809finest .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-809finest .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-809finest .crayon-info {
+	border-bottom-width: 1px !important;
+	border-bottom-style: solid !important;
+	color: #ffffff !important;
+	border-bottom-color: #BB0A1C !important;
+	background: #162E53 !important;
+}
+.crayon-theme-809finest .crayon-toolbar {
+	background: #BB0A1C !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #BB0A1C !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-809finest .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-809finest .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-809finest .crayon-title {
+	color: #ffffff !important;
+}
+.crayon-theme-809finest .crayon-language {
+	color: #ffffff !important;
+}
+.crayon-theme-809finest a.crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-809finest a.crayon-button:hover {
+	background-color: #dddddd !important;
+	color: #666;
+}
+.crayon-theme-809finest a.crayon-button.crayon-pressed:hover {
+	background-color: #eeeeee !important;
+	color: #666;
+}
+.crayon-theme-809finest a.crayon-button.crayon-pressed {
+	background-color: #dddddd !important;
+	color: #FFF;
+}
+.crayon-theme-809finest a.crayon-button.crayon-pressed:active {
+	background-color: #dddddd !important;
+	color: #FFF;
+}
+.crayon-theme-809finest a.crayon-button:active {
+	background-color: #dddddd !important;
+	color: #FFF;
+}
+.crayon-theme-809finest .crayon-pre .crayon-c {
+	color: #ffffff !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-s {
+	color: #ffffff !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-p {
+	color: #ffffff !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-ta {
+	color: #e91e1e !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-k {
+	color: #006699 !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-st {
+	color: #BB0A1C !important;
+	font-weight: bold !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-r {
+	color: #BB0A1C !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-t {
+	color: #BB0A1C !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-m {
+	color: #BB0A1C !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-i {
+	color: #ffffff !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-e {
+	color: #BB0A1C !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-v {
+	color: #ffffff !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-cn {
+	color: #ffffff !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-o {
+	color: #ffffff !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-sy {
+	color: #ffffff !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-n {
+	color: #ffffff !important;
+	font-style: italic !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-f {
+	color: #112442 !important;
+}
+.crayon-theme-809finest .crayon-pre .crayon-h {
+	color: #BB0A1C !important;
+}
