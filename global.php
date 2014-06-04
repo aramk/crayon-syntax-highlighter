@@ -1,7 +1,6 @@
 <?php
 
 // Switches
-
 define('CRAYON_DEBUG', FALSE);
 
 define('CRAYON_TAG_EDITOR', TRUE);

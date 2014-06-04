@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=AW99E
 License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
-Tested up to: 3.9.0
+Tested up to: 3.9.1
 Stable tag: trunk
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
@@ -275,8 +275,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.6.2 =
 * ADDED:
     * Ukrainian translation.
-
 * FIXED:
+    * Tag Editor compatibility with WordPress 3.9.1.
     * Reduced loading times by lazily loading Tag Editor content, which was parsing all languages to populate the dropdown.
     * Added more debug statements to log issues with loading resources and parsing languages.
     * Removed clear: both and float: none from crayon tag styles.

@@ -190,7 +190,7 @@
                     // never renders.
                     $.colorbox(colorboxSettings);
                 }
-                base._showDialog.apply(base, arguments);
+                base._showDialog(args);
             });
         };
 

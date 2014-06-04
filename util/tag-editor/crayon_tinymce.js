@@ -15,11 +15,7 @@
         //	var wasHighlighted = false;
 
         base.setHighlight = function (highlight) {
-            if (highlight) {
-                $(s.tinymce_button).addClass('mce_crayon_tinymce_highlight');
-            } else {
-                $(s.tinymce_button).removeClass('mce_crayon_tinymce_highlight');
-            }
+            $(s.tinymce_button).parent().toggleClass(s.tinymce_highlight, highlight);
             isHighlighted = highlight;
         };
 
