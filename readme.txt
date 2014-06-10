@@ -197,6 +197,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* AdsProvider, USA
 * Alicia Ramirez, (http://aliciaramirez.com/), Canada
 * William Eisert, USA
 * Inappix Development, (http://www.inappix.com/), Switzerland
