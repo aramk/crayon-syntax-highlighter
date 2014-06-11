@@ -70,7 +70,7 @@ Crayon comes translated in several languages already, and if yours is included i
 
 * Download [POEdit](http://www.poedit.net/). Add `..` to the source paths under catalog preferences, and `crayon__`, `crayon_n` and `crayon_e` under source keywords.
 * Update and start making translations.
-* Send the `.po` file to me at <crayon.syntax@gmail.com> and give me your name and a URL for credit. Alternatively, fork this repo and make a push request :)
+* Send the `.po` file to me at <crayon.syntax@gmail.com> and give me your name and a URL to your blog for credit. Alternatively, fork this repo and make a push request :)
 
 ## Fonts
 

@@ -1212,21 +1212,21 @@ class Human {
             '
             Arabic (<a href="http://djennadhamza.eb2a.com/" target="_blank">Djennad Hamza</a>),
             Chinese (<a href="http://smerpup.com/" target="_blank">Dezhi Liu</a>, <a href="http://neverno.me/" target="_blank">Jash Yin</a>),
-            Dutch (<a href="http://www.dreamdesignsolutions.nl/" target="_blank">Robin Roelofsen</a>, <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>),
+            Dutch (<a href="https://twitter.com/RobinRoelofsen" target="_blank">Robin Roelofsen</a>, <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>),
             French (<a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>),
             German (<a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&#223;</a>),
             Italian (<a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>),
             Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
             Korean (<a href="https://github.com/dokenzy" target="_blank">dokenzy</a>),
-            Lithuanian (<a href="http://www.host1free.com" target="_blank">Vincent G</a>),
+            Lithuanian (Vincent G),
             Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
             Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
-            Slovak (<a href="http://webhostinggeeks.com/blog/" target="_blank">http://webhostinggeeks.com/</a>),
+            Slovak (<a href="https://twitter.com/#!/webhostgeeks" target="_blank">webhostgeeks</a>),
             Slovenian (<a href="http://jodlajodla.si/" target="_blank">Jan Su&#353;nik</a>),
-            Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>),
+            Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, Di_Skyer),
             Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
             Turkish (<a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>),
-            Ukrainian (Michael Yunat, <a href="http://getvoip.com/blog" target="_blank">http://getvoip.com</a>)';
+            Ukrainian (Michael Yunat)';
 
         $links = '
 	 			<a id="docs-icon" class="small-icon" title="Documentation" href="' . $CRAYON_WEBSITE . '" target="_blank"></a>
