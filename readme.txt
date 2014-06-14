@@ -273,6 +273,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.6.3 =
+* FIXED:
+    * Removed commercial links from translations section following advice from WordPress.
+
 = 2.6.2 =
 * ADDED:
     * Ukrainian translation.
