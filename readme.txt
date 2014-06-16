@@ -115,6 +115,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Rust (thanks to <a href="https://github.com/Stibbons" target="_blank">Stibbons</a>)
 * Scheme (thanks to <a href="https://github.com/harry75369" target="_blank">Harry75369</a>)
 * Shell (Unix)
+* Swift (thanks to <a href="https://github.com/weyhan" target="_blank">weyhan</a>)
 * Transact-SQL
 * TeX
 * Vim
@@ -272,6 +273,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 5. Theme Editor.
 
 == Changelog ==
+
+= 2.6.4 =
+* ADDED:
+    * Swift language (thanks to <a href="https://github.com/weyhan" target="_blank">weyhan</a>).
 
 = 2.6.3 =
 * FIXED:

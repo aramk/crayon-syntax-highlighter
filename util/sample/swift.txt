@@ -1,0 +1,7 @@
+class Human {
+    var age = 0
+    func birthday() {
+        age++;
+        println('Happy Birthday!');
+    }
+}
