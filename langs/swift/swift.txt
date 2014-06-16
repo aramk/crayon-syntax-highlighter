@@ -1,0 +1,24 @@
+### SWIFT LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Swift
+    VERSION             1.0
+
+    COMMENT             (?default)
+    STRING              ((?<!\\)".*?(?<!\\)")
+
+    STATEMENT           (?default)
+    RESERVED            \b(?alt:reserved.txt)\b
+    CAST:ENTITY         (\b(?default:type)\b(?=\s*\([^\)]*\)))
+    TYPE                (?default)|\b(?alt:type.txt)\b|(?<=:)(\s*[A-Za-z_]\w*\b(?=\s*\{))
+    MODIFIER            \b(?alt:modifier.txt)\b
+
+    PROPERTY:VARIABLE   (?<=\.)([A-Za-z_]\w*)
+    ENTITY              (?default)
+
+    VARIABLE            (?default)|[A-Za-z_]\w*\s*$
+    IDENTIFIER          (?default)
+    CONSTANT            (?<!\w)[0-9]\.[0-9]+|(?<!\w)[0-9]\w*\b
+    OPERATOR            (?default)|(?alt:operator.txt)
+    SYMBOL              (?default)
