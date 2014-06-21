@@ -277,6 +277,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.6.4 =
 * ADDED:
     * Swift language (thanks to <a href="https://github.com/weyhan" target="_blank">weyhan</a>).
+    * Light Abite theme.
 
 = 2.6.3 =
 * FIXED:
