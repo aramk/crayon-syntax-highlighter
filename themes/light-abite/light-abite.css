@@ -1,0 +1,117 @@
+/*
+Name: Light Abite
+Description: Light color.
+Version: 1.0
+Author: Jacques Marais
+URL: http://jacquesmarais.tk/
+*/
+.crayon-theme-light-abite {
+	margin-bottom: 25px !important;
+	background-color: #f8f8ff !important;
+	font-size: 100% !important;
+	line-height: 130% !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #dedede !important;
+}
+.crayon-theme-light-abite .crayon-toolbar {
+	background-color: #eee !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #dedede !important;
+}
+.crayon-theme-light-abite .crayon-toolbar .crayon-language {
+	font-size: 80% !important;
+	color: #666 !important;
+}
+.crayon-theme-light-abite .crayon-toolbar .crayon-title {
+	font-size: 80% !important;
+	color: #666 !important;
+}
+.crayon-theme-light-abite .crayon-table .crayon-nums {
+	background-color: #eee !important;
+}
+.crayon-theme-light-abite .crayon-table .crayon-nums-content {
+	padding-top: 5px !important;
+	padding-bottom: 3px !important;
+}
+.crayon-theme-light-abite .crayon-table .crayon-num {
+	min-width: 1.2em !important;
+	text-align: right !important;
+	color: #aaa !important;
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-right-color: #dedede !important;
+}
+.crayon-theme-light-abite .crayon-pre {
+	padding-top: 5px !important;
+	padding-bottom: 3px !important;
+}
+.crayon-theme-light-abite .crayon-marked-line {
+	background: #fffee2 !important;
+}
+.crayon-theme-light-abite .crayon-marked-num {
+	color: #1561ac !important;
+	background: #b3d3f4 !important;
+	border-width: 1px !important;
+	border-color: #5999d9 !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-c {
+	color: #999 !important;
+	font-style: italic !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-s {
+	color: #1fbbdd !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-p {
+	color: #28c94a !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-k {
+	color: teal !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-st {
+	color: #3c9cc9 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-r {
+	color: #2bafaa !important;
+	font-weight: bold !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-t {
+	color: #800080 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-m {
+	color: #800080 !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-i {
+	color: #66cb76 !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-e {
+	color: teal !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-v {
+	color: #002D7A !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-cn {
+	color: #099 !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-o {
+	color: #006fe0 !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-f {
+	color: #999 !important;
+}
+.crayon-theme-light-abite .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
