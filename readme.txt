@@ -198,6 +198,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Goretity Árpád László, (http://h2co3.org/blog), Hungary
 * AdsProvider, USA
 * Alicia Ramirez, (http://aliciaramirez.com/), Canada
 * William Eisert, USA
