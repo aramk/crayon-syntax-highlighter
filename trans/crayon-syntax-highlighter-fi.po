@@ -1,0 +1,1399 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Crayon Syntax Highlighter v2.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-10 17:11+1000\n"
+"PO-Revision-Date: 2014-06-23 23:31+0200\n"
+"Last-Translator: Antti Vähälummukka <ana@tietomyrsky.com>\n"
+"Language-Team: Tietomyrsky <ana@tietomyrsky.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"Language: fi\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:164 crayon_settings.class.php:168
+msgid "Max"
+msgstr "Maksimi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:164 crayon_settings.class.php:168
+msgid "Min"
+msgstr "Minimi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:164 crayon_settings.class.php:168
+msgid "Static"
+msgstr "Staattinen"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:166 crayon_settings.class.php:170
+#: crayon_settings_wp.class.php:774 crayon_settings_wp.class.php:783
+#: crayon_settings_wp.class.php:1059 crayon_settings_wp.class.php:1061
+msgid "Pixels"
+msgstr "pikseliä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:166 crayon_settings.class.php:170
+msgid "Percent"
+msgstr "Prosenttia"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "None"
+msgstr "Ei mitään"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "Left"
+msgstr "Vasen"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "Center"
+msgstr "Keski"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "Right"
+msgstr "Oikea"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:181 crayon_settings.class.php:206
+msgid "On MouseOver"
+msgstr "Hiiren ollessa alueen päällä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:181 crayon_settings.class.php:187
+msgid "Always"
+msgstr "Aina"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:181 crayon_settings.class.php:187
+msgid "Never"
+msgstr "Ei koskaan"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:187
+msgid "When Found"
+msgstr "Jos löytyy"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:206
+msgid "On Double Click"
+msgstr "Kaksoisklikkauksella"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:206
+msgid "On Single Click"
+msgstr "Yhdellä klikkauksella"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:213
+msgid "An error has occurred. Please try again later."
+msgstr "Tapahtui virhe. Koeta myöhemmin uudellee."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:53 crayon_settings_wp.class.php:210
+#: crayon_settings_wp.class.php:1258
+#: util/tag-editor/crayon_tag_editor_wp.class.php:252
+msgid "Settings"
+msgstr "Asetukset"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:193
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Oikeutesi eivät riitä tämän sivun katselemiseen."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:225
+msgid "Save Changes"
+msgstr "Tallenna muutiokset"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:233
+msgid "Reset Settings"
+msgstr "Palauta oletukset"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:751
+msgid "Height"
+msgstr "Korkeus"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:757
+msgid "Width"
+msgstr "Leveys"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:763
+msgid "Top Margin"
+msgstr "Ylämariginaali"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:764
+msgid "Bottom Margin"
+msgstr "Alamariginaali"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:765 crayon_settings_wp.class.php:770
+msgid "Left Margin"
+msgstr "Vasen mariginaali"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:766 crayon_settings_wp.class.php:770
+msgid "Right Margin"
+msgstr "Oikea mariginaali"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:776
+msgid "Horizontal Alignment"
+msgstr "Vaaka-asettelu"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:779
+msgid "Allow floating elements to surround Crayon"
+msgstr "Salli elementtien kiertää Crayon"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:789
+msgid "Display the Toolbar"
+msgstr "Näytä työkalupalkki"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:792
+msgid "Overlay the toolbar on code rather than push it down when possible"
+msgstr "Näytä kiinteä työkalupalkki"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:793
+msgid "Toggle the toolbar on single click when it is overlayed"
+msgstr ""
+"Näytä tai piilota työkalupalkki yhdellä klikkauksella jos se on koodin päällä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:794
+msgid "Delay hiding the toolbar on MouseOut"
+msgstr "Työkalupalkin piilotusviive hiiren poistuessa alueelta"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:796
+msgid "Display the title when provided"
+msgstr "Näytä otsikko"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:797
+msgid "Display the language"
+msgstr "Näytä kieli"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:804
+msgid "Display striped code lines"
+msgstr "Käytä riveillä vuorottelevaa taustaa"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:805
+msgid "Enable line marking for important lines"
+msgstr "Salli tärkeiden rivien merkintä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:807
+msgid "Display line numbers by default"
+msgstr "Näytä rivinumerot"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:808
+msgid "Enable line number toggling"
+msgstr "Salli rivinumeroiden kytkeminen päälle ja pois"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:811
+msgid "Start line numbers from"
+msgstr "Aloita rivien numerointi numerosta"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:822
+msgid "When no language is provided, use the fallback"
+msgstr "Käytä oletusarvoa jos kieltä ei ole määritetty"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:829
+msgid "Parsing was successful"
+msgstr "Jäsentely onnistui"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:829
+msgid "Parsing was unsuccessful"
+msgstr "Jäsentely epäonnistui"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:835
+#, php-format
+msgid "The selected language with id %s could not be loaded"
+msgstr "Valittua kiletä (%s) ei voitu ladata"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:838
+msgid "Show Languages"
+msgstr "Näytä kielet"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1038
+msgid "Enable Live Preview"
+msgstr "Käytä elävää esikatselua"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1043
+#, php-format
+msgid "The selected theme with id %s could not be loaded"
+msgstr "Valittua teemaa (%s) ei voitu ladata"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1057
+msgid "Custom Font Size"
+msgstr "Mukautettu kirjasinkoko"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1064
+#, php-format
+msgid "The selected font with id %s could not be loaded"
+msgstr "Valittua kirjasinta (%s) ei voitu ladata"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1075
+msgid "Enable plain code view and display"
+msgstr "Salli formatoimattoman koodin näyttäminen"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1080
+msgid "Enable code copy/paste"
+msgstr "Salli koodin leikkaaminen ja liimaaminen"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1082
+msgid "Enable opening code in a window"
+msgstr "Salli koodin avaaminen ikkunassa"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1100
+msgid "Tab size in spaces"
+msgstr "Sarkainta vastaava välilyöntien määrä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1093
+msgid "Remove whitespace surrounding the shortcode content"
+msgstr "Poista whitespace-merkit lyhytkoodien ympäriltä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1126
+msgid ""
+"When loading local files and a relative path is given for the URL, use the "
+"absolute path"
+msgstr "Käytä paikallisten URL:ien sijaan absoluuttista URL:ää"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1153
+msgid "Clear the cache used to store remote code requests"
+msgstr "Tyhjennä ulkopuolisten koodien välimuisti"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1155
+msgid "Clear Now"
+msgstr "Tyhjennä nyt"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1161
+msgid "Disable mouse gestures for touchscreen devices (eg. MouseOver)"
+msgstr "Estä hiirieleet kosketusnäytöllä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1162
+msgid "Disable animations"
+msgstr "Estä animaatiot"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1163
+msgid "Disable runtime stats"
+msgstr "Estä ajonaikaiset tilastot"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1169
+msgid "Log errors for individual Crayons"
+msgstr "Kirjoita erillisten Crayonien virheet lokiin"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1170
+msgid "Log system-wide errors"
+msgstr "Kirjoita järjestelmänlaajuiset virheet lokiin"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1171
+msgid "Display custom message for errors"
+msgstr "Näytä mukautettu virheilmoitus"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1183
+msgid "Show Log"
+msgstr "Näytä loki"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1185
+msgid "Clear Log"
+msgstr "Tyhjennä loki"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1186
+msgid "Email Admin"
+msgstr "Lähetä sähköpostia ylläpitäjälle"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1188
+msgid "Email Developer"
+msgstr "Lähetä sähköpostia kehittäjälle"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1204
+msgid "Version"
+msgstr "Versio"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1206
+msgid "Developer"
+msgstr "Kehittäjä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:151
+msgid "Hourly"
+msgstr "Tunneittain"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:151
+msgid "Daily"
+msgstr "Päivittäin"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:152
+msgid "Weekly"
+msgstr "Viikoittain"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:152
+msgid "Monthly"
+msgstr "Kuukausittain"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:153
+msgid "Immediately"
+msgstr "Heti"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1156
+msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
+msgstr "Yritä ladata Crayonin tyylitiedosto ja JavaScripti vain tarvittaessa"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1129
+msgid "Followed by your relative URL."
+msgstr "Liitä perään suhteellinen URL."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1190
+msgid "The log is currently empty."
+msgstr "Loki on tyhjä."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1192
+msgid "The log file exists and is writable."
+msgstr "Loki on olemassa ja siihen voi kirjoittaa."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1192
+msgid "The log file exists and is not writable."
+msgstr "Loki on olemassa mutta siihen ei voi kirjoittaa."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1194
+msgid "The log file does not exist and is not writable."
+msgstr "Lokia ei ole olemassa eikä siihen voi kirjoittaa."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:828
+#, php-format
+msgid "%d language has been detected."
+msgid_plural "%d languages have been detected."
+msgstr[0] "%d kieli havaittut."
+msgstr[1] "%d kieltä havaittu."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1116
+msgid "Capture &lt;pre&gt; tags as Crayons"
+msgstr "Käsittele &lt;pre&gt; tägit samoin kuin Crayonit"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1098
+msgid "Show Mixed Language Icon (+)"
+msgstr "Näytä useamman kielen ikoni (+)"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1096
+msgid "Allow Mixed Language Highlighting with delimiters and tags."
+msgstr "Salli useamman kielen korostus käyttäen erottimia ja tägejä."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1119
+msgid "Capture Mini Tags like [php][/php] as Crayons."
+msgstr "Käsittele minitägit, kuten [php][/php], samoin kuin Crayonit"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1121
+msgid "Enable [plain][/plain] tag."
+msgstr "Salli [plain][/plain] tägit."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:206
+msgid "Disable Mouse Events"
+msgstr "Estä hiiritapahtumat"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1078
+msgid "Enable plain code toggling"
+msgstr "Salli formatoimattoman koodin näyttäminen ja piilotus"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1079
+msgid "Show the plain code by default"
+msgstr "Näytä oletusarvoisesti formatoimaton koodi"
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'Name'
+#: crayon_wp.class.php:0
+msgid "Crayon Syntax Highlighter"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'AuthorURI'
+#: crayon_wp.class.php:0
+msgid "http://aramk.com/"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'Author'
+#: crayon_wp.class.php:0
+msgid "Aram Kocharyan"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'Description'
+#: crayon_wp.class.php:0
+msgid ""
+"Supports multiple languages, themes, highlighting from a URL, local file or "
+"post text."
+msgstr ""
+"Tukee useita kieliä, teemoja, koodin hakemista URL-osoitteen avulla, "
+"paikallisia tiedostoja ja julkaisun sisäistä koodia."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1260
+msgid "Donate"
+msgstr "Lahjoita"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:491
+msgid "General"
+msgstr "Yleinen"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:492
+msgid "Theme"
+msgstr "Teema"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:493
+msgid "Font"
+msgstr "Kirjasin"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:494
+msgid "Metrics"
+msgstr "Asettelu"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:495 util/theme-editor/theme_editor.php:299
+msgid "Toolbar"
+msgstr "Työkalupalkki"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:496 util/theme-editor/theme_editor.php:297
+msgid "Lines"
+msgstr "Rivit"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:497
+#: util/tag-editor/crayon_tag_editor_wp.class.php:212
+msgid "Code"
+msgstr "Koodi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:499
+msgid "Languages"
+msgstr "Kielet"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:500
+msgid "Files"
+msgstr "Tiedostot"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:503
+msgid "Misc"
+msgstr "Muut"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:506
+msgid "Debug"
+msgstr "Virheenjäljitys"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:507
+msgid "Errors"
+msgstr "Virheet"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:508
+msgid "Log"
+msgstr "Loki"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:511
+msgid "About"
+msgstr "Ohjelmasta"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1040
+msgid "Enqueue themes in the header (more efficient)."
+msgstr "Sisällytä teemat header:iin (tehokkuussyistä)."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1070
+msgid "Enqueue fonts in the header (more efficient)."
+msgstr "Sisällytä kirjasimet header:iin (tehokkuussyistä)."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1018
+msgid "Loading..."
+msgstr "Ladataan..."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1259 util/theme-editor/theme_editor.php:336
+msgid "Theme Editor"
+msgstr "Teeman muokkain"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1083
+msgid "Always display scrollbars"
+msgstr "Näytä vierityspalkit aina"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1157
+msgid "Disable enqueuing for page templates that may contain The Loop."
+msgstr "Estä silmukan sisältävien teemojen sisällyttäminen."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1160
+msgid "Load Crayons only from the main Wordpress query"
+msgstr "Lataa Crayonit vain pääwordpressin kyselyistä"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:351
+msgid "Back To Settings"
+msgstr "Takaisin asetuksiin"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1207
+msgid "Translators"
+msgstr "Kääntäjät"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:290
+msgid "Toggle Plain Code"
+msgstr "Näytä tai piilota formatoimaton koodi"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:306
+msgid "Open Code In New Window"
+msgstr "Avaa koodi uudessa ikkunassa"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:286
+msgid "Toggle Line Numbers"
+msgstr "Rivinumerot päälle tai pois päältä"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:333
+msgid "Contains Mixed Languages"
+msgstr "Sisältää useita kieliä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1183
+msgid "Hide Log"
+msgstr "Piilota loki"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:136
+#, php-format
+msgid "Press %s to Copy, %s to Paste"
+msgstr "%s kopio, %s liittää"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:498
+msgid "Tags"
+msgstr "Tägit"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:781
+msgid "Inline Margin"
+msgstr "Inline mariginaali"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1120
+msgid "Capture Inline Tags like {php}{/php} inside sentences."
+msgstr "Tulkitse inline-tägit kuten {php} {/php} myös lauseiden sisällä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1115
+msgid "Capture `backquotes` as &lt;code&gt;"
+msgstr "Tulkitse `taakse kallistuvat heittomerkit` samoin kuin &lt;code&gt;"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1158
+msgid "Allow Crayons inside comments"
+msgstr "Salli Crayonit kommenttien sisällä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1110
+msgid "Wrap Inline Tags"
+msgstr "Rivitä inline tägit"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:502
+msgid "Tag Editor"
+msgstr "Tägimuokkain"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1252
+msgid "?"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1089
+msgid "Decode HTML entities in code"
+msgstr "Tulkitse HTML koodin sisällä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1091
+msgid "Decode HTML entities in attributes"
+msgstr "Tulkitse HTML attribuuttien sisällä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1145
+#, php-format
+msgid ""
+"Use %s to separate setting names from values in the &lt;pre&gt; class "
+"attribute"
+msgstr ""
+"Käytä %s-merkkiä erottamaan nimiä ja arvoja &lt;pre&gt; luokan attribuuteissa"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:62
+msgid "Add Crayon Code"
+msgstr "Lisää Crayon koodi"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:63
+msgid "Edit Crayon Code"
+msgstr "Muokkaa Crayonin koodia"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:64
+msgid "Add"
+msgstr "Lisää"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:65
+#: util/theme-editor/theme_editor.php:352
+msgid "Save"
+msgstr "Tallenna"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:900
+#: util/tag-editor/crayon_tag_editor_wp.class.php:189
+#: util/theme-editor/theme_editor.php:314
+msgid "Title"
+msgstr "Otsikko"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:191
+msgid "A short description"
+msgstr "Lyhyt kuvaus"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:193
+#: util/theme-editor/theme_editor.php:318
+msgid "Inline"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:200
+#: util/theme-editor/theme_editor.php:322
+msgid "Language"
+msgstr "Kieli"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:205
+msgid "Marked Lines"
+msgstr "Korostetut rivit"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:206
+msgid "(e.g. 1,2,3-5)"
+msgstr "(esim. 1,2,3-5)"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:215
+msgid "Clear"
+msgstr "Tyhjennä"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:219
+msgid "Paste your code here, or type it in manually."
+msgstr "Liitä tai kirjoita koodi tähän."
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:223
+msgid "URL"
+msgstr "URL"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:225
+msgid "Relative local path or absolute URL"
+msgstr "Suhteellinen polku tai absoluuttinen URL"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:228
+msgid ""
+"If the URL fails to load, the code above will be shown instead. If no code "
+"exists, an error is shown."
+msgstr ""
+"Jos URL ei lataannu näytetään ylläoleva koodi. Jos mitään koodia ei ole "
+"näytetään virheilmoitus."
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:230
+#, php-format
+msgid ""
+"If a relative local path is given it will be appended to %s - which is "
+"defined in %sCrayon &gt; Settings &gt; Files%s."
+msgstr ""
+"Annettuun suhteelliseen polkuun lisätään eteen %s, se on määritetty %sCrayon "
+"&gt; Asetukset &gt; Tiedostot%s."
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:257
+msgid "Change the following settings to override their global values."
+msgstr "Seuraavilla asetuksilla voit poiketa oletusarvoista."
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:259
+msgid "Only changes (shown yellow) are applied."
+msgstr "Oletusarvoista poikkeavat muutokset näytetään keltaisina."
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:261
+#, php-format
+msgid ""
+"Future changes to the global settings under %sCrayon &gt; Settings%s won't "
+"affect overridden settings."
+msgstr ""
+"Tulevat muutokset globaaleihin asetuksiin (%sCrayon &gt; Asetukset%s) eivät "
+"vaikuta näihin muutoksiin."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1159
+msgid "Remove Crayons from excerpts"
+msgstr "Poista Crayonit leikkeistä"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:294
+msgid "Toggle Line Wrap"
+msgstr "Rivitys päälle tai pois päältä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:501
+msgid "Posts"
+msgstr "Julkaisut"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:806
+msgid "Enable line ranges for showing only parts of code"
+msgstr "Salli rivialueet jotka näyttävät vain osan koodista"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:809
+msgid "Wrap lines by default"
+msgstr "Rivitä oletuksena"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:810
+msgid "Enable line wrap toggling"
+msgstr "Salli rivityksen päälle ja pois päältä kytkeminen"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:874
+msgid "Show Crayon Posts"
+msgstr "Näytä Crayon-julkaisut"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1015
+msgid "Edit"
+msgstr "Muokkaa"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1102
+msgid "Blank lines before code:"
+msgstr "Tyhjiä rivejä ennen koodia:"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1104
+msgid "Blank lines after code:"
+msgstr "Tyhjiä rivejä koodin jälkeen:"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1136
+msgid "Convert Legacy Tags"
+msgstr "Muunna käytöstä poistuvat tägit"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1139
+msgid "No Legacy Tags Found"
+msgstr "Käytöstä poistuvia tägejä ei löytynyt"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1149
+msgid "Display Tag Editor settings on the frontend"
+msgstr "Näytä tägimuokkaimen asetukset pääpalvelussa (frontend)"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:195
+msgid "Don't Highlight"
+msgstr "Älä korosta"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:203
+msgid "Line Range"
+msgstr "Rivialue"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:204
+msgid "(e.g. 3-5 or 3)"
+msgstr "(esim. 3 tai 3-5)"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:298 crayon_formatter.class.php:302
+msgid "Expand Code"
+msgstr "Laajenna koodi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:229
+msgid "Inline Tag"
+msgstr "Inline-tägi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:229
+msgid "Block Tag"
+msgstr "Lohkotägi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:137
+msgid "Click To Expand Code"
+msgstr "Laajenna koodi klikkaamalla"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:179
+msgid "Prompt"
+msgstr "Kehote"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:180
+msgid "Value"
+msgstr "Arvo"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:181
+msgid "Alert"
+msgstr "Varoitus"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:182 crayon_settings_wp.class.php:920
+msgid "No"
+msgstr "Ei"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:183 crayon_settings_wp.class.php:920
+msgid "Yes"
+msgstr "Kyllä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:184
+msgid "Confirm"
+msgstr "Vahvista"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:185
+msgid "Change Code"
+msgstr "Korvaa koodi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:875
+msgid "Refresh"
+msgstr "Virkistä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:900
+msgid "ID"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:900
+msgid "Posted"
+msgstr "Julkaistu"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:900
+msgid "Modifed"
+msgstr "Muokattu"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:900
+msgid "Contains Legacy Tags?"
+msgstr "Onko poistuvia tägejä?"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1015 util/theme-editor/theme_editor.php:199
+msgid "Duplicate"
+msgstr "Tee kopio"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1015
+msgid "Submit"
+msgstr "Lähetä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1016 util/theme-editor/theme_editor.php:196
+msgid "Delete"
+msgstr "Poista"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1020
+msgid "Duplicate a Stock Theme into a User Theme to allow editing."
+msgstr "Tee teemasta kopio jota voit muokata."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1031
+#, php-format
+msgid ""
+"Change the %1$sfallback language%2$s to change the sample code or %3$schange "
+"it manually%4$s. Lines 5-7 are marked."
+msgstr ""
+"Vaihtamalla %1$soletuskielen%2$s esimerkin koodi muuttuu. Voit myös "
+"%3$smuuttaa sitä käsin%4$s. Esimerkissä rivit 5-7 ovat korostettuja."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1055
+msgid "Add More"
+msgstr "Lisää enemmän"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1059
+msgid "Line Height"
+msgstr "rivin korkeus"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1084
+msgid "Minimize code"
+msgstr "Minimoi koodi"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1085
+msgid "Expand code beyond page borders on mouseover"
+msgstr "Salli rivien jatkua alueen yli reunan kun hiiri on alueen päällä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1086
+msgid "Enable code expanding toggling when possible"
+msgstr "Salli koodin laajennus ja pienennys kun se on mahdollista"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1095
+msgid "Remove &lt;code&gt; tags surrounding the shortcode content"
+msgstr "Poista &lt;code&gt; tägit lyhytkoodien sisällön ympäriltä"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1109
+msgid "Capture Inline Tags"
+msgstr "Käsittele inline-tägit"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1111
+msgid "Capture &lt;code&gt; as"
+msgstr "Käsittele &lt;code&gt;-tägit kuten"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1118
+#, php-format
+msgid ""
+"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"the %sTag Editor%s instead and convert legacy tags."
+msgstr ""
+"Tämä minitägien merkintätapa on %spoistumassa%s! Käytä niiden sijaan "
+"%stägimuokkainta%s ja muunna poistuvat tägit."
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1143
+msgid "Encode"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1148
+msgid ""
+"Display the Tag Editor in any TinyMCE instances on the frontend (e.g. "
+"bbPress)"
+msgstr "Näytä tägieditori kaikissa TinyMCE:n ilmentymissä (esim. bbPressissä)"
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'PluginURI'
+#: crayon_wp.class.php:0
+msgid "https://github.com/aramkocharyan/crayon-syntax-highlighter"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#. translators: plugin header field 'Version'
+#: crayon_wp.class.php:0
+msgid "2.4.0"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:180
+msgid "OK"
+msgstr "OK"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:182
+msgid "Cancel"
+msgstr "Peruuta"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:192
+msgid "User-Defined Theme"
+msgstr "Käyttäjän muokkaama teema"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:193
+msgid "Stock Theme"
+msgstr "Jakelun mukana tuleva teema"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:194
+msgid "Success!"
+msgstr "Onnistui!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:195
+msgid "Failed!"
+msgstr "Epäonnistui!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:197
+#, php-format
+msgid "Are you sure you want to delete the \"%s\" theme?"
+msgstr "Haluatko varmasti poistaa teeman \"%s\"?"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:198
+msgid "Delete failed!"
+msgstr "Poisto epäonnistui!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:200
+msgid "New Name"
+msgstr "Uusi nimi"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:201
+msgid "Duplicate failed!"
+msgstr "Kopiointi epäonnistui!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:202
+msgid "Please check the log for details."
+msgstr "Katso yksityiskohdat lokista."
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:203
+msgid "Are you sure you want to discard all changes?"
+msgstr "Haluatko varmasti hylätä kaikki muutokset?"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:204
+#, php-format
+msgid "Editing Theme: %s"
+msgstr "Muokataan teemaa: %s"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:205
+#, php-format
+msgid "Creating Theme: %s"
+msgstr "Luodaan teema: %s"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:206
+msgid "Submit Your Theme"
+msgstr "Tallenna teema"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:207
+msgid ""
+"Submit your User Theme for inclusion as a Stock Theme in Crayon! This will "
+"email me your theme - make sure it's considerably different from the stock "
+"themes :)"
+msgstr ""
+"Lähetä muokkaamasi teema Crayonille lisättäväksi jakeluun. Teema lähetetään "
+"minulle sähköpostitse - varmista, että teemasi poikkeaa riittävästi jakelun "
+"teemoista."
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:208
+msgid "Message"
+msgstr "Viesti"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:209
+msgid "Please include this theme in Crayon!"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:210
+msgid "Submit was successful."
+msgstr "Lähetys onnistui."
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:211
+msgid "Submit failed!"
+msgstr "Lähetys epäonnistui!"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:294
+msgid "Information"
+msgstr "Tietoa"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:295
+msgid "Highlighting"
+msgstr "Korostus"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:296
+msgid "Frame"
+msgstr "Kehys"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:298
+msgid "Line Numbers"
+msgstr "Rivinumerot"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:301
+msgid "Background"
+msgstr "Tausta"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:302
+msgid "Text"
+msgstr "Teksti"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:303
+msgid "Border"
+msgstr "Reuna"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:304
+msgid "Top Border"
+msgstr "Yläreuna"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:305
+msgid "Bottom Border"
+msgstr "Alareuna"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:306
+msgid "Right Border"
+msgstr "Oikea reuna"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:308
+msgid "Hover"
+msgstr "Leijutus"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:309
+msgid "Active"
+msgstr "Aktiivinen"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:310
+msgid "Pressed"
+msgstr "Painettu"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:311
+msgid "Pressed & Hover"
+msgstr "Painettu ja leijutus"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:312
+msgid "Pressed & Active"
+msgstr "Painettu ja aktiivinen"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:315
+msgid "Buttons"
+msgstr "Napit"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:317
+msgid "Normal"
+msgstr "Normaali"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:319
+msgid "Striped"
+msgstr "Raidallinen"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:320
+msgid "Marked"
+msgstr "Merkitty"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:321
+msgid "Striped & Marked"
+msgstr "Raidallinen & merkitty"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:390
+msgid "Comment"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:391
+msgid "String"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:392
+msgid "Preprocessor"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:393
+msgid "Tag"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:394
+msgid "Keyword"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:395
+msgid "Statement"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:396
+msgid "Reserved"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:397
+msgid "Type"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:398
+msgid "Modifier"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:399
+msgid "Identifier"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:400
+msgid "Entity"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:401
+msgid "Variable"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:402
+msgid "Constant"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:403
+msgid "Operator"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:404
+msgid "Symbol"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:405
+msgid "Notation"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:406
+msgid "Faded"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:407
+msgid "HTML"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:408
+msgid "Unhighlighted"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:542
+msgid "(Used for Copy/Paste)"
+msgstr ""
