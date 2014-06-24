@@ -135,10 +135,6 @@
     background: #EEE !important;
 }
 
-.mce_crayon_tinymce_highlight, .qt_crayon_highlight {
-    border: 1px solid #7c9dde !important;
-}
-
 .qt_crayon_highlight {
     background-image: -ms-linear-gradient(bottom, #daf2ff, white) !important;
     background-image: -moz-linear-gradient(bottom, #daf2ff, white) !important;
@@ -157,9 +153,12 @@
 
 /* TinyMCE v4 */
 .mce_crayon_tinymce {
-    background: url(../images/crayon_tinymce.png) 0 0 !important;
     padding: 0 !important;
     margin: 2px 3px !important;
+}
+.mce-i-crayon_tinymce,
+.mce_crayon_tinymce {
+    background: url(../images/crayon_tinymce.png) 0 0 !important;
 }
 
 /* TinyMCE v3 - deprecated */
