@@ -279,6 +279,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Swift language (thanks to <a href="https://github.com/weyhan" target="_blank">weyhan</a>).
     * Light Abite theme.
+    * Missing gettext for in settings page.
 * FIXED:
     * Issue causing other shortcode tags (e.g. captions) to be removed on post save.
     * Improved tag editor button style when active to use the default for TinyMCE.

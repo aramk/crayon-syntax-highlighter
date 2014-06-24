@@ -708,21 +708,10 @@ class CrayonSettingsWP {
         if (CrayonGlobalSettings::val(CrayonSettings::HIDE_HELP)) {
             return;
         }
-        echo '
-				<div id="crayon-help" class="updated settings-error crayon-help">
+        echo '<div id="crayon-help" class="updated settings-error crayon-help">
 				<p><strong>Howdy, coder!</strong> Thanks for using Crayon. <strong>Useful Links:</strong> <a href="' . $CRAYON_WEBSITE . '" target="_blank">Documentation</a>, <a href="' . $CRAYON_GIT . '" target="_blank">GitHub</a>, <a href="' . $CRAYON_PLUGIN_WP . '" target="_blank">Plugin Page</a>, <a href="' . $CRAYON_TWITTER . '" target="_blank">Twitter</a>. Crayon has always been free. If you value my work please consider a <a href="' . $CRAYON_DONATE . '">small donation</a> to show your appreciation. Thanks! <a class="crayon-help-close">X</a></p></div>
 						';
     }
-
-// 	public static function get_crayon_help_file() {
-// 		// Load help
-// 		if ( ($help = @file_get_contents(CRAYON_HELP_FILE)) !== FALSE) {
-// 			$help = str_replace('{PLUGIN}', CrayonGlobalSettings::plugin_path(), $help);
-// 		} else {
-// 			$help = 'Help failed to load... Try <a href="#info">these</a> instead.';
-// 		}
-// 		return $help;
-// 	}
 
     public static function help_screen() {
         $screen = get_current_screen();
@@ -730,22 +719,7 @@ class CrayonSettingsWP {
         if ($screen->id != self::$admin_page) {
             return;
         }
-
-        // Add my_help_tab if current screen is My Admin Page
-// 		$screen->add_help_tab( array(
-// 				'id'		=> 'crayon_help_tab',
-// 				'title'		=> crayon__('Crayon Help'),
-// 				'content'	=> self::get_crayon_help_file() // TODO consider adding tranlations for help
-// 		) );
     }
-
-    // XXX Depreciated since WP 3.3
-// 	public static function cont_help($contextual_help, $screen_id, $screen) {
-// 		if ($screen_id == self::$admin_page) {
-// 			return self::get_crayon_help_file();
-// 		}
-// 		return $contextual_help;
-// 	}
 
     public static function metrics() {
         echo '<div id="crayon-section-metrics" class="crayon-hide-inline">';
@@ -838,7 +812,7 @@ class CrayonSettingsWP {
                 // Language parsing info
                 echo CRAYON_BR, '<div id="crayon-subsection-langs-info"><div>' . self::button(array('id' => 'show-langs', 'title' => crayon__('Show Languages'))) . '</div></div>';
             } else {
-                echo 'No languages could be parsed.';
+                echo crayon__('No languages could be parsed.');
             }
         }
     }
@@ -849,7 +823,7 @@ class CrayonSettingsWP {
         if (($langs = CrayonParser::parse_all()) != FALSE) {
             $langs = CrayonLangs::sort_by_name($langs);
             echo '<table class="crayon-table" cellspacing="0" cellpadding="0"><tr class="crayon-table-header">',
-            '<td>ID</td><td>Name</td><td>Version</td><td>File Extensions</td><td>Aliases</td><td>State</td></tr>';
+            '<td>',crayon__('ID'),'</td><td>',crayon__('Name'),'</td><td>',crayon__('Version'),'</td><td>',crayon__('File Extensions'),'</td><td>',crayon__('Aliases'),'</td><td>',crayon__('State'),'</td></tr>';
             $keys = array_values($langs);
             for ($i = 0; $i < count($langs); $i++) {
                 $lang = $keys[$i];
@@ -864,9 +838,9 @@ class CrayonSettingsWP {
                 $lang->state_info(), '</td>',
                 '</tr>';
             }
-            echo '</table><br/>Languages that have the same extension as their name don\'t need to explicitly map extensions.';
+            echo '</table><br/>' . crayon__("Languages that have the same extension as their name don't need to explicitly map extensions.");
         } else {
-            echo 'No languages could be found.';
+            echo crayon__('No languages could be found.');
         }
         exit();
     }
