@@ -1188,6 +1188,7 @@ class Human {
             Chinese (<a href="http://smerpup.com/" target="_blank">Dezhi Liu</a>, <a href="http://neverno.me/" target="_blank">Jash Yin</a>),
             Dutch (<a href="https://twitter.com/RobinRoelofsen" target="_blank">Robin Roelofsen</a>, <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>),
             French (<a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>),
+            Finnish (<a href="https://github.com/vahalan" target="_blank">vahalan</a>),
             German (<a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&#223;</a>),
             Italian (<a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>),
             Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
