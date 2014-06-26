@@ -7,7 +7,7 @@
 
     COMMENT             (/\*.*?\*/)|(//.*?$)
     PREPROCESSOR		(#.*?$)
-    STRING              ((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)')
+    STRING              ((?<![^\\]\\)".*?(?<![^\\]\\)")|((?<![^\\]\\)'.*?(?<![^\\]\\)')
     
     STATEMENT           \b(?alt:statement.txt)\b
     RESERVED            \b(?<![:\.])(?alt:reserved.txt)\b
