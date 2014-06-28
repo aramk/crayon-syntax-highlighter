@@ -276,6 +276,12 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.6.5 =
+* ADDED:
+    * Shell-default theme.
+* FIXED:
+    * Added missing SVN files.
+
 = 2.6.4 =
 * ADDED:
     * Swift language (thanks to <a href="https://github.com/weyhan" target="_blank">weyhan</a>).
