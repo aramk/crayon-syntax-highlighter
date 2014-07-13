@@ -8,7 +8,7 @@
     COMMENT             (?default)
     PREPROCESSOR		(?default)
     STRING              (@?(?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)')
-    NOTATION            \<.+\>
+    NOTATION            \<\ ?[a-zA-Z]+\ ?\>
     
     STATEMENT           (?alt:statement_at.txt)\b|\b(?alt:statement.txt)\b
     RESERVED            (?alt:reserved_at.txt)\b|\b(?alt:reserved.txt)\b
