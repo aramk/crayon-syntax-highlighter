@@ -1194,11 +1194,12 @@ class Human {
             Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
             Korean (<a href="https://github.com/dokenzy" target="_blank">dokenzy</a>),
             Lithuanian (Vincent G),
+            Persian (MahdiY),
             Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
             Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
+            Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, Di_Skyer),
             Slovak (<a href="https://twitter.com/#!/webhostgeeks" target="_blank">webhostgeeks</a>),
             Slovenian (<a href="http://jodlajodla.si/" target="_blank">Jan Su&#353;nik</a>),
-            Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, Di_Skyer),
             Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
             Turkish (<a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>),
             Ukrainian (Michael Yunat)';

@@ -137,12 +137,13 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Japanese (thanks to <a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>)
 * Korean (thanks to <a href="https://github.com/dokenzy" target="_blank">dokenzy</a>)
 * Lithuanian (thanks to Vincent G)
+* Persian (thanks to MahdiY)
 * Polish (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
 * Portuguese (thanks to <a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>)
+* Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
 * Slovak (thanks to Branco, <a href="https://twitter.com/#!/webhostgeeks" target="_blank">webhostgeeks/</a>)
 * Slovenian (thanks to Jan Su&#353;nik, <a href="http://jodlajodla.si/" target="_blank">http://jodlajodla.si/</a>)
 * Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
-* Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
 * Turkish (thanks to <a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)
 * Ukrainian (thanks to Michael Yunat)
 * Help from translators at improving/adding to this list greatly appreciated!
@@ -199,6 +200,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Laurence Scotford, UK
 * Goretity Árpád László, (http://h2co3.org/blog), Hungary
 * AdsProvider, USA
 * Alicia Ramirez, (http://aliciaramirez.com/), Canada
@@ -275,6 +277,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 5. Theme Editor.
 
 == Changelog ==
+
+= 2.6.5 =
+* ADDED:
+    * Persian translation (thanks to MahdiY).
 
 = 2.6.5 =
 * ADDED:
