@@ -122,7 +122,7 @@ class CrayonTagEditorWP {
         return $plugin_array;
     }
 
-    // The remaining functions are for priting
+    // The remaining functions are for displayed output.
 
     public static function select_resource($id, $resources, $current, $set_class = TRUE) {
         $id = CrayonSettings::PREFIX . $id;

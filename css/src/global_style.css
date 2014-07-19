@@ -35,6 +35,10 @@
     text-align: left;
 }
 
+.rtl #crayon-te-table th, .rtl #crayon-te-table td {
+    text-align: right;
+}
+
 #crayon-te-table .crayon-tr-center td, #crayon-te-table .crayon-tr-center th {
     vertical-align: middle;
 }
