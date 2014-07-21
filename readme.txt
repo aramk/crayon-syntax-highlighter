@@ -145,7 +145,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Slovenian (thanks to Jan Su&#353;nik, <a href="http://jodlajodla.si/" target="_blank">http://jodlajodla.si/</a>)
 * Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
 * Turkish (thanks to <a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)
-* Ukrainian (thanks to Michael Yunat)
+* Ukrainian (thanks to <a href="http://getvoip.com/blog" target="_blank">Michael Yunat</a>)
 * Help from translators at improving/adding to this list greatly appreciated!
 
 **Articles**
