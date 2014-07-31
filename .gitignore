@@ -7,3 +7,5 @@ Thumbs.db
 *.pyc
 .idea/
 /log.txt
+
+.c9

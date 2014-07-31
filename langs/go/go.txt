@@ -9,8 +9,8 @@
     PREPROCESSOR        (?default)
     STRING              (?default)
     
-    STATEMENT           (?default)
-    RESERVED            (?default)|\b(?alt:reserved.txt)\b
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            (?default)
     TYPE                (?default)
     MODIFIER            (?default)
 
