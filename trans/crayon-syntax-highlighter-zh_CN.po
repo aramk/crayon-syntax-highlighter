@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Crayon Syntax Highlighter v2.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-31 16:13+0100\n"
-"PO-Revision-Date: 2014-07-31 16:39+0100\n"
+"PO-Revision-Date: 2014-07-31 16:46+0100\n"
 "Last-Translator: admin <admin@neverno.me>\n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -173,7 +173,7 @@ msgstr "行内标签"
 
 #: crayon_settings.class.php:229
 msgid "Block Tag"
-msgstr ""
+msgstr "块标签"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:54 crayon_settings_wp.class.php:211
@@ -200,7 +200,7 @@ msgstr "提示"
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:181
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:182
@@ -477,7 +477,7 @@ msgstr "显示全部语言"
 
 #: crayon_settings_wp.class.php:815
 msgid "No languages could be parsed."
-msgstr ""
+msgstr "无法识别语言"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:826 crayon_settings_wp.class.php:877
@@ -830,7 +830,7 @@ msgstr "按需加载插件的 CSS 与 JavaScript"
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:1135
 msgid "Disable enqueuing for page templates that may contain The Loop."
-msgstr ""
+msgstr "不将可能包含Wordpress主循环的页面模板加入队列"
 
 # @ crayon-syntax-highlighter
 #: crayon_settings_wp.class.php:1136
@@ -1151,6 +1151,8 @@ msgid ""
 "email me your theme - make sure it's considerably different from the stock "
 "themes :)"
 msgstr ""
+"把你的自定义主题加入Crayon官方主题中!这会给我发邮件,请确保你的主题和已有的不"
+"一样 :)"
 
 # @ crayon-syntax-highlighter
 #: util/theme-editor/theme_editor.php:208
@@ -1355,12 +1357,12 @@ msgstr "符号"
 # @ crayon-syntax-highlighter
 #: util/theme-editor/theme_editor.php:405
 msgid "Notation"
-msgstr ""
+msgstr "记号"
 
 # @ crayon-syntax-highlighter
 #: util/theme-editor/theme_editor.php:406
 msgid "Faded"
-msgstr ""
+msgstr "褪色"
 
 # @ crayon-syntax-highlighter
 #: util/theme-editor/theme_editor.php:407
