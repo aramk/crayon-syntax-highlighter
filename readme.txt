@@ -190,12 +190,6 @@ A handful of articles from others written about Crayon, thanks guys!
 * http://www.wplover.com/2155/crayon-syntax-highlighter-plugin/
 * http://www.htmlandphp.com/scripts/crayon-syntax-highlighter.html
 
-**Future Development**
-
-* Performance, minimised resources
-* Theme Editor
-* Integrated commenting
-
 **Donations**
 
 Thanks to all those who donate to the project:
@@ -278,9 +272,11 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 2.6.5 =
+= 2.6.6 =
 * ADDED:
     * Persian translation (thanks to MahdiY).
+* Fixed:
+    * Improved Chinese translation and Go language statements (thanks to <a href="https://github.com/sumhat" target="_blank">sumhat</a>)
 
 = 2.6.5 =
 * ADDED:
