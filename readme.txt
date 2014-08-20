@@ -73,6 +73,7 @@ Languages are defined in language files using Regular Expressions to capture ele
 See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specification/" target="_blank">Crayon Language File Specification</a> to learn how to make your own.
 
 * Default Language (one size fits all, highlights generic code)
+* C1 (thanks to <a href="http://oparin.info/" target="_blank">Oparin Pavel</a>)
 * ABAP
 * ActionScript
 * AmigaDOS (thanks to <a href="http://www.amigalog.com/" target="_blank">amigalog.com</a>)
@@ -194,6 +195,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Łukasz Bereza, Poland
 * Laurence Scotford, UK
 * Goretity Árpád László, (http://h2co3.org/blog), Hungary
 * AdsProvider, USA
@@ -275,6 +277,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.6.6 =
 * ADDED:
     * Persian translation (thanks to MahdiY).
+    * C1 language and themes (thanks to Oparin Pavel).
 * Fixed:
     * Improved Chinese translation and Go language statements (thanks to <a href="https://github.com/sumhat" target="_blank">sumhat</a>)
 

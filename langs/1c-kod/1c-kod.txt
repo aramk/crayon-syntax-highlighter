@@ -1,0 +1,10 @@
+﻿### 1C LANGUAGE ###
+
+    NAME                	1С (Код)
+    VERSION             	8.X
+    PREPROCESSOR           	((&|#)[^\n^',']*)
+	COMMENT             	(?default)
+	STRING					(?default)
+	OPERATOR            	(?alt:operator.txt)
+	STATEMENT			  	(?alt:statement.txt)([\s';']|$)
+	ENTITY              	\b[0-9.]*\b

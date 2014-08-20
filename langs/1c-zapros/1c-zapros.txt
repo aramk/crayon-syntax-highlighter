@@ -1,0 +1,10 @@
+﻿### 1C LANGUAGE ###
+
+    NAME                	1С (Запрос)
+    VERSION             	8.X
+	COMMENT             	(?default)
+    VARIABLE            	(&[^\s^','^)]*)
+	OPERATOR            	(?alt:operator.txt)([\s';']|$)
+	STATEMENT            	(\s(?alt:statement.txt)(.?))+?(?=\()|(\s)(?alt:statement.txt)([\s';']|$)
+	SYMBOL					(?alt:symbol.txt)
+	
