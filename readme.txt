@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=AW99E
 License: GPLv2 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
-Tested up to: 3.9.1
+Tested up to: 4.0.0
 Stable tag: trunk
 
 Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
@@ -195,6 +195,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Cloud-VPS, Poland
 * Łukasz Bereza, Poland
 * Laurence Scotford, UK
 * Goretity Árpád László, (http://h2co3.org/blog), Hungary
@@ -280,6 +281,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * C1 language and themes (thanks to Oparin Pavel).
 * Fixed:
     * Improved Chinese translation and Go language statements (thanks to <a href="https://github.com/sumhat" target="_blank">sumhat</a>)
+    * Theme editor failing to load.
+    * Updated to WP 4.0
 
 = 2.6.5 =
 * ADDED:
