@@ -260,10 +260,16 @@ a.mce_crayon_tinymce {
 
 .crayon-question {
     padding: 1px 4px !important;
-    background: #83b3cb !important;
     text-decoration: none !important;
-    color: white !important;
+    color: #83b3cb !important;
     border-radius: 10px !important;
+    height: 15px !important;
+    width: 15px !important;
+}
+
+.crayon-question:hover {
+    background: #83b3cb !important;
+    color: white !important;
     height: 15px !important;
     width: 15px !important;
 }

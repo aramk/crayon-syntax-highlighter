@@ -129,7 +129,8 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 **International Languages**
 
 * Arabic (thanks to <a href="http://djennadhamza.eb2a.com/" target="_blank">Djennad Hamza</a>)
-* Chinese (Simplified, thanks to <a href="http://smerpup.com/" target="_blank">Dezhi Liu</a> & <a href="http://neverno.me/" target="_blank">Jash Yin</a>)
+* Chinese Simplified (thanks to <a href="http://smerpup.com/" target="_blank">Dezhi Liu</a> & <a href="http://neverno.me/" target="_blank">Jash Yin</a>)
+* Chinese Traditional (thanks to <a href="http://www.arefly.com/" target="_blank">Arefly</a>)
 * Dutch (thanks to <a href="https://twitter.com/RobinRoelofsen" target="_blank">Robin Roelofsen</a> & <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>)
 * Finnish (thanks to <a href="https://github.com/vahalan" target="_blank">vahalan</a>)
 * French (thanks to <a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>)
@@ -275,11 +276,17 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.6.7 =
+* ADDED:
+    * Traditional Chinese translation (thanks to <a href="http://www.arefly.com/" target="_blank">Arefly</a>)
+* FIXED:
+    * Styling for (?) buttons on settings page.
+
 = 2.6.6 =
 * ADDED:
     * Persian translation (thanks to MahdiY).
     * C1 language and themes (thanks to Oparin Pavel).
-* Fixed:
+* FIXED:
     * Improved Chinese translation and Go language statements (thanks to <a href="https://github.com/sumhat" target="_blank">sumhat</a>)
     * Theme editor failing to load.
     * Updated to WP 4.0

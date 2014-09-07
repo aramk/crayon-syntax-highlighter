@@ -1,0 +1,1380 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Crayon Syntax Highlighter v2.6.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-07 10:22+1000\n"
+"PO-Revision-Date: 2014-09-07 10:22+1000\n"
+"Last-Translator: \n"
+"Language-Team: Arefly <eflyjason@gmail.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"crayon__;crayon_n;crayon_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:286
+msgid "Toggle Line Numbers"
+msgstr "切換是否顯示行編號"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:290
+msgid "Toggle Plain Code"
+msgstr "純文本顯示代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:294
+msgid "Toggle Line Wrap"
+msgstr "切換自動換行"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:298
+msgid "Expand Code"
+msgstr "點擊展開代碼"
+
+#: crayon_formatter.class.php:302
+msgid "Copy"
+msgstr "拷貝代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:306
+msgid "Open Code In New Window"
+msgstr "在新窗口中顯示代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_formatter.class.php:323
+msgid "Contains Mixed Languages"
+msgstr "含多種語言"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:151
+msgid "Hourly"
+msgstr "每小時"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:151
+msgid "Daily"
+msgstr "每天"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:152
+msgid "Weekly"
+msgstr "每周"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:152
+msgid "Monthly"
+msgstr "每月"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:153
+msgid "Immediately"
+msgstr "立刻"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:164 crayon_settings.class.php:168
+msgid "Max"
+msgstr "最大"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:164 crayon_settings.class.php:168
+msgid "Min"
+msgstr "最小"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:164 crayon_settings.class.php:168
+msgid "Static"
+msgstr "指定"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:166 crayon_settings.class.php:170
+#: crayon_settings_wp.class.php:749 crayon_settings_wp.class.php:758
+#: crayon_settings_wp.class.php:1037 crayon_settings_wp.class.php:1039
+msgid "Pixels"
+msgstr "px"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:166 crayon_settings.class.php:170
+msgid "Percent"
+msgstr "%"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "None"
+msgstr "從不"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "Left"
+msgstr "左對齊"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "Center"
+msgstr "居中"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:179
+msgid "Right"
+msgstr "右對齊"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:181 crayon_settings.class.php:206
+msgid "On MouseOver"
+msgstr "滑鼠經過"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:181 crayon_settings.class.php:187
+msgid "Always"
+msgstr "始終顯示"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:181 crayon_settings.class.php:187
+msgid "Never"
+msgstr "從不顯示"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:187
+msgid "When Found"
+msgstr "當有指定時"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:206
+msgid "On Double Click"
+msgstr "雙擊"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:206
+msgid "On Single Click"
+msgstr "單擊"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:206
+msgid "Disable Mouse Events"
+msgstr "禁止鼠標行為"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:213
+msgid "An error has occurred. Please try again later."
+msgstr "發生錯誤，請稍後重試。"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings.class.php:229
+msgid "Inline Tag"
+msgstr "行內標簽"
+
+#: crayon_settings.class.php:229
+msgid "Block Tag"
+msgstr "塊標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:54 crayon_settings_wp.class.php:211
+#: crayon_settings_wp.class.php:1242
+#: util/tag-editor/crayon_tag_editor_wp.class.php:256
+msgid "Settings"
+msgstr "設置"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:137
+#, php-format
+msgid "Press %s to Copy, %s to Paste"
+msgstr "使用 %s 拷貝，使用 %s 粘貼。"
+
+#: crayon_settings_wp.class.php:138
+msgid "Click To Expand Code"
+msgstr "點擊展開代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:180
+msgid "Prompt"
+msgstr "提示"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:181
+msgid "Value"
+msgstr "值"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:182
+msgid "Alert"
+msgstr "警告"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:183 crayon_settings_wp.class.php:897
+msgid "No"
+msgstr "取消"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:184 crayon_settings_wp.class.php:897
+msgid "Yes"
+msgstr "確認"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:185
+msgid "Confirm"
+msgstr "確認"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:186
+msgid "Change Code"
+msgstr "修改示例代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:194
+msgid "You do not have sufficient permissions to access this page."
+msgstr "無權限訪問此頁面"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:226
+msgid "Save Changes"
+msgstr "保存設置"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:233
+msgid "Reset Settings"
+msgstr "初始化設置"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:492
+msgid "General"
+msgstr "一般"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:493
+msgid "Theme"
+msgstr "主題"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:494
+msgid "Font"
+msgstr "字體"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:495
+msgid "Metrics"
+msgstr "排版"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:496 util/theme-editor/theme_editor.php:296
+msgid "Toolbar"
+msgstr "工具欄"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:497 util/theme-editor/theme_editor.php:294
+msgid "Lines"
+msgstr "行"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:498
+#: util/tag-editor/crayon_tag_editor_wp.class.php:216
+msgid "Code"
+msgstr "代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:499
+msgid "Tags"
+msgstr "標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:500
+msgid "Languages"
+msgstr "語言"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:501
+msgid "Files"
+msgstr "文件"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:502
+msgid "Posts"
+msgstr "文章"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:503
+msgid "Tag Editor"
+msgstr "標簽編輯器"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:504
+msgid "Misc"
+msgstr "其它"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:507
+msgid "Debug"
+msgstr "調試"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:508
+msgid "Errors"
+msgstr "錯誤"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:509
+msgid "Log"
+msgstr "日志"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:512
+msgid "About"
+msgstr "關於"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:726
+msgid "Height"
+msgstr "高"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:732
+msgid "Width"
+msgstr "寬"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:738
+msgid "Top Margin"
+msgstr "頂部外邊距"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:739
+msgid "Bottom Margin"
+msgstr "底部外邊距"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:740 crayon_settings_wp.class.php:745
+msgid "Left Margin"
+msgstr "左外邊距"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:741 crayon_settings_wp.class.php:745
+msgid "Right Margin"
+msgstr "右外邊距"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:751
+msgid "Horizontal Alignment"
+msgstr "對齊方式"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:754
+msgid "Allow floating elements to surround Crayon"
+msgstr "允許外掛代碼周圍使用浮動元素"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:756
+msgid "Inline Margin"
+msgstr "行內間距"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:764
+msgid "Display the Toolbar"
+msgstr "工具欄顯示方式："
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:767
+msgid "Overlay the toolbar on code rather than push it down when possible"
+msgstr "工具欄懸浮在代碼上而不是把代碼擠下去"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:768
+msgid "Toggle the toolbar on single click when it is overlayed"
+msgstr "當工具欄懸浮時單擊隱藏工具欄"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:769
+msgid "Delay hiding the toolbar on MouseOut"
+msgstr "工具欄消失附帶延遲效果"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:771
+msgid "Display the title when provided"
+msgstr "有標題則顯示標題"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:772
+msgid "Display the language"
+msgstr "顯示語言方式："
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:779
+msgid "Display striped code lines"
+msgstr "條紋顯示代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:780
+msgid "Enable line marking for important lines"
+msgstr "允許關鍵行高亮"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:781
+msgid "Enable line ranges for showing only parts of code"
+msgstr "開啟 指定顯示的行 功能"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:782
+msgid "Display line numbers by default"
+msgstr "默認顯示行編號"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:783
+msgid "Enable line number toggling"
+msgstr "允許切換顯示行編號"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:784
+msgid "Wrap lines by default"
+msgstr "默認自動換行"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:785
+msgid "Enable line wrap toggling"
+msgstr "允許切換自動換行"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:786
+msgid "Start line numbers from"
+msgstr "行編號始於"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:797
+msgid "When no language is provided, use the fallback"
+msgstr "當沒指定語言, 則默認語言為"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:803
+#, php-format
+msgid "%d language has been detected."
+msgstr "已支持 %d 種語言，"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:804
+msgid "Parsing was successful"
+msgstr "加載完成"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:804
+msgid "Parsing was unsuccessful"
+msgstr "加載失敗"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:810
+#, php-format
+msgid "The selected language with id %s could not be loaded"
+msgstr "ID為 %s 的語言加載失敗"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:813
+msgid "Show Languages"
+msgstr "顯示全部語言"
+
+#: crayon_settings_wp.class.php:815
+msgid "No languages could be parsed."
+msgstr "無法識別語言"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:826 crayon_settings_wp.class.php:877
+msgid "ID"
+msgstr "ID"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:826
+msgid "Name"
+msgstr "語言"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:826 crayon_settings_wp.class.php:1182
+msgid "Version"
+msgstr "版本"
+
+#: crayon_settings_wp.class.php:826
+msgid "File Extensions"
+msgstr "擴展名"
+
+#: crayon_settings_wp.class.php:826
+msgid "Aliases"
+msgstr "別名"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:826
+msgid "State"
+msgstr "狀態"
+
+#: crayon_settings_wp.class.php:841
+msgid ""
+"Languages that have the same extension as their name don't need to "
+"explicitly map extensions."
+msgstr ""
+
+#: crayon_settings_wp.class.php:843
+msgid "No languages could be found."
+msgstr "沒有找到任何語言"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:850
+msgid "Show Crayon Posts"
+msgstr "顯示已使用代碼高亮的文章"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:851
+msgid "Refresh"
+msgstr "重新整理"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:877
+#: util/tag-editor/crayon_tag_editor_wp.class.php:193
+#: util/theme-editor/theme_editor.php:311
+msgid "Title"
+msgstr "標題"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:877
+msgid "Posted"
+msgstr "發表時間"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:877
+msgid "Modifed"
+msgstr "修改時間"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:877
+msgid "Contains Legacy Tags?"
+msgstr "是否存在老式標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:992
+msgid "Edit"
+msgstr "編輯"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:992 util/theme-editor/theme_editor.php:199
+msgid "Duplicate"
+msgstr "拷貝"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:992
+msgid "Submit"
+msgstr "提交"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:993 util/theme-editor/theme_editor.php:196
+msgid "Delete"
+msgstr "刪除"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:995
+msgid "Loading..."
+msgstr "載入中"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:997
+msgid "Duplicate a Stock Theme into a User Theme to allow editing."
+msgstr "編輯主題前必須拷貝一個預設主題為自定義主題"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1008
+#, php-format
+msgid ""
+"Change the %1$sfallback language%2$s to change the sample code or %3$schange "
+"it manually%4$s. Lines 5-7 are marked."
+msgstr ""
+"%1$s修改默認語言%2$s 會顯示不同的示例代碼，您也可以 %3$s手動修改%4$s 示例代"
+"碼；5-7 行為關鍵行。"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1015
+msgid "Enable Live Preview"
+msgstr "允許即時預覽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1017
+msgid "Enqueue themes in the header (more efficient)."
+msgstr "在頭部就加載主題（推薦）"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1020
+#, php-format
+msgid "The selected theme with id %s could not be loaded"
+msgstr "ID為 %s 的主題加載失敗"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1035
+msgid "Custom Font Size"
+msgstr "字體大小"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1037
+msgid "Line Height"
+msgstr "行高"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1042
+#, php-format
+msgid "The selected font with id %s could not be loaded"
+msgstr "ID為 %s 的字體加載失敗"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1048
+msgid "Enqueue fonts in the header (more efficient)."
+msgstr "在頭部就加載字體（推薦）"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1053
+msgid "Enable plain code view and display"
+msgstr "允許純文本顯示代碼且顯示方式為"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1056
+msgid "Enable plain code toggling"
+msgstr "允許切換純文本顯示代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1057
+msgid "Show the plain code by default"
+msgstr "默認純文本顯示代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1058
+msgid "Enable code copy/paste"
+msgstr "允許代碼拷貝/粘貼"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1060
+msgid "Enable opening code in a window"
+msgstr "允許在新窗口中顯示代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1061
+msgid "Always display scrollbars"
+msgstr "總是顯示滾動條"
+
+#: crayon_settings_wp.class.php:1062
+msgid "Minimize code"
+msgstr "最小化代碼框"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1063
+msgid "Expand code beyond page borders on mouseover"
+msgstr "鼠標經過時,即使超出頁面邊界也展開代碼"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1064
+msgid "Enable code expanding toggling when possible"
+msgstr "可能時允許代碼折疊"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1067
+msgid "Decode HTML entities in code"
+msgstr "在代碼中進行 HTML 轉義"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1069
+msgid "Decode HTML entities in attributes"
+msgstr "在屬性中進行 HTML 轉義"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1071
+msgid "Remove whitespace surrounding the shortcode content"
+msgstr "刪除短代碼周圍的空白"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1073
+msgid "Remove &lt;code&gt; tags surrounding the shortcode content"
+msgstr "刪除短代碼周圍&lt;code&gt;標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1074
+msgid "Allow Mixed Language Highlighting with delimiters and tags."
+msgstr "允許多重語言高亮使用分隔符和標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1076
+msgid "Show Mixed Language Icon (+)"
+msgstr "顯示多重語言圖標 (+)"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1078
+msgid "Tab size in spaces"
+msgstr "Tab 等於幾個空格"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1080
+msgid "Blank lines before code:"
+msgstr "代碼高亮前的空行數："
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1082
+msgid "Blank lines after code:"
+msgstr "代碼高亮後的空行數："
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1087
+msgid "Capture Inline Tags"
+msgstr "捕獲行內標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1088
+msgid "Wrap Inline Tags"
+msgstr "行內標簽自動換行"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1089
+msgid "Capture &lt;code&gt; as"
+msgstr "捕獲 &lt;code&gt; 標簽為插件所用"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1093
+msgid "Capture `backquotes` as &lt;code&gt;"
+msgstr "捕獲 `反引號` 為 &lt;code&gt; 標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1094
+msgid "Capture &lt;pre&gt; tags as Crayons"
+msgstr "捕獲 &lt;pre&gt; 標簽為插件所用"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1096
+#, php-format
+msgid ""
+"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"the %sTag Editor%s instead and convert legacy tags."
+msgstr ""
+"%s不建議%s再使用迷你標簽以及行內標簽！請使用 %s標簽編輯器%s 代替且轉換掉老式"
+"標簽。"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1097
+msgid "Capture Mini Tags like [php][/php] as Crayons."
+msgstr "使用迷你標簽（如[php][/php]）"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1098
+msgid "Capture Inline Tags like {php}{/php} inside sentences."
+msgstr "捕獲如{php}{/php}形式的行內標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1099
+msgid "Enable [plain][/plain] tag."
+msgstr "啟用 [plain][/plain] 標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1104
+msgid ""
+"When loading local files and a relative path is given for the URL, use the "
+"absolute path"
+msgstr "當 URL 為相對路徑時，使用的絕對路徑為"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1107
+msgid "Followed by your relative URL."
+msgstr "置於相對路徑之前"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1114
+msgid "Convert Legacy Tags"
+msgstr "轉換老式標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1117
+msgid "No Legacy Tags Found"
+msgstr "暫無老式標簽"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1121
+msgid "Encode"
+msgstr "HTML 轉義"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1123
+#, php-format
+msgid ""
+"Use %s to separate setting names from values in the &lt;pre&gt; class "
+"attribute"
+msgstr "&lt;pre&gt; 標簽中使用 %s 分割每個屬性與屬性值。"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1126
+msgid ""
+"Display the Tag Editor in any TinyMCE instances on the frontend (e.g. "
+"bbPress)"
+msgstr "在前端任何 TinyMCE 編輯器都顯示標簽編輯器（如 bbPress）"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1127
+msgid "Display Tag Editor settings on the frontend"
+msgstr "在前端顯示標簽編輯器的設置"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1131
+msgid "Clear the cache used to store remote code requests"
+msgstr "清理用於存儲遠程代碼的緩存頻率"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1133
+msgid "Clear Now"
+msgstr "立刻清理"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1134
+msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
+msgstr "按需加載插件的 CSS 與 JavaScript"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1135
+msgid "Disable enqueuing for page templates that may contain The Loop."
+msgstr "不將可能包含Wordpress主循環的頁面模板加入隊列"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1136
+msgid "Allow Crayons inside comments"
+msgstr "允許在評論中使用"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1137
+msgid "Remove Crayons from excerpts"
+msgstr "文章摘要不啟用代碼高亮"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1138
+msgid "Load Crayons only from the main Wordpress query"
+msgstr "只從Wordpress的主查詢中加載Crayon"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1139
+msgid "Disable mouse gestures for touchscreen devices (eg. MouseOver)"
+msgstr "使用觸屏設備時禁止鼠標行為（如鼠標經過）"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1140
+msgid "Disable animations"
+msgstr "禁止動畫效果"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1141
+msgid "Disable runtime stats"
+msgstr "禁止執行時間統計"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1147
+msgid "Log errors for individual Crayons"
+msgstr "使用獨立的錯誤日志"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1148
+msgid "Log system-wide errors"
+msgstr "啟用系統錯誤日志"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1149
+msgid "Display custom message for errors"
+msgstr "自定義錯誤提示"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1161
+msgid "Show Log"
+msgstr "顯示日志"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1161
+msgid "Hide Log"
+msgstr "隱藏日志"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1163
+msgid "Clear Log"
+msgstr "清理日志"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1164
+msgid "Email Admin"
+msgstr "發郵件給管理員"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1166
+msgid "Email Developer"
+msgstr "發郵件給開發者"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1168
+msgid "The log is currently empty."
+msgstr "日志為空，"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1170
+msgid "The log file exists and is writable."
+msgstr "日志文件存在且可寫。"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1170
+msgid "The log file exists and is not writable."
+msgstr "日志文件存在但不可寫。"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1172
+msgid "The log file does not exist and is not writable."
+msgstr "日志文件不存在且不可寫。"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1184
+msgid "Developer"
+msgstr "開發者"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1185
+msgid "Translators"
+msgstr "翻譯者"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1236
+msgid "?"
+msgstr "？"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1243 util/theme-editor/theme_editor.php:333
+msgid "Theme Editor"
+msgstr "主題編輯器"
+
+# @ crayon-syntax-highlighter
+#: crayon_settings_wp.class.php:1244
+msgid "Donate"
+msgstr "捐助"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:65
+msgid "Add Crayon Code"
+msgstr "插入代碼高亮"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:66
+msgid "Edit Crayon Code"
+msgstr "編輯代碼高亮"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:67
+msgid "Add"
+msgstr "插入"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:68
+#: util/theme-editor/theme_editor.php:349
+msgid "Save"
+msgstr "保存"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:184
+msgid "OK"
+msgstr "確認"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:186
+msgid "Cancel"
+msgstr "取消"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:195
+msgid "A short description"
+msgstr "一段簡短的描述"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:197
+#: util/theme-editor/theme_editor.php:315
+msgid "Inline"
+msgstr "行內"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:199
+msgid "Don't Highlight"
+msgstr "禁止高亮"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:204
+#: util/theme-editor/theme_editor.php:319
+msgid "Language"
+msgstr "語言"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:207
+msgid "Line Range"
+msgstr "指定顯示的行"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:208
+msgid "(e.g. 3-5 or 3)"
+msgstr "（如 3-5 或 3）"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:209
+msgid "Marked Lines"
+msgstr "關鍵行"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:210
+msgid "(e.g. 1,2,3-5)"
+msgstr "（如 1,2,3-5）"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:219
+msgid "Clear"
+msgstr "清理"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:223
+msgid "Paste your code here, or type it in manually."
+msgstr "粘貼代碼到這裡，或者手工輸入。"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:227
+msgid "URL"
+msgstr "URL"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:229
+msgid "Relative local path or absolute URL"
+msgstr "相對路徑或絕對路徑 URL"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:232
+msgid ""
+"If the URL fails to load, the code above will be shown instead. If no code "
+"exists, an error is shown."
+msgstr ""
+"如果 URL 不能加載，將會使用下面的代碼代替顯示，如果也沒有代碼，則顯示錯誤提"
+"示。"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:234
+#, php-format
+msgid ""
+"If a relative local path is given it will be appended to %s - which is "
+"defined in %sCrayon &gt; Settings &gt; Files%s."
+msgstr ""
+"如果是相對路徑，則前面的路徑將是 %s （在 %sCrayon &gt; Settings &gt; Files%s "
+"裡面設置）"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:261
+msgid "Change the following settings to override their global values."
+msgstr "以下設置優先順序高於默認設置，"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:263
+msgid "Only changes (shown yellow) are applied."
+msgstr "只有背景色為黃色的選項優先級會高於默認設置，"
+
+# @ crayon-syntax-highlighter
+#: util/tag-editor/crayon_tag_editor_wp.class.php:265
+#, php-format
+msgid ""
+"Future changes to the global settings under %sCrayon &gt; Settings%s won't "
+"affect overridden settings."
+msgstr "其它設置會沿用默認設置（%s點擊前往設置%s）。"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:192
+msgid "User-Defined Theme"
+msgstr "自定義主題"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:193
+msgid "Stock Theme"
+msgstr "預設主題"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:194
+msgid "Success!"
+msgstr "成功！"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:195
+msgid "Failed!"
+msgstr "失敗！"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:197
+#, php-format
+msgid "Are you sure you want to delete the \"%s\" theme?"
+msgstr "確認刪除「%s」主題？"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:198
+msgid "Delete failed!"
+msgstr "刪除失敗！"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:200
+msgid "New Name"
+msgstr "自定義主題名"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:201
+msgid "Duplicate failed!"
+msgstr "拷貝失敗！"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:202
+msgid "Please check the log for details."
+msgstr "更多信息請查看日志。"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:203
+msgid "Are you sure you want to discard all changes?"
+msgstr "確認放棄所有的修改？"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:204
+#, php-format
+msgid "Editing Theme: %s"
+msgstr "編輯中的主題：%s"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:205
+#, php-format
+msgid "Creating Theme: %s"
+msgstr "創建中的主題：%s"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:206
+msgid "Submit Your Theme"
+msgstr "提交您的主題"
+
+#: util/theme-editor/theme_editor.php:207
+msgid ""
+"Submit your User Theme for inclusion as a Stock Theme in Crayon! This will "
+"email me your theme - make sure it's considerably different from the stock "
+"themes :)"
+msgstr ""
+"把你的自定義主題加入Crayon官方主題中！這會給我發郵件，請確保你的主題和已有的"
+"不一樣 :)"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:208
+msgid "Message"
+msgstr "說明"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:209
+msgid "Please include this theme in Crayon!"
+msgstr "請求納入預設主題！"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:210
+msgid "Submit was successful."
+msgstr "提交成功"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:211
+msgid "Submit failed!"
+msgstr "提交失敗！"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:291
+msgid "Information"
+msgstr "基本信息"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:292
+msgid "Highlighting"
+msgstr "代碼高亮"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:293
+msgid "Frame"
+msgstr "邊框"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:295
+msgid "Line Numbers"
+msgstr "行編號"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:298
+msgid "Background"
+msgstr "背景色"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:299
+msgid "Text"
+msgstr "文字"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:300
+msgid "Border"
+msgstr "邊框"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:301
+msgid "Top Border"
+msgstr "頂部邊框"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:302
+msgid "Bottom Border"
+msgstr "底部邊框"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:303
+msgid "Right Border"
+msgstr "右邊框"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:305
+msgid "Hover"
+msgstr "懸停"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:306
+msgid "Active"
+msgstr "激活"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:307
+msgid "Pressed"
+msgstr "已訪問"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:308
+msgid "Pressed & Hover"
+msgstr "已訪問 & 懸停"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:309
+msgid "Pressed & Active"
+msgstr "已訪問 & 激活"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:312
+msgid "Buttons"
+msgstr "按鈕"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:314
+msgid "Normal"
+msgstr "一般"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:316
+msgid "Striped"
+msgstr "條紋"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:317
+msgid "Marked"
+msgstr "關鍵"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:318
+msgid "Striped & Marked"
+msgstr "條紋 & 關鍵"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:348
+msgid "Back To Settings"
+msgstr "返回設置"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:387
+msgid "Comment"
+msgstr "注釋"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:388
+msgid "String"
+msgstr "字元串"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:389
+msgid "Preprocessor"
+msgstr "預處理器"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:390
+msgid "Tag"
+msgstr "標簽"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:391
+msgid "Keyword"
+msgstr "關鍵字"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:392
+msgid "Statement"
+msgstr "語句"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:393
+msgid "Reserved"
+msgstr "保留字"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:394
+msgid "Type"
+msgstr "類型"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:395
+msgid "Modifier"
+msgstr "修飾符"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:396
+msgid "Identifier"
+msgstr "標識"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:397
+msgid "Entity"
+msgstr "實例"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:398
+msgid "Variable"
+msgstr "變量"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:399
+msgid "Constant"
+msgstr "常量"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:400
+msgid "Operator"
+msgstr "操作符"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:401
+msgid "Symbol"
+msgstr "符號"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:402
+msgid "Notation"
+msgstr "記號"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:403
+msgid "Faded"
+msgstr "褪色"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:404
+msgid "HTML"
+msgstr "HTML"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:405
+msgid "Unhighlighted"
+msgstr "無高亮"
+
+# @ crayon-syntax-highlighter
+#: util/theme-editor/theme_editor.php:539
+msgid "(Used for Copy/Paste)"
+msgstr "（拷貝/粘貼時的樣式）"

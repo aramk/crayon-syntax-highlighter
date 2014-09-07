@@ -1185,7 +1185,8 @@ class Human {
         $translators = '<strong>' . crayon__('Translators') . ':</strong> ' .
             '
             Arabic (<a href="http://djennadhamza.eb2a.com/" target="_blank">Djennad Hamza</a>),
-            Chinese (<a href="http://smerpup.com/" target="_blank">Dezhi Liu</a>, <a href="http://neverno.me/" target="_blank">Jash Yin</a>),
+            Chinese Simplified (<a href="http://smerpup.com/" target="_blank">Dezhi Liu</a>, <a href="http://neverno.me/" target="_blank">Jash Yin</a>),
+            Chinese Traditional (<a href="http://www.arefly.com/" target="_blank">Arefly</a>),
             Dutch (<a href="https://twitter.com/RobinRoelofsen" target="_blank">Robin Roelofsen</a>, <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>),
             French (<a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>),
             Finnish (<a href="https://github.com/vahalan" target="_blank">vahalan</a>),
