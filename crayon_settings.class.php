@@ -1,7 +1,7 @@
 <?php
-require_once ('global.php');
-require_once (CRAYON_PARSER_PHP);
-require_once (CRAYON_THEMES_PHP);
+require_once('global.php');
+require_once(CRAYON_PARSER_PHP);
+require_once(CRAYON_THEMES_PHP);
 
 /**
  * Stores CrayonSetting objects.
@@ -64,6 +64,7 @@ class CrayonSettings {
     const WHITESPACE_AFTER = 'whitespace-after';
     const TRIM_CODE_TAG = 'trim-code-tag';
     const TAB_SIZE = 'tab-size';
+    const TAB_CONVERT = 'tab-convert';
     const FALLBACK_LANG = 'fallback-lang';
     const LOCAL_PATH = 'local-path';
     const SCROLL = 'scroll';
@@ -111,6 +112,7 @@ class CrayonSettings {
     const EXPAND = 'expand';
     const EXPAND_TOGGLE = 'expand-toggle';
     const MINIMIZE = 'minimize';
+    const IGNORE = 'ignore';
 
     private static $cache_array;
 
@@ -195,6 +197,7 @@ class CrayonSettings {
             new CrayonSetting(self::WHITESPACE_BEFORE, 0),
             new CrayonSetting(self::WHITESPACE_AFTER, 0),
             new CrayonSetting(self::TRIM_CODE_TAG, TRUE),
+            new CrayonSetting(self::TAB_CONVERT, FALSE),
             new CrayonSetting(self::TAB_SIZE, 4),
             new CrayonSetting(self::FALLBACK_LANG, CrayonLangs::DEFAULT_LANG),
             new CrayonSetting(self::LOCAL_PATH, ''),

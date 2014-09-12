@@ -1075,6 +1075,7 @@ class Human {
         echo '<div class="crayon-hide-inline-only">';
         self::checkbox(array(CrayonSettings::SHOW_MIXED, crayon__('Show Mixed Language Icon (+)')));
         echo '</div>';
+        self::checkbox(array(CrayonSettings::TAB_CONVERT, crayon__('Convert tabs to spaces')));
         self::span(crayon__('Tab size in spaces') . ': ');
         self::textbox(array('id' => CrayonSettings::TAB_SIZE, 'size' => 2, 'break' => TRUE));
         self::span(crayon__('Blank lines before code:') . ' ');

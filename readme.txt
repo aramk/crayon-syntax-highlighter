@@ -279,6 +279,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.6.7 =
 * ADDED:
     * Traditional Chinese translation (thanks to <a href="http://www.arefly.com/" target="_blank">Arefly</a>)
+    * Converting tabs to spaces setting is now off by default. The original tab size setting is used with the tab-size CSS style instead to preserve tabs in the source.
+    * "ignore:true" setting in the class of pre tags will prevent that code block from being parsed by Crayon.
 * FIXED:
     * Styling for (?) buttons on settings page.
 

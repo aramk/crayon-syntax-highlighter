@@ -357,6 +357,7 @@ coloring etc.
     overflow: visible;
     background: none !important;
     border: none !important;
+    tab-size: 4;
 }
 
 .crayon-syntax .crayon-line {

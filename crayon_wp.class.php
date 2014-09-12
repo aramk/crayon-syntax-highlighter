@@ -289,7 +289,6 @@ class CrayonWP {
             $wp_content = preg_replace_callback('#(?<!\$)\[\s*plain\s*\](.*?)\[\s*/\s*plain\s*\]#msi', 'CrayonFormatter::plain_code', $wp_content);
         }
 
-
         // Add IDs to the Crayons
         CrayonLog::debug('capture adding id ' . $wp_id . ' , now has len ' . strlen($wp_content));
         $wp_content = preg_replace_callback(self::REGEX_ID, 'CrayonWP::add_crayon_id', $wp_content);
@@ -345,6 +344,11 @@ class CrayonWP {
                     for ($j = 0; $j < count($att_matches[1]); $j++) {
                         $atts_array[trim(strtolower($att_matches[1][$j]))] = trim($att_matches[3][$j]);
                     }
+                }
+
+                if (@$atts_array[CrayonSettings::IGNORE]) {
+                    // TODO(aramk) Revert to the original content.
+                    continue;
                 }
 
                 // Capture theme
@@ -755,7 +759,7 @@ class CrayonWP {
         return $the_excerpt . ' ';
     }
 
-    // Refactored, used to capture pre and span tags which have settings in class attribute
+    // Used to capture pre and span tags which have settings in class attribute
     public static function class_tag($matches) {
         // If class exists, atts is not captured
         $pre_class = $matches[1];
@@ -775,6 +779,10 @@ class CrayonWP {
         }
 
         if (!empty($class)) {
+            if (preg_match('#\bignore\s*:\s*true#', $class)) {
+                // Prevent any changes if ignoring the tag.
+                return $matches[0];
+            }
             // crayon-inline is turned into inline="1"
             $class = preg_replace('#' . self::REGEX_INLINE_CLASS . '#mi', 'inline="1"', $class);
             // "setting[:_]value" style settings in the class attribute
