@@ -196,6 +196,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Erdal Cicek, Turkey
 * Cloud-VPS, Poland
 * Łukasz Bereza, Poland
 * Laurence Scotford, UK
@@ -281,6 +282,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Traditional Chinese translation (thanks to <a href="http://www.arefly.com/" target="_blank">Arefly</a>)
     * Converting tabs to spaces setting is now off by default. The original tab size setting is used with the tab-size CSS style instead to preserve tabs in the source.
     * "ignore:true" setting in the class of pre tags will prevent that code block from being parsed by Crayon.
+    * Obsidian theme thanks to <a href="http://rakcheev.ru/" target="_blank">Rakcheev Artem</a>.
 * FIXED:
     * Styling for (?) buttons on settings page.
 
