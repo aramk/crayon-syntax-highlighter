@@ -196,6 +196,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Raffael Vogler, Germany
 * Erdal Cicek, Turkey
 * Cloud-VPS, Poland
 * Łukasz Bereza, Poland
