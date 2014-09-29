@@ -284,6 +284,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Converting tabs to spaces setting is now off by default. The original tab size setting is used with the tab-size CSS style instead to preserve tabs in the source.
     * "ignore:true" setting in the class of pre tags will prevent that code block from being parsed by Crayon.
     * Obsidian theme thanks to <a href="http://rakcheev.ru/" target="_blank">Rakcheev Artem</a>.
+    * Visual Assist theme thanks to Brady Reuter.
 * FIXED:
     * Styling for (?) buttons on settings page.
 
