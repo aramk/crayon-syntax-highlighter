@@ -3,7 +3,7 @@
 #   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
 
     NAME                OCaml
-    VERSION             0.1.0
+    VERSION             0.1.1
 
     COMMENT             \(\*.*?\*\)
 
