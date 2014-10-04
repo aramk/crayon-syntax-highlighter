@@ -1,0 +1,6 @@
+string
+float
+unit
+bool
+char
+int

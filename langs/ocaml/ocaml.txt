@@ -1,0 +1,36 @@
+### OCaml LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                OCaml
+    VERSION             0.1.1
+
+    COMMENT             \(\*.*?\*\)
+
+#   Get rid of 'xxxx' string because we can have 'a type name or a''' variable name in ocaml
+    STRING              ((?<![^\\]\\)".*?(?<![^\\]\\)")
+    
+#   This list(file: reserved.txt) is taken from:
+#   http://caml.inria.fr/pub/docs/manual-ocaml-4.00/manual044.html
+#   Sort the words: awk '{print length, $0}' x.words | sort -nr | awk '{print $2}'
+    RESERVED            \b(?alt:reserved.txt)\b
+
+#   Basic types taken from:
+#   http://www.csc.villanova.edu/~dmatusze/resources/ocaml/ocaml.html#Types
+    TYPE                \b(?alt:type.txt)\b
+
+#   These functions are also taken from previous page.
+#   There are acting more like operators
+    KEYWORD             \b(?alt:function.txt)\b
+
+    ENTITY              (?default)
+
+    CAPS:VARIABLE       (?-i)\b[A-Z]\w+\b(?i)
+
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+
+#   Taken from previous page.
+#   Might not be complete
+    OPERATOR            (?alt:operator.txt)
+    SYMBOL              (?default)
