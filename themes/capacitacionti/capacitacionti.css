@@ -1,0 +1,179 @@
+/*
+Name: Capacitacionti
+Description: Terminal en Ubuntu Server.
+Version: 1.0
+Author: Henry Taype
+URL: http://capacitacionti.com/
+*/
+.crayon-theme-capacitacionti {
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #167378 !important;
+}
+.crayon-theme-capacitacionti-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #22BCB4 !important;
+}
+.crayon-theme-capacitacionti .crayon-table .crayon-nums {
+	background: #22BCB4 !important;
+	color: #AEDE3D !important;
+	border-right-color: #22BCB4 !important;
+	border-right-width: 2 !important;
+	border-right-style: solid !important;
+}
+.crayon-theme-capacitacionti *::selection {
+	background: transparent !important;
+}
+.crayon-theme-capacitacionti .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-capacitacionti .crayon-striped-line {
+	background: #167378 !important;
+}
+.crayon-theme-capacitacionti .crayon-striped-num {
+	background: #22BCB4 !important;
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-marked-line {
+	background: #167378 !important;
+	border-width: 1px !important;
+	border-color: #22BCB4 !important;
+}
+.crayon-theme-capacitacionti .crayon-marked-num {
+	color: #AEDE3D !important;
+	background: #22BCB4 !important;
+	border-width: 1px !important;
+	border-color: #22BCB4 !important;
+}
+.crayon-theme-capacitacionti .crayon-marked-line.crayon-striped-line {
+	background: #167378 !important;
+}
+.crayon-theme-capacitacionti .crayon-marked-num.crayon-striped-num {
+	background: #22BCB4 !important;
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-capacitacionti .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-capacitacionti .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-capacitacionti .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-capacitacionti .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-capacitacionti .crayon-toolbar {
+	background: #00595E !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #22BCB4 !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-capacitacionti .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-capacitacionti .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-capacitacionti .crayon-title {
+	color: #aede3d !important;
+	font-weight: bold !important;
+}
+.crayon-theme-capacitacionti .crayon-language {
+	color: #aede3d !important;
+	background-color: #00595E !important;
+}
+.crayon-theme-capacitacionti .crayon-button {
+	background-color: #C5E486 !important;
+}
+.crayon-theme-capacitacionti .crayon-button:hover {
+	background-color: #9FCF2E !important;
+	color: #666;
+}
+.crayon-theme-capacitacionti .crayon-button.crayon-pressed:hover {
+	background-color: #9FCF2E !important;
+	color: #666;
+}
+.crayon-theme-capacitacionti .crayon-button.crayon-pressed {
+	background-color: #7FB718 !important;
+	color: #FFF;
+}
+.crayon-theme-capacitacionti .crayon-button.crayon-pressed:active {
+	background-color: #7FB718 !important;
+	color: #FFF;
+}
+.crayon-theme-capacitacionti .crayon-button:active {
+	background-color: #7FB718 !important;
+	color: #FFF;
+}
+.crayon-theme-capacitacionti .crayon-pre {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-c {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-s {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-p {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-ta {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-k {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-st {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-r {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-t {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-m {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-i {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-e {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-v {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-cn {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-o {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-sy {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-n {
+	color: #AEDE3D !important;
+	font-style: italic !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-f {
+	color: #AEDE3D !important;
+}
+.crayon-theme-capacitacionti .crayon-pre .crayon-h {
+	color: #AEDE3D !important;
+}

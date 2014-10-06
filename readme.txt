@@ -278,6 +278,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.6.8 =
+* ADDED:
+    * Added Capacitacionti theme
+
 = 2.6.7 =
 * ADDED:
     * Traditional Chinese translation (thanks to <a href="http://www.arefly.com/" target="_blank">Arefly</a>)
