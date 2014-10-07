@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Crayon Syntax Highlighter
-Plugin URI: https://github.com/aramkocharyan/crayon-syntax-highlighter
+Plugin URI: https://github.com/aramk/crayon-syntax-highlighter
 Description: Supports multiple languages, themes, highlighting from a URL, local file or post text.
 Version: _2.6.8_beta
 Author: Aram Kocharyan

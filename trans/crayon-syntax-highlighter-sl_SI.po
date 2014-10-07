@@ -1085,18 +1085,6 @@ msgstr ""
 "bbPress)"
 
 # @ crayon-syntax-highlighter
-#. translators: plugin header field 'PluginURI'
-#: crayon_wp.class.php:0
-msgid "https://github.com/aramkocharyan/crayon-syntax-highlighter"
-msgstr "https://github.com/aramkocharyan/crayon-syntax-highlighter"
-
-# @ crayon-syntax-highlighter
-#. translators: plugin header field 'Version'
-#: crayon_wp.class.php:0
-msgid "2.4.0"
-msgstr "2.4.0"
-
-# @ crayon-syntax-highlighter
 #: util/tag-editor/crayon_tag_editor_wp.class.php:180
 msgid "OK"
 msgstr "V redu"

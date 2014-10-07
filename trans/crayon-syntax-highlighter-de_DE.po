@@ -1067,18 +1067,6 @@ msgstr ""
 msgid "Display the Tag Editor in any TinyMCE instances on the frontend (e.g. bbPress)"
 msgstr "Tag Editor in jedem TinyMCE Editor auf der Seite anzeigen (z.B. bbPress)"
 
-#. translators: plugin header field 'PluginURI'
-#: crayon_wp.class.php:0
-#@ crayon-syntax-highlighter
-msgid "https://github.com/aramkocharyan/crayon-syntax-highlighter"
-msgstr ""
-
-#. translators: plugin header field 'Version'
-#: crayon_wp.class.php:0
-#@ crayon-syntax-highlighter
-msgid "2.4.0"
-msgstr ""
-
 #: util/tag-editor/crayon_tag_editor_wp.class.php:180
 #@ crayon-syntax-highlighter
 msgid "OK"

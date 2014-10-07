@@ -8,7 +8,7 @@ Written in PHP and jQuery. Crayon is a Wordpress plugin, but can be used in any 
 
 ## Download
 
-* [Beta Development Releases](https://github.com/aramkocharyan/crayon-syntax-highlighter/zipball/master)
+* [Beta Development Releases](https://github.com/aramk/crayon-syntax-highlighter/zipball/master)
 * [Stable Releases](http://wordpress.org/extend/plugins/crayon-syntax-highlighter/)
 
 ## Tag Editor

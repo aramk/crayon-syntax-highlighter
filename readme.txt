@@ -54,9 +54,9 @@ It also supports some neat features like:
 
 **Links**
 
-* <a href="https://github.com/aramkocharyan/crayon-syntax-highlighter" target="_blank">Beta Releases</a>
+* <a href="https://github.com/aramk/crayon-syntax-highlighter" target="_blank">Beta Releases</a>
 * <a href="http://aramk.com/blog/2012/12/27/crayon-theme-editor/" target="_blank">Themes Demo</a>
-* <a href="https://github.com/aramkocharyan/crayon-syntax-highlighter" target="_blank">GitHub Project</a>
+* <a href="https://github.com/aramk/crayon-syntax-highlighter" target="_blank">GitHub Project</a>
 
 **Contributions**
 
@@ -262,7 +262,7 @@ Thanks to all those who donate to the project:
 
 == Frequently Asked Questions ==
 
-Please see the <a href="https://github.com/aramkocharyan/crayon-syntax-highlighter" target="_blank">documentation</a> for all the details.
+Please see the <a href="https://github.com/aramk/crayon-syntax-highlighter" target="_blank">documentation</a> for all the details.
 
 = Support =
 
@@ -426,7 +426,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Forced LTR for Crayon CSS, preventing the line numbers from appearing on the right
     * Added unhighlighted colour to theme editor and existing dark themes
     * New theme inputs not present in the loaded theme are added during save
-    * Fixed a bug related to IIS 7.5 and uniqid(): https://github.com/aramkocharyan/crayon-syntax-highlighter/issues/97
+    * Fixed a bug related to IIS 7.5 and uniqid(): https://github.com/aramk/crayon-syntax-highlighter/issues/97
 
 = 2.2.1 =
 * ADDED:
@@ -515,7 +515,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Translation to Slovak
 * FIXED:
     * jQuery UI is no longer an external dependency; now using wpdialog(). Theme Editor updated to use wpdialog.
-    * Inline tags. See: https://github.com/aramkocharyan/crayon-syntax-highlighter/issues/57
+    * Inline tags. See: https://github.com/aramk/crayon-syntax-highlighter/issues/57
     * Tag Editor didn't work on front end
     * Improved legacy tag conversion functions by removing false positives arising from duplicate regex
     * Slightly faster conversion of legacy by delaying database writes until the end
@@ -950,7 +950,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 1.7.3 =
 * Added Mini Tags and Plain Tags into Crayon. http://aramk.com/blog/2011/12/27/mini-tags-in-crayon/
 * Fixed a bug causing RSS feeds to contain malformed HTML of Crayons, now it shows plain code with correct indentations. Thanks to Артём.
-* Updated help in Settings and https://github.com/aramkocharyan/crayon-syntax-highlighter
+* Updated help in Settings and https://github.com/aramk/crayon-syntax-highlighter
 
 = 1.7.2 =
 * Fixed a bug that prevented foreign languages from being initialised and used. Thanks to @west_323 for finding it.
