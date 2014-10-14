@@ -280,7 +280,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 2.6.8 =
 * ADDED:
+    * OCaml langauge thanks to <a href="https://github.com/zhenjie" target="_blank">zhenjie</a>
     * Added Capacitacionti theme
+* FIXED:
+    * SVN issue with old versions of JS and CSS resources being deployed instead of the latest from the dev repo.
 
 = 2.6.7 =
 * ADDED:
