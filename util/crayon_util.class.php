@@ -526,7 +526,7 @@ EOT;
     // Returns the current HTTP URL
     public static function current_url() {
         $p = self::isSecure() ? "https://" : "http://";
-        return $p . $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI];
+        return $p . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     }
 
     // Removes crayon plugin path from absolute path
@@ -569,7 +569,7 @@ EOT;
     public static function isSecure() {
         return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443;
     }
-    
+
     public static function startsWith($haystack, $needle) {
         return substr($haystack, 0, strlen($needle)) === $needle;
     }

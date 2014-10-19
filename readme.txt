@@ -279,9 +279,13 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.6.9 =
+* ADDED:
+    * Added Orange Code theme
+
 = 2.6.8 =
 * ADDED:
-    * OCaml langauge thanks to <a href="https://github.com/zhenjie" target="_blank">zhenjie</a>
+    * OCaml language thanks to <a href="https://github.com/zhenjie" target="_blank">zhenjie</a>
     * Added Capacitacionti theme
 * FIXED:
     * SVN issue with old versions of JS and CSS resources being deployed instead of the latest from the dev repo.
@@ -1136,4 +1140,3 @@ http://wordpress.org/support/topic/plugin-crayon-syntax-highlighter-this-plugin-
 == Upgrade Notice ==
 
 Make sure to upgrade to the latest release when possible to ensure you avoid bugs others have found and enjoy new features.
-

@@ -1,0 +1,164 @@
+/*
+Name: Orange Code
+Description: Orange Code Editor
+Version: 1.0
+Author: Murat Akdeniz
+URL: http://webfikirleri.com/
+*/
+.crayon-theme-orange-code {
+	margin-bottom: 25px !important;
+	background-color: #f8f8ff !important;
+	font-size: 100% !important;
+	line-height: 130% !important;
+	border-width: 1px !important;
+	border-color: #dedede !important;
+	background: #fdfdfd !important;
+}
+.crayon-theme-orange-code .crayon-toolbar {
+	background-color: #eee !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #ff4500 !important;
+	background: #ffffff !important;
+}
+.crayon-theme-orange-code .crayon-toolbar .crayon-language {
+	font-size: 80% !important;
+	color: #666 !important;
+}
+.crayon-theme-orange-code .crayon-toolbar .crayon-title {
+	font-size: 80% !important;
+	color: #666 !important;
+}
+.crayon-theme-orange-code .crayon-table .crayon-nums {
+	background-color: #eee !important;
+	background: #fdfdfd !important;
+	border-right-color: #ffffff !important;
+	border-right-style: solid !important;
+	border-right-width: 2px !important;
+	color: #2c2c2c !important;
+}
+.crayon-theme-orange-code .crayon-table .crayon-nums-content {
+	padding-top: 5px !important;
+	padding-bottom: 3px !important;
+}
+.crayon-theme-orange-code .crayon-table .crayon-num {
+	min-width: 1.2em !important;
+	text-align: right !important;
+	color: #aaa !important;
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-right-color: #dedede !important;
+}
+.crayon-theme-orange-code .crayon-pre {
+	padding-top: 5px !important;
+	padding-bottom: 3px !important;
+}
+.crayon-theme-orange-code .crayon-marked-line {
+	background: #fff5e2 !important;
+	border-width: 1px !important;
+	border-color: #DFDFDF !important;
+}
+.crayon-theme-orange-code .crayon-marked-num {
+	color: #ffffff !important;
+	background: #ff6400 !important;
+	border-width: 1px !important;
+	border-color: #c94f00 !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-c {
+	color: #999 !important;
+	font-style: italic !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-s {
+	color: #d14 !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-p {
+	color: #b85c00 !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-k {
+	color: teal !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-st {
+	color: #000 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-r {
+	color: #000 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-t {
+	color: #800080 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-m {
+	color: #800080 !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-i {
+	color: #000 !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-e {
+	color: teal !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-v {
+	color: #002D7A !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-cn {
+	color: #099 !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-o {
+	color: #006fe0 !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-f {
+	color: #999 !important;
+}
+.crayon-theme-orange-code .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
+.crayon-theme-orange-code-inline {
+	background: #ff8e00 !important;
+}
+.crayon-theme-orange-code .crayon-striped-line {
+	background: #f6f6f6 !important;
+}
+.crayon-theme-orange-code .crayon-marked-line.crayon-top {
+	border-top-style: dotted !important;
+}
+.crayon-theme-orange-code .crayon-marked-line.crayon-bottom {
+	border-bottom-style: dotted !important;
+}
+.crayon-theme-orange-code .crayon-marked-line.crayon-striped-line {
+	background: #fff1d7 !important;
+}
+.crayon-theme-orange-code .crayon-striped-num {
+	background: #f6f6f6 !important;
+	color: #2c2c2c !important;
+}
+.crayon-theme-orange-code .crayon-marked-num.crayon-striped-num {
+	background: #dd5200 !important;
+	color: #ffffff !important;
+}
+.crayon-theme-orange-code .crayon-marked-num.crayon-top {
+	border-top-style: dotted !important;
+}
+.crayon-theme-orange-code .crayon-marked-num.crayon-bottom {
+	border-bottom-style: dotted !important;
+}
+.crayon-theme-orange-code .crayon-title {
+	color: #ff4500 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-orange-code .crayon-button:hover {
+	background-color: #ff4500 !important;
+}
+.crayon-theme-orange-code .crayon-button:active {
+	background-color: #ff4500 !important;
+}
