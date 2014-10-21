@@ -196,6 +196,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Peter Kriegel, (http://www.powershell-group.eu/), Germany
 * Geo My WP, (http://geomywp.com), US
 * Raffael Vogler, Germany
 * Erdal Cicek, Turkey
