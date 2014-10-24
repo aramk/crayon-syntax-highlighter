@@ -1126,6 +1126,10 @@ class Human {
         echo '<span>', $sep, self::help_button('http://aramk.com/blog/2012/03/25/crayon-tag-editor/'), '</span><br/>';
         self::checkbox(array(CrayonSettings::TAG_EDITOR_FRONT, crayon__("Display the Tag Editor in any TinyMCE instances on the frontend (e.g. bbPress)") . self::help_button('http://aramk.com/blog/2012/09/08/crayon-with-bbpress/')));
         self::checkbox(array(CrayonSettings::TAG_EDITOR_SETTINGS, crayon__("Display Tag Editor settings on the frontend")));
+        self::span(crayon__('Add Code button text') . ' ');
+        self::textbox(array('id' => CrayonSettings::TAG_EDITOR_ADD_BUTTON_TEXT, 'break' => TRUE));
+        self::span(crayon__('Edit Code button text') . ' ');
+        self::textbox(array('id' => CrayonSettings::TAG_EDITOR_EDIT_BUTTON_TEXT, 'break' => TRUE));
     }
 
     public static function misc() {

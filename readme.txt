@@ -282,7 +282,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 2.6.9 =
 * ADDED:
-    * Added Orange Code theme
+    * Orange Code theme.
+    * Support for changing the text shown for "Add Code" and "Edit Code" buttons in the Tag Editor.
+* FIXED:
+    * Missing PHP keywords thanks to <a href="https://github.com/tst" target="_blank">tst</a>.
 
 = 2.6.8 =
 * ADDED:
