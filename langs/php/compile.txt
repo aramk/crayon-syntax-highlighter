@@ -1,3 +1,4 @@
+# http://php.net/manual/en/language.constants.predefined.php
 __NAMESPACE__
 __METHOD__
 __FUNCTION__
@@ -5,3 +6,4 @@ __LINE__
 __FILE__
 __DIR__
 __CLASS__
+__TRAIT__

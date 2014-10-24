@@ -1,3 +1,4 @@
+# http://php.net/manual/en/reserved.keywords.php
 unset
 print
 return
@@ -12,3 +13,6 @@ exit
 empty
 echo
 die
+yield
+trait
+insteadof
