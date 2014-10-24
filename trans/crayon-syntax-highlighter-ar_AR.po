@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: crayon-syntax-highlighter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-23 23:09+1000\n"
+"POT-Creation-Date: 2013-05-24 08:40+1000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: fr_FR\n"
+"Language: ar-AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -75,7 +75,7 @@ msgstr "شهريا"
 # @ crayon-syntax-highlighter
 #: ../crayon_settings.class.php:152
 msgid "Immediately"
-msgstr "حاﻻ"
+msgstr "حا?"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings.class.php:163 ../crayon_settings.class.php:167
@@ -162,7 +162,7 @@ msgstr "تعطيل أفعال الفأرة"
 # @ crayon-syntax-highlighter
 #: ../crayon_settings.class.php:211
 msgid "An error has occurred. Please try again later."
-msgstr "لقد حدث خطأ . الرجاء اعادة المحاولة ﻻحقا."
+msgstr "لقد حدث خطأ . الرجاء اعادة المحاولة ?حقا."
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings.class.php:227
@@ -176,7 +176,7 @@ msgstr ""
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:53 ../crayon_settings_wp.class.php:210
-#: ../crayon_settings_wp.class.php:1255
+#: ../crayon_settings_wp.class.php:1257
 #: ../util/tag-editor/crayon_tag_editor_wp.class.php:254
 msgid "Settings"
 msgstr "إعدادات"
@@ -463,7 +463,7 @@ msgstr "خطأ في التحويل "
 #: ../crayon_settings_wp.class.php:835
 #, php-format
 msgid "The selected language with id %s could not be loaded"
-msgstr " (%s) ﻻ نستطيع تحديد اللغة المختارة بـالرقم  "
+msgstr " (%s) ? نستطيع تحديد اللغة المختارة بـالرقم  "
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:838
@@ -552,7 +552,7 @@ msgstr "تحميل اعدادات الاضافة  في التروسية -أكث�
 #: ../crayon_settings_wp.class.php:1043
 #, php-format
 msgid "The selected theme with id %s could not be loaded"
-msgstr " %s ﻻ نستطيع تحميل الشكل المحدد بالرقم  "
+msgstr " %s ? نستطيع تحميل الشكل المحدد بالرقم  "
 
 #: ../crayon_settings_wp.class.php:1055
 msgid "Add More"
@@ -573,7 +573,7 @@ msgstr "الارتفاع"
 #: ../crayon_settings_wp.class.php:1064
 #, php-format
 msgid "The selected font with id %s could not be loaded"
-msgstr " (%s) ﻻ يمكن تحديد الخط المحدد بالــ"
+msgstr " (%s) ? يمكن تحديد الخط المحدد بالــ"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:1070
@@ -764,7 +764,7 @@ msgstr "تفريغ الأن"
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:1155
 msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
-msgstr "ﻻ تحاول أن تغير في  ملفات الـ  CSS و JavaScript في حالة الضرورة فقط "
+msgstr "? تحاول أن تغير في  ملفات الـ  CSS و JavaScript في حالة الضرورة فقط "
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:1156
@@ -853,12 +853,12 @@ msgstr "السجلات متاحة وتستطيع الكتابة عليها "
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:1191
 msgid "The log file exists and is not writable."
-msgstr "السجلات موجودة لكن ﻻ تسنطيع الكتابة عليها "
+msgstr "السجلات موجودة لكن ? تسنطيع الكتابة عليها "
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:1193
 msgid "The log file does not exist and is not writable."
-msgstr "السجلات غير موجودة ، وﻻ تستطيع كتابتها"
+msgstr "السجلات غير موجودة ، و? تستطيع كتابتها"
 
 # @ crayon-syntax-highlighter
 #: ../crayon_settings_wp.class.php:1203
@@ -876,18 +876,18 @@ msgid "Translators"
 msgstr "المترجم"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1249
+#: ../crayon_settings_wp.class.php:1251
 msgid "?"
 msgstr "؟"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1256
+#: ../crayon_settings_wp.class.php:1258
 #: ../util/theme-editor/theme_editor.php:336
 msgid "Theme Editor"
 msgstr "محرر الاشكال"
 
 # @ crayon-syntax-highlighter
-#: ../crayon_settings_wp.class.php:1257
+#: ../crayon_settings_wp.class.php:1259
 msgid "Donate"
 msgstr "تبرع "
 
@@ -1014,48 +1014,48 @@ msgstr ""
 
 #: ../util/theme-editor/theme_editor.php:192
 msgid "User-Defined Theme"
-msgstr ""
+msgstr "ثيم معرف من المستخدم"
 
 # @ crayon-syntax-highlighter
 #: ../util/theme-editor/theme_editor.php:193
 #, fuzzy
 msgid "Stock Theme"
-msgstr "الشكل"
+msgstr "الشكل المخزن"
 
 #: ../util/theme-editor/theme_editor.php:194
 msgid "Success!"
-msgstr ""
+msgstr "نجح"
 
 #: ../util/theme-editor/theme_editor.php:195
 msgid "Failed!"
-msgstr ""
+msgstr "فشل"
 
 #: ../util/theme-editor/theme_editor.php:197
 #, php-format
 msgid "Are you sure you want to delete the \"%s\" theme?"
-msgstr ""
+msgstr "؟ \"%s\" ىهل أنت متأكد من حذف الثيم المسمى بـ"
 
 #: ../util/theme-editor/theme_editor.php:198
 #, fuzzy
 msgid "Delete failed!"
-msgstr "احذف"
+msgstr "فشل الحذف"
 
 #: ../util/theme-editor/theme_editor.php:200
 msgid "New Name"
-msgstr ""
+msgstr "اسم جديد"
 
 #: ../util/theme-editor/theme_editor.php:201
 #, fuzzy
 msgid "Duplicate failed!"
-msgstr "انسخ"
+msgstr "فشل النسخ"
 
 #: ../util/theme-editor/theme_editor.php:202
 msgid "Please check the log for details."
-msgstr ""
+msgstr "من فضلك ، تحقق من السجلات لمزيد من التفاصيل "
 
 #: ../util/theme-editor/theme_editor.php:203
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "هل أنت متأكد من حذف جميع التغييرات ؟"
 
 #: ../util/theme-editor/theme_editor.php:204
 #, fuzzy, php-format
@@ -1069,7 +1069,7 @@ msgstr " \"%s\" أنشأ شكلا مبني على "
 
 #: ../util/theme-editor/theme_editor.php:206
 msgid "Submit Your Theme"
-msgstr ""
+msgstr "ارسل الثيم"
 
 #: ../util/theme-editor/theme_editor.php:207
 msgid ""
@@ -1077,14 +1077,16 @@ msgid ""
 "email me your theme - make sure it's considerably different from the stock "
 "themes :)"
 msgstr ""
+"ارسل هذا الثيم في الاضافة, وهذا سيرسل الى ايميل بهذا الثيمتأكد من أن يكون "
+"الثيم فريد ولايشبه شكلا سابقا"
 
 #: ../util/theme-editor/theme_editor.php:208
 msgid "Message"
-msgstr ""
+msgstr "رسالة"
 
 #: ../util/theme-editor/theme_editor.php:209
 msgid "Please include this theme in Crayon!"
-msgstr ""
+msgstr "ضمن هذا الثيمفي الاضافة "
 
 # @ crayon-syntax-highlighter
 #: ../util/theme-editor/theme_editor.php:210
@@ -1094,11 +1096,11 @@ msgstr "تم التحويل بنجاح"
 
 #: ../util/theme-editor/theme_editor.php:211
 msgid "Submit failed!"
-msgstr ""
+msgstr "فشل الارسال"
 
 #: ../util/theme-editor/theme_editor.php:294
 msgid "Information"
-msgstr ""
+msgstr "معلومات"
 
 # @ crayon-syntax-highlighter
 #: ../util/theme-editor/theme_editor.php:295
@@ -1108,7 +1110,7 @@ msgstr "تعطيل تلوين الكود"
 
 #: ../util/theme-editor/theme_editor.php:296
 msgid "Frame"
-msgstr ""
+msgstr "الاطار"
 
 # @ crayon-syntax-highlighter
 #: ../util/theme-editor/theme_editor.php:298
@@ -1118,19 +1120,19 @@ msgstr "أظهر/أخف أرقام الأسطر"
 
 #: ../util/theme-editor/theme_editor.php:301
 msgid "Background"
-msgstr ""
+msgstr "الخلفية"
 
 #: ../util/theme-editor/theme_editor.php:302
 msgid "Text"
-msgstr ""
+msgstr "الرسالة"
 
 #: ../util/theme-editor/theme_editor.php:303
 msgid "Border"
-msgstr ""
+msgstr "الحدود"
 
 #: ../util/theme-editor/theme_editor.php:304
 msgid "Top Border"
-msgstr ""
+msgstr "الحد الأعلى"
 
 # @ crayon-syntax-highlighter
 #: ../util/theme-editor/theme_editor.php:305
@@ -1140,39 +1142,39 @@ msgstr "الهامش السفلي"
 
 #: ../util/theme-editor/theme_editor.php:306
 msgid "Right Border"
-msgstr ""
+msgstr "الحد الأيمن"
 
 #: ../util/theme-editor/theme_editor.php:308
 msgid "Hover"
-msgstr ""
+msgstr "ممرر"
 
 #: ../util/theme-editor/theme_editor.php:309
 msgid "Active"
-msgstr ""
+msgstr "مفعل"
 
 #: ../util/theme-editor/theme_editor.php:310
 msgid "Pressed"
-msgstr ""
+msgstr "الضغط"
 
 #: ../util/theme-editor/theme_editor.php:311
 msgid "Pressed & Hover"
-msgstr ""
+msgstr "مضغط و عند التمرير"
 
 #: ../util/theme-editor/theme_editor.php:312
 msgid "Pressed & Active"
-msgstr ""
+msgstr "مضغط و معلم"
 
 #: ../util/theme-editor/theme_editor.php:315
 msgid "Buttons"
-msgstr ""
+msgstr "ازرار"
 
 #: ../util/theme-editor/theme_editor.php:317
 msgid "Normal"
-msgstr ""
+msgstr "عادي"
 
 #: ../util/theme-editor/theme_editor.php:319
 msgid "Striped"
-msgstr ""
+msgstr "ملقم"
 
 # @ crayon-syntax-highlighter
 #: ../util/theme-editor/theme_editor.php:320
@@ -1182,7 +1184,7 @@ msgstr "الأسطر المعلمة "
 
 #: ../util/theme-editor/theme_editor.php:321
 msgid "Striped & Marked"
-msgstr ""
+msgstr "ملقم ومعلم"
 
 # @ crayon-syntax-highlighter
 #: ../util/theme-editor/theme_editor.php:351
@@ -1191,15 +1193,15 @@ msgstr "العودة للإعدادات"
 
 #: ../util/theme-editor/theme_editor.php:390
 msgid "Comment"
-msgstr ""
+msgstr "تعليق"
 
 #: ../util/theme-editor/theme_editor.php:391
 msgid "String"
-msgstr ""
+msgstr "حروف"
 
 #: ../util/theme-editor/theme_editor.php:392
 msgid "Preprocessor"
-msgstr ""
+msgstr "قبل المعالجة"
 
 # @ crayon-syntax-highlighter
 #: ../util/theme-editor/theme_editor.php:393
@@ -1209,19 +1211,19 @@ msgstr "أوسمة"
 
 #: ../util/theme-editor/theme_editor.php:394
 msgid "Keyword"
-msgstr ""
+msgstr "كلمات مفتاحية"
 
 #: ../util/theme-editor/theme_editor.php:395
 msgid "Statement"
-msgstr ""
+msgstr "تقرير"
 
 #: ../util/theme-editor/theme_editor.php:396
 msgid "Reserved"
-msgstr ""
+msgstr "محفوظة"
 
 #: ../util/theme-editor/theme_editor.php:397
 msgid "Type"
-msgstr ""
+msgstr "نوع"
 
 #: ../util/theme-editor/theme_editor.php:398
 #, fuzzy
@@ -1230,40 +1232,40 @@ msgstr "حرر في"
 
 #: ../util/theme-editor/theme_editor.php:399
 msgid "Identifier"
-msgstr ""
+msgstr "معرف"
 
 #: ../util/theme-editor/theme_editor.php:400
 msgid "Entity"
-msgstr ""
+msgstr "وحدة"
 
 #: ../util/theme-editor/theme_editor.php:401
 msgid "Variable"
-msgstr ""
+msgstr "متغير"
 
 #: ../util/theme-editor/theme_editor.php:402
 msgid "Constant"
-msgstr ""
+msgstr "ثابت"
 
 #: ../util/theme-editor/theme_editor.php:403
 msgid "Operator"
-msgstr ""
+msgstr "معامل"
 
 #: ../util/theme-editor/theme_editor.php:404
 msgid "Symbol"
-msgstr ""
+msgstr "رمز"
 
 #: ../util/theme-editor/theme_editor.php:405
 msgid "Notation"
-msgstr ""
+msgstr "تدوين"
 
 #: ../util/theme-editor/theme_editor.php:406
 msgid "Faded"
-msgstr ""
+msgstr "تلاشي"
 
 #: ../util/theme-editor/theme_editor.php:407
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: ../util/theme-editor/theme_editor.php:540
 msgid "(Used for Copy/Paste)"
-msgstr ""
+msgstr "(مستخدم للنسخ/اللصق)"
