@@ -146,6 +146,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Slovak (thanks to Branco, <a href="https://twitter.com/#!/webhostgeeks" target="_blank">webhostgeeks/</a>)
 * Slovenian (thanks to Jan Su&#353;nik, <a href="http://jodlajodla.si/" target="_blank">http://jodlajodla.si/</a>)
 * Spanish (thanks to <a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>)
+* Tamil (thanks to <a href="http://kks21199.mrgoogleglass.com/" target="_blank">KKS21199</a>)
 * Turkish (thanks to <a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>)
 * Ukrainian (thanks to <a href="http://getvoip.com/blog" target="_blank">Michael Yunat</a>)
 * Help from translators at improving/adding to this list greatly appreciated!
@@ -196,6 +197,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Julie Knowles, (http://knowlesfamily.com/), USA
 * Peter Kriegel, (http://www.powershell-group.eu/), Germany
 * Geo My WP, (http://geomywp.com), US
 * Raffael Vogler, Germany
@@ -284,6 +286,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Orange Code theme.
     * Support for changing the text shown for "Add Code" and "Edit Code" buttons in the Tag Editor.
+    * Raygun theme.
+    * Tamil language.
 * FIXED:
     * Missing PHP keywords thanks to <a href="https://github.com/tst" target="_blank">tst</a>.
 

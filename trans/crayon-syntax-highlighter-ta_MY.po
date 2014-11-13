@@ -1,0 +1,1306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: crayon-syntax-highlighter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-20 13:53+1000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: MahdiY <ymd1376@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"crayon__;crayon_n;crayon_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.6.10\n"
+"Language: ta_MY\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:286
+msgid "Toggle Line Numbers"
+msgstr "வரி எண்கள் நிலைமாற்றவும்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:290
+msgid "Toggle Plain Code"
+msgstr "மாற்று எளிய குறியீடு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:294
+msgid "Toggle Line Wrap"
+msgstr "மாற்று வரி மடக்கு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:298
+msgid "Expand Code"
+msgstr "குறியீடு விரி"
+
+#: ../crayon_formatter.class.php:302
+msgid "Copy"
+msgstr "நகலெடு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:306
+msgid "Open Code In New Window"
+msgstr "புதிய சாளரத்தில்குறியீடு  திற"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_formatter.class.php:323
+msgid "Contains Mixed Languages"
+msgstr "கலப்பு மொழிகள் கொண்டிருக்கிறது"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:151
+msgid "Hourly"
+msgstr "மணிக்கொருமுறை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:151
+msgid "Daily"
+msgstr "நாள்தோறும்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:152
+msgid "Weekly"
+msgstr "வாரந்தோறும்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:152
+msgid "Monthly"
+msgstr "மாதந்தோறும்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:153
+msgid "Immediately"
+msgstr "உடனடியாக"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:164 ../crayon_settings.class.php:168
+msgid "Max"
+msgstr "அதிகபட்சம்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:164 ../crayon_settings.class.php:168
+msgid "Min"
+msgstr "குறைந்தது"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:164 ../crayon_settings.class.php:168
+msgid "Static"
+msgstr "நிலையான"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:166 ../crayon_settings.class.php:170
+#: ../crayon_settings_wp.class.php:749 ../crayon_settings_wp.class.php:758
+#: ../crayon_settings_wp.class.php:1037 ../crayon_settings_wp.class.php:1039
+msgid "Pixels"
+msgstr "பிக்சல்கள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:166 ../crayon_settings.class.php:170
+msgid "Percent"
+msgstr "சதவீதம்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:179
+msgid "None"
+msgstr "எதுவும் இல்லை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:179
+msgid "Left"
+msgstr "இடது"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:179
+msgid "Center"
+msgstr "நடு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:179
+msgid "Right"
+msgstr "வலது"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:181 ../crayon_settings.class.php:206
+msgid "On MouseOver"
+msgstr "சுட்டி மேலே வைக்கப்படும்போது"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:181 ../crayon_settings.class.php:187
+msgid "Always"
+msgstr "எப்போதும்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:181 ../crayon_settings.class.php:187
+msgid "Never"
+msgstr "வேண்டாம்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:187
+msgid "When Found"
+msgstr "காணப்படும் போது"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:206
+msgid "On Double Click"
+msgstr "இரட்டை கிளிக்கில்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:206
+msgid "On Single Click"
+msgstr "ஒரே கிளிக்கில் "
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:206
+msgid "Disable Mouse Events"
+msgstr "கணினி சொடுக்கி நிகழ்வுகள் முடக்கு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:213
+msgid "An error has occurred. Please try again later."
+msgstr "ஒரு பிழை ஏற்பட்டுள்ளது. பின்னர் மீண்டும் முயற்சிக்கவும்."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings.class.php:229
+msgid "Inline Tag"
+msgstr "இன்லைன் இணைப்பு"
+
+#: ../crayon_settings.class.php:229
+msgid "Block Tag"
+msgstr "பிளாக் இணைப்பு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:54 ../crayon_settings_wp.class.php:211
+#: ../crayon_settings_wp.class.php:1242
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:256
+msgid "Settings"
+msgstr "அமைப்புகள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:137
+#, php-format
+msgid "Press %s to Copy, %s to Paste"
+msgstr "நகலெடுக்க பிரஸ் %s , ஒத்தவதற்கு பிரஸ் %s "
+
+#: ../crayon_settings_wp.class.php:138
+msgid "Click To Expand Code"
+msgstr "குறியீடு விரிவிக்க கிளிக் செய்யவும்"
+
+#: ../crayon_settings_wp.class.php:180
+msgid "Prompt"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:181
+msgid "Value"
+msgstr "மதிப்பு"
+
+#: ../crayon_settings_wp.class.php:182
+msgid "Alert"
+msgstr "எச்சரிக்கை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:183 ../crayon_settings_wp.class.php:897
+msgid "No"
+msgstr "இல்லை"
+
+#: ../crayon_settings_wp.class.php:184 ../crayon_settings_wp.class.php:897
+msgid "Yes"
+msgstr "ஆமாம்"
+
+#: ../crayon_settings_wp.class.php:185
+msgid "Confirm"
+msgstr "உறுதிப்படுத்து"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:186
+msgid "Change Code"
+msgstr "மாற்று குறியீடு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:194
+msgid "You do not have sufficient permissions to access this page."
+msgstr "நீங்கள் இந்த பக்கம் அணுக போதுமான அனுமதிகள் இல்லை."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:226
+msgid "Save Changes"
+msgstr "சேமி"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:233
+msgid "Reset Settings"
+msgstr "மீட்டமை அமைப்புகள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:492
+msgid "General"
+msgstr "பொது"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:493
+msgid "Theme"
+msgstr "தீம்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:494
+msgid "Font"
+msgstr "எழுத்துரு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:495
+msgid "Metrics"
+msgstr "மெட்ரிக்ஸ்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:496
+#: ../util/theme-editor/theme_editor.php:299
+msgid "Toolbar"
+msgstr "கருவிப்பட்டை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:497
+#: ../util/theme-editor/theme_editor.php:297
+msgid "Lines"
+msgstr "கோடுகள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:498
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:216
+msgid "Code"
+msgstr "குறியீடு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:499
+msgid "Tags"
+msgstr "குறிச்சொற்கள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:500
+msgid "Languages"
+msgstr "மொழிகள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:501
+msgid "Files"
+msgstr "கோப்புகள்"
+
+#: ../crayon_settings_wp.class.php:502
+msgid "Posts"
+msgstr "இடுகைகள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:503
+msgid "Tag Editor"
+msgstr "டாக் எடிட்டரை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:504
+msgid "Misc"
+msgstr "மற்றவை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:507
+msgid "Debug"
+msgstr "பிழைத்திருத்தம்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:508
+msgid "Errors"
+msgstr "பிழைகள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:509
+msgid "Log"
+msgstr "பதிகை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:512
+msgid "About"
+msgstr "பற்றி"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:726
+msgid "Height"
+msgstr "உயரம்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:732
+msgid "Width"
+msgstr "அகலம்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:738
+msgid "Top Margin"
+msgstr "மேல்மட்ட மார்ஜின்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:739
+msgid "Bottom Margin"
+msgstr "பாட்டம் மார்ஜின்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:740 ../crayon_settings_wp.class.php:745
+msgid "Left Margin"
+msgstr "இடது மார்ஜின்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:741 ../crayon_settings_wp.class.php:745
+msgid "Right Margin"
+msgstr "வலது மார்ஜின்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:751
+msgid "Horizontal Alignment"
+msgstr "கிடைமட்ட சீரமைப்பு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:754
+msgid "Allow floating elements to surround Crayon"
+msgstr "கிரேயான் சுற்றி கூறுகளை மிதந்து அனுமதி"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:756
+msgid "Inline Margin"
+msgstr "இன்லைன் மார்ஜின்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:764
+msgid "Display the Toolbar"
+msgstr "டூல்பார்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:767
+msgid "Overlay the toolbar on code rather than push it down when possible"
+msgstr "Overlay the toolbar on code rather than push it down when possible"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:768
+msgid "Toggle the toolbar on single click when it is overlayed"
+msgstr "அது இடப்படுகிறது போது ஒரே கிளிக்கில் மீது டூல்பார் நிலைமாற்றவும்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:769
+msgid "Delay hiding the toolbar on MouseOut"
+msgstr "தாமதம் மவுஸ் அவுட் மீது டூல்பார் மறைத்து"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:771
+msgid "Display the title when provided"
+msgstr "வழங்கப்படும் போது தலைப்பை காட்ட"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:772
+msgid "Display the language"
+msgstr "மொழியை காண்பிக்கும்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:779
+msgid "Display striped code lines"
+msgstr "கோடிட்ட குறியீடு கோடுகள் காண்பிக்கும்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:780
+msgid "Enable line marking for important lines"
+msgstr "முக்கியமான வரிகளை குறிக்கும் வரி இயக்கு"
+
+#: ../crayon_settings_wp.class.php:781
+msgid "Enable line ranges for showing only parts of code"
+msgstr "குறியீடு பகுதிகளை மட்டுமே காட்டும் வரி எல்லைகள் இயக்கு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:782
+msgid "Display line numbers by default"
+msgstr "இயல்பாக காட்டு வரிசை எண்களை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:783
+msgid "Enable line number toggling"
+msgstr "வரி எண் மற்றொரு முறை இயக்கு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:784
+msgid "Wrap lines by default"
+msgstr "இயல்பாக மடக்கு கோடுகள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:785
+msgid "Enable line wrap toggling"
+msgstr "வரி மடக்கு மற்றொரு முறை இயக்கு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:786
+msgid "Start line numbers from"
+msgstr "வரி எண்கள் இருந்து தொடங்க"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:797
+msgid "When no language is provided, use the fallback"
+msgstr "எந்த மொழியை வழங்கப்படுகிறது போது, குறைவடையும் பயன்படுத்த"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:803
+#, php-format
+msgid "%d language has been detected."
+msgstr "%d மொழி கண்டறியப்பட்டது."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:804
+msgid "Parsing was successful"
+msgstr "பாகுபடுத்தல் வெற்றிகரமான இருந்தது"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:804
+msgid "Parsing was unsuccessful"
+msgstr "பாகுபடுத்தல் வெற்றியடையவில்லை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:810
+#, php-format
+msgid "The selected language with id %s could not be loaded"
+msgstr "ஐடி %s கொண்டு தேர்ந்தெடுக்கப்பட்ட மொழியில் மாற முடியவில்லை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:813
+msgid "Show Languages"
+msgstr "காண்பி மொழிகள்"
+
+#: ../crayon_settings_wp.class.php:815
+msgid "No languages could be parsed."
+msgstr " அலச. மொழிகள் இல்லை"
+
+#: ../crayon_settings_wp.class.php:826 ../crayon_settings_wp.class.php:877
+msgid "ID"
+msgstr "ஐடி"
+
+#: ../crayon_settings_wp.class.php:826
+msgid "Name"
+msgstr "பெயர்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:826 ../crayon_settings_wp.class.php:1182
+msgid "Version"
+msgstr "பதிப்பு"
+
+#: ../crayon_settings_wp.class.php:826
+msgid "File Extensions"
+msgstr "கோப்பு நீட்டிப்புகள்"
+
+#: ../crayon_settings_wp.class.php:826
+msgid "Aliases"
+msgstr "மாற்றுப்பெயர்கள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:826
+msgid "State"
+msgstr "மாநிலம்"
+
+#: ../crayon_settings_wp.class.php:841
+msgid ""
+"Languages that have the same extension as their name don't need to "
+"explicitly map extensions."
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:843
+msgid "No languages could be found."
+msgstr "மொழிகள் இல்லை காணலாம்."
+
+#: ../crayon_settings_wp.class.php:850
+msgid "Show Crayon Posts"
+msgstr "காண்பி கிரேயான் இடுகைகள்"
+
+#: ../crayon_settings_wp.class.php:851
+msgid "Refresh"
+msgstr "புதுப்பிப்பு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:877
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:193
+#: ../util/theme-editor/theme_editor.php:314
+msgid "Title"
+msgstr "தலைப்பு"
+
+#: ../crayon_settings_wp.class.php:877
+msgid "Posted"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:877
+msgid "Modifed"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:877
+msgid "Contains Legacy Tags?"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:992
+msgid "Edit"
+msgstr "திருத்த"
+
+#: ../crayon_settings_wp.class.php:992
+#: ../util/theme-editor/theme_editor.php:199
+msgid "Duplicate"
+msgstr "பிரதி"
+
+#: ../crayon_settings_wp.class.php:992
+msgid "Submit"
+msgstr "சமர்ப்பிக்கவும்"
+
+#: ../crayon_settings_wp.class.php:993
+#: ../util/theme-editor/theme_editor.php:196
+msgid "Delete"
+msgstr "நீக்கு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:995
+msgid "Loading..."
+msgstr "ஏற்றுகிறது ..."
+
+#: ../crayon_settings_wp.class.php:997
+msgid "Duplicate a Stock Theme into a User Theme to allow editing."
+msgstr "எடிட்டிங் அனுமதிக்க ஒரு பயனர் தீம் ஒரு பங்குவர்த்தக தீம் நகல்."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1008
+#, php-format
+msgid ""
+"Change the %1$sfallback language%2$s to change the sample code or %3$schange "
+"it manually%4$s. Lines 5-7 are marked."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1015
+msgid "Enable Live Preview"
+msgstr "நேரடி முன்னோட்டம் இயக்கு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1017
+msgid "Enqueue themes in the header (more efficient)."
+msgstr "தலைப்பு (திறமையான) இல் என்கியூ கருப்பொருள்கள்."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1020
+#, php-format
+msgid "The selected theme with id %s could not be loaded"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1035
+msgid "Custom Font Size"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1037
+msgid "Line Height"
+msgstr "வரி உயரம்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1042
+#, php-format
+msgid "The selected font with id %s could not be loaded"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1048
+msgid "Enqueue fonts in the header (more efficient)."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1053
+msgid "Enable plain code view and display"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1056
+msgid "Enable plain code toggling"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1057
+msgid "Show the plain code by default"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1058
+msgid "Enable code copy/paste"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1060
+msgid "Enable opening code in a window"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1061
+msgid "Always display scrollbars"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:1062
+msgid "Minimize code"
+msgstr "குறியீடு குறைத்தல்"
+
+#: ../crayon_settings_wp.class.php:1063
+msgid "Expand code beyond page borders on mouseover"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:1064
+msgid "Enable code expanding toggling when possible"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1067
+msgid "Decode HTML entities in code"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1069
+msgid "Decode HTML entities in attributes"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1071
+msgid "Remove whitespace surrounding the shortcode content"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:1073
+msgid "Remove &lt;code&gt; tags surrounding the shortcode content"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1074
+msgid "Allow Mixed Language Highlighting with delimiters and tags."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1076
+msgid "Show Mixed Language Icon (+)"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1078
+msgid "Tab size in spaces"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:1080
+msgid "Blank lines before code:"
+msgstr "குறியீடு முன் வெற்றுக் கோடுகள்:"
+
+#: ../crayon_settings_wp.class.php:1082
+msgid "Blank lines after code:"
+msgstr "குறியீடு பிறகு வெற்று கோடுகள்:"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1087
+msgid "Capture Inline Tags"
+msgstr "இன்லைன் குறிச்சொற்கள் கைப்பற்ற"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1088
+msgid "Wrap Inline Tags"
+msgstr "மடக்கு இன்லைன் இணைப்புகள்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1089
+msgid "Capture &lt;code&gt; as"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1093
+msgid "Capture `backquotes` as &lt;code&gt;"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1094
+msgid "Capture &lt;pre&gt; tags as Crayons"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:1096
+#, php-format
+msgid ""
+"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"the %sTag Editor%s instead and convert legacy tags."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1097
+msgid "Capture Mini Tags like [php][/php] as Crayons."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1098
+msgid "Capture Inline Tags like {php}{/php} inside sentences."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1099
+msgid "Enable [plain][/plain] tag."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1104
+msgid ""
+"When loading local files and a relative path is given for the URL, use the "
+"absolute path"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1107
+msgid "Followed by your relative URL."
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:1114
+msgid "Convert Legacy Tags"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:1117
+msgid "No Legacy Tags Found"
+msgstr "எந்த மரபுரிமை இணைப்புகள் கிடைக்கவில்லை"
+
+#: ../crayon_settings_wp.class.php:1121
+msgid "Encode"
+msgstr "என்கோடு"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1123
+#, php-format
+msgid ""
+"Use %s to separate setting names from values in the &lt;pre&gt; class "
+"attribute"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:1126
+msgid ""
+"Display the Tag Editor in any TinyMCE instances on the frontend (e.g. "
+"bbPress)"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:1127
+msgid "Display Tag Editor settings on the frontend"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1131
+msgid "Clear the cache used to store remote code requests"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1133
+msgid "Clear Now"
+msgstr "தெளிவு இப்பொழுது"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1134
+msgid "Attempt to load Crayon's CSS and JavaScript only when needed"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1135
+msgid "Disable enqueuing for page templates that may contain The Loop."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1136
+msgid "Allow Crayons inside comments"
+msgstr ""
+
+#: ../crayon_settings_wp.class.php:1137
+msgid "Remove Crayons from excerpts"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1138
+msgid "Load Crayons only from the main Wordpress query"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1139
+msgid "Disable mouse gestures for touchscreen devices (eg. MouseOver)"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1140
+msgid "Disable animations"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1141
+msgid "Disable runtime stats"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1147
+msgid "Log errors for individual Crayons"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1148
+msgid "Log system-wide errors"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1149
+msgid "Display custom message for errors"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1161
+msgid "Show Log"
+msgstr "பதிவைக் காண்பிக்கவும்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1161
+msgid "Hide Log"
+msgstr "பதிகை மறை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1163
+msgid "Clear Log"
+msgstr "தெளிவு பதிகை"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1164
+msgid "Email Admin"
+msgstr "மின்னஞ்சல் நிர்வாகம்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1166
+msgid "Email Developer"
+msgstr "மின்னஞ்சல் டெவலப்பர்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1168
+msgid "The log is currently empty."
+msgstr "பதிவு தற்போது காலியாக உள்ளது."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1170
+msgid "The log file exists and is writable."
+msgstr "பதிவு கோப்பு உள்ளது மற்றும் எழுத."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1170
+msgid "The log file exists and is not writable."
+msgstr "பதிவு கோப்பு உள்ளது மற்றும் எழுத அல்ல."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1172
+msgid "The log file does not exist and is not writable."
+msgstr "பதிவு கோப்பு உள்ளவில்லை மற்றும் எழுதக்கூடியதாக இல்லை."
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1184
+msgid "Developer"
+msgstr "டெவலப்பர்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1185
+msgid "Translators"
+msgstr "மொழிபெயர்ப்பாளர்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1236
+msgid "?"
+msgstr "?"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1243
+#: ../util/theme-editor/theme_editor.php:336
+msgid "Theme Editor"
+msgstr "தீம் எடிட்டர்"
+
+# @ crayon-syntax-highlighter
+#: ../crayon_settings_wp.class.php:1244
+msgid "Donate"
+msgstr "தானம் செய்யுங்கள்"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:65
+msgid "Add Crayon Code"
+msgstr "கிரேயான் குறியீடு சேர்"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:66
+msgid "Edit Crayon Code"
+msgstr "திருத்த கிரேயான் குறியீடு"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:67
+msgid "Add"
+msgstr "சேர்"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:68
+#: ../util/theme-editor/theme_editor.php:352
+msgid "Save"
+msgstr "சேமி"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:184
+msgid "OK"
+msgstr "சரி"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:186
+msgid "Cancel"
+msgstr "ரத்து"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:195
+msgid "A short description"
+msgstr "ஒரு குறுகிய விளக்கம்"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:197
+#: ../util/theme-editor/theme_editor.php:318
+msgid "Inline"
+msgstr "இன்லைன்"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:199
+msgid "Don't Highlight"
+msgstr "முன்னிலைப்படுத்த"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:204
+#: ../util/theme-editor/theme_editor.php:322
+msgid "Language"
+msgstr "மொழி"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:207
+msgid "Line Range"
+msgstr "வரி ரேஞ்ச்"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:208
+msgid "(e.g. 3-5 or 3)"
+msgstr "(எ.கா. 3-5 அல்லது 3)"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:209
+msgid "Marked Lines"
+msgstr "குறிக்கப்பட்டது கோடுகள்"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:210
+msgid "(e.g. 1,2,3-5)"
+msgstr "(எ.கா. 1,2,3-5)"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:219
+msgid "Clear"
+msgstr "தெளிவு"
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:223
+msgid "Paste your code here, or type it in manually."
+msgstr "இங்கே உங்கள் குறியீடு ஒட்டவும், அல்லது கைமுறையாக அதை தட்டச்சு."
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:227
+msgid "URL"
+msgstr "URL"
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:229
+msgid "Relative local path or absolute URL"
+msgstr ""
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:232
+msgid ""
+"If the URL fails to load, the code above will be shown instead. If no code "
+"exists, an error is shown."
+msgstr ""
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:234
+#, php-format
+msgid ""
+"If a relative local path is given it will be appended to %s - which is "
+"defined in %sCrayon &gt; Settings &gt; Files%s."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:261
+msgid "Change the following settings to override their global values."
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:263
+msgid "Only changes (shown yellow) are applied."
+msgstr ""
+
+#: ../util/tag-editor/crayon_tag_editor_wp.class.php:265
+#, php-format
+msgid ""
+"Future changes to the global settings under %sCrayon &gt; Settings%s won't "
+"affect overridden settings."
+msgstr ""
+
+#: ../util/theme-editor/theme_editor.php:192
+msgid "User-Defined Theme"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:193
+msgid "Stock Theme"
+msgstr "பங்குவர்த்தக தீம்"
+
+#: ../util/theme-editor/theme_editor.php:194
+msgid "Success!"
+msgstr "வெற்றி!"
+
+#: ../util/theme-editor/theme_editor.php:195
+msgid "Failed!"
+msgstr "தோல்வி!"
+
+#: ../util/theme-editor/theme_editor.php:197
+#, php-format
+msgid "Are you sure you want to delete the \"%s\" theme?"
+msgstr ""
+
+#: ../util/theme-editor/theme_editor.php:198
+msgid "Delete failed!"
+msgstr "நீக்கு தோல்வி!"
+
+#: ../util/theme-editor/theme_editor.php:200
+msgid "New Name"
+msgstr "புதிய பெயர்"
+
+#: ../util/theme-editor/theme_editor.php:201
+msgid "Duplicate failed!"
+msgstr "பிரதி தோல்வி!"
+
+#: ../util/theme-editor/theme_editor.php:202
+msgid "Please check the log for details."
+msgstr "விவரங்கள் பதிவு சரிபார்க்கவும்."
+
+#: ../util/theme-editor/theme_editor.php:203
+msgid "Are you sure you want to discard all changes?"
+msgstr "நீங்கள் அனைத்து மாற்றங்களையும் நிராகரிக்க வேண்டும் உறுதியாக உள்ளீர்களா?"
+
+#: ../util/theme-editor/theme_editor.php:204
+#, php-format
+msgid "Editing Theme: %s"
+msgstr "Editing Theme: %s"
+
+#: ../util/theme-editor/theme_editor.php:205
+#, php-format
+msgid "Creating Theme: %s"
+msgstr "தீம் உருவாக்குதல்: %s"
+
+#: ../util/theme-editor/theme_editor.php:206
+msgid "Submit Your Theme"
+msgstr ""
+
+#: ../util/theme-editor/theme_editor.php:207
+msgid ""
+"Submit your User Theme for inclusion as a Stock Theme in Crayon! This will "
+"email me your theme - make sure it's considerably different from the stock "
+"themes :)"
+msgstr ""
+
+#: ../util/theme-editor/theme_editor.php:208
+msgid "Message"
+msgstr "தகவல்"
+
+#: ../util/theme-editor/theme_editor.php:209
+msgid "Please include this theme in Crayon!"
+msgstr "கிரேயோனில் இந்த தீம் சேருங்கள்!"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:210
+msgid "Submit was successful."
+msgstr "சமர்ப்பிக்கவும் வெற்றிகரமான இருந்தது."
+
+#: ../util/theme-editor/theme_editor.php:211
+msgid "Submit failed!"
+msgstr "சமர்ப்பிக்கவும் தோல்வி!"
+
+#: ../util/theme-editor/theme_editor.php:294
+msgid "Information"
+msgstr "தகவல்"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:295
+msgid "Highlighting"
+msgstr "வெளிச்சம்போட்டு"
+
+#: ../util/theme-editor/theme_editor.php:296
+msgid "Frame"
+msgstr "ஃப்ரேம்"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:298
+msgid "Line Numbers"
+msgstr "வரி எண்கள்"
+
+#: ../util/theme-editor/theme_editor.php:301
+msgid "Background"
+msgstr "பின்னணி"
+
+#: ../util/theme-editor/theme_editor.php:302
+msgid "Text"
+msgstr "உரை"
+
+#: ../util/theme-editor/theme_editor.php:303
+msgid "Border"
+msgstr "பார்டர்"
+
+#: ../util/theme-editor/theme_editor.php:304
+msgid "Top Border"
+msgstr "மேல்மட்ட பார்டர்"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:305
+msgid "Bottom Border"
+msgstr "பாட்டம் பார்டர்"
+
+#: ../util/theme-editor/theme_editor.php:306
+msgid "Right Border"
+msgstr "வலது பார்டர்v"
+
+#: ../util/theme-editor/theme_editor.php:308
+msgid "Hover"
+msgstr "ஹோவர்"
+
+#: ../util/theme-editor/theme_editor.php:309
+msgid "Active"
+msgstr "செயலில்"
+
+#: ../util/theme-editor/theme_editor.php:310
+msgid "Pressed"
+msgstr "அழுத்தப்பட்ட"
+
+#: ../util/theme-editor/theme_editor.php:311
+msgid "Pressed & Hover"
+msgstr "பிரெஸ்ட் & ஹோவர்"
+
+#: ../util/theme-editor/theme_editor.php:312
+msgid "Pressed & Active"
+msgstr "பிரெஸ்ட் & செயலில்"
+
+#: ../util/theme-editor/theme_editor.php:315
+msgid "Buttons"
+msgstr "பொத்தான்கள்"
+
+#: ../util/theme-editor/theme_editor.php:317
+msgid "Normal"
+msgstr "இயல்பான"
+
+#: ../util/theme-editor/theme_editor.php:319
+msgid "Striped"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:320
+msgid "Marked"
+msgstr "குறிக்கப்பட்டது"
+
+#: ../util/theme-editor/theme_editor.php:321
+msgid "Striped & Marked"
+msgstr ""
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:351
+msgid "Back To Settings"
+msgstr "மீண்டும் அமைப்புகள்"
+
+#: ../util/theme-editor/theme_editor.php:390
+msgid "Comment"
+msgstr "கருத்து"
+
+#: ../util/theme-editor/theme_editor.php:391
+msgid "String"
+msgstr ""
+
+#: ../util/theme-editor/theme_editor.php:392
+msgid "Preprocessor"
+msgstr "ப்ரிப்ராஸசசர்"
+
+# @ crayon-syntax-highlighter
+#: ../util/theme-editor/theme_editor.php:393
+msgid "Tag"
+msgstr "இணைப்பு"
+
+#: ../util/theme-editor/theme_editor.php:394
+msgid "Keyword"
+msgstr "முக்கிய"
+
+#: ../util/theme-editor/theme_editor.php:395
+msgid "Statement"
+msgstr "அறிக்கை"
+
+#: ../util/theme-editor/theme_editor.php:396
+msgid "Reserved"
+msgstr "ஒதுக்கப்பட்டது"
+
+#: ../util/theme-editor/theme_editor.php:397
+msgid "Type"
+msgstr "வகை"
+
+#: ../util/theme-editor/theme_editor.php:398
+msgid "Modifier"
+msgstr "மாற்றி"
+
+#: ../util/theme-editor/theme_editor.php:399
+msgid "Identifier"
+msgstr "ஐடண்டிபயர்"
+
+#: ../util/theme-editor/theme_editor.php:400
+msgid "Entity"
+msgstr "நிறுவனத்தின்"
+
+#: ../util/theme-editor/theme_editor.php:401
+msgid "Variable"
+msgstr "Variable"
+
+#: ../util/theme-editor/theme_editor.php:402
+msgid "Constant"
+msgstr "கான்ஸ்டன்ட்"
+
+#: ../util/theme-editor/theme_editor.php:403
+msgid "Operator"
+msgstr "ஆபரேட்டர்"
+
+#: ../util/theme-editor/theme_editor.php:404
+msgid "Symbol"
+msgstr "சின்னங்கள்"
+
+#: ../util/theme-editor/theme_editor.php:405
+msgid "Notation"
+msgstr "குறிப்பு"
+
+#: ../util/theme-editor/theme_editor.php:406
+msgid "Faded"
+msgstr "வாடி"
+
+#: ../util/theme-editor/theme_editor.php:407
+msgid "HTML"
+msgstr "HTML"
+
+#: ../util/theme-editor/theme_editor.php:408
+msgid "Unhighlighted"
+msgstr "தனிப்படுத்தாதவை"
+
+#: ../util/theme-editor/theme_editor.php:542
+msgid "(Used for Copy/Paste)"
+msgstr ""
+
+msgid "Parsed With Errors"
+msgstr "பிழைகள் உடன் அலசப்பட்டது"
+
+msgid "Successfully Parsed"
+msgstr "வெற்றிகரமாக அலசப்பட்டது"
+
+msgid "Not Parsed"
+msgstr "அலசப்படவில்லை"
+
+msgid "Undetermined"
+msgstr "தீர்மானிக்கப்படாத"
+
+msgid "Description"
+msgstr "விளக்கம்"
+
+msgid "Author"
+msgstr "எழுதியோன்"
+
+msgid "Add More"
+msgstr "மேலும் சேர்"

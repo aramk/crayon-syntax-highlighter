@@ -1130,6 +1130,8 @@ class Human {
         self::textbox(array('id' => CrayonSettings::TAG_EDITOR_ADD_BUTTON_TEXT, 'break' => TRUE));
         self::span(crayon__('Edit Code button text') . ' ');
         self::textbox(array('id' => CrayonSettings::TAG_EDITOR_EDIT_BUTTON_TEXT, 'break' => TRUE));
+        self::span(crayon__('Quicktag button text') . ' ');
+        self::textbox(array('id' => CrayonSettings::TAG_EDITOR_QUICKTAG_BUTTON_TEXT, 'break' => TRUE));
     }
 
     public static function misc() {
@@ -1207,6 +1209,7 @@ class Human {
             Slovak (<a href="https://twitter.com/#!/webhostgeeks" target="_blank">webhostgeeks</a>),
             Slovenian (<a href="http://jodlajodla.si/" target="_blank">Jan Su&#353;nik</a>),
             Spanish (<a href="http://www.hbravo.com/" target="_blank">Hermann Bravo</a>),
+            Tamil (<a href="http://kks21199.mrgoogleglass.com/" target="_blank">KKS21199</a>),
             Turkish (<a href="http://hakanertr.wordpress.com" target="_blank">Hakan</a>),
             Ukrainian (<a href="http://getvoip.com/blog" target="_blank">Michael Yunat</a>)';
 

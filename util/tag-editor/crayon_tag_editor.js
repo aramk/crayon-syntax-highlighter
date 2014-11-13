@@ -368,7 +368,7 @@
             inline.change();
 
             // Show the dialog
-            var dialog_title = editing ? s.dialog_title_edit : s.dialog_title_add;
+            var dialog_title = editing ? s.edit_text : s.add_text;
             $(s.dialog_title_css).html(dialog_title);
             if (showCallback) {
                 showCallback();

@@ -1,12 +1,17 @@
 (function($) {
 
+    var settings = CrayonTagEditorSettings;
+    console.log('settings', settings);
+
 	window.CrayonQuickTags = new function() {
 	
 		var base = this;
 
 		base.init = function() {
 			base.sel = '*[id*="crayon_quicktag"],*[class*="crayon_quicktag"]';
-			QTags.addButton( 'crayon_quicktag', 'crayon', function() {
+            var buttonText = settings.quicktag_text;
+            buttonText = buttonText !== undefined ? buttonText : 'crayon';
+			QTags.addButton( 'crayon_quicktag', buttonText , function() {
 				CrayonTagEditor.showDialog({
                     insert: function(shortcode) {
                         QTags.insertContent(shortcode);

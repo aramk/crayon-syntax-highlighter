@@ -109,6 +109,7 @@ class CrayonSettings {
     const TAG_EDITOR_SETTINGS = 'tag-editor-front-hide';
     const TAG_EDITOR_ADD_BUTTON_TEXT = 'tag-editor-button-add-text';
     const TAG_EDITOR_EDIT_BUTTON_TEXT = 'tag-editor-button-edit-text';
+    const TAG_EDITOR_QUICKTAG_BUTTON_TEXT = 'tag-editor-quicktag-button-text';
     const WRAP_TOGGLE = 'wrap-toggle';
     const WRAP = 'wrap';
     const EXPAND = 'expand';
@@ -246,6 +247,7 @@ class CrayonSettings {
             new CrayonSetting(self::TAG_EDITOR_SETTINGS, TRUE),
             new CrayonSetting(self::TAG_EDITOR_ADD_BUTTON_TEXT, crayon__('Add Code')),
             new CrayonSetting(self::TAG_EDITOR_EDIT_BUTTON_TEXT, crayon__('Edit Code')),
+            new CrayonSetting(self::TAG_EDITOR_QUICKTAG_BUTTON_TEXT, 'crayon'),
             new CrayonSetting(self::WRAP_TOGGLE, TRUE),
             new CrayonSetting(self::WRAP, FALSE),
             new CrayonSetting(self::EXPAND, FALSE),
