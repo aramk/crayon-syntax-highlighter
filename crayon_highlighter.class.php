@@ -123,7 +123,9 @@ class CrayonHighlighter {
 				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
 				curl_setopt($ch, CURLOPT_FRESH_CONNECT, FALSE);
 				curl_setopt($ch, CURLOPT_MAXREDIRS, 5);
-				curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+                if (isset($_SERVER['HTTP_USER_AGENT'])) {
+				    curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+                }
 				$content = curl_exec($ch);
 				$error = curl_error($ch);
 				$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);

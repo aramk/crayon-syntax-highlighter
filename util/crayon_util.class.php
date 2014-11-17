@@ -334,6 +334,9 @@ EOT;
             return self::$touchscreen;
         }
         if (($devices = self::lines(CRAYON_TOUCH_FILE, 'lw')) !== FALSE) {
+            if (!isset($_SERVER['HTTP_USER_AGENT'])) {
+                return false;
+            }
             // Create array of device strings from file
             $user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
             self::$touchscreen = (self::strposa($user_agent, $devices) !== FALSE);

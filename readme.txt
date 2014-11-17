@@ -290,6 +290,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Tamil language.
 * FIXED:
     * Missing PHP keywords thanks to <a href="https://github.com/tst" target="_blank">tst</a>.
+    * Error with undefined HTTP_USER_AGENT thanks to Enrique Cordero.
 
 = 2.6.8 =
 * ADDED:
