@@ -291,6 +291,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * FIXED:
     * Missing PHP keywords thanks to <a href="https://github.com/tst" target="_blank">tst</a>.
     * Error with undefined HTTP_USER_AGENT thanks to Enrique Cordero.
+    * Removed misused error control operator.
 
 = 2.6.8 =
 * ADDED:

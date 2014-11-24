@@ -346,7 +346,7 @@ class CrayonWP {
                     }
                 }
 
-                if (@$atts_array[CrayonSettings::IGNORE]) {
+                if (isset($atts_array[CrayonSettings::IGNORE]) && $atts_array[CrayonSettings::IGNORE]) {
                     // TODO(aramk) Revert to the original content.
                     continue;
                 }
