@@ -1146,6 +1146,9 @@ class Human {
         self::checkbox(array(CrayonSettings::TOUCHSCREEN, crayon__('Disable mouse gestures for touchscreen devices (eg. MouseOver)')));
         self::checkbox(array(CrayonSettings::DISABLE_ANIM, crayon__('Disable animations')));
         self::checkbox(array(CrayonSettings::DISABLE_RUNTIME, crayon__('Disable runtime stats')));
+        echo '<span class="crayon-span-100">' . crayon__('Do Crayon Not Apply To Posts Older Than:') . ' </span>';
+        self::textbox(array('id' => CrayonSettings::DISABLE_DATE, 'size' => 8, 'break' => FALSE));
+        echo "(MM/DD/YYYY)";
     }
 
     // Debug Fields ===========================================================

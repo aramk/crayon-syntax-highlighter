@@ -72,6 +72,7 @@ class CrayonSettings {
     const PLAIN_TOGGLE = 'plain-toggle';
     const SHOW_PLAIN = 'show-plain';
     const DISABLE_RUNTIME = 'runtime';
+    const DISABLE_DATE = 'disable-date';
     const TOUCHSCREEN = 'touchscreen';
     const DISABLE_ANIM = 'disable-anim';
     const ERROR_LOG = 'error-log';
@@ -213,6 +214,7 @@ class CrayonSettings {
             new CrayonSetting(self::DISABLE_ANIM, FALSE),
             new CrayonSetting(self::TOUCHSCREEN, TRUE),
             new CrayonSetting(self::DISABLE_RUNTIME, FALSE),
+            new CrayonSetting(self::DISABLE_DATE, ''),
             new CrayonSetting(self::ERROR_LOG, TRUE),
             new CrayonSetting(self::ERROR_LOG_SYS, TRUE),
             new CrayonSetting(self::ERROR_MSG_SHOW, TRUE),
