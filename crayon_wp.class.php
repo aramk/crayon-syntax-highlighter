@@ -248,6 +248,12 @@ class CrayonWP {
         CrayonUtil::set_var($skip_setting_check, FALSE);
         CrayonUtil::set_var($just_check, FALSE);
 
+        //do not apply crayon for posts older than a certain date if a date is set
+        if(CrayonGlobalSettings::val(CrayonSettings::DISABLE_DATE) && get_post_time('U', true, $wp_id) <= strtotime(CrayonGlobalSettings::val(CrayonSettings::DISABLE_DATE))){
+            $do_nothing['content'] = $wp_content;
+            return $do_nothing;
+        }
+
         // Will contain captured crayons and altered $wp_content
         $capture = array('capture' => array(), 'content' => $wp_content, 'has_captured' => FALSE);
 
