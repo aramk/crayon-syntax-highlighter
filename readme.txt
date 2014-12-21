@@ -197,6 +197,8 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Helen McManus, (http://invisiblepixels.org/InvisibleWords/), Netherlands
+* Thomas Fee, UK
 * Julie Knowles, (http://knowlesfamily.com/), USA
 * Peter Kriegel, (http://www.powershell-group.eu/), Germany
 * Geo My WP, (http://geomywp.com), US
@@ -292,6 +294,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Missing PHP keywords thanks to <a href="https://github.com/tst" target="_blank">tst</a>.
     * Error with undefined HTTP_USER_AGENT thanks to Enrique Cordero.
     * Removed misused error control operator.
+    * HTTPS check for whether to use https://
 
 = 2.6.8 =
 * ADDED:

@@ -570,7 +570,16 @@ EOT;
 
     // returns 'true' or 'false' depending on whether this PHP file was served over HTTPS
     public static function isSecure() {
-        return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443;
+        // From https://core.trac.wordpress.org/browser/tags/4.0.1/src/wp-includes/functions.php
+        if ( isset($_SERVER['HTTPS']) ) {
+            if ( 'on' == strtolower($_SERVER['HTTPS']) )
+                return true;
+            if ( '1' == $_SERVER['HTTPS'] )
+                return true;
+        } elseif ( isset($_SERVER['SERVER_PORT']) && ( '443' == $_SERVER['SERVER_PORT'] ) ) {
+            return true;
+        }
+        return false;
     }
 
     public static function startsWith($haystack, $needle) {
