@@ -14,7 +14,7 @@
     MODULE:KEYWORD      \b(?alt:module.txt)\b
     EXCEPTION:KEYWORD   \b(?alt:exception.txt)\b
     STATEMENT           \b(?alt:statement.txt)\b
-    RESERVED            (?alt:reserved.txt)
+    RESERVED            \b(?alt:reserved.txt)\b
     TYPE                \b(?alt:type.txt)\b
     MODIFIER            \b(?alt:modifier.txt)\b
     
