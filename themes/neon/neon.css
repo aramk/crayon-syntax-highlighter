@@ -32,35 +32,6 @@ URL: http://atlocal.net/
 	border-right-width: 1px !important;
 	border-right-color: #333 !important;
 }
-.crayon-theme-neon .crayon-code::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
-.crayon-theme-neon .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
-.crayon-theme-neon::selection {
-	background: #777 !important;
-}
-.crayon-theme-neon .crayon-toolbar::selection {
-	background: #777 !important;
-}
-.crayon-theme-neon .crayon-toolbar *::selection {
-	background: #777 !important;
-}
-.crayon-theme-neon .crayon-info::selection {
-	background: #777 !important;
-}
-.crayon-theme-neon .crayon-info *::selection {
-	background: #777 !important;
-}
-.crayon-theme-neon .crayon-nums::selection {
-	background: #777 !important;
-}
-.crayon-theme-neon .crayon-nums *::selection {
-	background: #777 !important;
-}
 .crayon-theme-neon .crayon-line {
 	background: #050505 !important;
 }

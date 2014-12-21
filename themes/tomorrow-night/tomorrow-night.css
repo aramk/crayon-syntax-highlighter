@@ -23,13 +23,6 @@ URL: http://aramk.com/
 	color: #898989 !important;
 	border-right-width: 1px !important;
 }
-.crayon-theme-tomorrow-night *::selection {
-	background: transparent !important;
-}
-.crayon-theme-tomorrow-night .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-tomorrow-night .crayon-striped-line {
 	background: #202326 !important;
 }

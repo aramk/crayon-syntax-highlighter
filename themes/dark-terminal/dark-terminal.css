@@ -24,13 +24,6 @@ URL: http://blog.naydenov.net/
 	border-right-width: 1px !important;
 	border-right-color: #ffffff !important;
 }
-.crayon-theme-dark-terminal *::selection {
-	background: transparent !important;
-}
-.crayon-theme-dark-terminal .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-dark-terminal .crayon-striped-line {
 	background: #000000 !important;
 }

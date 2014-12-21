@@ -28,35 +28,6 @@ Notes: I don't provide striped lines because it would break the original purpose
 	background: #073642 !important;
 	color: #586e75 !important;
 }
-.crayon-theme-solarized-dark .crayon-code::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
-.crayon-theme-solarized-dark .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
-.crayon-theme-solarized-dark::selection {
-	background: transparent !important;
-}
-.crayon-theme-solarized-dark .crayon-toolbar::selection {
-	background: transparent !important;
-}
-.crayon-theme-solarized-dark .crayon-toolbar *::selection {
-	background: transparent !important;
-}
-.crayon-theme-solarized-dark .crayon-info::selection {
-	background: transparent !important;
-}
-.crayon-theme-solarized-dark .crayon-info *::selection {
-	background: transparent !important;
-}
-.crayon-theme-solarized-dark .crayon-nums::selection {
-	background: transparent !important;
-}
-.crayon-theme-solarized-dark .crayon-nums *::selection {
-	background: transparent !important;
-}
 .crayon-theme-solarized-dark .crayon-striped-line {
 	background: #002b36 !important;
 	border-width: 1px !important;

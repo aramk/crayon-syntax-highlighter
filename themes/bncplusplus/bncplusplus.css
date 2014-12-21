@@ -23,13 +23,6 @@ URL: http://shipuahamed.blogspot.com/  http://bncplusplus.tk
 	color: #898989 !important;
 	border-right-width: 1px !important;
 }
-.crayon-theme-bncplusplus *::selection {
-	background: transparent !important;
-}
-.crayon-theme-bncplusplus .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-bncplusplus .crayon-striped-line {
 	background: #000000 !important;
 }

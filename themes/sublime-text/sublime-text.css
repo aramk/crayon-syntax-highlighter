@@ -22,13 +22,6 @@ URL: http://khosite.com/
 	background: #272822 !important;
 	color: #868686 !important;
 }
-.crayon-theme-sublime-text *::selection {
-	background: transparent !important;
-}
-.crayon-theme-sublime-text .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-sublime-text .crayon-striped-line {
 	background: #272822 !important;
 }

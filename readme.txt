@@ -296,6 +296,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Error with undefined HTTP_USER_AGENT thanks to Enrique Cordero.
     * Removed misused error control operator.
     * HTTPS check for whether to use https://
+    * Selection CSS style for plain code.
     * Reserved keywords in Ruby.
 
 = 2.6.8 =

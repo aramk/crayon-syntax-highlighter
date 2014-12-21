@@ -22,13 +22,6 @@ URL: http://www.sqlxdetails.com
 	background: #dfefff !important;
 	color: #5499de !important;
 }
-.crayon-theme-ssms2012 *::selection {
-	background: transparent !important;
-}
-.crayon-theme-ssms2012 .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-ssms2012 .crayon-striped-line {
 }
 .crayon-theme-ssms2012 .crayon-striped-num {

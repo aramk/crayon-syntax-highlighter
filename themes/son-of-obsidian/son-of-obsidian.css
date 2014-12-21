@@ -25,35 +25,6 @@ Twitter: @__phiphou__
 	border-right-width: 1px !important;
 	border-right-color: #475459 !important;
 }
-.crayon-theme-son-of-obsidian .crayon-code::selection {
-	background: #7c9299 !important;
-	color: #FFFFFF !important;
-}
-.crayon-theme-son-of-obsidian .crayon-code *::selection {
-	background: #7c9299 !important;
-	color: #FFFFFF !important;
-}
-.crayon-theme-son-of-obsidian::selection {
-	background: transparent !important;
-}
-.crayon-theme-son-of-obsidian .crayon-toolbar::selection {
-	background: transparent !important;
-}
-.crayon-theme-son-of-obsidian .crayon-toolbar *::selection {
-	background: transparent !important;
-}
-.crayon-theme-son-of-obsidian .crayon-info::selection {
-	background: transparent !important;
-}
-.crayon-theme-son-of-obsidian .crayon-info *::selection {
-	background: transparent !important;
-}
-.crayon-theme-son-of-obsidian .crayon-nums::selection {
-	background: transparent !important;
-}
-.crayon-theme-son-of-obsidian .crayon-nums *::selection {
-	background: transparent !important;
-}
 .crayon-theme-son-of-obsidian .crayon-striped-line {
 	background: #22282a !important;
 	border-width: 1px !important;

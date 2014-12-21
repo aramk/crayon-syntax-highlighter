@@ -25,13 +25,6 @@ URL: http://www.turnwall.com/
 	padding-right: 5px !important;
 	color: #afafaf !important;
 }
-.crayon-theme-turnwall *::selection {
-	background: transparent !important;
-}
-.crayon-theme-turnwall .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-turnwall .crayon-striped-line {
 	background: #f9f9f9 !important;
 }

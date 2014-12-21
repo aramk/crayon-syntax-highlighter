@@ -23,13 +23,6 @@ URL: http://www.feeldesignstudio.com
 	border-right-color: #555555 !important;
 	border-right-style: solid !important;
 }
-.crayon-theme-feeldesign *::selection {
-	background: transparent !important;
-}
-.crayon-theme-feeldesign .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-feeldesign .crayon-striped-line {
 	background: #363636 !important;
 }

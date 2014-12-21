@@ -21,13 +21,6 @@ URL: http://www.robertfassl.de
 	background: #fdfdfd !important;
 	color: #d4d4d4 !important;
 }
-.crayon-theme-pspad *::selection {
-	background: transparent !important;
-}
-.crayon-theme-pspad .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-pspad .crayon-striped-line {
 	background: #f5f5f5 !important;
 }

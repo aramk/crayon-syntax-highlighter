@@ -22,15 +22,8 @@ URL: http://capacitacionti.com/
 	background: #22BCB4 !important;
 	color: #AEDE3D !important;
 	border-right-color: #22BCB4 !important;
-	border-right-width: 2 !important;
+	border-right-width: 2px !important;
 	border-right-style: solid !important;
-}
-.crayon-theme-capacitacionti *::selection {
-	background: transparent !important;
-}
-.crayon-theme-capacitacionti .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
 }
 .crayon-theme-capacitacionti .crayon-striped-line {
 	background: #167378 !important;

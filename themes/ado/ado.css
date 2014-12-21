@@ -28,11 +28,8 @@ URL: http://www.adostudio.it/
 	border-right-style: solid !important;
 	border-right-color: #202020 !important;
 }
-.crayon-theme-ado .crayon-code::selection {
-	background: #BBEEDA !important;
-	color: #269B6C !important;
-}
-.crayon-theme-ado .crayon-code *::selection {
+.crayon-theme-ado .crayon-code *::selection,
+.crayon-theme-ado .crayon-plain::selection {
 	background: #BBEEDA !important;
 	color: #269B6C !important;
 }

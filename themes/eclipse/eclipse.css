@@ -24,13 +24,6 @@ Author: Sunil
 	border-right-color: #008000 !important;
 	border-right-style: solid !important;
 }
-.crayon-theme-eclipse *::selection {
-	background: transparent !important;
-}
-.crayon-theme-eclipse .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-eclipse .crayon-striped-line {
 	background: #f7f7f7 !important;
 }

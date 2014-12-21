@@ -23,13 +23,6 @@ URL:
 	border-right-color: #8c8d8f !important;
 	border-right-style: solid !important;
 }
-.crayon-theme-visual-assist *::selection {
-	background: transparent !important;
-}
-.crayon-theme-visual-assist .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-visual-assist .crayon-striped-line {
 	background: #353535 !important;
 }

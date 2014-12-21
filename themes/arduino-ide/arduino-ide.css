@@ -21,13 +21,6 @@ Url: http://majsterkowo.pl
 	background: #fdfdfd !important;
 	color: #d4d4d4 !important;
 }
-.crayon-theme-arduino-ide *::selection {
-	background: transparent !important;
-}
-.crayon-theme-arduino-ide .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-arduino-ide .crayon-striped-line {
 	background: #fafafa !important;
 }

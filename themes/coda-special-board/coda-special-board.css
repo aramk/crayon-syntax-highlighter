@@ -32,35 +32,6 @@ URL: http://www.refuseall.it
 	border-right-width: 1px !important;
 	border-right-color: #333 !important;
 }
-.crayon-theme-coda-special-board .crayon-code::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
-.crayon-theme-coda-special-board .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
-.crayon-theme-coda-special-board::selection {
-	background: transparent !important;
-}
-.crayon-theme-coda-special-board .crayon-toolbar::selection {
-	background: transparent !important;
-}
-.crayon-theme-coda-special-board .crayon-toolbar *::selection {
-	background: transparent !important;
-}
-.crayon-theme-coda-special-board .crayon-info::selection {
-	background: transparent !important;
-}
-.crayon-theme-coda-special-board .crayon-info *::selection {
-	background: transparent !important;
-}
-.crayon-theme-coda-special-board .crayon-nums::selection {
-	background: transparent !important;
-}
-.crayon-theme-coda-special-board .crayon-nums *::selection {
-	background: transparent !important;
-}
 .crayon-theme-coda-special-board .crayon-striped-line {
 	background: #343434 !important;
 	border-width: 1px !important;

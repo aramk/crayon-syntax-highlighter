@@ -22,13 +22,6 @@ Url: http://itfiend.com/
 	background: #cccccc !important;
 	color: #8ac1f8 !important;
 }
-.crayon-theme-powershell-ise *::selection {
-	background: transparent !important;
-}
-.crayon-theme-powershell-ise .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-powershell-ise .crayon-striped-line {
 	background: #ffffff !important;
 }
@@ -115,10 +108,10 @@ Url: http://itfiend.com/
 	color: #FFF;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-c {
-	color: #006400 !important;//comments
+	color: #006400 !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-s {
-	color: #8b0000 !important;//strings
+	color: #8b0000 !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-p {
 	color: #b85c00 !important;
@@ -130,28 +123,28 @@ Url: http://itfiend.com/
 	color: #3215eb !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-st {
-	color: #00008b !important;//foreach
+	color: #00008b !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-r {
-	color: #0000ff !important;//command
+	color: #0000ff !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-t {
-	color: #000080 !important;//switch in (), commands in []
+	color: #000080 !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-m {
 	color: #3215eb !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-i {
-	color: #8a2be2 !important;//switch values, ().statements, [System.Math]:
+	color: #8a2be2 !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-e {
-	color: #000000 !important;//adds/round/Pow, occasionally backtick switch text, affects backticked properties
+	color: #000000 !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-v {
-	color: #ff4500 !important;//variables
+	color: #ff4500 !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-cn {
-	color: #000080 !important;//Crayon Constant, assigned to Switches
+	color: #000080 !important;
 }
 .crayon-theme-powershell-ise .crayon-pre .crayon-o {
 	color: #a9a9a9 !important;

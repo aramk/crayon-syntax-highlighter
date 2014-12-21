@@ -151,9 +151,9 @@ coloring etc.
 
 /*.crayon-syntax .crayon-toolbar,*/
 /*.crayon-syntax .crayon-toolbar * {*/
-    /*height: 18px;*/
-    /*line-height: 18px;*/
-    /*padding: 0px;*/
+/*height: 18px;*/
+/*line-height: 18px;*/
+/*padding: 0px;*/
 /*}*/
 
 .crayon-syntax .crayon-toolbar span {
@@ -386,6 +386,11 @@ coloring etc.
 {
     font-family: Monaco, 'MonacoRegular', 'Courier New', monospace;
     font-weight: 500;
+}
+
+.crayon-syntax .crayon-toolbar *::selection,
+.crayon-syntax .crayon-nums *::selection {
+    background: transparent;
 }
 
 /*

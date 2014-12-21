@@ -22,13 +22,6 @@ Url: http://nikolayzahariev.com/
 	background: #ffffff !important;
 	color: #8ac1f8 !important;
 }
-.crayon-theme-vs2012 *::selection {
-	background: transparent !important;
-}
-.crayon-theme-vs2012 .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-vs2012 .crayon-striped-line {
 	background: #ffffff !important;
 }

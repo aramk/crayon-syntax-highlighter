@@ -24,13 +24,6 @@ URL: http://zingdesign.com/
 	padding-right: 5px !important;
 	color: #333333 !important;
 }
-.crayon-theme-raygun *::selection {
-	background: transparent !important;
-}
-.crayon-theme-raygun .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-raygun .crayon-striped-line {
 	background: #F0F3F8 !important;
 }

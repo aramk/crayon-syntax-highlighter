@@ -21,13 +21,6 @@ URL: http://irisvfx.com
 	background: #fdfdfd !important;
 	color: #d4d4d4 !important;
 }
-.crayon-theme-iris-vfx *::selection {
-	background: transparent !important;
-}
-.crayon-theme-iris-vfx .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-iris-vfx .crayon-striped-line {
 }
 .crayon-theme-iris-vfx .crayon-striped-num {

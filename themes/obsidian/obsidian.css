@@ -32,35 +32,6 @@ URL: http://rakcheev.ru/
 	border-right-width: 1px !important;
 	border-right-color: #808080 !important;
 }
-.crayon-theme-obsidian .crayon-code::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
-.crayon-theme-obsidian .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
-.crayon-theme-obsidian::selection {
-	background: transparent !important;
-}
-.crayon-theme-obsidian .crayon-toolbar::selection {
-	background: transparent !important;
-}
-.crayon-theme-obsidian .crayon-toolbar *::selection {
-	background: transparent !important;
-}
-.crayon-theme-obsidian .crayon-info::selection {
-	background: transparent !important;
-}
-.crayon-theme-obsidian .crayon-info *::selection {
-	background: transparent !important;
-}
-.crayon-theme-obsidian .crayon-nums::selection {
-	background: transparent !important;
-}
-.crayon-theme-obsidian .crayon-nums *::selection {
-	background: transparent !important;
-}
 .crayon-theme-obsidian .crayon-striped-line {
 	background: #283033 !important;
 	border-width: 1px !important;

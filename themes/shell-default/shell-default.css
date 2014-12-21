@@ -23,13 +23,6 @@ URL: http://amfearliath.tk
 	color: #898989 !important;
 	border-right-width: 1px !important;
 }
-.crayon-theme-shell-default *::selection {
-	background: transparent !important;
-}
-.crayon-theme-shell-default .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-shell-default .crayon-striped-line {
 	background: #000000 !important;
 }

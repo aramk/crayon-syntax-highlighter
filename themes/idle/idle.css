@@ -24,13 +24,6 @@ URL: http://aramk.com/
 	border-right-width: 1px !important;
 	border-right-style: solid !important;
 }
-.crayon-theme-idle *::selection {
-	background: transparent !important;
-}
-.crayon-theme-idle .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-idle .crayon-striped-line {
 	background: #f9f9f9 !important;
 }

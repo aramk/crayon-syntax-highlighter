@@ -21,13 +21,6 @@ URL: http://809finest.com
 	color: #ffffff !important;
 	background: #BB0A1C !important;
 }
-.crayon-theme-809finest *::selection {
-	background: transparent !important;
-}
-.crayon-theme-809finest .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-809finest .crayon-striped-line {
 	background: #162E53 !important;
 }

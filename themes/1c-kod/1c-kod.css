@@ -1,6 +1,6 @@
 /*
-Name: 1C (Код)
-Description: Стили для подсветки кода 1C
+Name: 1C (пїЅпїЅпїЅ)
+Description: пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ 1C
 Version: 1.0
 Author: Oparin Pavel
 URL: http://oparin.info
@@ -21,13 +21,6 @@ URL: http://oparin.info
 .crayon-theme-1c-kod .crayon-table .crayon-nums {
 	background: #dfefff !important;
 	color: #5499de !important;
-}
-.crayon-theme-1c-kod *::selection {
-	background: transparent !important;
-}
-.crayon-theme-1c-kod .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
 }
 .crayon-theme-1c-kod .crayon-striped-line {
 	background: #f7f7f7 !important;

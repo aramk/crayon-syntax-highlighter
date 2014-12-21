@@ -28,35 +28,6 @@ URL: http://epicgeeks.net/
 	border-right-color: #3cc0ff !important;
 	border-right-style: dashed !important;
 }
-.crayon-theme-epicgeeks .crayon-code::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
-.crayon-theme-epicgeeks .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
-.crayon-theme-epicgeeks::selection {
-	background: transparent !important;
-}
-.crayon-theme-epicgeeks .crayon-toolbar::selection {
-	background: transparent !important;
-}
-.crayon-theme-epicgeeks .crayon-toolbar *::selection {
-	background: transparent !important;
-}
-.crayon-theme-epicgeeks .crayon-info::selection {
-	background: transparent !important;
-}
-.crayon-theme-epicgeeks .crayon-info *::selection {
-	background: transparent !important;
-}
-.crayon-theme-epicgeeks .crayon-nums::selection {
-	background: transparent !important;
-}
-.crayon-theme-epicgeeks .crayon-nums *::selection {
-	background: transparent !important;
-}
 .crayon-theme-epicgeeks .crayon-striped-line {
 	background: #ffffd2 !important;
 	border-width: 1px !important;

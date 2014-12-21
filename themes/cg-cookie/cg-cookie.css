@@ -23,13 +23,6 @@ URL: http://cgcookie.com
 	border-right-color: #8c8d8f !important;
 	border-right-style: dashed !important;
 }
-.crayon-theme-cg-cookie *::selection {
-	background: transparent !important;
-}
-.crayon-theme-cg-cookie .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-cg-cookie .crayon-striped-line {
 	background: #24272e !important;
 }

@@ -24,13 +24,6 @@ URL: http://www.bryanjhv.com
 	border-right-color: #555555 !important;
 	border-right-style: solid !important;
 }
-.crayon-theme-monokai *::selection {
-	background: transparent !important;
-}
-.crayon-theme-monokai .crayon-code *::selection {
-	background: #ddeeff !important;
-	color: #316ba5 !important;
-}
 .crayon-theme-monokai .crayon-striped-line {
 	background: #363636 !important;
 }
