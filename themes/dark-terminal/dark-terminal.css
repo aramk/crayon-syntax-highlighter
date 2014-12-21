@@ -20,7 +20,7 @@ URL: http://blog.naydenov.net/
 }
 .crayon-theme-dark-terminal .crayon-table .crayon-nums {
 	background: #000000 !important;
-	color: #000000 !important;
+	color: #494949 !important;
 	border-right-width: 1px !important;
 	border-right-color: #ffffff !important;
 }
@@ -36,7 +36,7 @@ URL: http://blog.naydenov.net/
 }
 .crayon-theme-dark-terminal .crayon-striped-num {
 	background: #000000 !important;
-	color: #000000 !important;
+	color: #494949 !important;
 }
 .crayon-theme-dark-terminal .crayon-marked-line {
 	background: #3b3b3b !important;
@@ -44,7 +44,7 @@ URL: http://blog.naydenov.net/
 	border-color: #3a3a47 !important;
 }
 .crayon-theme-dark-terminal .crayon-marked-num {
-	color: #000000 !important;
+	color: #494949 !important;
 	background: #000000 !important;
 	border-width: 1px !important;
 	border-color: #000000 !important;
@@ -54,7 +54,7 @@ URL: http://blog.naydenov.net/
 }
 .crayon-theme-dark-terminal .crayon-marked-num.crayon-striped-num {
 	background: #000000 !important;
-	color: #000000 !important;
+	color: #494949 !important;
 }
 .crayon-theme-dark-terminal .crayon-marked-line.crayon-top {
 	border-top-style: solid !important;
