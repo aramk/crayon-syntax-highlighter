@@ -635,18 +635,19 @@ class CrayonSettingsWP {
 
     // Input Drawing ==========================================================
 
-    private static function textbox($args) {
+    private static function input($args) {
         $id = '';
         $size = 40;
         $margin = FALSE;
         $preview = 1;
         $break = FALSE;
+        $type = 'text';
         extract($args);
 
-        echo '<input id="', CrayonSettings::PREFIX, $id, '" name="', self::OPTIONS, '[', $id, ']" class="' . CrayonSettings::SETTING . '" size="', $size, '" type="text" value="',
+        echo '<input id="', CrayonSettings::PREFIX, $id, '" name="', self::OPTIONS, '[', $id, ']" class="' . CrayonSettings::SETTING . '" size="', $size, '" type="', $type,'" value="',
         self::$options[$id], '" style="margin-left: ', ($margin ? '20px' : '0px'), ';" crayon-preview="', ($preview ? 1 : 0), '" />', ($break ? CRAYON_BR : '');
     }
-
+    
     private static function checkbox($args, $line_break = TRUE, $preview = TRUE) {
         if (empty($args) || !is_array($args) || count($args) != 2) {
             return;
@@ -726,13 +727,13 @@ class CrayonSettingsWP {
         self::checkbox(array(CrayonSettings::HEIGHT_SET, '<span class="crayon-span-50">' . crayon__('Height') . ' </span>'), FALSE);
         self::dropdown(CrayonSettings::HEIGHT_MODE, FALSE);
         echo ' ';
-        self::textbox(array('id' => CrayonSettings::HEIGHT, 'size' => 8));
+        self::input(array('id' => CrayonSettings::HEIGHT, 'size' => 8));
         echo ' ';
         self::dropdown(CrayonSettings::HEIGHT_UNIT);
         self::checkbox(array(CrayonSettings::WIDTH_SET, '<span class="crayon-span-50">' . crayon__('Width') . ' </span>'), FALSE);
         self::dropdown(CrayonSettings::WIDTH_MODE, FALSE);
         echo ' ';
-        self::textbox(array('id' => CrayonSettings::WIDTH, 'size' => 8));
+        self::input(array('id' => CrayonSettings::WIDTH, 'size' => 8));
         echo ' ';
         self::dropdown(CrayonSettings::WIDTH_UNIT);
         $text = array(crayon__('Top Margin') => array(CrayonSettings::TOP_SET, CrayonSettings::TOP_MARGIN),
@@ -745,7 +746,7 @@ class CrayonSettingsWP {
             $preview = ($p == crayon__('Left Margin') || $p == crayon__('Right Margin'));
             self::checkbox(array($set, '<span class="crayon-span-110">' . $p . '</span>'), FALSE, $preview);
             echo ' ';
-            self::textbox(array('id' => $margin, 'size' => 8, 'preview' => FALSE));
+            self::input(array('id' => $margin, 'size' => 8, 'preview' => FALSE));
             echo '<span class="crayon-span-margin">', crayon__('Pixels'), '</span>', CRAYON_BR;
         }
         echo '<span class="crayon-span" style="min-width: 135px;">' . crayon__('Horizontal Alignment') . ' </span>';
@@ -754,7 +755,7 @@ class CrayonSettingsWP {
         self::checkbox(array(CrayonSettings::FLOAT_ENABLE, crayon__('Allow floating elements to surround Crayon')), FALSE, FALSE);
         echo '</div>';
         echo '<span class="crayon-span-100">' . crayon__('Inline Margin') . ' </span>';
-        self::textbox(array('id' => CrayonSettings::INLINE_MARGIN, 'size' => 2));
+        self::input(array('id' => CrayonSettings::INLINE_MARGIN, 'size' => 2));
         echo '<span class="crayon-span-margin">', crayon__('Pixels'), '</span>';
         echo '</div>';
     }
@@ -784,7 +785,7 @@ class CrayonSettingsWP {
         self::checkbox(array(CrayonSettings::WRAP, crayon__('Wrap lines by default')));
         self::checkbox(array(CrayonSettings::WRAP_TOGGLE, crayon__('Enable line wrap toggling')));
         self::span(crayon__('Start line numbers from') . ' ');
-        self::textbox(array('id' => CrayonSettings::START_LINE, 'size' => 2, 'break' => TRUE));
+        self::input(array('id' => CrayonSettings::START_LINE, 'size' => 2, 'break' => TRUE));
         echo '</div>';
     }
 
@@ -1033,9 +1034,9 @@ class Human {
         // echo '<a href="http://bit.ly/Yr2Xv6" target="_blank">', crayon__('Add More'), '</a>';
         echo '<span class="crayon-span-10"></span>';
         self::checkbox(array(CrayonSettings::FONT_SIZE_ENABLE, crayon__('Custom Font Size') . ' '), FALSE);
-        self::textbox(array('id' => CrayonSettings::FONT_SIZE, 'size' => 2));
+        self::input(array('id' => CrayonSettings::FONT_SIZE, 'size' => 2));
         echo '<span class="crayon-span-margin">', crayon__('Pixels'), ',&nbsp;&nbsp;', crayon__('Line Height'), ' </span>';
-        self::textbox(array('id' => CrayonSettings::LINE_HEIGHT, 'size' => 2));
+        self::input(array('id' => CrayonSettings::LINE_HEIGHT, 'size' => 2));
         echo '<span class="crayon-span-margin">', crayon__('Pixels'), '</span></br>';
         if ((!CrayonResources::fonts()->is_loaded($db_font) || !CrayonResources::fonts()->exists($db_font))) {
             // Default font doesn't actually exist as a file, it means do not override default theme font
@@ -1077,11 +1078,11 @@ class Human {
         echo '</div>';
         self::checkbox(array(CrayonSettings::TAB_CONVERT, crayon__('Convert tabs to spaces')));
         self::span(crayon__('Tab size in spaces') . ': ');
-        self::textbox(array('id' => CrayonSettings::TAB_SIZE, 'size' => 2, 'break' => TRUE));
+        self::input(array('id' => CrayonSettings::TAB_SIZE, 'size' => 2, 'break' => TRUE));
         self::span(crayon__('Blank lines before code:') . ' ');
-        self::textbox(array('id' => CrayonSettings::WHITESPACE_BEFORE, 'size' => 2, 'break' => TRUE));
+        self::input(array('id' => CrayonSettings::WHITESPACE_BEFORE, 'size' => 2, 'break' => TRUE));
         self::span(crayon__('Blank lines after code:') . ' ');
-        self::textbox(array('id' => CrayonSettings::WHITESPACE_AFTER, 'size' => 2, 'break' => TRUE));
+        self::input(array('id' => CrayonSettings::WHITESPACE_AFTER, 'size' => 2, 'break' => TRUE));
     }
 
     public static function tags() {
@@ -1104,7 +1105,7 @@ class Human {
         echo '<a name="files"></a>';
         echo crayon__('When loading local files and a relative path is given for the URL, use the absolute path'), ': ',
         '<div style="margin-left: 20px">', home_url(), '/';
-        self::textbox(array('id' => CrayonSettings::LOCAL_PATH));
+        self::input(array('id' => CrayonSettings::LOCAL_PATH));
         echo '</div>', crayon__('Followed by your relative URL.');
     }
 
@@ -1127,11 +1128,11 @@ class Human {
         self::checkbox(array(CrayonSettings::TAG_EDITOR_FRONT, crayon__("Display the Tag Editor in any TinyMCE instances on the frontend (e.g. bbPress)") . self::help_button('http://aramk.com/blog/2012/09/08/crayon-with-bbpress/')));
         self::checkbox(array(CrayonSettings::TAG_EDITOR_SETTINGS, crayon__("Display Tag Editor settings on the frontend")));
         self::span(crayon__('Add Code button text') . ' ');
-        self::textbox(array('id' => CrayonSettings::TAG_EDITOR_ADD_BUTTON_TEXT, 'break' => TRUE));
+        self::input(array('id' => CrayonSettings::TAG_EDITOR_ADD_BUTTON_TEXT, 'break' => TRUE));
         self::span(crayon__('Edit Code button text') . ' ');
-        self::textbox(array('id' => CrayonSettings::TAG_EDITOR_EDIT_BUTTON_TEXT, 'break' => TRUE));
+        self::input(array('id' => CrayonSettings::TAG_EDITOR_EDIT_BUTTON_TEXT, 'break' => TRUE));
         self::span(crayon__('Quicktag button text') . ' ');
-        self::textbox(array('id' => CrayonSettings::TAG_EDITOR_QUICKTAG_BUTTON_TEXT, 'break' => TRUE));
+        self::input(array('id' => CrayonSettings::TAG_EDITOR_QUICKTAG_BUTTON_TEXT, 'break' => TRUE));
     }
 
     public static function misc() {
@@ -1146,9 +1147,8 @@ class Human {
         self::checkbox(array(CrayonSettings::TOUCHSCREEN, crayon__('Disable mouse gestures for touchscreen devices (eg. MouseOver)')));
         self::checkbox(array(CrayonSettings::DISABLE_ANIM, crayon__('Disable animations')));
         self::checkbox(array(CrayonSettings::DISABLE_RUNTIME, crayon__('Disable runtime stats')));
-        echo '<span class="crayon-span-100">' . crayon__('Do Not Apply Crayon To Posts Older Than:') . ' </span>';
-        self::textbox(array('id' => CrayonSettings::DISABLE_DATE, 'size' => 8, 'break' => FALSE));
-        echo "(MM/DD/YYYY)";
+        echo '<span class="crayon-span-100">' . crayon__('Disable for posts before') . ':</span> ';
+        self::input(array('id' => CrayonSettings::DISABLE_DATE, 'type' => 'date', 'size' => 8, 'break' => FALSE));
     }
 
     // Debug Fields ===========================================================
@@ -1157,7 +1157,7 @@ class Human {
         self::checkbox(array(CrayonSettings::ERROR_LOG, crayon__('Log errors for individual Crayons')));
         self::checkbox(array(CrayonSettings::ERROR_LOG_SYS, crayon__('Log system-wide errors')));
         self::checkbox(array(CrayonSettings::ERROR_MSG_SHOW, crayon__('Display custom message for errors')));
-        self::textbox(array('id' => CrayonSettings::ERROR_MSG, 'size' => 60, 'margin' => TRUE));
+        self::input(array('id' => CrayonSettings::ERROR_MSG, 'size' => 60, 'margin' => TRUE));
     }
 
     public static function log() {

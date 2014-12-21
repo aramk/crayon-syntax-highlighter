@@ -286,8 +286,9 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 = 2.6.9 =
 * ADDED:
-    * Orange Code theme.
+    * Setting to disable Crayon for posts older than a given date (thanks to <a href="https://github.com/weismannweb" target="_blank">weismannweb</a>).
     * Support for changing the text shown for "Add Code" and "Edit Code" buttons in the Tag Editor.
+    * Orange Code theme.
     * Raygun theme.
     * Tamil language.
 * FIXED:
