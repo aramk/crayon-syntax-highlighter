@@ -1,7 +1,6 @@
 (function ($) {
 
     var settings = CrayonTagEditorSettings;
-    console.log('settings', settings);
 
     window.CrayonQuickTags = new function () {
 
