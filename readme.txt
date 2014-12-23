@@ -284,6 +284,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.6.10 =
+* FIXED:
+    * Support for nested multi-line strings in Swift language (thanks to <a href="https://github.com/nicolafiorillo" target="_blank">nicolafiorillo</a>).
+
 = 2.6.9 =
 * ADDED:
     * Setting to disable Crayon for posts older than a given date (thanks to <a href="https://github.com/weismannweb" target="_blank">weismannweb</a>).
