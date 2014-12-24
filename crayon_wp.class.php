@@ -542,9 +542,10 @@ class CrayonWP {
 
             CrayonLog::debug('enqueue');
             global $CRAYON_VERSION;
+            CrayonSettingsWP::load_settings(TRUE);
             if (CRAYON_MINIFY) {
                 wp_enqueue_style('crayon', plugins_url(CRAYON_STYLE_MIN, __FILE__), array(), $CRAYON_VERSION);
-                wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS_MIN, __FILE__), array('jquery'), $CRAYON_VERSION);
+                wp_enqueue_script('crayon_js', plugins_url(CRAYON_JS_MIN, __FILE__), array('jquery'), $CRAYON_VERSION, CrayonGlobalSettings::val(CrayonSettings::DELAY_LOAD_JS));
             } else {
                 wp_enqueue_style('crayon_style', plugins_url(CRAYON_STYLE, __FILE__), array(), $CRAYON_VERSION);
                 wp_enqueue_style('crayon_global_style', plugins_url(CRAYON_STYLE_GLOBAL, __FILE__), array(), $CRAYON_VERSION);
