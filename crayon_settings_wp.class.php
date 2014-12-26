@@ -1149,6 +1149,8 @@ class Human {
         self::checkbox(array(CrayonSettings::DISABLE_RUNTIME, crayon__('Disable runtime stats')));
         echo '<span class="crayon-span-100">' . crayon__('Disable for posts before') . ':</span> ';
         self::input(array('id' => CrayonSettings::DISABLE_DATE, 'type' => 'date', 'size' => 8, 'break' => FALSE));
+        echo '<br/>';
+        self::checkbox(array(CrayonSettings::DELAY_LOAD_JS, crayon__('Load Crayon JS at page footer for better page loading performance. Require wp_footer() being called in theme.')));
     }
 
     // Debug Fields ===========================================================

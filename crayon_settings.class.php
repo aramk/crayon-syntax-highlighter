@@ -117,6 +117,7 @@ class CrayonSettings {
     const EXPAND_TOGGLE = 'expand-toggle';
     const MINIMIZE = 'minimize';
     const IGNORE = 'ignore';
+    const DELAY_LOAD_JS = 'delay-load-js';
 
     private static $cache_array;
 
@@ -254,7 +255,8 @@ class CrayonSettings {
             new CrayonSetting(self::WRAP, FALSE),
             new CrayonSetting(self::EXPAND, FALSE),
             new CrayonSetting(self::EXPAND_TOGGLE, TRUE),
-            new CrayonSetting(self::MINIMIZE, FALSE)
+            new CrayonSetting(self::MINIMIZE, FALSE),
+            new CrayonSetting(self::DELAY_LOAD_JS, FALSE)
         );
 
         $this->set($settings);
