@@ -285,6 +285,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 2.6.10 =
+* ADDED:
+    * Option to load crayon script in the footer to improve loading performance (thanks to <a href="https://github.com/sumhat" target="_blank">sumhat</a>).
 * FIXED:
     * Support for nested multi-line strings in Swift language (thanks to <a href="https://github.com/nicolafiorillo" target="_blank">nicolafiorillo</a>).
 
