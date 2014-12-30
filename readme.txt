@@ -197,6 +197,8 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Peter Kellner, (http://peterkellner.net), US
+* Open Hardware Design Group LLC, (http://opensourcehardwaregroup.com/), US
 * Helen McManus, (http://invisiblepixels.org/InvisibleWords/), Netherlands
 * Thomas Fee, UK
 * Julie Knowles, (http://knowlesfamily.com/), USA
