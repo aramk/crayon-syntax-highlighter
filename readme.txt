@@ -291,6 +291,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Option to load crayon script in the footer to improve loading performance (thanks to <a href="https://github.com/sumhat" target="_blank">sumhat</a>).
 * FIXED:
     * Support for nested multi-line strings in Swift language (thanks to <a href="https://github.com/nicolafiorillo" target="_blank">nicolafiorillo</a>).
+    * CrayonFormatter::print_error() called non-statically (thanks to <a href="https://github.com/ksubileau" target="_blank">https://github.com/ksubileau</a>)
 
 = 2.6.9 =
 * ADDED:
