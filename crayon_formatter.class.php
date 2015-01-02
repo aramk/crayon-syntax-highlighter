@@ -481,7 +481,7 @@ class CrayonFormatter {
 		}
 	}
 
-	function print_error($hl, $error, $line_numbers = 'ERROR', $print = TRUE) {
+	public static function print_error($hl, $error, $line_numbers = 'ERROR', $print = TRUE) {
 		if (get_class($hl) != CRAYON_HIGHLIGHTER) {
 			return;
 		}
