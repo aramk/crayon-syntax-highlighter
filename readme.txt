@@ -292,6 +292,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * FIXED:
     * Support for nested multi-line strings in Swift language (thanks to <a href="https://github.com/nicolafiorillo" target="_blank">nicolafiorillo</a>).
     * CrayonFormatter::print_error() called non-statically (thanks to <a href="https://github.com/ksubileau" target="_blank">https://github.com/ksubileau</a>)
+    * Admin CSS issue: https://github.com/aramk/crayon-syntax-highlighter/issues/250.
 
 = 2.6.9 =
 * ADDED:

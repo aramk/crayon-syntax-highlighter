@@ -274,7 +274,7 @@
     color: #666 !important;
 }
 
-.note {
+#crayon-main-wrap .form-table .note {
     font-style: italic;
     color: #999;
 }
