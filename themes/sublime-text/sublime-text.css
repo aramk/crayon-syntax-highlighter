@@ -14,9 +14,9 @@ URL: http://khosite.com/
 }
 .crayon-theme-sublime-text-inline {
 	border-width: 1px !important;
-	border-color: #ddd !important;
+	border-color: #999 !important;
 	border-style: solid !important;
-	background: #fafafa !important;
+	background: #272822 !important;
 }
 .crayon-theme-sublime-text .crayon-table .crayon-nums {
 	background: #272822 !important;
