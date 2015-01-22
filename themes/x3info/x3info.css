@@ -1,0 +1,165 @@
+/*
+Name: X3info
+Description: X3info.com
+Version: 1.0
+Author: Jafran Ahmed
+URL: http://x3info.com
+*/
+.crayon-theme-x3info {
+	border-width: 1px !important;
+	border-color: #35907e !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #f0f0f0 !important;
+}
+.crayon-theme-x3info-inline {
+	border-width: 0px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #f0f0f0 !important;
+}
+.crayon-theme-x3info .crayon-table .crayon-nums {
+	background: #35907e !important;
+	color: #ffffff !important;
+}
+.crayon-theme-x3info .crayon-striped-line {
+	background: #fafafa !important;
+}
+.crayon-theme-x3info .crayon-striped-num {
+	background: #35907e !important;
+	color: #ffffff !important;
+}
+.crayon-theme-x3info .crayon-marked-line {
+	background: #acb1b0 !important;
+	border-width: 1px !important;
+	border-color: #4fb9b1 !important;
+}
+.crayon-theme-x3info .crayon-marked-num {
+	color: #fdfeff !important;
+	background: #333333 !important;
+	border-width: 0px !important;
+	border-color: #5999d9 !important;
+}
+.crayon-theme-x3info .crayon-marked-line.crayon-striped-line {
+	background: #cacfce !important;
+}
+.crayon-theme-x3info .crayon-marked-num.crayon-striped-num {
+	background: #666666 !important;
+	color: #afeeee !important;
+}
+.crayon-theme-x3info .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-x3info .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-x3info .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-x3info .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-x3info .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #65642c !important;
+}
+.crayon-theme-x3info .crayon-toolbar {
+	border-bottom-width: 0px !important;
+	border-bottom-color: #f0f0f0 !important;
+	background: #35907e !important;
+}
+.crayon-theme-x3info .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-x3info .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-x3info .crayon-title {
+	color: #fbfbfb !important;
+}
+.crayon-theme-x3info .crayon-language {
+	color: #4fb9b1 !important;
+}
+.crayon-theme-x3info a.crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-x3info a.crayon-button:hover {
+	background-color: #c0e3e1 !important;
+	color: #666;
+}
+.crayon-theme-x3info a.crayon-button.crayon-pressed:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-x3info a.crayon-button.crayon-pressed {
+	background-color: #4fb9b1 !important;
+	color: #FFF;
+}
+.crayon-theme-x3info a.crayon-button.crayon-pressed:active {
+	background-color: #4fb9b1 !important;
+	color: #FFF;
+}
+.crayon-theme-x3info a.crayon-button:active {
+	background-color: #4fb9b1 !important;
+	color: #FFF;
+}
+.crayon-theme-x3info .crayon-pre .crayon-c {
+	color: #c7562b !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-s {
+	color: #9c29b5 !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-p {
+	color: #cb7824 !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-ta {
+	color: #46b6db !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-k {
+	color: #173e36 !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-st {
+	color: #333 !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-r {
+	color: #4fb9b1 !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-t {
+	color: #387a6d !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-m {
+	color: #35907e !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-i {
+	color: #333 !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-e {
+	color: #008b8b !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-v {
+	color: #4ab28d !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-cn {
+	color: #2f4f4f !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-o {
+	color: #008b8b !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-f {
+	color: #999 !important;
+}
+.crayon-theme-x3info .crayon-pre .crayon-h {
+	color: #3bbece !important;
+}
+.crayon-theme-x3info .crayon-button {
+}
