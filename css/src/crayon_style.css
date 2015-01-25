@@ -77,6 +77,7 @@ coloring etc.
     width: auto !important;
     border-spacing: 0 !important;
     border-collapse: collapse !important;
+    table-layout: auto !important;
 }
 
 .crayon-syntax .crayon-table td,

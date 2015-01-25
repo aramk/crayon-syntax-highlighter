@@ -7,5 +7,5 @@ Thumbs.db
 *.pyc
 .idea/
 /log.txt
-
+*.sublime-workspace
 .c9

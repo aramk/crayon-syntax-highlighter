@@ -294,6 +294,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Support for nested multi-line strings in Swift language (thanks to <a href="https://github.com/nicolafiorillo" target="_blank">nicolafiorillo</a>).
     * CrayonFormatter::print_error() called non-statically (thanks to <a href="https://github.com/ksubileau" target="_blank">https://github.com/ksubileau</a>)
     * Admin CSS issue: https://github.com/aramk/crayon-syntax-highlighter/issues/250.
+    * Table style incompatibility with WP 2015 theme.
 
 = 2.6.9 =
 * ADDED:
