@@ -105,6 +105,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Java
 * JavaScript
 * Objective-C
+* Papyrus
 * Perl
 * PHP
 * PL/SQL
@@ -197,6 +198,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Stefan Onderka, (http://www.onderka.com), Germany
 * Peter Kellner, (http://peterkellner.net), US
 * Open Hardware Design Group LLC, (http://opensourcehardwaregroup.com/), US
 * Helen McManus, (http://invisiblepixels.org/InvisibleWords/), Netherlands
@@ -290,6 +292,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * ADDED:
     * Option to load crayon script in the footer to improve loading performance (thanks to <a href="https://github.com/sumhat" target="_blank">sumhat</a>).
     * X3Info theme
+    * Papyrus language
 * FIXED:
     * Support for nested multi-line strings in Swift language (thanks to <a href="https://github.com/nicolafiorillo" target="_blank">nicolafiorillo</a>).
     * CrayonFormatter::print_error() called non-statically (thanks to <a href="https://github.com/ksubileau" target="_blank">https://github.com/ksubileau</a>)

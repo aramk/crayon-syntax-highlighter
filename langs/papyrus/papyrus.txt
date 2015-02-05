@@ -1,0 +1,23 @@
+### PAPYRUS LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Papyrus
+    VERSION             1.0.0
+
+    COMMENT             ({.*?})|(;.*?$)
+    STRING              (?default)
+    
+    STATEMENT            (?default)|\b(?alt:statement.txt)\b
+    RESERVED             (?default)|\b(?alt:reserved.txt)\b
+	ENTITY               (?default)|\b(?alt:type.txt)\b
+    
+    VARIABLE            (?default)
+    IDENTIFIER          (?default)
+    CONSTANT            (?default)
+    OPERATOR            (?default)
+    SYMBOL              (?default)
+	
+	
+	
+	
