@@ -198,17 +198,17 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
-* Performance Simulations, (http://www.performancesimulations.com/), US
+* Performance Simulations, (http://www.performancesimulations.com/), USA
 * Lindsay Ross, (http://gravelrash.com), New Zealand
 * Ruperto Coronado Muñoz, Mexico
 * Stefan Onderka, (http://www.onderka.com), Germany
-* Peter Kellner, (http://peterkellner.net), US
-* Open Hardware Design Group LLC, (http://opensourcehardwaregroup.com/), US
+* Peter Kellner, (http://peterkellner.net), USA
+* Open Hardware Design Group LLC, (http://opensourcehardwaregroup.com/), USA
 * Helen McManus, (http://invisiblepixels.org/InvisibleWords/), Netherlands
 * Thomas Fee, UK
 * Julie Knowles, (http://knowlesfamily.com/), USA
 * Peter Kriegel, (http://www.powershell-group.eu/), Germany
-* Geo My WP, (http://geomywp.com), US
+* Geo My WP, (http://geomywp.com), USA
 * Raffael Vogler, Germany
 * Erdal Cicek, Turkey
 * Cloud-VPS, Poland
