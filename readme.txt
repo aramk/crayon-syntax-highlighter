@@ -198,6 +198,9 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Performance Simulations, (http://www.performancesimulations.com/), US
+* Lindsay Ross, (http://gravelrash.com), New Zealand
+* Ruperto Coronado Muñoz, Mexico
 * Stefan Onderka, (http://www.onderka.com), Germany
 * Peter Kellner, (http://peterkellner.net), US
 * Open Hardware Design Group LLC, (http://opensourcehardwaregroup.com/), US
