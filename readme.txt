@@ -198,6 +198,8 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Samuel Deering, Australia
+* Billiard Greg, (http://billiardgreg.com/), USA
 * Performance Simulations, (http://www.performancesimulations.com/), USA
 * Lindsay Ross, (http://gravelrash.com), New Zealand
 * Ruperto Coronado Muñoz, Mexico
