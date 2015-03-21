@@ -369,6 +369,8 @@ coloring etc.
     /* width: 500px !important; */
     white-space: pre-wrap !important;
     /*    word-wrap:break-word !important;*/
+    height: auto;
+    word-break: break-all;
 }
 
 .crayon-syntax-inline .crayon-pre,
@@ -409,11 +411,6 @@ This has been disabled to allow more flexibility in changing font sizes.
 
 .crayon-table .crayon-nums-content {
     white-space: nowrap; /* Prevent wrapping line numbers in some themes */
-}
-
-.crayon-syntax.crayon-wrapped .crayon-line {
-    /*	min-height: 15px;*/
-    height: auto;
 }
 
 .crayon-syntax .crayon-num,

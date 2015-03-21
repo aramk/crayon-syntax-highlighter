@@ -198,6 +198,10 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* ZengChun Yang, China
+* Alan Kaplan, (http://www.akaplan.com/blog), US
+* Christopher Yarbrough, (http://chrisyarbrough.com/), Germany
+* Johann Weiher, (http://codequartett.de/), Germany
 * Samuel Deering, Australia
 * Billiard Greg, (http://billiardgreg.com/), USA
 * Performance Simulations, (http://www.performancesimulations.com/), USA
@@ -303,6 +307,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * CrayonFormatter::print_error() called non-statically (thanks to <a href="https://github.com/ksubileau" target="_blank">https://github.com/ksubileau</a>)
     * Admin CSS issue: https://github.com/aramk/crayon-syntax-highlighter/issues/250.
     * Table style incompatibility with WP 2015 theme.
+    * Wrapped text now breaks per character.
 
 = 2.6.9 =
 * ADDED:
