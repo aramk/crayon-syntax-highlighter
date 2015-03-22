@@ -199,6 +199,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Nilesh Govindrajan, (http://nileshgr.com/), India
 * ZengChun Yang, China
 * Alan Kaplan, (http://www.akaplan.com/blog), US
 * Christopher Yarbrough, (http://chrisyarbrough.com/), Germany
@@ -297,6 +298,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 5. Theme Editor.
 
 == Changelog ==
+
+= 2.6.11 =
+* ADDED:
+    * Onderka15 theme.
 
 = 2.6.10 =
 * ADDED:

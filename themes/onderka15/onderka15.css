@@ -1,0 +1,167 @@
+/*
+Name: Onderka15
+Description: Version: 1.0
+Author: Stefan Onderka
+URL: http://www.onderka.com
+*/
+.crayon-theme-onderka15 {
+	border-width: 1px !important;
+	text-shadow: none !important;
+	background: #f8f8f8 !important;
+	border-color: #c8c8c8 !important;
+	border-style: solid !important;
+}
+.crayon-theme-onderka15-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	background: #f8f8f8 !important;
+	border-style: solid !important;
+}
+.crayon-theme-onderka15 .crayon-table .crayon-nums {
+	background: #c0c0c0 !important;
+	color: #696969 !important;
+}
+.crayon-theme-onderka15 .crayon-striped-line {
+	background: #f8f8f8 !important;
+}
+.crayon-theme-onderka15 .crayon-striped-num {
+	background: #c0c0c0 !important;
+	color: #696969 !important;
+}
+.crayon-theme-onderka15 .crayon-marked-line {
+	border-width: 1px !important;
+	border-color: #c7c7c7 !important;
+	background: #ffffff !important;
+}
+.crayon-theme-onderka15 .crayon-marked-num {
+	color: #ffffff !important;
+	background: #c0c0c0 !important;
+	border-width: 1px !important;
+	border-color: #939393 !important;
+}
+.crayon-theme-onderka15 .crayon-marked-line.crayon-striped-line {
+	background: #f8f8f8 !important;
+}
+.crayon-theme-onderka15 .crayon-marked-num.crayon-striped-num {
+	background: #c0c0c0 !important;
+	color: #ffffff !important;
+}
+.crayon-theme-onderka15 .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-onderka15 .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-onderka15 .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-onderka15 .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-onderka15 .crayon-info {
+	background: #909090 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #696969 !important;
+	border-bottom-style: solid !important;
+	color: #c0c0c0 !important;
+}
+.crayon-theme-onderka15 .crayon-toolbar {
+	background: #eeeeee !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #dddddd !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-onderka15 .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-onderka15 .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-onderka15 .crayon-title {
+	color: #999999 !important;
+}
+.crayon-theme-onderka15 .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-onderka15 a.crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-onderka15 a.crayon-button:hover {
+	background-color: #dddddd !important;
+	color: #666;
+}
+.crayon-theme-onderka15 a.crayon-button.crayon-pressed:hover {
+	background-color: #eeeeee !important;
+	color: #666;
+}
+.crayon-theme-onderka15 a.crayon-button.crayon-pressed {
+	background-color: #dddddd !important;
+	color: #FFF;
+}
+.crayon-theme-onderka15 a.crayon-button.crayon-pressed:active {
+	background-color: #dddddd !important;
+	color: #FFF;
+}
+.crayon-theme-onderka15 a.crayon-button:active {
+	background-color: #dddddd !important;
+	color: #FFF;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-c {
+	color: #32cd32 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-s {
+	color: #1996d4 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-p {
+	color: #222222 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-ta {
+	color: #e91e1e !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-k {
+	color: #006699 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-st {
+	color: #cc6600 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-r {
+	color: #cc6600 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-t {
+	color: #CC6600 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-m {
+	color: #cc6600 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-i {
+	color: #222222 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-e {
+	color: #cc6600 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-v {
+	color: #222222 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-cn {
+	color: #222222 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-o {
+	color: #222222 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-f {
+	color: #999 !important;
+}
+.crayon-theme-onderka15 .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
+.crayon-theme-onderka15 .crayon-pre {
+	color: #959595 !important;
+}
