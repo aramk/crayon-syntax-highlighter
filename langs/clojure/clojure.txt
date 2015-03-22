@@ -1,0 +1,21 @@
+### CLOJURE LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Clojure
+    VERSION             1.0
+
+    COMMENT             (;.*?$)|(;\|.*?\|;)
+    STRING              (?<!\\)".*?(?<!\\)"
+    
+    STATEMENT           \b(?alt:statement.txt)\b
+    SPECIAL             \b(?alt:special.txt)\b
+    TYPE                \b(?alt:type.txt)\b
+    HOF                 \b(?alt:hof.txt)\b
+    VAR                 \b(?alt:vars.txt)\b
+    KEYWORD             (?<=\()\s*[a-z-]*[a-z]\b
+    
+    IDENTIFIER          [a-z-]*[a-z]
+    CONSTANT            (?default)
+    OPERATOR            (?default)|\(|\)
+    SYMBOL              (?default)
