@@ -85,6 +85,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * C
 * C#
 * C++
+* Clojure (thanks to <a href="https://github.com/mberndtgen" target="_blank"></a>)
 * CoffeeScript (thanks to <a href="http://firn.jp/crayon-coffeescript" target="_blank">Dai Akatsuka</a>)
 * CSS
 * Delphi/Pascal (thanks to <a href="http://squashbrain.com/" target="_blank">Chris McClenny</a>)
