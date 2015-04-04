@@ -302,6 +302,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.6.11 =
 * ADDED:
     * Onderka15 theme.
+    * Obsidian Light theme.
 
 = 2.6.10 =
 * ADDED:
