@@ -801,7 +801,7 @@ class CrayonWP {
             $post_class = preg_replace('#\bdata-url\s*=#mi', 'url=', $post_class);
         }
         if (!empty($pre_class)) {
-            $pre_class = preg_replace('#\bdata-url\s*=#mi', 'url=', $post_class);
+            $pre_class = preg_replace('#\bdata-url\s*=#mi', 'url=', $pre_class);
         }
 
         if (!empty($class)) {

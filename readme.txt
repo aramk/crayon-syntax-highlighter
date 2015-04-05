@@ -306,6 +306,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Prevented using is_admin() as a security query.
     * Removed the ability to load files from the filesystem due to security vulnerabilities. Ensure
     all URLs are publicly accessible.
+    * Fixed a bug causing tags to be removed in some cases.
 
 = 2.6.10 =
 * ADDED:
