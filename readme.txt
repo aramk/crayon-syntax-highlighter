@@ -7,12 +7,12 @@ Requires at least: 3.0
 Tested up to: 4.1.0
 Stable tag: trunk
 
-Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, local file or post text.
+Syntax Highlighter supporting multiple languages, themes, fonts, highlighting from a URL, or post text.
 
 == Description ==
 
 A Syntax Highlighter built in PHP and jQuery that supports customizable languages and themes.
-It can highlight from a URL, a local file or Wordpress post text. Crayon makes it easy to manage Language files and define
+It can highlight from a URL, or Wordpress post text. Crayon makes it easy to manage Language files and define
 custom language elements with regular expressions.
 It also supports some neat features like:
 
@@ -46,7 +46,6 @@ It also supports some neat features like:
 * Line marking (for important lines)
 * <a href="http://aramk.com/blog/2012/09/02/line-ranges-in-crayon‎" target="_blank">Line ranges (showing only parts of the code)</a>
 * Starting line number (default is 1)
-* Local directory to search for local files
 * File extension detection
 * Live Preview in settings
 * Dimensions, margins, alignment, font-size, line-height, float
@@ -299,10 +298,14 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 2.6.11 =
+= 2.7.0 =
 * ADDED:
     * Onderka15 theme.
     * Obsidian Light theme.
+* FIXED:
+    * Prevented using is_admin() as a security query.
+    * Removed the ability to load files from the filesystem due to security vulnerabilities. Ensure
+    all URLs are publicly accessible.
 
 = 2.6.10 =
 * ADDED:

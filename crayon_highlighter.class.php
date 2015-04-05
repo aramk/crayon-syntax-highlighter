@@ -56,80 +56,39 @@ class CrayonHighlighter {
 			$this->error('The specified URL is empty, please provide a valid URL.');
 			return;
 		}
-		/*	Try to replace the URL with an absolute path if it is local, used to prevent scripts
-		 from executing when they are loaded. */
+		// Try to replace the URL with an absolute path if it is local, used to prevent scripts
+		// from executing when they are loaded.
 		$url = $this->url;
 		if ($this->setting_val(CrayonSettings::DECODE_ATTRIBUTES)) {
 			$url = CrayonUtil::html_entity_decode($url);
 		}
 		$url = CrayonUtil::pathf($url);
-		$local = FALSE; // Whether to read locally
 		$site_http = CrayonGlobalSettings::site_url();
-		$site_path = CrayonGlobalSettings::site_path();
 		$scheme = parse_url($url, PHP_URL_SCHEME);
-		
 		// Try to replace the site URL with a path to force local loading
-		if (strpos($url, $site_http) !== FALSE || strpos($url, $site_path) !== FALSE ) {
-			$url = str_replace($site_http, $site_path, $url);
-			// Attempt to load locally
-			$local = TRUE;
-			$local_url = $url;
-		} else if (empty($scheme)) {
+		if (empty($scheme)) {
 			// No url scheme is given - path may be given as relative
-			$local_url = preg_replace('#^((\/|\\\\)*)?#', $site_path . $this->setting_val(CrayonSettings::LOCAL_PATH), $url);
-			$local = TRUE;
+			$url = CrayonUtil::path_slash($site_http) . CrayonUtil::path_slash($this->setting_val(CrayonSettings::LOCAL_PATH)) . $url;
 		}
-		// Try to find the file locally
-		if ($local == TRUE) {
-			if ( ($contents = CrayonUtil::file($local_url)) !== FALSE ) {
-				$this->code($contents);
+		$http_code = 0;
+		// If available, use the built in wp remote http get function, we don't need SSL
+		if (function_exists('wp_remote_get')) {
+			$url_uid = 'crayon_' . CrayonUtil::str_uid($url);
+			$cached = get_transient($url_uid, 'crayon-syntax');
+			CrayonSettingsWP::load_cache();
+			if ($cached !== FALSE) {
+				$content = $cached;
+				$http_code = 200;
 			} else {
-				$local = FALSE;
-				CrayonLog::log("Local url ($local_url) could not be loaded", '', FALSE);
-			}
-		}
-		// If reading the url locally produced an error or failed, attempt remote request
-		if ($local == FALSE) {
-			if (empty($scheme)) {
-				$url = (CrayonUtil::isSecure() ? 'https://' : 'http://') . $url;
-			}
-			$http_code = 0;
-			// If available, use the built in wp remote http get function, we don't need SSL
-			if (function_exists('wp_remote_get')) {
-				$url_uid = 'crayon_' . CrayonUtil::str_uid($url);
-				$cached = get_transient($url_uid, 'crayon-syntax');
-				CrayonSettingsWP::load_cache();
-				if ($cached !== FALSE) {
-					$content = $cached;
-					$http_code = 200;
-				} else {
-					$response = @wp_remote_get($url, array('sslverify' => false, 'timeout' => 20));
-					$content = wp_remote_retrieve_body($response);
-					$http_code = wp_remote_retrieve_response_code($response);
-					$cache = $this->setting_val(CrayonSettings::CACHE);
-					$cache_sec = CrayonSettings::get_cache_sec($cache);
-					if ($cache_sec > 1 && $http_code >= 200 && $http_code < 400) {
-						set_transient($url_uid, $content, $cache_sec);
-						CrayonSettingsWP::add_cache($url_uid);
-					}
+				$response = @wp_remote_get($url, array('sslverify' => false, 'timeout' => 20));
+				$content = wp_remote_retrieve_body($response);
+				$http_code = wp_remote_retrieve_response_code($response);
+				$cache = $this->setting_val(CrayonSettings::CACHE);
+				$cache_sec = CrayonSettings::get_cache_sec($cache);
+				if ($cache_sec > 1 && $http_code >= 200 && $http_code < 400) {
+					set_transient($url_uid, $content, $cache_sec);
+					CrayonSettingsWP::add_cache($url_uid);
 				}
-			} else {
-				$ch = curl_init($url);
-				curl_setopt($ch, CURLOPT_HEADER, FALSE);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-				// For https connections, we do not require SSL verification
-				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-				curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20);
-				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-				curl_setopt($ch, CURLOPT_FRESH_CONNECT, FALSE);
-				curl_setopt($ch, CURLOPT_MAXREDIRS, 5);
-                if (isset($_SERVER['HTTP_USER_AGENT'])) {
-				    curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-                }
-				$content = curl_exec($ch);
-				$error = curl_error($ch);
-				$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-				curl_close($ch);
 			}
 			if ($http_code >= 200 && $http_code < 400) {
 				$this->code($content);
