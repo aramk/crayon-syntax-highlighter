@@ -644,10 +644,10 @@ class CrayonSettingsWP {
         $type = 'text';
         extract($args);
 
-        echo '<input id="', CrayonSettings::PREFIX, $id, '" name="', self::OPTIONS, '[', $id, ']" class="' . CrayonSettings::SETTING . '" size="', $size, '" type="', $type,'" value="',
+        echo '<input id="', CrayonSettings::PREFIX, $id, '" name="', self::OPTIONS, '[', $id, ']" class="' . CrayonSettings::SETTING . '" size="', $size, '" type="', $type, '" value="',
         self::$options[$id], '" style="margin-left: ', ($margin ? '20px' : '0px'), ';" crayon-preview="', ($preview ? 1 : 0), '" />', ($break ? CRAYON_BR : '');
     }
-    
+
     private static function checkbox($args, $line_break = TRUE, $preview = TRUE) {
         if (empty($args) || !is_array($args) || count($args) != 2) {
             return;
@@ -824,7 +824,7 @@ class CrayonSettingsWP {
         if (($langs = CrayonParser::parse_all()) != FALSE) {
             $langs = CrayonLangs::sort_by_name($langs);
             echo '<table class="crayon-table" cellspacing="0" cellpadding="0"><tr class="crayon-table-header">',
-            '<td>',crayon__('ID'),'</td><td>',crayon__('Name'),'</td><td>',crayon__('Version'),'</td><td>',crayon__('File Extensions'),'</td><td>',crayon__('Aliases'),'</td><td>',crayon__('State'),'</td></tr>';
+            '<td>', crayon__('ID'), '</td><td>', crayon__('Name'), '</td><td>', crayon__('Version'), '</td><td>', crayon__('File Extensions'), '</td><td>', crayon__('Aliases'), '</td><td>', crayon__('State'), '</td></tr>';
             $keys = array_values($langs);
             for ($i = 0; $i < count($langs); $i++) {
                 $lang = $keys[$i];
