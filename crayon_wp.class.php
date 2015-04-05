@@ -979,7 +979,7 @@ class CrayonWP {
         add_action('wp_ajax_nopriv_crayon-tag-editor', 'CrayonTagEditorWP::content');
         add_action('wp_ajax_crayon-highlight', 'CrayonWP::ajax_highlight');
         add_action('wp_ajax_nopriv_crayon-highlight', 'CrayonWP::ajax_highlight');
-        if (is_admin()) {
+        if (current_user_can('manage_options')) {
             add_action('wp_ajax_crayon-ajax', 'CrayonWP::ajax');
             add_action('wp_ajax_crayon-theme-editor', 'CrayonThemeEditorWP::content');
             add_action('wp_ajax_crayon-theme-editor-save', 'CrayonThemeEditorWP::save');
