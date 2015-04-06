@@ -71,7 +71,7 @@ class CrayonHighlighter {
 			$url = CrayonUtil::path_slash($site_http) . CrayonUtil::path_slash($this->setting_val(CrayonSettings::LOCAL_PATH)) . $url;
 		}
 		$http_code = 0;
-		// If available, use the built in wp remote http get function, we don't need SSL
+		// If available, use the built in wp remote http get function.
 		if (function_exists('wp_remote_get')) {
 			$url_uid = 'crayon_' . CrayonUtil::str_uid($url);
 			$cached = get_transient($url_uid, 'crayon-syntax');
@@ -90,13 +90,31 @@ class CrayonHighlighter {
 					CrayonSettingsWP::add_cache($url_uid);
 				}
 			}
-			if ($http_code >= 200 && $http_code < 400) {
-				$this->code($content);
-			} else {
-				if (empty($this->code)) {
-					// If code is also given, just use that
-					$this->error("The provided URL ('$this->url'), parsed remotely as ('$url'), could not be accessed.");
-				}
+		} else if (in_array(parse_url($url, PHP_URL_SCHEME), array('ssl', 'http', 'https'))) {
+			// Fallback to cURL. At this point, the URL scheme must be valid.
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_HEADER, FALSE);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+			// For https connections, we do not require SSL verification
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+			curl_setopt($ch, CURLOPT_FRESH_CONNECT, FALSE);
+			curl_setopt($ch, CURLOPT_MAXREDIRS, 5);
+      if (isset($_SERVER['HTTP_USER_AGENT'])) {
+		    curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+      }
+			$content = curl_exec($ch);
+			$error = curl_error($ch);
+			$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+			curl_close($ch);
+		}
+		if ($http_code >= 200 && $http_code < 400) {
+			$this->code($content);
+		} else {
+			if (empty($this->code)) {
+				// If code is also given, just use that
+				$this->error("The provided URL ('$this->url'), parsed remotely as ('$url'), could not be accessed.");
 			}
 		}
 		$this->needs_load = FALSE;

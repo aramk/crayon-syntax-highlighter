@@ -303,9 +303,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Onderka15 theme.
     * Obsidian Light theme.
 * FIXED:
-    * Prevented using is_admin() as a security query.
-    * Removed the ability to load files from the filesystem due to security vulnerabilities. Ensure
-    all URLs are publicly accessible.
+    * Prevented using is_admin() as a security query (thanks to <a href="https://research.g0blin.co.uk/" target="_blank">g0blin Research</a>).
+    * Removed the ability to load files from the filesystem due to security vulnerabilities (thanks to <a href="http://kevinsubileau.fr" target="_blank">Kevin Subileau</a>). Ensure all URLs are publicly accessible.
     * Fixed a bug causing tags to be removed in some cases.
 
 = 2.6.10 =
