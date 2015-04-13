@@ -6,4 +6,4 @@ url=git://github.com/aramk/colorpicker.git
 	url = https://github.com/antiphasis/crayon-lang-ada.git
 [submodule "langs/vbnet"]
 	path = langs/vbnet
-	url = https://github.com/OomJan/crayon-lang-vbnet.git
+url=https://github.com/NuGardt/crayon-lang-vbnet.git
