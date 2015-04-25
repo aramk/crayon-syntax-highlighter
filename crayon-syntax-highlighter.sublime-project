@@ -5,7 +5,8 @@
 			"follow_symlinks": true,
 			"path": ".",
       "folder_exclude_patterns": [
-        "min"
+        "min",
+        "trans"
       ]
 		}
 	]

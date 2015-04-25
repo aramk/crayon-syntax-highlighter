@@ -943,7 +943,7 @@ class CrayonSettingsWP {
 
         // Load custom code based on language
         $lang = $crayon->setting_val(CrayonSettings::FALLBACK_LANG);
-        $path = crayon_pf(CRAYON_UTIL_PATH . '/sample/' . $lang . '.txt', FALSE);
+        $path = CrayonGlobalSettings::plugin_path() . CRAYON_UTIL_DIR . '/sample/' . $lang . '.txt';
 
         if (isset($_POST[self::SAMPLE_CODE])) {
             $crayon->code($_POST[self::SAMPLE_CODE]);
