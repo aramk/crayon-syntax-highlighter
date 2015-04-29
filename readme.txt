@@ -198,6 +198,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Christian Martens, (http://insgesamt.net/), Germany
 * Nilesh Govindrajan, (http://nileshgr.com/), India
 * ZengChun Yang, China
 * Alan Kaplan, (http://www.akaplan.com/blog), US
