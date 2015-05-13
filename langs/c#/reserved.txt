@@ -3,6 +3,7 @@ unchecked
 delegate
 explicit
 checked
+nameof
 params
 typeof
 sizeof
