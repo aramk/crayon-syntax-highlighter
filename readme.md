@@ -39,7 +39,7 @@ You can even mix code together like on a real HTML page, by having `<script>`, `
 
 ## Languages
 
-Language information is found here in the Wordpress Admin: *Settings > Crayon > Languages > Show Languages* You can customise and create new languages and define how to capture each element (keywords, comments, strings, etc.) with regular expressions. Languages are structured `langs/lang-name/lang-name.txt`. Take a look at `langs/default/default.txt` and check out the neat regex of the default/generic language. I've also spent considerable time putting together a quick guide in `langs/readme.txt`.
+Language information is found here in the Wordpress Admin: *Settings > Crayon > Languages > Show Languages* You can customise and create new languages and define how to capture each element (keywords, comments, strings, etc.) with regular expressions. Languages are structured `langs/lang-name/lang-name.txt`. Take a look at `langs/default/default.txt` and check out the neat regex of the default/generic language. See the [readme](langs/readme.md) in `langs/readme.md` for more information about the language file syntax.
 
 ## Themes
 
