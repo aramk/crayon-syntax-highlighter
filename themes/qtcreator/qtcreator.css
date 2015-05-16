@@ -1,0 +1,164 @@
+/*
+Name: Qtcreator
+Description: Qt Creator IDE Theme
+Version: 0.1
+Author: Andrei Shikalev
+URL: http://шикалёв.рф
+*/
+.crayon-theme-qtcreator {
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #ffffff !important;
+}
+.crayon-theme-qtcreator-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #ffffff !important;
+}
+.crayon-theme-qtcreator .crayon-table .crayon-nums {
+	background: #f0f0f0 !important;
+	color: #a0a0a0 !important;
+}
+.crayon-theme-qtcreator .crayon-striped-line {
+	background: #ffffff !important;
+}
+.crayon-theme-qtcreator .crayon-striped-num {
+	background: #f0f0f0 !important;
+	color: #a0a0a0 !important;
+}
+.crayon-theme-qtcreator .crayon-marked-line {
+	background: #e0f0ff !important;
+	border-width: 1px !important;
+	border-color: #ffffff !important;
+}
+.crayon-theme-qtcreator .crayon-marked-num {
+	color: #a0a0a0 !important;
+	background: #f0f0f0 !important;
+	border-width: 0px !important;
+	border-color: #ffffff !important;
+}
+.crayon-theme-qtcreator .crayon-marked-line.crayon-striped-line {
+	background: #ffffff !important;
+}
+.crayon-theme-qtcreator .crayon-marked-num.crayon-striped-num {
+	background: #f0f0f0 !important;
+	color: #a0a0a0 !important;
+}
+.crayon-theme-qtcreator .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-qtcreator .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-qtcreator .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-qtcreator .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-qtcreator .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-qtcreator .crayon-toolbar {
+	background: #DDD !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #BBB !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-qtcreator .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-qtcreator .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-qtcreator .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-qtcreator .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-qtcreator a.crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-qtcreator a.crayon-button:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-qtcreator a.crayon-button.crayon-pressed:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-qtcreator a.crayon-button.crayon-pressed {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-qtcreator a.crayon-button.crayon-pressed:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-qtcreator a.crayon-button:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-c {
+	color: #008000 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-s {
+	color: #008000 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-p {
+	color: #000080 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-k {
+	color: #808000 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-st {
+	color: #000000 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-r {
+	color: #22eb15 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-t {
+	color: #808000 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-m {
+	color: #808000 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-i {
+	color: #15a6eb !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-e {
+	color: #800080 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-v {
+	color: #000000 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-cn {
+	color: #000000 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-o {
+	color: #000000 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-f {
+	color: #ffffff !important;
+}
+.crayon-theme-qtcreator .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}

@@ -299,6 +299,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.7.2 =
+* ADDED:
+    * Qtcreator theme.
+
 = 2.7.1 =
 * FIXED:
     * Bug causing sample code to give an error due to new restriction on loading local files.
