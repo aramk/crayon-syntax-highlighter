@@ -1207,6 +1207,7 @@ class Human {
             Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
             Korean (<a href="https://github.com/dokenzy" target="_blank">dokenzy</a>),
             Lithuanian (Vincent G),
+            Norwegian (<a href="http://www.jackalworks.com/blogg" target="_blank">Jackalworks</a>),
             Persian (MahdiY),
             Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
             Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
