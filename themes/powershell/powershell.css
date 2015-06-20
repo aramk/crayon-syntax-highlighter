@@ -1,0 +1,171 @@
+/*
+Name: Powershell
+Description: Version: 1.0
+Author: Joshua Davis
+URL: http://jdav.is
+*/
+*/
+*/
+*/
+*/
+*/
+.crayon-theme-powershell {
+	border-width: 1px !important;
+	border-color: #303030 !important;
+	text-shadow: none !important;
+	background: #303030 !important;
+}
+.crayon-theme-powershell-inline {
+	border-width: 0px !important;
+	border-color: #000000 !important;
+	background: #012456 !important;
+}
+.crayon-theme-powershell .crayon-table .crayon-nums {
+	background: #012456 !important;
+	color: #fff !important;
+	border-right-width: 1px !important;
+	border-right-color: #8c8d8f !important;
+	border-right-style: solid !important;
+}
+.crayon-theme-powershell .crayon-striped-line {
+	background: #012456 !important;
+}
+.crayon-theme-powershell .crayon-striped-num {
+	background: #012456 !important;
+	color: #fff !important;
+}
+.crayon-theme-powershell .crayon-marked-line {
+	background: #012456 !important;
+	border-width: 1px !important;
+	border-color: #595959 !important;
+}
+.crayon-theme-powershell .crayon-marked-num {
+	color: #fff !important;
+	background: #012456 !important;
+	border-width: 1px !important;
+	border-color: #595959 !important;
+}
+.crayon-theme-powershell .crayon-marked-line.crayon-striped-line {
+	background: #012456 !important;
+}
+.crayon-theme-powershell .crayon-marked-num.crayon-striped-num {
+	background: #012456 !important;
+	color: #fff !important;
+}
+.crayon-theme-powershell .crayon-marked-line.crayon-top {
+}
+.crayon-theme-powershell .crayon-marked-num.crayon-top {
+}
+.crayon-theme-powershell .crayon-marked-line.crayon-bottom {
+}
+.crayon-theme-powershell .crayon-marked-num.crayon-bottom {
+}
+.crayon-theme-powershell .crayon-info {
+	background: #333 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	color: #fff !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-powershell .crayon-toolbar {
+	background: #4f4f4f !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #2e2e2e !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-powershell .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-powershell .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-powershell .crayon-title {
+	color: #fff !important;
+}
+.crayon-theme-powershell .crayon-language {
+	color: #fff !important;
+}
+.crayon-theme-powershell .crayon-button {
+}
+.crayon-theme-powershell .crayon-button:hover {
+	background-color: #d3d3d3 !important;
+	color: #666;
+}
+.crayon-theme-powershell .crayon-button.crayon-pressed:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-powershell .crayon-button.crayon-pressed {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-powershell .crayon-button.crayon-pressed:active {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-powershell .crayon-button:active {
+	background-color: #bcbcbc !important;
+	color: #FFF;
+}
+.crayon-theme-powershell .crayon-pre .crayon-c {
+	color: #57A64A !important;
+	font-style: italic !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-s {
+	color: #D69D85 !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-p {
+	color: #9B9B8B !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-ta {
+	color: #d35a5a !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-k {
+	color: #569CD6 !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-st {
+	color: #20b0da !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-r {
+	color: #f4bb15 !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-t {
+	color: #f4bb15 !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-m {
+	color: #569CD6 !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-i {
+	color: #dcdcdc !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-e {
+	color: #ff8000 !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-v {
+	color: #bdb76b !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-cn {
+	color: #e7a37a !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-o {
+	color: #DADADA !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-sy {
+	color: #D8D8D8 !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-f {
+	color: #999999 !important;
+}
+.crayon-theme-powershell .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
+.crayon-theme-powershell .crayon-pre {
+	color: #ffffff !important;
+}
+.crayon-theme-powershell {
+	background: #012456 !important;
+}

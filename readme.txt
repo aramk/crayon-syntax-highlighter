@@ -199,6 +199,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Brian Williams, US
 * Christian Martens, (http://insgesamt.net/), Germany
 * Nilesh Govindrajan, (http://nileshgr.com/), India
 * ZengChun Yang, China
@@ -305,6 +306,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Qtcreator theme.
     * Norwegian translation.
     * Amity theme.
+    * Flat-UI theme.
+    * Powershell theme.
 
 = 2.7.1 =
 * FIXED:

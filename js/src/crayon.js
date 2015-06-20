@@ -410,7 +410,7 @@
                 return makeUID(uid);
             }
             var settings = crayons[uid].popup_settings;
-            if (settings.data) {
+            if (settings && settings.data) {
                 // Already done
                 return;
             }

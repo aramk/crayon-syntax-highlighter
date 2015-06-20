@@ -1,0 +1,163 @@
+/*
+Name: Flatui Light
+Description: Based on light flat UI colors
+Version: 1.0
+Author: Kaunteya Suryawanshi
+URL: http://www.greenmercury.com
+*/
+.crayon-theme-flatui-light {
+	border-width: 1px !important;
+	border-color: #999 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #ffffff !important;
+}
+.crayon-theme-flatui-light-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #fafafa !important;
+}
+.crayon-theme-flatui-light .crayon-table .crayon-nums {
+	background: #dfefff !important;
+	color: #5499de !important;
+}
+.crayon-theme-flatui-light .crayon-striped-line {
+	background: #f7f7f7 !important;
+}
+.crayon-theme-flatui-light .crayon-striped-num {
+	background: #c8e1fa !important;
+	color: #317cc5 !important;
+}
+.crayon-theme-flatui-light .crayon-marked-line {
+	background: #f5f0f8 !important;
+	border-width: 1px !important;
+	border-color: #e9e579 !important;
+}
+.crayon-theme-flatui-light .crayon-marked-num {
+	color: #1561ac !important;
+	background: #b3d3f4 !important;
+	border-width: 1px !important;
+	border-color: #5999d9 !important;
+}
+.crayon-theme-flatui-light .crayon-marked-line.crayon-striped-line {
+	background: #faf8d1 !important;
+}
+.crayon-theme-flatui-light .crayon-marked-num.crayon-striped-num {
+	background: #9ec5ec !important;
+	color: #105395 !important;
+}
+.crayon-theme-flatui-light .crayon-marked-line.crayon-top {
+}
+.crayon-theme-flatui-light .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-flatui-light .crayon-marked-line.crayon-bottom {
+}
+.crayon-theme-flatui-light .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-flatui-light .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-flatui-light .crayon-toolbar {
+	background: #DDD !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #BBB !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-flatui-light .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-flatui-light .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-flatui-light .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-flatui-light .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-flatui-light .crayon-button {
+	background-color: #DDD !important;
+}
+.crayon-theme-flatui-light .crayon-button:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-flatui-light .crayon-button.crayon-pressed:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-flatui-light .crayon-button.crayon-pressed {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-flatui-light .crayon-button.crayon-pressed:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-flatui-light .crayon-button:active {
+	background-color: #BCBCBC !important;
+	color: #FFF;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-c {
+	color: #e08283 !important;
+	font-style: italic !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-s {
+	color: #3FC380 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-p {
+	color: #F5AB35 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-ta {
+	color: #3498db !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-k {
+	color: #9b59b6 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-st {
+	color: #9b59b6 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-r {
+	color: #9b59b6 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-t {
+	color: #9b59b6 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-m {
+	color: #9b59b6 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-i {
+	color: #4d3a3a !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-e {
+	color: #59abe3 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-v {
+	color: #59abe3 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-cn {
+	color: #d24d57 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-o {
+	color: #5c97bf !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-f {
+	color: #999 !important;
+}
+.crayon-theme-flatui-light .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
