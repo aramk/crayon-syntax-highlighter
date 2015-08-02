@@ -111,7 +111,6 @@ define('CRAYON_THEMES_PHP', CRAYON_ROOT_PATH . 'crayon_themes.class.php');
 define('CRAYON_FONTS_PHP', CRAYON_ROOT_PATH . 'crayon_fonts.class.php');
 define('CRAYON_RESOURCE_PHP', CRAYON_ROOT_PATH . 'crayon_resource.class.php');
 define('CRAYON_UTIL_PHP', CRAYON_UTIL_DIR . 'crayon_util.class.php');
-define('CRAYON_EXCEPTIONS_PHP', CRAYON_UTIL_DIR . 'exceptions.php');
 define('CRAYON_TIMER_PHP', CRAYON_UTIL_DIR . 'crayon_timer.class.php');
 define('CRAYON_LOG_PHP', CRAYON_UTIL_DIR . 'crayon_log.class.php');
 
