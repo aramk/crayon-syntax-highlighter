@@ -308,6 +308,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Amity theme.
     * Flat-UI theme.
     * Powershell theme.
+    * Mm Dark Blue theme.
+    * Prism Like theme.
 
 = 2.7.1 =
 * FIXED:

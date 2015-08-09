@@ -1,0 +1,119 @@
+/*
+Name: Prism Like
+Description: Theme similar to prism.js with rounded corners
+Version: 1.0
+Author: Augustin
+*/
+.crayon-theme-prism-like {
+	margin-bottom: 25px !important;
+	background-color: #F5F2F0 !important;
+	border-radius: 5px;
+	font-size: 100% !important;
+	line-height: 130% !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #dedede !important;
+	background: #f5f5f5 !important;
+}
+.crayon-theme-prism-like .crayon-toolbar {
+	background-color: #eee !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #dedede !important;
+}
+.crayon-theme-prism-like .crayon-toolbar .crayon-language {
+	font-size: 80% !important;
+	color: #666 !important;
+}
+.crayon-theme-prism-like .crayon-toolbar .crayon-title {
+	font-size: 80% !important;
+	color: #666 !important;
+}
+.crayon-theme-prism-like .crayon-table .crayon-nums {
+	background-color: #eee !important;
+}
+.crayon-theme-prism-like .crayon-table .crayon-nums-content {
+	padding-top: 5px !important;
+	padding-bottom: 3px !important;
+}
+.crayon-theme-prism-like .crayon-table .crayon-num {
+	min-width: 1.2em !important;
+	text-align: right !important;
+	color: #aaa !important;
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-right-color: #dedede !important;
+}
+.crayon-theme-prism-like .crayon-pre {
+	padding-top: 5px !important;
+	padding-bottom: 3px !important;
+}
+.crayon-theme-prism-like .crayon-marked-line {
+	background: #fffee2 !important;
+}
+.crayon-theme-prism-like .crayon-marked-num {
+	color: #1561ac !important;
+	background: #b3d3f4 !important;
+	border-width: 1px !important;
+	border-color: #5999d9 !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-c {
+	color: #7D8B99 !important;
+	font-style: italic !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-s {
+	color: #669900 !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-p {
+	color: #b85c00 !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-k {
+	color: #2F9C0A !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-st {
+	color: #1990C5 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-r {
+	color: #1990C5 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-t {
+	color: #1990C5 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-m {
+	color: #1990C5 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-i {
+	color: #000 !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-e {
+	color: black !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-v {
+	color: black !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-cn {
+	color: #990055 !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-o {
+	color: #A67F59 !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-f {
+	color: #999 !important;
+}
+.crayon-theme-prism-like .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
