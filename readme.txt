@@ -199,6 +199,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Matthew Hood, Australia
 * Brian Williams, US
 * Christian Martens, (http://insgesamt.net/), Germany
 * Nilesh Govindrajan, (http://nileshgr.com/), India
