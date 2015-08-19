@@ -1,0 +1,319 @@
+/*
+Name: Kaderu
+Description: Specially for kaderu.ru
+Version: 1.0
+Author: Denis Kasatkin
+URL: http://kaderu.ru/
+*/
+.crayon-theme-kaderu {
+	border-width: 1px !important;
+	border-color: #c6c5c5 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #fdfdfd !important;
+}
+.crayon-theme-kaderu-inline {
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+	background: #fafafa !important;
+}
+.crayon-theme-kaderu .crayon-table .crayon-nums {
+	background: #ffffff !important;
+	color: #00008b !important;
+}
+.crayon-theme-kaderu .crayon-striped-line {
+	background: #f8f8f8 !important;
+}
+.crayon-theme-kaderu .crayon-striped-num {
+	background: #f8f8f8 !important;
+	color: #00008b !important;
+}
+.crayon-theme-kaderu .crayon-marked-line {
+	background: #fffee2 !important;
+	border-width: 0px !important;
+	border-color: #e9e579 !important;
+}
+.crayon-theme-kaderu .crayon-marked-num {
+	color: #00008b !important;
+	background: #fffee2 !important;
+	border-width: 1px !important;
+	border-color: #eaf4ff !important;
+}
+.crayon-theme-kaderu .crayon-marked-line.crayon-striped-line {
+	background: #faf8d1 !important;
+}
+.crayon-theme-kaderu .crayon-marked-num.crayon-striped-num {
+	background: #faf9d7 !important;
+	color: #00008b !important;
+}
+.crayon-theme-kaderu .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-kaderu .crayon-toolbar {
+	background: #ffffff !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #c6c5c5 !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-kaderu .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-kaderu .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-kaderu .crayon-language {
+	color: #999 !important;
+}
+.crayon-theme-kaderu .crayon-button {
+	background-color: #ffffff !important;
+}
+.crayon-theme-kaderu .crayon-button:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-kaderu .crayon-button.crayon-pressed:hover {
+	background-color: #EEE !important;
+	color: #666;
+}
+.crayon-theme-kaderu .crayon-button.crayon-pressed {
+	background-color: #d3d3d3 !important;
+	color: #FFF;
+}
+.crayon-theme-kaderu .crayon-button.crayon-pressed:active {
+	background-color: #ffffff !important;
+	color: #FFF;
+}
+.crayon-theme-kaderu .crayon-button:active {
+	background-color: #2574a9 !important;
+	color: #FFF;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-c {
+	color: #696969 !important;
+	font-style: italic !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-s {
+	color: #008000 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-p {
+	color: #b8860b !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-k {
+	color: #800080 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-st {
+	color: #800080 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-r {
+	color: #800080 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-t {
+	color: #800080 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-m {
+	color: #800080 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-i {
+	color: #000 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-e {
+	color: #00008b !important;
+	font-weight: bold !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-v {
+	color: #002D7A !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-cn {
+	color: #b8860b !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-o {
+	color: #800080 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-f {
+	color: #999 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-c {
+	color: #696969 !important;
+	font-style: italic !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-s {
+	color: #008000 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-p {
+	color: #b8860b !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-k {
+	color: #800080 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-st {
+	color: #800080 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-r {
+	color: #800080 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-t {
+	color: #800080 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-m {
+	color: #800080 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-i {
+	color: #000 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-e {
+	color: #00008b !important;
+	font-weight: bold !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-v {
+	color: #002D7A !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-cn {
+	color: #b8860b !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-o {
+	color: #800080 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-f {
+	color: #999 !important;
+}
+.crayon-theme-kaderu .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
+.crayon-theme-kaderu {
+	border-width: 1px !important;
+	border-color: #c6c5c5 !important;
+	border-style: solid !important;
+	background: #fdfdfd !important;
+}
+.crayon-theme-kaderu-inline {
+	background: #fafafa !important;
+	border-width: 1px !important;
+	border-color: #ddd !important;
+	border-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-striped-line {
+	background: #f8f8f8 !important;
+}
+.crayon-theme-kaderu .crayon-marked-line {
+	background: #fffee2 !important;
+	border-width: 0px !important;
+	border-color: #e9e579 !important;
+}
+.crayon-theme-kaderu .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-marked-line.crayon-striped-line {
+	background: #faf8d1 !important;
+}
+.crayon-theme-kaderu .crayon-table .crayon-nums {
+	background: #ffffff !important;
+	color: #00008b !important;
+}
+.crayon-theme-kaderu .crayon-striped-num {
+	background: #f8f8f8 !important;
+	color: #00008b !important;
+}
+.crayon-theme-kaderu .crayon-marked-num {
+	background: #fffee2 !important;
+	color: #00008b !important;
+	border-width: 1px !important;
+	border-color: #eaf4ff !important;
+}
+.crayon-theme-kaderu .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-marked-num.crayon-striped-num {
+	background: #faf9d7 !important;
+	color: #00008b !important;
+}
+.crayon-theme-kaderu .crayon-toolbar {
+	background: #ffffff !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #c6c5c5 !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-kaderu .crayon-button {
+	background-color: #ffffff !important;
+}
+.crayon-theme-kaderu .crayon-button:hover {
+	background-color: #EEE !important;
+}
+.crayon-theme-kaderu .crayon-button:active {
+	background-color: #2574a9 !important;
+}
+.crayon-theme-kaderu .crayon-button.crayon-pressed {
+	background-color: #d3d3d3 !important;
+}
+.crayon-theme-kaderu .crayon-button.crayon-pressed:hover {
+	background-color: #EEE !important;
+}
+.crayon-theme-kaderu .crayon-button.crayon-pressed:active {
+	background-color: #ffffff !important;
+}
+.crayon-theme-kaderu .crayon-info {
+	background: #faf9d7 !important;
+	color: #7e7d34 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-kaderu .crayon-language {
+	color: #999 !important;
+}

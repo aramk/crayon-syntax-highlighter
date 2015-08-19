@@ -311,6 +311,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Powershell theme.
     * Mm Dark Blue theme.
     * Prism Like theme.
+    * Kaderu theme.
 
 = 2.7.1 =
 * FIXED:
