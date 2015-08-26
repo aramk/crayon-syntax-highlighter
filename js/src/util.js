@@ -3,10 +3,6 @@ var jQueryCrayon = jQuery;
 
 (function ($) {
 
-    $(document).ready(function () {
-        CrayonUtil.init();
-    });
-
     CrayonUtil = new function () {
 
         var base = this;
@@ -178,6 +174,10 @@ var jQueryCrayon = jQuery;
         }
 
     };
+
+    $(document).ready(function () {
+        CrayonUtil.init();
+    });
 
     // http://stackoverflow.com/questions/2360655/jquery-event-handlers-always-execute-in-order-they-were-bound-any-way-around-t
 
