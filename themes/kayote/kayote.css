@@ -1,0 +1,184 @@
+/*
+Name: Kayote
+Description: Dark background. Classy text.
+Version: 1.0
+Author: Nicholas Coughlin
+URL: http://www.ncoughlin.com
+*/
+.crayon-theme-kayote {
+	text-shadow: none !important;
+	color: #fff;
+	background: #2d2d2d !important;
+	border-style: solid !important;
+	border-width: 4px !important;
+	border-color: #333 !important;
+}
+.crayon-theme-kayote .crayon-code {
+	background: #2d2d2d !important;
+}
+.crayon-theme-kayote-inline {
+	background: #333 !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #333 !important;
+}
+.crayon-theme-kayote span {
+	color: #999 !important;
+}
+.crayon-theme-kayote .crayon-table .crayon-nums {
+	color: #8d8d8d !important;
+	background: #424242 !important;
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-right-color: #333 !important;
+}
+.crayon-theme-kayote .crayon-striped-line {
+	background: #343434 !important;
+	border-width: 1px !important;
+	border-color: #171717 !important;
+}
+.crayon-theme-kayote .crayon-striped-num {
+	background: #303030 !important;
+	color: #7f7f7f !important;
+	border-width: 1px !important;
+	border-color: #CCC !important;
+}
+.crayon-theme-kayote .crayon-marked-line {
+	background: #516051 !important;
+	border-width: 1px !important;
+	border-color: #abffaa !important;
+}
+.crayon-theme-kayote .crayon-marked-num {
+	color: #6c6c6c !important;
+	background: #a3f5a5 !important;
+	border-width: 1px !important;
+	border-color: #777 !important;
+}
+.crayon-theme-kayote .crayon-marked-line.crayon-striped-line {
+	background: #637564 !important;
+}
+.crayon-theme-kayote .crayon-marked-num.crayon-striped-num {
+	background: #83da82 !important;
+	color: #595959 !important;
+}
+.crayon-theme-kayote .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-kayote .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-kayote .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-kayote .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-kayote .crayon-info {
+	background: #faf9d7 !important;
+	color: #7e7d34 !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+}
+.crayon-theme-kayote .crayon-toolbar {
+	background: #b2b2b2 !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #666 !important;
+}
+.crayon-theme-kayote .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-kayote .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-kayote .crayon-title {
+	color: #333 !important;
+}
+.crayon-theme-kayote .crayon-language {
+	color: #666 !important;
+}
+.crayon-theme-kayote .crayon-toolbar .crayon-mixed-highlight {
+	background-position: -24px center;
+}
+.crayon-theme-kayote .crayon-button {
+	background-color: transparent !important;
+}
+.crayon-theme-kayote .crayon-button:hover {
+	background-color: #ccc !important;
+	color: #666;
+}
+.crayon-theme-kayote .crayon-button.crayon-pressed:hover {
+	background-color: #ccc !important;
+	color: #666;
+}
+.crayon-theme-kayote .crayon-button.crayon-pressed {
+	background-color: #999 !important;
+	color: #ccc;
+}
+.crayon-theme-kayote .crayon-button.crayon-pressed:active {
+	background-color: #999 !important;
+	color: #ccc;
+}
+.crayon-theme-kayote .crayon-button:active {
+	background-color: #999 !important;
+	color: #ccc;
+}
+.crayon-theme-kayote .crayon-pre .crayon-c {
+	color: #b2b2b2 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-p {
+	color: #a19ba2 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-s {
+	color: #b2cb79 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-k {
+	color: #c2b298 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-st {
+	color: #c2b298 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-r {
+	color: #c2b298 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-t {
+	color: #c2b298 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-m {
+	color: #d58a45 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-ta {
+	color: #AAA !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-i {
+	color: #d58a45 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-v {
+	color: #92a3ca !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-e {
+	color: #d9d8a6 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-cn {
+	color: #80aac6 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-o {
+	color: #bedcbe !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-h {
+	color: #82adc9 !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-sy {
+	color: #ffffff !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-n {
+	color: #726e73 !important;
+	font-style: italic !important;
+}
+.crayon-theme-kayote .crayon-pre .crayon-f {
+	color: #595959 !important;
+}
+.crayon-theme-kayote .crayon-pre {
+	color: #ffffff !important;
+}

@@ -23,7 +23,7 @@ $CRAYON_WEBSITE = 'https://github.com/aramk/crayon-syntax-highlighter';
 $CRAYON_EMAIL = 'crayon.syntax@gmail.com';
 $CRAYON_TWITTER = 'http://twitter.com/crayonsyntax';
 $CRAYON_GIT = 'http://github.com/aramk/crayon-syntax-highlighter';
-$CRAYON_PLUGIN_WP = 'http://wordpress.org/extend/plugins/crayon-syntax-highlighter';
+$CRAYON_PLUGIN_WP = 'https://wordpress.org/plugins/crayon-syntax-highlighter/';
 
 // XXX Used to name the class
 

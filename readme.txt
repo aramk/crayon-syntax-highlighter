@@ -199,12 +199,14 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Robert Giczewski, (http://www.lazydaemon.de/), Germany
+* Hoke Media, (http://hoke.media/), USA
 * Matthew Hood, Australia
-* Brian Williams, US
+* Brian Williams, USA
 * Christian Martens, (http://insgesamt.net/), Germany
 * Nilesh Govindrajan, (http://nileshgr.com/), India
 * ZengChun Yang, China
-* Alan Kaplan, (http://www.akaplan.com/blog), US
+* Alan Kaplan, (http://www.akaplan.com/blog), USA
 * Christopher Yarbrough, (http://chrisyarbrough.com/), Germany
 * Johann Weiher, (http://codequartett.de/), Germany
 * Samuel Deering, Australia
@@ -312,6 +314,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Mm Dark Blue theme.
     * Prism Like theme.
     * Kaderu theme.
+    * Kayote theme.
 
 = 2.7.1 =
 * FIXED:
