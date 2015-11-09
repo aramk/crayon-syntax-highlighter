@@ -661,7 +661,7 @@ EOT;
     public static function version_parts($version) {
         preg_match('#[\d+\.]+#msi', $version, $match);
         if (count($match[0])) {
-            return split('\.', $match[0]);
+            return explode('.', $match[0]);
         } else {
             return array();
         }
