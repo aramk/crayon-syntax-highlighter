@@ -8,7 +8,7 @@
     COMMENT                     (?default)|(\#.*?$)
     STRING                      (?default)|(<<<EOT.*?^EOT)
     
-    TAG                         <\?php\b|<\?|\?>
+    TAG                         <\?php\b|<\?=|<\?|\?>
     CONSTRUCT:KEYWORD           \b(?alt:construct.txt)\b
     STATEMENT                   (?default)
     RESERVED                    (?default)
