@@ -33,11 +33,12 @@ if (CRAYON_THEME_EDITOR) {
 }
 require_once('crayon_settings_wp.class.php');
 
-if (defined('ABSPATH')) {
-    // Used to get plugin version info
-    require_once(ABSPATH . 'wp-admin/includes/plugin.php');
-    crayon_set_info(get_plugin_data(__FILE__));
-}
+crayon_set_info(array(
+	'Version' => '_2.7.2_beta',
+	'Date' => '25th April, 2015',
+	'AuthorName' => 'Aram Kocharyan',
+	'PluginURI' => 'https://github.com/aramk/crayon-syntax-highlighter',
+));
 
 /* The plugin class that manages all other classes and integrates Crayon with WP */
 
