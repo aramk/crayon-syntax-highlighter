@@ -175,7 +175,7 @@ function crayon_set_info($info_array) {
     if (($date = @filemtime(CRAYON_README_FILE)) !== FALSE) {
         $CRAYON_DATE = date("jS F, Y", $date);
     }
-    crayon_set_info_key('AuthorName', $info_array, $CRAYON_A);
+    crayon_set_info_key('AuthorName', $info_array, $CRAYON_AUTHOR);
     crayon_set_info_key('PluginURI', $info_array, $CRAYON_WEBSITE);
 }
 
