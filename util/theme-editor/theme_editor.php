@@ -662,7 +662,7 @@ class CrayonThemeEditorWP {
             // Create an instance to use functions, since late static binding is only available in 5.3 (PHP kinda sucks)
             $theme = CrayonResources::themes()->resource_instance('');
             $newID = $theme->clean_id($name);
-            $name = $theme->clean_name($newID);
+            $name = CrayonResource::clean_name($newID);
             $newPath = CrayonResources::themes()->path($newID, $user);
             $newDir = CrayonResources::themes()->dirpath_for_id($newID, $user);
 

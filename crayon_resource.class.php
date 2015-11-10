@@ -400,7 +400,7 @@ class CrayonResource {
 	function __construct($id, $name = NULL) {
 		$id = $this->clean_id($id);
 		CrayonUtil::str($this->id, $id);
-		( empty($name) ) ? $this->name( $this->clean_name($this->id) ) : $this->name($name);
+		( empty($name) ) ? $this->name( self::clean_name($this->id) ) : $this->name($name);
 	}
 
 	function __tostring() {
@@ -424,7 +424,7 @@ class CrayonResource {
         return preg_replace('#[^\w-]#msi', '', $id);
 	}
 
-	function clean_name($id) {
+	public static function clean_name($id) {
 		$id = CrayonUtil::hyphen_to_space( strtolower(trim($id)) );
 		return CrayonUtil::ucwords($id);
 	}
