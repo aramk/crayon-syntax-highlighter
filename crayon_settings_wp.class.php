@@ -1209,7 +1209,7 @@ class Human {
             Lithuanian (Vincent G),
             Norwegian (<a href="http://www.jackalworks.com/blogg" target="_blank">Jackalworks</a>),
             Persian (MahdiY),
-            Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
+            Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>, <a href="http://rob006.net/" target="_blank">Robert Korulczyk</a>),
             Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
             Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, Di_Skyer),
             Slovak (<a href="https://twitter.com/#!/webhostgeeks" target="_blank">webhostgeeks</a>),
