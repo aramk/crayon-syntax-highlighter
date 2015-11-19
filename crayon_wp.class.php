@@ -33,10 +33,9 @@ if (CRAYON_THEME_EDITOR) {
 }
 require_once('crayon_settings_wp.class.php');
 
+
 if (defined('ABSPATH')) {
-    // Used to get plugin version info
-    require_once(ABSPATH . 'wp-admin/includes/plugin.php');
-    crayon_set_info(get_plugin_data(__FILE__));
+    add_action('init', 'CrayonWP::set_plugin_data', 11);
 }
 
 /* The plugin class that manages all other classes and integrates Crayon with WP */
@@ -98,13 +97,15 @@ class CrayonWP {
 
     const MODE_NORMAL = 0, MODE_JUST_CODE = 1, MODE_PLAIN_CODE = 2;
 
-    // Public Methods =========================================================
-
     public static function post_captures() {
         return self::$post_queue;
     }
 
-    // Methods ================================================================
+    public static function set_plugin_data() {
+        // Used to get plugin version info
+        require_once(ABSPATH . 'wp-admin/includes/plugin.php');
+        crayon_set_info(get_plugin_data(__FILE__));
+    }
 
     private function __construct() {
     }
