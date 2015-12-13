@@ -315,6 +315,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Prism Like theme.
     * Kaderu theme.
     * Kayote theme.
+    * Xcode theme.
 * FIXED:
     * Polish translation and other fixes (thanks to https://github.com/rob006).
 

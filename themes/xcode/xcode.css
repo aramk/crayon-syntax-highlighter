@@ -1,0 +1,120 @@
+/*
+Name: Xcode
+Description: Default Xcode theme
+Version: 1.0
+Author: Yaroslav Erohin
+URL: http://ysoftware.ru/blog
+*/
+.crayon-theme-xcode {
+	margin-bottom: 25px !important;
+	background-color: #f8f8ff !important;
+	font-size: 100% !important;
+	line-height: 130% !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+}
+.crayon-theme-xcode .crayon-toolbar {
+	background-color: #eee !important;
+	border-bottom-style: solid !important;
+	border-bottom-width: 1px !important;
+}
+.crayon-theme-xcode .crayon-toolbar .crayon-language {
+	font-size: 80% !important;
+	color: #666 !important;
+}
+.crayon-theme-xcode .crayon-toolbar .crayon-title {
+	font-size: 80% !important;
+	color: #666 !important;
+}
+.crayon-theme-xcode .crayon-table .crayon-nums {
+	background-color: #eee !important;
+}
+.crayon-theme-xcode .crayon-table .crayon-nums-content {
+	padding-top: 5px !important;
+	padding-bottom: 3px !important;
+}
+.crayon-theme-xcode .crayon-table .crayon-num {
+	min-width: 1.2em !important;
+	text-align: right !important;
+	color: #aaa !important;
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-right-color: #dedede !important;
+}
+.crayon-theme-xcode .crayon-pre {
+	padding-top: 5px !important;
+	padding-bottom: 3px !important;
+}
+.crayon-theme-xcode .crayon-marked-line {
+	background: #A4CDFF !important;
+}
+.crayon-theme-xcode .crayon-marked-num {
+}
+.crayon-theme-xcode .crayon-pre .crayon-c {
+	color: #007400 !important;
+	font-style: italic !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-s {
+	color: #C41A16 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-p {
+	color: #643820 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-ta {
+	color: #FF0000 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-k {
+	color: #AA0D91 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-st {
+	color: #AA0D91 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-r {
+	color: #AA0D91 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-t {
+	color: #5C2699 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-m {
+	color: #800080 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-i {
+	color: #AA0D91 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-e {
+	color: #2E0D6E !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-v {
+	color: #5C2699 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-cn {
+	color: #2E0D6E !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-o {
+	color: #2E0D6E !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-sy {
+	color: #333 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-f {
+	color: #999 !important;
+}
+.crayon-theme-xcode .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
+.crayon-theme-xcode .crayon-striped-num {
+}
+.crayon-theme-xcode .crayon-button {
+}
+.crayon-theme-xcode .crayon-marked-line.crayon-striped-line {
+	background: #A4CDFF !important;
+}
+.crayon-theme-xcode .crayon-striped-line {
+	background: #f6f6f6 !important;
+}
+.crayon-theme-xcode .crayon-marked-num.crayon-bottom {
+}
