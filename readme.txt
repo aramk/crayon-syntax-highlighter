@@ -316,6 +316,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
     * Kaderu theme.
     * Kayote theme.
     * Xcode theme.
+    * Source Code Pro font.
 * FIXED:
     * Polish translation and other fixes (thanks to https://github.com/rob006).
 
