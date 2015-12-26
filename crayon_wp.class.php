@@ -835,7 +835,7 @@ class CrayonWP {
      * Check if the $ notation has been used to ignore [crayon] tags within posts and remove all matches
      * Can also remove if used without $ as a regular crayon
      *
-     * @depreciated
+     * @deprecated
      */
     public static function crayon_remove_ignore($the_content, $ignore_flag = '$') {
         if ($ignore_flag == FALSE) {

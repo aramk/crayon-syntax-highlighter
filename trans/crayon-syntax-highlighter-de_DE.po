@@ -1054,7 +1054,7 @@ msgstr "Behandle &lt;code&gt; wie"
 #: crayon_settings_wp.class.php:1118
 #, php-format
 #@ crayon-syntax-highlighter
-msgid "Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use the %sTag Editor%s instead and convert legacy tags."
+msgid "Using this markup for Mini Tags and Inline tags is now %sdeprecated%s! Use the %sTag Editor%s instead and convert legacy tags."
 msgstr "Diese Auszeichnung für Mini-Tags und Inline-Tags ist %sveraltet%s!. Bitte den %sTag Editor%s verwenden und veraltete Tags konvertieren."
 
 #: crayon_settings_wp.class.php:1143

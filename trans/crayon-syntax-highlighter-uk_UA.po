@@ -585,7 +585,7 @@ msgstr "Захоплення <pre> тегів в Crayons"
 #: ../crayon_settings_wp.class.php:1117
 #, php-format
 msgid ""
-"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"Using this markup for Mini Tags and Inline tags is now %sdeprecated%s! Use "
 "the %sTag Editor%s instead and convert legacy tags."
 msgstr ""
 "Використовуйте цю розмітку для виявлення вбудованих та застарілих тегів %s "

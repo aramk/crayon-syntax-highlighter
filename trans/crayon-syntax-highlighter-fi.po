@@ -1059,7 +1059,7 @@ msgstr "Käsittele &lt;code&gt;-tägit kuten"
 #: crayon_settings_wp.class.php:1118
 #, php-format
 msgid ""
-"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"Using this markup for Mini Tags and Inline tags is now %sdeprecated%s! Use "
 "the %sTag Editor%s instead and convert legacy tags."
 msgstr ""
 "Tämä minitägien merkintätapa on %spoistumassa%s! Käytä niiden sijaan "

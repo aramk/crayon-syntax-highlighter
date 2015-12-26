@@ -744,7 +744,7 @@ msgstr "捕获 &lt;pre&gt; 标签为插件所用"
 #: crayon_settings_wp.class.php:1096
 #, php-format
 msgid ""
-"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"Using this markup for Mini Tags and Inline tags is now %sdeprecated%s! Use "
 "the %sTag Editor%s instead and convert legacy tags."
 msgstr ""
 "%s不建议%s再使用迷你标签以及行内标签！请使用 %s标签编辑器%s 代替且转换掉老式"

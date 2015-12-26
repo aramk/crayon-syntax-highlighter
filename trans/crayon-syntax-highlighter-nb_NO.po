@@ -641,7 +641,7 @@ msgstr "Fang &lt;pre&gt; som 'Crayon'"
 #: ../crayon-syntax-highlighter/crayon_settings_wp.class.php:1098
 #, php-format
 msgid ""
-"Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use "
+"Using this markup for Mini Tags and Inline tags is now %sdeprecated%s! Use "
 "the %sTag Editor%s instead and convert legacy tags."
 msgstr ""
 "Bruk av disse markeringene for minitagger og innside-tagger er nå %sforeldet"

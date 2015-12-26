@@ -153,7 +153,7 @@ Using the legacy tag  `[crayon attributes] some code [/crayon]` is possible but 
 
 ### Mini Tags
 
-Using Mini Tags like `[php]some code[/php]` is supported but also depreciated in favour of `<pre>` tags.
+Using Mini Tags like `[php]some code[/php]` is supported but also deprecated in favour of `<pre>` tags.
 
 ## Licence
 
