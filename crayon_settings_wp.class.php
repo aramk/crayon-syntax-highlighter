@@ -64,7 +64,7 @@ class CrayonSettingsWP {
         add_action("admin_print_styles-post-new.php", 'CrayonSettingsWP::admin_styles');
         add_action("admin_print_styles-post.php", 'CrayonSettingsWP::admin_styles');
 
-        // TODO depreciated since WP 3.3, remove eventually
+        // TODO deprecated since WP 3.3, remove eventually
         global $wp_version;
         if ($wp_version >= '3.3') {
             add_action("load-$admin_page", 'CrayonSettingsWP::help_screen');
