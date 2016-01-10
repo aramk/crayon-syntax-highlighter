@@ -4,11 +4,6 @@ Description: Version: 1.0
 Author: Joshua Davis
 URL: http://jdav.is
 */
-*/
-*/
-*/
-*/
-*/
 .crayon-theme-powershell {
 	border-width: 1px !important;
 	border-color: #303030 !important;
@@ -51,7 +46,7 @@ URL: http://jdav.is
 .crayon-theme-powershell .crayon-marked-num.crayon-striped-num {
 	background: #012456 !important;
 	color: #fff !important;
-}
+}/**/
 .crayon-theme-powershell .crayon-marked-line.crayon-top {
 }
 .crayon-theme-powershell .crayon-marked-num.crayon-top {
@@ -66,7 +61,7 @@ URL: http://jdav.is
 	border-bottom-color: #b1af5e !important;
 	color: #fff !important;
 	border-bottom-style: solid !important;
-}
+}/**/
 .crayon-theme-powershell .crayon-toolbar {
 	background: #4f4f4f !important;
 	border-bottom-width: 1px !important;
