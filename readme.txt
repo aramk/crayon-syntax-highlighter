@@ -304,6 +304,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.8.1 =
+* ADDED:
+    * Coy theme.
+
 = 2.8.0 =
 * ADDED:
     * Qtcreator theme.
