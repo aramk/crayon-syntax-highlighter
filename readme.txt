@@ -304,7 +304,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
-= 2.7.2 =
+= 2.8.0 =
 * ADDED:
     * Qtcreator theme.
     * Norwegian translation.
