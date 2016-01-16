@@ -1,0 +1,23 @@
+### Maya MEL LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+#   CREATED BY  Andrew Hazelden (http://www.andrewhazelden.com) based upon the BBEdit Codeless Language module by M. Chris Kerstan (http://www.chriskerstan.de)
+
+
+    NAME                        MEL
+    VERSION                     2016
+  
+    COMMENT                     (?default)|(\#.*?$)
+    STRING                      (?default)|(<<<EOT.*?^EOT)
+    REGEX:PREPROCESSOR          \b\w*/([^\r\n]|(?<=\\)/)+/\w*\b
+    
+    TAG                         <\?php|<\?|\?>
+    STATEMENT                   \b(?alt:statement.txt)\b
+    RESERVED                    \b(?alt:reserved.txt)\b
+    TYPE                        (?default)|\b(?alt:type.txt)\b
+    ENTITY                      (?default)|\b[a-z_]\w*(::|->)
+    VARIABLE                    (\$|%)[a-z_]\w*\b
+    IDENTIFIER                  \b[a-z_]\w*\b\s*(?=\([^\)]*\))
+    CONSTANT                    \b[a-z_]\w*\b|\b(?alt:constant.txt)\b
+    OPERATOR                    (?default)
+    SYMBOL                      (?default)
