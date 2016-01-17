@@ -1,0 +1,24 @@
+// Code starts here
+global proc human(int $age){
+  string $ageExt;
+  $age++;
+
+  if($age == 0){
+    $ageExt = "th";
+  }else if($age == 1){
+    $ageExt = "st";
+  }else if($age == 2){
+    $ageExt = "nd";
+  }else{
+    $ageExt = "th";
+  }
+  
+  print("Happy " + $age + $ageExt + " Birthday!\n");
+}
+
+
+int $i=0;
+for($i=0;$i<=99;$i+=1){
+  human($i);
+}
+
