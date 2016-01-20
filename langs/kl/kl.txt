@@ -1,0 +1,25 @@
+### Fabric Engine KL LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+#   CREATED BY  Andrew Hazelden (http://www.andrewhazelden.com)
+
+    NAME                        Fabric Engine KL
+    VERSION                     2.0
+  
+    COMMENT                     (?default)
+    PREPROCESSOR                (?default)
+    STRING                      (?default)
+    
+    CONSTANT                    \b(?alt:constant.txt)\b
+    MODULE:KEYWORD              \b(?alt:module.txt)\b
+    STATEMENT                   \b(?alt:statement.txt)\b
+    TYPE                        \b(?alt:type.txt)\b 
+    VARIABLE                    \b(?alt:variable.txt)\b
+    
+# Reserved commented out due to Crayon having a file size limit for loading the document
+#    RESERVED                    \b(?alt:reserved.txt)\b
+
+    ENTITY                      (?default)
+    IDENTIFIER                  (?default)
+    OPERATOR                    (?default)
+    SYMBOL                      (?default)

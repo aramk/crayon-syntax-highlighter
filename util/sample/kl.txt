@@ -1,0 +1,18 @@
+/*
+* Swirley Movement OP KL Example
+*/
+  
+require Math;
+
+operator swirleyMovementOp(
+	Scalar seconds, 
+	Index id, 
+	Xfo baseXfo, 
+	io Xfo xfo
+) {
+  xfo.tr = baseXfo.tr + Vec3(sin((seconds * 2.3) + (id * 3.2)) * 3.0, cos(seconds * 4.30) * 3.0, 0.0);
+
+// The following line will log a message to the console...
+// report("swirleyMovementOp :" + xfo.tr);
+}
+

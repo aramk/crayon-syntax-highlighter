@@ -11,7 +11,6 @@
     STRING                      (?default)|(<<<EOT.*?^EOT)
     REGEX:PREPROCESSOR          \b\w*/([^\r\n]|(?<=\\)/)+/\w*\b
     
-    TAG                         <\?php|<\?|\?>
     STATEMENT                   \b(?alt:statement.txt)\b
     RESERVED                    \b(?alt:reserved.txt)\b
     TYPE                        (?default)|\b(?alt:type.txt)\b
