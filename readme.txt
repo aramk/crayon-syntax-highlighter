@@ -97,6 +97,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * INI
 * Lisp
 * Lua
+* Maya MEL (thanks to <a href="https://github.com/AndrewHazelden" target="_blank">Andrew Hazelden</a>)
 * Microsoft Registry (thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>)
 * MIVA Script
 * Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
