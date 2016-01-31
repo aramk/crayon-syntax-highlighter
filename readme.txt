@@ -200,6 +200,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Rochat Stéphane, Switzerland
 * Brennan Hale-Matthews, Canada
 * Robert Giczewski, (http://www.lazydaemon.de/), Germany
 * Hoke Media, (http://hoke.media/), USA
