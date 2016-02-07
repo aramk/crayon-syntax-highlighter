@@ -91,6 +91,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Delphi Web Script (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>)
 * Diff (thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>)
 * Erlang (thanks to <a href="http://netroid.de/" target="_blank">Daniel</a>)
+* Fabric Engine KL (thanks to <a href="https://github.com/AndrewHazelden" target="_blank">Andrew Hazelden</a>)
 * Go
 * Haskell
 * HTML (XML/XHTML)
