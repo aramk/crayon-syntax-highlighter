@@ -201,6 +201,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* WallyWare, Inc., (https://pi-plates.com), USA
 * Stéphane Rochat, (http://stephanerochat.ch), Switzerland
 * Brennan Hale-Matthews, Canada
 * Robert Giczewski, (http://www.lazydaemon.de/), Germany
