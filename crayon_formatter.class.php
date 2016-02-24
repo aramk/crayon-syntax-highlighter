@@ -205,9 +205,12 @@ class CrayonFormatter {
             // Generate the lines
             $line_num = $start_line + $i - 1;
             $line_id = $uid . '-' . $line_num;
-            $print_code .= '<div class="crayon-line' . $marked_line . $striped_line . '" id="' . $line_id . '">' . $code_line . '</div>';
-            if (!is_string($line_numbers)) {
-                $print_nums .= '<div class="crayon-num' . $marked_num . $striped_num . '" data-line="' . $line_id . '">' . $line_num . '</div>';
+            // Delete last line space
+            if ($i != $hl->line_count() || $code_line != '&nbsp;') {
+                $print_code .= '<div class="crayon-line' . $marked_line . $striped_line . '" id="' . $line_id . '">' . $code_line . '</div>';
+                if (!is_string($line_numbers)) {
+                    $print_nums .= '<div class="crayon-num' . $marked_num . $striped_num . '" data-line="' . $line_id . '">' . $line_num . '</div>';
+                }
             }
         }
         // If $line_numbers is a string, display it
