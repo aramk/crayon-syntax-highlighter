@@ -5,7 +5,7 @@ Supports multiple languages, themes, fonts, highlighting from a URL, local file 
 Written in PHP and jQuery. Crayon is a Wordpress plugin, but can be used in any PHP environment.
 
 ## Download
-
+f
 * [Beta Development Releases](https://github.com/aramk/crayon-syntax-highlighter/zipball/master)
 * [Stable Releases](https://wordpress.org/plugins/crayon-syntax-highlighter/)
 
@@ -41,9 +41,13 @@ You can even mix code together like on a real HTML page, by having `<script>`, `
 
 Language information is found here in the Wordpress Admin: *Settings > Crayon > Languages > Show Languages* You can customise and create new languages and define how to capture each element (keywords, comments, strings, etc.) with regular expressions. Languages are structured `langs/lang-name/lang-name.txt`. Take a look at `langs/default/default.txt` and check out the neat regex of the default/generic language. See the [readme](langs/readme.md) in `langs/readme.md` for more information about the language file syntax.
 
+You can add custom languages in `wp-content/uploads/crayon-syntax-highlighter/languages` with the same format as those in the plugin directory and they will remain after plugin updates.
+
 ## Themes
 
 Crayon comes with built-in Themes to style your code. See a sample of the current set of themes. Themes are structured `themes/theme-name/theme-name.css`. If you know CSS, take a look at `themes/default/default.css` to get an idea of how they work and how you can change/create them. The specification for CSS classes is here.
+
+You can add custom themes in `wp-content/uploads/crayon-syntax-highlighter/themes` with the same format as those in the plugin directory and they will remain after plugin updates. This is where user themes are stored when you customise stock themes in the Theme Editor.
 
 ## Comments
 
@@ -73,6 +77,8 @@ Crayon comes translated in several languages already, and if yours is included i
 ## Fonts
 
 You can define fonts and font-sizes within Themes, but you can also override the theme's font with those inside `fonts/` and also provide `@font-face` fonts just like in themes - it's just CSS after all.
+
+You can add custom fonts in `wp-content/uploads/crayon-syntax-highlighter/fonts` with the same format as those in the plugin directory and they will remain after plugin updates.
 
 ## Disable Highlighting
 
