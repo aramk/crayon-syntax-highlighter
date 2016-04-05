@@ -201,6 +201,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Kai Chen, Canada
 * Chen Kaiyuan, China
 * Kamarul Musa, Malaysia
 * WallyWare, Inc., (https://pi-plates.com), USA

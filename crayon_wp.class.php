@@ -200,6 +200,7 @@ class CrayonWP {
             $the_captures = $captures['capture'];
         }
         $the_content = $captures['content'];
+        $the_content = strip_tags($the_content, '<pre>');
         foreach ($the_captures as $id => $capture) {
             $atts = $capture['atts'];
             $no_enqueue = array(
