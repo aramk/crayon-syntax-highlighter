@@ -200,7 +200,7 @@ class CrayonWP {
             $the_captures = $captures['capture'];
         }
         $the_content = $captures['content'];
-        $the_content = strip_tags($the_content, '<pre>');
+        $the_content = strip_tags($the_content);
         foreach ($the_captures as $id => $capture) {
             $atts = $capture['atts'];
             $no_enqueue = array(
@@ -213,6 +213,7 @@ class CrayonWP {
             $the_content = CrayonUtil::preg_replace_escape_back(self::regex_with_id($id), $crayon_formatted, $the_content, 1, $count);
         }
 
+        header('Content-Type', 'text/html');
         return $the_content;
     }
 
