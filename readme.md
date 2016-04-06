@@ -52,13 +52,15 @@ You can add custom themes in `wp-content/uploads/crayon-syntax-highlighter/theme
 
 You can enable support for Crayon comments by adding TinyMCE to the comment box. Add this code at the end of your theme's `functions.php` file. This requires at least version 3.3 of Wordpress.
 
-	add_filter('comment_form_defaults', 'tinymce_comment_enable');
-	function tinymce_comment_enable ( $args ) {
-	    ob_start();
-	    wp_editor('', 'comment', array('tinymce'));
-	    $args['comment_field'] = ob_get_clean();
-	    return $args;
-	}
+```php
+add_filter('comment_form_defaults', 'tinymce_comment_enable');
+function tinymce_comment_enable ( $args ) {
+    ob_start();
+    wp_editor('', 'comment', array('tinymce'));
+    $args['comment_field'] = ob_get_clean();
+    return $args;
+}
+```
 	
 Then enable these settings in *Wordpress Admin > Settings > Crayon*:
 
