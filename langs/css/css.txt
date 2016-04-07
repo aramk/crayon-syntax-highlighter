@@ -3,11 +3,11 @@
 #   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
 
     NAME                CSS
-    VERSION             1.9.0
+    VERSION             1.9.1
 
     COMMENT             (/\*.*?\*/)
     STRING              (?default)
-    NOTATION            \@[\w-]+[^;]*;?
+    NOTATION            \@[\w-]+[^;\{]*;?
 
     # For the <style> tag
     ATT_STR:STRING      (((?<!\\)".*?(?<!\\)")|((?<!\\)'.*?(?<!\\)'))
