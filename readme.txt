@@ -315,6 +315,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.8.1 =
 * ADDED:
     * Coy theme.
+* FIXED:
+    * Strip tags in output content for CrayonWP::highlight()
 
 = 2.8.0 =
 * ADDED:
