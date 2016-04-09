@@ -1159,15 +1159,6 @@ class CrayonWP {
         return plugin_basename(__FILE__);
     }
 
-    // This should never be called through AJAX, only server side, since WP will not be loaded
-    public static function wp_load_path() {
-        if (defined('ABSPATH')) {
-            return ABSPATH . 'wp-load.php';
-        } else {
-            CrayonLog::syslog('wp_load_path could not find value for ABSPATH');
-        }
-    }
-
     public static function pre_excerpt($e) {
         CrayonLog::debug('pre_excerpt');
         self::$is_excerpt = TRUE;
