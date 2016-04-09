@@ -312,6 +312,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.8.2 =
+* ADDED:
+    * Plain white theme (thanks to http://vhbelvadi.com).
+
 = 2.8.1 =
 * ADDED:
     * Coy theme.
