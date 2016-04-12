@@ -201,6 +201,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Joe Sabate, Spain
 * Kai Chen, Canada
 * Chen Kaiyuan, China
 * Kamarul Musa, Malaysia
