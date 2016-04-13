@@ -313,6 +313,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.8.3 =
+* FIXED:
+    * header() use in CrayonWP::highlight()
+
 = 2.8.2 =
 * ADDED:
     * Plain white theme (thanks to http://vhbelvadi.com).
