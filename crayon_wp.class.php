@@ -3,7 +3,7 @@
 Plugin Name: Crayon Syntax Highlighter
 Plugin URI: https://github.com/aramk/crayon-syntax-highlighter
 Description: Supports multiple languages, themes, highlighting from a URL, local file or post text.
-Version: 2.8.3
+Version: _2.8.4_beta
 Author: Aram Kocharyan
 Author URI: http://aramk.com/
 Text Domain: crayon-syntax-highlighter
@@ -200,7 +200,8 @@ class CrayonWP {
             $the_captures = $captures['capture'];
         }
         $the_content = $captures['content'];
-        $the_content = strip_tags($the_content);
+        $the_content = CrayonUtil::strip_tags_blacklist($the_content, array('script'));
+        $the_content = CrayonUtil::strip_event_attributes($the_content);
         foreach ($the_captures as $id => $capture) {
             $atts = $capture['atts'];
             $no_enqueue = array(

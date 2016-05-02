@@ -829,6 +829,30 @@ EOT;
         return $atts;
     }
 
+    // Strips only the given tags in the given HTML string.
+    public static function strip_tags_blacklist($html, $tags) {
+        foreach ($tags as $tag) {
+            $regex = '#<\s*' . $tag . '[^>]*>.*?<\s*/\s*'. $tag . '>#msi';
+            $html = preg_replace($regex, '', $html);
+        }
+        return $html;
+    }
+
+    // Strips the given attributes found in the given HTML string.
+    public static function strip_attributes($html, $atts) {
+        foreach ($atts as $att) {
+            $regex = '#\b' . $att . '\b(\s*=\s*[\'"][^\'"]*[\'"])?(?=[^<]*>)#msi';
+            $html = preg_replace($regex, '', $html);
+        }
+        return $html;
+    }
+
+    // Strips all event attributes on DOM elements (prefixe with "on").
+    public static function strip_event_attributes($html, $atts) {
+        $regex = '#\bon\w+\b(\s*=\s*[\'"][^\'"]*[\'"])?(?=[^<]*>)#msi';
+        return preg_replace($regex, '', $html);
+    }
+
 }
 
 ?>
