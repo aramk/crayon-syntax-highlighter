@@ -848,7 +848,7 @@ EOT;
     }
 
     // Strips all event attributes on DOM elements (prefixe with "on").
-    public static function strip_event_attributes($html, $atts) {
+    public static function strip_event_attributes($html) {
         $regex = '#\bon\w+\b(\s*=\s*[\'"][^\'"]*[\'"])?(?=[^<]*>)#msi';
         return preg_replace($regex, '', $html);
     }
