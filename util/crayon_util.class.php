@@ -832,7 +832,7 @@ EOT;
     // Strips only the given tags in the given HTML string.
     public static function strip_tags_blacklist($html, $tags) {
         foreach ($tags as $tag) {
-            $regex = '#<\s*\b' . $tag . '\b[^>]*>.*?<\s*/\s*'. $tag . '\b[^>]*>#msi';
+            $regex = '#<\s*\b' . $tag . '\b[^>]*>.*?<\s*/\s*'. $tag . '\b[^>]*>?#msi';
             $html = preg_replace($regex, '', $html);
         }
         return $html;
