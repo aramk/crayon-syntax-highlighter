@@ -313,6 +313,10 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 
 == Changelog ==
 
+= 2.8.5
+* FIXED:
+    * Moved header() call out of CrayonWP::highlight().
+
 = 2.8.4 =
 * ADDED:
     * CrayonWP::highlight() can return plain text instead of HTML. Used for AJAX requests to prevent
