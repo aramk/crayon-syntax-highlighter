@@ -201,6 +201,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Alok Choudhary, (http://alokchoudhary.com), USA
 * Joe Sabate, Spain
 * Kai Chen, Canada
 * Chen Kaiyuan, China
