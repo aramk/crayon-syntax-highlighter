@@ -779,6 +779,15 @@ class CrayonWP {
         $atts = $matches[5];
         $content = $matches[6];
 
+        // We don't support nested span/pre/code, strip them out and only.
+        // parse the top level. If we don't do this, we'll possibly nest
+        // [crayon] tags and bad things happen.
+        // We could get fancier with the regex to ensure that the tags match,
+        // but because this is raw HTML if the tags don't match it was already
+        // busted anyway.
+        $strip_regex = '#</?(pre|code|span)[^>]*>#i';
+        $content = preg_replace($strip_regex, '', $content);
+
         // If we find a crayon=false in the attributes, or a crayon[:_]false in the class, then we should not capture
         $ignore_regex_atts = '#crayon\s*=\s*(["\'])\s*(false|no|0)\s*\1#msi';
         $ignore_regex_class = '#crayon\s*[:_]\s*(false|no|0)#msi';
