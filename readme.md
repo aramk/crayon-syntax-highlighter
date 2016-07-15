@@ -164,4 +164,4 @@ Using Mini Tags like `[php]some code[/php]` is supported but also deprecated in 
 
 ## Licence
 
-Crayon is released under the GPLv2 licence. See `readme.txt`.
+Crayon is released under the GPLv3 licence. See `license.txt`.

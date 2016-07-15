@@ -1,7 +1,7 @@
 === Crayon Syntax Highlighter ===
 Contributors: akarmenia
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=AW99EMEPQ4CFE&lc=AU&item_name=Crayon%20Syntax%20Highlighter%20Donation&item_number=crayon%2ddonate&currency_code=AUD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
-License: GPLv2 or later
+License: GPLv3 or later
 Tags: syntax highlighter, syntax, highlighter, highlighting, crayon, code highlighter, bbpress
 Requires at least: 3.0
 Tested up to: 4.5.2
