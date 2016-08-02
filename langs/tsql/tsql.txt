@@ -6,7 +6,7 @@
     VERSION             1.8.0
 
     COMMENT             (/\*.*?\*/)|(--.*?$)
-    STRING              ((?<!\\)'.*?(?<!\\)')
+    STRING              ('[^']*')
     
     KEYWORD             \b(?alt:keyword.txt)\b
     TYPE                 \b(?alt:type.txt)\b
