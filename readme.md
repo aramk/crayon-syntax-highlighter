@@ -2,6 +2,8 @@
 
 Supports multiple languages, themes, fonts, highlighting from a URL, local file or post text.
 
+![snapshot](https://raw.githubusercontent.com/aramk/crayon-syntax-highlighter/master/screenshots/screenshot-2.png)
+
 Written in PHP and jQuery. Crayon is a Wordpress plugin, but can be used in any PHP environment.
 
 ## Download
