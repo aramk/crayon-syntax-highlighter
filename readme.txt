@@ -319,6 +319,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 = 2.8.5
 * FIXED:
     * Moved header() call out of CrayonWP::highlight().
+    * Renamed MIXED to ALTERNATE to fix compatibility with PHP7, thanks to https://github.com/edwarddekker.
 
 = 2.8.4 =
 * ADDED:
