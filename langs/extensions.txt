@@ -2,7 +2,7 @@
 # Languages where names and extensions are the same do not need to be listed Eg PHP
 # Languages that appear first in this list and share extensions will be given precedence
 
-# Format: ID EXTENSION1 EXTENSION2 
+# Format: ID EXTENSION1 EXTENSION2
 
 c# cs
 c++ h hh hpp hxx h++ cc cpp cxx c++
@@ -13,9 +13,10 @@ objc m mm
 papyrus psc
 python py pyw pyc pyo pyd
 vb vbs
-ruby rb rbx rhtml 
+ruby rb rbx rhtml
 as swf fla
 perl pl
 delphi pas
 applescript scpt applescript
 miva mv mvc mvt
+verilog v
