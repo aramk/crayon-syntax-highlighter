@@ -122,6 +122,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Swift (thanks to <a href="https://github.com/weyhan" target="_blank">weyhan</a>)
 * Transact-SQL
 * TeX
+* Verilog (thanks to <a href="https://github.com/gdevic" target="_blank">Goran Devic</a>)
 * Vim
 * Visual Basic
 * Visual Basic .NET (thanks to <a href="https://github.com/OomJan/crayon-lang-vbnet" target="_blank">Kevin Gardthausen</a>)
@@ -317,6 +318,8 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 == Changelog ==
 
 = 2.8.5
+* ADDED: 
+    * Verilog language, thanks to https://github.com/gdevic.
 * FIXED:
     * Moved header() call out of CrayonWP::highlight().
     * Renamed MIXED to ALTERNATE to fix compatibility with PHP7, thanks to https://github.com/edwarddekker.
