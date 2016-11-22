@@ -202,6 +202,8 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Felipe Tonello, UK
+* Zeyi Wang, USA
 * Michal Owsiak, (http://owsiak.org), Poland
 * Andres Castano, (http://acastano.com), USA
 * Alok Choudhary, (http://alokchoudhary.com), USA
