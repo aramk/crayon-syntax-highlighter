@@ -1,7 +1,6 @@
 ### REGEX LANGUAGE ###
 
 #   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
-#(?default)|\b(?alt:reserved.txt)\b
 
     NAME                Regex
     VERSION             0.1
