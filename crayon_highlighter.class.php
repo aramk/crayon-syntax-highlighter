@@ -201,15 +201,15 @@ class CrayonHighlighter {
 		if ($code === NULL) {
 			return $this->code;
 		} else {
+			if ($this->setting_val(CrayonSettings::TRIM_CODE_TAG)) {
+				$code = preg_replace('#^\s*<\s*code[^>]*>#msi', '', $code);
+				$code = preg_replace('#</\s*code[^>]*>\s*$#msi', '', $code);
+			}
+
 			// Trim whitespace
 			if ($this->setting_val(CrayonSettings::TRIM_WHITESPACE)) {
 				$code = preg_replace("#(?:^\\s*\\r?\\n)|(?:\\r?\\n\\s*$)#", '', $code);
 			}
-
-            if ($this->setting_val(CrayonSettings::TRIM_CODE_TAG)) {
-                $code = preg_replace('#^\s*<\s*code[^>]*>#msi', '', $code);
-                $code = preg_replace('#</\s*code[^>]*>\s*$#msi', '', $code);
-            }
 
 			$before = $this->setting_val(CrayonSettings::WHITESPACE_BEFORE);
 			if ($before > 0) {
