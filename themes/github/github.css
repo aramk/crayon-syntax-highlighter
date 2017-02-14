@@ -31,6 +31,7 @@ URL: http://firn.jp/
 .crayon-theme-github .crayon-table .crayon-nums-content {
   padding-top: 5px !important;
   padding-bottom: 3px !important;
+  white-space: nowrap; /* Prevent wrapping line numbers in some themes */
 }
 
 .crayon-theme-github .crayon-table .crayon-num {
