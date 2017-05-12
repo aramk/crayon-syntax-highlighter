@@ -202,6 +202,7 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Sevim Tunc, UK
 * Andreas Hauck, Germany
 * Felipe Tonello, UK
 * Zeyi Wang, USA
