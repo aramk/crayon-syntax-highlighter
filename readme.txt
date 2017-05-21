@@ -96,6 +96,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Haskell
 * HTML (XML/XHTML)
 * INI
+* Kotlin
 * Lisp
 * Lua
 * Maya MEL (thanks to <a href="https://github.com/AndrewHazelden" target="_blank">Andrew Hazelden</a>)
