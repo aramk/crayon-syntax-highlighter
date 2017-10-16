@@ -129,9 +129,11 @@ class CrayonFormatter {
                 $info_style .= "min-height: $info_height line-height: $info_height";
             }
         } else if (!$hl->is_inline()) {
-            if (($font_size = CrayonGlobalSettings::get(CrayonSettings::FONT_SIZE)) !== FALSE) {
-                $font_size = $font_size->def() . 'px !important;';
-                $line_height = ($font_size * 1.4) . 'px !important;';
+            $tmp_font_size = CrayonGlobalSettings::get(CrayonSettings::FONT_SIZE);
+            if ($tmp_font_size !== FALSE) {
+                $font_size_def = $tmp_font_size->def();
+                $font_size = $font_size_def . 'px !important;';
+                $line_height = ($font_size_def * 1.4) . 'px !important;';
             }
         }
 
