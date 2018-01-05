@@ -690,7 +690,7 @@ class CrayonWP {
                 $atts = $v['atts'];
                 $content = $v['code']; // The code we replace post content with
                 $crayon = self::shortcode($atts, $content, $id);
-                if (is_feed()) {
+                if (is_feed() && !$crayon->is_inline()) {
                     // Convert the plain code to entities and put in a <pre></pre> tag
                     $crayon_formatted = CrayonFormatter::plain_code($crayon->code(), $crayon->setting_val(CrayonSettings::DECODE));
                 } else {
