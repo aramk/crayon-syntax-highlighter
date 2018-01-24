@@ -1,0 +1,22 @@
+### REGEX LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    NAME                Regex
+    VERSION             0.1
+
+    COMMENT             
+    PREPROCESSOR		^\^|\$$
+    STRING              (?<!\\)(?:\\\\)*(?<=\[)(.+?)(?<!\\)(\\\\)*(?=\])
+    
+    STATEMENT           
+    RESERVED            
+    TYPE                (?<!\\)(?:\\\\)*(?:\()(\?(?:<?(?:[!=])|:))
+    MODIFIER            (?<!\\)(?:\\\\)*([+?*]|\{\d*,\d*\})
+    
+    ENTITY              (?:\\\\)*(?alt:reservedEsc.txt)|(?<!\\)(?alt:reservedNEsc.txt)
+    VARIABLE            
+    IDENTIFIER          
+    CONSTANT            (?<!\\)(?:\\\\)*([()\]\[])
+    OPERATOR            
+    SYMBOL              
