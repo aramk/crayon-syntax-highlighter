@@ -790,7 +790,7 @@ EOT;
 
     // Detect if on a Mac or PC
     public static function is_mac($default = FALSE) {
-        $user = $_SERVER['HTTP_USER_AGENT'];
+        $user = isset( $_SERVER['HTTP_USER_AGENT'] ) ? $_SERVER['HTTP_USER_AGENT'] : '';
         if (stripos($user, 'macintosh') !== FALSE) {
             return TRUE;
         } else if (stripos($user, 'windows') !== FALSE || stripos($user, 'linux') !== FALSE) {
