@@ -397,7 +397,7 @@ class CrayonSettings {
      * This is used when saving form an HTML form to the db, and also when reading from the db
      * back into the global settings.
      * @param string $name
-     * @param alternate $value
+     * @param mixed $value
      */
     public static function validate($name, $value) {
         if (!is_string($name)) {
