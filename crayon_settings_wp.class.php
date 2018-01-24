@@ -1074,7 +1074,7 @@ class Human {
         self::checkbox(array(CrayonSettings::TRIM_CODE_TAG, crayon__('Remove &lt;code&gt; tags surrounding the shortcode content')));
         self::checkbox(array(CrayonSettings::ALTERNATE, crayon__('Allow Mixed Language Highlighting with delimiters and tags.') . self::help_button('http://aramk.com/blog/2011/12/25/mixed-language-highlighting-in-crayon/')));
         echo '<div class="crayon-hide-inline-only">';
-        self::checkbox(array(CrayonSettings::SHOW_MIXED, crayon__('Show Mixed Language Icon (+)')));
+        self::checkbox(array(CrayonSettings::SHOW_ALTERNATE, crayon__('Show Mixed Language Icon (+)')));
         echo '</div>';
         self::checkbox(array(CrayonSettings::TAB_CONVERT, crayon__('Convert tabs to spaces')));
         self::span(crayon__('Tab size in spaces') . ': ');
