@@ -42,7 +42,7 @@ You can even mix code together like on a real HTML page, by having `<script>`, `
 
 Language information is found here in the Wordpress Admin: *Settings > Crayon > Languages > Show Languages* You can customise and create new languages and define how to capture each element (keywords, comments, strings, etc.) with regular expressions. Languages are structured `langs/lang-name/lang-name.txt`. Take a look at `langs/default/default.txt` and check out the neat regex of the default/generic language. See the [readme](langs/readme.md) in `langs/readme.md` for more information about the language file syntax.
 
-You can add custom languages in `wp-content/uploads/crayon-syntax-highlighter/languages` with the same format as those in the plugin directory and they will remain after plugin updates.
+You can add custom languages in `wp-content/uploads/crayon-syntax-highlighter/langs` with the same format as those in the plugin directory and they will remain after plugin updates. Custom languages with the same names as those in the plugin directory take precedence.
 
 ## Themes
 

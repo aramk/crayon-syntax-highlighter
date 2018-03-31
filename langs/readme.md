@@ -54,10 +54,16 @@ These are known, recognised and highlighted by Crayon. You can defined others, b
 
 ### Regex
 
-* Written as per normal, without delimiters or escaping
+* Written as per normal (using PHP's Perl-compatible regex or PCRE), without delimiters or escaping with the exception of `(`, which must be escaped in character classes
 * Applied in the order they appear in the file. If language has reserved keywords, these should be higher than variables
 * Whitespace around regex is ignored - only first character to last forms regex
 * If single space is intended, use \s to avoid conflict with whitespace used for separation e.g. `TEST [t] \s\s\shello`
+* Unescaped `(` not followed by `?` will be automatically replaced by `(?:`
+
+### Regex modes
+
+* Modes CASE_INSENSITIVE, MULTI_LINE and SINGLE_LINE correspond to PCRE's  `i`, `m` and `s` modifiers respectively and are all set by default
+* A mode can be unset (`OFF`, `NO` or `0`) with a single line such as `CASE_INSENSITIVE =OFF` (at least one space is required between the mode name and the `=`)
 
 ### Comments
 
