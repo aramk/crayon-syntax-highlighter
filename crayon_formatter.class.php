@@ -111,7 +111,7 @@ class CrayonFormatter {
         // TODO improve logic
         if ($hl->setting_val(CrayonSettings::FONT_SIZE_ENABLE)) {
             $_font_size = $hl->setting_val(CrayonSettings::FONT_SIZE);
-            $font_size = $_font_size . 'px !important;';
+            $font_size = $_font_size;
             $_line_height = $hl->setting_val(CrayonSettings::LINE_HEIGHT);
             // Don't allow line height to be less than font size
             $line_height = ($_line_height > $_font_size ? $_line_height : $_font_size) . 'px !important;';
