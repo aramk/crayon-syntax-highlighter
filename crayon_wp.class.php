@@ -541,6 +541,16 @@ class CrayonWP {
     }
 
     public static function enqueue_resources() {
+	  
+	/**
+         * Script load or not
+         * @var bool
+         */
+        $can_load = apply_filters( 'crayon_scripts_load', true );
+        if( ! $can_load ) {
+            return;
+        }
+	    
         if (!self::$enqueued) {
 
             CrayonLog::debug('enqueue');
