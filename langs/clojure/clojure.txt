@@ -16,6 +16,6 @@
     KEYWORD             (?<=\(|\/)\s*[a-zA-Z0-9->]{1,}[a-zA-Z0-9]\b
     
     IDENTIFIER          [a-z-]*[a-z]
-    CONSTANT            :[a-zA-Z]+
+    CONSTANT            :[a-zA-Z0-9]+
     OPERATOR            (?default)|\(|\)
     SYMBOL              (?default)
