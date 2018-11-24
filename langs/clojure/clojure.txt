@@ -13,7 +13,7 @@
     TYPE                \b(?alt:type.txt)\b
     HOF                 \b(?alt:hof.txt)\b
     VAR                 \b(?alt:vars.txt)\b
-    KEYWORD             (?<=\(|/)\s*[a-z-]*[a-z]\b
+    KEYWORD             (?<=\(|\/)\s*[a-zA-Z0-9->]{1,}[a-zA-Z0-9]\b
     
     IDENTIFIER          [a-z-]*[a-z]
     CONSTANT            :[a-zA-Z]+
