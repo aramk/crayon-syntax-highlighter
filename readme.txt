@@ -106,6 +106,7 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * MySQL (thanks to <a href="http://assemblysys.com/" target="_blank">AssemblySys.com</a> and <a href="http://ansas-meyer.de/" target="_blank">ansas-meyer.de</a>)
 * Java
 * JavaScript
+* Kotlin
 * Objective-C
 * Papyrus
 * Perl
