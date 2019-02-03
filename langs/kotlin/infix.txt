@@ -1,0 +1,8 @@
+shl
+shr
+ushr
+and
+xor
+or
+until
+to

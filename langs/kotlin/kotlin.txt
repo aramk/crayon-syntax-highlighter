@@ -1,0 +1,29 @@
+### KOTLIN LANGUAGE ###
+
+#   ELEMENT_NAME [optional-css-class] REGULAR_EXPRESSION
+
+    CASE_INSENSITIVE = OFF
+
+    NAME                Kotlin
+    VERSION             1.0.0
+
+    COMMENT             (?default)
+    STRING              (?:(?<!\\)""".*?(?<!\\)""")|(?default)
+    MARK_AT:TAG         (?<=this|super|return|break|continue)@[A-Za-z_]\w*|\b[A-Za-z_]\w*@(?!\w)
+
+    FUNCTION:KEYWORD    \b(?alt:function.txt)\b|(?<=\s)(?alt:infix.txt)(?=\s)
+    NOTATION            (?<= |)@[\w.]+
+    STATEMENT           \b(?alt:statement.txt)\b
+    RESERVED            \b(?alt:reserved.txt)\b
+    TYPE                \b(?alt:type.txt)\b
+    MODIFIER            \b(?alt:modifier.txt)\b
+
+    ENTITY              \b[A-Za-z_]\w*(?=\s*(\w+@\s*)?\{)|\b[A-Za-z_]\w*\b(?=\s*\([^\)]*\))|(?<!\.)\b[A-Za-z_]\w*\b(?=[^}=|,.:;"'\)]*{)
+    GENERIC:ENTITY      (?<=<)[A-Za-z_]\w*(?=>|\s*:\s*[A-Za-z_]\w*>)|(?<=in|out|:)\s+[A-Za-z_]\w*(?=>)
+    VARIABLE            [A-Za-z_]\w*(?=\s*(?alt:operator.txt)|\s*(?alt:symbol.txt)|\s+[A-Za-z_]\w*\s+\S|\s*$)
+
+    IDENTIFIER          (?default)
+
+    CONSTANT            (?<!\w)((\.\d[\d_]*|\d[\d_]*\.?)[\d_]*([eE]\d[\d_]*)?[fF]?|((0[bB])?[\d_]+|0[xX][\d_a-fA-F]*)[uUlL]?)\b
+    OPERATOR            (?alt:operator.txt)
+    SYMBOL              (?alt:symbol.txt)
