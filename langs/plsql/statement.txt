@@ -171,6 +171,7 @@ backup
 access
 write
 where
+while
 using
 until
 union
@@ -213,6 +214,7 @@ audit
 alter
 after
 admin
+elsif
 work
 with
 when
@@ -237,6 +239,7 @@ next
 mode
 long
 lock
+loop
 link
 like
 left
@@ -246,6 +249,7 @@ goto
 from
 file
 exec
+exit
 else
 each
 dump

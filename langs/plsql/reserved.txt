@@ -318,6 +318,7 @@ advise
 access
 write
 where
+while
 views
 value
 using
@@ -361,6 +362,7 @@ float
 fetch
 false
 entry
+elsif
 deref
 debug
 dbmac
@@ -388,6 +390,7 @@ year
 work
 with
 when
+exit
 view
 user
 undo
@@ -416,6 +419,7 @@ move
 mode
 long
 lock
+loop
 list
 link
 like
