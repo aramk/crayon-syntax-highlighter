@@ -645,7 +645,7 @@ EOT;
         foreach ($_GET as $get => $val) {
             $get_vars[] = $get . '=' . $val;
         }
-        return implode($get_vars, '&');
+        return implode('&', $get_vars);
     }
 
     // Creates a unique ID from a string
