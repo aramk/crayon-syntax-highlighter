@@ -337,7 +337,7 @@ class CrayonLang extends CrayonVersionResource {
 	// Override
 	function clean_id($id) {
         $id = CrayonUtil::space_to_hyphen( strtolower(trim($id)) );
-        return preg_replace('/[^\w-+#]/msi', '', $id);
+        return preg_replace('/[^\w+#-]/msi', '', $id);
 	}
 
 	function ext($ext = NULL) {
@@ -411,7 +411,7 @@ class CrayonLang extends CrayonVersionResource {
 			$name = trim(strtoupper($name));
 			if (array_key_exists($name, $this->elements) && $element === NULL) {
 				return $this->elements[$name];
-			} else if (@get_class($element) == CRAYON_ELEMENT_CLASS) {
+			} else if ($element !== NULL && @get_class($element) == CRAYON_ELEMENT_CLASS) {
 				$this->elements[$name] = $element;
 			}
 		}
