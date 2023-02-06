@@ -411,7 +411,7 @@ class CrayonLang extends CrayonVersionResource {
 			$name = trim(strtoupper($name));
 			if (array_key_exists($name, $this->elements) && $element === NULL) {
 				return $this->elements[$name];
-			} else if (@get_class($element) == CRAYON_ELEMENT_CLASS) {
+			} else if ($element !== NULL && @get_class($element) == CRAYON_ELEMENT_CLASS) {
 				$this->elements[$name] = $element;
 			}
 		}
